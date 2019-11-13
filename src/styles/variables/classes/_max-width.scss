@@ -1,0 +1,12 @@
+$hu-max-width-modules: (base, responsive);
+
+$hu-max-width-types: hu-append($hu-max-width-types,
+  (
+    30: 30%,
+    50: 50%,
+    33rem: hu-rem(528),
+    50rem: 50rem,
+    100vw: 100vw,
+    container: hu-rem(1350),
+  )
+);

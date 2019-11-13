@@ -1,0 +1,12 @@
+$hu-pos-modules: (base, responsive);
+
+$hu-pos-scale: hu-prepend(
+  $hu-pos-scale,
+  (
+    400: 1rem,
+    -400: -1rem,
+    -1vh: -1vh,
+    -50: -50%,
+    -100: -100%,
+  )
+);

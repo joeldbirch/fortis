@@ -1,0 +1,5 @@
+$hu-transition-duration-types: hu-prepend(
+  $hu-transition-duration-types, (
+    150: 0.15s,
+  )
+);

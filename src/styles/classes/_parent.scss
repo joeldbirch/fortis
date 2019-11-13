@@ -1,0 +1,3 @@
+@include hu-parent-classes(filter, (is-safari), $hu-filter-modules, $hu-filter-types);
+@include hu-parent-classes(display, (is-home), $hu-display-modules, $hu-display-types);
+@include hu-parent-classes(visibility, (is-home), $hu-visibility-modules, $hu-visibility-types);

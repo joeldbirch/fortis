@@ -1,0 +1,18 @@
+@include hu-pseudo-classes(font-size, ("::placeholder"), $hu-font-size-modules, $hu-font-size-types);
+
+$placeholder-base: (
+  color: (inherit: inherit),
+  mix-blend-mode: $hu-mix-blend-mode-types,
+  transition-property: $hu-transition-property-types,
+);
+@each $class-name, $types in $placeholder-base {
+  @include hu-pseudo-classes($class-name, ("::placeholder"), (base), $types);
+}
+
+$placeholder-base-focus: (
+  opacity: $hu-opacity-types,
+  transition-duration: $hu-transition-duration-types,
+);
+@each $class-name, $types in $placeholder-base-focus {
+  @include hu-pseudo-classes($class-name, ("::placeholder"), (base, focus), $types);
+}

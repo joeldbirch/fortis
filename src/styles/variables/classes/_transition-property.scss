@@ -1,0 +1,9 @@
+$hu-transition-property-modules: (base, reduced-motion);
+
+$hu-transition-property-types: (
+  all: all,
+  bg-color: background-color,
+  none: none,
+  opacity: opacity,
+  clip-path: clip-path,
+);

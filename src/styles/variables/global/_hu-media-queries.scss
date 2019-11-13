@@ -1,0 +1,10 @@
+$hu-media-queries: (
+  max-palm: (max-w: hu-em(549)),
+  palm: hu-em(550),
+  widepalm: hu-em(680),
+  max-lap: (max-w: hu-em(767)),
+  lap: hu-em(768),
+  desk: hu-em(1040),
+  bigdesk: hu-em(1350),
+  wall: hu-em(1543),
+);

@@ -1,0 +1,58 @@
+{
+  "name": "gatsby-theme-balance",
+  "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "version": "0.0.1",
+  "author": "Joel Birch <joeldbirch@gmail.com>",
+  "main": "index.js",
+  "dependencies": {
+    "fix-outline": "https://github.com/joeldbirch/fix-outline.git",
+    "gatsby-image": "^2.0.41",
+    "gatsby-plugin-google-tagmanager": "^2.0.13",
+    "gatsby-plugin-manifest": "^2.1.1",
+    "gatsby-plugin-netlify": "^2.0.17",
+    "gatsby-plugin-offline": "^2.1.0",
+    "gatsby-plugin-polyfill-io": "^1.1.0",
+    "gatsby-plugin-purgecss": "^3.1.1",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-react-svg": "^2.1.1",
+    "gatsby-plugin-sass": "^2.0.11",
+    "gatsby-plugin-sharp": "^2.0.36",
+    "gatsby-source-filesystem": "^2.0.33",
+    "gatsby-transformer-sharp": "^2.1.19",
+    "hucssley": "stowball/hucssley#master",
+    "prop-types": "^15.7.2",
+    "react-helmet": "^5.2.1"
+  },
+  "devDependencies": {
+    "gatsby": "^2.4.2",
+    "node-sass": "^4.12.0",
+    "prettier": "^1.17.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.4.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}
