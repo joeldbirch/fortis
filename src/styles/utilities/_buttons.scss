@@ -1,0 +1,40 @@
+// @import "tools-typography";
+
+$force-button-styles: false !default;
+$selector: '.btn';
+
+@if $force-button-styles == true {
+  // allows higher specificity needed for WP editor
+  $selector: #{$selector}#{$selector}#{$selector};
+}
+
+#{$selector} {
+  @include btn;
+}
+
+.btn-wrap {
+  display: inline-flex; // so it inherits text alignment and also contains button, respecting surrounding padding
+  padding-top: hu-get($hu-spacing-scale, 50);
+}
+
+.hover\:bright {
+  &:hover {
+    filter: brightness(1.15);
+  }
+}
+
+.hover\:bright__img {
+  &:hover {
+    img {
+      filter: brightness(1.15);
+    }
+  }
+}
+
+.c-floating-field__input:focus+.c-floating-field__label {
+  opacity: .6;
+}
+
+.c-floating-field__input:valid+.c-floating-field__label {
+  opacity: 0;
+}

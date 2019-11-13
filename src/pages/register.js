@@ -35,7 +35,7 @@ const styles = {
   `,
 
   regoFooter: `
-    bg-color:beige-100
+    background-color:beige-100
   `,
 }
 
@@ -177,7 +177,7 @@ const RegistrationPage = () => (
           ${styles.tintWrap}
           ${styles.padTop3}
           ${styles.padBottom3}
-          bg-color:green-300
+          background-color:green-300
         `}>
         <div
           className={`
@@ -267,7 +267,7 @@ const RegistrationPage = () => (
       </div>
 
 
-      <section className={`${styles.tintWrap} ${styles.padBottom3} bg-color:neutral-0`}>
+      <section className={`${styles.tintWrap} ${styles.padBottom3} background-color:neutral-0`}>
         <div className={`${styles.container} ${styles.padTop2}`}>
           <RuledSubHeading>
             Developer

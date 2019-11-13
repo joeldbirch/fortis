@@ -8,7 +8,7 @@ import { container, subhead } from '../styles/helpers'
 const styles = {
   root: `
     👉 the-header
-    bg-color:transparent
+    background-color:transparent
     pos-top:0
     position:fixed
     z-index:200

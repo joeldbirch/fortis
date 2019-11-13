@@ -44,6 +44,9 @@ $hu-spacing-scale: (
   700p: 70%,
   800p: 80%,
 
+  site-pad: var(--site-pad),
+  -site-pad: var(---site-pad),
+
   vert1: hu-rem(45),
   vert2: hu-rem(90),
   vert3: hu-rem(135),

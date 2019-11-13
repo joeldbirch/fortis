@@ -1,0 +1,9 @@
+a:not([class]),
+.anchor-base {
+  color: inherit;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

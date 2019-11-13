@@ -1,60 +1,26 @@
-@import "node_modules/hucssley/src/helpers";
+@import "styles/utilities/tools-mixins";
+@import "styles/utilities/tools-typography";
 
-@import "node_modules/hucssley/src/variables/global/index";
-@import "styles/variables/global/index";
+@import "styles/base/hucssley-setup";
 
-@import "node_modules/hucssley/src/variables/classes/index";
-@import "styles/variables/classes/index";
-// set class overrides before if you don’t need access to the defaults & want changes to flow through referenced vars
+@import "styles/base/custom-reset";
 
-@import "node_modules/hucssley/src/variables/reset/index";
-@import "styles/variables/reset/index";
+@import "styles/base/custom-properties";
+// @import "styles/vendor/index";
+@import "styles/utilities/index";
+// @import "styles/scoped/index";
 
-/* purgecss start ignore */
-@import "node_modules/hucssley/src/reset/index";
-/* purgecss end ignore */
-
-@import "node_modules/hucssley/src/styles";
+@import "./node_modules/hucssley/src/styles";
 @import "styles/classes/index";
 
-:root {
-  --radius: 50vw;
-
-  @supports (--radius: 50vmax) {
-    --radius: 50vmax;
-  }
-}
-
-@keyframes circular-reveal {
-  20% { clip-path: circle(var(--radius, 80%) at 50% 50%); }
-  40% { clip-path: circle(var(--radius, 80%) at 50% 50%); }
-  60% { clip-path: circle(9rem at 50% 83%); }
-  80% { clip-path: circle(9rem at 50% 83%); }
-}
-
-@keyframes fade-reveal {
-  45% { opacity: 1; }
-  70% { opacity: 0; }
-  80% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@keyframes text-bright {
-  45% { filter: brightness(1) drop-shadow(0 2px 7px rgba(0,0,0,0)); }
-  70% { filter: brightness(18) drop-shadow(0 2px 7px rgba(0,0,0,1)); }
-  80% { filter: brightness(18) drop-shadow(0 2px 7px rgba(0,0,0,1)); }
-  90% { filter: brightness(1) drop-shadow(0 2px 7px rgba(0,0,0,0)); }
-}
-
-:root {
-  --guide-color: rgb(255, 255, 255);
-  --site-pad: 1rem;
-}
-
-.grid-guide {
-  background-image: linear-gradient(to right, transparent, rgba(255,200,255,.9));
-  background-size: calc((100% - 4rem) / 10) auto;
-  background-position-x: var(--site-pad);
-}
+// .grid-guide {
+//   background-image: linear-gradient(to right, transparent, rgba(255,200,255,.9));
+//   background-size: calc((100% - 4rem) / 10) auto;
+//   background-position-x: var(--site-pad);
+// }
 
 .all-fill-current * { fill: currentColor }
+
+
+
+

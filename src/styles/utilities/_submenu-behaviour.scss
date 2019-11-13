@@ -1,0 +1,164 @@
+@import "styles/utilities/tools-mixins";
+@import "styles/hucssley-setup";
+
+// https://stackoverflow.com/questions/33371153/css-transition-delay-on-pointer-events-not-working
+@keyframes delay-pointer-events {
+  0% { visibility: hidden; }
+  50% { visibility: hidden; }
+  100% { visibility: visible; }
+}
+
+.main-menu-mobile {
+  ul/* all descendant ULs */ {
+    will-change: transform, opacity;
+  }
+
+  &__ul {
+    animation-direction: reverse;
+    animation: delay-pointer-events 1.6s linear;
+    opacity: 0;
+    transform: translateX(50%);
+    transition-delay: 0.8s;
+    transition-duration: 0.25s;
+    transition-property: opacity, transform, visibility;
+    visibility: hidden;
+    z-index: 1;
+
+    @include parent_hovered {
+      animation: delay-pointer-events 0.5s linear;
+      opacity: 1;
+      transform: translateX(calc(var(--site-pad) * 2));
+      visibility: visible;
+      z-index: 2;
+
+      @include increase-specificity(2) {
+        transition-delay: 0.25s;
+      }
+    }
+  }
+
+  &__li {
+    @include hovered {
+      z-index: 2;
+    }
+  }
+
+  &__a {
+    @include parent_hovered {
+      color: hu-get($hu-colors, red 400);
+    }
+  }
+}
+
+
+$transition-delays: (
+  opacity: 0.8s,
+  transform: 0.8s,
+  visibility: 0.8s,
+);
+
+$transition-properties: map-keys($transition-delays);
+
+.main-menu-desk {
+  ul/* all descendant ULs */,
+  section {
+    will-change: opacity, transform;
+  }
+
+  &__ul,
+  &__sub {
+    animation-direction: reverse;
+    animation: delay-pointer-events 1.6ms linear;
+    opacity: 0;
+    transition-delay: map-values($transition-delays);
+    transition-duration: 0.25s;
+    transition-property: $transition-properties;
+    visibility: hidden;
+    z-index: 1;
+
+    @include parent_hocussed_within {
+      animation: delay-pointer-events 0.5ms linear;
+      opacity: 1;
+      visibility: visible;
+      z-index: 2;
+
+      @include increase-specificity(2) {
+        transition-delay: 0.25s;
+      }
+    }
+
+    &--lvl-0 {
+      transform: translateX(50%);
+
+      @include parent_hocussed_within {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__li {
+    @include hocussed_within {
+      z-index: 2;
+    }
+  }
+
+  &__a {
+    @include parent_hocussed_within {
+      color: hu-get($hu-colors, red 400);
+    }
+
+    &--lvl-1 {
+      @include parent_hocussed_within {
+        &::before {
+          background-color: white;
+          margin-bottom: -1px;
+          z-index: -1;
+        }
+      }
+    }
+  }
+}
+
+.mega-menu {
+  &__parent-container {
+    // longer delay for min-height to hide closing animation of mega sub if neither ancestor are hover/focus-within
+    $menu-fully-unhocussed-transition-delays: map-merge(
+      $transition-delays,
+      ( opacity: 1.05s )
+    );
+
+    transform: translateX(0);
+    transition-delay: map-values($menu-fully-unhocussed-transition-delays);
+
+    $self: &;
+
+    @at-root {
+      .mega-menu__ancestor-li {
+        @include hocussed_within {
+          #{$self} {
+            transition-delay: 1.05s;
+          }
+        }
+      }
+    }
+  }
+
+  &__content {
+    opacity: 0;
+    transition: opacity .6s .45s;
+  }
+
+  &__parent-li {
+    @include hocussed_within {
+      .mega-menu__content {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media (hover: hover) {
+  .\&\:hover-only--color\:red-400:hover {
+    color: hu-get($hu-colors, red 400);
+  }
+}

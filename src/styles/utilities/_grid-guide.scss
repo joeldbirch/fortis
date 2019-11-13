@@ -1,0 +1,21 @@
+/*body*/.grid-guide {
+  &::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: var(--site-pad);
+    right: var(--site-pad);
+    bottom: 0;
+    z-index: 999;
+    pointer-events: none;
+    max-width: var(--site-max-width);
+    margin: 0 auto;
+    background-image:
+      linear-gradient(to right, var(--guide-color) 0, var(--guide-color) 1px, transparent 1px)
+    ;
+    background-size: calc(50% / 6) 100%;
+    box-shadow: inset -1px 0 0 var(--guide-color);
+  }
+}
+
+// 12 column grid with an extra column margin each side

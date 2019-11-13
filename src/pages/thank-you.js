@@ -10,7 +10,7 @@ import TheFooter from '../components/TheFooter'
 import SEO from '../components/seo'
 
 const ThankYouPage = () => (
-  <Layout className="bg-color:beige-100">
+  <Layout className="background-color:beige-100">
     <SEO title="Thank you!" />
     <Helmet
       meta={[

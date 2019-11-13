@@ -13,28 +13,8 @@ $jb-colors: hu-append((
     400: #dfc2b2, // desired colour
   ),
   green: (
-    200: #00946C, // AA accessible for small text
-    300: #007A5A, // AA accessible for large text
-    400: #006047, // desired colour
-  ),
-  orange: (
-    300: #ffb7a1, // Better accessibility on green, echoes beige feel
-    400: #f5511e, // AA accessible for small text
-    500: #ce3100, // AA accessible for small text on beige
+    400: #3f5455, // fortis green
   ),
 ), $hu-colors-keywords);
 
 $hu-colors: $jb-colors;
-
-$hu-themes: (
-  green: (
-    primary: hu-get($hu-colors, green 400),
-    secondary: hu-get($hu-colors, orange 400),
-    highlight: hu-get($hu-colors, orange 400),
-  ),
-  beige: (
-    primary: hu-get($hu-colors, beige 300),
-    secondary: hu-get($hu-colors, orange 400),
-    highlight: hu-get($hu-colors, orange 400),
-  ),
-);

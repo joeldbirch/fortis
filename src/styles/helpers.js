@@ -1,7 +1,5 @@
 export const containerBase = `
   margin-horizontal:auto
-  @mq-lap--padding-horizontal:600
-  padding-horizontal:400
 `
 
 export const container = `
@@ -49,7 +47,6 @@ export const padBottom3 = `
 export const subhead = `
   @mq-desk--font-size:400
   font-size:300
-  font-weight:700
   letter-spacing:20
   text-case:upper
 `
@@ -60,7 +57,7 @@ export const button = `
   border-style:solid
   border-width:200
   color:orange-400
-  &:hocus--bg-color:neutral-0
+  &:hocus--background-color:neutral-0
   &:hocus--text-decoration:underline
   padding-horizontal:700
   padding-vertical:400
