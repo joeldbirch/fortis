@@ -7,34 +7,35 @@
   "main": "index.js",
   "dependencies": {
     "fix-outline": "https://github.com/joeldbirch/fix-outline.git",
-    "gatsby-image": "^2.0.41",
-    "gatsby-plugin-google-tagmanager": "^2.0.13",
-    "gatsby-plugin-manifest": "^2.1.1",
-    "gatsby-plugin-netlify": "^2.0.17",
+    "gatsby-image": "^2.2.31",
+    "gatsby-plugin-google-tagmanager": "^2.1.16",
+    "gatsby-plugin-manifest": "^2.2.27",
+    "gatsby-plugin-netlify": "^2.1.24",
     "gatsby-plugin-offline": "^2.1.0",
     "gatsby-plugin-polyfill-io": "^1.1.0",
-    "gatsby-plugin-purgecss": "^3.1.1",
-    "gatsby-plugin-react-helmet": "^3.0.12",
-    "gatsby-plugin-react-svg": "^2.1.1",
-    "gatsby-plugin-sass": "^2.0.11",
-    "gatsby-plugin-sharp": "^2.0.36",
-    "gatsby-source-filesystem": "^2.0.33",
-    "gatsby-transformer-sharp": "^2.1.19",
-    "hucssley": "stowball/hucssley#master",
+    "gatsby-plugin-purgecss": "^4.0.1",
+    "gatsby-plugin-react-helmet": "^3.1.14",
+    "gatsby-plugin-react-svg": "^2.1.2",
+    "gatsby-plugin-sass": "^2.1.21",
+    "gatsby-plugin-sharp": "^2.2.37",
+    "gatsby-source-filesystem": "^2.1.36",
+    "gatsby-transformer-sharp": "^2.3.3",
+    "hucssley": "github:stowball/hucssley#master",
     "prop-types": "^15.7.2",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "sharp": "^0.23.2"
   },
   "devDependencies": {
-    "gatsby": "^2.4.2",
-    "node-sass": "^4.12.0",
-    "prettier": "^1.17.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "gatsby": "^2.17.11",
+    "node-sass": "^4.13.0",
+    "prettier": "^1.19.1",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
   },
   "peerDependencies": {
-    "gatsby": "^2.4.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "gatsby": "^2.17.11",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
   },
   "keywords": [
     "gatsby"

@@ -5148,15 +5148,6 @@ fs-extra@^4.0.2:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
-fs-extra@^7.0.0:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-7.0.1.tgz#4f189c44aa123b895f722804f55ea23eadc348e9"
-  integrity sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==
-  dependencies:
-    graceful-fs "^4.1.2"
-    jsonfile "^4.0.0"
-    universalify "^0.1.0"
-
 fs-extra@^8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-8.1.0.tgz#49d43c45a88cd9677668cb7be1b46efdb8d2e1c0"
@@ -5290,7 +5281,7 @@ gatsby-graphiql-explorer@^0.2.27:
   dependencies:
     "@babel/runtime" "^7.7.2"
 
-gatsby-image@^2.0.41:
+gatsby-image@^2.2.31:
   version "2.2.31"
   resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.2.31.tgz#b8eb4b578bd850523a98dcf573bcd9a01e14c37b"
   integrity sha512-DRRDCsATxhvoG6NcO1zlbQFMVTWbmp2XtM+humcC7IPy+Uq5wP4NREV/ICBx3d/hcAabg0vyjHNjrGeDo0ZBbw==
@@ -5322,14 +5313,14 @@ gatsby-page-utils@^0.0.29:
     micromatch "^3.1.10"
     slash "^3.0.0"
 
-gatsby-plugin-google-tagmanager@^2.0.13:
+gatsby-plugin-google-tagmanager@^2.1.16:
   version "2.1.16"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-tagmanager/-/gatsby-plugin-google-tagmanager-2.1.16.tgz#f0e5281ecd3533faf0085903aae90c5310d2eac9"
   integrity sha512-RSJyBgtpqez14tydqmhxmDSD0uCSs4GVdjAaX81p1tzjSYcYmOQsXZPO2pKm15pL9H7D2ZABsWeoT/3nJu9swQ==
   dependencies:
     "@babel/runtime" "^7.7.2"
 
-gatsby-plugin-manifest@^2.1.1:
+gatsby-plugin-manifest@^2.2.27:
   version "2.2.27"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.27.tgz#19848ad1876362ac3a76981f77dca857b878ac68"
   integrity sha512-c9TwM3GncLMIFUb3uM/d4Nq+RXtbd79gP2FA0lKnpRcK3wsnHVbUDh0iKF802ObrkVkoBUqwT0tFD8sLONsL/w==
@@ -5339,7 +5330,7 @@ gatsby-plugin-manifest@^2.1.1:
     semver "^5.7.1"
     sharp "^0.23.2"
 
-gatsby-plugin-netlify@^2.0.17:
+gatsby-plugin-netlify@^2.1.24:
   version "2.1.24"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-2.1.24.tgz#bdb414aa7f0ac5984339212d662699c054061c05"
   integrity sha512-2lfMN374Hbh+sHlHATwoqE2ow1RvtAZ4ebBiXd609/4qWMDz3St7q4IKm721PnYkGRDYY4rKhgdlsMvihTiFUw==
@@ -5382,30 +5373,30 @@ gatsby-plugin-polyfill-io@^1.1.0:
   dependencies:
     babel-runtime "^6.26.0"
 
-gatsby-plugin-purgecss@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-purgecss/-/gatsby-plugin-purgecss-3.1.1.tgz#2855f0ca5fd96d9888147ade09aaf2daf16b0e1a"
-  integrity sha512-98SBK2ZmsmL2HdTw+2lJOhuOkxpHoTOuwKW2+0qx0nZ+WlSiUOkY3o4fXAtQOFlcaxDzjRXbw1hpP1NaXQciQg==
+gatsby-plugin-purgecss@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-purgecss/-/gatsby-plugin-purgecss-4.0.1.tgz#e9b85eb6189aa20fff9f0c2e0c8ce748f64624bb"
+  integrity sha512-sYh7gm+9dovl+QASrInSXqB2qIMdfGW+Y7+Gum//jYjvktYlFCjGUXD8k/Wiw+CmXaJh8k5avFC23Cot96SS4w==
   dependencies:
-    fs-extra "^7.0.0"
+    fs-extra "^8.1.0"
     loader-utils "^1.1.0"
-    purgecss "^1.0.1"
+    purgecss "^1.3.0"
 
-gatsby-plugin-react-helmet@^3.0.12:
+gatsby-plugin-react-helmet@^3.1.14:
   version "3.1.14"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.1.14.tgz#322b6586206c3f850b504a18e9277c6866494b18"
   integrity sha512-08I1QEiYmZ+H2pcnKWNsbWYq+N6rG0JIqve9nhZVCzprIy0BW5IvMcs3NE0eYn35mCMC/vnw8EA4cvvpGenzxg==
   dependencies:
     "@babel/runtime" "^7.7.2"
 
-gatsby-plugin-react-svg@^2.1.1:
+gatsby-plugin-react-svg@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-svg/-/gatsby-plugin-react-svg-2.1.2.tgz#e5aa026ece1a8aa3319bf10a8e20cf4595aec932"
   integrity sha512-y2vqiI/+bW8UPNL8628NwoX6kHtM4WJz6CiHPc9fhvSUa2Y8wriFJnGl1K249/9RXomOUQhl7r7JOuVhweSl1w==
   dependencies:
     svg-react-loader "^0.4.4"
 
-gatsby-plugin-sass@^2.0.11:
+gatsby-plugin-sass@^2.1.21:
   version "2.1.21"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sass/-/gatsby-plugin-sass-2.1.21.tgz#c2dbf425909a243e03a1e89467a02becb56ca6f0"
   integrity sha512-5xuWO+WjGMIDSJsN0DSO336q3gutAZEbwNGMxwf6+efB0zkKSI5kQDbUbV/+PDIlChRpfJ52bi43XH5uTNb1kg==
@@ -5413,7 +5404,7 @@ gatsby-plugin-sass@^2.0.11:
     "@babel/runtime" "^7.7.2"
     sass-loader "^7.3.1"
 
-gatsby-plugin-sharp@^2.0.36:
+gatsby-plugin-sharp@^2.2.37:
   version "2.2.37"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.2.37.tgz#e8d3029dcb263efcdcd96ecdfb16891b304cfcdc"
   integrity sha512-efx5oC34QIaXpzzFs71faIwPMVxrur7LvHCfrKMstSmFXmim9yixuDQVYusIbY4eqebnj5o7XmIRcMCCvzivEg==
@@ -5447,7 +5438,7 @@ gatsby-react-router-scroll@^2.1.15:
     scroll-behavior "^0.9.10"
     warning "^3.0.0"
 
-gatsby-source-filesystem@^2.0.33:
+gatsby-source-filesystem@^2.1.36:
   version "2.1.36"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.1.36.tgz#3e2fda1d7e7a31cfc0e67814ef7f4fb94d6e4e8c"
   integrity sha512-8J2bEfIM+bxXTCcJ9Y5ZV7WEPiFDoY/G0tfZVrYsZZiuLPSNKuryxtjV0NwSDRE8mQZn9M54a3Q8xI34/pkfyQ==
@@ -5491,7 +5482,7 @@ gatsby-telemetry@^1.1.36:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
-gatsby-transformer-sharp@^2.1.19:
+gatsby-transformer-sharp@^2.3.3:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.3.3.tgz#221b5d3f31f8d9b5399ca7ba5c6ee1d34518a0da"
   integrity sha512-e4k/5jSlysoCtuYKJ9iv9DrJUvy6ZbbQUeyXP0wi2KJjhEFG7t0Kcu71vZKpDC+HN0BeApSrsBWHaJvvhD0dlw==
@@ -5504,7 +5495,7 @@ gatsby-transformer-sharp@^2.1.19:
     semver "^5.7.1"
     sharp "^0.23.2"
 
-gatsby@^2.4.2:
+gatsby@^2.17.11:
   version "2.17.11"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.17.11.tgz#788cd93aec2bf6beaf7bf8dd1182a8f779c004e8"
   integrity sha512-dAWYZiDfSGoGDmdeVD7qnCYRE06nocnrDWxxll7IeGc8ZSpS2FSXFtbnumzp8tS56vv2KdVl7hDof+nrPAMI5w==
@@ -6299,7 +6290,7 @@ https-browserify@^1.0.0:
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
   integrity sha1-7AbBDgo0wPL68Zn3/X/Hj//QPHM=
 
-hucssley@stowball/hucssley#master:
+"hucssley@github:stowball/hucssley#master":
   version "0.1.0"
   resolved "https://codeload.github.com/stowball/hucssley/tar.gz/fbea68bab56537469b5468e2716dc865e84cce4a"
 
@@ -8302,7 +8293,7 @@ node-releases@^1.1.38:
   dependencies:
     semver "^6.3.0"
 
-node-sass@^4.12.0:
+node-sass@^4.13.0:
   version "4.13.0"
   resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.13.0.tgz#b647288babdd6a1cb726de4545516b31f90da066"
   integrity sha512-W1XBrvoJ1dy7VsvTAS5q1V45lREbTlZQqFbiHb3R3OTTCma0XBtuG6xZ6Z4506nR4lmHPTqVRwxT6KgtWC97CA==
@@ -9627,7 +9618,7 @@ prepend-http@^2.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
-prettier@^1.17.0:
+prettier@^1.19.1:
   version "1.19.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.19.1.tgz#f7d7f5ff8a9cd872a7be4ca142095956a60797cb"
   integrity sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
@@ -9796,7 +9787,7 @@ punycode@^1.2.4, punycode@^1.4.1:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
   integrity sha1-wNWmOycYgArY4esPpSachN1BhF4=
 
-purgecss@^1.0.1:
+purgecss@^1.3.0:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/purgecss/-/purgecss-1.4.1.tgz#d362e63eb1ed9dd1fa1554b9fd7accb8d54e56dc"
   integrity sha512-5jONV/D/3nfa+lC425+LA+OWe5/LDn4a79cac+TnzJq3VczwnWlpIDdW275hHsGhkzIlqATQsYFLW7or0cSwNQ==
@@ -9937,7 +9928,7 @@ react-dev-utils@^4.2.3:
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
-react-dom@^16.8.6:
+react-dom@^16.11.0:
   version "16.11.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.11.0.tgz#7e7c4a5a85a569d565c2462f5d345da2dd849af5"
   integrity sha512-nrRyIUE1e7j8PaXSPtyRKtz+2y9ubW/ghNgqKFHHAHaeP0fpF5uXR+sq8IMRHC+ZUxw7W9NyCDTBtwWxvkb0iA==
@@ -10008,7 +9999,7 @@ react-side-effect@^1.1.0:
   dependencies:
     shallowequal "^1.0.1"
 
-react@^16.11.0, react@^16.8.6:
+react@^16.11.0:
   version "16.11.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.11.0.tgz#d294545fe62299ccee83363599bf904e4a07fdbb"
   integrity sha512-M5Y8yITaLmU0ynd0r1Yvfq98Rmll6q8AxaEe88c8e7LxO8fZ2cNgmFt0aGAS9wzf1Ao32NKXtCl+/tVVtkxq6g==
