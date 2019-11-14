@@ -1,0 +1,12 @@
+$hu-backdrop-filter-modules: (
+  core: (base, responsive),
+  pseudos: (
+    // "::after",
+    "::before",
+  ),
+);
+
+$hu-backdrop-filter-types: (
+  // blur-100: blur(1px) saturate(1.5),
+  overlay: saturate(2) brightness(0.9) contrast(0.9),
+);

@@ -9,4 +9,6 @@ $hu-flex-basis-types: (
   33: 33.333%,
   35: 35%,
   80: 80%,
+  container: hu-rem(1350),
+  hero-100: calc(100vh - 7vmin)
 );

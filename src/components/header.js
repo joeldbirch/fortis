@@ -4,7 +4,6 @@ import React from 'react'
 
 import Logo from '../images/inline/logo-ode.svg'
 import { container, bodyText, smallText } from '../styles/helpers'
-import { callbackify } from 'util'
 
 const styles = {
   root: `
@@ -12,9 +11,9 @@ const styles = {
     ${container}
     background-color:green-400
     overflow:hidden
-    flex-shrink:0
+    flex-shrink:1
     position:relative
-    padding-bottom:9/16
+    max-height:container
   `,
   logo: `
     👉 the-logo
@@ -39,8 +38,6 @@ const styles = {
   `
 }
 
-const minHeight = `100vh - 7vw`
-
 const Header = ({ className, siteTitle = `` }) => (
   <StaticQuery
     query={graphql`
@@ -58,7 +55,8 @@ const Header = ({ className, siteTitle = `` }) => (
             ${className}
           `}
           style={{
-            minHeight: `calc(${minHeight})`,
+            maxHeight: `47.4875rem`,
+            flexBasis: `calc(100vh - 7vw)`,
           }}
         >
 
@@ -72,14 +70,18 @@ const Header = ({ className, siteTitle = `` }) => (
                   className={`
                     opacity:70
                     position:absolute
-                    pos-top:0
+                    pos-top:50
                     height:100
-                    width:100
+                    @mq-max-desk-width--min-width:100
+                    @mq-max-desk--width:hero-100
+                    @mq-max-desk--max-width:container
+                    @mq-tall--min-width:100
                     pos-left:50
-                    translate-x:-50
+                    transform:-50
+                    max-width:container
                   `}
                   style={{
-                    minWidth: `calc((${minHeight}) * 1.777777778)`,
+                    maxHeight: `47.4875rem`,
                   }}
                   >
                 </iframe>
@@ -108,11 +110,15 @@ const Header = ({ className, siteTitle = `` }) => (
               <h2
                 className={`
                   ${smallText}
+                  padding-bottom:site-pad-100
                 `}
-              >589 Toorak Road, Toorak</h2>
+              >
+                589 Toorak Road, Toorak
+              </h2>
               <h1
                 className={`
                   ${bodyText}
+                  @mq-lap-shallow--display:none
                 `}
               >
                 Experience the freedom of<br />low maintenance living in Toorak

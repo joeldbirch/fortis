@@ -4,9 +4,26 @@ $hu-media-queries: (
   widepalm: hu-em(680),
   max-lap: (max-w: hu-em(767)),
   lap: hu-em(768),
+  lap-shallow: (
+    min-w: hu-em(768),
+    max-h: hu-em(550),
+  ),
   desk: hu-em(1040),
+  max-desk-width: (
+    max-w: hu-em(1349),
+  ),
+  max-desk: (
+    max-w: hu-em(1349),
+    max-h: hu-em(1349),
+  ),
   bigdesk: hu-em(1350),
   wall: hu-em(1543),
+
+  tall: (
+    other: (
+      min-height: 85em,
+    ),
+  ),
 
   // hover-only: (
   //   other: (

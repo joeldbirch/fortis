@@ -1,0 +1,8 @@
+$hu-min-width-modules: (base, responsive);
+
+$hu-min-width-types: hu-append($hu-min-width-types,
+  (
+    hero-100: unquote("calc((100vh - 7vw) * 1.777777778)"),
+    container: hu-rem(1350),
+  )
+);
