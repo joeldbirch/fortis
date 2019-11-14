@@ -16,7 +16,7 @@ export const sitePadV = `
 
 export const padTop1 = `
   @mq-bigdesk--padding-top:vert1
-  padding-top:350vw
+  padding-top:site-pad-100
 `
 
 export const padTop2 = `
@@ -30,7 +30,7 @@ export const padTop3 = `
 `
 
 export const padBottom1 = `
-  padding-bottom:350vw
+  padding-bottom:site-pad-100
   @mq-bigdesk--padding-bottom:vert1
 `
 

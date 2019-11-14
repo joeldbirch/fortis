@@ -1,16 +1,11 @@
 /* purgecss start ignore */
-
 :root {
   --guide-color: rgba(0, 153, 255, 0.2);
-  --site-pad: 1rem;
+  --site-pad: 3.5vw;
   ---site-pad: calc(var(--site-pad) * -1);
   --site-max-width: #{hu-get($hu-max-width-types, container)};
   --grid-template-columns-var1: 1fr 1fr;
   --rhythm-offset: -0.25em; // see rhythm-fix mixin in _tools-typography.scss
   --bg-image: '';
-
-  @media all and (min-width: #{hu-get($hu-media-queries, lap)}) {
-    --site-pad: 2rem;
-  }
 }
 /* purgecss end ignore */

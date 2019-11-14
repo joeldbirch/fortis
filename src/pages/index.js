@@ -65,10 +65,12 @@ const SubSection = ({
 }
 
 const RegistrationPage = () => (
-  <Layout>
+  <Layout className={`
+    padding-top:site-pad-100
+  `}>
 
     <SEO
-      title="Enquire here"
+      title="Request floorplans"
       keywords={[`Bower`, `enquiries`, `South Yarra`]}
     />
 
@@ -269,7 +271,10 @@ const RegistrationPage = () => (
 
       <section className={`
           force-full-width
-          padding-horizontal:site-pad ${styles.padBottom3} background-color:neutral-0`}>
+          padding-horizontal:site-pad-100
+          ${styles.padBottom3}
+          background-color:neutral-0
+        `}>
         <div className={`${styles.container} ${styles.padTop2}`}>
           <RuledSubHeading>
             Developer

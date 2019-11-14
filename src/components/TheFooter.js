@@ -23,7 +23,7 @@ const styles = {
     align-items:center
     degrade-to-inline
     display:grid
-    grid-gap:350vw
+    grid-gap:site-pad-100
     @mq-desk--grid-gap:vert1
     @mq-bigdesk--grid-gap:vert2
     grid-template-columns:var1
@@ -33,7 +33,7 @@ const styles = {
   logoLink: `
     👉 footerLogoLink
     display:block
-    margin-right:350vw
+    margin-right:site-pad-100
     @mq-lap--margin-right:400
   `,
   logo: `

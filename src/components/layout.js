@@ -26,7 +26,7 @@ const Layout = ({
   }
 
   function htmlClasses() {
-    return `padding-horizontal:site-pad`
+    return `padding-horizontal:site-pad-100`
   }
 
   return (

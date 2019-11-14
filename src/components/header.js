@@ -2,16 +2,14 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Logo from '../images/inline/logo-bower.svg'
+import Logo from '../images/inline/logo-ode.svg'
 import { container, subhead } from '../styles/helpers'
 
 const styles = {
   root: `
     👉 the-header
-    background-color:transparent
-    pos-top:0
-    position:fixed
-    z-index:200
+    background-color:green-400
+    position:relative
   `,
   logoLink: `
     @mq-lap--margin-top:0
@@ -55,6 +53,10 @@ const Header = ({ className, siteTitle = `` }) => (
     render={data => {
       return (
         <header className={`${styles.root} ${className}`}>
+        <iframe src="https://player.vimeo.com/video/76979871?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1" title="ode-video"
+          frameBorder="0"></iframe>
+
+
           <div className={`
             ${container}
             display:flex
@@ -63,11 +65,7 @@ const Header = ({ className, siteTitle = `` }) => (
             justify-content:space-between
           `}>
             <Link to="/" className={styles.logoLink}>
-              <Logo className={styles.logo} aria-label="Bower by Fortis" />
-            </Link>
-
-            <Link to="/register/#enquiries" className={`${styles.headerNav}`}>
-              Enquire now
+              <Logo className={styles.logo} aria-label={siteTitle} />
             </Link>
           </div>
         </header>

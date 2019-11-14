@@ -13,7 +13,7 @@ const styles = {
   textWrap: `
     @mq-palm--flex-direction:column
     @mq-palm--display:flex
-    @mq-palm--padding-left:350vw
+    @mq-palm--padding-left:site-pad-100
     @mq-bigdesk--padding-left:vert1
     @mq-palm--width:40
     @mq-palm--margin-top:auto

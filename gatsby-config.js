@@ -1,9 +1,21 @@
 module.exports = {
   siteMetadata: {
-    title: `A website by Balance`,
+    title: `Ode of Toorak`,
     description: ``,
   },
   plugins: [
+    {
+      resolve:`gatsby-source-cloudinary`,
+      options:{
+        cloudName: `imagin`,
+        apiKey: `578256213179122`,
+        apiSecret: `LWH77FB2_H4dRYV0Ved_mdJx4rk`,
+        resourceType: 'video',
+        type: `upload`,
+        tags: false,
+        prefix: `ODE/`
+      }
+    },
     {
       resolve: `gatsby-plugin-polyfill-io`,
       options: {
