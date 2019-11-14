@@ -70,7 +70,7 @@ const RegistrationPage = () => (
   `}>
 
     <SEO
-      title="Request floorplans"
+      title="Request floor plans"
       keywords={[`Bower`, `enquiries`, `South Yarra`]}
     />
 

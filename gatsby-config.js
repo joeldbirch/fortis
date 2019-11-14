@@ -5,37 +5,12 @@ module.exports = {
   },
   plugins: [
     {
-      resolve:`gatsby-source-cloudinary`,
-      options:{
-        cloudName: `imagin`,
-        apiKey: `578256213179122`,
-        apiSecret: `LWH77FB2_H4dRYV0Ved_mdJx4rk`,
-        resourceType: 'video',
-        type: `upload`,
-        tags: false,
-        prefix: `ODE/`
-      }
-    },
-    {
       resolve: `gatsby-plugin-polyfill-io`,
       options: {
         features: [`fetch`]
       },
     },
-    {
-      resolve: `gatsby-plugin-google-tagmanager`,
-      options: {
-        id: "GTM-N8MZWQZ",
-        // Include GTM in development.
-        // Defaults to false meaning GTM will only be loaded in production.
-        includeInDevelopment: false,
 
-        // Specify optional GTM environment details.
-        // gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIROMENT_AUTH_STRING",
-        // gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIROMENT_PREVIEW_NAME",
-        // dataLayerName: "YOUR_DATA_LAYER_NAME",
-      },
-    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
