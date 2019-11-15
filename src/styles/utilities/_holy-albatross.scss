@@ -16,7 +16,7 @@
 }
 
 .\@mq-max-tiny--albatross__baby {
-  @media all and (max-width: #{hu-get($hu-media-queries, max-tiny max-w)}) {
+  @media all and (max-width: #{hu-get($hu-media-queries, max-palm max-w)}) {
     --albatross-breakpoint: 19rem;
   }
 }

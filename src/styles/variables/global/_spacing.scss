@@ -48,7 +48,7 @@ $hu-spacing-scale: (
 
   site-pad: unquote("var(--site-pad, 3.5vmin)"),
   site-pad-100: unquote("var(--site-pad, 3.5vmin)"),
-  "-site-pad-100": "calc(var(--site-pad, 3.5vmin) * -1)",
+  "-site-pad-100": unquote("calc(var(--site-pad, 3.5vmin) * -1)"),
   site-pad-200: 7vmin,
   "-site-pad-200": -7vmin,
 

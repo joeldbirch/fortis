@@ -8,20 +8,15 @@ export const container = `
 `
 
 export const sitePadV = `
-  @mq-bigdesk--padding-vertical:800
-  @mq-lap--padding-vertical:700
-  @mq-palm--padding-vertical:600
-  padding-vertical:500
+  padding-vertical:site-pad-100
 `
 
 export const padTop1 = `
-  @mq-bigdesk--padding-top:vert1
   padding-top:site-pad-100
 `
 
 export const padTop2 = `
-  padding-top:700vw
-  @mq-bigdesk--padding-top:vert2
+  padding-top:site-pad-200
 `
 
 export const padTop3 = `
@@ -31,12 +26,10 @@ export const padTop3 = `
 
 export const padBottom1 = `
   padding-bottom:site-pad-100
-  @mq-bigdesk--padding-bottom:vert1
 `
 
 export const padBottom2 = `
-  padding-bottom:700vw
-  @mq-bigdesk--padding-bottom:vert2
+  padding-bottom:site-pad-200
 `
 
 export const padBottom3 = `
@@ -53,14 +46,12 @@ export const subhead = `
 
 export const button = `
   ${subhead}
-  border-color:orange-400
-  border-style:solid
-  border-width:200
-  color:orange-400
-  &:hocus--background-color:neutral-0
-  &:hocus--text-decoration:underline
+  &:hocus--background-color:black-40
+  background-color:black-80
+  color:neutral-0
   padding-horizontal:700
   padding-vertical:400
+  text-transform:uppercase
 `
 
 export const tintWrap = `

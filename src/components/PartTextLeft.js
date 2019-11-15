@@ -13,32 +13,40 @@ const styles = {
   textWrap: `
     @mq-palm--flex-direction:column
     @mq-palm--display:flex
-    @mq-palm--padding-left:site-pad-100
-    @mq-bigdesk--padding-left:vert1
-    @mq-palm--width:40
+    @mq-palm--padding-left:site-pad-200
+    @mq-lap--padding-right:site-pad-200
+    @mq-palm--width:50
+    @mq-desk--width:40
+
     @mq-palm--margin-top:auto
     @mq-max-palm--margin-top:400
   `,
 
   imageWrap: `
-    @mq-palm--width:55
+    @mq-palm--width:50
     @mq-max-palm--height:18rem
+
   `,
 
   image: `
     height:100
+    @mq-palm--margin-left:-site-pad-100
+    @mq-bigdesk--margin-left:0
   `,
 }
 
-export default ({imageName, children }) => {
+export default ({imageName, textClassName="", children }) => {
   return (
     <div className={styles.root}>
 
       <div className={styles.imageWrap}>
-        <Image name={imageName} className={`height:100`} />
+        <Image name={imageName} className={`${styles.image}`} />
       </div>
 
-      <div className={styles.textWrap}>
+      <div className={`
+        ${styles.textWrap}
+        ${textClassName}
+      `}>
         { children }
       </div>
 
