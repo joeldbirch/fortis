@@ -49,7 +49,7 @@ const RegistrationPage = () => {
       <Main>
 
         <PartText
-          imageName="bedroom"
+          imageName="kitchen"
           imageWrapClassName={`
             @mq-palm--margin-left:-site-pad-100
             @mq-bigdesk--margin-left:0
@@ -86,13 +86,13 @@ const RegistrationPage = () => {
           margin-vertical:site-pad-200
         `}>
           <Image
-            name="terrace"
+            name="courtyard"
           />
         </div>
 
 
         <PartText
-          imageName="bedroom"
+          imageName="dining"
           className={`
             flex-direction:row-reverse
           `}
@@ -169,13 +169,13 @@ const RegistrationPage = () => {
           margin-vertical:site-pad-200
         `}>
           <Image
-            name="ensuite"
+            name="living"
           />
         </div>
 
 
         <PartText
-          imageName="bedroom"
+          imageName="bathroom"
           imageWrapClassName={`
             @mq-palm--margin-left:-site-pad-100
             @mq-bigdesk--margin-left:0
@@ -212,7 +212,7 @@ const RegistrationPage = () => {
           margin-vertical:site-pad-200
         `}>
           <Image
-            name="ensuite"
+            name="hero"
           />
         </div>
 
@@ -223,8 +223,7 @@ const RegistrationPage = () => {
           <>
             <h3 className={`
               font-size:600
-              @mq-widepalm--font-size:800
-              @mq-wall--font-size:800
+              @mq-widepalm--font-size:700
               line-height:300
               font-weight:400
 
@@ -249,7 +248,7 @@ const RegistrationPage = () => {
                   margin-bottom:500
                   @mq-widepalm--margin-bottom:700
                   @mq-widepalm--margin-left:700
-                  @mq-widepalm--margin-top:200
+                  @mq-widepalm--margin-top:300
                   max-width:20rem
                 `}
                 style={{

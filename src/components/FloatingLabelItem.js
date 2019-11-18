@@ -36,11 +36,11 @@ const styles = {
   👉 c-floating-field__label
   &:before--arrow-left
   margin-left:0
-  margin-top:50p
+  translate-Y:-50
   opacity:0
   pointer-events:none
   pos-left:100
-  pos-top:0
+  pos-top:50
   position:absolute
   text-case:lower
   transform:right-center-small

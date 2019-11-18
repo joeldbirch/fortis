@@ -49,6 +49,8 @@ export const button = `
   background-color:black-80
   color:neutral-0
   font-size:400
+  @mq-lap--font-size:600
+  @mq-desk--font-size:700
   padding-horizontal:600
   padding-vertical:400
 `
@@ -81,7 +83,6 @@ export const bodyText = `
   font-size:400
   @mq-lap--font-size:600
   @mq-desk--font-size:700
-  @mq-wall--font-size:800
   line-height:300
   font-weight:400
 `

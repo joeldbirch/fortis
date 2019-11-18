@@ -1,5 +1,5 @@
 import React from 'react'
-import { container, forceFullWidth } from '../styles/helpers'
+import { forceFullWidth } from '../styles/helpers'
 import Social from './Social'
 
 const styles = {
@@ -22,7 +22,8 @@ export default ({ className, ...props }) => {
         font-family:raleway
         padding-vertical:site-pad
         @mq-max-lap--text-align:center
-        ${ container }
+        @mq-desk--max-width:50rem
+        margin:auto
       `}>
         <h3 className={`
           font-size:400
