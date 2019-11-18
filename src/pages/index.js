@@ -193,7 +193,12 @@ const RegistrationPage = () => {
               @mq-desk--width:40
             `}
           >
-            <blockquote>
+            <blockquote
+              className={`
+                padding:0
+                margin:0
+              `}>
+
               <p className={`
                 ${styles.bodyText}
                 margin-bottom:400
