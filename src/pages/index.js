@@ -16,10 +16,10 @@ const styles = {
 
   contactWrap: `
     ${commonStyles.container}
-    display:grid
-    grid-template-columns:1
-    grid-gap:700vw
     @mq-bigdesk--grid-gap:vert2
+    display:grid
+    grid-gap:700vw
+    grid-template-columns:1
   `,
 
   regoFooter: `
@@ -49,22 +49,27 @@ const RegistrationPage = () => {
         ctaClickHandler={openModal}
       />
 
-      <div className="flex-grow:1 flex-shrink:0 display:flex flex-direction:column">
+      <div className={`
+        display:flex
+        flex-direction:column
+        flex-grow:1
+        flex-shrink:0
+      `}>
         <Main>
 
           <PartText
             imageName="kitchen"
             imageWrapClassName={`
-              @mq-palm--margin-left:-site-pad-100
               @mq-bigdesk--margin-left:0
+              @mq-palm--margin-left:-site-pad-100
             `}
             textClassName={`
-              @mq-palm--margin-top:auto
-              @mq-max-palm--margin-top:400
-              @mq-palm--padding-left:site-pad-200
-              @mq-lap--padding-right:site-pad-200
-              @mq-palm--width:50
               @mq-desk--width:40
+              @mq-lap--padding-right:site-pad-200
+              @mq-max-palm--margin-top:400
+              @mq-palm--margin-top:auto
+              @mq-palm--padding-left:site-pad-200
+              @mq-palm--width:50
             `}
           >
             <p className={`
@@ -104,11 +109,10 @@ const RegistrationPage = () => {
               flex-direction:row-reverse
             `}
             imageWrapClassName={`
-              margin-bottom:site-pad-200
-              @mq-palm--margin-bottom:0
-
-              @mq-palm--margin-right:-site-pad-100
               @mq-bigdesk--margin-right:0
+              @mq-palm--margin-bottom:0
+              @mq-palm--margin-right:-site-pad-100
+              margin-bottom:site-pad-200
 
             `}
             imageClassName={`
@@ -131,13 +135,13 @@ const RegistrationPage = () => {
             <div className="albatross margin-vertical:400">
               <ul className={`
                 ${styles.bodyText}
+                @mq-desk--columns:2
+                @mq-palm--columns:auto
+                columns:2
+                list-style:disc
                 margin-bottom:400
                 margin-top:400
-                list-style:disc
                 padding-left:500
-                columns:2
-                @mq-palm--columns:auto
-                @mq-desk--columns:2
               `}
               style={{
                 columnGap: `7vmin`,
@@ -165,7 +169,6 @@ const RegistrationPage = () => {
               onClick={openModal}
               className={`
                 ${commonStyles.button}
-                ${commonStyles.bodyText}
                 margin-top:auto
                 margin-horizontal:auto
               `}>
@@ -186,28 +189,27 @@ const RegistrationPage = () => {
           <PartText
             imageName="bathroom"
             imageWrapClassName={`
-              @mq-palm--margin-left:-site-pad-100
               @mq-bigdesk--margin-left:0
+              @mq-palm--margin-left:-site-pad-100
             `}
             textClassName={`
+              @mq-desk--width:40
+              @mq-lap--padding-right:site-pad-200
               @mq-max-palm--margin-top:400
               @mq-palm--padding-left:site-pad-200
-              @mq-lap--padding-right:site-pad-200
               @mq-palm--width:50
-              @mq-desk--width:40
             `}
           >
             <blockquote
               className={`
-                padding:0
                 margin:0
+                padding:0
               `}>
 
               <p className={`
                 ${styles.bodyText}
-                margin-top:0
                 margin-bottom:400
-                font-style:italic
+                margin-top:0
               `}
                 style={{
                   hangingPunctuation: `first`,
@@ -217,8 +219,8 @@ const RegistrationPage = () => {
               </p>
               <p className={`
                 ${styles.bodyText}
-                margin-top:0
                 margin-bottom:400
+                margin-top:0
               `}>
               <span className="font-weight:500">Cathryn Tattersall</span><br />
               Architect— Ewert Leaf
@@ -229,7 +231,6 @@ const RegistrationPage = () => {
               onClick={openModal}
               className={`
                 ${commonStyles.button}
-                ${commonStyles.bodyText}
                 margin-top:auto
               `}>
               More info
@@ -253,16 +254,16 @@ const RegistrationPage = () => {
           >
             <>
               <h3 className={`
-                font-size:600
                 @mq-widepalm--font-size:700
-                line-height:300
-                font-weight:400
-                margin-top:0
-                margin-bottom:400
                 @mq-widepalm--margin-bottom:600
-                margin-right:700
-                max-width:20rem
                 @mq-widepalm--max-width:caption
+                font-size:600
+                font-weight:400
+                line-height:300
+                margin-bottom:400
+                margin-right:700
+                margin-top:0
+                max-width:20rem
               `}
               >
                 Please complete this form to access your floor plan and material options.
@@ -275,11 +276,11 @@ const RegistrationPage = () => {
               >
                 <p
                   className={`
-                    font-size:300
-                    margin-bottom:500
                     @mq-widepalm--margin-bottom:700
                     @mq-widepalm--margin-left:700
                     @mq-widepalm--margin-top:300
+                    font-size:300
+                    margin-bottom:500
                     max-width:20rem
                   `}
                   style={{
@@ -304,12 +305,12 @@ const RegistrationPage = () => {
               </div>
               <button
                 className={`
+                  &:hocus--opacity:100
                   font-size:950
-                  position:absolute
+                  opacity:60
                   pos-right:0
                   pos-top:0
-                  opacity:60
-                  &:hocus--opacity:100
+                  position:absolute
                 `}
                 onClick={closeModal}
                 style={{
@@ -323,8 +324,8 @@ const RegistrationPage = () => {
 
         <p className={`
           ${styles.bodyText}
-          margin-top:0
           margin-bottom:site-pad-200
+          margin-top:0
           text-align:center
         `}>
           Construction commenced,<br />move in December 2020.
@@ -332,10 +333,9 @@ const RegistrationPage = () => {
             onClick={openModal}
             className={`
               ${commonStyles.button}
-              ${commonStyles.bodyText}
-              margin-top:site-pad
-              margin-horizontal:auto
               display:block
+              margin-horizontal:auto
+              margin-top:site-pad
             `}>
             More info
           </button>

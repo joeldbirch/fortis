@@ -15,32 +15,33 @@ const styles = {
     👉 the-header
     ${container}
     background-color:green-400
-    overflow:hidden
-    flex-shrink:1
-    position:relative
     flex-basis:hero-100
+    flex-shrink:1
     max-height:container
+    overflow:hidden
+    position:relative
   `,
   logo: `
     👉 the-logo
     color:neutral-900
     display:block
     height:auto
-    width:60vmin
-    position:absolute
+    max-width:33rem
     pos-top-left:50
+    position:absolute
     transform:-50
+    width:60vmin
   `,
   content: `
+    align-items:center
+    color:neutral-0
     display:flex
     flex-direction:column
-    padding:site-pad-200
-    align-items:center
     justify-content:space-between
-    position:absolute
+    padding:site-pad-200
     pos-top-left-bottom-right:0
+    position:absolute
     text-align:center
-    color:neutral-0
   `
 }
 
@@ -69,17 +70,17 @@ const Header = ({ className=``, siteTitle = ``, ctaClickHandler=()=>{} }) => (
             allow="autoplay"
             allowFullScreen
             className={`
-              position:absolute
-              pos-top:50
-              min-height:100
-              @mq-max-desk-width--min-width:100
-              @mq-max-desk--width:hero-100
               @mq-max-desk--max-width:container
+              @mq-max-desk--width:hero-100
+              @mq-max-desk-width--min-width:100
               @mq-tall--min-width:100
-              pos-left:50
-              transform:-50
-              max-width:container
               filter:darken
+              max-width:container
+              min-height:100
+              pos-left:50
+              pos-top:50
+              position:absolute
+              transform:-50
             `}
             frameBorder="0"
             height="1080"
@@ -89,6 +90,7 @@ const Header = ({ className=``, siteTitle = ``, ctaClickHandler=()=>{} }) => (
             }}
             title="odevideo"
             width="1920"
+            loading="lazy"
           >
           </iframe>
 
@@ -99,8 +101,8 @@ const Header = ({ className=``, siteTitle = ``, ctaClickHandler=()=>{} }) => (
               <h2
                 className={`
                   ${smallText}
-                  padding-bottom:site-pad-100
                   margin-vertical:0
+                  padding-bottom:site-pad-100
                 `}
               >
                 589 Toorak Road, Toorak

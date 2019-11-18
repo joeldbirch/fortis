@@ -38,10 +38,11 @@ export default ({children, className, ...props}) => {
   return (
     <Modal
       { ...props }
-      style={styles}
+      closeTimeoutMS={400}
       contentLabel="Modal"
       shouldCloseOnOverlayClick={false}
-      closeTimeoutMS={400}
+      shouldReturnFocusAfterClose={false}
+      style={styles}
     >
       { children }
     </Modal>

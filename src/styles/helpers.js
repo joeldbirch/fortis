@@ -49,8 +49,10 @@ export const button = `
   background-color:neutral-900
   opacity:80
   color:neutral-0
+  font-size:400
   padding-horizontal:600
   padding-vertical:400
+  text-transform:uppercase
 `
 
 export const tintWrap = `
@@ -80,7 +82,6 @@ export const callOut = `
 export const bodyText = `
   font-size:400
   @mq-lap--font-size:600
-  @mq-bigdesk--font-size:700
   line-height:300
   font-weight:400
 `
