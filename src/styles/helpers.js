@@ -45,13 +45,12 @@ export const subhead = `
 `
 
 export const button = `
-  ${subhead}
   &:hocus--background-color:neutral-900
   background-color:black-80
   color:neutral-0
-  padding-horizontal:700
+  font-size:400
+  padding-horizontal:600
   padding-vertical:400
-  text-transform:uppercase
 `
 
 export const tintWrap = `
@@ -88,22 +87,22 @@ export const bodyText = `
 `
 
 export const smallText = `
+  @mq-lap--font-size:300
   font-size:200
   font-weight:400
-  @mq-lap--font-size:300
 `
 
 export const guide = `
+  @mq-lap--bg-position:x-site-pad-200
+  @mq-lap--bg-size-guide-200
   bg-image-guide
   bg-position:x-site-pad-100
   bg-size-guide-100
-  @mq-lap--bg-position:x-site-pad-200
-  @mq-lap--bg-size-guide-200
 `
 
 export const forceFullWidth = `
-  width:100vw
-  position:relative
-  pos-left-right:50
   margin-horizontal:-50vw
+  pos-left-right:50
+  position:relative
+  width:100vw
 `

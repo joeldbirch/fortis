@@ -23,7 +23,7 @@ const Layout = ({
   ...props
 }) => {
   function bodyClasses() {
-    return `${isIos() || isSafari() ? `is-safari` : ``} grid-guide `
+    return `${isIos() || isSafari() ? `is-safari` : ``}  `
   }
 
   function htmlClasses() {

@@ -28,7 +28,7 @@ const styles = {
 
 
 const RegistrationPage = () => {
-  const [modalOpen, setModalOpen] = useState(false)
+  const [modalOpen, setModalOpen] = useState(true)
 
   const openModal = () => setModalOpen(true)
   const closeModal = () => setModalOpen(false)
@@ -220,7 +220,73 @@ const RegistrationPage = () => {
           isOpen={modalOpen}
           onRequestClose={closeModal}
         >
-          <RegistrationForm />
+          <>
+            <h3 className={`
+              font-size:600
+              @mq-widepalm--font-size:800
+              @mq-wall--font-size:800
+              line-height:300
+              font-weight:400
+
+              margin-bottom:400
+              @mq-widepalm--margin-bottom:600
+              margin-right:700
+              max-width:20rem
+              @mq-widepalm--max-width:caption
+            `}
+            >
+              Please complete this form to access your floor plan and material options.
+            </h3>
+            <div
+              class={`
+                @mq-widepalm--display:flex
+                @mq-widepalm--flex-direction:row-reverse
+              `}
+            >
+              <p
+                className={`
+                  font-size:300
+                  margin-bottom:500
+                  @mq-widepalm--margin-bottom:700
+                  @mq-widepalm--margin-left:700
+                  @mq-widepalm--margin-top:200
+                  max-width:20rem
+                `}
+                style={{
+                  flexBasis: `12em`,
+                }}
+              >
+                If you’d prefer to call, please speak to Sarah&#160;Case at RT&#160;Edgar on <a
+                  className={`
+                    color:inherit
+                    &:hocus--text-decoration:underline
+                  `}
+                  href="tel:0439431020"
+                >
+                  0439&#160;431&#160;020
+                </a>
+              </p>
+              <RegistrationForm
+                className={`
+                  @mq-widepalm--flex-grow:1
+                `}
+              />
+            </div>
+            <button
+              className={`
+                font-size:950
+                position:absolute
+                pos-right:0
+                pos-top:0
+                opacity:60
+                &:hocus--opacity:100
+              `}
+              onClick={closeModal}
+              style={{
+                padding: `2.75rem`
+              }}
+            > &times; </button>
+          </>
         </FormModal>
 
       </Main>
@@ -230,17 +296,17 @@ const RegistrationPage = () => {
         margin-bottom:site-pad-200
         text-align:center
       `}>
-      Construction commenced,<br />move in December 2020.
-      <button
-        onClick={openModal}
-        className={`
-          ${commonStyles.button}
-          margin-top:site-pad
-          margin-horizontal:auto
-          display:block
-        `}>
-        More info
-      </button>
+        Construction commenced,<br />move in December 2020.
+        <button
+          onClick={openModal}
+          className={`
+            ${commonStyles.button}
+            margin-top:site-pad
+            margin-horizontal:auto
+            display:block
+          `}>
+          More info
+        </button>
       </p>
 
 

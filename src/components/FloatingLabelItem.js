@@ -20,27 +20,28 @@ const styles = {
   `,
   input: `
     👉 c-floating-field__input
-    box-sizing:border-box
-    display:block
     &:focus:placeholder--opacity:0
-    padding:400
     &:placeholder--color:inherit
     &:placeholder--mix-blend-mode:multiply
     &:placeholder--opacity:60
     &:placeholder--transition-duration:200
     &:placeholder--transition-property:opacity
+    box-sizing:border-box
+    display:block
+    padding-horizontal:350
+    padding-vertical:300
     width:100
   `,
   label: `
   👉 c-floating-field__label
-  margin-left:n400
-  margin-top:550
+  &:before--arrow-left
+  margin-left:0
+  margin-top:50p
   opacity:0
   pointer-events:none
   pos-left:100
   pos-top:0
   position:absolute
-  &:before--arrow-left
   text-case:lower
   transform:right-center-small
   transition-duration:200
@@ -51,7 +52,7 @@ const styles = {
   // raw CSS:
   inputSiblingBehaviour: `
     .c-floating-field__input:focus+.c-floating-field__label {
-      opacity: .6;
+      opacity: .5;
     }
     .c-floating-field__input:valid+.c-floating-field__label {
       opacity: 0;
@@ -90,7 +91,7 @@ export default ({
         type={type}
       />
       <label className={labelClassName} htmlFor={capitalize(name)}>
-        {label}
+        {label.toLowerCase()}
       </label>
     </div>
   )
