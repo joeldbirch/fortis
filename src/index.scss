@@ -3,21 +3,17 @@
 
 @import "styles/base/hucssley-setup";
 
+/* purgecss start ignore */
 @import "styles/base/custom-reset";
-
 @import "styles/base/custom-properties";
+/* purgecss end ignore */
+
 // @import "styles/vendor/index";
 @import "styles/utilities/index";
 // @import "styles/scoped/index";
 
 @import "./node_modules/hucssley/src/styles";
 @import "styles/classes/index";
-
-// .grid-guide {
-//   background-image: linear-gradient(to right, transparent, rgba(255,200,255,.9));
-//   background-size: calc((100% - 4rem) / 10) auto;
-//   background-position-x: var(--site-pad);
-// }
 
 .all-fill-current * { fill: currentColor }
 

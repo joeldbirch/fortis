@@ -75,7 +75,13 @@
                   { loader:
                      '/Users/joeldbirch/htdocs/odeoftoorak/node_modules/gatsby-plugin-purgecss/loader.js',
                     options:
-                     { content: [ 'public/**/*.html', 'src/**/*.js', 'src/images/*.svg' ],
+                     { content:
+                        [ 'public/*.html',
+                          'public/**/*.html',
+                          'src/**/*.js',
+                          'src/*.js',
+                          'src/images/*.svg',
+                          'src/images/**/*.svg' ],
                        rejected: true,
                        printRejected: true,
                        printAll: false,
@@ -89,7 +95,7 @@
                        purgeOnly: [],
                        extractors:
                         [ { extractor: [Function: extractor],
-                            extensions: [ 'html', 'js' ] } ],
+                            extensions: [ 'html', 'js', 'svg' ] } ],
                        whitelist: [ 'html', 'body' ] } },
                   { loader:
                      '/Users/joeldbirch/htdocs/odeoftoorak/node_modules/postcss-loader/lib/index.js',
@@ -113,7 +119,13 @@
                   { loader:
                      '/Users/joeldbirch/htdocs/odeoftoorak/node_modules/gatsby-plugin-purgecss/loader.js',
                     options:
-                     { content: [ 'public/**/*.html', 'src/**/*.js', 'src/images/*.svg' ],
+                     { content:
+                        [ 'public/*.html',
+                          'public/**/*.html',
+                          'src/**/*.js',
+                          'src/*.js',
+                          'src/images/*.svg',
+                          'src/images/**/*.svg' ],
                        rejected: true,
                        printRejected: true,
                        printAll: false,
@@ -127,7 +139,7 @@
                        purgeOnly: [],
                        extractors:
                         [ { extractor: [Function: extractor],
-                            extensions: [ 'html', 'js' ] } ],
+                            extensions: [ 'html', 'js', 'svg' ] } ],
                        whitelist: [ 'html', 'body' ] } },
                   { loader:
                      '/Users/joeldbirch/htdocs/odeoftoorak/node_modules/postcss-loader/lib/index.js',
@@ -154,7 +166,13 @@
                   { loader:
                      '/Users/joeldbirch/htdocs/odeoftoorak/node_modules/gatsby-plugin-purgecss/loader.js',
                     options:
-                     { content: [ 'public/**/*.html', 'src/**/*.js', 'src/images/*.svg' ],
+                     { content:
+                        [ 'public/*.html',
+                          'public/**/*.html',
+                          'src/**/*.js',
+                          'src/*.js',
+                          'src/images/*.svg',
+                          'src/images/**/*.svg' ],
                        rejected: true,
                        printRejected: true,
                        printAll: false,
@@ -168,7 +186,7 @@
                        purgeOnly: [],
                        extractors:
                         [ { extractor: [Function: extractor],
-                            extensions: [ 'html', 'js' ] } ],
+                            extensions: [ 'html', 'js', 'svg' ] } ],
                        whitelist: [ 'html', 'body' ] } },
                   { loader:
                      '/Users/joeldbirch/htdocs/odeoftoorak/node_modules/postcss-loader/lib/index.js',
@@ -194,7 +212,13 @@
                   { loader:
                      '/Users/joeldbirch/htdocs/odeoftoorak/node_modules/gatsby-plugin-purgecss/loader.js',
                     options:
-                     { content: [ 'public/**/*.html', 'src/**/*.js', 'src/images/*.svg' ],
+                     { content:
+                        [ 'public/*.html',
+                          'public/**/*.html',
+                          'src/**/*.js',
+                          'src/*.js',
+                          'src/images/*.svg',
+                          'src/images/**/*.svg' ],
                        rejected: true,
                        printRejected: true,
                        printAll: false,
@@ -208,7 +232,7 @@
                        purgeOnly: [],
                        extractors:
                         [ { extractor: [Function: extractor],
-                            extensions: [ 'html', 'js' ] } ],
+                            extensions: [ 'html', 'js', 'svg' ] } ],
                        whitelist: [ 'html', 'body' ] } },
                   { loader:
                      '/Users/joeldbirch/htdocs/odeoftoorak/node_modules/postcss-loader/lib/index.js',

@@ -71,7 +71,7 @@ const Header = ({ className=``, siteTitle = ``, ctaClickHandler=()=>{} }) => (
             className={`
               position:absolute
               pos-top:50
-              height:100
+              min-height:100
               @mq-max-desk-width--min-width:100
               @mq-max-desk--width:hero-100
               @mq-max-desk--max-width:container
