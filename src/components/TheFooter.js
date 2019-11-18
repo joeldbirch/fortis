@@ -19,7 +19,6 @@ export default ({ className, ...props }) => {
       ${ forceFullWidth }
     `} {...props}>
       <div className={`
-        font-family:raleway
         padding-vertical:site-pad
         @mq-max-lap--text-align:center
         ${ container }
