@@ -16,7 +16,6 @@ const styles = {
 }
 
 const LogoLink = ({ children, to = `#`, className = ``, ...props }) => {
-  className += styles.logoLink
   return (
     <a href={to} rel="external" {...props} className={className}>
       {children}
@@ -40,6 +39,8 @@ export default () => (
     >
       <div
         className={`
+          group
+          max-width:17rem
           padding-right:500
           @mq-desk--padding-right:800
         `}
@@ -49,6 +50,7 @@ export default () => (
           className={`
             display:block
             position:relative
+            pos-left:-10
           `}
           to="https://www.fortis.com.au/"
         >
@@ -59,12 +61,18 @@ export default () => (
             className={styles.logo}
             lazyload="lazy"
             src="/images/logo-fortis.svg"
+            style={{
+              marginLeft: `3px`,
+            }}
           />
         </LogoLink>
+
       </div>
 
       <div
         className={`
+          group
+          max-width:17rem
           padding-right:500
           @mq-desk--padding-right:800
         `}
@@ -86,10 +94,13 @@ export default () => (
             src="/images/logo-toorak-time-capsule.svg"
           />
         </LogoLink>
+
       </div>
 
       <div
         className={`
+          group
+          max-width:17rem
           padding-right:500
           @mq-desk--padding-right:800
         `}
@@ -99,6 +110,7 @@ export default () => (
           className={`
             display:block
             position:relative
+            pos-left:-10
           `}
           to="https://ewertleaf.com.au/"
         >
@@ -109,12 +121,18 @@ export default () => (
             className={styles.logo}
             lazyload="lazy"
             src="/images/logo-ewert-leaf-2.svg"
+            style={{
+              marginLeft: `-4px`,
+            }}
           />
         </LogoLink>
+
       </div>
 
       <div
         className={`
+          group
+          max-width:17rem
           padding-right:500
           @mq-desk--padding-right:800
         `}
@@ -124,6 +142,7 @@ export default () => (
           className={`
             display:block
             position:relative
+            pos-left:-10
           `}
           to="https://www.cobild.com.au"
         >
@@ -136,19 +155,23 @@ export default () => (
             src="/images/logo-cobild.svg"
           />
         </LogoLink>
+
       </div>
 
       <div
         className={`
+          group
+          max-width:17rem
           padding-right:500
           @mq-desk--padding-right:800
         `}
       >
         <LogoLink
-          aria-label="Marshall White"
+          aria-label="RT Edgar"
           className={`
             display:block
             position:relative
+            pos-left:-10
           `}
           to="https://www.rtedgar.com"
         >
@@ -161,6 +184,7 @@ export default () => (
             src="/images/logo-rt-edgar.svg"
           />
         </LogoLink>
+
       </div>
 
     </div>
