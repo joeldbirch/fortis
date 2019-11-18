@@ -8,19 +8,20 @@ $jb-colors: hu-append((
     ),
   ),
   black: (
-    20: rgba(0,0,0,0.2),
-    40: rgba(0,0,0,0.4),
-    60: rgba(0,0,0,0.6),
-    80: rgba(0,0,0,0.8),
+    20: rgba(0, 0, 0, 0.2),
+    40: rgba(0, 0, 0, 0.4),
+    60: rgba(0, 0, 0, 0.6),
+    80: rgba(0, 0, 0, 0.8),
   ),
   white: (
-    20: rgba(255,255,255,0.2),
-    40: rgba(255,255,255,0.4),
+    20: rgba(255, 255, 255, 0.2),
+    40: rgba(255, 255, 255, 0.4),
+    70: rgba(255, 255, 255, 0.7),
   ),
   beige: (
     100: #f9f3f0,
-    300:  #E5CEC2, // AA accessible for 14pt+/bold orange-500 text
-    400: #dfc2b2, // desired colour
+    300: #E5CEC2,
+    400: #dfc2b2,
   ),
   green: (
     400: #3f5455, // fortis green

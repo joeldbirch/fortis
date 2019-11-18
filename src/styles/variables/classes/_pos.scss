@@ -6,8 +6,17 @@ $hu-pos-scale: hu-prepend(
     400: 1rem,
     -400: -1rem,
     -1vh: -1vh,
+    50: 50%,
     -50: -50%,
     -100: -100%,
     "-site-pad": -3.5vmin,
   )
+);
+
+$hu-pos-types: hu-append(
+  $hu-pos-types,
+  (
+    pos-left-right: (left, right),
+    // pos-top-left-right: (left, right, top),
+  ),
 );

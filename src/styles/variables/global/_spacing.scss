@@ -45,6 +45,7 @@ $hu-spacing-scale: (
   700p: 70%,
   800p: 80%,
 
+  "-50vw": -50vw,
 
   site-pad: unquote("var(--site-pad, 3.5vmin)"),
   site-pad-100: unquote("var(--site-pad, 3.5vmin)"),

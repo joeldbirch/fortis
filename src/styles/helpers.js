@@ -46,7 +46,7 @@ export const subhead = `
 
 export const button = `
   ${subhead}
-  &:hocus--background-color:black-40
+  &:hocus--background-color:neutral-900
   background-color:black-80
   color:neutral-0
   padding-horizontal:700
@@ -99,4 +99,11 @@ export const guide = `
   bg-size-guide-100
   @mq-lap--bg-position:x-site-pad-200
   @mq-lap--bg-size-guide-200
+`
+
+export const forceFullWidth = `
+  width:100vw
+  position:relative
+  pos-left-right:50
+  margin-horizontal:-50vw
 `

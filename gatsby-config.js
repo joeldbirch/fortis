@@ -18,6 +18,15 @@ module.exports = {
         features: [`fetch`]
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `raleway\:300,500` // you can also specify font weights and styles
+        ],
+        display: 'swap'
+      }
+    },
 
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
