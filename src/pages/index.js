@@ -28,7 +28,7 @@ const styles = {
 
 
 const RegistrationPage = () => {
-  const [modalOpen, setModalOpen] = useState(true)
+  const [modalOpen, setModalOpen] = useState(false)
 
   const openModal = () => setModalOpen(true)
   const closeModal = () => setModalOpen(false)
@@ -181,7 +181,6 @@ const RegistrationPage = () => {
             @mq-bigdesk--margin-left:0
           `}
           textClassName={`
-            @mq-palm--margin-top:auto
             @mq-max-palm--margin-top:400
             @mq-palm--padding-left:site-pad-200
             @mq-lap--padding-right:site-pad-200
@@ -189,23 +188,38 @@ const RegistrationPage = () => {
             @mq-desk--width:40
           `}
         >
-          <p className={`
-            ${styles.bodyText}
-          `}>
-            Founded on the past, created for tomorrow, Ode has been meticulously curated for enduring perfection in&#160;residence.
-          </p>
-          <p className={`
-            ${styles.bodyText}
-            margin-top:400
-          `}>
-            Open and elegant. Calm and private.
-          </p>
-          <p className={`
-            ${styles.bodyText}
-            margin-top:400
-          `}>
-            From the very foundations, these seven boutique, 3-bedroom residences are a living tribute to the area and those who reside in&#160;it.
-          </p>
+          <blockquote>
+            <p className={`
+              ${styles.bodyText}
+              margin-bottom:400
+              font-style:italic
+            `}
+              style={{
+                hangingPunctuation: `first`,
+              }}
+            >
+              “The design vision for Ode was to create a strong, clean form without unnecessary detail. The building’s exterior is bold yet refined through the selection of quality materials and subtle design elements. This outer strength creates contrast with the calming sense of home inside.”
+            </p>
+            <p className={`
+              ${styles.bodyText}
+              margin-bottom:400
+            `}>
+            <span className="font-weight:500">Cathryn Tattersall</span><br />
+            Architect— Ewert Leaf
+            </p>
+          </blockquote>
+
+          <button
+            onClick={openModal}
+            className={`
+              ${commonStyles.button}
+              margin-top:auto
+            `}>
+            More info
+          </button>
+
+
+
         </PartText>
 
         <div className={`
@@ -237,7 +251,7 @@ const RegistrationPage = () => {
               Please complete this form to access your floor plan and material options.
             </h3>
             <div
-              class={`
+              className={`
                 @mq-widepalm--display:flex
                 @mq-widepalm--flex-direction:row-reverse
               `}
