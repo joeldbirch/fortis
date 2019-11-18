@@ -50,13 +50,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Bower`,
-        short_name: `Bower`,
+        name: `Ode of Toorak`,
+        short_name: `Ode`,
         start_url: `/`,
-        background_color: `#dfc2b2`,
-        theme_color: `#dfc2b2`,
+        background_color: `#f5f2ed`,
+        theme_color: `#f5f2ed`,
         display: `minimal-ui`,
-        icon: require.resolve(`./src/images/bower-icon.png`), // This path is relative to the root of the site.
+        icon: require.resolve(`./src/images/ode-icon.png`), // This path is relative to the root of the site.
       },
     },
     {
@@ -64,6 +64,8 @@ module.exports = {
       options: {
         printRejected: true, // Print removed selectors and processed file names
         content: ['public/**/*.html', 'src/**/*.js', 'src/images/*.svg'],
+        ignore: [`/src/components/FormModal/_index.scss`, `/src/components/TheWrap/style.module.scss`, `/src/styles/base/_custom-reset.scss`],
+        debug: true,
         extractors: [
           {
             extractor: class {

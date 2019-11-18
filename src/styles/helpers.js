@@ -45,12 +45,10 @@ export const subhead = `
 `
 
 export const button = `
-  &:hocus--background-color:neutral-900
-  background-color:black-80
+  &:hocus--opacity:100
+  background-color:neutral-900
+  opacity:80
   color:neutral-0
-  font-size:400
-  @mq-lap--font-size:600
-  @mq-desk--font-size:700
   padding-horizontal:600
   padding-vertical:400
 `
@@ -82,7 +80,7 @@ export const callOut = `
 export const bodyText = `
   font-size:400
   @mq-lap--font-size:600
-  @mq-desk--font-size:700
+  @mq-bigdesk--font-size:700
   line-height:300
   font-weight:400
 `

@@ -19,7 +19,6 @@ const styles = {
   imageWrap: `
     @mq-palm--width:50
     @mq-max-palm--height:18rem
-
   `,
 
   image: `

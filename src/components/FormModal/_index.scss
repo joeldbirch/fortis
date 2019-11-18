@@ -1,3 +1,4 @@
+/* purgecss start ignore */
 .ReactModal__Overlay {
   opacity: 0;
   transition: opacity 400ms ease-in-out;
@@ -10,3 +11,4 @@
 .ReactModal__Overlay--before-close{
   opacity: 0;
 }
+/* purgecss end ignore */

@@ -44,7 +44,7 @@ const styles = {
   `
 }
 
-const Header = ({ className, siteTitle = ``, ctaClickHandler=()=>{} }) => (
+const Header = ({ className=``, siteTitle = ``, ctaClickHandler=()=>{} }) => (
   <StaticQuery
     query={graphql`
       query pathnameQuery {
@@ -65,48 +65,32 @@ const Header = ({ className, siteTitle = ``, ctaClickHandler=()=>{} }) => (
           }}
         >
 
-
-                <iframe
-                  // src="https://browseplay.com/player/auto-muted/36957f7e-2907-47c3-a707-6a54ad21a445?controls=0&loader=0&loop=1&autoplay=1&playsinline=1"
-                  frameBorder="0"
-                  title="ode-video"
-                  width="1920"
-                  height="1080"
-                  className={`
-                    position:absolute
-                    pos-top:50
-                    height:100
-                    @mq-max-desk-width--min-width:100
-                    @mq-max-desk--width:hero-100
-                    @mq-max-desk--max-width:container
-                    @mq-tall--min-width:100
-                    pos-left:50
-                    transform:-50
-                    max-width:container
-                    filter:darken
-                  `}
-                  style={{
-                    maxHeight: `47.4875rem`,
-                  }}
-                  >
-                </iframe>
-
-            {/* <iframe
-              src="https://player.vimeo.com/video/373047575?background=1"
-              allow="autoplay; fullscreen"
-              allowFullScreen
-              frameBorder="0"
-              title="ode-video"
-              width="1920"
-              height="1080"
-              className={`
-                width:100
-                height:100
-                position:absolute
-              `}
-              >
-            </iframe> */}
-
+          <iframe
+            allow="autoplay; fullscreen"
+            allowFullScreen
+            className={`
+              position:absolute
+              pos-top:50
+              height:100
+              @mq-max-desk-width--min-width:100
+              @mq-max-desk--width:hero-100
+              @mq-max-desk--max-width:container
+              @mq-tall--min-width:100
+              pos-left:50
+              transform:-50
+              max-width:container
+              filter:darken
+            `}
+            frameBorder="0"
+            height="1080"
+            src="https://player.vimeo.com/video/373833397?background=1"
+            style={{
+              maxHeight: `47.4875rem`,
+            }}
+            title="ode-video"
+            width="1920"
+          >
+          </iframe>
 
           <div className={`
             ${styles.content}

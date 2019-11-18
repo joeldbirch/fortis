@@ -11,7 +11,6 @@ import { StaticQuery, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import { isIos, isSafari } from '../utilities/helpers'
 import TheWrap from './TheWrap'
-import Header from './header'
 import '../index.scss'
 import fixOutline from 'fix-outline'
 
@@ -23,7 +22,7 @@ const Layout = ({
   ...props
 }) => {
   function bodyClasses() {
-    return `${isIos() || isSafari() ? `is-safari` : ``} grid-guide `
+    return `${isIos() || isSafari() ? `is-safari` : ``} `
   }
 
   function htmlClasses() {
@@ -60,14 +59,7 @@ const Layout = ({
               <body className={bodyClasses()} />
               <html className={htmlClasses()} />
             </Helmet>
-            <Header
-              siteTitle={data.site.siteMetadata.title}
-              className={headerClassName}
-              ctaClickHandler={ctaClickHandler}
-            />
-            <div className="flex-grow:1 flex-shrink:0 display:flex flex-direction:column">
-              {children}
-            </div>
+            {children}
           </TheWrap>
         )
       }}

@@ -1,6 +1,8 @@
 import React from 'react'
 import Modal from 'react-modal'
+/* purgecss start ignore */
 import './_index.scss'
+/* purgecss end ignore */
 
 const styles = {
   overlay: {
