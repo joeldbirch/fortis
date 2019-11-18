@@ -2,5 +2,5 @@ $hu-filter-modules: (base);
 
 $hu-filter-types: (
   none: none,
-  darken: brightness(0.8),
+  darken: brightness(0.8) saturate(1.2),
 );

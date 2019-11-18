@@ -66,7 +66,7 @@ const Header = ({ className=``, siteTitle = ``, ctaClickHandler=()=>{} }) => (
         >
 
           <iframe
-            allow="autoplay; fullscreen"
+            allow="autoplay"
             allowFullScreen
             className={`
               position:absolute
@@ -83,11 +83,11 @@ const Header = ({ className=``, siteTitle = ``, ctaClickHandler=()=>{} }) => (
             `}
             frameBorder="0"
             height="1080"
-            src="https://player.vimeo.com/video/373833397?background=1"
+            src="https://player.vimeo.com/video/373833397?playsinline=1&background=1&autoplay=1&loop=1&autopause=0&muted=1"
             style={{
               maxHeight: `47.4875rem`,
             }}
-            title="ode-video"
+            title="odevideo"
             width="1920"
           >
           </iframe>
