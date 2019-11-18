@@ -44,7 +44,7 @@ const styles = {
   `
 }
 
-const Header = ({ className, siteTitle = `` }) => (
+const Header = ({ className, siteTitle = ``, ctaClickHandler=()=>{} }) => (
   <StaticQuery
     query={graphql`
       query pathnameQuery {
@@ -136,9 +136,13 @@ const Header = ({ className, siteTitle = `` }) => (
               aria-label={siteTitle}
             />
 
-            <button className={`
-              ${button}
-            `}>More info</button>
+            <button
+              onClick={ctaClickHandler}
+              className={`
+                ${button}
+              `}>
+              More info
+            </button>
           </div>
         </header>
       )

@@ -19,6 +19,7 @@ const Layout = ({
   children,
   headerClassName = ``,
   className = ``,
+  ctaClickHandler,
   ...props
 }) => {
   function bodyClasses() {
@@ -62,6 +63,7 @@ const Layout = ({
             <Header
               siteTitle={data.site.siteMetadata.title}
               className={headerClassName}
+              ctaClickHandler={ctaClickHandler}
             />
             <div className="flex-grow:1 flex-shrink:0 display:flex flex-direction:column">
               {children}
@@ -76,6 +78,7 @@ const Layout = ({
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   headerClassName: PropTypes.string,
+  ctaClickHandler: PropTypes.func,
 }
 
 export default Layout
