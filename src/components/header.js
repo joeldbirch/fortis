@@ -100,6 +100,7 @@ const Header = ({ className=``, siteTitle = ``, ctaClickHandler=()=>{} }) => (
                 className={`
                   ${smallText}
                   padding-bottom:site-pad-100
+                  margin-vertical:0
                 `}
               >
                 589 Toorak Road, Toorak
@@ -107,6 +108,7 @@ const Header = ({ className=``, siteTitle = ``, ctaClickHandler=()=>{} }) => (
               <h1
                 className={`
                   ${bodyText}
+                  margin-vertical:0
                   @mq-lap-shallow--font-size:400
                 `}
               >

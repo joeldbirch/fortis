@@ -29,6 +29,7 @@ export default ({ className, ...props }) => {
           font-size:400
           font-weight:500
           letter-spacing:20
+          margin-top:0
           margin-bottom:400
         `}>Fortis Development Group</h3>
 

@@ -69,17 +69,20 @@ const RegistrationPage = () => {
           >
             <p className={`
               ${styles.bodyText}
+              margin-vertical:0
             `}>
               Founded on the past, created for tomorrow, Ode has been meticulously curated for enduring perfection in&#160;residence.
             </p>
             <p className={`
               ${styles.bodyText}
+              margin-bottom:0
               margin-top:400
             `}>
               Open and elegant. Calm and private.
             </p>
             <p className={`
               ${styles.bodyText}
+              margin-bottom:0
               margin-top:400
             `}>
               From the very foundations, these seven boutique, 3-bedroom residences are a living tribute to the area and those who reside in&#160;it.
@@ -121,6 +124,7 @@ const RegistrationPage = () => {
           >
             <h2 className={`
               ${styles.bodyText}
+              margin-vertical:0
             `}>
               Features include
             </h2>
@@ -201,6 +205,7 @@ const RegistrationPage = () => {
 
               <p className={`
                 ${styles.bodyText}
+                margin-top:0
                 margin-bottom:400
                 font-style:italic
               `}
@@ -212,6 +217,7 @@ const RegistrationPage = () => {
               </p>
               <p className={`
                 ${styles.bodyText}
+                margin-top:0
                 margin-bottom:400
               `}>
               <span className="font-weight:500">Cathryn Tattersall</span><br />
@@ -251,7 +257,7 @@ const RegistrationPage = () => {
                 @mq-widepalm--font-size:700
                 line-height:300
                 font-weight:400
-
+                margin-top:0
                 margin-bottom:400
                 @mq-widepalm--margin-bottom:600
                 margin-right:700
@@ -317,6 +323,7 @@ const RegistrationPage = () => {
 
         <p className={`
           ${styles.bodyText}
+          margin-top:0
           margin-bottom:site-pad-200
           text-align:center
         `}>
