@@ -6,6 +6,7 @@ import Layout from '../components/layout'
 import Main from '../components/TheMain'
 import PartText from '../components/PartText'
 import TheFooter from '../components/TheFooter'
+import TheAffilliates from '../components/TheAffilliates'
 import Header from '../components/header'
 import SEO from '../components/seo'
 import FormModal from '../components/FormModal/index'
@@ -321,6 +322,8 @@ const RegistrationPage = () => {
           </FormModal>
 
         </Main>
+
+        <TheAffilliates />
 
         <p className={`
           ${styles.bodyText}

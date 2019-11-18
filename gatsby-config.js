@@ -65,7 +65,7 @@ module.exports = {
         printRejected: true, // Print removed selectors and processed file names
         content: ['public/*.html', 'public/**/*.html', 'src/**/*.js','src/*.js', 'src/images/*.svg', 'src/images/**/*.svg'],
         ignore: [`/src/components/FormModal/_index.scss`, `/src/components/TheWrap/style.module.scss`, `/src/styles/base/_custom-reset.scss`],
-        // debug: true,
+        whitelist: [`albatross`],
         extractors: [
           {
             extractor: class {
