@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Ode of Toorak`,
-    description: ``,
+    description: `589 Toorak Road, Toorak. Experience the freedom of low maintenance living in Toorak`,
   },
   plugins: [
     {
