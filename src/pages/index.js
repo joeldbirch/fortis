@@ -223,7 +223,7 @@ const RegistrationPage = () => {
                 margin-top:0
               `}>
               <span className="font-weight:500">Cathryn Tattersall</span><br />
-              Architect— Ewert Leaf
+              Architect — Ewert Leaf
               </p>
             </blockquote>
 
