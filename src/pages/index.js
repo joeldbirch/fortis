@@ -155,7 +155,7 @@ const RegistrationPage = () => {
                 <li>Double-glazed windows</li>
                 <li>Concealed air-conditioning</li>
                 <li>Miele appliances</li>
-                <li>Two car parks</li>
+                <li>Two, three or four car parks</li>
                 <li>Powder room</li>
                 <li>Separate walk-in laundry</li>
                 <li>Butler’s pantry</li>
@@ -330,7 +330,7 @@ const RegistrationPage = () => {
           margin-top:0
           text-align:center
         `}>
-          Construction commenced,<br />move in December 2020.
+          Construction commenced,<br />move in early 2021.
           <button
             onClick={openModal}
             className={`
