@@ -140,7 +140,7 @@ const RegistrationPage = () => {
                 @mq-palm--columns:auto
                 @mq-desk--columns:2
                 list-style:disc
-                margin-bottom:400
+                margin-bottom:500
                 margin-top:0
                 padding-left:450
               `}
