@@ -141,7 +141,7 @@ const RegistrationPage = () => {
                 columns:2
                 list-style:disc
                 margin-bottom:400
-                margin-top:400
+                margin-top:0
                 padding-left:500
               `}
               style={{

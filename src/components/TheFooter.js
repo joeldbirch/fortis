@@ -44,7 +44,7 @@ export default ({ className, ...props }) => {
         `}>
           Sydney<br />
           Ground Floor<br />
-          33-39 Riley Street<br />
+          33&#8211;39 Riley Street<br />
           Woolloomooloo<br />
           NSW 2011
         </address>
@@ -58,7 +58,7 @@ export default ({ className, ...props }) => {
         `}>
           Melbourne<br />
           Level 2<br />
-          49-51 Stead Street<br />
+          49&#8211;51 Stead Street<br />
           South Melbourne<br />
           VIC 3205
         </address>
