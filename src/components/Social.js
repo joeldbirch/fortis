@@ -24,7 +24,7 @@ export default ({className}) => (
     ${className}
     text-align:center
   `}>
-    <a href="http://instagram.com/fortisdg" target="_blank" rel="noreferrer noopener" className={`
+    <a href="http://instagram.com/fortisdg" target="_blank" rel="noreferrer noopener" aria-label="Instagram" className={`
       ${ styles.iconLink }
     `}>
       <Instagram className={`
@@ -32,7 +32,7 @@ export default ({className}) => (
         font-size:200
       `} />
     </a>
-    <a href="mailto:hello@fortis.com.au" target="_blank" rel="noreferrer noopener" className={`
+    <a href="mailto:hello@fortis.com.au" target="_blank" rel="noreferrer noopener"  aria-label="Email us" className={`
       ${ styles.iconLink }
     `}>
       <Email className={`
