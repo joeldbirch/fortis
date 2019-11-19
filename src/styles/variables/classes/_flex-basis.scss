@@ -1,13 +1,15 @@
-$hu-flex-basis-modules: (base);
+$hu-flex-basis-modules: (base, responsive);
 
 $hu-flex-basis-types: (
   10: 10%,
   15: 15%,
   20: 20%,
   25: 25%,
+  29: 29%,
   30: 35%,
   33: 33.333%,
   35: 35%,
+  40: 40%,
   80: 80%,
   container: hu-rem(1350),
   hero-100: calc(100vh - 7vmin)
