@@ -13,7 +13,8 @@ const styles = {
   `,
   item: `
     group
-    flex-basis:40
+    flex-basis:80
+    @mq-palm--flex-basis:40
     @mq-palm--flex-basis:25
     @mq-desk--flex-basis:15
     flex-shrink:0
@@ -33,7 +34,8 @@ const styles = {
     width:80
     @mq-desk--width:100
     @mq-max-desk-width--margin:auto
-    max-width:33vw
+    max-width:12rem
+    @mq-desk--max-width:33vw
     @mq-max-desk-width--margin-horizontal:400
     @mq-desk--opacity:70
     group:hocus__opacity:100
@@ -94,7 +96,8 @@ export default () => (
             lazyload="lazy"
             src="/images/logo-fortis.svg"
             style={{
-              marginLeft: `3px`,
+              position: `relative`,
+              left: `3px`,
             }}
           />
         </LogoLink>
