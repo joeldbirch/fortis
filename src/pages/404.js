@@ -1,7 +1,8 @@
 import React from 'react'
-
+import Main from '../components/TheMain'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import TheFooter from '../components/TheFooter'
 
 const NotFoundPage = () => (
   <Layout>
@@ -14,8 +15,13 @@ const NotFoundPage = () => (
         },
       ]}
     />
-    <h1>Not Found</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <Main>
+      <div>
+        <h1 className="font-weight:400">Not Found</h1>
+        <p className="margin-top:400">Sorry, no content exists at this address.</p>
+      </div>
+    </Main>
+    <TheFooter />
   </Layout>
 )
 
