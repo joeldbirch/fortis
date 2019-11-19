@@ -155,7 +155,7 @@ const RegistrationPage = () => {
                 <li>Double-glazed windows</li>
                 <li>Concealed air-conditioning</li>
                 <li>Miele appliances</li>
-                <li>Two, three or four car parks</li>
+                <li>Two, three or four carparks</li>
                 <li>Powder room</li>
                 <li>Separate walk-in laundry</li>
                 <li>Butler’s pantry</li>
