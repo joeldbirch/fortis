@@ -136,9 +136,9 @@ const RegistrationPage = () => {
             <div className="margin-vertical:400">
               <ul className={`
                 ${styles.bodyText}
-                @mq-desk--columns:2
+                @mq-tiny--columns:2
                 @mq-palm--columns:auto
-                columns:2
+                @mq-desk--columns:2
                 list-style:disc
                 margin-bottom:400
                 margin-top:0
