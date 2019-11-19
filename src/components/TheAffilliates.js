@@ -8,7 +8,8 @@ const styles = {
     albatross
     padding-vertical:site-pad
     justify-content:center
-    @mq-widepalm--justify-content:flex-start
+    @mq-desk--justify-content:flex-start
+    @mq-max-lap--text-align:center
   `,
   item: `
     group
@@ -59,7 +60,7 @@ export default () => (
     className={`
       ${container}
       width:100
-      margin-bottom:site-pad
+      margin-bottom:600
       @mq-desk--margin-bottom:0
     `}
     >
@@ -229,7 +230,7 @@ export default () => (
           className={`
             ${styles.para}
           `}
-        >For enquires please call<br />Sarah&#160;Case — 0439&#160;431&#160;020 Rudy&#160;Van&#160;Der&#160;Berg — 0405&#160;204&#160;450</p>
+        >For enquires please call<br />Sarah&#160;Case — 0439&#160;431&#160;020<br /> Rudy&#160;Van&#160;Der&#160;Berg — 0405&#160;204&#160;450</p>
       </div>
 
     </div>
