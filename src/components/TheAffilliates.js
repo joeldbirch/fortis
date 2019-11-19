@@ -35,6 +35,8 @@ const styles = {
     @mq-max-desk-width--margin:auto
     max-width:33vw
     @mq-max-desk-width--margin-horizontal:400
+    @mq-desk--opacity:70
+    group:hocus__opacity:100
   `,
   para: `
     @mq-desk--opacity:0
