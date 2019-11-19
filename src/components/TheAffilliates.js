@@ -235,7 +235,25 @@ export default () => (
           className={`
             ${styles.para}
           `}
-        >For enquires please call<br />Sarah&#160;Case — 0439&#160;431&#160;020<br /> Rudy&#160;Van&#160;Der&#160;Berg — 0405&#160;204&#160;450</p>
+        >For enquires please call<br />Sarah&#160;Case —
+          <a
+            className={`
+              color:inherit
+              &:hocus--text-decoration:underline
+            `}
+            href="tel:0439431020"
+          > 0439&#160;431&#160;020
+          </a><br />
+          Rudy&#160;Van&#160;Der&#160;Berg — <a
+            className={`
+              color:inherit
+              &:hocus--text-decoration:underline
+            `}
+            href="tel:0405204450"
+          >
+            0405&#160;204&#160;450
+          </a>
+        </p>
       </div>
 
     </div>
