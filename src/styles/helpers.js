@@ -81,7 +81,14 @@ export const callOut = `
 
 export const bodyText = `
   font-size:400
-  @mq-lap--font-size:600
+  @mq-lap--font-size:500
+  line-height:300
+  font-weight:400
+`
+
+export const largeText = `
+  font-size:600
+  @mq-lap--font-size:800
   line-height:300
   font-weight:400
 `

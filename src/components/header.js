@@ -5,7 +5,7 @@ import React from 'react'
 import Logo from '../images/inline/logo-ode.svg'
 import {
   container,
-  bodyText,
+  largeText,
   smallText,
   button
 } from '../styles/helpers'
@@ -109,7 +109,7 @@ const Header = ({ className=``, siteTitle = ``, ctaClickHandler=()=>{} }) => (
               </h2>
               <h1
                 className={`
-                  ${bodyText}
+                  ${largeText}
                   margin-vertical:0
                   @mq-lap-shallow--font-size:400
                 `}

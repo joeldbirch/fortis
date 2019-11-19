@@ -17,7 +17,7 @@ const Image = ({ name=`hero`, className=``, ...props }) => (
   <StaticQuery
     query={graphql`
       query {
-        hero: file(relativePath: { eq: "hero-external.jpg" }) {
+        hero: file(relativePath: { eq: "hero-external-2.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 1350, quality: 61) {
               ...GatsbyImageSharpFluid_withWebp
@@ -52,7 +52,7 @@ const Image = ({ name=`hero`, className=``, ...props }) => (
             }
           }
         }
-        courtyard: file(relativePath: { eq: "courtyard.jpg" }) {
+        courtyard: file(relativePath: { eq: "courtyard-looking-in.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 1350, quality: 61) {
               ...GatsbyImageSharpFluid_withWebp

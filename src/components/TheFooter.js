@@ -28,7 +28,8 @@ export default ({ className, ...props }) => {
           font-weight:500
           letter-spacing:20
           margin-top:0
-          margin-bottom:400
+          margin-bottom:600
+          @mq-lap--margin-bottom:400
         `}>Fortis Development Group</h3>
 
         <div className={`

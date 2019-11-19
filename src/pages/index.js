@@ -41,7 +41,7 @@ const RegistrationPage = () => {
       `}
     >
       <SEO
-        title="Request floor plans"
+        title="Fortis Development Group"
         keywords={[`Ode of Toorak`, `property`, `development`]}
       />
 
@@ -133,7 +133,7 @@ const RegistrationPage = () => {
             `}>
               Features include
             </h2>
-            <div className="albatross margin-vertical:400">
+            <div className="margin-vertical:400">
               <ul className={`
                 ${styles.bodyText}
                 @mq-desk--columns:2
@@ -142,16 +142,16 @@ const RegistrationPage = () => {
                 list-style:disc
                 margin-bottom:400
                 margin-top:0
-                padding-left:500
+                padding-left:450
               `}
               style={{
-                columnGap: `7vmin`,
+                columnGap: `2rem`,
               }}
               >
                 <li>Single floor living</li>
                 <li>Lift entry, to private foyer</li>
                 <li>Private outdoor terraces</li>
-                <li>Feature joinery and fireplaces</li>
+                <li>Feature joinery & fireplaces</li>
                 <li>Double-glazed windows</li>
                 <li>Concealed air-conditioning</li>
                 <li>Miele appliances</li>
@@ -160,8 +160,8 @@ const RegistrationPage = () => {
                 <li>Separate walk-in laundry</li>
                 <li>Butler’s pantry</li>
                 <li>Audio visual intercom</li>
-                <li>Provisions for electric car charging</li>
-                <li>Separate storage enclosures on title</li>
+                <li>Electric car charging</li>
+                <li>Storage enclosures on title</li>
                 <li>Meets VIC BASIX Energy Targets</li>
               </ul>
             </div>
@@ -171,7 +171,6 @@ const RegistrationPage = () => {
               className={`
                 ${commonStyles.button}
                 margin-top:auto
-                margin-horizontal:auto
               `}>
               More info
             </button>
@@ -216,7 +215,7 @@ const RegistrationPage = () => {
                   hangingPunctuation: `first`,
                 }}
               >
-                “The design vision for Ode was to create a strong, clean form without unnecessary detail. The building’s exterior is bold yet refined through the selection of quality materials and subtle design elements. This outer strength creates contrast with the calming sense of home inside.”
+                ‘The design vision for Ode was to create a strong, clean form without unnecessary detail. The building’s exterior is bold yet refined through the selection of quality materials and subtle design elements. This outer strength creates contrast with the calming sense of home inside.’
               </p>
               <p className={`
                 ${styles.bodyText}
@@ -326,7 +325,7 @@ const RegistrationPage = () => {
         <TheAffilliates />
 
         <p className={`
-          ${styles.bodyText}
+          ${styles.largeText}
           margin-bottom:site-pad-200
           margin-top:0
           text-align:center
