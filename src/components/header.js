@@ -1,7 +1,7 @@
 import { StaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-
+import Image from './image'
 import Logo from '../images/inline/logo-ode.svg'
 import {
   container,
@@ -65,9 +65,30 @@ const Header = ({ className=``, siteTitle = ``, ctaClickHandler=()=>{} }) => (
             maxHeight: `47.4875rem`,
           }}
         >
+          <Image
+            className={`
+              @mq-max-desk--max-width:container
+              @mq-max-desk--width:hero-100
+              @mq-max-desk-width--min-width:100
+              @mq-tall--min-width:100
+              filter:darken
+              max-width:container
+              min-height:100
+              pos-left:50
+              pos-top:50
+              position:absolute
+              transform:-50
+
+              width:100
+            `}
+            name="poster"
+            style={{
+              position: `absolute`,
+            }}
+          />
 
           <iframe
-            allow="autoplay"
+            allow="autoplay; fullscreen"
             allowFullScreen
             className={`
               @mq-max-desk--max-width:container
@@ -84,20 +105,24 @@ const Header = ({ className=``, siteTitle = ``, ctaClickHandler=()=>{} }) => (
             `}
             frameBorder="0"
             height="1080"
-            src="https://player.vimeo.com/video/373833397?playsinline=1&background=1&autoplay=1&loop=1&autopause=0&muted=1"
+            src="https://player.vimeo.com/video/374109483?background=1&playsinline=1&autoplay=1&loop=1&autopause=0&muted=1"
             style={{
               maxHeight: `47.4875rem`,
             }}
             title="odevideo"
             width="1920"
             loading="lazy"
-          >
+          >background-image: url("https://i.vimeocdn.com/video/832712668.jpg?mw=2700&mh=1520&q=70");
           </iframe>
 
           <div className={`
             ${styles.content}
           `}>
-            <div>
+            <div
+              className={`
+                filter:drop-shadow
+              `}
+            >
               <h2
                 className={`
                   ${smallText}
