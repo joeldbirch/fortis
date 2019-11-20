@@ -112,7 +112,7 @@ const Header = ({ className=``, siteTitle = ``, ctaClickHandler=()=>{} }) => (
             title="odevideo"
             width="1920"
             loading="lazy"
-          >background-image: url("https://i.vimeocdn.com/video/832712668.jpg?mw=2700&mh=1520&q=70");
+          >
           </iframe>
 
           <div className={`
