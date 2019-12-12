@@ -139,7 +139,7 @@ const Header = ({ className=``, siteTitle = ``, ctaClickHandler=()=>{} }) => (
                   @mq-lap-shallow--font-size:400
                 `}
               >
-                Experience the freedom of<br />low maintenance living in Toorak
+                Experience the freedom of<br />elegant and effortless Toorak living
               </h1>
             </div>
             <Logo
