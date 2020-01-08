@@ -103,6 +103,7 @@ ul {
 
 a {
   text-decoration: none;
+  text-decoration-thickness: 1px;
 
   @supports (text-decoration-skip-ink: auto) {
     text-decoration-skip-ink: none;

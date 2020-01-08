@@ -1,13 +1,7 @@
-$hu-font-size-types: hu-append(
-  $hu-font-size-types,
-  (
-    950: 2rem,
-    990: 2.5rem,
-    1000: hu-rem(56),
-
-    grow600: calc(3vw),
-    grow700: calc(3.5vw + .5rem),
-    vw: 8.7vw, // 118px ish at bigdesk breakpoint
-    max: 118px,
-  ),
+$hu-font-size-types: (
+  300: 0.75rem,
+  400: 1rem,
+  500: 1.25rem,
+  600: 1.625rem,
+  700: 2rem,
 );

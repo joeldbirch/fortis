@@ -6,6 +6,7 @@
   "author": "Joel Birch <joeldbirch@gmail.com>",
   "main": "index.js",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "fix-outline": "https://github.com/joeldbirch/fix-outline.git",
     "gatsby-image": "^2.2.31",
     "gatsby-plugin-google-fonts": "^1.0.1",
@@ -19,9 +20,14 @@
     "gatsby-plugin-react-svg": "^2.1.2",
     "gatsby-plugin-sass": "^2.1.21",
     "gatsby-plugin-sharp": "^2.2.37",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.1.36",
+    "gatsby-source-graphql": "^2.1.29",
     "gatsby-transformer-sharp": "^2.3.3",
+    "glob": "^7.1.6",
     "hucssley": "github:stowball/hucssley#master",
+    "lodash.isempty": "^4.4.0",
+    "lodash.uniqby": "^4.7.0",
     "prop-types": "^15.7.2",
     "react-helmet": "^5.2.1",
     "react-modal": "^3.11.1"
@@ -45,7 +51,8 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "NODE_EXTRA_CA_CERTS=~/.config/valet/Certificates/fortiscms.dev.au.crt NODE_TLS_REJECT_UNAUTHORIZED=0 gatsby develop --https",
+    "clean": "gatsby clean",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",

@@ -1,7 +1,7 @@
 import { StaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-import Image from './image'
+import Image from './Image'
 import Logo from '../images/inline/logo-ode.svg'
 import {
   container,
@@ -105,7 +105,7 @@ const Header = ({ className=``, siteTitle = ``, ctaClickHandler=()=>{} }) => (
             `}
             frameBorder="0"
             height="1080"
-            src="https://player.vimeo.com/video/374109483?background=1&playsinline=1&autoplay=1&loop=1&autopause=0&muted=1"
+            src="https://player.vimeo.com/video/374109483?background=1&playsinline=1&autoplay=0&loop=1&autopause=0&muted=1"
             style={{
               maxHeight: `47.4875rem`,
             }}

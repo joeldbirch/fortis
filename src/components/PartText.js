@@ -2,7 +2,7 @@ import React from 'react'
 import {
   padBottom3,
 } from '../styles/helpers'
-import Image from './image'
+import Image from './Image'
 
 const styles = {
   root: `

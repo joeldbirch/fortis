@@ -1,18 +1,22 @@
 /**
  * Layout component that queries for data
- * with Gatsby's StaticQuery component
+ * with Gatsby's useStaticQuery hook
  *
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
+// import { useStaticQuery, graphql } from 'gatsby'
+import { Link } from 'gatsby'
 import Helmet from 'react-helmet'
-import { isIos, isSafari } from '../utilities/helpers'
 import TheWrap from './TheWrap'
+import Menu from './Menu'
+import Main from './TheMain'
+import TheHeader from './TheHeader'
+import TheFooter from './TheFooter'
+import { isIos, isSafari } from '../utilities/helpers'
 import '../index.scss'
-import fixOutline from 'fix-outline'
 
 const Layout = ({
   children,
@@ -21,6 +25,8 @@ const Layout = ({
   ctaClickHandler,
   ...props
 }) => {
+
+
   function bodyClasses() {
     return `${isIos() || isSafari() ? `is-safari` : ``} `
   }
@@ -29,41 +35,69 @@ const Layout = ({
     return `padding-horizontal:site-pad-100`
   }
 
+  const [menuOpen, toggleMenu] = useState(false)
+
+  // const data = useStaticQuery(graphql`
+  //   query SiteTitleQuery {
+  //     site {
+  //       siteMetadata {
+  //         title
+  //       }
+  //     }
+  //   }
+  // `)
+
   return (
-    <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
-            }
-          }
-        }
+    <TheWrap
+      id="TheWrap"
+      className={`
+        👉 the-wrap
+        ${className}
       `}
-      render={data => {
-        if (`undefined` !== typeof window) fixOutline()
-        className += ` 👉 the-wrap`
-        return (
-          <TheWrap className={className} id="TheWrap" {...props}>
-            <Helmet>
-              <style>
-                {`
-                html,
-                body,
-                [id="___gatsby"],
-                [id="___gatsby"]>[role="group"] {
-                  height: 100%;
-                }
-              `}
-              </style>
-              <body className={bodyClasses()} />
-              <html className={htmlClasses()} />
-            </Helmet>
-            {children}
-          </TheWrap>
-        )
-      }}
-    />
+      {...props}
+    >
+      <Helmet>
+        <style>
+          {`
+          html,
+          body,
+          [id="___gatsby"],
+          [id="___gatsby"]>[role="group"] {
+            height: 100%;
+          }
+        `}
+        </style>
+        <body className={bodyClasses()} />
+        <html className={htmlClasses()} />
+      </Helmet>
+
+      <TheHeader>
+        <Link
+          to="/"
+          className={`
+            color:neutral-900
+            &:hocus--text-decoration:underline
+          `}
+        >
+          <h1
+            className={`
+              font-weight:400
+              font-size:500
+            `}
+          >
+            Fortis
+          </h1>
+        </Link>
+        <Menu toggleHandler={toggleMenu} isOpen={menuOpen} />
+      </TheHeader>
+
+      <Main>
+        {children}
+      </Main>
+
+      <TheFooter className={``} />
+
+    </TheWrap>
   )
 }
 

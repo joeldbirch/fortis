@@ -1,22 +1,47 @@
+let activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || `development`
+console.log(`Using environment config: ${activeEnv}`)
+
+require('dotenv').config({
+  path: `.env.${activeEnv}`,
+})
+
+console.log(`This WordPress Endpoint is used: '${process.env.WORDPRESS_URL}'`)
+
 module.exports = {
   siteMetadata: {
-    title: `Ode of Toorak`,
-    description: `589 Toorak Road, Toorak. Experience the freedom of low maintenance living in Toorak`,
+    title: `Fortis Development Group`,
+    description: `Tailoring places to life’s rituals`,
   },
   plugins: [
     {
-      resolve: "gatsby-plugin-hubspot",
+      resolve: `gatsby-source-graphql`,
       options: {
-          trackingCode: "6351172",
-          respectDNT: true,
-          productionOnly: true,
+        typeName: `WPGraphQL`,
+        fieldName: `wpgraphql`,
+        url: `${process.env.WORDPRESS_URL}/graphql`,
+      },
+    },
+    // {
+    //   resolve: `gatsby-plugin-hubspot`,
+    //   options: {
+    //       trackingCode: "6351172",
+    //       respectDNT: true,
+    //       productionOnly: true,
+    //   },
+    // },
+    {
+      resolve: `gatsby-plugin-web-font-loader`,
+      options: {
+        typekit: {
+          id: `hwx4ktl`,
+        },
       },
     },
     `gatsby-plugin-polyfill-io`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
-      resolve: "gatsby-plugin-react-svg",
+      resolve: `gatsby-plugin-react-svg`,
       options: {
         rule: {
           include: /src\/images\/inline/ // See below to configure properly
@@ -35,8 +60,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Ode of Toorak`,
-        short_name: `Ode`,
+        name: `Fortis Development Group`,
+        short_name: `Fortis`,
         start_url: `/`,
         background_color: `#f5f2ed`,
         theme_color: `#f5f2ed`,

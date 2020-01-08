@@ -4,4 +4,6 @@ $hu-transition-property-types: (
   all: all,
   none: none,
   opacity: opacity,
+  transform: transform,
+  opacity-transform: unquote('opacity, transform'),
 );
