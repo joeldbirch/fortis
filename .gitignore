@@ -1,3 +1,5 @@
+.template-cache
+
 # Logs
 logs
 *.log

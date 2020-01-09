@@ -58,5 +58,33 @@ const NewsPreviewFragment = `
   }
 `
 
+const NewsIntroFragment = `
+  fragment NewsIntroFragment on WPGraphQL_Post {
+    id
+    postId
+    title
+    uri
+    date
+    slug
+    excerpt
+    content
+    featuredImage {
+      sourceUrl
+      altText
+      imageFile {
+        childImageSharp {
+          fluid(maxHeight: 400, maxWidth: 800, quality: 90, cropFocus: CENTER) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+    }
+    author {
+      name
+      slug
+    }
+  }
+`
+
 module.exports.PostTemplateFragment = PostTemplateFragment
 module.exports.NewsPreviewFragment = NewsPreviewFragment

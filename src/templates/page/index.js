@@ -15,7 +15,7 @@ const Page = ({ pageContext }) => {
     page: { title, pageBuilder },
   } = pageContext
 
-  const layouts = pageBuilder.layouts || []
+  const layouts = pageBuilder && pageBuilder.layouts ? pageBuilder.layouts : []
 
   return (
     <Layout>

@@ -1,9 +1,7 @@
 import React from 'react'
 import Layout from '../../components/Layout'
-import NewsIntro from '../../components/NewsIntro'
 import PostEntry from '../../components/PostEntry'
 import Pagination from '../../components/Pagination'
-
 import SEO from '../../components/SEO'
 
 const News = ({ pageContext }) => {
@@ -12,10 +10,8 @@ const News = ({ pageContext }) => {
   return (
     <Layout>
       <SEO
-        title="News & Views"
+        title="Projects"
       />
-
-      <NewsIntro />
 
       {nodes && nodes.map(post => <PostEntry key={post.postId} post={post}/>)}
 

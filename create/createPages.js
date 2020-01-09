@@ -130,7 +130,12 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
         }
 
         /**
-         * Filter out empty objects. This can happen, if for some reason you
+         * Some pages don't have pageBuilder
+         */
+        page.pageBuilder = page.pageBuilder || {layouts: []}
+
+        /**
+         * Filter out empty objects. This can happen if for some reason you
          * don't query for a specific layout (UnionType), that is potentially
          * there.
          */
