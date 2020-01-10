@@ -10,8 +10,8 @@ const PostTemplateFragment = `
       altText
       imageFile {
         childImageSharp {
-          fluid(maxHeight: 400, maxWidth: 800, quality: 90, cropFocus: CENTER) {
-            ...GatsbyImageSharpFluid_tracedSVG
+          fluid(maxWidth: 800, quality: 90, cropFocus: CENTER) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }
       }
@@ -45,43 +45,11 @@ const NewsPreviewFragment = `
       altText
       imageFile {
         childImageSharp {
-          fluid(maxHeight: 400, maxWidth: 800, quality: 90, cropFocus: CENTER) {
-            ...GatsbyImageSharpFluid_tracedSVG
+          fluid(maxWidth: 800, quality: 90, cropFocus: CENTER) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }
       }
-    }
-    author {
-      name
-      slug
-    }
-  }
-`
-
-const NewsIntroFragment = `
-  fragment NewsIntroFragment on WPGraphQL_Post {
-    id
-    postId
-    title
-    uri
-    date
-    slug
-    excerpt
-    content
-    featuredImage {
-      sourceUrl
-      altText
-      imageFile {
-        childImageSharp {
-          fluid(maxHeight: 400, maxWidth: 800, quality: 90, cropFocus: CENTER) {
-            ...GatsbyImageSharpFluid_tracedSVG
-          }
-        }
-      }
-    }
-    author {
-      name
-      slug
     }
   }
 `

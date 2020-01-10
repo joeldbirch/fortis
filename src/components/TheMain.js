@@ -7,7 +7,6 @@ const styles = {
     flex-direction:column
     flex-grow:1
     flex-shrink:0
-    padding-top:site-pad-200
     width:100
     ${container}
   `,

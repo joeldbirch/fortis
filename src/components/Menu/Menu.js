@@ -3,7 +3,7 @@ import { useStaticQuery, graphql  } from 'gatsby'
 
 import MenuItem from './MenuItem'
 
-const Menu = ({toggleHandler=function(){}, isOpen=false}) => {
+const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
   const data = useStaticQuery(graphql`
     fragment MenuItem on WPGraphQL_MenuItem {
       id
@@ -38,6 +38,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false}) => {
 
   return (
     <div className={`
+      ${className}
     `}>
       <nav role="navigation">
         <button
@@ -46,7 +47,9 @@ const Menu = ({toggleHandler=function(){}, isOpen=false}) => {
           className={`
             padding:0
             position:relative
-            font-size:500
+            font-size:300
+            @mq-tiny--font-size:400
+            @mq-lap--font-size:500
             &:before--hit-area-xy-100
             &:hocus--text-decoration:underline
             z-index:200
@@ -55,7 +58,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false}) => {
         >
           {isOpen ? `Close` : `Menu`}
         </button>
-        <ul
+        <div
           className={`
             position:fixed
             pos-right:0
@@ -66,24 +69,40 @@ const Menu = ({toggleHandler=function(){}, isOpen=false}) => {
             max-width:75
             @mq-palm--max-width:50
             transition-property:opacity-transform
-            transition-duration:200
+            transition-duration:400
             padding-top:site-pad-300
             padding-left:site-pad-300
             padding-right:site-pad
-            ${isOpen ?  `` : `translate-x:100`}
+            ${isOpen ?  `` : `translate-x:50 opacity:0`}
           `
           }
           style={{
-            backgroundColor: "hsla(25, 15%, 85%, 0.8)",
+            backgroundColor: "hsla(25, 15%, 85%, 0.93)",
             backdropFilter: "blur(3px)",
           }}
         >
-          {
-            menuItems.map((menuItem) => (
-              <MenuItem key={menuItem.id} menuItem={menuItem} wordPressUrl={wordPressUrl} />
-            ))
-          }
-        </ul>
+          <ul className={`
+            padding-vertical:400
+          `}>
+            {
+              menuItems.map((menuItem) => (
+                <MenuItem
+                  className={`
+                    @mq-tiny--font-size:500
+                  `}
+                  linkClasses={`
+                    text-decoration:none
+                    &:hocus--text-decoration:underline
+                    color:neutral-900
+                  `}
+                  key={menuItem.id}
+                  menuItem={menuItem}
+                  wordPressUrl={wordPressUrl}
+                />
+              ))
+            }
+          </ul>
+        </div>
       </nav>
     </div>
   )

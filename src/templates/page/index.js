@@ -5,7 +5,6 @@ import React from 'react'
 
 import Layout from '../src/components/Layout'
 import SEO from '../src/components/SEO'
-import { convertAmpersands } from '../src/utilities/helpers'
 
 // Sections
 ${imports.map(({ componentName, filePath }) => `import ${componentName} from '${filePath}';`).join('\n')}
@@ -19,9 +18,9 @@ const Page = ({ pageContext }) => {
 
   return (
     <Layout>
-      <SEO title={convertAmpersands(title)} />
+      <SEO title={title} />
 
-      <h1>{convertAmpersands(title)}</h1>
+      <h1 className="visually-hidden">{title}</h1>
       {
         layouts.map((layout, index) => {
           ${imports.map(({ componentName, layoutType }) => {

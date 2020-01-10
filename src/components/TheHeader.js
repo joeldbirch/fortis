@@ -8,10 +8,13 @@ const TheHeader = ({children}) => {
         display:flex
         justify-content:space-between
         padding:site-pad-100
+        padding-bottom:0
         pos-left:0
+        pos-top:0
         position:fixed
         width:100
         z-index:200
+        pointer-events:none
       `}
     >
       {children}

@@ -13,8 +13,8 @@ const ProjectTemplateFragment = `
       altText
       imageFile {
         childImageSharp {
-          fluid(maxHeight: 400, maxWidth: 800, quality: 90, cropFocus: CENTER) {
-            ...GatsbyImageSharpFluid_tracedSVG
+          fluid(maxHeight: 900, maxWidth: 1600, quality: 90, cropFocus: CENTER) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }
       }
@@ -31,7 +31,7 @@ const ProjectTemplateFragment = `
         imageFile {
           childImageSharp {
             fluid(maxHeight: 200, maxWidth: 400, quality: 90, cropFocus: CENTER) {
-              ...GatsbyImageSharpFluid_tracedSVG
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
         }
@@ -42,11 +42,6 @@ const ProjectTemplateFragment = `
 
 const ProjectPreviewFragment = `
   fragment ProjectPreviewFragment on WPGraphQL_Project {
-    projectTags {
-      nodes {
-        name
-      }
-    }
     projectId
     id
     title
@@ -55,8 +50,8 @@ const ProjectPreviewFragment = `
       altText
       imageFile {
         childImageSharp {
-          fluid(maxHeight: 400, maxWidth: 800, quality: 90, cropFocus: CENTER) {
-            ...GatsbyImageSharpFluid_tracedSVG
+          fluid(maxHeight: 900, maxWidth: 1600, quality: 90, cropFocus: CENTER) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }
       }
@@ -66,6 +61,13 @@ const ProjectPreviewFragment = `
       fieldGroupName
       status
       suburb
+    }
+    projectTags {
+      nodes {
+        slug
+        name
+        id
+      }
     }
   }
 `

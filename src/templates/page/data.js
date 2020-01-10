@@ -6,17 +6,6 @@ const PageTemplateFragment = (layouts) => `
     content
     uri
     isFrontPage
-    featuredImage {
-      sourceUrl
-      altText
-      imageFile {
-        childImageSharp {
-          fluid(maxHeight: 400, maxWidth: 800, quality: 90, cropFocus: CENTER) {
-            ...GatsbyImageSharpFluid_tracedSVG
-          }
-        }
-      }
-    }
     pageBuilder {
       layouts {
         ${layouts}

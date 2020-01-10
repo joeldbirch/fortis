@@ -1,15 +1,14 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import FluidImage from './FluidImage'
-import { blogURI } from '../../globals'
 
-const PostEntry = ({ post }) => {
+const PostEntry = ({ post, parentUri }) => {
   const {uri, title, featuredImage, excerpt} = post
 
   return (
     <div>
       <header>
-        <Link to={`${blogURI}/${uri}/`}>
+        <Link to={`${parentUri}/${uri}/`}>
           <h2>{title}</h2>
           <FluidImage image={featuredImage} />
         </Link>

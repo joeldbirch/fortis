@@ -8,8 +8,8 @@ module.exports = () => {
         altText
         imageFile {
           childImageSharp {
-            fluid(maxHeight: 400, maxWidth: 800, quality: 90, cropFocus: CENTER) {
-              ...GatsbyImageSharpFluid_tracedSVG
+            fluid(maxHeight: 900, maxWidth: 1600, quality: 90, cropFocus: CENTER) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
         }

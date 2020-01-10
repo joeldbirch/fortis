@@ -3,9 +3,10 @@ import Layout from '../../components/Layout'
 import PostEntry from '../../components/PostEntry'
 import Pagination from '../../components/Pagination'
 import SEO from '../../components/SEO'
+import { projectsURI } from '../../../globals'
 
-const News = ({ pageContext }) => {
-  const { nodes, pageNumber, hasNextPage, itemsPerPage, allPosts } = pageContext
+const Projects = ({ pageContext }) => {
+  const { nodes, pageNumber, hasNextPage, itemsPerPage, allProjects } = pageContext
 
   return (
     <Layout>
@@ -13,16 +14,16 @@ const News = ({ pageContext }) => {
         title="Projects"
       />
 
-      {nodes && nodes.map(post => <PostEntry key={post.postId} post={post}/>)}
+      {nodes && nodes.map(post => <PostEntry key={post.id} post={post} parentUri={projectsURI} />)}
 
       <Pagination
         pageNumber={pageNumber}
         hasNextPage={hasNextPage}
-        allPosts={allPosts}
+        allProjects={allProjects}
         itemsPerPage={itemsPerPage}
       />
     </Layout>
   )
 }
 
-export default News
+export default Projects

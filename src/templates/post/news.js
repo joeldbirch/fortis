@@ -3,6 +3,7 @@ import Layout from '../../components/Layout'
 import NewsIntro from '../../components/NewsIntro'
 import PostEntry from '../../components/PostEntry'
 import Pagination from '../../components/Pagination'
+import { blogURI } from '../../../globals'
 
 import SEO from '../../components/SEO'
 
@@ -17,7 +18,7 @@ const News = ({ pageContext }) => {
 
       <NewsIntro />
 
-      {nodes && nodes.map(post => <PostEntry key={post.postId} post={post}/>)}
+      {nodes && nodes.map(post => <PostEntry key={post.id} post={post} parentUri={blogURI}/>)}
 
       <Pagination
         pageNumber={pageNumber}

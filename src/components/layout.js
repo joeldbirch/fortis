@@ -77,18 +77,23 @@ const Layout = ({
           className={`
             color:neutral-900
             &:hocus--text-decoration:underline
+            &:before--hit-area-xy-100
+            position:relative
+            pointer-events:auto
           `}
         >
           <h1
             className={`
               font-weight:400
-              font-size:500
+              font-size:300
+              @mq-tiny--font-size:400
+              @mq-lap--font-size:500
             `}
           >
             Fortis
           </h1>
         </Link>
-        <Menu toggleHandler={toggleMenu} isOpen={menuOpen} />
+        <Menu toggleHandler={toggleMenu} isOpen={menuOpen} className="pointer-events:auto" />
       </TheHeader>
 
       <Main>
