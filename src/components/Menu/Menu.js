@@ -73,11 +73,11 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
             padding-top:site-pad-300
             padding-left:site-pad-300
             padding-right:site-pad
-            ${isOpen ?  `` : `translate-x:50 opacity:0`}
+            ${isOpen ?  `` : `translate-x:100 opacity:0`}
           `
           }
           style={{
-            backgroundColor: "hsla(25, 15%, 85%, 0.93)",
+            backgroundColor: "hsla(25, 0%, 88%, 0.95)",
             backdropFilter: "blur(3px)",
           }}
         >

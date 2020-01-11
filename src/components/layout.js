@@ -32,7 +32,7 @@ const Layout = ({
   }
 
   function htmlClasses() {
-    return `padding-horizontal:site-pad-100`
+    return ``
   }
 
   const [menuOpen, toggleMenu] = useState(false)
@@ -67,7 +67,10 @@ const Layout = ({
           }
         `}
         </style>
-        <body className={bodyClasses()} />
+        <body className={`
+          ${bodyClasses()}
+          grid-guide
+        `} />
         <html className={htmlClasses()} />
       </Helmet>
 

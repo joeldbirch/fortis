@@ -1,15 +1,16 @@
 /* purgecss start ignore */
 :root {
   --guide-color: rgba(0, 153, 255, 0.2);
-  --site-pad: 3.5vmin;
-  ---site-pad: calc(var(--site-pad) * -1);
+  --site-pad: #{$site-pad};
+  ---site-pad: calc(var(--site-pad, #{$site-pad}) * -1);
+  --site-column: #{$site-column};
   --site-max-width: #{hu-get($hu-max-width-types, container)};
   --grid-template-columns-var1: 1fr 1fr;
   --rhythm-offset: -0.25em; // see rhythm-fix mixin in _tools-typography.scss
   --bg-image: '';
 
-  @media (min-width: #{hu-get($hu-media-queries, lap)}) and (max-height: #{hu-get($hu-media-queries, palm)}) {
-    --site-pad: 1rem;
-  }
+  // @media (min-width: #{hu-get($hu-media-queries, lap)}) and (max-height: #{hu-get($hu-media-queries, palm)}) {
+  //   --site-pad: 1rem;
+  // }
 }
 /* purgecss end ignore */

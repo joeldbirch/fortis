@@ -1,3 +1,20 @@
+$site-layout-columns: 12;
+$site-padding-columns: 1;
+$site-column-value: 100 / ($site-layout-columns + $site-padding-columns);
+// left and right padding get half a column each
+$site-pad-value: $site-column-value / 2;
+
+$site-pad: #{$site-pad-value}vw;
+$site-column: #{$site-column-value}vw;
+
+$column-spacing: ();
+@for $column from 1 through $site-layout-columns {
+  $column-spacing: map-merge(
+    $column-spacing,
+    (columns-#{$column}: calc(var(--site-column, #{$site-column}) * #{$column}))
+  )
+}
+
 @import "styles/utilities/tools-mixins";
 @import "styles/utilities/tools-typography";
 

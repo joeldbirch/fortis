@@ -1,25 +1,61 @@
 import React from 'react'
 import FluidImage from '../../components/FluidImage'
 
+const featureWidth = `
+  @mq-max-bigdesk--max-width:measure
+  @mq-bigdesk--width:columns-7
+`
+
 const styles = {
   root: `
-    height:100vh
-    margin-horizontal:-site-pad-300
-    display:grid
+    min-height:100vh
+    padding-horizontal:site-pad-100
+    padding-top:site-pad-300
+    padding-bottom:400
+    display:flex
+    flex-direction:column
+    justify-content:space-between
   `,
   inner: `
-    padding-horizontal:site-pad-400
-    padding-vertical:site-pad-300
+    margin-horizontal:auto
+    width:columns-10
+    ${featureWidth}
   `,
   mediaWrap: `
     padding-top:9/16
-    padding-horizontal:site-pad-100
-    max-height:container
-    max-width:67rem
-    margin-horizontal:auto
-    margin-vertical:400
+    margin-top:400
+    min-height:hero-100
+    @mq-desk--min-height:auto
     overflow:hidden
     position:relative
+  `,
+  brandingWrap: `
+    @mq-desk--display:flex
+    @mq-desk--flex-flow:row-reverse
+    @mq-desk--justify-content:space-between
+    @mq-desk--align-items:flex-end
+    @mq-desk--margin-top:-400
+    position:relative
+  `,
+  tagline: `
+    font-family:cursive
+    font-weight:400
+    font-size:400
+    @mq-palm--font-size:500
+    @mq-bigdesk--font-size:600
+    text-align:center
+    padding-bottom:200
+    padding-top:400
+    @mq-desk--padding-bottom:site-pad
+    @mq-desk--text-align:left
+    @mq-desk--padding-left:site-pad
+    @mq-desk--flex-grow:1
+  `,
+  watermark: `
+    ${featureWidth}
+    height:auto
+    width:columns-12
+    flex-shrink:0
   `,
 }
 
@@ -35,15 +71,13 @@ const Branded = ({image, text, video=null}) => {
           className={`
             ${styles.mediaWrap}
           `}
-          style={{
-            maxHeight: `47.4875rem`,
-          }}
         >
           <FluidImage
             image={image}
             className={`
               pos-left:0
               pos-top:0
+              height:100
               width:100
             `}
             style={{
@@ -57,7 +91,6 @@ const Branded = ({image, text, video=null}) => {
                   allow="autoplay; fullscreen"
                   allowFullScreen
                   className={`
-                    filter:darken
                     height:100
                     pos-left:50
                     pos-top:50
@@ -79,10 +112,36 @@ const Branded = ({image, text, video=null}) => {
 
         </div>
 
-        <h2 className={`
-          font-family:cursive
-          font-weight:400
-        `}>{text}</h2>
+
+
+      </div>
+
+      <div
+        className={`
+          ${styles.brandingWrap}
+        `}
+      >
+        <h2
+          className={`
+            ${styles.tagline}
+          `}
+          style={{
+            transform: 'rotate(-2deg)',
+          }}
+          dangerouslySetInnerHTML={{__html: text}}
+        />
+
+        <img
+          className={`
+            ${styles.watermark}
+          `}
+          src="images/logo-fortis-watermark.svg"
+          role="presentation"
+          alt="Fortis"
+          width="764"
+          height="202"
+          loading="lazy"
+        />
       </div>
     </section>
   )

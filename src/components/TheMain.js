@@ -1,5 +1,4 @@
 import React from 'react'
-import { container } from '../styles/helpers'
 
 const styles = {
   main: `
@@ -8,7 +7,6 @@ const styles = {
     flex-grow:1
     flex-shrink:0
     width:100
-    ${container}
   `,
 }
 

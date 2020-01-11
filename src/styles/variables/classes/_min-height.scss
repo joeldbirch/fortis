@@ -2,7 +2,9 @@ $hu-min-height-modules: (base, responsive);
 
 $hu-min-height-types: hu-append($hu-min-height-types,
   (
-    hero-100: unquote("calc(100vh - 7vmin)"),
-    container: hu-rem(1350),
+    auto: auto,
+    hero-100: 60vh,
+    hero-200: unquote("calc(100vh - 7vmin)"),
+    container: hu-rem(1400),
   )
 );
