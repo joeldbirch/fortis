@@ -16,6 +16,7 @@ import Main from './TheMain'
 import TheHeader from './TheHeader'
 import TheFooter from './TheFooter'
 import { isIos, isSafari } from '../utilities/helpers'
+import { uiFontSize } from '../styles/helpers'
 import '../index.scss'
 
 const Layout = ({
@@ -71,7 +72,7 @@ const Layout = ({
           ${bodyClasses()}
           grid-guide
         `} />
-        <html className={htmlClasses()} />
+        <html className={htmlClasses()} lang="en" />
       </Helmet>
 
       <TheHeader>
@@ -87,10 +88,7 @@ const Layout = ({
         >
           <h1
             className={`
-              font-weight:400
-              font-size:300
-              @mq-tiny--font-size:400
-              @mq-lap--font-size:500
+              ${uiFontSize}
             `}
           >
             Fortis

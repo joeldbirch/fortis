@@ -23,15 +23,22 @@ $hu-spacing-scale: (
 
   "-50vw": -50vw,
 
-  site-pad: unquote("var(--site-pad)"),
-  site-pad-100: unquote("var(--site-pad)"),
-  "-site-pad-100": unquote("calc(var(--site-pad) * -1)"),
-  site-pad-200: unquote("calc(var(--site-pad) * 2)"),
-  "-site-pad-200": unquote("calc(var(--site-pad) * -2)"),
-  site-pad-300: unquote("calc(var(--site-pad) * 3)"),
-  "-site-pad-300": unquote("calc(var(--site-pad) * -3)"),
-  site-pad-400: unquote("calc(var(--site-pad) * 4)"),
-  "-site-pad-400": unquote("calc(var(--site-pad) * -4)"),
+);
+
+$site-padding: ();
+@for $pad from 1 through 6 {
+  $site-padding: map-merge(
+    $site-padding,
+    (
+      "site-pad-#{$pad}00": unquote("calc(var(--site-pad) * #{$pad})"),
+      "-site-pad-#{$pad}00": unquote("calc(var(--site-pad) * -#{$pad})"),
+    )
+  );
+}
+
+$hu-spacing-scale: map-merge(
+  $hu-spacing-scale,
+  $site-padding
 );
 
 $hu-spacing-scale: map-merge(

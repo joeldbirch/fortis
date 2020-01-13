@@ -8,5 +8,6 @@ $hu-backdrop-filter-modules: (
 
 $hu-backdrop-filter-types: (
   // blur-100: blur(1px) saturate(1.5),
+  blur-overlay: blur(8px) saturate(2.5) brightness(0.5),
   overlay: saturate(2) brightness(0.9) contrast(0.9),
 );

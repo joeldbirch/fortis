@@ -7,4 +7,4 @@ $hu-width-types: hu-append(
   )
 );
 
-$hu-width-types: map-merge($hu-width-types, $column-spacing);
+$hu-width-types: hu-append($hu-width-types, $column-spacing);

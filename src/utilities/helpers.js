@@ -89,3 +89,8 @@ export const CreateLocalLink = (menuItem, wordPressUrl, blogURI=`news/`) => {
 }
 
 export const convertAmpersands = text => text.replace(`&#038;`,`&`).replace(`&amp;`,`&`)
+
+export const getPath = link => {
+  const path = new URL(link)
+  return path.href.replace(path.origin, ``)
+}

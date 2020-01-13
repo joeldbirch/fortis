@@ -113,3 +113,27 @@ export const forceFullWidth = `
   position:relative
   width:100vw
 `
+
+export const handwritten = `
+  font-family:cursive
+  font-weight:400
+  font-size:400
+  @mq-palm--font-size:500
+  @mq-bigdesk--font-size:600
+`
+
+export const centred = `
+  position:absolute
+  pos-top-left:50
+  transform:-50
+`
+
+export const appleBezier = `cubic-bezier(0.645, 0.045, 0.355, 1)`
+export const appleFade = {transition: `0.4s ${appleBezier}`}
+
+export const uiFontSize = `
+  @mq-lap--font-size:500
+  @mq-tiny--font-size:400
+  font-size:300
+  font-weight:400
+`

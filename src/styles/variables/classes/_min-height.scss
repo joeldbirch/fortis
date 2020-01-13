@@ -4,7 +4,7 @@ $hu-min-height-types: hu-append($hu-min-height-types,
   (
     auto: auto,
     hero-100: 60vh,
-    hero-200: unquote("calc(100vh - 7vmin)"),
+    50vw: 50vw,
     container: hu-rem(1400),
   )
 );

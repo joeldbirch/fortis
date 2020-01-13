@@ -2,7 +2,9 @@ const ProjectTemplateFragment = `
   fragment ProjectTemplateFragment on WPGraphQL_Project {
     projectTags {
       nodes {
+        slug
         name
+        id
       }
     }
     projectId
@@ -24,7 +26,19 @@ const ProjectTemplateFragment = `
       fieldGroupName
       fullAddress
       status
+      video
       suburb
+      suburbImage {
+        sourceUrl
+        altText
+        imageFile {
+          childImageSharp {
+            fluid(maxHeight: 900, maxWidth: 900, quality: 90, cropFocus: CENTER) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+        }
+      }
       logo {
         sourceUrl
         altText

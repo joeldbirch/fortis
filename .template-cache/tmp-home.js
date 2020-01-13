@@ -7,8 +7,8 @@ import SEO from '../src/components/SEO'
 
 // Sections
 import Branded from '../src/layouts/Branded';
-import Hero from '../src/layouts/Hero';
 import TextBlock from '../src/layouts/TextBlock';
+import Hero from '../src/layouts/Hero';
 import NewsOverview from '../src/layouts/NewsOverview';
 
 const Page = ({ pageContext }) => {
@@ -31,13 +31,13 @@ const Page = ({ pageContext }) => {
               }
             
 
-              if (layout.fieldGroupName === 'page_Pagebuilder_Layouts_Hero') {
-                  return <Hero {...layout} key={index} />;
+              if (layout.fieldGroupName === 'page_Pagebuilder_Layouts_TextBlock') {
+                  return <TextBlock {...layout} key={index} />;
               }
             
 
-              if (layout.fieldGroupName === 'page_Pagebuilder_Layouts_TextBlock') {
-                  return <TextBlock {...layout} key={index} />;
+              if (layout.fieldGroupName === 'page_Pagebuilder_Layouts_Hero') {
+                  return <Hero {...layout} key={index} />;
               }
             
 

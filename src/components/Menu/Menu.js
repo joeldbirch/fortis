@@ -2,6 +2,9 @@ import React from 'react'
 import { useStaticQuery, graphql  } from 'gatsby'
 
 import MenuItem from './MenuItem'
+import CloseAnimation from '../CloseAnimation'
+
+import { centred, appleFade, appleBezier, uiFontSize } from '../../styles/helpers'
 
 const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
   const data = useStaticQuery(graphql`
@@ -46,18 +49,46 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
           aria-expanded={isOpen}
           className={`
             padding:0
-            position:relative
-            font-size:300
-            @mq-tiny--font-size:400
-            @mq-lap--font-size:500
+            position:absolute
+            ${uiFontSize}
             &:before--hit-area-xy-100
-            &:hocus--text-decoration:underline
+            &:hover--text-decoration:underline
             z-index:200
+            margin-right:site-pad-100
+            margin-top:site-pad-100
+            pos-top-right:0
           `}
           onClick={toggleMenu}
+          style={{
+            width: `4em`,
+            height: `1.3em`,
+          }}
         >
-          {isOpen ? `Close` : `Menu`}
+          <span
+            className={`
+              width:100
+              height:100
+              pos-top-left:0
+              position:absolute
+              ${isOpen ? `opacity:0 scale:80` : ``}
+            `}
+            style={{
+              ...appleFade,
+            }}
+          >
+            <span
+              className={`
+                ${centred}
+                ${isOpen ? `text-decoration:none` : ``}
+              `}
+            >Menu</span>
+          </span>
+          <CloseAnimation
+            closed={isOpen}
+            wrapStyles={appleFade}
+          />
         </button>
+
         <div
           className={`
             position:fixed
@@ -68,8 +99,8 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
             width:100
             max-width:75
             @mq-palm--max-width:50
-            transition-property:opacity-transform
-            transition-duration:400
+            transition-property:transform-opacity
+            transition-duration:1000
             padding-top:site-pad-300
             padding-left:site-pad-300
             padding-right:site-pad
@@ -77,8 +108,9 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
           `
           }
           style={{
-            backgroundColor: "hsla(25, 0%, 88%, 0.95)",
-            backdropFilter: "blur(3px)",
+            backgroundColor: `hsla(25, 0%, 88%, 0.95)`,
+            backdropFilter: `blur(3px)`,
+            transitionTimingFunction: appleBezier,
           }}
         >
           <ul className={`
@@ -92,7 +124,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
                   `}
                   linkClasses={`
                     text-decoration:none
-                    &:hocus--text-decoration:underline
+                    &:hover--text-decoration:underline
                     color:neutral-900
                   `}
                   key={menuItem.id}
