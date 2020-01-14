@@ -103,7 +103,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
             @mq-desk--max-width:columns-4-1/2
             transition-property:opacity-transform
             transition-duration:700
-            padding-top:columns-1-1/2
+            padding-top:site-top
             padding-left:columns-1
             padding-right:site-pad
             ${isOpen ?  `` : `translate-x:100 opacity:0`}
@@ -116,7 +116,6 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
           }}
         >
           <ul className={`
-            padding-vertical:400
           `}>
             {
               menuItems.map((menuItem) => (

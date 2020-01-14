@@ -1,8 +1,7 @@
 /* purgecss start ignore */
 :root {
   --guide-color: rgba(0, 153, 255, 0.2);
-  --site-pad: #{$site-pad};
-  ---site-pad: calc(var(--site-pad, #{$site-pad}) * -1);
+  --site-top: calc(#{$site-column} * 1.5 + 1rem);
   --site-column: #{$site-column};
   --site-max-width: #{hu-get($hu-max-width-types, container)};
   --grid-template-columns-var1: 1fr 1fr;
@@ -12,5 +11,8 @@
   // @media (min-width: #{hu-get($hu-media-queries, lap)}) and (max-height: #{hu-get($hu-media-queries, palm)}) {
   //   --site-pad: 1rem;
   // }
+  @media (min-width: #{hu-get($hu-media-queries, bigdesk)}) {
+    --site-top: 11rem;
+  }
 }
 /* purgecss end ignore */

@@ -8,15 +8,15 @@ const styles = {
     height:100vh
     min-height:50vw
     padding-horizontal:columns-0-1/2
-    padding-top:columns-1-1/2
+    padding-top:site-top
     padding-bottom:400
     display:flex
     flex-direction:column
     justify-content:space-between
   `,
   mediaWrap: `
-    flex-basis:80
-    margin-top:400
+    flex-basis:60
+    flex-grow:1
     margin-horizontal:columns-0-1/2
     @mq-desk--margin-horizontal:columns-1-1/2
     @mq-bigdesk--margin-horizontal:site-pad-500

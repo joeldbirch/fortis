@@ -1,6 +1,7 @@
 $site-layout-columns: 12;
 $site-padding-columns: 1;
 $site-column-value: 100 / ($site-layout-columns + $site-padding-columns);
+
 // left and right padding get half a column each
 $site-pad-value: $site-column-value / 2;
 $site-pad: #{$site-pad-value}vw;

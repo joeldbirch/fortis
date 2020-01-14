@@ -10,6 +10,7 @@ const ProjectTemplateFragment = `
     projectId
     id
     title
+    content
     featuredImage {
       sourceUrl
       altText
@@ -48,6 +49,8 @@ const ProjectTemplateFragment = `
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
+          publicURL
+          extension
         }
       }
     }
