@@ -11,6 +11,9 @@ const Project = ({ pageContext }) => {
     project: {title, content, featuredImage, projectDetails},
   } = pageContext
 
+  console.log({projectDetails});
+
+
   return (
     <Layout>
       <SEO title={`${title} | project`} />
@@ -22,9 +25,10 @@ const Project = ({ pageContext }) => {
       />
 
       <ProjectDetails
-        data={{content, ...projectDetails}}
+        title={title}
+        content={content}
+        {...projectDetails}
       />
-      <div dangerouslySetInnerHTML={{__html: content}} />
 
     </Layout>
   )

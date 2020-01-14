@@ -1,3 +1,16 @@
+$column-spacing: ();
+
+@for $column from 0 through $site-layout-columns {
+  $column-spacing: map-merge(
+    $column-spacing,
+    map-merge(
+      column-space($column),
+      column-space($column + .5, "#{$column}-1/2"),
+    )
+  );
+}
+
+
 $hu-spacing-scale: (
   auto: auto,
   0: 0,

@@ -6,7 +6,6 @@ const styles = {
   root: `
     background-color:green-400
     color:neutral-0
-    padding:site-pad
   `,
 }
 
@@ -19,7 +18,7 @@ export default ({ className, ...props }) => {
       ${ forceFullWidth }
     `} {...props}>
       <div className={`
-        padding-vertical:site-pad
+        padding:columns-0-1/2
         @mq-max-lap--text-align:center
         ${ container }
       `}>
@@ -66,7 +65,7 @@ export default ({ className, ...props }) => {
         </div>
 
         <Social className={`
-          padding-top:site-pad
+          padding-top:columns-0-1/2
         `} />
 
       </div>

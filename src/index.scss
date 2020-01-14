@@ -7,25 +7,8 @@ $site-pad-value: $site-column-value / 2;
 $site-pad: #{$site-pad-value}vw;
 $site-column: #{$site-column-value}vw;
 
-@function column-space($column: 1, $key: $column) {
-  @return (
-    columns-#{$key}: #{$site-column-value * $column}vw,
-    -columns-#{$key}: #{$site-column-value * $column * -1}vw,
-  );
-}
 
-$column-spacing: ();
-
-@for $column from 0 through $site-layout-columns {
-  $column-spacing: map-merge(
-    $column-spacing,
-    map-merge(
-      column-space($column),
-      column-space($column + .5, "#{$column}-1/2"),
-    )
-  );
-}
-
+@import "styles/utilities/tools-functions";
 @import "styles/utilities/tools-mixins";
 @import "styles/utilities/tools-typography";
 

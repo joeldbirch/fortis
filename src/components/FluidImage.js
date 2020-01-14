@@ -15,7 +15,7 @@ const FluidImage = ({ image, withFallback = false, ...props }) => {
    * Return fallback image, if no image is given.
    */
   if (!image) {
-    return withFallback ? <img src={data.fallBackImage.publicURL} alt="Fallback" {...props} /> : null
+    return withFallback ? <img src={data.fallBackImage.publicURL} alt="" {...props} /> : null
   }
 
   if (image && image.imageFile) {
