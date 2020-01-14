@@ -8,15 +8,15 @@ export const container = `
 `
 
 export const sitePadV = `
-  padding-vertical:site-pad-100
+  padding-vertical:columns-0-1/2
 `
 
 export const padTop1 = `
-  padding-top:site-pad-100
+  padding-top:columns-0-1/2
 `
 
 export const padTop2 = `
-  padding-top:site-pad-200
+  padding-top:columns-1
 `
 
 export const padTop3 = `
@@ -25,11 +25,11 @@ export const padTop3 = `
 `
 
 export const padBottom1 = `
-  padding-bottom:site-pad-100
+  padding-bottom:columns-0-1/2
 `
 
 export const padBottom2 = `
-  padding-bottom:site-pad-200
+  padding-bottom:columns-1
 `
 
 export const padBottom3 = `
@@ -100,10 +100,10 @@ export const smallText = `
 `
 
 export const guide = `
-  @mq-lap--bg-position:x-site-pad-200
+  @mq-lap--bg-position:x-columns-1
   @mq-lap--bg-size-guide-200
   bg-image-guide
-  bg-position:x-site-pad-100
+  bg-position:x-columns-0-1/2
   bg-size-guide-100
 `
 

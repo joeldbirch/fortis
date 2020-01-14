@@ -7,8 +7,8 @@ const styles = {
   root: `
     height:100vh
     min-height:50vw
-    padding-horizontal:site-pad-100
-    padding-top:site-pad-300
+    padding-horizontal:columns-0-1/2
+    padding-top:columns-1-1/2
     padding-bottom:400
     display:flex
     flex-direction:column
@@ -17,8 +17,8 @@ const styles = {
   mediaWrap: `
     flex-basis:80
     margin-top:400
-    margin-horizontal:site-pad-100
-    @mq-desk--margin-horizontal:site-pad-300
+    margin-horizontal:columns-0-1/2
+    @mq-desk--margin-horizontal:columns-1-1/2
     @mq-bigdesk--margin-horizontal:site-pad-500
     overflow:hidden
     position:relative
@@ -37,9 +37,9 @@ const styles = {
     text-align:center
     padding-bottom:200
     padding-top:400
-    @mq-desk--padding-bottom:site-pad-100
+    @mq-desk--padding-bottom:columns-0-1/2
     @mq-desk--text-align:left
-    @mq-desk--padding-left:site-pad-100
+    @mq-desk--padding-left:columns-0-1/2
     @mq-desk--flex-grow:1
   `,
   watermark: `

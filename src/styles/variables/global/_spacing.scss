@@ -25,22 +25,6 @@ $hu-spacing-scale: (
 
 );
 
-$site-padding: ();
-@for $pad from 1 through 6 {
-  $site-padding: map-merge(
-    $site-padding,
-    (
-      "site-pad-#{$pad}00": unquote("calc(var(--site-pad) * #{$pad})"),
-      "-site-pad-#{$pad}00": unquote("calc(var(--site-pad) * -#{$pad})"),
-    )
-  );
-}
-
-$hu-spacing-scale: map-merge(
-  $hu-spacing-scale,
-  $site-padding
-);
-
 $hu-spacing-scale: map-merge(
   $hu-spacing-scale,
   $column-spacing

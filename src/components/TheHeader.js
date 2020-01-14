@@ -7,7 +7,7 @@ const TheHeader = ({children}) => {
         align-items:center
         display:flex
         justify-content:space-between
-        padding:site-pad-100
+        padding:columns-0-1/2
         padding-bottom:0
         pos-left:0
         pos-top:0

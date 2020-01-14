@@ -54,13 +54,14 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
             &:before--hit-area-xy-100
             &:hover--text-decoration:underline
             z-index:200
-            margin-right:site-pad-100
-            margin-top:site-pad-100
+            margin-right:columns-0-1/2
+            margin-top:columns-0-1/2
             pos-top-right:0
+            user-select:none
           `}
           onClick={toggleMenu}
           style={{
-            width: `4em`,
+            width: `2.6em`,
             height: `1.3em`,
           }}
         >
@@ -97,12 +98,13 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
             height:100vh
             display:block
             width:100
-            max-width:75
-            @mq-palm--max-width:50
-            transition-property:transform-opacity
-            transition-duration:1000
-            padding-top:site-pad-300
-            padding-left:site-pad-300
+            max-width:columns-8-1/2
+            @mq-palm--max-width:columns-6-1/2
+            @mq-desk--max-width:columns-4-1/2
+            transition-property:opacity-transform
+            transition-duration:700
+            padding-top:columns-1-1/2
+            padding-left:columns-1
             padding-right:site-pad
             ${isOpen ?  `` : `translate-x:100 opacity:0`}
           `
@@ -121,6 +123,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
                 <MenuItem
                   className={`
                     @mq-tiny--font-size:500
+                    @mq-lap--font-size:550
                   `}
                   linkClasses={`
                     text-decoration:none

@@ -70,7 +70,6 @@ const Layout = ({
         </style>
         <body className={`
           ${bodyClasses()}
-          grid-guide
         `} />
         <html className={htmlClasses()} lang="en" />
       </Helmet>

@@ -38,7 +38,7 @@ const styles = {
     display:flex
     flex-direction:column
     justify-content:space-between
-    padding:site-pad-200
+    padding:columns-1
     pos-top-left-bottom-right:0
     position:absolute
     text-align:center
@@ -127,7 +127,7 @@ const Header = ({ className=``, siteTitle = ``, ctaClickHandler=()=>{} }) => (
                 className={`
                   ${smallText}
                   margin-vertical:0
-                  padding-bottom:site-pad-100
+                  padding-bottom:columns-0-1/2
                 `}
               >
                 589 Toorak Road, Toorak

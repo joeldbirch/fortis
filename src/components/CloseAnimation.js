@@ -22,7 +22,7 @@ const inlineStyles = {
   lines: {
     height: `100%`,
     transition: `transform 1s ${appleBezier}`,
-    width: `1px`,
+    width: `2px`,
   }
 }
 
@@ -52,10 +52,10 @@ const ClosedAnimation = ({closed=true, wrapStyles={}}) => {
           {},
           inlineStyles.lines,
           {
-            left: `0`,
+            left: `-1px`,
             transformOrigin: `0 100%`,
           },
-          closed ? {transform: `skew(-45deg)`} : {}
+          closed ? {transform: `rotate(45deg) scaleY(1.414)`} : {}
         )}
       ></span>
       <span
@@ -69,10 +69,10 @@ const ClosedAnimation = ({closed=true, wrapStyles={}}) => {
           {},
           inlineStyles.lines,
           {
-            right: `0`,
+            right: `-1px`,
             transformOrigin: `100% 100%`,
           },
-          closed ? {transform: `skew(45deg)`} : {}
+          closed ? {transform: `rotate(-45deg) scaleY(1.414)`} : {}
         )}
       ></span>
     </span>

@@ -13,8 +13,8 @@ const styles = {
   textWrap: `
     @mq-palm--flex-direction:column
     @mq-palm--display:flex
-    @mq-palm--padding-left:site-pad-200
-    @mq-lap--padding-right:site-pad-200
+    @mq-palm--padding-left:columns-1
+    @mq-lap--padding-right:columns-1
     @mq-palm--width:50
     @mq-desk--width:40
 
@@ -30,7 +30,7 @@ const styles = {
 
   image: `
     height:100
-    @mq-palm--margin-left:-site-pad-100
+    @mq-palm--margin-left:-columns-0-1/2
     @mq-bigdesk--margin-left:0
   `,
 }

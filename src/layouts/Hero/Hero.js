@@ -21,8 +21,8 @@ const Hero = ({image, label, linkTo, video}) => {
     >
       <header
         className={`
-          padding-top:site-pad-100
-          padding-horizontal:site-pad-100
+          padding-top:columns-0-1/2
+          padding-horizontal:columns-0-1/2
           position:absolute
           pos-top-left:0
           width:100
