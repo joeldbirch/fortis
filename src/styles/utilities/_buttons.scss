@@ -13,8 +13,10 @@ $selector: '.btn';
 }
 
 .btn-wrap {
+  @include rhythm-fix;
   display: inline-flex; // so it inherits text alignment and also contains button, respecting surrounding padding
-  padding-top: hu-get($hu-spacing-scale, 50);
+  padding-top: hu-get($hu-spacing-scale, columns-0-1/4);
+  font-size: hu-get($hu-font-size-types, 400);
 }
 
 .hover\:bright {

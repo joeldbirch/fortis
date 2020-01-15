@@ -23,34 +23,42 @@ const ProjectTemplateFragment = `
       }
     }
     projectDetails {
-      buildingType
       fieldGroupName
-      fullAddress
-      status
-      video
-      suburb
-      suburbImage {
-        sourceUrl
-        altText
-        imageFile {
-          childImageSharp {
-            fluid(maxHeight: 900, maxWidth: 900, quality: 90, cropFocus: CENTER) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+      detailsTable {
+        mediaDetails {
+          suburbImage {
+            sourceUrl
+            altText
+            imageFile {
+              childImageSharp {
+                fluid(maxHeight: 900, maxWidth: 900, quality: 90, cropFocus: CENTER) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
             }
           }
+          logo {
+            sourceUrl
+            altText
+            imageFile {
+              childImageSharp {
+                fluid(maxHeight: 200, maxWidth: 400, quality: 90, cropFocus: CENTER) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+              publicURL
+              extension
+            }
+          }
+          video
         }
-      }
-      logo {
-        sourceUrl
-        altText
-        imageFile {
-          childImageSharp {
-            fluid(maxHeight: 200, maxWidth: 400, quality: 90, cropFocus: CENTER) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-          publicURL
-          extension
+        textualDetails {
+          buildingType
+          suburb
+          fullAddress
+          status
+          introductoryText
+          enquiryLink
         }
       }
     }
@@ -74,10 +82,14 @@ const ProjectPreviewFragment = `
       }
     }
     projectDetails {
-      buildingType
       fieldGroupName
-      status
-      suburb
+      detailsTable {
+        textualDetails {
+          buildingType
+          suburb
+          status
+        }
+      }
     }
     projectTags {
       nodes {

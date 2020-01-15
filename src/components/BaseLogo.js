@@ -1,20 +1,20 @@
 import React from 'react'
 import FluidImage from './FluidImage'
 
-const ProjectLogo = ({ logo, alt=`` }) => {
+const ProjectLogo = ({ logo, alt=``, fallbackClasses, ...props }) => {
 
   const { imageFile } = logo
   let Logo
 
   if (imageFile) {
     if ( imageFile.childImageSharp ) {
-      Logo = () => <FluidImage image={logo} />
+      Logo = () => <FluidImage image={logo} {...props} />
 
     } else if (imageFile.extension === 'svg') {
-      Logo = () => <img src={imageFile.publicURL} alt={alt} />
+      Logo = () => <img src={imageFile.publicURL} alt={alt} {...props} />
 
     } else {
-      Logo = () => <h1>{alt}</h1>
+      Logo = () => <p className={fallbackClasses}>{alt}</p>
     }
   }
 

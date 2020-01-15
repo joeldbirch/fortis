@@ -11,8 +11,8 @@
   // @media (min-width: #{hu-get($hu-media-queries, lap)}) and (max-height: #{hu-get($hu-media-queries, palm)}) {
   //   --site-pad: 1rem;
   // }
-  @media (min-width: #{hu-get($hu-media-queries, bigdesk)}) {
-    --site-column: 6.730769231rem;
+  @media (min-width: #{hu-get($hu-media-queries, wall)}) {
+    --site-column: 7.692307692rem;
   }
 }
 /* purgecss end ignore */

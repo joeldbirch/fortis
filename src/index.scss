@@ -21,7 +21,7 @@ $site-column: #{$site-column-value}vw;
 
 // @import "styles/vendor/index";
 @import "styles/utilities/index";
-// @import "styles/scoped/index";
+@import "styles/scoped/index";
 
 @import "./node_modules/hucssley/src/styles";
 @import "styles/classes/index";

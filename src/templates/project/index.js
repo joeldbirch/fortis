@@ -8,10 +8,12 @@ import Hero from '../../layouts/Hero'
 const Project = ({ pageContext }) => {
 
   const {
-    project: {title, content, featuredImage, projectDetails},
+    project: {
+      title,
+      featuredImage,
+      projectDetails,
+    },
   } = pageContext
-
-  console.log({projectDetails});
 
 
   return (
@@ -21,12 +23,11 @@ const Project = ({ pageContext }) => {
       <Hero
         label={title}
         image={featuredImage}
-        video={projectDetails.video}
+        video={projectDetails.detailsTable.mediaDetails.video}
       />
 
       <ProjectDetails
         title={title}
-        content={content}
         {...projectDetails}
       />
 

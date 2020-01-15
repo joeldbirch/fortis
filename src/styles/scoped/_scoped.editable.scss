@@ -1,0 +1,64 @@
+// @import "../utilities/tools-typography";
+
+$scoped_container: 's-editable' !default;
+
+.u-space-items {
+  @include space-items;
+}
+
+.#{$scoped_container} {
+  // @if $scoped_container != 's-editable' {
+  //   // apply spacing to wp-editor
+  //   @include space-items;
+  // }
+
+  @include space-items;
+
+  // @include headings(('h', '.h'));
+
+  // improve vertical rhythm by mitigating unwanted line-height
+  // &:not(.s-aside) > :first-child:not([class*="margin:"]):not([class*="margin-vertical"]):not([class*="margin-top"]) {
+  //   @include rhythm-fix;
+  // }
+
+  // &:not(.s-aside) {
+  //   h3,
+  //   h4,
+  //   h5,
+  //   h6 {
+  //     &:not([class*="pos-top"]) {
+  //       position: relative;
+  //       top: 0.5rem;
+  //     }
+  //   }
+  // }
+
+  a:not([class]) {
+    color: inherit;
+    text-decoration: underline;
+
+    // @include hit-area(0.5em);
+
+    &:hover {
+      // color: hu-get($hu-colors, red 400);
+      text-decoration: none;
+    }
+  }
+
+  & > [style*="text-align: justify"] {
+    text-align: left;
+  }
+
+  // table {
+  //   font-size: hu-get($hu-font-size-types, 300);
+
+  //   @media all and (max-width: #{hu-get($hu-media-queries, lap)}) {
+  //     font-size: hu-get($hu-font-size-types, 400);
+  //   }
+  // }
+
+  ol,
+  ul {
+    list-style-position: inside;
+  }
+}
