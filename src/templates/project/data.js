@@ -1,4 +1,4 @@
-const ProjectTemplateFragment = `
+const ProjectTemplateFragment = (layouts) => `
   fragment ProjectTemplateFragment on WPGraphQL_Project {
     projectTags {
       nodes {
@@ -20,6 +20,11 @@ const ProjectTemplateFragment = `
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }
+      }
+    }
+    projectBuilder {
+      layouts {
+        ${layouts}
       }
     }
     projectDetails {

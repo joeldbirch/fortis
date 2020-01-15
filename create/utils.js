@@ -1,11 +1,11 @@
 const path = require('path')
 
-module.exports.getAllLayoutsData = () => {
+module.exports.getAllLayoutsData = (pageType=`page`) => {
   const glob = require('glob')
 
   let allLayoutsString = ''
 
-  const fileArray = glob.sync('./src/layouts/**/*.data.js')
+  const fileArray = glob.sync(`./src/layouts/${pageType}/**/*.data.js`)
 
   fileArray.forEach(function(file) {
     let queryStringFunction = require(path.resolve(file))
@@ -48,14 +48,14 @@ module.exports.createTemplate = ({ templateCacheFolderPath, templatePath, templa
 /**
  * Creates pages out of the temporary created templates.
  */
-module.exports.createPageWithTemplate = ({ createTemplate, templateCacheFolder, pageTemplate, page, pagePath, mappedLayouts, createPage, reporter }) => {
+module.exports.createPageWithTemplate = ({ createTemplate, templateCacheFolder, pageTemplate, page, pagePath, mappedLayouts, createPage, reporter, prefix=`tmp` }) => {
   /**
    * First we create a new template file for each page.
    */
   createTemplate({
     templateCacheFolderPath: templateCacheFolder,
     templatePath: pageTemplate,
-    templateName: `tmp-${page.uri}`,
+    templateName: `${prefix}-${page.uri}`,
     imports: mappedLayouts,
   }).then(() => {
     /**
@@ -63,7 +63,7 @@ module.exports.createPageWithTemplate = ({ createTemplate, templateCacheFolder, 
      */
     createPage({
       path: pagePath,
-      component: path.resolve(`${templateCacheFolder}/tmp-${page.uri}.js`),
+      component: path.resolve(`${templateCacheFolder}/${prefix}-${page.uri}.js`),
       context: {
         page: page,
       },

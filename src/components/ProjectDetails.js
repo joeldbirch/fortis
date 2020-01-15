@@ -9,11 +9,9 @@ const ProjectDetails = ({
     mediaDetails: {
       suburbImage,
       logo,
-      video,
     },
     textualDetails: {
       buildingType,
-      suburb,
       fullAddress,
       status,
       introductoryText,

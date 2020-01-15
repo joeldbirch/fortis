@@ -1,10 +1,11 @@
 const _uniqBy = require('lodash.uniqby')
 const _isEmpty = require('lodash.isempty')
 
+const { templateCacheFolder } = require('../globals')
+
 const { getAllLayoutsData, createTemplate, createPageWithTemplate } = require('./utils')
 
-const filePathToComponents = `../src/layouts/`
-const templateCacheFolder = `.template-cache`
+const filePathToComponents = `../src/layouts/page/`
 const layoutMapping = require('./layoutMapping')
 
 const pageTemplate = require.resolve('../src/templates/page')
@@ -149,6 +150,7 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
         if (layouts && layouts.length > 0) {
           const UniqueLayouts = _uniqBy(layouts, `fieldGroupName`)
 
+
           mappedLayouts = UniqueLayouts.map((layout) => {
             return {
               layoutType: layout.fieldGroupName,
@@ -157,7 +159,6 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
             }
           })
         }
-
 
         createPageWithTemplate({
           createTemplate: createTemplate,

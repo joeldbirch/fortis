@@ -26,7 +26,7 @@ const Page = ({ pageContext }) => {
           ${imports.map(({ componentName, layoutType }) => {
             return `
               if (layout.fieldGroupName === '${layoutType}') {
-                  return <${componentName} {...layout} key={index} />;
+                  return <${componentName} {...layout} key={index} />
               }
             `
           }).join('\n')}

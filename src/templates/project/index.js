@@ -1,38 +1,63 @@
-import React  from 'react'
+module.exports = (imports) => {
+  return `
+    // This is a temporary generated file. Changes to this file will be overwritten!
+    import React from 'react'
 
-import Layout from '../../components/Layout'
-import SEO from '../../components/SEO'
-import ProjectDetails from '../../components/ProjectDetails'
-import Hero from '../../layouts/Hero'
+    import Layout from '../src/components/Layout'
+    import SEO from '../src/components/SEO'
+    import ProjectDetails from '../src/components/ProjectDetails'
+    import Hero from '../src/layouts/page/Hero'
 
-const Project = ({ pageContext }) => {
-
-  const {
-    project: {
-      title,
-      featuredImage,
-      projectDetails,
-    },
-  } = pageContext
+    // ProjectBuilder Sections
+    ${imports.map(({ componentName, filePath }) => `import ${componentName} from '${filePath}';`).join('\n')}
 
 
-  return (
-    <Layout>
-      <SEO title={`${title} | project`} />
+    const Project = ({ pageContext }) => {
 
-      <Hero
-        label={title}
-        image={featuredImage}
-        video={projectDetails.detailsTable.mediaDetails.video}
-      />
+      const {
+        page: {
+          title,
+          featuredImage,
+          projectDetails,
+          projectBuilder,
+        },
+      } = pageContext
 
-      <ProjectDetails
-        title={title}
-        {...projectDetails}
-      />
+      const layouts = projectBuilder && projectBuilder.layouts ? projectBuilder.layouts : []
 
-    </Layout>
-  )
+      return (
+        <Layout>
+          <SEO title={title + ' | project'} />
+
+          <h1 className="visually-hidden">{title}</h1>
+
+          <Hero
+            label={title}
+            image={featuredImage}
+            video={projectDetails.detailsTable.mediaDetails.video}
+          />
+
+          <ProjectDetails
+            title={title}
+            {...projectDetails}
+          />
+
+          {
+            layouts.map((layout, index) => {
+              ${imports.map(({ componentName, layoutType }) => {
+                return `
+                  if (layout.fieldGroupName === '${layoutType}') {
+                      return <${componentName} {...layout} key={index} />
+                  }
+                `
+              }).join('\n')}
+            })
+          }
+
+        </Layout>
+      )
+    }
+
+    export default Project
+  `
 }
-
-export default Project

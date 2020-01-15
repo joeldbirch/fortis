@@ -1,7 +1,7 @@
 import React from 'react'
 import FluidImage from './FluidImage'
 
-const ProjectLogo = ({ logo, alt=``, fallbackClasses, ...props }) => {
+const BaseLogo = ({ logo, alt=``, fallbackClasses, ...props }) => {
 
   const { imageFile } = logo
   let Logo
@@ -21,4 +21,4 @@ const ProjectLogo = ({ logo, alt=``, fallbackClasses, ...props }) => {
   return <Logo />
 }
 
-export default ProjectLogo
+export default BaseLogo
