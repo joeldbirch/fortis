@@ -1,7 +1,6 @@
 import React from 'react'
 import Logo from './BaseLogo'
 import FluidImage from './FluidImage'
-import { uiFontSize } from '../styles/helpers'
 
 const ProjectDetails = ({
   title,
@@ -38,12 +37,9 @@ const ProjectDetails = ({
 
       <div
         className={`
-          @mq-palm--degrade-to-inline
+          @mq-palm--display:flex
           @mq-desk--padding-horizontal:columns-1
         `}
-        style={{
-          '--prefer-display': 'flex',
-        }}
       >
 
         <div className={`
@@ -51,11 +47,15 @@ const ProjectDetails = ({
           @mq-palm--padding-right:columns-1
         `}>
           <Logo logo={ logo } alt={title} style={{maxWidth: '15rem'}} />
-          <div className="u-space-items margin-top:columns-0-1/2">
+          <div className={`
+            margin-top:800
+            @mq-palm--margin-top:columns-0-1/2
+          `}>
             <p className={`
               meta
               font-size:300
               @mq-bigdesk--font-size:400
+              margin-bottom:400
             `}>
               {fullAddress}<br />
               {status} /
@@ -69,14 +69,17 @@ const ProjectDetails = ({
             >
               <p
                 className={`
-                  @mq-lap--font-size:500
+                  font-size:500
                   @mq-bigdesk--font-size:600
                 `}
               >{introductoryText}</p>
               {
                 enquiryLink
                 ?
-                  <p className="margin-top:columns-0-1/2">
+                  <p className={`
+                    margin-top:800
+                    @mq-palm--margin-top:columns-0-1/2
+                  `}>
                     <a
                       href={enquiryLink}
                       className={`

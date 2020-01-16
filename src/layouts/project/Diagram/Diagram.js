@@ -16,23 +16,17 @@ const Diagram = ({diagram, text, heading}) => {
         width:100
         max-width:container
         margin-horizontal:auto
-        margin-bottom:columns-0-1/2
-        margin-top:columns-0-1/2
+        padding-top:800
+        @mq-palm--padding-top:columns-0-1/2
         position:relative
-        grid-guide
       `}
-      style={{
-        '--guides-max-width': '100rem',
-        '--guide-color': 'hsla(350, 100%, 48%, 0.1)',
-        '--position': 'absolute'
-      }}
     >
       <div className={`
         @mq-widepalm--position:absolute
         @mq-palm--margin-left:columns-6
         @mq-desk--margin-left:columns-7
         @mq-palm--width:columns-6
-        @mq-palm--max-width:small-column
+        max-width:small-column
 
       `}>
         <h2 class={`${subhead}`}>

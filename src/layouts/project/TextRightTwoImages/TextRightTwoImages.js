@@ -19,10 +19,10 @@ const TextRightTwoImages = ({
     <section
       className={`
         padding-horizontal:columns-0-1/2
+        padding-vertical:columns-0-1/2
         width:100
         max-width:container
         margin-horizontal:auto
-        margin-vertical:columns-0-1/2
         position:relative
         grid-guide
         join-start

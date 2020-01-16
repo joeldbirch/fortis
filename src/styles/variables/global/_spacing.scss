@@ -26,13 +26,15 @@ $hu-spacing-scale: (
   // 500: hu-rem(24),
   // 525: hu-rem(26),
   // 550: hu-rem(28),
-  600: hu-rem(32),
-  700: hu-rem(48),
+  600: hu-rem(24),
+  700: hu-rem(48), // remove
+  800: hu-rem(32),
+  1000: hu-rem(40),
 
   "9/16": 56.25%,
-  600p: 60%,
-  700p: 70%,
-  800p: 80%,
+  600p: 60%, // remove
+  700p: 70%, // remove
+  800p: 80%, // remove
 
   "-50vw": -50vw,
 

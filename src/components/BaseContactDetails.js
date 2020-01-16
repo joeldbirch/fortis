@@ -3,7 +3,7 @@ import React from 'react'
 export default ({ firstName, lastName, email, phone }) => (
   <address
     className="vcard font-style:normal
-  font-size:300 @mq-desk--font-size:400"
+  font-size:200 @mq-desk--font-size:400"
   >
     <span className="fn n">
       <span className="given-name">{firstName}</span>{' '}

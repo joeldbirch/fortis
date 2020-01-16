@@ -27,15 +27,6 @@ const Layout = ({
   ...props
 }) => {
 
-
-  function bodyClasses() {
-    return `${isIos() || isSafari() ? `is-safari` : ``} `
-  }
-
-  function htmlClasses() {
-    return ``
-  }
-
   const [menuOpen, toggleMenu] = useState(false)
 
   // const data = useStaticQuery(graphql`
@@ -69,9 +60,12 @@ const Layout = ({
         `}
         </style>
         <body className={`
-          ${bodyClasses()}
+          ${isIos() || isSafari() ? `is-safari` : ``}
+
         `} />
-        <html className={htmlClasses()} lang="en" />
+        <html className={`
+          @mq-max-palm--font-size:300
+        `} lang="en" />
       </Helmet>
 
       <TheHeader>
@@ -96,7 +90,13 @@ const Layout = ({
         <Menu toggleHandler={toggleMenu} isOpen={menuOpen} className="pointer-events:auto" />
       </TheHeader>
 
-      <Main>
+      <Main
+        style={{
+          '--guides-max-width': '100rem',
+          '--guide-color': 'hsla(350, 100%, 48%, 0.1)',
+          '--position': 'absolute'
+        }}
+      >
         {children}
       </Main>
 
