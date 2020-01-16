@@ -25,11 +25,9 @@ const ProjectDetails = ({
       className={`
         padding-horizontal:columns-0-1/2
         padding-top:site-top
-        padding-bottom:columns-0-1/2
         max-width:container
         margin-horizontal:auto
         position:relative
-        grid-guide
       `}
       style={{
         '--guides-max-width': '100rem',
@@ -71,7 +69,7 @@ const ProjectDetails = ({
             >
               <p
                 className={`
-                  ${uiFontSize}
+                  @mq-lap--font-size:500
                   @mq-bigdesk--font-size:600
                 `}
               >{introductoryText}</p>

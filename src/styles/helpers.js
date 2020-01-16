@@ -38,10 +38,12 @@ export const padBottom3 = `
 `
 
 export const subhead = `
-  @mq-desk--font-size:400
-  font-size:300
-  letter-spacing:20
-  text-case:upper
+  @mq-bigdesk--font-size:600
+  @mq-lap--font-size:500
+  font-size:500
+  font-weight:400
+  margin-bottom:400
+  rhythm-fix-after
 `
 
 export const button = `

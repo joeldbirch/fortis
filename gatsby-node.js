@@ -37,6 +37,19 @@ exports.createResolvers = (
           })
         },
       },
+      imageFilePortrait: {
+        type: `File`,
+        resolve(source, args, context, info) {
+          return createRemoteFileNode({
+            url: source.sourceUrl,
+            store,
+            cache,
+            createNode,
+            createNodeId,
+            reporter,
+          })
+        },
+      },
     },
     WPGraphQL_Page: {
       title: {

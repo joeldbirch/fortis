@@ -19,6 +19,7 @@ $hu-max-width-types: hu-append($hu-max-width-types,
     container: hu-rem(1600),
 
     caption: 12em,
+    small-column: 19em,
     measure: 47.115em, // 7 columns at 1400px window width
   )
 );
