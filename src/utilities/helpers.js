@@ -31,23 +31,33 @@ export const getSvgInline = (image) => (
 )
 
 export const fetchSvgInline = (image) => {
-  fetch(image.src)
+  fetch(image.currentSrc || image.src)
     .then((response) => response.text())
     .then((response) => {
-      let svgStr = response
+      const svgStr = response
 
-      if (svgStr.indexOf('height') === -1) {
-        const height = image.height
-        const width = image.width
-
-        svgStr = svgStr.replace('<svg', `<svg height="${height}" width="${width}"`)
+      if (svgStr.indexOf('<svg') === -1) {
+        return
       }
 
       const span = document.createElement('span')
+
       span.innerHTML = svgStr
 
       const inlineSvg = span.getElementsByTagName('svg')[0]
+
+      inlineSvg.setAttribute('aria-label', image.alt || '')
       inlineSvg.setAttribute('class', image.className) // IE doesn't support classList on SVGs
+      inlineSvg.setAttribute('focusable', false)
+      inlineSvg.setAttribute('role', 'img')
+
+      if (image.height) {
+        inlineSvg.setAttribute('height', image.height)
+      }
+
+      if (image.width) {
+        inlineSvg.setAttribute('width', image.width)
+      }
 
       image.parentNode.replaceChild(inlineSvg, image)
     })
@@ -88,7 +98,7 @@ export const CreateLocalLink = (menuItem, wordPressUrl, blogURI=`news/`) => {
   return newUri
 }
 
-export const convertAmpersands = text => text.replace(`&#038;`,`&`).replace(`&amp;`,`&`)
+export const convertAmpersands = text => text.replace(`&#038`,`&`).replace(`&amp`,`&`)
 
 export const getPath = link => {
   const path = new URL(link)

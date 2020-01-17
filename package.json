@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "dotenv": "^8.2.0",
+    "fibers": "^4.0.2",
     "fix-outline": "https://github.com/joeldbirch/fix-outline.git",
     "gatsby-image": "^2.2.38",
     "gatsby-plugin-google-fonts": "^1.0.1",
@@ -33,11 +34,11 @@
     "lodash.uniqby": "^4.7.0",
     "prop-types": "^15.7.2",
     "react-helmet": "^5.2.1",
-    "react-modal": "^3.11.1"
+    "react-modal": "^3.11.1",
+    "sass": "^1.24.5"
   },
   "devDependencies": {
     "gatsby": "^2.18.21",
-    "node-sass": "^4.13.0",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",

@@ -1,3 +1,5 @@
+const Fiber = require('fibers')
+
 let activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || `development`
 console.log(`Using environment config: ${activeEnv}`)
 
@@ -39,7 +41,13 @@ module.exports = {
     },
     `gatsby-plugin-polyfill-io`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        implementation: require(`sass`),
+        fiber: Fiber,
+      },
+    },
     {
       resolve: `gatsby-plugin-react-svg`,
       options: {

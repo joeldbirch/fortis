@@ -29,7 +29,7 @@ const Diagram = ({diagram, text, heading}) => {
         max-width:small-column
 
       `}>
-        <h2 class={`${subhead}`}>
+        <h2 className={`${subhead}`}>
           {heading}
         </h2>
         <p>{text}</p>

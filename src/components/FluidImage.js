@@ -10,7 +10,6 @@ const FluidImage = ({ image, withFallback = false, ...props }) => {
       }
     }
   `)
-
   /**
    * Return fallback image, if no image is given.
    */
@@ -18,12 +17,10 @@ const FluidImage = ({ image, withFallback = false, ...props }) => {
     return withFallback ? <img src={data.fallBackImage.publicURL} alt="" {...props} /> : null
   }
 
-  if (image && image.imageFile) {
-    return <GatsbyImage fluid={image.imageFile.childImageSharp.fluid} alt={image.altText}{...props} />
-  }
+  const normalisedFile = image.imageFile || image.imageFilePortrait
 
-  if (image && image.imageFilePortrait) {
-    return <GatsbyImage fluid={image.imageFilePortrait.childImageSharp.fluid} alt={image.altText}{...props} />
+  if (normalisedFile) {
+    return <GatsbyImage fluid={normalisedFile.childImageSharp.fluid} alt={image.altText} {...props} />
   }
 
   return <img src={image.sourceUrl} alt={image.altText} {...props} />

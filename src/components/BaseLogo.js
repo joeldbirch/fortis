@@ -1,24 +1,20 @@
 import React from 'react'
 import FluidImage from './FluidImage'
+import SvgImg from './SvgImg'
 
 const BaseLogo = ({ logo, alt=``, fallbackClasses, ...props }) => {
-
   const { imageFile } = logo
-  let Logo
 
-  if (imageFile) {
-    if ( imageFile.childImageSharp ) {
-      Logo = () => <FluidImage image={logo} {...props} />
+  switch (true) {
+    case imageFile && imageFile.childImageSharp:
+      return <FluidImage image={logo} {...props} />
 
-    } else if (imageFile.extension === 'svg') {
-      Logo = () => <img src={imageFile.publicURL} alt={alt} {...props} />
+    case imageFile && imageFile.extension === 'svg':
+      return <SvgImg src={imageFile.publicURL} alt={alt} {...props} />
 
-    } else {
-      Logo = () => <p className={fallbackClasses}>{alt}</p>
-    }
+    default:
+      return <p className={fallbackClasses}>{alt}</p>
   }
-
-  return <Logo />
 }
 
 export default BaseLogo

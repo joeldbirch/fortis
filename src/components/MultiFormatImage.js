@@ -1,5 +1,6 @@
 import React from 'react'
 import FluidImage from './FluidImage'
+import SvgImg from './SvgImg'
 
 const MultiFormatImage = ({ image, alt=``, fallbackClasses, ...props }) => {
 
@@ -11,7 +12,11 @@ const MultiFormatImage = ({ image, alt=``, fallbackClasses, ...props }) => {
       Image = () => <FluidImage image={image} {...props} />
 
     } else if (imageFile.extension === 'svg') {
-      Image = () => <img src={imageFile.publicURL} alt={alt} {...props} />
+      Image = () => <SvgImg
+        alt={alt}
+        src={imageFile.publicURL}
+        {...props}
+      />
 
     } else {
       Image = () => <p className={fallbackClasses}>{alt}</p>

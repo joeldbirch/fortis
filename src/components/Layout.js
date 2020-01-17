@@ -64,7 +64,8 @@ const Layout = ({
 
         `} />
         <html className={`
-          @mq-max-palm--font-size:300
+          font-size:300
+          @mq-lap--font-size:400
         `} lang="en" />
       </Helmet>
 

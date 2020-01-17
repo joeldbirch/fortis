@@ -3,7 +3,7 @@ import { fetchSvgInline } from '../utilities/helpers'
 
 export default class extends Component {
 
-  constructor(props) {
+  constructor({props}) {
     super(props)
     this.imgRef = createRef()
   }

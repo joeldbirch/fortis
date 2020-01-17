@@ -121,7 +121,7 @@ export const handwritten = `
   font-weight:400
   font-size:400
   @mq-palm--font-size:500
-  @mq-bigdesk--font-size:600
+  @mq-bigdesk--font-size:550
 `
 
 export const centred = `
