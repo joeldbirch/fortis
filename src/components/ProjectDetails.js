@@ -72,37 +72,32 @@ const ProjectDetails = ({
             </p>
 
             <div
+              dangerouslySetInnerHTML={{__html: introductoryText}}
               className={`
                 s-editable
+                font-size:500
+                @mq-bigdesk--font-size:600
               `}
-            >
-              <div
-                dangerouslySetInnerHTML={{__html: introductoryText}}
-                className={`
-                  font-size:500
-                  @mq-bigdesk--font-size:600
-                `}
-              />
-              {
-                enquiryLink
-                ?
-                  <p className={`
-                    margin-top:800
-                    @mq-palm--margin-top:columns-0-1/2
-                  `}>
-                    <a
-                      href={enquiryLink}
-                      className={`
-                        btn
-                        display:inline-block
-                      `}
-                    >
-                      Enquire
-                    </a>
-                  </p>
-                : ``
-              }
-            </div>
+            />
+            {
+              enquiryLink
+              ?
+                <p className={`
+                  margin-top:800
+                  @mq-palm--margin-top:columns-0-1/2
+                `}>
+                  <a
+                    href={enquiryLink}
+                    className={`
+                      btn
+                      display:inline-block
+                    `}
+                  >
+                    Enquire
+                  </a>
+                </p>
+              : ``
+            }
           </div>
         </div>
 
