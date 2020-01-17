@@ -4,78 +4,82 @@ import { subhead, handwritten } from '../../../styles/helpers'
 
 const styles = {
   root: `
+    @mq-palm--padding-vertical:columns-0-1/2
+    grid-guide
+    margin-horizontal:auto
+    max-width:container
     padding-horizontal:columns-0-1/2
     padding-vertical:800
-    @mq-palm--padding-vertical:columns-0-1/2
-    width:100
-    max-width:container
-    margin-horizontal:auto
     position:relative
-    grid-guide
+    width:100
   `,
   wrapColumns: `
     🎁wrap-columns
-    width:100
-    flex-direction:row-reverse
-    @mq-palm--display:flex
     @mq-desk--padding-horizontal:columns-1
+    @mq-palm--display:flex
+    flex-direction:row-reverse
     justify-content:space-between
+    width:100
   `,
   startColumn: `
     🏁start-column
-    display:flex
-    flex-direction:column-reverse
+    @mq-desk--width:columns-5
     @mq-palm--flex-direction:column
     @mq-palm--width:columns-4
-    @mq-widepalm--width:columns-6
-    @mq-desk--width:columns-5
     @mq-widepalm--justify-content:space-between
+    @mq-widepalm--width:columns-6
+    display:flex
+    flex-direction:column-reverse
   `,
   endColumn: `
     🎬end-column
-    display:flex
-    flex-direction:column
-    position:relative
-    @mq-lap--align-items:flex-end
+    @mq-desk--width:columns-5
     @mq-lap--justify-content:space-between
+    @mq-palm--align-items:flex-end
     @mq-palm--padding-right:columns-1
     @mq-palm--width:columns-8
     @mq-widepalm--width:columns-6
-    @mq-desk--width:columns-5
-  `,
-  startColumnStartRow: `
-    max-width:small-column
-    width:100
-    @mq-tiny--margin-bottom:columns-0-1/2
-    max-width:small-column
-    @mq-widepalm--max-width:columns-4
-    @mq-widepalm--align-self:flex-end
-    @mq-desk--width:columns-3
-  `,
-  startColumnEndRow: `
-    max-width:small-column
-    @mq-desk--justify-self:flex-end
-  `,
-  endColumnStartRow: `
-    @mq-tiny--position:absolute
-    @mq-palm--position:static
-    @mq-widepalm--position:absolute
-    @mq-widepalm--pos-right:0
-    @mq-widepalm--margin-right:-columns-2
-    @mq-widepalm--margin-top:columns-1
-    @mq-widepalm--pos-top:400
-    @mq-widepalm--width:columns-2-1/2
-    @mq-max-palm--pos-bottom:100
-    @mq-max-palm--pos-right:0
-    @mq-max-palm--width:columns-8
     display:flex
     flex-direction:column
+    position:relative
+  `,
+  startColumnStartRow: `
+    @mq-desk--width:columns-3
+    @mq-tiny--margin-bottom:columns-0-1/2
+    @mq-widepalm--align-self:flex-end
+    @mq-widepalm--max-width:columns-4
+    max-width:small-column
+    max-width:small-column
+    width:100
+  `,
+  startColumnEndRow: `
+    @mq-desk--justify-self:flex-end
+    max-width:small-column
+  `,
+  endColumnStartRow: `
     @mq-lap--align-items:flex-end
+    @mq-max-palm--pos-bottom:100
+    @mq-max-palm--pos-right:0
+    @mq-palm--max-width:100
+    @mq-palm--max-width:caption
+    @mq-palm--position:static
+    @mq-tiny--max-width:var
+    @mq-tiny--position:absolute
+    @mq-widepalm--margin-right:-columns-2
+    @mq-widepalm--margin-top:columns-1
+    @mq-widepalm--pos-right:0
+    @mq-widepalm--pos-top:400
+    @mq-widepalm--position:absolute
+    @mq-widepalm--width:columns-2-1/2
+    @mq-desk--padding-right:columns-0-1/2
+    display:flex
+    flex-direction:column
+    max-width:small-column
     padding-horizontal:400
   `,
   endColumnEndRow: `
-    width:100
     height:100
+    width:100
   `,
 }
 
@@ -110,13 +114,8 @@ const TextRightTwoImages = ({
 
 
         <div className={styles.endColumn}>
-          <div
-            className={`
-              ${styles.endColumnStartRow}
-              @mq-tiny--max-width:var
-              @mq-palm--max-width:100
-            `}
-            style={{'--max-width' : 'calc(90vw - 19em)'}}
+          <div className={` ${styles.endColumnStartRow} `}
+            style={{'--max-width' : 'calc(90vw - 17.5em)'}}
           >
             <span
               className={`
@@ -131,6 +130,7 @@ const TextRightTwoImages = ({
                 @mq-palm--padding-top:0
                 rhythm-fix-after
                 rhythm-fix-before
+                @mq-palm--width:small-caption
               `}
             >{bobNote}</span>
           </div>
@@ -140,6 +140,7 @@ const TextRightTwoImages = ({
               image={bobLargerImage}
               className={`
                 height:100
+                @mq-max-palm--max-width:small-column
               `}
             />
           </div>

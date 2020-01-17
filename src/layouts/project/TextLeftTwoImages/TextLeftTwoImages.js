@@ -4,67 +4,67 @@ import { subhead, handwritten } from '../../../styles/helpers'
 
 const styles = {
   root: `
+    @mq-palm--padding-vertical:columns-0-1/2
+    margin-horizontal:auto
+    max-width:container
     padding-horizontal:columns-0-1/2
     padding-vertical:800
-    @mq-palm--padding-vertical:columns-0-1/2
-    width:100
-    max-width:container
-    margin-horizontal:auto
     position:relative
+    width:100
     grid-guide
   `,
   wrapColumns: `
     🎁wrap-columns
-    width:100
-    @mq-palm--display:flex
     @mq-desk--padding-horizontal:columns-1
+    @mq-palm--display:flex
     justify-content:space-between
+    width:100
   `,
   startColumn: `
     🏁start-column
+    @mq-desk--align-self:flex-start
+    @mq-palm--flex-direction:column
     display:flex
     flex-direction:column-reverse
-    @mq-palm--flex-direction:column
-    @mq-desk--align-self:flex-start
   `,
   endColumn: `
     🎬end-column
+    @mq-lap--align-items:flex-end
+    @mq-lap--justify-content:space-between
     display:flex
     flex-direction:column
     position:relative
-    @mq-lap--align-items:flex-end
-    @mq-lap--justify-content:space-between
   `,
   startColumnStartRow: `
-    width:columns-10
+    @mq-desk--max-width:100
+    @mq-desk--width:columns-2
+    @mq-palm--width:columns-3
     @mq-tiny--margin-bottom:columns-0-1/2
-    max-width:caption
-    @mq-palm--padding-right:800
-    @mq-bigdesk--padding-right:1000
-    @mq-bigdesk--max-width:small-column
+    width:caption
   `,
   startColumnEndRow: `
     max-width:small-column
   `,
   endColumnStartRow: `
-    @mq-tiny--position:absolute
-    @mq-palm--position:static
+    @mq-lap--align-self:flex-start
     @mq-max-palm--pos-bottom:100
     @mq-max-palm--pos-right:0
     @mq-max-palm--width:columns-8
+    @mq-palm--position:static
+    @mq-tiny--max-width:var
+    @mq-tiny--position:absolute
     display:flex
-    flex-direction:column
     flex-basis:40
-    @mq-lap--align-self:flex-start
+    flex-direction:column
     padding-horizontal:columns-0-1/2
   `,
   endColumnEndRow: `
-    align-self:flex-end
+    @mq-desk--width:columns-7
     @mq-palm--padding-left:columns-1
     @mq-palm--width:columns-8
-    @mq-desk--width:columns-7
-    width:100
+    align-self:flex-end
     flex-basis:60
+    width:100
   `,
 }
 
@@ -82,6 +82,7 @@ const TextLeftTwoImages = ({
         <div className={styles.startColumn}>
           <div className={styles.startColumnStartRow}>
             <FluidImage
+              className={` @mq-palm--margin-right:-400`}
               image={billSmallerImage}
             />
           </div>
@@ -100,7 +101,7 @@ const TextLeftTwoImages = ({
 
         <figure className={styles.endColumn}>
           <figcaption
-            className={`${styles.endColumnStartRow} @mq-tiny--max-width:var`}
+            className={`${styles.endColumnStartRow}`}
             style={{'--max-width' : 'calc(90vw - 12em)'}}
           >
             <span

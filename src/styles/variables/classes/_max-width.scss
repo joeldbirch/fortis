@@ -18,9 +18,10 @@ $hu-max-width-types: hu-append($hu-max-width-types,
     100vw: 100vw,
     container: hu-rem(1600),
     var: unquote('var(--max-width)'),
+    small-caption: 5em,
     caption: 12em,
     logo: 15em,
-    small-column: 19em,
+    small-column: 17.5em,
     measure: 47.115em, // 7 columns at 1400px window width
   )
 );

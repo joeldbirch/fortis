@@ -49,8 +49,8 @@ const ProjectDetails = ({
           <Logo
             logo={ logo }
             alt={`${title} logo`}
-            width="240"
-            height="73"
+            width="264"
+            height="80"
             className={`
               max-width:logo
             `}
@@ -76,12 +76,13 @@ const ProjectDetails = ({
                 s-editable
               `}
             >
-              <p
+              <div
+                dangerouslySetInnerHTML={{__html: introductoryText}}
                 className={`
                   font-size:500
                   @mq-bigdesk--font-size:600
                 `}
-              >{introductoryText}</p>
+              />
               {
                 enquiryLink
                 ?

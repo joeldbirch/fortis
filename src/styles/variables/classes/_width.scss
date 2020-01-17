@@ -4,6 +4,8 @@ $hu-width-types: hu-append(
     50: 50%,
     100: 100%,
     hero-100: unquote("calc((100vh - 7vmin) * 1.777777778)"),
+    caption: 12em,
+    small-caption: 5em,
   )
 );
 
