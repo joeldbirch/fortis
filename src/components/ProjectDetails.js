@@ -28,11 +28,6 @@ const ProjectDetails = ({
         margin-horizontal:auto
         position:relative
       `}
-      style={{
-        '--guides-max-width': '100rem',
-        '--guide-color': 'hsla(350, 100%, 48%, 0.1)',
-        '--position': 'absolute'
-      }}
     >
 
       <div

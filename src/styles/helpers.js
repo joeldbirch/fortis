@@ -120,6 +120,7 @@ export const handwritten = `
   font-family:cursive
   font-weight:400
   font-size:400
+  line-height:200
   @mq-palm--font-size:500
   @mq-bigdesk--font-size:550
 `

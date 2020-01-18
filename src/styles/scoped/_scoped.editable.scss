@@ -62,6 +62,13 @@ $scoped_container: 's-editable' !default;
     list-style-position: inside;
   }
 
+  blockquote {
+    font-size: #{hu-get($hu-font-size-types, 500)};
+    @media (min-width: #{hu-get($hu-media-queries, bigdesk)}) {
+      font-size: hu-get($hu-font-size-types, 600);
+    }
+  }
+
   strong {
     display: inline-block;
     font-weight: normal;

@@ -22,7 +22,7 @@ const Diagram = ({diagram, text, heading}) => {
       `}
     >
       <div className={`
-        @mq-widepalm--position:absolute
+        @mq-palm--position:absolute
         @mq-palm--margin-left:columns-6
         @mq-desk--margin-left:columns-7
         @mq-palm--width:columns-6
@@ -41,7 +41,8 @@ const Diagram = ({diagram, text, heading}) => {
         <MultiFormatImage
           image={diagram}
           className={`
-            max-width:100
+            width:100
+            height:auto
           `}
         />
       </div>

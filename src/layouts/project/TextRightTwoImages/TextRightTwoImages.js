@@ -5,7 +5,6 @@ import { subhead, handwritten } from '../../../styles/helpers'
 const styles = {
   root: `
     @mq-palm--padding-vertical:columns-0-1/2
-    grid-guide
     margin-horizontal:auto
     max-width:container
     padding-horizontal:columns-0-1/2

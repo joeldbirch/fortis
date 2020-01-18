@@ -11,7 +11,6 @@ const styles = {
     padding-vertical:800
     position:relative
     width:100
-    grid-guide
   `,
   wrapColumns: `
     🎁wrap-columns
