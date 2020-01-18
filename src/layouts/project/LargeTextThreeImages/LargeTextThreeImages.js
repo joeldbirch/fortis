@@ -11,41 +11,6 @@ const styles = {
     padding-vertical:800
     position:relative
     width:100
-    grid-guide
-  `,
-  wrapColumns: `
-    🎁wrap-columns
-    @mq-desk--padding-horizontal:columns-1
-    @mq-palm--display:flex
-    justify-content:space-between
-    width:100
-  `,
-  startColumn: `
-    🏁start-column
-    @mq-desk--align-self:flex-start
-    @mq-palm--flex-direction:column
-    display:flex
-    flex-direction:column-reverse
-  `,
-  endColumn: `
-    🎬end-column
-    @mq-lap--align-items:flex-end
-    @mq-lap--justify-content:space-between
-    display:flex
-    flex-direction:column
-    position:relative
-  `,
-  startColumnEndRow: `
-    max-width:small-column
-  `,
-
-  endColumnEndRow: `
-    @mq-desk--width:columns-7
-    @mq-palm--padding-left:columns-1
-    @mq-palm--width:columns-8
-    align-self:flex-end
-    flex-basis:60
-    width:100
   `,
 }
 
@@ -68,13 +33,16 @@ const LargeTextThreeImages = ({
     <section className={styles.root}>
       <div
         className={`
-          @mq-palm--display:flex
+          display:flex
+          flex-direction:column-reverse
+          @mq-tiny--flex-direction:row
+          justify-content:space-between
           @mq-desk--padding-horizontal:columns-1
         `}
       >
 
         <div className={`
-          @mq-palm--width:50
+          @mq-tiny--width:50
           @mq-palm--padding-right:columns-1
           @mq-lap--margin-top:columns-1
         `}>
@@ -82,21 +50,27 @@ const LargeTextThreeImages = ({
             dangerouslySetInnerHTML={{__html: benText}}
             className={`
               s-editable
+              rhythm-fix-before
+              rhythm-fix-after
             `}
           />
           <figure className={`
-            margin-top:columns-1
+            margin-top:800
+            @mq-tiny--margin-top:columns-1
             @mq-tiny--display:flex
+            @mq-tiny--margin-right:-columns-6
             @mq-desk--margin-right:-columns-2
             @mq-desk--margin-left:columns-1
             @mq-palm--margin-right:-columns-1
             align-items:center
           `}>
             <div className={`
+              box-sizing:content-box
               @mq-desk--max-width:100
+              @mq-tiny--width:columns-5
               @mq-palm--width:columns-3
               @mq-desk--width:columns-2
-              @mq-tiny--margin-bottom:columns-0-1/2
+              @mq-lap--padding-right:400
               width:caption
             `}>
               <FluidImage
@@ -106,8 +80,8 @@ const LargeTextThreeImages = ({
             </div>
             <figcaption
               className={`
-                @mq-tiny--max-width:var
-                @mq-tiny--padding-left:columns-0-1/2
+                @mq-palm--max-width:var
+                @mq-tiny--padding-left:800
                 flex-basis:40
               `}
               style={{'--max-width' : 'calc(90vw - 12em)'}}
@@ -116,7 +90,6 @@ const LargeTextThreeImages = ({
                 className={`
                   ${handwritten}
                   display:block
-                  @mq-tiny--margin-top:-1000
                   text-align:left
                   padding-vertical:columns-0-1/2
                   rhythm-fix-after
@@ -128,19 +101,60 @@ const LargeTextThreeImages = ({
         </div>
 
         <div className={`
+          @mq-tiny--width:columns-5
           @mq-palm--width:50
           @mq-desk--padding-left:columns-1
         `}>
           <FluidImage
             image={benLargerImage}
             className={`
-              @mq-max-palm--margin-top:columns-0-1/2
-              @mq-max-palm--max-width:small-column
+              margin-bottom:800
+              @mq-tiny--margin-bottom:0
+              @mq-tiny--max-width:100
+              max-width:small-column
 
             `}
           />
         </div>
       </div>
+
+      <figure className={`
+        margin-top:800
+        @mq-palm--margin-right:columns-2
+        @mq-desk--margin-right:columns-3
+        @mq-tiny--margin-top:columns-1
+        @mq-tiny--display:flex
+        @mq-tiny--flex-direction:row-reverse
+        align-items:center
+      `}>
+        <FluidImage
+          className={`
+            max-width:small-column
+            width:100
+            @mq-tiny--max-width:columns-5
+            @mq-desk--max-width:columns-4
+          `}
+          image={benOtherSmallerImage}
+        />
+        <figcaption
+          className={`
+            @mq-tiny--padding-horizontal:800
+            @mq-desk--padding-horizontal:columns-1
+            flex-grow:1
+          `}
+        >
+          <span
+            className={`
+              ${handwritten}
+              display:block
+              text-align:left
+              @mq-tiny--text-align:center
+              padding-vertical:columns-0-1/2
+            `}
+          >{benOtherNote}</span>
+        </figcaption>
+      </figure>
+
     </section>
   )
 }
