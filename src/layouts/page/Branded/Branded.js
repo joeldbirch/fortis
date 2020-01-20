@@ -1,6 +1,7 @@
 import React from 'react'
 import FluidImage from 'components/FluidImage'
 import FullWindowVideo from 'components/FullWindowVideo'
+import Divider from 'components/DividerHorizontal'
 import { handwritten } from 'styles/helpers'
 
 const styles = {
@@ -13,6 +14,7 @@ const styles = {
     display:flex
     flex-direction:column
     justify-content:space-between
+    position:relative
   `,
   mediaWrap: `
     flex-basis:60
@@ -105,6 +107,7 @@ const Branded = ({image, text, video=null}) => {
           loading="lazy"
         />
       </div>
+      <Divider bottom={true} />
     </section>
   )
 }

@@ -11,7 +11,6 @@ const TextBlock = ({text}) => {
         width:100
         padding-vertical:800
         position:relative
-        grid-guide
         min-height:100vh
         display:flex
       `}

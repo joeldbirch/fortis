@@ -3,8 +3,8 @@ import NewsPreviews from 'components/NewsPreviews'
 import NewsIntro from 'components/NewsIntro'
 import NewsHeader from 'components/NewsHeader'
 import SectionHeader from 'components/SectionHeader'
+import Divider from 'components/DividerHorizontal'
 import { useNewsData  } from 'hooks/use-news-data'
-// import { divider  } from '../../../styles/helpers'
 import { blogURI } from '../../../../globals'
 
 const LinkToNewsPage = () => (
@@ -34,25 +34,29 @@ const NewsOverview = ({sectionHeading, introText}) => {
   if (!posts) return null
   return (
     <section className={`
-      padding-horizontal:columns-0-1/2
-      @mq-desk--padding-horizontal:columns-1-1/2
-      margin-horizontal:auto
-      max-width:container
-      padding-bottom:800
       position:relative
-      grid-guide
-
     `}>
-      <SectionHeader>
-        <NewsHeader />
-      </SectionHeader>
+      <Divider />
+      <div
+        className={`
+          padding-horizontal:columns-0-1/2
+          @mq-desk--padding-horizontal:columns-1-1/2
+          margin-horizontal:auto
+          max-width:container
+          padding-bottom:800
+          grid-guide
+        `}
+      >
+        <SectionHeader>
+          <NewsHeader />
+        </SectionHeader>
 
-      <NewsPreviews
-        posts={posts}
-        intro={<Intro content={introText} />}
-        pagination={hasNextPage ? <LinkToNewsPage /> : () => {}}
-      />
-
+        <NewsPreviews
+          posts={posts}
+          intro={<Intro content={introText} />}
+          pagination={hasNextPage ? <LinkToNewsPage /> : () => {}}
+        />
+      </div>
     </section>
   )
 }
