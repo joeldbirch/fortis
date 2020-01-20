@@ -1,5 +1,5 @@
 import React from 'react'
-import PostEntry from '../PostEntry'
+import PostEntry from 'components/PostEntry'
 import { blogURI } from '../../../globals'
 
 const NewsPreview = ({posts, intro, pagination}) => {

@@ -4,7 +4,7 @@ import NewsIntro from 'components/NewsIntro'
 import NewsHeader from 'components/NewsHeader'
 import SectionHeader from 'components/SectionHeader'
 import { useNewsData  } from 'hooks/use-news-data'
-// import { container  } from '../../../styles/helpers'
+// import { divider  } from '../../../styles/helpers'
 import { blogURI } from '../../../../globals'
 
 const LinkToNewsPage = () => (
@@ -38,7 +38,7 @@ const NewsOverview = ({sectionHeading, introText}) => {
       @mq-desk--padding-horizontal:columns-1-1/2
       margin-horizontal:auto
       max-width:container
-      padding-vertical:800
+      padding-bottom:800
       position:relative
       grid-guide
 

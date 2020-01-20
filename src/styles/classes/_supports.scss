@@ -17,8 +17,8 @@
   }
 }
 
-.no-grid-gap--margin-bottom-700 {
-  margin-bottom: hu-get($hu-spacing-scale, 700);
+.no-grid-gap--margin-bottom-800 {
+  margin-bottom: hu-get($hu-spacing-scale, 800);
 
   @supports (grid-gap: 1rem) {
     margin-bottom: 0;
