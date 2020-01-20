@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default ({bottom}) => {
+export default ({className, bottom, ...props}) => {
+
   return (
     <div
       className={`
+        ${className}
         margin-horizontal:columns-0-1/2
         border-top-width:100
         border-top-style:solid
@@ -12,6 +14,7 @@ export default ({bottom}) => {
         position:absolute
         ${bottom ? `pos-bottom:0` : `pos-top:0` }
       `}
+      { ...props }
     />
   )
 }

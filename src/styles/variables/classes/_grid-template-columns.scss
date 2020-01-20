@@ -6,7 +6,7 @@ $hu-grid-template-columns-types: (
   3: 1fr 1fr 1fr,
   4: 1fr 1fr 1fr 1fr,
   5: 1fr 1fr 1fr 1fr 1fr,
-  var1: var(--grid-template-columns-var1, 1fr),
-  var2: var(--grid-template-columns-var2, 1fr),
-  var3: var(--grid-template-columns-var3, 1fr),
+  var-1: var(--grid-template-columns-var-1, 1fr),
+  var-2: var(--grid-template-columns-var-2, 1fr),
+  var-3: var(--grid-template-columns-var-3, 1fr),
 );

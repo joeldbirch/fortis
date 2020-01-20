@@ -27,7 +27,7 @@
   border:{
     width: 1px;
     style: solid;
-    color: inherit;
+    color: #{hu-get($hu-colors, neutral 600)};
   }
   border-radius: 0; // remove iOS rounding
   color: #{hu-get($hu-colors, black 80)};
@@ -38,6 +38,9 @@
   text-decoration: none;
 
   &:hover:not([disabled]) {
+    border: {
+      color: inherit;
+    }
     color: #{hu-get($hu-colors, neutral 1000)};
     text-decoration: underline;
 

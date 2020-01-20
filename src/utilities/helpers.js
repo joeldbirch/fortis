@@ -104,3 +104,5 @@ export const getPath = link => {
   const path = new URL(link)
   return path.href.replace(path.origin, ``)
 }
+
+export const getCurrentYear = () => new Date().getFullYear()
