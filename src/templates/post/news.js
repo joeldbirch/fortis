@@ -1,31 +1,39 @@
 import React from 'react'
 import Layout from '../../components/Layout'
 import NewsIntro from '../../components/NewsIntro'
-import PostEntry from '../../components/PostEntry'
+import NewsPreviews from '../../components/NewsPreviews'
+import NewsHeader from '../../components/NewsHeader'
 import Pagination from '../../components/Pagination'
-import { blogURI } from '../../../globals'
-
 import SEO from '../../components/SEO'
+
+const NewsNavigation = () => (
+  <NewsHeader isMain="true" />
+)
 
 const News = ({ pageContext }) => {
   const { nodes, pageNumber, hasNextPage, itemsPerPage, allPosts } = pageContext
 
   return (
-    <Layout>
+    <Layout
+      AddToHeader={<NewsNavigation/>}
+    >
       <SEO
         title="News & Views"
       />
 
-      <NewsIntro />
-
-      {nodes && nodes.map(post => <PostEntry key={post.id} post={post} parentUri={blogURI}/>)}
-
-      <Pagination
-        pageNumber={pageNumber}
-        hasNextPage={hasNextPage}
-        allPosts={allPosts}
-        itemsPerPage={itemsPerPage}
+      <NewsPreviews
+        posts={nodes}
+        intro={<NewsIntro />}
+        pagination={
+          <Pagination
+            pageNumber={pageNumber}
+            hasNextPage={hasNextPage}
+            allPosts={allPosts}
+            itemsPerPage={itemsPerPage}
+          />
+        }
       />
+
     </Layout>
   )
 }

@@ -24,6 +24,7 @@ const Layout = ({
   headerClassName = ``,
   className = ``,
   ctaClickHandler,
+  AddToHeader,
   ...props
 }) => {
 
@@ -80,14 +81,31 @@ const Layout = ({
             pointer-events:auto
           `}
         >
-          <h1
+          <p
             className={`
               ${uiFontSize}
             `}
           >
             Fortis
-          </h1>
+          </p>
         </Link>
+        { !AddToHeader
+          ? ``
+          : (
+            <div className={`
+              padding-left:columns-3-1/2
+              padding-right:columns-1-1/2
+              max-width:container
+              width:100
+              position:absolute
+              pos-left:50
+              translate-x:-50
+              margin:auto
+            `}>
+              {AddToHeader}
+            </div>
+          )
+        }
         <Menu toggleHandler={toggleMenu} isOpen={menuOpen} className="pointer-events:auto" />
       </TheHeader>
 

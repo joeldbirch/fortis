@@ -1,20 +1,19 @@
 import React from 'react'
-import FluidImage from '../../../components/FluidImage'
-import { subhead, handwritten } from '../../../styles/helpers'
+import FluidImage from 'components/FluidImage'
+import { subhead, handwritten } from 'styles/helpers'
 
 const styles = {
   root: `
-    @mq-palm--padding-vertical:columns-0-1/2
+    padding-horizontal:columns-0-1/2
+    @mq-desk--padding-horizontal:columns-1-1/2
     margin-horizontal:auto
     max-width:container
-    padding-horizontal:columns-0-1/2
     padding-vertical:800
     position:relative
     width:100
   `,
   wrapColumns: `
     🎁wrap-columns
-    @mq-desk--padding-horizontal:columns-1
     @mq-palm--display:flex
     flex-direction:row-reverse
     justify-content:space-between

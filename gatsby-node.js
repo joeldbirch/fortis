@@ -1,3 +1,4 @@
+const path = require('path')
 const createPages = require('./create/createPages')
 const createPosts = require('./create/createPosts')
 const createProjects = require('./create/createProjects')
@@ -65,6 +66,14 @@ exports.createResolvers = (
       title: {
         resolve: source => convertAmpersands(source.title),
       },
+    },
+  })
+}
+
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, "src"), "node_modules"],
     },
   })
 }

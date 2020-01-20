@@ -9,4 +9,5 @@ module.exports = {
   Project_Projectbuilder_Layouts_TextRightTwoImages: `TextRightTwoImages`,
   Project_Projectbuilder_Layouts_LargeTextThreeImagesNotes: `LargeTextThreeImages`,
   Project_Projectbuilder_Layouts_ImageGallery: `ImageGallery`,
+  Project_Projectbuilder_Layouts_BigTextOnly: `BigText`,
 }

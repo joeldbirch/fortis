@@ -2,8 +2,8 @@ import React from 'react'
 import Flickity from 'react-flickity-component'
 import Helmet from 'react-helmet'
 import 'flickity/css/flickity.css'
-import FluidImage from '../../../components/FluidImage'
-import { handwritten } from '../../../styles/helpers'
+import FluidImage from 'components/FluidImage'
+import { handwritten } from 'styles/helpers'
 
 const ImageGallery = ({imageGallery}) => {
   return (
@@ -12,7 +12,8 @@ const ImageGallery = ({imageGallery}) => {
       className={`
         position:relative
         width:100vw
-        margin-vertical:columns-0-1/2
+        padding-vertical:columns-0-1/2
+        overflow:hidden
       `}
     >
       <Helmet>

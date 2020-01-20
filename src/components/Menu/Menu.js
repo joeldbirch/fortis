@@ -1,43 +1,19 @@
 import React from 'react'
-import { useStaticQuery, graphql  } from 'gatsby'
+import { useMenuData  } from '../../hooks/use-menu-data'
 
 import MenuItem from './MenuItem'
 import CloseAnimation from '../CloseAnimation'
-
 import { centred, appleFade, appleBezier, uiFontSize } from '../../styles/helpers'
 
+
+
 const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
-  const data = useStaticQuery(graphql`
-    fragment MenuItem on WPGraphQL_MenuItem {
-      id
-      label
-      url
-      title
-      target
-    }
-    query GETMAINMENU {
-      wpgraphql {
-        menuItems(where: {location: PRIMARY}) {
-          nodes {
-            ...MenuItem
-          }
-        }
-        generalSettings {
-          url
-        }
-      }
-    }
-  `)
+  const {
+    menuItems = [],
+    wordPressUrl,
+  } = useMenuData()
 
-  if (!data.wpgraphql.menuItems) return null
-
-  const menuItems = data.wpgraphql.menuItems.nodes || []
-  const wordPressUrl = data.wpgraphql.generalSettings.url
-
-
-  function toggleMenu() {
-    toggleHandler(!isOpen)
-  }
+  if (!menuItems) return null
 
   return (
     <div className={`
@@ -59,7 +35,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
             pos-top-right:0
             user-select:none
           `}
-          onClick={toggleMenu}
+          onClick={() => toggleHandler(!isOpen)}
           style={{
             width: `2.6em`,
             height: `1.3em`,

@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import FluidImage from '../../../components/FluidImage'
-import FullWindowVideo from '../../../components/FullWindowVideo'
-import { uiFontSize } from '../../../styles/helpers'
-import { getPath } from '../../../utilities/helpers'
+import FluidImage from 'components/FluidImage'
+import FullWindowVideo from 'components/FullWindowVideo'
+import { uiFontSize } from 'styles/helpers'
+import { getPath } from 'utilities/helpers'
 
 
 const Hero = ({image, label, linkTo, video}) => {

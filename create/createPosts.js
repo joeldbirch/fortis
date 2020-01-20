@@ -24,24 +24,24 @@ const GET_POSTS = `
         where: {
           parent: null
         }
-        ) {
-          pageInfo {
-            hasNextPage
-            endCursor
-          }
-          nodes {
-            uri
+      ) {
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
+        nodes {
+          uri
 
-            # This is the fragment used for the Post Template
-            ...PostTemplateFragment
+          # This is the fragment used for the Post Template
+          ...PostTemplateFragment
 
-            # This is the fragment used for the news previews
-            ...NewsPreviewFragment
-          }
+          # This is the fragment used for the news previews
+          ...NewsPreviewFragment
         }
       }
     }
-  `
+  }
+`
 
 const allPosts = []
 const newsPages = []

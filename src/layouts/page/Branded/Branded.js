@@ -1,7 +1,7 @@
 import React from 'react'
-import FluidImage from '../../../components/FluidImage'
-import FullWindowVideo from '../../../components/FullWindowVideo'
-import { handwritten } from '../../../styles/helpers'
+import FluidImage from 'components/FluidImage'
+import FullWindowVideo from 'components/FullWindowVideo'
+import { handwritten } from 'styles/helpers'
 
 const styles = {
   root: `

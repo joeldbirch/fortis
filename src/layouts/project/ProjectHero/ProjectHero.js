@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '../../page/Hero'
+import Hero from 'layouts/page/Hero'
 
 const ProjectHero = ({children, ...props}) => {
   return (

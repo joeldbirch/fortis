@@ -1,6 +1,6 @@
 import React from 'react'
-import MultiFormatImage from '../../../components/MultiFormatImage'
-import { subhead } from '../../../styles/helpers'
+import MultiFormatImage from 'components/MultiFormatImage'
+import { subhead } from 'styles/helpers'
 
 // const styles = {
 //   root: `

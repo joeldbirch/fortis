@@ -9,6 +9,7 @@
     "@": "./src"
   },
   "dependencies": {
+    "babel-plugin-root-import": "^6.4.1",
     "dotenv": "^8.2.0",
     "fibers": "^4.0.2",
     "fix-outline": "https://github.com/joeldbirch/fix-outline.git",
