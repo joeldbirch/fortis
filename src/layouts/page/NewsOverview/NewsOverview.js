@@ -9,10 +9,12 @@ import { useNewsData  } from 'hooks/use-news-data'
 import { blogURI } from '../../../../globals'
 
 const LinkToNewsPage = () => (
-  <p className={`
-    margin-vertical:800
-    @mq-tiny--margin-vertical:columns-0-1/2
-    `}>
+  <p
+    className={`
+      margin-bottom:columns-0-1/2
+      text-align:center
+    `}
+  >
     <a className={`btn`} href={blogURI}>View all news</a>
   </p>
 )
