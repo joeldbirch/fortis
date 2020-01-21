@@ -8,8 +8,8 @@ const NewsHeader = ({isMain=false, headingText=``}) => {
     query NewsHeaderQuery {
       wpgraphql {
         newsIntro {
-          introContent {
-            newsSectionTitle
+          content {
+            siteSectionTitle
           }
         }
       }
@@ -26,7 +26,7 @@ const NewsHeader = ({isMain=false, headingText=``}) => {
       dangerouslySetInnerHTML={{
         __html: headingText
             ?  headingText
-            : data.wpgraphql.newsIntro.introContent.newsSectionTitle}}
+            : data.wpgraphql.newsIntro.content.siteSectionTitle}}
     />
 
   )

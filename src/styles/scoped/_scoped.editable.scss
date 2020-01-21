@@ -69,6 +69,29 @@ $scoped_container: 's-editable' !default;
     }
   }
 
+  pre {
+    white-space: normal;
+    font-family: #{hu-get($hu-font-family-types, cursive)};
+    font-weight: 400;
+    line-height: #{hu-get($hu-line-height-types, 200)};
+    max-width: 80%;
+    font-size: #{hu-get($hu-font-size-types, 400)};
+
+    // for use inline in templates
+    margin-left: var(--offset-left, 0);
+
+    @media (min-width: #{hu-get($hu-media-queries, palm)}) {
+      font-size: #{hu-get($hu-font-size-types, 500)};
+    }
+
+    @media (min-width: #{hu-get($hu-media-queries, bigdesk)}) {
+      font-size: #{hu-get($hu-font-size-types, 550)};
+      // for use inline in templates
+      margin-left: var(--bigdesk-offset-left, var(--offset-left));
+    }
+
+  }
+
   strong {
     display: inline-block;
     font-weight: normal;

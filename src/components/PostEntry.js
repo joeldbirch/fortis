@@ -13,6 +13,7 @@ const PostEntry = ({
   showNote=false,
   note,
   className,
+  imageClasses=``,
 }) => {
 
   return (
@@ -20,7 +21,6 @@ const PostEntry = ({
       className={`
         ${className}
         position:relative
-        @mq-palm--padding-bottom:columns-1
         padding-bottom:1000
       `}
     >
@@ -29,16 +29,22 @@ const PostEntry = ({
         className={`
           color:neutral-900
           text-decoration:none
+          height:100
+          display:flex
+          flex-direction:column
         `}
         to={uri}
       >
-        <FluidImage image={featuredImage} />
+        <FluidImage image={featuredImage} className={`
+          ${imageClasses}
+          flex-grow:1
+        `} />
 
         <header
           className={`
             display:flex
             flex-direction:column-reverse
-            padding-top:columns-0-1/2
+            padding-top:400
             rhythm-fix-before
             rhythm-fix-after
           `}

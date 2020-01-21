@@ -7,7 +7,7 @@ const NewsIntro = () => {
     query NewsIntroQuery {
       wpgraphql {
         newsIntro {
-          introContent {
+          content {
             introContent
           }
         }
@@ -15,7 +15,7 @@ const NewsIntro = () => {
     }
   `)
   return <LargeText>
-    {data.wpgraphql.newsIntro.introContent.introContent}
+    {data.wpgraphql.newsIntro.content.introContent}
   </LargeText>
 }
 

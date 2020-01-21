@@ -29,6 +29,7 @@ const News = ({ pageContext }) => {
           margin-horizontal:auto
           max-width:container
           padding-bottom:800
+          width:100
           grid-guide
         `}
       >
