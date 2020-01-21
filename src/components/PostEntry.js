@@ -37,7 +37,6 @@ const PostEntry = ({
       >
         <FluidImage image={featuredImage} className={`
           ${imageClasses}
-          flex-grow:1
         `} />
 
         <header
