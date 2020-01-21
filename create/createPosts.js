@@ -131,8 +131,8 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
     * so we can have all the data we need.
     */
     if (hasNextPage) {
-      postNumber++
-      reporter.info(`fetch post ${postNumber} of posts...`)
+      pageNumber++
+      reporter.info(`fetch post ${pageNumber} of posts...`)
       return fetchPosts({ first: itemsPerPage, after: endCursor })
     }
 

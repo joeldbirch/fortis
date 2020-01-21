@@ -1,4 +1,5 @@
 import React from 'react'
+import LargeText from 'components/LargeText'
 
 const styles = {
   root: `
@@ -22,18 +23,7 @@ const BigText = ({ bigText }) => {
           @mq-desk--padding-horizontal:columns-1
         `}
       >
-        <div
-          dangerouslySetInnerHTML={{__html: bigText}}
-          className={`
-            font-size:500
-            @mq-bigdesk--font-size:600
-            max-width:var
-            s-editable
-            rhythm-fix-before
-            rhythm-fix-after
-          `}
-          style={{'--max-width': '20em'}}
-        />
+        <LargeText>{bigText}</LargeText>
       </div>
     </section>
   )

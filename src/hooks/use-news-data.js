@@ -11,6 +11,15 @@ export const useNewsData = () => {
         uri
         date
         content
+        optionalFields {
+          subheading
+          note
+        }
+        categories {
+          nodes {
+            name
+          }
+        }
         featuredImage {
           sourceUrl
           altText
@@ -26,7 +35,7 @@ export const useNewsData = () => {
       query GET_POSTS {
         wpgraphql {
           posts(
-            first: 1
+            first: 6
             # This will make sure to only get the parent nodes and no children
             where: {
               parent: null

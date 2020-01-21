@@ -4,6 +4,7 @@ import NewsIntro from 'components/NewsIntro'
 import NewsHeader from 'components/NewsHeader'
 import SectionHeader from 'components/SectionHeader'
 import Divider from 'components/DividerHorizontal'
+import LargeText from 'components/LargeText'
 import { useNewsData  } from 'hooks/use-news-data'
 import { blogURI } from '../../../../globals'
 
@@ -16,16 +17,7 @@ const LinkToNewsPage = () => (
   </p>
 )
 
-const Intro = ({content}) => (
-  content
-  ? <div
-      className={` s-editable `}
-      dangerouslySetInnerHTML={{__html: content}}
-    />
-  : <NewsIntro />
-)
-
-const NewsOverview = ({sectionHeading, introText}) => {
+const NewsOverview = ({introText}) => {
   const {
     posts = [],
     hasNextPage,
@@ -53,7 +45,7 @@ const NewsOverview = ({sectionHeading, introText}) => {
 
         <NewsPreviews
           posts={posts}
-          intro={<Intro content={introText} />}
+          intro={introText ? <LargeText>{introText}</LargeText> : <NewsIntro />}
           pagination={hasNextPage ? <LinkToNewsPage /> : () => {}}
         />
       </div>

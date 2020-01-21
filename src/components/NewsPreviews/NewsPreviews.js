@@ -1,27 +1,56 @@
 import React from 'react'
-import PostEntry from 'components/PostEntry'
-import { blogURI } from '../../../globals'
+import NewsEntry from './NewsEntry'
 
 const NewsPreview = ({posts, intro, pagination}) => {
-
-  if (!posts) return null
-
+  if (!posts) return ``
   return (
     <>
-      {intro}
-
-      <ol className={`
-      `}>
-        {
-          posts.map((post) => (
-            <PostEntry
-              key={post.id}
-              post={post}
-              parentUri={blogURI}
-            />
-          ))
-        }
-      </ol>
+      <div
+        className={`
+          padding-top:800
+          @mq-palm--padding-top:columns-0-1/2
+        `}
+      >
+        <div
+          // first item has intro in same container
+          className={`
+          `}
+        >
+          {intro}
+          <NewsEntry
+            post={posts[0]}
+            className={`
+              margin-top:1000
+              @mq-palm--margin-top:columns-0-1/2
+            `}
+          />
+        </div>
+        <NewsEntry
+          post={posts[1]}
+          className={`
+          `}
+        />
+        <NewsEntry
+          post={posts[2]}
+          className={`
+          `}
+        />
+        <NewsEntry
+          post={posts[3]}
+          className={`
+          `}
+        />
+        <NewsEntry
+          post={posts[4]}
+          className={`
+          `}
+        />
+        <NewsEntry
+          post={posts[5]}
+          className={`
+          `}
+        />
+      </div>
 
       {pagination}
     </>
