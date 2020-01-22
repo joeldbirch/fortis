@@ -29,5 +29,9 @@ $site-column: #{$site-column-value}vw;
 .all-fill-current * { fill: currentColor }
 
 
-
+.highlight {
+  box-shadow: 0 0 0 1000px rgba(0,0,0,.5);
+  position: relative;
+  z-index: 9;
+}
 

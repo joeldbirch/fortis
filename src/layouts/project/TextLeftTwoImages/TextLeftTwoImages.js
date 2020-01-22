@@ -68,8 +68,10 @@ const styles = {
 
 
 const TextLeftTwoImages = ({
-  billLargerImage,
-  billSmallerImage,
+  billImages: {
+    larger,
+    smaller,
+  },
   billText,
   billHeading,
   billNote
@@ -81,7 +83,7 @@ const TextLeftTwoImages = ({
           <div className={styles.startColumnStartRow}>
             <FluidImage
               className={` @mq-palm--margin-right:-400`}
-              image={billSmallerImage}
+              image={smaller}
             />
           </div>
 
@@ -117,7 +119,7 @@ const TextLeftTwoImages = ({
 
           <div className={styles.endColumnEndRow}>
             <FluidImage
-              image={billLargerImage}
+              image={larger}
               className={`
                 height:100
               `}

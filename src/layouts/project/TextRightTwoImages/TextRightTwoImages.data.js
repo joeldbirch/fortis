@@ -5,24 +5,26 @@ module.exports = () => {
       bobHeading
       bobNote
       bobText
-      bobSmallerImage {
-        sourceUrl
-        altText
-        imageFile {
-          childImageSharp {
-            fluid(maxHeight: 235, maxWidth: 328, quality: 90, cropFocus: CENTER) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+      bobImages {
+        smaller {
+          sourceUrl
+          altText
+          imageFile {
+            childImageSharp {
+              fluid(maxHeight: 235, maxWidth: 328, quality: 90, cropFocus: CENTER) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
             }
           }
         }
-      }
-      bobLargerImage {
-        sourceUrl
-        altText
-        imageFilePortrait {
-          childImageSharp {
-            fluid(maxHeight: 655, maxWidth: 470, quality: 90, cropFocus: CENTER) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        larger {
+          sourceUrl
+          altText
+          imageFilePortrait {
+            childImageSharp {
+              fluid(maxHeight: 655, maxWidth: 470, quality: 90, cropFocus: CENTER) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
             }
           }
         }

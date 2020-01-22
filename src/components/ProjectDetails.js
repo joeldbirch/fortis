@@ -60,9 +60,9 @@ const ProjectDetails = ({
               @mq-bigdesk--font-size:400
               margin-bottom:400
             `}>
-              {fullAddress}<br />
-              {status} /
-              {buildingType}
+              <span>{fullAddress}</span><br />
+              <span>{status}</span> /
+              <span>{buildingType}</span>
             </p>
 
             <div

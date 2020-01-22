@@ -83,8 +83,10 @@ const styles = {
 
 
 const TextRightTwoImages = ({
-  bobLargerImage,
-  bobSmallerImage,
+  bobImages: {
+    larger,
+    smaller,
+  },
   bobText,
   bobHeading,
   bobNote
@@ -95,7 +97,7 @@ const TextRightTwoImages = ({
         <div className={styles.startColumn}>
           <div className={styles.startColumnStartRow}>
             <FluidImage
-              image={bobSmallerImage}
+              image={smaller}
             />
           </div>
 
@@ -135,7 +137,7 @@ const TextRightTwoImages = ({
 
           <div className={styles.endColumnEndRow}>
             <FluidImage
-              image={bobLargerImage}
+              image={larger}
               className={`
                 height:100
                 @mq-max-palm--max-width:small-column

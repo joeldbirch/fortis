@@ -140,3 +140,9 @@ export const uiFontSize = `
   font-size:300
   font-weight:400
 `
+
+export const highlight = `
+  box-shadow:highlight
+  position:relative
+  z-index:900
+`
