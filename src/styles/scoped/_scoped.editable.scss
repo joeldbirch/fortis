@@ -94,7 +94,7 @@ $scoped_container: 's-editable' !default;
 
   strong {
     display: inline-block;
-    font-weight: normal;
+    font-weight: normal !important;
     position: relative;
 
     &::before {

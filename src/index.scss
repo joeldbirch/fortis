@@ -1,12 +1,4 @@
-$site-layout-columns: 12;
-$site-padding-columns: 1;
-$site-column-value: 100 / ($site-layout-columns + $site-padding-columns);
-
-// left and right padding get half a column each
-$site-pad-value: $site-column-value / 2;
-$site-pad: #{$site-pad-value}vw;
-$site-column: #{$site-column-value}vw;
-
+@import "styles/site-variables";
 
 @import "styles/utilities/tools-functions";
 @import "styles/utilities/tools-mixins";
@@ -29,9 +21,9 @@ $site-column: #{$site-column-value}vw;
 .all-fill-current * { fill: currentColor }
 
 
-.highlight {
-  box-shadow: 0 0 0 1000px rgba(0,0,0,.5);
-  position: relative;
-  z-index: 9;
-}
+// .highlight {
+//   box-shadow: 0 0 0 1000px rgba(0,0,0,.5);
+//   position: relative;
+//   z-index: 9;
+// }
 
