@@ -1,9 +1,0 @@
-// @import "tools-typography";
-
-.rhythm-fix-before {
-  @include rhythm-fix;
-}
-
-.rhythm-fix-after{
-  @include rhythm-fix(after);
-}

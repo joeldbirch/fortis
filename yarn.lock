@@ -1196,6 +1196,10 @@
   dependencies:
     core-js "^2.5.7"
 
+"@joeldbirch/fortis-styles@https://joel_birch@bitbucket.org/joel_birch/fortis-styles.git":
+  version "1.0.0"
+  resolved "https://joel_birch@bitbucket.org/joel_birch/fortis-styles.git#1fe0f33f0a09873b427a4602cf9b23f334e3dcaa"
+
 "@mikaelkristiansson/domready@^1.0.10":
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/@mikaelkristiansson/domready/-/domready-1.0.10.tgz#f6d69866c0857664e70690d7a0bfedb72143adb5"
@@ -6595,9 +6599,9 @@ https-browserify@^1.0.0:
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
   integrity sha1-7AbBDgo0wPL68Zn3/X/Hj//QPHM=
 
-"hucssley@github:stowball/hucssley#master":
+"hucssley@github:stowball/hucssley":
   version "0.1.0"
-  resolved "https://codeload.github.com/stowball/hucssley/tar.gz/fbea68bab56537469b5468e2716dc865e84cce4a"
+  resolved "https://codeload.github.com/stowball/hucssley/tar.gz/146d5b1023f12dd1db2279f29f7e34e3981d7e96"
 
 human-signals@^1.1.1:
   version "1.1.1"

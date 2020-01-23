@@ -8,7 +8,11 @@
   "exports": {
     "@": "./src"
   },
+  "engines": {
+    "node": ">= 12.14.1"
+  },
   "dependencies": {
+    "@joeldbirch/fortis-styles": "https://joel_birch@bitbucket.org/joel_birch/fortis-styles.git",
     "babel-plugin-root-import": "^6.4.1",
     "dotenv": "^8.2.0",
     "fibers": "^4.0.2",
@@ -31,7 +35,7 @@
     "gatsby-source-graphql": "^2.1.31",
     "gatsby-transformer-sharp": "^2.3.12",
     "glob": "^7.1.6",
-    "hucssley": "github:stowball/hucssley#master",
+    "hucssley": "github:stowball/hucssley",
     "lodash.isempty": "^4.4.0",
     "lodash.uniqby": "^4.7.0",
     "prop-types": "^15.7.2",
@@ -62,8 +66,9 @@
     "develop": "NODE_EXTRA_CA_CERTS=~/.config/valet/Certificates/fortiscms.dev.au.crt NODE_TLS_REJECT_UNAUTHORIZED=0 gatsby develop --https",
     "clean": "gatsby clean",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "yarn develop",
     "serve": "gatsby serve",
+    "update:styles": "yarn add https://joel_birch@bitbucket.org/joel_birch/fortis-styles.git",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "repository": {
