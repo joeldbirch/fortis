@@ -33,7 +33,7 @@ const Hero = ({image, label, linkTo, video}) => {
           className={`
             ${uiFontSize}
             margin-left:columns-3
-            color:neutral-0
+            color:neutral-900
           `}
         >
           <OptionalLink to={to}>{label}</OptionalLink>
