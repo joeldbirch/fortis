@@ -17,7 +17,7 @@ import TheHeader from './TheHeader'
 import TheFooter from './TheFooter'
 import { isIos, isSafari } from '../utilities/helpers'
 import { uiFontSize } from '../styles/helpers'
-import '@joeldbirch/fortis-styles'
+import 'styles/index.scss'
 
 const Layout = ({
   children,
