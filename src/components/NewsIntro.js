@@ -2,7 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import LargeText from 'components/LargeText'
 
-const NewsIntro = () => {
+const NewsIntro = (props) => {
   const data = useStaticQuery(graphql`
     query NewsIntroQuery {
       wpgraphql {
@@ -14,7 +14,7 @@ const NewsIntro = () => {
       }
     }
   `)
-  return <LargeText>
+  return <LargeText {...props}>
     {data.wpgraphql.newsIntro.content.introContent}
   </LargeText>
 }

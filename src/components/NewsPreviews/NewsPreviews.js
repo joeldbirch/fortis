@@ -37,49 +37,65 @@ const NewsPreview = ({posts, intro, pagination}) => {
             `}
           />
         </div>
-        <NewsEntry
-          post={posts[1]}
-          className={`
-            @mq-palm--padding-bottom:columns-1
-          `}
-          imageClasses={`
-            flex-grow:1
-          `}
-        />
-        <NewsEntry
-          post={posts[2]}
-          className={`
-            @mq-palm--margin-top:columns-0-1/2
-            @mq-palm--padding-bottom:columns-1
-          `}
-          imageClasses={`
-            flex-grow:1
-          `}
-        />
-        <NewsEntry
-          post={posts[3]}
-          className={`
-            @mq-palm--padding-left:columns-2
-            @mq-palm--padding-bottom:columns-3
-          `}
-        />
-        <NewsEntry
-          post={posts[4]}
-          className={`
-            @mq-palm--padding-horizontal:columns-1
-            @mq-palm--padding-bottom:columns-2-1/2
-          `}
-        />
-        <NewsEntry
-          post={posts[5]}
-          className={`
-            @mq-palm--padding-horizontal:columns-1
-            @mq-palm--padding-bottom:columns-0-1/2
-          `}
-          imageClasses={`
-            flex-grow:1
-          `}
-        />
+        { !posts[1]
+          ? ``
+          : <NewsEntry
+              post={posts[1]}
+              className={`
+                @mq-palm--padding-bottom:columns-1
+              `}
+              imageClasses={`
+                flex-grow:1
+              `}
+            />
+        }
+
+        { !posts[2]
+          ? ``
+          : <NewsEntry
+              post={posts[2]}
+              className={`
+                @mq-palm--margin-top:columns-0-1/2
+                @mq-palm--padding-bottom:columns-1
+              `}
+              imageClasses={`
+                flex-grow:1
+              `}
+            />
+        }
+        { !posts[3]
+          ? ``
+          : <NewsEntry
+              post={posts[3]}
+              className={`
+                @mq-palm--padding-left:columns-2
+                @mq-palm--padding-bottom:columns-3
+              `}
+            />
+        }
+        { !posts[4]
+          ? ``
+          : <NewsEntry
+              post={posts[4]}
+              className={`
+                @mq-palm--padding-horizontal:columns-1
+                @mq-palm--padding-bottom:columns-2-1/2
+              `}
+            />
+        }
+        { !posts[5]
+          ? ``
+          : <NewsEntry
+              post={posts[5]}
+              className={`
+                @mq-palm--padding-horizontal:columns-1
+                @mq-palm--padding-bottom:columns-0-1/2
+              `}
+              imageClasses={`
+                flex-grow:1
+              `}
+            />
+        }
       </div>
 
       {pagination}

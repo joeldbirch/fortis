@@ -46,7 +46,7 @@ const GET_POSTS = `
 const allPosts = []
 const newsPages = []
 let pageNumber = 0
-const itemsPerPage = 10
+const itemsPerPage = 6
 
 /**
 * This is the export which Gatbsy will use to process.
@@ -122,7 +122,7 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
     * Map over the posts for later creation
     */
     nodes
-    && nodes.map((posts) => {
+    && nodes.forEach((posts) => {
       allPosts.push(posts)
     })
 

@@ -11,11 +11,11 @@ import { blogURI } from '../../../../globals'
 const LinkToNewsPage = () => (
   <p
     className={`
-      margin-bottom:columns-0-1/2
+      margin-bottom:columns-0-1/4
       text-align:center
     `}
   >
-    <a className={`btn`} href={blogURI}>View all news</a>
+    <a className={`btn display:inline-flex`} href={blogURI}>View all news</a>
   </p>
 )
 
@@ -38,7 +38,6 @@ const NewsOverview = ({introText}) => {
           margin-horizontal:auto
           max-width:container
           padding-bottom:800
-          grid-guide
         `}
       >
         <SectionHeader>

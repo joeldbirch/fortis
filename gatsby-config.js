@@ -1,5 +1,7 @@
 const Fiber = require('fibers')
 
+const getAuthBase64 = (user, pass) => Buffer.from(`${user}:${pass}`).toString('base64')
+
 let activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || `development`
 console.log(`Using environment config: ${activeEnv}`)
 
@@ -8,6 +10,7 @@ require('dotenv').config({
 })
 
 console.log(`This WordPress Endpoint is used: '${process.env.WORDPRESS_URL}'`)
+
 
 module.exports = {
   siteMetadata: {
@@ -33,6 +36,9 @@ module.exports = {
         typeName: `WPGraphQL`,
         fieldName: `wpgraphql`,
         url: `${process.env.WORDPRESS_URL}/graphql`,
+        headers: {
+          Authorization: `Basic ${getAuthBase64(process.env.AUTH_USERNAME, process.env.AUTH_PASSWORD)}`,
+        },
       },
     },
     // {

@@ -54,7 +54,7 @@ const GET_PROJECTS = (layouts) => `
 const allProjects = []
 const projectsPages = []
 let pageNumber = 0
-const itemsPerPage = 1
+const itemsPerPage = 100
 
 /**
 * This is the export which Gatbsy will use to process.
@@ -135,7 +135,7 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
       * Map over the pages for later creation
       */
       nodes
-      && nodes.map((projects) => {
+      && nodes.forEach((projects) => {
         allProjects.push(projects)
       })
 
@@ -146,7 +146,7 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
       if (hasNextPage) {
         pageNumber++
         reporter.info(`fetch project ${pageNumber} of project...`)
-        return fetchPages({ first: itemsPerPage, after: endCursor })
+        return fetchProjects({ first: itemsPerPage, after: endCursor })
       }
 
       /**

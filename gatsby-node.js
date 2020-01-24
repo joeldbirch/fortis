@@ -1,8 +1,11 @@
 const path = require('path')
+
 const createPages = require('./create/createPages')
 const createPosts = require('./create/createPosts')
 const createProjects = require('./create/createProjects')
 const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
+
+const getAuthBase64 = (user, pass) => Buffer.from(`${user}:${pass}`).toString('base64')
 const convertAmpersands = text => text.replace(`&#038;`,`&`).replace(`&amp;`,`&`)
 
 exports.createPagesStatefully = async ({ graphql, actions, reporter }, options) => {
@@ -35,6 +38,9 @@ exports.createResolvers = (
             createNode,
             createNodeId,
             reporter,
+            httpHeaders: {
+              Authorization: `Basic ${getAuthBase64(process.env.AUTH_USERNAME, process.env.AUTH_PASSWORD)}`,
+            },
           })
         },
       },
@@ -48,6 +54,9 @@ exports.createResolvers = (
             createNode,
             createNodeId,
             reporter,
+            httpHeaders: {
+              Authorization: `Basic ${authString}`,
+            },
           })
         },
       },

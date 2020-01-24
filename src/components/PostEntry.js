@@ -1,19 +1,15 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import FluidImage from './FluidImage'
 import { handwritten } from 'styles/helpers'
 
 const PostEntry = ({
-  uri,
   featuredImage,
-  id,
-  title,
-  subheading,
-  label,
   showNote=false,
   note,
-  className,
+  className=``,
   imageClasses=``,
+  headerClasses=``,
+  children,
 }) => {
 
   return (
@@ -21,19 +17,15 @@ const PostEntry = ({
       className={`
         ${className}
         position:relative
-        padding-bottom:1000
       `}
     >
-      <Link
-        aria-labelledby={`preview-${id}`}
+      <div
         className={`
-          color:neutral-900
-          text-decoration:none
           height:100
           display:flex
           flex-direction:column
+          position:relative
         `}
-        to={uri}
       >
         <FluidImage image={featuredImage} className={`
           ${imageClasses}
@@ -41,49 +33,25 @@ const PostEntry = ({
 
         <header
           className={`
-            display:flex
-            flex-direction:column-reverse
+            ${headerClasses}
             padding-top:400
-            rhythm-fix-before
-            rhythm-fix-after
+            padding-bottom:1000
+            @mq-max-palm--padding-horizontal:columns-0-1/2
           `}
         >
 
-          <h2
-            className={`
-              font-weight:400
-              font-size:400
-            `}
-            id={`preview-${id}`}>{title}
-          </h2>
-          <h3
-            className={`
-              font-weight:400
-              font-size:400
-            `}
-          >
-            {subheading}
-          </h3>
-          <h4
-            className={`
-              font-weight:400
-              font-size:200
-              text-transform:uppercase
-              margin-bottom:100
-            `}
-          >
-            {label}
-          </h4>
+          {children}
+
+          { !showNote
+            ? ``
+            : <p
+                className={`
+                  ${handwritten}
+                `}
+              >{note}</p>
+          }
         </header>
-      </Link>
-      { !showNote
-        ? ``
-        : <p
-            className={`
-              ${handwritten}
-            `}
-          >{note}</p>
-      }
+      </div>
     </article>
   )
 }

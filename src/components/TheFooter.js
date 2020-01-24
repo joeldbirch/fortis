@@ -14,7 +14,6 @@ export default ({ className, ...props }) => {
   return (
     <footer className={`
       ${ className }
-      ${ styles.root }
     `} {...props}>
       <div
         className={`

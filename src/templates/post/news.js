@@ -24,18 +24,19 @@ const News = ({ pageContext }) => {
       <div
         className={`
           padding-top:site-top
-          padding-horizontal:columns-0-1/2
+          @mq-palm--padding-horizontal:columns-0-1/2
           @mq-desk--padding-horizontal:columns-1-1/2
           margin-horizontal:auto
           max-width:container
           padding-bottom:800
           width:100
-          grid-guide
         `}
       >
         <NewsPreviews
           posts={nodes}
-          intro={<NewsIntro />}
+          intro={<NewsIntro className={`
+            @mq-max-palm--padding-horizontal:columns-0-1/2
+          `} />}
           className={`
             padding-top:site-top
           `}

@@ -32,7 +32,6 @@ const NewsPreviewFragment = `
     title
     uri
     date
-    content
     optionalFields {
       subheading
       note

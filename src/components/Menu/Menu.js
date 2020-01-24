@@ -78,7 +78,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
             @mq-palm--max-width:columns-6-1/2
             @mq-desk--max-width:columns-4-1/2
             transition-property:opacity-transform
-            transition-duration:700
+            transition-duration:400
             padding-top:site-top
             padding-left:columns-1
             padding-right:site-pad
