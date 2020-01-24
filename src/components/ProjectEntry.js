@@ -41,7 +41,7 @@ const ProjectEntry = ({
         <FluidImage image={featuredImage} className={`
         `} />
 
-        <div className="padding-horizontal:columns-0-1/2">
+        <div className="@mq-palm--padding-horizontal:columns-0-1/2">
           <header
             className={`
               padding-top:400

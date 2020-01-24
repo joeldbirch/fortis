@@ -3,6 +3,7 @@ const { blogURI } = require('../globals')
 const {
   PostTemplateFragment,
   NewsPreviewFragment,
+  NewsIntroFragment,
 } = require('../src/templates/post/data')
 
 const { FluidImageFragment } = require('../src/templates/fragments')
@@ -14,9 +15,13 @@ const GET_POSTS = `
   ${FluidImageFragment}
   ${PostTemplateFragment}
   ${NewsPreviewFragment}
+  ${NewsIntroFragment}
 
   query GET_POSTS($first:Int $after:String) {
     wpgraphql {
+      # This is the fragment used for the news intros
+      ...NewsIntroFragment
+
       posts(
         first: $first
         after: $after
@@ -80,6 +85,7 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
     */
     const {
       wpgraphql: {
+        newsIntro,
         posts: {
           nodes,
           pageInfo: { hasNextPage, endCursor },
@@ -110,6 +116,7 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
       path: newsPagePath,
       component: newsTemplate,
       context: {
+        newsIntro,
         nodes,
         pageNumber: pageNumber + 1,
         hasNextPage,

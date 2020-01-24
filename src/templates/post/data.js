@@ -55,5 +55,17 @@ const NewsPreviewFragment = `
   }
 `
 
+const NewsIntroFragment = `
+  fragment NewsIntroFragment on WPGraphQL {
+    newsIntro {
+      content {
+        siteSectionTitle
+        introContent
+      }
+    }
+  }
+`
+
 module.exports.PostTemplateFragment = PostTemplateFragment
 module.exports.NewsPreviewFragment = NewsPreviewFragment
+module.exports.NewsIntroFragment = NewsIntroFragment

@@ -1,30 +1,33 @@
 import React from 'react'
 import Layout from '../../components/Layout'
-import NewsIntro from '../../components/NewsIntro'
+import LargeText from '../../components/LargeText'
 import NewsPreviews from '../../components/NewsPreviews'
 import NewsHeader from '../../components/NewsHeader'
 import Pagination from '../../components/Pagination'
 import SEO from '../../components/SEO'
 
-const NewsNavigation = () => (
-  <NewsHeader isMain="true" />
-)
 
 const News = ({ pageContext }) => {
-  const { nodes, pageNumber, hasNextPage, itemsPerPage, allPosts } = pageContext
+  const { newsIntro: {
+    content: {
+      siteSectionTitle,
+      introContent,
+    },
+  },
+  nodes, pageNumber, hasNextPage, itemsPerPage, allPosts } = pageContext
 
   return (
     <Layout
-      AddToHeader={<NewsNavigation/>}
+      AddToHeader={<NewsHeader isMain="true" headingText={siteSectionTitle} />}
     >
       <SEO
-        title="News & Views"
+        title={siteSectionTitle}
       />
 
       <div
         className={`
           padding-top:site-top
-          @mq-palm--padding-horizontal:columns-0-1/2
+          padding-horizontal:columns-0-1/2
           @mq-desk--padding-horizontal:columns-1-1/2
           margin-horizontal:auto
           max-width:container
@@ -34,9 +37,7 @@ const News = ({ pageContext }) => {
       >
         <NewsPreviews
           posts={nodes}
-          intro={<NewsIntro className={`
-            @mq-max-palm--padding-horizontal:columns-0-1/2
-          `} />}
+          intro={<LargeText>{introContent}</LargeText>}
           className={`
             padding-top:site-top
           `}

@@ -36,7 +36,6 @@ const PostEntry = ({
             ${headerClasses}
             padding-top:400
             padding-bottom:1000
-            @mq-max-palm--padding-horizontal:columns-0-1/2
           `}
         >
 

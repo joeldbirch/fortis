@@ -105,6 +105,17 @@ const ProjectPreviewFragment = `
     }
   }
 `
+const ProjectsIntroFragment = `
+  fragment ProjectsIntroFragment on WPGraphQL {
+    projectsIntro {
+      content {
+        siteSectionTitle
+        introContent
+      }
+    }
+  }
+`
 
 module.exports.ProjectTemplateFragment = ProjectTemplateFragment
 module.exports.ProjectPreviewFragment = ProjectPreviewFragment
+module.exports.ProjectsIntroFragment = ProjectsIntroFragment

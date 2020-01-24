@@ -1,6 +1,5 @@
 import React from 'react'
 import NewsPreviews from 'components/NewsPreviews'
-import NewsIntro from 'components/NewsIntro'
 import NewsHeader from 'components/NewsHeader'
 import SectionHeader from 'components/SectionHeader'
 import Divider from 'components/DividerHorizontal'
@@ -19,10 +18,17 @@ const LinkToNewsPage = () => (
   </p>
 )
 
-const NewsOverview = ({introText}) => {
+const NewsOverview = () => {
+
   const {
     posts = [],
     hasNextPage,
+    newsIntro: {
+      content: {
+        siteSectionTitle,
+        introContent,
+      },
+    },
   } = useNewsData()
 
   if (!posts) return null
@@ -41,12 +47,12 @@ const NewsOverview = ({introText}) => {
         `}
       >
         <SectionHeader>
-          <NewsHeader />
+          <NewsHeader headingText={siteSectionTitle} />
         </SectionHeader>
 
         <NewsPreviews
           posts={posts}
-          intro={introText ? <LargeText>{introText}</LargeText> : <NewsIntro />}
+          intro={<LargeText>{introContent}</LargeText>}
           pagination={hasNextPage ? <LinkToNewsPage /> : () => {}}
         />
       </div>

@@ -34,6 +34,12 @@ export const useNewsData = () => {
       }
       query GET_POSTS {
         wpgraphql {
+          newsIntro {
+            content {
+              siteSectionTitle
+              introContent
+            }
+          }
           posts(
             first: 6
             # This will make sure to only get the parent nodes and no children
@@ -55,6 +61,7 @@ export const useNewsData = () => {
   )
 
   return {
+    newsIntro: wpgraphql.newsIntro,
     posts: wpgraphql.posts.nodes,
     hasNextPage: wpgraphql.posts.pageInfo.hasNextPage,
   }

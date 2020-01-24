@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default ({className, children, ...props}) => {
-  return (
+export default ({className, children=null, ...props}) => {
+  return !children ? `` : (
     <div
       dangerouslySetInnerHTML={{__html: children}}
       className={`

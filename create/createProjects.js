@@ -6,6 +6,7 @@ const { projectsURI, templateCacheFolder } = require('../globals')
 const {
   ProjectTemplateFragment,
   ProjectPreviewFragment,
+  ProjectsIntroFragment,
 } = require('../src/templates/project/data')
 
 const { getAllLayoutsData, createTemplate, createPageWithTemplate } = require('./utils')
@@ -22,9 +23,13 @@ const GET_PROJECTS = (layouts) => `
   ${FluidImageFragment}
   ${ProjectTemplateFragment(layouts)}
   ${ProjectPreviewFragment}
+  ${ProjectsIntroFragment}
 
   query GET_PROJECTS($first:Int $after:String) {
     wpgraphql {
+      # This is the fragment used for the projects intro
+      ...ProjectsIntroFragment
+
       projects (
         first: $first
         after: $after
@@ -93,6 +98,7 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
       */
       const {
         wpgraphql: {
+          projectsIntro,
           projects: {
             nodes,
             pageInfo: { hasNextPage, endCursor },
@@ -123,6 +129,7 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
         path: projectsPagePath,
         component: projectsTemplate,
         context: {
+          projectsIntro,
           nodes,
           pageNumber: pageNumber + 1,
           hasNextPage,
