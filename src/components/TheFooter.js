@@ -16,10 +16,12 @@ export default ({ className, ...props }) => {
     `} {...props}>
       <div
         className={`
-          @mq-palm--display:grid
-          grid-template-columns:2
+          display:grid
+          grid-template-columns:var-1
           @mq-palm--grid-template-columns:var-2
           @mq-desk--grid-template-columns:var-3
+          grid-gap:columns-1
+          @mq-palm--grid-gap:0
           font-size:300
           @mq-bigdesk--font-size:400
           position:relative
@@ -27,6 +29,7 @@ export default ({ className, ...props }) => {
           padding-top:50
         `}
         style={{
+          '--grid-template-columns-var-1': '5fr 6fr',
           '--grid-template-columns-var-2': '4fr 2.667fr 2.667fr 2.667fr',
           '--grid-template-columns-var-3': '4fr 2fr 2fr 2fr 2fr',
         }}
