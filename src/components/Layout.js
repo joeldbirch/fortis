@@ -15,8 +15,8 @@ import Menu from './Menu'
 import Main from './TheMain'
 import TheHeader from './TheHeader'
 import TheFooter from './TheFooter'
-import { isIos, isSafari } from '../utilities/helpers'
-import { uiFontSize } from '../styles/helpers'
+import { isIos, isSafari } from 'utilities/helpers'
+import { uiFontSize } from 'styles/helpers'
 import 'styles/index.scss'
 
 const Layout = ({
@@ -62,7 +62,7 @@ const Layout = ({
         </style>
         <body className={`
           ${isIos() || isSafari() ? `is-safari` : ``}
-
+          grid-guide
         `} />
         <html className={`
           font-size:300
@@ -93,7 +93,7 @@ const Layout = ({
           ? ``
           : (
             <div className={`
-              padding-left:columns-3-1/2
+              padding-left:columns-4-1/2
               padding-right:columns-1-1/2
               max-width:container
               width:100

@@ -1,11 +1,11 @@
 {
 	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"path": "src/fortis-styles"
-		}
-	],
-  "settings": {}
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "workbench.activityBar.visible": false,
+    "search.useIgnoreFiles": false
+  }
 }

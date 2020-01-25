@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../../components/Layout'
 import LargeText from '../../components/LargeText'
 import NewsPreviews from '../../components/NewsPreviews'
-import NewsHeader from '../../components/NewsHeader'
+import PageHeader from '../../components/PageHeader'
 import Pagination from '../../components/Pagination'
 import SEO from '../../components/SEO'
 
@@ -18,7 +18,7 @@ const News = ({ pageContext }) => {
 
   return (
     <Layout
-      AddToHeader={<NewsHeader isMain="true" headingText={siteSectionTitle} />}
+      AddToHeader={<PageHeader isMain="true" headingText={siteSectionTitle} />}
     >
       <SEO
         title={siteSectionTitle}

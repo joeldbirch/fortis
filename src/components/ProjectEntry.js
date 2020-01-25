@@ -22,11 +22,13 @@ const ProjectEntry = ({
     },
   },
   showNote,
+  className=``,
 }) => {
   return (
 
     <article
       className={`
+      ${className}
         position:relative
       `}
     >
@@ -39,6 +41,7 @@ const ProjectEntry = ({
         `}
       >
         <FluidImage image={featuredImage} className={`
+          height:100
         `} />
 
         <div className="@mq-palm--padding-horizontal:columns-0-1/2">

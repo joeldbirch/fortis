@@ -1,7 +1,7 @@
 import React from 'react'
 import { uiFontSize } from '../styles/helpers'
 
-const NewsHeader = ({isMain=false, headingText=``}) => {
+const PageHeader = ({isMain=false, headingText=``}) => {
 
   const HeadingTag = isMain ? `h1` : `h2`
 
@@ -18,4 +18,4 @@ const NewsHeader = ({isMain=false, headingText=``}) => {
   )
 }
 
-export default NewsHeader
+export default PageHeader

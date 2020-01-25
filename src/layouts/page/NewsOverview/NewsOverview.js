@@ -1,6 +1,6 @@
 import React from 'react'
 import NewsPreviews from 'components/NewsPreviews'
-import NewsHeader from 'components/NewsHeader'
+import PageHeader from 'components/PageHeader'
 import SectionHeader from 'components/SectionHeader'
 import Divider from 'components/DividerHorizontal'
 import LargeText from 'components/LargeText'
@@ -47,7 +47,7 @@ const NewsOverview = () => {
         `}
       >
         <SectionHeader>
-          <NewsHeader headingText={siteSectionTitle} />
+          <PageHeader headingText={siteSectionTitle} />
         </SectionHeader>
 
         <NewsPreviews

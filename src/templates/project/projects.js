@@ -2,29 +2,37 @@ import React from 'react'
 import Layout from 'components/Layout'
 import Pagination from 'components/Pagination'
 import ProjectEntry from 'components/ProjectEntry'
-import SectionHeader from 'components/SectionHeader'
+import TextBlock from 'layouts/page/TextBlock'
+import PageHeader from '../../components/PageHeader'
 import SEO from 'components/SEO'
 
 const Projects = ({ pageContext }) => {
-  const { nodes, pageNumber, hasNextPage, itemsPerPage, allProjects } = pageContext
+  const {
+    projectsIntro: {
+      content: {
+        siteSectionTitle,
+        introContent,
+      }
+    },
+    nodes,
+    pageNumber,
+    hasNextPage,
+    itemsPerPage,
+    allProjects
+  } = pageContext
 
   return (
     <Layout
-      AddToHeader={
-        <SectionHeader>
-          Projects
-        </SectionHeader>
-      }
+      AddToHeader={<PageHeader isMain="true" headingText={siteSectionTitle} />}
     >
       <SEO
-        title="Projects"
+        title={siteSectionTitle}
       />
 
-
+      <TextBlock text={introContent} />
 
       <div
         className={`
-          padding-top:site-top
           width:100
           padding-bottom:800
           @mq-max-palm--padding-horizontal:columns-0-1/2
@@ -36,6 +44,7 @@ const Projects = ({ pageContext }) => {
       >
         {nodes && nodes.map(post => (
           <ProjectEntry
+            key={post.id}
             post={post}
             className={`
               @mq-palm--min-height:100vh
