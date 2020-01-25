@@ -30,7 +30,7 @@ export default ({ className, ...props }) => {
         `}
         style={{
           '--grid-template-columns-var-1': '5fr 6fr',
-          '--grid-template-columns-var-2': '4fr 2.667fr 2.667fr 2.667fr',
+          '--grid-template-columns-var-2': '4fr 2fr 3fr 3fr',
           '--grid-template-columns-var-3': '4fr 2fr 2fr 2fr 2fr',
         }}
       >
