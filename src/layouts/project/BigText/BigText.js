@@ -4,8 +4,6 @@ import LargeText from 'components/LargeText'
 const styles = {
   root: `
     @mq-palm--padding-bottom:columns-1
-    margin-horizontal:auto
-    max-width:container
     padding-horizontal:columns-0-1/2
     padding-bottom:1000
     padding-top:400

@@ -6,8 +6,6 @@ const TextBlock = ({text}) => {
       className={`
         padding-horizontal:columns-1-1/2
         @mq-desk--padding-horizontal:columns-1-1/2
-        margin-horizontal:auto
-        max-width:container
         width:100
         padding-vertical:800
         position:relative
@@ -24,7 +22,7 @@ const TextBlock = ({text}) => {
           rhythm-fix-before
           s-editable
         `}
-        style={{'--max-width': '40.5rem'}}
+        style={{'--max-width': '40rem'}}
         dangerouslySetInnerHTML={{__html: text}}
       />
     </section>

@@ -14,8 +14,6 @@ const Diagram = ({diagram, text, heading}) => {
       className={`
         padding-horizontal:columns-0-1/2
         width:100
-        max-width:container
-        margin-horizontal:auto
         padding-top:800
         @mq-palm--padding-top:columns-0-1/2
         position:relative

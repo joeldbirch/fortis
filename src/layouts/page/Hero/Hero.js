@@ -32,7 +32,7 @@ const Hero = ({image, label, linkTo, video}) => {
         <h2
           className={`
             ${uiFontSize}
-            margin-left:columns-3
+            margin-left:columns-4
             color:neutral-900
           `}
         >

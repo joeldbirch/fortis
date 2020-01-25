@@ -17,7 +17,6 @@ export default ({ className, ...props }) => {
     `} {...props}>
       <div
         className={`
-          ${ container }
           @mq-palm--display:grid
           grid-template-columns:2
           @mq-palm--grid-template-columns:var-2
@@ -36,7 +35,6 @@ export default ({ className, ...props }) => {
         <Divider
           // override divider component's margin
           className={`
-            max-width:container
             @mq-palm--margin-horizontal:auto
             @mq-max-palm--margin-horizontal:auto
           `}

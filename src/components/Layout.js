@@ -95,12 +95,10 @@ const Layout = ({
             <div className={`
               padding-left:columns-4-1/2
               padding-right:columns-1-1/2
-              max-width:container
               width:100
               position:absolute
               pos-left:50
               translate-x:-50
-              margin:auto
             `}>
               {AddToHeader}
             </div>

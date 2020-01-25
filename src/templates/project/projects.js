@@ -39,7 +39,7 @@ const Projects = ({ pageContext }) => {
         `}
         style={{
           '--grid-template-columns-var-1': '4.75fr 7fr',
-          '--grid-template-columns-var-2': '2.75fr 9fr',
+          '--grid-template-columns-var-2': '3.75fr 8fr',
           }}
       >
         {nodes && nodes.map(post => (

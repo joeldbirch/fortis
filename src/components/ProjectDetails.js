@@ -25,8 +25,6 @@ const ProjectDetails = ({
         padding-horizontal:columns-0-1/2
         @mq-desk--padding-horizontal:columns-1-1/2
         padding-top:site-top
-        max-width:container
-        margin-horizontal:auto
         position:relative
       `}
     >

@@ -6,8 +6,6 @@ const styles = {
   root: `
     padding-horizontal:columns-0-1/2
     @mq-desk--padding-horizontal:columns-1-1/2
-    margin-horizontal:auto
-    max-width:container
     padding-vertical:800
     position:relative
     width:100

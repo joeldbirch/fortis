@@ -54,9 +54,6 @@ const ProjectEntry = ({
               grid-gap:columns-0-1/4
               grid-template-columns:var-1
               @mq-tiny--grid-template-columns:var-2
-
-              max-width:container
-              margin:auto
               width:100
             `}
           >
