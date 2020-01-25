@@ -33,7 +33,6 @@ const NewsPreview = ({posts, intro, pagination}) => {
               margin-top:1000
               @mq-palm--margin-top:columns-1
               @mq-palm--padding-right:columns-2
-              @mq-palm--padding-bottom:columns-1
             `}
           />
         </div>
@@ -42,7 +41,6 @@ const NewsPreview = ({posts, intro, pagination}) => {
           : <NewsEntry
               post={posts[1]}
               className={`
-                @mq-palm--padding-bottom:columns-1
               `}
               imageClasses={`
                 flex-grow:1
@@ -56,7 +54,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
               post={posts[2]}
               className={`
                 @mq-palm--margin-top:columns-0-1/2
-                @mq-palm--padding-bottom:columns-1
+                @mq-palm--padding-top:columns-1
               `}
               imageClasses={`
                 flex-grow:1
@@ -69,7 +67,8 @@ const NewsPreview = ({posts, intro, pagination}) => {
               post={posts[3]}
               className={`
                 @mq-palm--padding-left:columns-2
-                @mq-palm--padding-bottom:columns-3
+                @mq-palm--padding-bottom:columns-2
+                @mq-palm--padding-top:columns-1
               `}
             />
         }
@@ -79,6 +78,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
               post={posts[4]}
               className={`
                 @mq-palm--padding-horizontal:columns-1
+                @mq-palm--padding-top:columns-1
                 @mq-palm--padding-bottom:columns-2-1/2
               `}
             />
@@ -89,6 +89,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
               post={posts[5]}
               className={`
                 @mq-palm--padding-horizontal:columns-1
+                @mq-palm--padding-top:columns-1
                 @mq-palm--padding-bottom:columns-0-1/2
               `}
               imageClasses={`

@@ -24,6 +24,7 @@ const NewsEntry = ({
       headerClasses={`
         display:flex
         flex-direction:column-reverse
+        @mq-palm--padding-bottom:0
       `}
       {...post}
       {...props}

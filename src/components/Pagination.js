@@ -6,36 +6,51 @@ const Pagination = ({ pageNumber, hasNextPage }) => {
   if (pageNumber === 1 && !hasNextPage) return null
 
   return (
-    <div>
-      <h2>News navigation</h2>
-      <div>
+    <div
+      className={`
+        text-align:center
+      `}
+    >
+      <h2 className={`visually-hidden`}>News navigation</h2>
+
+      <div
+        className={`
+          ${pageNumber > 1 && hasNextPage ? `display:inline-grid` : ``}
+          grid-template-columns:2
+        `}
+      >
         {
           pageNumber > 1 && (
             <Link
-              className={`prev page-numbers`}
+              className={`btn display:inline-block margin-horizontal:100`}
               to={pageNumber > 2 ? `${blogURI}/page/${pageNumber - 1}` : `${blogURI}/`}
             >
-              <span>Earlier articles</span>
+              Later articles
             </Link>
           )
         }
-
-        <span aria-current="page" className="page-numbers current" style={{ padding: "5px 10px" }}>
-          <span className="meta-nav screen-reader-text">Page </span>
-          {pageNumber}
-        </span>
 
         {
           hasNextPage && (
             <Link
-              className={`next page-numbers`}
+              className={`btn display:inline-block margin-horizontal:100`}
               to={`${blogURI}/page/${pageNumber + 1}`}
             >
-              <span>Later articles</span>
+              Earlier articles
             </Link>
           )
         }
       </div>
+
+      {
+        (hasNextPage || pageNumber > 1)
+        ? <p aria-current="page" className="page-numbers current margin-top:400 color:neutral-400">
+            <span className="meta-nav visually-hidden">Page </span>
+            {pageNumber}
+          </p>
+        : ``
+      }
+
     </div>
   )
 }

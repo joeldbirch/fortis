@@ -1,6 +1,5 @@
 import React from 'react'
 import Divider from 'components/DividerHorizontal'
-import { container } from 'styles/helpers'
 import { getCurrentYear } from 'utilities/helpers'
 
 const styles = {

@@ -29,6 +29,7 @@ const News = ({ pageContext }) => {
           padding-top:site-top
           padding-horizontal:columns-0-1/2
           @mq-desk--padding-horizontal:columns-1-1/2
+          @mq-palm--padding-bottom:columns-0-1/2
           padding-bottom:800
           width:100
         `}
