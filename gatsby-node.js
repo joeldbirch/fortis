@@ -55,7 +55,7 @@ exports.createResolvers = (
             createNodeId,
             reporter,
             httpHeaders: {
-              Authorization: `Basic ${authString}`,
+              Authorization: `Basic ${getAuthBase64(process.env.AUTH_USERNAME, process.env.AUTH_PASSWORD)}`,
             },
           })
         },
