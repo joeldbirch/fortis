@@ -3,6 +3,7 @@ import React  from 'react'
 import Layout from 'components/Layout'
 import SEO from 'components/SEO'
 import FluidImage from 'components/FluidImage'
+import NewsOverview from 'layouts/page/NewsOverview'
 import { handwritten } from 'styles/helpers'
 
 const Post = ({ pageContext }) => {
@@ -22,12 +23,10 @@ const Post = ({ pageContext }) => {
       featuredImage,
     },
   } = pageContext
-  console.log({note});
 
   return (
     <Layout>
       <SEO title={`${title} | News & views`} />
-
 
       <div
         className={`
@@ -64,13 +63,14 @@ const Post = ({ pageContext }) => {
               @mq-palm--padding-right:columns-1
               font-size:500
               @mq-bigdesk--font-size:600
+                      rhythm-fix-before
             `}
           >
             <div
               className={`
                 display:flex
                 flex-direction:column-reverse
-                max-width:var
+                @mq-max-palm--max-width:small-column //clear-the-note
               `}
             >
               <h1
@@ -82,15 +82,17 @@ const Post = ({ pageContext }) => {
               >
                 {title}
               </h1>
-              <h2
-                className={`
-                  font-weight:400
-                  font-size:em
-                  rhythm-fix-before
-                `}
-              >
-                <span className={`underlined`}>{subheading}</span>
-              </h2>
+              { !subheading
+                ? ``
+                : <h2
+                    className={`
+                      font-weight:400
+                      font-size:em
+                    `}
+                  >
+                    <span className={`underlined`}>{subheading}</span>
+                  </h2>
+              }
               <h3
                 className={`
                   font-weight:400
@@ -109,10 +111,15 @@ const Post = ({ pageContext }) => {
               : <p
                   className={`
                     ${handwritten}
-                    margin-top:800
+                    @mq-palm--margin-top:800
                     @mq-max-palm--position:absolute
                     @mq-max-palm--pos-top-right:0
+                    @mq-max-palm--max-width:caption
+                    @mq-palm--max-width:small-column
                   `}
+                  style={{
+                    'transform': 'rotate(-1deg)',
+                  }}
                 >
                   {note}
                 </p>
@@ -130,8 +137,7 @@ const Post = ({ pageContext }) => {
         </div>
       </div>
 
-
-
+      <NewsOverview/>
 
     </Layout>
   )

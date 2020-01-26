@@ -62,7 +62,6 @@ const Layout = ({
         </style>
         <body className={`
           ${isIos() || isSafari() ? `is-safari` : ``}
-          grid-guide
         `} />
         <html className={`
           font-size:300

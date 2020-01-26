@@ -1,6 +1,6 @@
 const Globals = {
-  blogURI: `news`,
-  projectsURI: `projects`,
+  blogURI: `/news`,
+  projectsURI: `/projects`,
   templateCacheFolder: `.template-cache`,
 }
 

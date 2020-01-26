@@ -22,8 +22,12 @@ const NewsPreview = ({posts, intro, pagination}) => {
             className={`
               @mq-palm--padding-right:columns-1
               @mq-lap--margin-top:columns-1
+              can-rotate-note
             `}
-            style={{'--offset-left': '1rem'}}
+            style={{
+              '--offset-left': '1rem',
+              '--rotate': '-2deg',
+            }}
           >
             {intro}
           </div>

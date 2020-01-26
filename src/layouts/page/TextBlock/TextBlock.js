@@ -1,6 +1,11 @@
 import React from 'react'
 
-const TextBlock = ({text}) => {
+const TextBlock = ({text, style={}}) => {
+  const inlineStyles = Object.assign(
+    {},
+    {'--rotate': '-1deg'},
+    style
+  )
   return (
     <section
       className={`
@@ -17,12 +22,13 @@ const TextBlock = ({text}) => {
         className={`
           font-size:600
           margin:auto
-          max-width:var
+          max-width:measure
           rhythm-fix-after
           rhythm-fix-before
           s-editable
+          can-style-note
         `}
-        style={{'--max-width': '40rem'}}
+        style={inlineStyles}
         dangerouslySetInnerHTML={{__html: text}}
       />
     </section>

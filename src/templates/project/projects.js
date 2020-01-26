@@ -29,7 +29,10 @@ const Projects = ({ pageContext }) => {
         title={siteSectionTitle}
       />
 
-      <TextBlock text={introContent} />
+      <TextBlock text={introContent} style={{
+        '--desk-offset-left': '-4.5em',
+        '--rotate': '-1deg',
+      }} />
 
       <div
         className={`

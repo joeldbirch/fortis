@@ -62,20 +62,18 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "cd src && yarn add https://joel_birch@bitbucket.org/joel_birch/fortis-styles.git && cd ../ ",
-    "build": "gatsby build",
+    "build": "yarn pull:styles && gatsby build",
     "develop": "gatsby develop",
     "clean": "gatsby clean",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "yarn develop",
     "serve": "gatsby serve",
-    "update:styles": "cd src && git pull && cd ../",
+    "pull:styles": "cd src/fortis-styles && git pull --rebase && cd ../../",
+    "push:styles": "cd src/fortis-styles && git add . && git commit -m 'Update styles.' && git push origin master && cd ../../",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "git@bitbucket.org:joel_birch/fortis.git"
   }
 }
