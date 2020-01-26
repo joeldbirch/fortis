@@ -64,6 +64,7 @@ const Layout = ({
           ${isIos() || isSafari() ? `is-safari` : ``}
           overflow-y:scroll
           scroll-snap-type:y-proximity
+          grid-guide
         `} />
         <html className={`
           font-size:300
@@ -80,15 +81,13 @@ const Layout = ({
             &:before--hit-area-xy-100
             position:relative
             pointer-events:auto
+            underlined
+            underlined--thin
+            underlined-reveal
+            ${uiFontSize}
           `}
         >
-          <p
-            className={`
-              ${uiFontSize}
-            `}
-          >
-            Fortis
-          </p>
+          Fortis
         </Link>
         { !AddToHeader
           ? ``

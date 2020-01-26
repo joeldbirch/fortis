@@ -17,6 +17,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
 
   return (
     <div className={`
+      menu
       ${className}
     `}>
       <nav role="navigation">
@@ -24,6 +25,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
           aria-haspopup
           aria-expanded={isOpen}
           className={`
+            menu-toggler
             padding:0
             position:absolute
             ${uiFontSize}
@@ -47,6 +49,9 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
               height:100
               pos-top-left:0
               position:absolute
+              underlined
+              underlined--thin
+              underlined-reveal
               ${isOpen ? `opacity:0 scale:80` : ``}
             `}
             style={{
@@ -68,15 +73,16 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
 
         <div
           className={`
+            menu-bg
             position:fixed
             pos-right:0
             pos-top:0
             height:100vh
             display:block
             width:100
-            max-width:columns-8-1/2
+            max-width:columns-11-1/2
             @mq-palm--max-width:columns-6-1/2
-            @mq-desk--max-width:columns-4-1/2
+            @mq-bigdesk--max-width:columns-4-1/2
             transition-property:opacity-transform
             transition-duration:400
             padding-top:site-top
@@ -92,18 +98,25 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
           }}
         >
           <ul className={`
+            menu-list
+            font-size:700
+            @mq-desk--font-size:800
+            font-weight:300
           `}>
             {
               menuItems.map((menuItem) => (
                 <MenuItem
                   className={`
-                    @mq-tiny--font-size:500
-                    @mq-lap--font-size:550
                   `}
                   linkClasses={`
                     text-decoration:none
                     &:hover--text-decoration:underline
+                    underlined
+                    underlined--thin
+                    underlined-reveal
                     color:neutral-900
+                    display:inline-block
+                    @mq-max-palm--padding-vertical:100
                   `}
                   key={menuItem.id}
                   menuItem={menuItem}

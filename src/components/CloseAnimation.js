@@ -36,7 +36,8 @@ const ClosedAnimation = ({closed=true, wrapStyles={}}) => {
         {},
         inlineStyles.wrap,
         {
-          opacity: closed ? `1` : `0`
+          opacity: closed ? `1` : `0`,
+          pointerEvents: closed ? `auto` : `none`,
         },
         wrapStyles,
       )}
