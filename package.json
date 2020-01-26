@@ -12,27 +12,28 @@
     "node": ">= 12.14.1"
   },
   "dependencies": {
+    "@joeldbirch/fortis-styles": "https://joel_birch@bitbucket.org/joel_birch/fortis-styles.git",
     "babel-plugin-root-import": "^6.4.1",
     "dotenv": "^8.2.0",
     "fibers": "^4.0.2",
     "fix-outline": "https://github.com/joeldbirch/fix-outline.git",
     "flickity": "^2.2.1",
-    "gatsby-image": "^2.2.38",
+    "gatsby-image": "^2.2.39",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-hubspot": "^1.3.3",
-    "gatsby-plugin-manifest": "^2.2.37",
+    "gatsby-plugin-manifest": "^2.2.38",
     "gatsby-plugin-netlify": "^2.1.31",
-    "gatsby-plugin-offline": "^3.0.31",
+    "gatsby-plugin-offline": "^3.0.32",
     "gatsby-plugin-polyfill-io": "^1.1.0",
     "gatsby-plugin-purgecss": "^4.0.1",
     "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sass": "^2.1.27",
-    "gatsby-plugin-sharp": "^2.3.13",
+    "gatsby-plugin-sharp": "^2.4.0",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.1.46",
-    "gatsby-source-graphql": "^2.1.31",
-    "gatsby-transformer-sharp": "^2.3.12",
+    "gatsby-source-graphql": "^2.1.32",
+    "gatsby-transformer-sharp": "^2.3.13",
     "glob": "^7.1.6",
     "hucssley": "github:stowball/hucssley",
     "lodash.isempty": "^4.4.0",
@@ -41,18 +42,18 @@
     "react-flickity-component": "^3.4.0",
     "react-helmet": "^5.2.1",
     "react-modal": "^3.11.1",
-    "sass": "^1.24.5"
+    "sass": "^1.25.0"
   },
   "devDependencies": {
-    "gatsby": "^2.18.21",
+    "gatsby": "^2.19.5",
     "gatsby-plugin-eslint": "^2.0.8",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "sharp": "^0.23.4"
+    "sharp": "^0.24.0"
   },
   "peerDependencies": {
-    "gatsby": "^2.18.21",
+    "gatsby": "^2.19.5",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
@@ -61,7 +62,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "postinstall": "cd src && yarn add https://joel_birch@bitbucket.org/joel_birch/fortis-styles.git && cd ../ ",
+    "firstpostinstall": "cd src && yarn add https://joel_birch@bitbucket.org/joel_birch/fortis-styles.git && cd ../ ",
     "build": "yarn pull:styles && gatsby build",
     "develop": "gatsby develop",
     "clean": "gatsby clean",
