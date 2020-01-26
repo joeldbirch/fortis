@@ -17,6 +17,7 @@ const Hero = ({image, label, linkTo, video}) => {
         position:relative
         min-height:100vh
         width:100vw
+        scroll-snap-align:start
       `}
     >
       <header

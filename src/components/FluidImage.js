@@ -21,7 +21,13 @@ const FluidImage = ({ image, withFallback = false, className=``, ...props }) => 
   const normalisedFile = image.imageFile || image.imageFilePortrait
 
   if (normalisedFile) {
-    return <GatsbyImage fluid={normalisedFile.childImageSharp.fluid} alt={image.altText} className={className} {...props} />
+    return <GatsbyImage
+      fluid={normalisedFile.childImageSharp.fluid}
+      alt={image.altText}
+      className={className}
+      durationFadeIn={1000}
+      {...props}
+    />
   }
 
   return <img src={image.sourceUrl} alt={image.altText} className={`${className} width:100`} {...props} />

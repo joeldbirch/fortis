@@ -35,6 +35,7 @@ const NewsOverview = () => {
   return (
     <section className={`
       position:relative
+      scroll-snap-align:start
     `}>
       <Divider />
       <div

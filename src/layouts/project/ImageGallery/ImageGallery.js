@@ -14,6 +14,7 @@ const ImageGallery = ({imageGallery}) => {
         width:100vw
         padding-vertical:columns-0-1/2
         overflow:hidden
+        scroll-snap-align:center
       `}
     >
       <Helmet>

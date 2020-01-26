@@ -16,6 +16,7 @@ const TextBlock = ({text, style={}}) => {
         position:relative
         min-height:100vh
         display:flex
+        scroll-snap-align:start
       `}
     >
       <div

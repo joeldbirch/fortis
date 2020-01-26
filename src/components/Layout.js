@@ -62,6 +62,8 @@ const Layout = ({
         </style>
         <body className={`
           ${isIos() || isSafari() ? `is-safari` : ``}
+          overflow-y:scroll
+          scroll-snap-type:y-proximity
         `} />
         <html className={`
           font-size:300
@@ -116,7 +118,9 @@ const Layout = ({
         {children}
       </Main>
 
-      <TheFooter className={``} />
+      <TheFooter className={`
+        scroll-snap-align:end
+      `} />
 
     </TheWrap>
   )

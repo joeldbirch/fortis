@@ -15,6 +15,7 @@ const styles = {
     flex-direction:column
     justify-content:space-between
     position:relative
+    scroll-snap-align:start
   `,
   mediaWrap: `
     flex-basis:60
