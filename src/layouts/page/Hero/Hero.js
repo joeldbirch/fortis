@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import FluidImage from 'components/FluidImage'
 import FullWindowVideo from 'components/FullWindowVideo'
+import ScrollPrompt from 'components/ScrollPrompt'
 import { uiFontSize } from 'styles/helpers'
 import { getPath } from 'utilities/helpers'
 
@@ -29,6 +30,9 @@ const Hero = ({image, label, linkTo, video}) => {
           width:100
           z-index:100
         `}
+        style={{
+          '--color-contrast': 'white',
+        }}
       >
         <h2
           className={`
@@ -57,6 +61,7 @@ const Hero = ({image, label, linkTo, video}) => {
               `}
             />
       }
+      <ScrollPrompt />
     </section>
   )
 }

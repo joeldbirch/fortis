@@ -25,7 +25,7 @@ const FluidImage = ({ image, withFallback = false, className=``, ...props }) => 
       fluid={normalisedFile.childImageSharp.fluid}
       alt={image.altText}
       className={className}
-      durationFadeIn={1000}
+      durationFadeIn={1500}
       {...props}
     />
   }

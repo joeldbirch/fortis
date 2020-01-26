@@ -1,4 +1,5 @@
 import React from 'react'
+import ScrollPrompt from 'components/ScrollPrompt'
 
 const TextBlock = ({text, style={}}) => {
   const inlineStyles = Object.assign(
@@ -32,6 +33,7 @@ const TextBlock = ({text, style={}}) => {
         style={inlineStyles}
         dangerouslySetInnerHTML={{__html: text}}
       />
+      <ScrollPrompt />
     </section>
   )
 }

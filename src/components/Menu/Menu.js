@@ -100,7 +100,6 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
           <ul className={`
             menu-list
             font-size:700
-            @mq-desk--font-size:800
             font-weight:300
           `}>
             {
