@@ -15,9 +15,9 @@ const PostTemplateFragment = `
     featuredImage {
       sourceUrl
       altText
-      imageFile {
+      imageFileHero {
         childImageSharp {
-          fluid(maxWidth: 800, quality: 90, cropFocus: CENTER) {
+          fluid(maxWidth: 1600, maxHeight:900, quality: 70, cropFocus: CENTER) {
             ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }
@@ -46,7 +46,14 @@ const NewsPreviewFragment = `
       altText
       imageFile {
         childImageSharp {
-          fluid(maxWidth: 800, quality: 90, cropFocus: CENTER) {
+          fluid(maxWidth: 1000, maxHeight: 563, quality: 70, cropFocus: CENTER) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+      imageFilePortrait {
+        childImageSharp {
+          fluid(maxWidth: 1000, maxHeight: 1000, quality: 70, cropFocus: CENTER) {
             ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }

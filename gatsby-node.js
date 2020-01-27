@@ -14,7 +14,6 @@ exports.createPagesStatefully = async ({ graphql, actions, reporter }, options) 
   await createProjects({ actions, graphql, reporter }, options)
 }
 
-
 exports.createResolvers = (
   {
     actions,
@@ -26,39 +25,32 @@ exports.createResolvers = (
   },
 ) => {
   const { createNode } = actions
+
+  const createThumbnailResolver = source => createRemoteFileNode({
+    url: source.sourceUrl,
+    store,
+    cache,
+    createNode,
+    createNodeId,
+    reporter,
+    httpHeaders: {
+      Authorization: `Basic ${getAuthBase64(process.env.AUTH_USERNAME, process.env.AUTH_PASSWORD)}`,
+    },
+  })
+
   createResolvers({
     WPGraphQL_MediaItem: {
       imageFile: {
         type: `File`,
-        resolve(source, args, context, info) {
-          return createRemoteFileNode({
-            url: source.sourceUrl,
-            store,
-            cache,
-            createNode,
-            createNodeId,
-            reporter,
-            httpHeaders: {
-              Authorization: `Basic ${getAuthBase64(process.env.AUTH_USERNAME, process.env.AUTH_PASSWORD)}`,
-            },
-          })
-        },
+        resolve: createThumbnailResolver,
       },
       imageFilePortrait: {
         type: `File`,
-        resolve(source, args, context, info) {
-          return createRemoteFileNode({
-            url: source.sourceUrl,
-            store,
-            cache,
-            createNode,
-            createNodeId,
-            reporter,
-            httpHeaders: {
-              Authorization: `Basic ${getAuthBase64(process.env.AUTH_USERNAME, process.env.AUTH_PASSWORD)}`,
-            },
-          })
-        },
+        resolve: createThumbnailResolver,
+      },
+      imageFileHero: {
+        type: `File`,
+        resolve: createThumbnailResolver,
       },
     },
     WPGraphQL_Page: {
