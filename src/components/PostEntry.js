@@ -12,6 +12,7 @@ const PostEntry = ({
   headerClasses=``,
   children,
 }) => {
+  console.log({artDirection, featuredImage});
 
   return (
     <article
