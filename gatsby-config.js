@@ -3,7 +3,7 @@ const Fiber = require('fibers')
 const {
   wordpressSelectors,
   wordpressPatterns,
-} = require('./src/whitelists')
+} = require('./src/whitelist')
 
 const getAuthBase64 = (user, pass) => Buffer.from(`${user}:${pass}`).toString('base64')
 
