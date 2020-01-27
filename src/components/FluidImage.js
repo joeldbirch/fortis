@@ -2,7 +2,7 @@ import React from 'react'
 import GatsbyImage from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby'
 
-const FluidImage = ({ image, withFallback = false, className=``, ...props }) => {
+const FluidImage = ({ image, withFallback = false, className=``, artDirection=`imageFile`, ...props }) => {
 
   const data = useStaticQuery(graphql`
     query {
@@ -18,7 +18,7 @@ const FluidImage = ({ image, withFallback = false, className=``, ...props }) => 
     return withFallback ? <img src={data.fallBackImage.publicURL} alt="" className={`${className} width:100`} {...props} /> : null
   }
 
-  const normalisedFile = image.imageFile || image.imageFilePortrait
+  const normalisedFile = image[artDirection] || image.imageFilePortrait
 
   if (normalisedFile) {
     return <GatsbyImage

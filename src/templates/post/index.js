@@ -44,6 +44,7 @@ const Post = ({ pageContext }) => {
             margin-bottom:columns-0-1/2
           `}
           image={featuredImage}
+          artDirection={`imageFileHero`}
         />
         <div
           className={`

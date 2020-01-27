@@ -50,6 +50,7 @@ const ImageGallery = ({imageGallery}) => {
           `}>
             <FluidImage
               image={image}
+              artDirection={`imageFileHero`}
               className={`
                 width:100
                 height:100

@@ -46,8 +46,10 @@ const NewsPreview = ({posts, intro, pagination}) => {
               post={posts[1]}
               className={`
               `}
+              artDirection={`imageFilePortrait`}
               imageClasses={`
-                flex-grow:1
+                @mq-palm--flex-grow:1
+                @mq-palm--height:0
               `}
             />
         }
@@ -96,6 +98,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
                 @mq-palm--padding-top:columns-1
                 @mq-palm--padding-bottom:columns-0-1/2
               `}
+              artDirection={`imageFilePortrait`}
               imageClasses={`
                 flex-grow:1
               `}

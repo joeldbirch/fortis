@@ -4,6 +4,7 @@ import { handwritten } from 'styles/helpers'
 
 const PostEntry = ({
   featuredImage,
+  artDirection,
   showNote=false,
   note,
   className=``,
@@ -27,9 +28,14 @@ const PostEntry = ({
           position:relative
         `}
       >
-        <FluidImage image={featuredImage} className={`
-          ${imageClasses}
-        `} />
+        <FluidImage
+          image={featuredImage}
+          artDirection={artDirection}
+          className={`
+            ${imageClasses}
+            @mq-max-palm--height:9/16vw
+          `}
+        />
 
         <header
           className={`

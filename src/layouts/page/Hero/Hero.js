@@ -56,6 +56,7 @@ const Hero = ({image, label, linkTo, video}) => {
           ? <FullWindowVideo vimeoId={video}/>
           : <FluidImage
               image={image}
+              artDirection={`imageFileHero`}
               className={`
                 height:100vh
               `}
