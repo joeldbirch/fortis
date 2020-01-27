@@ -65,6 +65,7 @@ const Layout = ({
           ${isIos() || isSafari() ? `is-safari` : ``}
           overflow-y:scroll
           scroll-snap-type:y-mandatory
+          grid-guide
         `} />
         <html className={`
           font-size:300
