@@ -1,5 +1,10 @@
 const Fiber = require('fibers')
 
+const {
+  wordpressSelectors,
+  wordpressPatterns,
+} = require('./src/whitelists')
+
 const getAuthBase64 = (user, pass) => Buffer.from(`${user}:${pass}`).toString('base64')
 
 let activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || `development`
@@ -101,7 +106,8 @@ module.exports = {
         printRejected: true, // Print removed selectors and processed file names
         content: ['public/*.html', 'public/**/*.html', 'src/**/*.js','src/*.js', 'src/images/*.svg', 'src/images/**/*.svg'],
         ignore: [`/src/components/FormModal/_index.scss`, `/src/components/TheWrap/style.module.scss`, `/src/styles/base/_custom-reset.scss`],
-        whitelist: [`albatross`],
+        whitelist: wordpressSelectors,
+        whitelistPatterns: wordpressPatterns,
         extractors: [
           {
             extractor: class {
