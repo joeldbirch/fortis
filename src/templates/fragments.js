@@ -1,6 +1,5 @@
 const FluidImageFragment = `
-  fragment GatsbyImageSharpFluid_withWebp_tracedSVG on ImageSharpFluid {
-    tracedSVG
+  fragment GatsbyImageSharpFluid_withWebp_noBase64 on ImageSharpFluid {
     aspectRatio
     src
     srcSet

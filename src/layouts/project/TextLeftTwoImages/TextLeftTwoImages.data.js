@@ -12,7 +12,7 @@ module.exports = () => {
           imageFilePortrait {
             childImageSharp {
               fluid(maxHeight: 328, maxWidth: 235, quality: 90, cropFocus: CENTER) {
-                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
           }
@@ -23,7 +23,7 @@ module.exports = () => {
           imageFile {
             childImageSharp {
               fluid(maxHeight: 470, maxWidth: 655, quality: 90, cropFocus: CENTER) {
-                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
           }

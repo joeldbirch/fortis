@@ -12,7 +12,7 @@ module.exports = () => {
           extension
           childImageSharp {
             fluid(maxHeight: 900, maxWidth: 1600, quality: 90, cropFocus: CENTER) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }
         }
