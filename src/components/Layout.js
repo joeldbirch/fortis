@@ -70,6 +70,9 @@ const Layout = ({
           font-size:300
           @mq-lap--font-size:400
         `} lang="en" />
+
+        <meta name="robots" content="noindex" />
+
       </Helmet>
 
       <TheHeader>
