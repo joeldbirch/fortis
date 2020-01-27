@@ -103,16 +103,17 @@ module.exports = {
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
+        debug: true,
         printRejected: true, // Print removed selectors and processed file names
-        content: ['public/*.html', 'public/**/*.html', 'src/**/*.js','src/*.js', 'src/images/*.svg', 'src/images/**/*.svg'],
-        ignore: [`/src/components/FormModal/_index.scss`, `/src/components/TheWrap/style.module.scss`, `/src/styles/base/_custom-reset.scss`],
+        content: ['public/*.html', 'public/**/*.html', 'src/**/*.js','src/*.js', 'src/images/*.svg', 'src/images/**/*.svg', 'src/fortis-styles/**/!(*.d).{js,jsx}'],
+        ignore: [`/src/components/FormModal/_index.scss`, `/src/components/TheWrap/style.module.scss`, `flickity`],
         whitelist: wordpressSelectors,
         whitelistPatterns: wordpressPatterns,
         extractors: [
           {
             extractor: class {
               static extract(content) {
-                return content.match(/[A-Za-z0-9-_&:@<>]+/g) || [];
+                return content.match(/[A-Za-z0-9-_&:@<>/]+/g) || [];
               }
             },
             extensions: ['html', 'js', 'svg'],
