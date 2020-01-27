@@ -108,6 +108,7 @@ module.exports = {
     'width:cols-12',
     'is-selected',
     'dot',
+    'pre',
   ]),
   wordpressPatterns: [
     /^(.*)-template(-.*)?$/,
