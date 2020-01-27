@@ -1,6 +1,8 @@
 import React from 'react'
 import NewsEntry from './NewsEntry'
 
+const cols = (num) => Math.round((num / 13) * 10000) / 100
+
 const NewsPreview = ({posts, intro, pagination}) => {
   if (!posts) return ``
   return (
@@ -37,6 +39,13 @@ const NewsPreview = ({posts, intro, pagination}) => {
               margin-top:1000
               @mq-palm--margin-top:columns-1
               @mq-palm--padding-right:columns-2
+            `}
+            imageAspectRatio={16/9}
+            imageSizes={`
+              (max-width: 549px) ${cols(12)}vw,
+              (min-width: 960px) ${cols(3)}vw,
+              (min-width: 550px) ${cols(4)}vw,
+              850px
             `}
           />
         </div>

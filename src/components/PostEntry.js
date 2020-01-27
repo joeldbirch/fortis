@@ -4,6 +4,7 @@ import { handwritten } from 'styles/helpers'
 
 const PostEntry = ({
   featuredImage,
+  imageAspectRatio,
   showNote=false,
   note,
   className=``,
@@ -27,9 +28,13 @@ const PostEntry = ({
           position:relative
         `}
       >
-        <FluidImage image={featuredImage} className={`
-          ${imageClasses}
-        `} />
+        <FluidImage
+          image={featuredImage}
+          sizes={{...featuredImage.childImageSharp.fluid, imageAspectRatio}}
+          className={`
+            ${imageClasses}
+          `}
+        />
 
         <header
           className={`
