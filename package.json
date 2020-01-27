@@ -62,7 +62,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "postinstall": "cd src && yarn add https://joel_birch@bitbucket.org/joel_birch/fortis-styles.git && cd ../ ",
+    "firstpostinstall": "cd src && git clone https://joel_birch@bitbucket.org/joel_birch/fortis-styles.git && cd ../ ",
     "build": "yarn pull:styles && gatsby build",
     "develop": "gatsby develop",
     "clean": "gatsby clean",
