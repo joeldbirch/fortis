@@ -1,5 +1,7 @@
 module.exports = {
   wordpressSelectors: [
+    'h3',
+    'h4',
     'rtl',
     'home',
     'blog',
