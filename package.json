@@ -8,9 +8,6 @@
   "exports": {
     "@": "./src"
   },
-  "engines": {
-    "node": ">= 12.14.1"
-  },
   "dependencies": {
     "@joeldbirch/fortis-styles": "https://joel_birch@bitbucket.org/joel_birch/fortis-styles.git",
     "babel-plugin-root-import": "^6.4.1",
@@ -62,8 +59,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build:initial": "nvm use 12 && cd src && git clone https://joel_birch@bitbucket.org/joel_birch/fortis-styles.git && cd ../ && npm run build",
-    "build": "npm run pull:styles && gatsby build",
+    "build:initial": "nvm use 12 && cd src && git clone https://joel_birch@bitbucket.org/joel_birch/fortis-styles.git && cd ../ && yarn build",
+    "build": "yarn pull:styles && gatsby build",
     "develop": "gatsby develop",
     "clean": "gatsby clean",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
