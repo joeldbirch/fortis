@@ -116,7 +116,9 @@ export default ({ className, ...props }) => {
           >Follow us</h3>
           <ul
             className={`
-              list-type:none
+              list-style:none
+              padding:0
+              margin:0
             `}
           >
             <li> <a href="https://instagram.com">Instagram</a> </li>

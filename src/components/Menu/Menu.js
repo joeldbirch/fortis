@@ -99,6 +99,9 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
         >
           <ul className={`
             menu-list
+            list-style:none
+            padding:0
+            margin:0
             font-size:700
             font-weight:300
           `}>
