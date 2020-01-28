@@ -129,8 +129,8 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
     * Map over the posts for later creation
     */
     nodes
-    && nodes.forEach((posts) => {
-      allPosts.push(posts)
+    && nodes.forEach((post) => {
+      allPosts.push(post)
     })
 
     /**

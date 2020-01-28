@@ -1,14 +1,15 @@
 import React  from 'react'
-
 import Layout from 'components/Layout'
 import SEO from 'components/SEO'
 import FluidImage from 'components/FluidImage'
 import ScrollPrompt from 'components/ScrollPrompt'
+import PageHeader from 'components/PageHeader'
 import NewsOverview from 'layouts/page/NewsOverview'
+import { useNewsData  } from 'hooks/use-news-data'
 import { handwritten } from 'styles/helpers'
 
-const Post = ({ pageContext }) => {
 
+const Post = ({ pageContext }) => {
   const {
     post: {
       optionalFields: {
@@ -25,8 +26,18 @@ const Post = ({ pageContext }) => {
     },
   } = pageContext
 
+  const {
+    newsIntro: {
+      content: {
+        siteSectionTitle,
+      },
+    },
+  } = useNewsData()
+
   return (
-    <Layout>
+    <Layout
+      AddToHeader={<PageHeader headingTag="p" headingText={siteSectionTitle} />}
+    >
       <SEO title={`${title} | News & views`} />
 
       <div
@@ -66,8 +77,10 @@ const Post = ({ pageContext }) => {
               @mq-palm--padding-right:columns-1
               font-size:500
               @mq-bigdesk--font-size:600
-                      rhythm-fix-before
             `}
+            style={{
+              '--bigdesk-offset-left': '1rem',
+            }}
           >
             <div
               className={`
@@ -80,6 +93,9 @@ const Post = ({ pageContext }) => {
                 className={`
                   font-weight:400
                   font-size:em
+                  margin-top:100
+                  @mq-lap--margin-top:0
+                  @mq-wall--font-size:700
                 `}
                 id={`preview-${id}`}
               >
@@ -90,10 +106,11 @@ const Post = ({ pageContext }) => {
                 : <h2
                     className={`
                       font-weight:400
-                      font-size:em
+                      font-size:300
+                      @mq-bigdesk--font-size:400
                     `}
                   >
-                    <span className={`underlined`}>{subheading}</span>
+                    <span className={``}>{subheading}</span>
                   </h2>
               }
               <h3
@@ -101,9 +118,10 @@ const Post = ({ pageContext }) => {
                   font-weight:400
                   font-size:200
                   text-transform:uppercase
-                  margin-bottom:400
-                  @mq-desk--position:absolute
+                  margin-bottom:100
+                  @mq-bigdesk--position:absolute
                   pos-top:-columns-0-1/4
+                  color:neutral-700
                 `}
               >
                 {cats[0].name}
@@ -131,7 +149,7 @@ const Post = ({ pageContext }) => {
           <div
             className={`
               s-editable
-              @mq-bigdesk--font-size:500
+              @mq-wall--font-size:500
               rhythm-fix-before
             `}
             dangerouslySetInnerHTML={{__html: content}}

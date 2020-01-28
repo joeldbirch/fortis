@@ -56,10 +56,10 @@ const NewsEntry = ({
       <h3
         className={`
           font-weight:400
-          font-size:400
+          font-size:300
         `}
       >
-        {subheading}
+        {subheading || `Article`}
       </h3>
       <h4
         className={`
@@ -67,6 +67,7 @@ const NewsEntry = ({
           font-size:200
           text-transform:uppercase
           margin-bottom:100
+          color:neutral-700
         `}
       >
         {categories.nodes[0].name}

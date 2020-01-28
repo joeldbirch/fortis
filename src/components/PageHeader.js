@@ -1,9 +1,9 @@
 import React from 'react'
 import { uiFontSize } from '../styles/helpers'
 
-const PageHeader = ({isMain=false, headingText=``}) => {
+const PageHeader = ({isMain=false, headingText=``, headingTag=`h2`}) => {
 
-  const HeadingTag = isMain ? `h1` : `h2`
+  const HeadingTag = isMain ? `h1` : headingTag
 
   return (
     <HeadingTag
