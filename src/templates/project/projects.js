@@ -40,10 +40,6 @@ const Projects = ({ pageContext }) => {
           padding-bottom:800
           @mq-max-palm--padding-horizontal:columns-0-1/2
         `}
-        style={{
-          '--grid-template-columns-var-1': '4.75fr 7fr',
-          '--grid-template-columns-var-2': '3.75fr 8fr',
-          }}
       >
         {nodes && nodes.map(post => (
           <ProjectEntry

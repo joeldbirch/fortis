@@ -82,7 +82,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
             width:100
             max-width:columns-11-1/2
             @mq-palm--max-width:columns-6-1/2
-            @mq-bigdesk--max-width:columns-4-1/2
+            @mq-bigdesk--max-width:columns-3-1/2
             transition-property:opacity-transform
             transition-duration:400
             padding-top:site-top

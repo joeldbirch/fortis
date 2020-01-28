@@ -44,9 +44,14 @@ const Hero = ({image, label, linkTo, video}) => {
           <OptionalLink to={to} className={`
             &:before--hit-area-xy-100
             color:inherit
-            underlined
-            underlined--thin
-            &:hover:after--opacity:0
+            ${to
+              ? `
+                underlined
+                underlined--thin
+                &:hover:after--opacity:0
+              `
+              : ``
+            }
           `}>{label}</OptionalLink>
         </h2>
       </header>

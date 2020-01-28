@@ -35,11 +35,13 @@ module.exports = (imports) => {
             label={title}
             image={featuredImage}
             video={projectDetails.detailsTable.mediaDetails.video}
+            className="scroll-snap-align:start"
           />
 
           <ProjectDetails
             title={title}
             {...projectDetails}
+            className="scroll-snap-align:start"
           />
 
           {

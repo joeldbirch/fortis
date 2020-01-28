@@ -34,7 +34,8 @@ const Diagram = ({diagram, text, heading}) => {
       </div>
       <div className={`
         @mq-max-palm--margin-top:400
-        @mq-desk--padding-horizontal:columns-1
+        @mq-lap--padding-horizontal:columns-1
+        @mq-desk--padding-horizontal:columns-2
       `}>
         <MultiFormatImage
           image={diagram}

@@ -10,7 +10,7 @@ export default ({children}) => {
     >
       <div
         className={`
-          padding-left:columns-4-1/2
+          padding-left:columns-3-1/2
           padding-right:columns-1-1/2
           width:100
         `}

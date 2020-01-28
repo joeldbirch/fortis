@@ -30,7 +30,6 @@ const NewsEntry = ({
 }) => {
 
   const alteredPost = postWithFeaturedImageSizes(post, imageSizes)
-  console.log(alteredPost);
 
   return (
     <PostEntry

@@ -31,6 +31,11 @@ const ProjectEntry = ({
       ${className}
         position:relative
       `}
+      style={{
+        '--grid-template-columns-var-1': '4.75fr 7fr',
+        '--grid-template-columns-var-2': '2.75fr 9fr',
+        '--grid-template-columns-var-3': '1.75fr 10fr',
+        }}
     >
       <div
         className={`
@@ -54,6 +59,7 @@ const ProjectEntry = ({
               grid-gap:columns-0-1/4
               grid-template-columns:var-1
               @mq-tiny--grid-template-columns:var-2
+              @mq-lap--grid-template-columns:var-3
               width:100
             `}
           >
