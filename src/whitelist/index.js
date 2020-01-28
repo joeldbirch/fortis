@@ -180,6 +180,7 @@ module.exports = {
     /^hidden_(.*)?$/,
     /^logged-in__display:(.*)?$/,
     /^validation_(.*)?$/,
+    /^u-space-items(.*)?$/,
     /^(.*)?-?paged(-.*)?$/,
   ]),
 }
