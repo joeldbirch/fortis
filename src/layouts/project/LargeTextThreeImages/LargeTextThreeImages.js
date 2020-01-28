@@ -2,6 +2,15 @@ import React from 'react'
 import FluidImage from 'components/FluidImage'
 import { handwritten } from 'styles/helpers'
 
+// import { cols, mq } from 'utilities/helpers'
+
+// // const smallerSizes = `
+// //   (max-width: ${mq.maxPalm}) ${cols(12)}vw,
+// //   (min-width: ${mq.desk}) ${cols(3)}vw,
+// //   (min-width: ${mq.palm}) ${cols(4)}vw,
+// //   850px
+// // `
+
 const styles = {
   root: `
     padding-horizontal:columns-0-1/2

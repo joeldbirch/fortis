@@ -3,19 +3,8 @@ import PostEntry from 'components/PostEntry'
 import { Link } from 'gatsby'
 import { blogURI } from '../../../globals'
 
-const postWithFeaturedImageSizes = (post, sizes) => {
-  if (!sizes) return post
-  const alteredPost= Object.assign(
-    {},
-    post
-  )
-  alteredPost.featuredImage.imageFile.childImageSharp.fluid.sizes = sizes
-  return alteredPost
-}
-
 const NewsEntry = ({
   showNote,
-  imageSizes,
   post: {
     optionalFields: {
       subheading,
@@ -29,8 +18,6 @@ const NewsEntry = ({
   ...props
 }) => {
 
-  const alteredPost = postWithFeaturedImageSizes(post, imageSizes)
-
   return (
     <PostEntry
       showNote={showNote}
@@ -39,7 +26,7 @@ const NewsEntry = ({
         flex-direction:column-reverse
         @mq-palm--padding-bottom:0
       `}
-      {...alteredPost}
+      {...post}
       {...props}
     >
       <h2

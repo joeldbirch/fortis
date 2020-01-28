@@ -2,7 +2,7 @@ import React from 'react'
 import GatsbyImage from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby'
 
-const FluidImage = ({ image, withFallback = false, className=``, artDirection=`imageFile`, ...props }) => {
+const FluidImage = ({ image, withFallback = false, className=``, artDirection=`imageFile`, sizes, ...props }) => {
 
   const data = useStaticQuery(graphql`
     query {
@@ -18,11 +18,14 @@ const FluidImage = ({ image, withFallback = false, className=``, artDirection=`i
     return withFallback ? <img src={data.fallBackImage.publicURL} alt="" className={`${className} width:100`} {...props} /> : null
   }
 
-  const normalisedFile = image[artDirection] || image.imageFilePortrait
+  if (image[artDirection]) {
 
-  if (normalisedFile) {
+    const fluidData = sizes
+      ? {...image[artDirection].childImageSharp.fluid, sizes }
+      : image[artDirection].childImageSharp.fluid
+
     return <GatsbyImage
-      fluid={normalisedFile.childImageSharp.fluid}
+      fluid={fluidData}
       alt={image.altText}
       className={className}
       durationFadeIn={1500}

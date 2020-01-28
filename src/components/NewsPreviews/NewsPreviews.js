@@ -1,13 +1,7 @@
 import React from 'react'
 import NewsEntry from './NewsEntry'
+import { cols, mq } from 'utilities/helpers'
 
-const cols = (num) => Math.round((num / 13) * 10000) / 100
-const huEm = (px) => `${px / 16}em`
-const mq = {
-  palm: huEm(550),
-  maxPalm: huEm(549),
-  desk: huEm(960),
-}
 const smallerSizes = `
   (max-width: ${mq.maxPalm}) ${cols(12)}vw,
   (min-width: ${mq.desk}) ${cols(3)}vw,
@@ -58,7 +52,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
               @mq-palm--margin-top:columns-1
               @mq-palm--padding-right:columns-2
             `}
-            imageSizes={smallerSizes}
+            sizes={smallerSizes}
           />
         </div>
         { !posts[1]
@@ -72,7 +66,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
                 @mq-palm--flex-grow:1
                 @mq-palm--height:0
               `}
-              imageSizes={largerSizes}
+              sizes={largerSizes}
             />
         }
 
@@ -84,7 +78,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
                 @mq-palm--margin-top:columns-0-1/2
                 @mq-palm--padding-top:columns-1
               `}
-              imageSizes={largerSizes}
+              sizes={largerSizes}
               imageClasses={`
                 flex-grow:1
               `}
@@ -99,7 +93,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
                 @mq-palm--padding-bottom:columns-2
                 @mq-palm--padding-top:columns-1
               `}
-              imageSizes={smallerSizes}
+              sizes={smallerSizes}
             />
         }
         { !posts[4]
@@ -111,7 +105,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
                 @mq-palm--padding-top:columns-1
                 @mq-palm--padding-bottom:columns-2-1/2
               `}
-              imageSizes={smallerSizes}
+              sizes={smallerSizes}
             />
         }
         { !posts[5]
@@ -124,7 +118,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
                 @mq-palm--padding-bottom:columns-0-1/2
               `}
               artDirection={`imageFilePortrait`}
-              imageSizes={smallerSizes}
+              sizes={smallerSizes}
               imageClasses={`
                 flex-grow:1
               `}

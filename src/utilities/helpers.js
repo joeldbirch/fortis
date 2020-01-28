@@ -106,3 +106,23 @@ export const getPath = link => {
 }
 
 export const getCurrentYear = () => new Date().getFullYear()
+
+export const cols = (num) => Math.round((num / 13) * 10000) / 100
+
+export const huEm = (px) => `${px / 16}em`
+
+export const mq = {
+  palm: huEm(550),
+  maxPalm: huEm(549),
+  desk: huEm(960),
+}
+
+export const postWithFeaturedImageSizes = (post, sizes) => {
+  if (!sizes) return post
+  const alteredPost= Object.assign(
+    {},
+    post
+  )
+  alteredPost.featuredImage.imageFile.childImageSharp.fluid.sizes = sizes
+  return alteredPost
+}

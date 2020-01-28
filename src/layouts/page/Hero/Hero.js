@@ -46,9 +46,8 @@ const Hero = ({image, label, linkTo, video}) => {
             color:inherit
             ${to
               ? `
-                underlined
-                underlined--thin
-                &:hover:after--opacity:0
+                text-decoration:underline
+                &:hover--text-decoration:none
               `
               : ``
             }

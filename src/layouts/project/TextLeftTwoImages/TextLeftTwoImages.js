@@ -82,6 +82,7 @@ const TextLeftTwoImages = ({
             <FluidImage
               className={` @mq-palm--margin-right:-400`}
               image={smaller}
+              artDirection="imageFilePortrait"
             />
           </div>
 

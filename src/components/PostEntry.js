@@ -5,6 +5,7 @@ import { handwritten } from 'styles/helpers'
 const PostEntry = ({
   featuredImage,
   artDirection,
+  sizes,
   showNote=false,
   note,
   className=``,
@@ -35,6 +36,7 @@ const PostEntry = ({
             ${imageClasses}
             @mq-max-palm--height:9/16vw
           `}
+          sizes={sizes}
         />
 
         <header

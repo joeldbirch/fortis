@@ -5,15 +5,14 @@ module.exports = () => {
       image {
         sourceUrl
         altText
-        imageFile {
+        imageFileHero {
           childImageSharp {
-            fluid(maxHeight: 900, maxWidth: 1600, quality: 90, cropFocus: CENTER) {
+            fluid(maxWidth: 1600, maxHeight: 900, quality: 70, cropFocus: CENTER) {
               ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }
         }
       }
     }
-
   `
 }

@@ -9,7 +9,7 @@ module.exports = () => {
           altText
           imageFile {
             childImageSharp {
-              fluid(maxHeight: 655, maxWidth: 470, quality: 90, cropFocus: CENTER) {
+              fluid(maxWidth: 470, maxHeight: 655, quality: 70, cropFocus: CENTER) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
@@ -21,9 +21,9 @@ module.exports = () => {
         benSmallerImage {
           sourceUrl
           altText
-          imageFilePortrait {
+          imageFile {
             childImageSharp {
-              fluid(maxHeight: 328, maxWidth: 235, quality: 90, cropFocus: CENTER) {
+              fluid(maxWidth: 235, maxHeight: 328, quality: 70, cropFocus: CENTER) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
@@ -35,9 +35,9 @@ module.exports = () => {
         benOtherSmallerImage {
           sourceUrl
           altText
-          imageFilePortrait {
+          imageFile {
             childImageSharp {
-              fluid(maxHeight: 235, maxWidth: 328, quality: 90, cropFocus: CENTER) {
+              fluid(maxWidth: 328, maxHeight: 235, quality: 70, cropFocus: CENTER) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }

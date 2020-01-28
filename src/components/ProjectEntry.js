@@ -45,9 +45,12 @@ const ProjectEntry = ({
           position:relative
         `}
       >
-        <FluidImage image={featuredImage} className={`
-          height:100
-        `} />
+        <FluidImage
+          image={featuredImage}
+          className={`
+            height:100
+          `}
+        />
 
         <div className="@mq-palm--padding-horizontal:columns-0-1/2">
           <header

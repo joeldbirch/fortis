@@ -16,7 +16,14 @@ const ProjectTemplateFragment = (layouts) => `
       altText
       imageFile {
         childImageSharp {
-          fluid(maxHeight: 900, maxWidth: 1600, quality: 90, cropFocus: CENTER) {
+          fluid(maxWidth: 1600, maxHeight: 900, quality: 70, cropFocus: CENTER) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+      imageFileHero {
+        childImageSharp {
+          fluid(maxWidth: 1600, maxHeight: 900, quality: 70, cropFocus: CENTER) {
             ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }
@@ -36,7 +43,7 @@ const ProjectTemplateFragment = (layouts) => `
             altText
             imageFile {
               childImageSharp {
-                fluid(maxHeight: 900, maxWidth: 900, quality: 90, cropFocus: CENTER) {
+                fluid(maxHeight: 1000, maxWidth: 1000, quality: 90, cropFocus: CENTER) {
                   ...GatsbyImageSharpFluid_withWebp_noBase64
                 }
               }
@@ -80,7 +87,7 @@ const ProjectPreviewFragment = `
       altText
       imageFile {
         childImageSharp {
-          fluid(maxHeight: 900, maxWidth: 1600, quality: 90, cropFocus: CENTER) {
+          fluid(maxWidth: 1600, maxHeight: 900, quality: 70, cropFocus: CENTER) {
             ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }

@@ -140,6 +140,7 @@ const TextRightTwoImages = ({
                 height:100
                 @mq-max-palm--max-width:small-column
               `}
+              artDirection="imageFilePortrait"
             />
           </div>
         </div>
