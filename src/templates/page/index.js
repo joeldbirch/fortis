@@ -11,8 +11,7 @@ ${imports.map(({ componentName, filePath }) => `import ${componentName} from '${
 
 const Page = ({ pageContext }) => {
   const {
-    isFrontPage,
-    page: { title, pageBuilder },
+    page: { title, pageBuilder, isFrontPage },
   } = pageContext
 
   const layouts = pageBuilder && pageBuilder.layouts ? pageBuilder.layouts : []
