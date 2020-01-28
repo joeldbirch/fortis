@@ -1,6 +1,7 @@
 import React from 'react'
 import MultiFormatImage from 'components/MultiFormatImage'
 import { subhead } from 'styles/helpers'
+import { cols, mq } from 'utilities/helpers'
 
 // const styles = {
 //   root: `
@@ -42,6 +43,11 @@ const Diagram = ({diagram, text, heading}) => {
           className={`
             width:100
             height:auto
+          `}
+          sizes={`
+            (min-width: ${mq.lap}) ${cols(10)}vw,
+            (min-width: ${mq.desk}) ${cols(8)}vw,
+            ${cols(12)}vw
           `}
         />
       </div>

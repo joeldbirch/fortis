@@ -1,6 +1,7 @@
 import React from 'react'
 import FluidImage from 'components/FluidImage'
 import { subhead, handwritten } from 'styles/helpers'
+import { cols, mq } from 'utilities/helpers'
 
 const styles = {
   root: `
@@ -82,7 +83,12 @@ const TextLeftTwoImages = ({
             <FluidImage
               className={` @mq-palm--margin-right:-400`}
               image={smaller}
-              artDirection="imageFilePortrait"
+              sizes={`
+                (max-width: ${mq.maxPalm}) 12em,
+                (min-width: ${mq.desk}) calc(${cols(2)}vw + 1em),
+                (min-width: ${mq.palm}) calc(${cols(3)}vw + 1em),
+                235px
+              `}
             />
           </div>
 
@@ -121,6 +127,12 @@ const TextLeftTwoImages = ({
               image={larger}
               className={`
                 height:100
+              `}
+              sizes={`
+                (max-width: ${mq.maxPalm}) ${cols(12)}vw,
+                (min-width: ${mq.desk}) ${cols(6)}vw,
+                (min-width: ${mq.palm}) ${cols(7)}vw,
+                655px
               `}
             />
           </div>

@@ -9,7 +9,7 @@ module.exports = () => {
         smaller {
           sourceUrl
           altText
-          imageFilePortrait {
+          imageFile {
             childImageSharp {
               fluid(maxHeight: 328, maxWidth: 235, quality: 70, cropFocus: CENTER) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64

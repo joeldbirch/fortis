@@ -1,6 +1,7 @@
 import React from 'react'
 import FluidImage from 'components/FluidImage'
 import { subhead, handwritten } from 'styles/helpers'
+import { cols, mq } from 'utilities/helpers'
 
 const styles = {
   root: `
@@ -44,7 +45,6 @@ const styles = {
     @mq-tiny--margin-bottom:columns-0-1/2
     @mq-widepalm--align-self:flex-end
     @mq-widepalm--max-width:columns-4
-    max-width:small-column
     max-width:small-column
     width:100
   `,
@@ -96,6 +96,12 @@ const TextRightTwoImages = ({
           <div className={styles.startColumnStartRow}>
             <FluidImage
               image={smaller}
+              sizes={`
+                (max-width: ${mq.maxPalm}) 17.5em,
+                (min-width: ${mq.desk}) ${cols(3)}vw,
+                (min-width: ${mq.palm}) ${cols(4)}vw,
+                328px
+              `}
             />
           </div>
 
@@ -140,7 +146,13 @@ const TextRightTwoImages = ({
                 height:100
                 @mq-max-palm--max-width:small-column
               `}
-              artDirection="imageFilePortrait"
+              sizes={`
+                (max-width: ${mq.maxPalm}) 17.5em,
+                (min-width: ${mq.desk}) ${cols(4)}vw,
+                (min-width: ${mq.widepalm}) ${cols(5)}vw,
+                (min-width: ${mq.palm}) ${cols(7)}vw,
+                470px
+              `}
             />
           </div>
         </div>
