@@ -9,7 +9,7 @@ const ScrollPrompt = (props) => {
         position:absolute
         pos-bottom:0
         pos-left:50
-        padding:columns-0-1/4
+        padding:columns-0-1/2
       `}
     >
       <ArrowDrawn
