@@ -24,6 +24,7 @@ const Projects = ({ pageContext }) => {
   return (
     <Layout
       AddToHeader={<PageHeader isMain="true" headingText={siteSectionTitle} />}
+      scrollStrict={true}
     >
       <SEO
         title={siteSectionTitle}

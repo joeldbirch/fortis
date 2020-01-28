@@ -32,14 +32,14 @@ const ProjectEntry = ({
         position:relative
       `}
       style={{
-        '--grid-template-columns-var-1': '4.75fr 7fr',
+        '--grid-template-columns-var-1': '3.75fr 8fr',
         '--grid-template-columns-var-2': '2.75fr 9fr',
         '--grid-template-columns-var-3': '1.75fr 10fr',
         }}
     >
       <div
         className={`
-          height:100vh
+          @mq-palm--height:100vh
           display:flex
           flex-direction:column
           position:relative
@@ -48,7 +48,7 @@ const ProjectEntry = ({
         <FluidImage
           image={featuredImage}
           className={`
-            height:100
+            @mq-palm--height:100
           `}
         />
 
@@ -57,11 +57,10 @@ const ProjectEntry = ({
             className={`
               padding-top:400
               padding-bottom:1000
-
               display:grid
               grid-gap:columns-0-1/4
               grid-template-columns:var-1
-              @mq-tiny--grid-template-columns:var-2
+              @mq-palm--grid-template-columns:var-2
               @mq-lap--grid-template-columns:var-3
               width:100
             `}

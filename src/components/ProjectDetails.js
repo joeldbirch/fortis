@@ -26,6 +26,7 @@ const ProjectDetails = ({
         @mq-desk--padding-horizontal:columns-1-1/2
         padding-top:site-top
         position:relative
+        scroll-snap-align:start
       `}
     >
       <div

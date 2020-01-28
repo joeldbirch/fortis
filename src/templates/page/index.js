@@ -11,13 +11,16 @@ ${imports.map(({ componentName, filePath }) => `import ${componentName} from '${
 
 const Page = ({ pageContext }) => {
   const {
+    isFrontPage,
     page: { title, pageBuilder },
   } = pageContext
 
   const layouts = pageBuilder && pageBuilder.layouts ? pageBuilder.layouts : []
 
   return (
-    <Layout>
+    <Layout
+      scrollStrict={isFrontPage}
+    >
       <SEO title={title} />
 
       <h1 className="visually-hidden">{title}</h1>

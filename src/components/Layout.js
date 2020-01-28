@@ -25,27 +25,17 @@ const Layout = ({
   className = ``,
   ctaClickHandler,
   AddToHeader,
+  scrollStrict=false,
   ...props
 }) => {
 
   const [menuOpen, toggleMenu] = useState(false)
-
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
 
   return (
     <TheWrap
       id="TheWrap"
       className={`
         👉 the-wrap
-        scroll-snap-align:start
         ${className}
       `}
       {...props}
@@ -63,8 +53,8 @@ const Layout = ({
         </style>
         <body className={`
           ${isIos() || isSafari() ? `is-safari` : ``}
+          ${scrollStrict ? `scroll-snap-type:y-mandatory` : `scroll-snap-type:y-proximity`}
           overflow-y:scroll
-          scroll-snap-type:y-mandatory
           grid-guide
         `} />
         <html className={`
