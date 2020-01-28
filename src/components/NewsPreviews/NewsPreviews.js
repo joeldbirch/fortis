@@ -2,6 +2,24 @@ import React from 'react'
 import NewsEntry from './NewsEntry'
 
 const cols = (num) => Math.round((num / 13) * 10000) / 100
+const huEm = (px) => `${px / 16}em`
+const mq = {
+  palm: huEm(550),
+  maxPalm: huEm(549),
+  desk: huEm(960),
+}
+const smallerSizes = `
+  (max-width: ${mq.maxPalm}) ${cols(12)}vw,
+  (min-width: ${mq.desk}) ${cols(3)}vw,
+  (min-width: ${mq.palm}) ${cols(4)}vw,
+  850px
+`
+const largerSizes = `
+  (max-width: 549px) ${cols(12)}vw,
+  (min-width: 960px) ${cols(5)}vw,
+  (min-width: 550px) ${cols(6)}vw,
+  850px
+`
 
 const NewsPreview = ({posts, intro, pagination}) => {
   if (!posts) return ``
@@ -40,12 +58,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
               @mq-palm--margin-top:columns-1
               @mq-palm--padding-right:columns-2
             `}
-            imageSizes={`
-              (max-width: 549px) ${cols(12)}vw,
-              (min-width: 960px) ${cols(3)}vw,
-              (min-width: 550px) ${cols(4)}vw,
-              850px
-            `}
+            imageSizes={smallerSizes}
           />
         </div>
         { !posts[1]
@@ -59,6 +72,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
                 @mq-palm--flex-grow:1
                 @mq-palm--height:0
               `}
+              imageSizes={largerSizes}
             />
         }
 
@@ -70,6 +84,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
                 @mq-palm--margin-top:columns-0-1/2
                 @mq-palm--padding-top:columns-1
               `}
+              imageSizes={largerSizes}
               imageClasses={`
                 flex-grow:1
               `}
@@ -84,6 +99,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
                 @mq-palm--padding-bottom:columns-2
                 @mq-palm--padding-top:columns-1
               `}
+              imageSizes={smallerSizes}
             />
         }
         { !posts[4]
@@ -95,6 +111,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
                 @mq-palm--padding-top:columns-1
                 @mq-palm--padding-bottom:columns-2-1/2
               `}
+              imageSizes={smallerSizes}
             />
         }
         { !posts[5]
@@ -107,6 +124,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
                 @mq-palm--padding-bottom:columns-0-1/2
               `}
               artDirection={`imageFilePortrait`}
+              imageSizes={smallerSizes}
               imageClasses={`
                 flex-grow:1
               `}
