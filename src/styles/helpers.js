@@ -132,7 +132,7 @@ export const centred = `
 `
 
 export const appleBezier = `cubic-bezier(0.645, 0.045, 0.355, 1)`
-export const appleFade = {transition: `0.4s ${appleBezier}`}
+export const appleFade = {transition: `opacity 0.4s, transform 0.4s, filter 0.2s`}
 
 export const uiFontSize = `
   @mq-lap--font-size:500
@@ -152,3 +152,13 @@ export const shader = `
   &:before--hit-area-xy-0
   &:before--z-index:100
 `
+
+export const invertedStyles = {
+  'filter': 'invert(1) contrast(1.2) drop-shadow(rgba(0, 0, 0, 1) 0px 1px 10px)',
+  ...appleFade,
+}
+
+export const nonInvertedStyles = {
+  'filter': 'invert(0) contrast(1) drop-shadow(rgba(0, 0, 0, 0) 0px 1px 10px)',
+  ...appleFade,
+}

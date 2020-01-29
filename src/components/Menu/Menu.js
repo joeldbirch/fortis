@@ -3,8 +3,7 @@ import { useMenuData  } from '../../hooks/use-menu-data'
 
 import MenuItem from './MenuItem'
 import CloseAnimation from '../CloseAnimation'
-import { centred, appleFade, appleBezier, uiFontSize } from '../../styles/helpers'
-
+import { centred, appleFade, appleBezier, uiFontSize, invertedStyles, nonInvertedStyles } from '../../styles/helpers'
 
 
 const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerReversed}) => {
@@ -14,10 +13,6 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
   } = useMenuData()
 
   if (!menuItems) return null
-
-  const reversedStyle = headerReversed
-      ? { 'filter': 'invert(1) contrast(1.2)' }
-      : {}
 
   return (
     <div className={`
@@ -59,10 +54,10 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
               underlined-reveal
               ${isOpen ? `opacity:0 scale:80` : ``}
             `}
-            style={{
-              ...appleFade,
-              ...reversedStyle,
-            }}
+            style={headerReversed
+              ? invertedStyles
+              : nonInvertedStyles
+            }
           >
             <span
               className={`

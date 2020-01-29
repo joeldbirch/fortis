@@ -16,7 +16,7 @@ import Main from './TheMain'
 import TheHeader from './TheHeader'
 import TheFooter from './TheFooter'
 import { isIos, isSafari } from 'utilities/helpers'
-import { uiFontSize } from 'styles/helpers'
+import { uiFontSize, invertedStyles, nonInvertedStyles } from 'styles/helpers'
 import 'styles/index.scss'
 
 const Layout = ({
@@ -70,10 +70,6 @@ const Layout = ({
 
       <TheHeader
         id="SiteHeader"
-        className={`
-          color:contrast
-          transition-duration:400
-        `}
       >
         <Link
           to="/"
@@ -90,7 +86,7 @@ const Layout = ({
           `}
           style={
             headerReversed
-              ? { 'filter': 'invert(1) contrast(1.2)' }
+              ? invertedStyles
               : {}
           }
         >
@@ -110,8 +106,8 @@ const Layout = ({
               `}
               style={
                 headerReversed
-                  ? { 'filter': 'invert(1) contrast(1.2)' }
-                  : {}
+                  ? invertedStyles
+                  : nonInvertedStyles
               }
             >
               {AddToHeader}
