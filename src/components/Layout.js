@@ -5,9 +5,9 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-// import { useStaticQuery, graphql } from 'gatsby'
+import useHeaderIntersection from 'hooks/use-header-intersection'
 import { Link } from 'gatsby'
 import Helmet from 'react-helmet'
 import TheWrap from './TheWrap'
@@ -30,38 +30,7 @@ const Layout = ({
 }) => {
 
   const [menuOpen, toggleMenu] = useState(false)
-  const [headerReversed, setHeaderReversed] = useState(false)
-
-  useEffect(function() {
-    const sections = document.querySelectorAll(`section, .isSection`)
-    const intersectionConfig = {
-      rootMargin: `0px`,
-      threshold: [0, .1], // TODO: tweak intersection threshold
-    }
-    const header = document.getElementById(`SiteHeader`)
-
-    const observer = new IntersectionObserver(function (entries, self) {
-      entries.forEach(entry => {
-        const { target } = entry
-        if (entry.isIntersecting) {
-          const {top, bottom} = target.getBoundingClientRect()
-          const behindHeader = top < 16 && bottom > header.offsetHeight
-          const shouldReverse = target.dataset.reverse === "true"
-          // console.log({
-          //   shouldReverse,
-          //   behindHeader,
-          //   target,
-          //   reverse: target.dataset.reverse,
-          //   sectionTop: top,
-          //   sectionBottom: bottom,
-          // });
-          if (behindHeader) setHeaderReversed(shouldReverse)
-        }
-      })
-    }, intersectionConfig)
-
-    sections.forEach(section => observer.observe(section))
-  }, [])
+  const [headerReversed] = useHeaderIntersection()
 
   return (
     <TheWrap
