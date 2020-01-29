@@ -47,7 +47,7 @@ const Projects = ({ pageContext }) => {
             key={post.id}
             post={post}
             className={`
-              @mq-palm--min-height:100vh
+              @mq-palm--min-height:100vh-fixed
               @mq-palm--display:grid
               scroll-snap-align:start
             `}

@@ -78,7 +78,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
             position:fixed
             pos-right:0
             pos-top:0
-            height:100vh
+            height:100vh-fixed
             display:block
             width:100
             max-width:columns-11-1/2

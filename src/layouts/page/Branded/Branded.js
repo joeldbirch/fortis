@@ -6,7 +6,7 @@ import { handwritten } from 'styles/helpers'
 
 const styles = {
   root: `
-    height:100vh
+    height:100vh-fixed
     min-height:50vw
     padding-horizontal:columns-0-1/2
     padding-top:site-top

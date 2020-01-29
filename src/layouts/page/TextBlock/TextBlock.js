@@ -15,7 +15,7 @@ const TextBlock = ({text, style={}}) => {
         width:100
         padding-vertical:800
         position:relative
-        min-height:100vh
+        min-height:100vh-fixed
         display:flex
         scroll-snap-align:start
       `}

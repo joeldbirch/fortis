@@ -16,7 +16,7 @@ const Hero = ({image, label, linkTo, video, className, ...props}) => {
       className={`
         ${className}
         position:relative
-        min-height:100vh
+        min-height:100vh-fixed
         width:100vw
         scroll-snap-align:start
       `}
@@ -68,7 +68,7 @@ const Hero = ({image, label, linkTo, video, className, ...props}) => {
               image={image}
               artDirection={`imageFileHero`}
               className={`
-                height:100vh
+                height:100vh-fixed
                 ${shader}
               `}
             />

@@ -39,7 +39,7 @@ const ProjectEntry = ({
     >
       <div
         className={`
-          @mq-palm--height:100vh
+          @mq-palm--height:100vh-fixed
           display:flex
           flex-direction:column
           position:relative
