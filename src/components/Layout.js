@@ -16,7 +16,7 @@ import Main from './TheMain'
 import TheHeader from './TheHeader'
 import TheFooter from './TheFooter'
 import { isIos, isSafari } from 'utilities/helpers'
-import { uiFontSize, invertedStyles, nonInvertedStyles } from 'styles/helpers'
+import { uiFontSize, getInvertedStyles } from 'styles/helpers'
 import 'styles/index.scss'
 
 const Layout = ({
@@ -84,11 +84,7 @@ const Layout = ({
             underlined-reveal
             ${uiFontSize}
           `}
-          style={
-            headerReversed
-              ? invertedStyles
-              : {}
-          }
+          style={getInvertedStyles(headerReversed)}
         >
           Fortis
         </Link>
@@ -104,11 +100,7 @@ const Layout = ({
                 pos-left:50
                 translate-x:-50
               `}
-              style={
-                headerReversed
-                  ? invertedStyles
-                  : nonInvertedStyles
-              }
+              style={getInvertedStyles(headerReversed)}
             >
               {AddToHeader}
             </div>

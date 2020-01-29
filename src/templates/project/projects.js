@@ -38,7 +38,6 @@ const Projects = ({ pageContext }) => {
       <div
         className={`
           width:100
-          padding-bottom:800
           @mq-max-palm--padding-horizontal:columns-0-1/2
         `}
       >

@@ -6,7 +6,7 @@ import ScrollPrompt from 'components/ScrollPrompt'
 import { uiFontSize, shader } from 'styles/helpers'
 import { getPath } from 'utilities/helpers'
 
-const Hero = ({image, label, linkTo, video, className, ...props}) => {
+const Hero = ({image, label, linkTo, video, className=``, ...props}) => {
 
   const to = linkTo && linkTo.link ? getPath(linkTo.link) : null
   const OptionalLink = to ? Link : `span`
@@ -15,12 +15,12 @@ const Hero = ({image, label, linkTo, video, className, ...props}) => {
     <section
       className={`
         ${className}
+        js-contrast--reverse
         position:relative
         min-height:100vh-fixed
         width:100vw
         scroll-snap-align:start
       `}
-      data-reverse={true}
     >
       <header
         className={`
@@ -29,7 +29,8 @@ const Hero = ({image, label, linkTo, video, className, ...props}) => {
           position:absolute
           pos-top-left:0
           width:100
-          z-index:100
+          z-index:200
+          pointer-events:none
         `}
         style={{
           '--color-contrast': 'white',
@@ -44,11 +45,13 @@ const Hero = ({image, label, linkTo, video, className, ...props}) => {
         >
           <OptionalLink to={to} className={`
             &:before--hit-area-xy-100
-            color:inherit
+            color:neutral-0
             ${to
               ? `
                 text-decoration:underline
                 &:hover--text-decoration:none
+                pointer-events:auto
+                position:relative
               `
               : ``
             }
@@ -63,6 +66,7 @@ const Hero = ({image, label, linkTo, video, className, ...props}) => {
               className={`
                 ${shader}
               `}
+              data-reverse={true}
             />
           : <FluidImage
               image={image}

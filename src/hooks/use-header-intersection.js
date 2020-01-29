@@ -5,17 +5,18 @@ const useHeaderIntersection = function() {
   const [headerReversed, setHeaderReversed] = useState(false)
 
   const init = function() {
-    const sections = document.querySelectorAll(`section, .isSection`)
+    // must use classes instead of data because can't pass data props to gatsby-image
+    const sections = document.querySelectorAll(`section:not(.js-contrast-ignore), .js-contrast`)
     const intersectionConfig = {
-      // 90% offset bottom to make the test area similar to where header is
-      rootMargin: `0px 0px -90% 0px`,
+      // offset to make the test area similar to where header is
+      rootMargin: `3% 0px -92% 0px`,
       threshold: 0,
     }
     const observer = new IntersectionObserver(function (entries) {
       entries.forEach(entry => {
         const { target } = entry
         if (entry.isIntersecting) {
-          const shouldReverse = target.dataset.reverse === "true"
+          const shouldReverse = target.classList.contains(`js-contrast--reverse`)
           setHeaderReversed(shouldReverse)
         }
       })

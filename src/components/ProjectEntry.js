@@ -49,6 +49,8 @@ const ProjectEntry = ({
           image={featuredImage}
           className={`
             @mq-palm--height:100
+            js-contrast
+            js-contrast--reverse
           `}
         />
 

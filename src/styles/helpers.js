@@ -154,11 +154,18 @@ export const shader = `
 `
 
 export const invertedStyles = {
-  'filter': 'invert(1) contrast(1.2) drop-shadow(rgba(0, 0, 0, 1) 0px 1px 10px)',
+  filter: 'invert(1) contrast(1.2)',
+  textShadow: 'rgba(255,255,255, 0.1) 0px -1px 1px,  rgba(255,255,255, .5) 0px -1px 20px',
   ...appleFade,
 }
 
 export const nonInvertedStyles = {
-  'filter': 'invert(0) contrast(1) drop-shadow(rgba(0, 0, 0, 0) 0px 1px 10px)',
+  filter: 'invert(0) contrast(1)',
   ...appleFade,
 }
+
+export const getInvertedStyles = isInverted => (
+  isInverted
+  ? invertedStyles
+  : nonInvertedStyles
+)

@@ -10,13 +10,13 @@ const ImageGallery = ({imageGallery}) => {
 
     <section
       className={`
+        js-contrast-ignore
         position:relative
         width:100vw
         padding-vertical:columns-0-1/2
         overflow:hidden
         scroll-snap-align:center
       `}
-      data-reverse={true}
     >
       <Helmet>
         <style>{`
@@ -48,6 +48,8 @@ const ImageGallery = ({imageGallery}) => {
           <div key={index} className={`
             position:relative
             width:100
+            js-contrast
+            js-contrast--reverse
           `}>
             <FluidImage
               image={image}
