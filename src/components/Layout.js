@@ -70,7 +70,7 @@ const Layout = ({
         <Link
           to="/"
           className={`
-            color:neutral-900
+            color:inherit
             &:hocus--text-decoration:underline
             &:before--hit-area-xy-100
             position:relative

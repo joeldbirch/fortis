@@ -26,6 +26,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
           aria-expanded={isOpen}
           className={`
             menu-toggler
+            color:inherit
             padding:0
             position:absolute
             ${uiFontSize}
