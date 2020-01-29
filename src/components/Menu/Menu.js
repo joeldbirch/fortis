@@ -7,13 +7,17 @@ import { centred, appleFade, appleBezier, uiFontSize } from '../../styles/helper
 
 
 
-const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
+const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerReversed}) => {
   const {
     menuItems = [],
     wordPressUrl,
   } = useMenuData()
 
   if (!menuItems) return null
+
+  const reversedStyle = headerReversed
+      ? { 'filter': 'invert(1) contrast(1.2)' }
+      : {}
 
   return (
     <div className={`
@@ -57,6 +61,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``}) => {
             `}
             style={{
               ...appleFade,
+              ...reversedStyle,
             }}
           >
             <span

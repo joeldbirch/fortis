@@ -72,14 +72,8 @@ const Layout = ({
         id="SiteHeader"
         className={`
           color:contrast
-          transition-property:color
           transition-duration:400
         `}
-        style={
-          headerReversed
-            ? { '--color-contrast': 'white' }
-            : {}
-        }
       >
         <Link
           to="/"
@@ -94,25 +88,37 @@ const Layout = ({
             underlined-reveal
             ${uiFontSize}
           `}
+          style={
+            headerReversed
+              ? { 'filter': 'invert(1) contrast(1.2)' }
+              : {}
+          }
         >
           Fortis
         </Link>
         { !AddToHeader
           ? ``
           : (
-            <div className={`
-              padding-left:columns-3-1/2
-              padding-right:columns-1-1/2
-              width:100
-              position:absolute
-              pos-left:50
-              translate-x:-50
-            `}>
+            <div
+              className={`
+                padding-left:columns-3-1/2
+                padding-right:columns-1-1/2
+                width:100
+                position:absolute
+                pos-left:50
+                translate-x:-50
+              `}
+              style={
+                headerReversed
+                  ? { 'filter': 'invert(1) contrast(1.2)' }
+                  : {}
+              }
+            >
               {AddToHeader}
             </div>
           )
         }
-        <Menu toggleHandler={toggleMenu} isOpen={menuOpen} className="pointer-events:auto" />
+        <Menu headerReversed={headerReversed} toggleHandler={toggleMenu} isOpen={menuOpen} className="pointer-events:auto" />
       </TheHeader>
 
       <Main
