@@ -15,10 +15,13 @@ const TextBlock = ({text, style={}}) => {
         width:100
         padding-vertical:800
         position:relative
-        min-height:100vh-fixed
+        min-height:100vh
         display:flex
         scroll-snap-align:start
       `}
+      style={{
+        transition: 'min-height .25s .1s'
+      }}
     >
       <div
         className={`

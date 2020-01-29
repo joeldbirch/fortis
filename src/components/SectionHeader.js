@@ -6,6 +6,8 @@ export default ({children}) => {
       className={`
         padding-vertical:columns-0-1/2
         force-full-width
+        position:absolute
+        pos-top:0
       `}
     >
       <div

@@ -161,7 +161,7 @@ const Post = ({ pageContext }) => {
         <ScrollPrompt/>
       </div>
 
-      <NewsOverview/>
+      <NewsOverview showHeading={false} />
 
     </Layout>
   )

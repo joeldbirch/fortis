@@ -53,15 +53,26 @@ const Layout = ({
         `}
         </style>
         <body className={`
-          ${isIos() || isSafari() ? `is-safari` : ``}
-          scroll-snap-type:y-proximity
-          overflow-y:scroll
-          grid-guide
+          ${
+            // Safari just can't handle the truth about scroll snapping
+            // in combination with its error-prone nav hiding and vh units
+            isIos() || isSafari()
+            ? `
+                is-safari
+                scroll-behavior:smooth
+              `
+            : `
+                overflow-y:scroll
+                scroll-snap-type:y-proximity
+              `
+          }
+          min-height:100vh-fixed
         `}
         />
         <html className={`
           font-size:300
           @mq-lap--font-size:400
+          min-height:100vh-fixed
         `} lang="en" />
 
         <meta name="robots" content="noindex" />

@@ -17,10 +17,13 @@ const Hero = ({image, label, linkTo, video, className=``, ...props}) => {
         ${className}
         js-contrast--reverse
         position:relative
-        min-height:100vh-fixed
+        min-height:100vh
         width:100vw
         scroll-snap-align:start
       `}
+      style={{
+        transition: 'min-height .25s .1s'
+      }}
     >
       <header
         className={`
@@ -72,12 +75,12 @@ const Hero = ({image, label, linkTo, video, className=``, ...props}) => {
               image={image}
               artDirection={`imageFileHero`}
               className={`
-                height:100vh-fixed
+                height:100vh
                 ${shader}
               `}
             />
       }
-      <ScrollPrompt />
+      <ScrollPrompt className={`color:neutral-0`} />
     </section>
   )
 }
