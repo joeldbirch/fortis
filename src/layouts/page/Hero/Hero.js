@@ -3,11 +3,10 @@ import { Link } from 'gatsby'
 import FluidImage from 'components/FluidImage'
 import FullWindowVideo from 'components/FullWindowVideo'
 import ScrollPrompt from 'components/ScrollPrompt'
-import { uiFontSize } from 'styles/helpers'
+import { uiFontSize, shader } from 'styles/helpers'
 import { getPath } from 'utilities/helpers'
 
-
-const Hero = ({image, label, linkTo, video}) => {
+const Hero = ({image, label, linkTo, video, className, ...props}) => {
 
   const to = linkTo && linkTo.link ? getPath(linkTo.link) : null
   const OptionalLink = to ? Link : `span`
@@ -15,6 +14,7 @@ const Hero = ({image, label, linkTo, video}) => {
   return (
     <section
       className={`
+        ${className}
         position:relative
         min-height:100vh
         width:100vw
@@ -57,12 +57,18 @@ const Hero = ({image, label, linkTo, video}) => {
 
       {
         video
-          ? <FullWindowVideo vimeoId={video}/>
+          ? <FullWindowVideo
+              vimeoId={video}
+              className={`
+                ${shader}
+              `}
+            />
           : <FluidImage
               image={image}
               artDirection={`imageFileHero`}
               className={`
                 height:100vh
+                ${shader}
               `}
             />
       }

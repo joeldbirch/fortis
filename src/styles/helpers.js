@@ -146,3 +146,9 @@ export const highlight = `
   position:relative
   z-index:900
 `
+
+export const shader = `
+  &:before--background-image:black-20-down
+  &:before--hit-area-xy-0
+  &:before--z-index:100
+`
