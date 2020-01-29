@@ -4,6 +4,9 @@ export default ({className, bottom, ...props}) => {
 
   return (
     <div
+      style={{
+        marginTop: `-1px`
+      }}
       className={`
         ${className}
         margin-horizontal:columns-0-1/2

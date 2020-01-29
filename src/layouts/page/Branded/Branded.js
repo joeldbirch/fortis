@@ -58,9 +58,7 @@ const Branded = ({image, text, video=null}) => {
       className={`
         ${styles.root}
       `}
-      style={{
-        marginBottom: `-1px`,
-      }}
+
     >
       <div
         className={`
