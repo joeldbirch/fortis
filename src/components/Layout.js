@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 // import { useStaticQuery, graphql } from 'gatsby'
 import { Link } from 'gatsby'
@@ -30,6 +30,38 @@ const Layout = ({
 }) => {
 
   const [menuOpen, toggleMenu] = useState(false)
+  const [headerReversed, setHeaderReversed] = useState(false)
+
+  useEffect(function() {
+    const sections = document.querySelectorAll(`section, .isSection`)
+    const intersectionConfig = {
+      rootMargin: `0px`,
+      threshold: [0, .1], // TODO: tweak intersection threshold
+    }
+    const header = document.getElementById(`SiteHeader`)
+
+    const observer = new IntersectionObserver(function (entries, self) {
+      entries.forEach(entry => {
+        const { target } = entry
+        if (entry.isIntersecting) {
+          const {top, bottom} = target.getBoundingClientRect()
+          const behindHeader = top < 16 && bottom > header.offsetHeight
+          const shouldReverse = target.dataset.reverse === "true"
+          // console.log({
+          //   shouldReverse,
+          //   behindHeader,
+          //   target,
+          //   reverse: target.dataset.reverse,
+          //   sectionTop: top,
+          //   sectionBottom: bottom,
+          // });
+          if (behindHeader) setHeaderReversed(shouldReverse)
+        }
+      })
+    }, intersectionConfig)
+
+    sections.forEach(section => observer.observe(section))
+  }, [])
 
   return (
     <TheWrap
@@ -56,7 +88,8 @@ const Layout = ({
           scroll-snap-type:y-proximity
           overflow-y:scroll
           grid-guide
-        `} />
+        `}
+        />
         <html className={`
           font-size:300
           @mq-lap--font-size:400
@@ -66,7 +99,19 @@ const Layout = ({
 
       </Helmet>
 
-      <TheHeader>
+      <TheHeader
+        id="SiteHeader"
+        className={`
+          color:contrast
+          transition-property:color
+          transition-duration:400
+        `}
+        style={
+          headerReversed
+            ? { '--color-contrast': 'white' }
+            : {}
+        }
+      >
         <Link
           to="/"
           className={`

@@ -20,6 +20,7 @@ const Hero = ({image, label, linkTo, video, className, ...props}) => {
         width:100vw
         scroll-snap-align:start
       `}
+      data-reverse={true}
     >
       <header
         className={`
