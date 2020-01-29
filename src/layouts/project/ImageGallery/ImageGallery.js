@@ -16,6 +16,7 @@ const ImageGallery = ({imageGallery}) => {
         overflow:hidden
         scroll-snap-align:center
       `}
+      data-reverse={true}
     >
       <Helmet>
         <style>{`
