@@ -53,7 +53,7 @@ const Layout = ({
         </style>
         <body className={`
           ${isIos() || isSafari() ? `is-safari` : ``}
-          ${scrollStrict ? `scroll-snap-type:y-mandatory` : `scroll-snap-type:y-proximity`}
+          scroll-snap-type:y-proximity
           overflow-y:scroll
           grid-guide
         `} />
