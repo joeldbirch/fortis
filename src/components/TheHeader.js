@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TheHeader = ({children, className, ...props}) => {
+const TheHeader = ({children, className=``, ...props}) => {
   return (
     <header
       className={`
