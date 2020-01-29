@@ -1,9 +1,10 @@
 import React from 'react'
 
-const TheHeader = ({children}) => {
+const TheHeader = ({children, className, ...props}) => {
   return (
     <header
       className={`
+        ${className}
         align-items:center
         display:flex
         justify-content:space-between
@@ -16,6 +17,7 @@ const TheHeader = ({children}) => {
         z-index:200
         pointer-events:none
       `}
+      {...props}
     >
       {children}
     </header>
