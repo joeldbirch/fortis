@@ -14,6 +14,7 @@ import { handwritten } from 'styles/helpers'
 const styles = {
   root: `
     padding-horizontal:columns-0-1/2
+    @mq-desk--padding-vertical:columns-0-1/2
     padding-vertical:800
     position:relative
     width:100
