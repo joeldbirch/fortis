@@ -49,6 +49,7 @@ const Projects = ({ pageContext }) => {
               @mq-palm--min-height:100vh-fixed
               @mq-palm--display:grid
               scroll-snap-align:start
+              scroll-margin-top:-px
             `}
             imageClasses={`
               @mq-palm--flex-grow:1

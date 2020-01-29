@@ -20,6 +20,7 @@ const Hero = ({image, label, linkTo, video, className=``, ...props}) => {
         min-height:100vh
         width:100vw
         scroll-snap-align:start
+        scroll-margin-top:-px
       `}
       style={{
         transition: 'min-height .25s .1s'
