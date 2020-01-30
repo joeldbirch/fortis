@@ -3,6 +3,7 @@ import Flickity from 'react-flickity-component'
 import Helmet from 'react-helmet'
 import 'flickity/css/flickity.css'
 import FluidImage from 'components/FluidImage'
+import {path} from 'components/ArrowRounded'
 import { handwritten } from 'styles/helpers'
 
 const ImageGallery = ({imageGallery}) => {
@@ -30,7 +31,7 @@ const ImageGallery = ({imageGallery}) => {
           }
           .flickity-button {
             border-radius: 0;
-            padding: 1rem;
+            padding: 3vw;
           }
           .flickity-prev-next-button.next {
             right: 0;
@@ -38,10 +39,19 @@ const ImageGallery = ({imageGallery}) => {
           .flickity-prev-next-button.previous {
             left: 0;
           }
+          .flickity-prev-next-button .flickity-button-icon {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            width: 0.875rem;
+            height: 0.875rem;
+          }
         `}</style>
       </Helmet>
 
       <Flickity
+        options={{arrowShape: path}}
         static={true}
       >
         { imageGallery.map((image, index) => (

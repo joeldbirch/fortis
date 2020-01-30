@@ -1,5 +1,6 @@
 import React from 'react'
 import Divider from 'components/DividerHorizontal'
+import ArrowRounded from 'components/ArrowRounded'
 import { getCurrentYear } from 'utilities/helpers'
 
 const styles = {
@@ -71,6 +72,7 @@ export default ({ className, ...props }) => {
             style={{'--grid-template-columns-var-3': '1fr auto'}}
           >
             <input
+              required
               id="emailSignup"
               type="email"
               placeholder="Email address"
@@ -96,8 +98,19 @@ export default ({ className, ...props }) => {
                 border-bottom-width:100
                 border-bottom-color:neutral-600
                 line-height:200
+                color:neutral-500
+                &:hocus--color:neutral-900
               `}
-            >Go</button>
+            >
+              <span className="visually-hidden">Go</span>
+              <ArrowRounded
+                role="presentation"
+                className={`
+                  rotate:180
+                  font-size:300
+                `}
+              />
+            </button>
           </div>
         </form>
 
