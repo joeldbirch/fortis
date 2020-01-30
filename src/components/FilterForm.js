@@ -1,46 +1,32 @@
 import React, { useEffect, useState } from 'react'
 
-const FilterItem = ({id, name, checked=null, toggleHandler = ()=>{}, ...props}) => (
-  <li
-    className={`
-      margin:200
-    `}
-    key={id}
-    {...props}
-  >
-    <label
-      className={`
-        display:inline-block
-          font-size:200
-      `}
-    >
-      <input
-        defaultChecked={checked}
-        type="checkbox"
-        className={`
-          vertical-align:0
-          margin-right:100
-        `}
-        onChange={({target}) => toggleHandler(id, target.checked)}
-      />
-      <span
-        className={`
-          vertical-align:middle
-        `}
-      >{name}</span>
-    </label>
-  </li>
-)
+const styles = {
+  hitarea: `
+    display:inline-flex
+    font-size:200
+    padding-vertical:100
+    padding-horizontal:200
+    cursor:pointer
+  `,
+  icon: `
+    vertical-align:middle
+    margin-right:100
+  `,
+  text: `
+    vertical-align:middle
+  `
+
+}
 
 
-const FilterForm = ({items, changeHandler = ()=>{} }) => {
+const FilterForm = ({
+  items,
+  reset = ()=>{},
+  changeHandler = ()=>{},
+}) => {
 
-  const all = {
-    name: `All`,
-    id: null,
-  }
 
-  const shownItems = items.filter(item => item.count > 0)
+  const shownTags = items.filter(tag => tag.count > 0)
 
   const [currentFilters, setFilter] = useState([])
 
@@ -65,13 +51,26 @@ const FilterForm = ({items, changeHandler = ()=>{} }) => {
       <ul
         className={`
           display:flex
-          margin:-200
+          flex-wrap:wrap
+          @mq-max-palm--justify-content:center
+          margin-horizontal:-100
         `}
       >
+        <li>
+          <button
+            type="reset"
+            className={styles.hitarea}
+            onClick={reset}
+          >
+            <span className={styles.icon} >↻</span>
+            <span className={styles.text} >Reset</span>
+          </button>
+        </li>
+
         {
-          shownItems
-          && shownItems.length
-          && shownItems
+          shownTags
+          && shownTags.length
+          && shownTags
           .map(item => (
             <FilterItem
               key={item.id}
@@ -87,4 +86,24 @@ const FilterForm = ({items, changeHandler = ()=>{} }) => {
   )
 }
 
-export default FilterForm;
+const FilterItem = ({id, name, checked=null, toggleHandler = ()=>{}, ...props}) => (
+  <li
+    className={`
+    `}
+    key={id}
+    {...props}
+  >
+    <label className={styles.hitarea} >
+      <input
+        defaultChecked={checked}
+        type="checkbox"
+        className={styles.icon}
+        onChange={({target}) => toggleHandler(id, target.checked)}
+      />
+      <span className={styles.text} >{name}</span>
+    </label>
+  </li>
+)
+
+
+export default FilterForm

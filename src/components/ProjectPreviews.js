@@ -7,23 +7,21 @@ import { uiFontSize } from 'styles/helpers'
 
 const ProjectPreviews = ({posts, tags:{ nodes: tags}}) => {
 
-  const [filteredPosts, setFilteredPosts] = useState(posts)
+  const [shownPosts, setShownPosts] = useState(posts)
 
-  const changeFilteredPosts = (mustHaveIds) => {
-    console.log(mustHaveIds);
-
-    const newlyFilteredPosts = posts.filter(post => {
-
+  const changeShownPosts = (mustHaveIds) => {
+    const newlyShownPosts = posts.filter(post => {
       const ids = post.projectTags.nodes.map(tag => tag.id)
-      console.log({tagIds: ids})
-
       return mustHaveIds.every(id => ids.includes(id))
     })
-
-    setFilteredPosts(newlyFilteredPosts)
-    console.log(newlyFilteredPosts)
+    setShownPosts(newlyShownPosts)
   }
 
+  const isShown = ({id}) => {
+    return shownPosts.map(post => post.id).includes(id)
+  }
+
+  const filterReset = () => setShownPosts(posts)
 
   return (
     <section
@@ -35,11 +33,11 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}}) => {
       <div
         className={`
           position:relative
-          padding-top:site-top
         `}
       >
         <Divider/>
         <SectionHeader
+          absolute={false}
           className={`
             scroll-snap-align:start
           `}>
@@ -51,19 +49,29 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}}) => {
             `}
           >Projects Filter</h2>
 
-          <ProjectsFilter items={tags} changeHandler={changeFilteredPosts} />
+          <ProjectsFilter
+            items={tags}
+            changeHandler={changeShownPosts}
+            reset={filterReset}
+          />
+
         </SectionHeader>
       </div>
 
-      {filteredPosts && filteredPosts.map(post => (
+      {posts && posts.map((post, index) => (
         <ProjectEntry
           key={post.id}
           post={post}
           className={`
-            @mq-palm--min-height:100vh-fixed
-            @mq-palm--display:grid
-            scroll-snap-align:start
+            ${index !== 0 ? `scroll-snap-align:start` : ``}
             scroll-margin-top:-px
+            overflow:hidden
+            transition-duration:400
+            ${
+              isShown(post)
+                ? `max-height:100vh`
+                : `max-height:0`
+            }
           `}
           imageClasses={`
             @mq-palm--flex-grow:1

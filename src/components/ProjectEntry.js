@@ -24,22 +24,22 @@ const ProjectEntry = ({
   showNote,
   className=``,
 }) => {
-  return (
 
+  return (
     <article
       className={`
       ${className}
-        position:relative
       `}
       style={{
         '--grid-template-columns-var-1': '3.75fr 8fr',
         '--grid-template-columns-var-2': '2.75fr 9fr',
         '--grid-template-columns-var-3': '1.75fr 10fr',
-        }}
+      }}
     >
       <div
         className={`
-          @mq-palm--height:100vh-fixed
+          position:relative
+          @mq-palm--height:100vh-fixed-less-top
           display:flex
           flex-direction:column
           position:relative
