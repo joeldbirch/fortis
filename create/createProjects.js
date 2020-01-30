@@ -7,6 +7,7 @@ const {
   ProjectTemplateFragment,
   ProjectPreviewFragment,
   ProjectsIntroFragment,
+  ProjectTagsFragment,
 } = require('../src/templates/project/data')
 
 const { getAllLayoutsData, createTemplate, createPageWithTemplate } = require('./utils')
@@ -24,24 +25,23 @@ const GET_PROJECTS = (layouts) => `
   ${ProjectTemplateFragment(layouts)}
   ${ProjectPreviewFragment}
   ${ProjectsIntroFragment}
+  ${ProjectTagsFragment}
 
-  query GET_PROJECTS($first:Int $after:String) {
+  query GET_PROJECTS($first:Int) {
     wpgraphql {
       # This is the fragment used for the projects intro
       ...ProjectsIntroFragment
 
+      # This is the fragment used for all existing project tags
+      ...ProjectTagsFragment
+
       projects (
         first: $first
-        after: $after
         # This will make sure to only get the parent nodes and no children
         where: {
           parent: null
         }
       ) {
-        pageInfo {
-          hasNextPage
-          endCursor
-        }
         nodes {
           uri
 
@@ -56,9 +56,7 @@ const GET_PROJECTS = (layouts) => `
   }
 `
 
-const allProjects = []
-const projectsPages = []
-let pageNumber = 0
+let projectsPage
 const itemsPerPage = 100
 
 /**
@@ -67,7 +65,7 @@ const itemsPerPage = 100
 * @param { actions, graphql }
 * @returns {Promise<void>}
 */
-module.exports = async ({ actions, graphql, reporter }, options) => {
+module.exports = async ({ actions, graphql, reporter }) => {
   /**
    * Get all layouts data as a concatenated string
    */
@@ -98,22 +96,13 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
       */
       const {
         wpgraphql: {
+          projectTags,
           projectsIntro,
           projects: {
             nodes,
-            pageInfo: { hasNextPage, endCursor },
           },
         },
       } = data
-
-      /**
-       * Define the path for the paginated projects page.
-       * This is the url the page will live at
-       * @type {string}
-       */
-      const projectsPagePath = !variables.after
-        ? `${projectsURI}`
-        : `${projectsURI}/page/${pageNumber + 1}`
 
       /**
        * Add config for the projectsPage to the projectsPage array
@@ -125,35 +114,14 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
        *   context: {nodes: *, pageNumber: number, hasNextPage: *}
        * }}
        */
-      projectsPages[pageNumber] = {
-        path: projectsPagePath,
+      projectsPage = {
+        path: projectsURI,
         component: projectsTemplate,
         context: {
+          projectTags,
           projectsIntro,
           nodes,
-          pageNumber: pageNumber + 1,
-          hasNextPage,
-          itemsPerPage,
-          allProjects,
         },
-      }
-
-      /**
-      * Map over the pages for later creation
-      */
-      nodes
-      && nodes.forEach((projects) => {
-        allProjects.push(projects)
-      })
-
-      /**
-      * If there's another page, fetch more
-      * so we can have all the data we need.
-      */
-      if (hasNextPage) {
-        pageNumber++
-        reporter.info(`fetch project ${pageNumber} of project...`)
-        return fetchProjects({ first: itemsPerPage, after: endCursor })
       }
 
       /**
@@ -161,16 +129,17 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
       * so we can create the necessary pages with
       * all the data on hand.
       */
-      return allProjects
+      return nodes
     })
 
     /**
     * Kick off our `fetchProjects` method which will get us all
     * the projects we need to create individual pages.
     */
-    await fetchProjects({ first: itemsPerPage, after: null }).then((wpProjects) => {
+    await fetchProjects({ first: itemsPerPage}).then((wpProjects) => {
+      reporter.info(`${wpProjects.length} projects found.`)
 
-      wpProjects && wpProjects.map((project) => {
+      wpProjects && wpProjects.forEach((project) => {
         /**
         * Build project path based of theme projectsURI setting.
         */
@@ -225,18 +194,7 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
       reporter.info(`# -----> PAGES TOTAL: ${wpProjects.length}`)
     })
 
-        /**
-     * Map over the `projectsPages` array to create the
-     * paginated projects pages
-     */
-    projectsPages
-    && projectsPages.map((projectsPage) => {
-      if (projectsPage.context.pageNumber === 1) {
-        projectsPage.context.publisher = true
-        projectsPage.context.label = projectsPage.path.replace(`/`, ``)
-      }
-      createPage(projectsPage)
-      reporter.info(`created projects archive page ${projectsPage.context.pageNumber}`)
-    })
+    createPage(projectsPage)
+    reporter.info(`created projects archive page`)
 
 }

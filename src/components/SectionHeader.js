@@ -1,9 +1,10 @@
 import React from 'react'
 
-export default ({children}) => {
+export default ({className=``, children}) => {
   return (
     <header
       className={`
+        ${className}
         padding-vertical:columns-0-1/2
         force-full-width
         position:absolute

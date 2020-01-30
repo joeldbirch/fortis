@@ -1,9 +1,8 @@
 import React from 'react'
 import Layout from 'components/Layout'
-import Pagination from 'components/Pagination'
-import ProjectEntry from 'components/ProjectEntry'
+import ProjectPreviews from 'components/ProjectPreviews'
 import TextBlock from 'layouts/page/TextBlock'
-import PageHeader from '../../components/PageHeader'
+import PageHeader from 'components/PageHeader'
 import SEO from 'components/SEO'
 
 const Projects = ({ pageContext }) => {
@@ -12,13 +11,10 @@ const Projects = ({ pageContext }) => {
       content: {
         siteSectionTitle,
         introContent,
-      }
+      },
     },
     nodes,
-    pageNumber,
-    hasNextPage,
-    itemsPerPage,
-    allProjects
+    projectTags,
   } = pageContext
 
   return (
@@ -35,35 +31,7 @@ const Projects = ({ pageContext }) => {
         '--rotate': '-1deg',
       }} />
 
-      <div
-        className={`
-          width:100
-          @mq-max-palm--padding-horizontal:columns-0-1/2
-        `}
-      >
-        {nodes && nodes.map(post => (
-          <ProjectEntry
-            key={post.id}
-            post={post}
-            className={`
-              @mq-palm--min-height:100vh-fixed
-              @mq-palm--display:grid
-              scroll-snap-align:start
-              scroll-margin-top:-px
-            `}
-            imageClasses={`
-              @mq-palm--flex-grow:1
-            `}
-          />
-        ))}
-
-        <Pagination
-          pageNumber={pageNumber}
-          hasNextPage={hasNextPage}
-          allProjects={allProjects}
-          itemsPerPage={itemsPerPage}
-        />
-      </div>
+      <ProjectPreviews posts={nodes} tags={projectTags} />
     </Layout>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default ({className, bottom, ...props}) => {
+export default ({className=``, bottom, ...props}) => {
 
   return (
     <div

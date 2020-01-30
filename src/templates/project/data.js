@@ -1,12 +1,5 @@
 const ProjectTemplateFragment = (layouts) => `
   fragment ProjectTemplateFragment on WPGraphQL_Project {
-    projectTags {
-      nodes {
-        slug
-        name
-        id
-      }
-    }
     projectId
     id
     title
@@ -122,7 +115,19 @@ const ProjectsIntroFragment = `
     }
   }
 `
-
+const ProjectTagsFragment = `
+  fragment ProjectTagsFragment on WPGraphQL {
+    projectTags {
+      nodes {
+        name
+        slug
+        id
+        count
+      }
+    }
+  }
+`
 module.exports.ProjectTemplateFragment = ProjectTemplateFragment
 module.exports.ProjectPreviewFragment = ProjectPreviewFragment
 module.exports.ProjectsIntroFragment = ProjectsIntroFragment
+module.exports.ProjectTagsFragment = ProjectTagsFragment

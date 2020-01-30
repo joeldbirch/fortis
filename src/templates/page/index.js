@@ -17,9 +17,7 @@ const Page = ({ pageContext }) => {
   const layouts = pageBuilder && pageBuilder.layouts ? pageBuilder.layouts : []
 
   return (
-    <Layout
-      scrollStrict={isFrontPage}
-    >
+    <Layout>
       <SEO title={title} />
 
       <h1 className="visually-hidden">{title}</h1>

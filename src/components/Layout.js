@@ -63,7 +63,10 @@ const Layout = ({
               `
             : `
                 overflow-y:scroll
-                scroll-snap-type:y-proximity
+                ${scrollStrict
+                  ? `scroll-snap-type:y-mandatory`
+                  : `scroll-snap-type:y-proximity`
+                }
               `
           }
           min-height:100vh-fixed
