@@ -67,8 +67,38 @@ const ProjectTemplateFragment = (layouts) => `
         }
       }
     }
+    relatedContent {
+      similarProjects {
+        project {
+          ... on WPGraphQL_Project {
+            id
+            title
+            featuredImage {
+              sourceUrl
+              altText
+              imageFile {
+                childImageSharp {
+                  fluid(maxWidth: 800, maxHeight: 450, quality: 70, cropFocus: CENTER) {
+                    ...GatsbyImageSharpFluid_withWebp_noBase64
+                  }
+                }
+              }
+            }
+            projectDetails {
+              fieldGroupName
+              detailsTable {
+                textualDetails {
+                  buildingType
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 `
+
 
 const ProjectPreviewFragment = `
   fragment ProjectPreviewFragment on WPGraphQL_Project {
@@ -105,6 +135,7 @@ const ProjectPreviewFragment = `
     }
   }
 `
+
 const ProjectsIntroFragment = `
   fragment ProjectsIntroFragment on WPGraphQL {
     projectsIntro {
