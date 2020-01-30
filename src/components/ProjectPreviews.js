@@ -3,17 +3,19 @@ import ProjectEntry from 'components/ProjectEntry'
 import Divider from 'components/DividerHorizontal'
 import SectionHeader from 'components/SectionHeader'
 import ProjectsFilter from 'components/FilterForm'
-import { uiFontSize } from 'styles/helpers'
 
 const ProjectPreviews = ({posts, tags:{ nodes: tags}}) => {
 
   const [shownPosts, setShownPosts] = useState(posts)
 
   const changeShownPosts = (mustHaveIds) => {
-    const newlyShownPosts = posts.filter(post => {
-      const ids = post.projectTags.nodes.map(tag => tag.id)
-      return mustHaveIds.every(id => ids.includes(id))
-    })
+    const newlyShownPosts =
+      mustHaveIds.length < 1
+      ? posts
+      : posts.filter(post => {
+        const ids = post.projectTags.nodes.map(tag => tag.id)
+        return mustHaveIds.every(id => ids.includes(id))
+      })
     setShownPosts(newlyShownPosts)
   }
 
@@ -41,18 +43,13 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}}) => {
           className={`
             scroll-snap-align:start
           `}>
-          <h2
-            className={`
-              ${uiFontSize}
-              color:neutral-200
-              margin-bottom:columns-0-1/4
-            `}
-          >Projects Filter</h2>
+          <h2 className={` visually-hidden `}>Projects Filter</h2>
 
           <ProjectsFilter
             items={tags}
-            changeHandler={changeShownPosts}
+            update={changeShownPosts}
             reset={filterReset}
+            className={`@mq-desk--padding-top:columns-0-1/2 padding-top:1000`}
           />
 
         </SectionHeader>

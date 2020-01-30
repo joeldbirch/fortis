@@ -1,30 +1,33 @@
 import React, { useEffect, useState } from 'react'
+import { uiFontSize } from 'styles/helpers'
 
 const styles = {
   hitarea: `
-    display:inline-flex
-    font-size:200
+    display:flex
+    align-items:center
+    font-size:300
     padding-vertical:100
     padding-horizontal:200
     cursor:pointer
+    line-height:200
+    &:hover--text-decoration:underline
   `,
+  // TODO: use SVG for reset icon
   icon: `
-    vertical-align:middle
     margin-right:100
   `,
   text: `
-    vertical-align:middle
+  vertical-align:top
   `
-
 }
 
 
 const FilterForm = ({
   items,
   reset = ()=>{},
-  changeHandler = ()=>{},
+  update = ()=>{},
+  className=``,
 }) => {
-
 
   const shownTags = items.filter(tag => tag.count > 0)
 
@@ -33,37 +36,41 @@ const FilterForm = ({
   const itemToggled = (id, checked) => {
     const newFilters = checked
       ? [...currentFilters, id]
-      : currentFilters.filter(filterId => filterId === id)
+      : currentFilters.filter(filterId => filterId !== id)
 
     setFilter(newFilters)
-    changeHandler(newFilters)
+    update(newFilters)
   }
 
   // reset on page load
   useEffect(() => setFilter([]), [])
 
-  // toggleItem(id, checked) {
-
-  // }
-
   return (
-    <form>
+    <form
+      className={`
+        ${className}
+        color:neutral-700
+        display:flex
+      `}
+      style={{
+        userSelect: `none`
+      }}
+    >
       <ul
         className={`
           display:flex
           flex-wrap:wrap
-          @mq-max-palm--justify-content:center
-          margin-horizontal:-100
+          margin-horizontal:-200
         `}
       >
-        <li>
+        <li className={``}>
           <button
             type="reset"
             className={styles.hitarea}
             onClick={reset}
           >
             <span className={styles.icon} >↻</span>
-            <span className={styles.text} >Reset</span>
+            <span className={styles.text} >Reset filter</span>
           </button>
         </li>
 
@@ -81,7 +88,8 @@ const FilterForm = ({
         ))}
 
       </ul>
-
+      {/* this is to match header heights because reasons */}
+      <span className={`${uiFontSize}`}>&#160;</span>
     </form>
   )
 }
