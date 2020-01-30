@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default ({className=``, bottom, ...props}) => {
+export default ({className=``, bottom, noMargin=false, ...props}) => {
 
   return (
     <div
@@ -9,7 +9,10 @@ export default ({className=``, bottom, ...props}) => {
       }}
       className={`
         ${className}
-        margin-horizontal:columns-0-1/2
+        ${noMargin
+          ? ``
+          : `margin-horizontal:columns-0-1/2`
+        }
         border-top-width:100
         border-top-style:solid
         border-top-color:neutral-600
