@@ -17,7 +17,7 @@ const Hero = ({image, label, linkTo, video, className=``, ...props}) => {
         ${className}
         js-contrast--reverse
         position:relative
-        min-height:100vh
+        min-height:100vh-fixed
         width:100vw
         scroll-snap-align:start
         scroll-margin-top:-px
