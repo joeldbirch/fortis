@@ -47,6 +47,7 @@ export default ({ prependId="field" }) => (
     >
       <input
         required
+        aria-label="Enter your email address here"
         aria-required={true}
         id={`${prependId}-emailSignup`}
         type="email"
@@ -81,7 +82,7 @@ export default ({ prependId="field" }) => (
           &:hocus--color:neutral-900
         `}
       >
-        <span className="visually-hidden">Go</span>
+        <span className="visually-hidden">Submit</span>
         <ArrowRounded
           role="presentation"
           className={`
