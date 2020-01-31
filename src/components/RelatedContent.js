@@ -4,6 +4,8 @@ import Divider from 'components/DividerHorizontal'
 import CarouselSlide from 'components/CarouselSlide'
 import { path } from 'components/ArrowRounded'
 import { uiFontSize } from 'styles/helpers'
+import 'flickity/css/flickity.css'
+import 'styles/_flickity-overrides.scss'
 
 const RelatedContent = ({
   similarProjects,

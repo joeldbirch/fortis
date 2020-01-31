@@ -1,0 +1,35 @@
+/* allow caption to break out of flickity container */
+.flickity-viewport {
+  overflow: visible;
+}
+.flickity-enabled {
+  position:static;
+}
+/* move dots to be inside flickity container */
+.flickity-page-dots {
+  bottom: 1rem;
+  margin-bottom: calc(var(--site-column) * 0.5);
+}
+.flickity-button {
+  border-radius: 0;
+  padding: 3vw;
+
+  &:disabled {
+    opacity: 0;
+  }
+}
+
+.flickity-prev-next-button.next {
+  right: 0;
+}
+.flickity-prev-next-button.previous {
+  left: 0;
+}
+.flickity-prev-next-button .flickity-button-icon {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 0.875rem;
+  height: 0.875rem;
+}
