@@ -23,7 +23,7 @@ const styles = {
   `,
 }
 
-export default () => (
+export default ({ prependId="field" }) => (
   <NetlifyForm className={styles.root} name="Fortis Newsletter 2020">
     <h3
       className={`
@@ -32,7 +32,7 @@ export default () => (
         margin-top:600
       `}
     >
-      <label htmlFor="emailSignup">
+      <label htmlFor={`${prependId}-emailSignup`}>
         Subscribe to our newsletter
       </label>
     </h3>
@@ -47,9 +47,13 @@ export default () => (
     >
       <input
         required
-        id="emailSignup"
+        aria-required={true}
+        id={`${prependId}-emailSignup`}
         type="email"
+        name="emailAddress"
         placeholder="Email address"
+        minLength="3"
+        size="40"
         className={`
           padding-left:0
           padding-top:800
