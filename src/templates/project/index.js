@@ -28,13 +28,12 @@ module.exports = (imports) => {
       const layouts = projectBuilder && projectBuilder.layouts ? projectBuilder.layouts : []
 
       return (
-        <Layout>
+        <Layout
+          AddToHeader={<h1 className="@mq-lap--font-size:500 @mq-tiny--font-size:400 font-size:300 font-weight:400">{title}</h1>}
+        >
           <SEO title={title + ' | project'} />
 
-          <h1 className="visually-hidden">{title}</h1>
-
           <Hero
-            label={title}
             image={featuredImage}
             video={projectDetails.detailsTable.mediaDetails.video}
             className="scroll-snap-align:start"
