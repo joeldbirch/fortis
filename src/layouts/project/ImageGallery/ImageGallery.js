@@ -25,6 +25,9 @@ const ImageGallery = ({imageGallery}) => {
           .flickity-viewport {
             overflow: visible;
           }
+          .flickity-enabled {
+            position:static;
+          }
           /* move dots to be inside flickity container */
           .flickity-page-dots {
             bottom: 1rem;
@@ -47,6 +50,7 @@ const ImageGallery = ({imageGallery}) => {
             width: 0.875rem;
             height: 0.875rem;
           }
+
         `}</style>
       </Helmet>
 

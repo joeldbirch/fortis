@@ -72,13 +72,14 @@ const ProjectTemplateFragment = (layouts) => `
         project {
           ... on WPGraphQL_Project {
             id
+            uri
             title
             featuredImage {
               sourceUrl
               altText
               imageFile {
                 childImageSharp {
-                  fluid(maxWidth: 800, maxHeight: 450, quality: 70, cropFocus: CENTER) {
+                  fluid(maxWidth: 800, maxHeight: 600, quality: 70, cropFocus: CENTER) {
                     ...GatsbyImageSharpFluid_withWebp_noBase64
                   }
                 }
@@ -89,6 +90,7 @@ const ProjectTemplateFragment = (layouts) => `
               detailsTable {
                 textualDetails {
                   buildingType
+                  suburb
                 }
               }
             }

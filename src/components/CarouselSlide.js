@@ -2,13 +2,11 @@ import React from 'react'
 import { Link } from 'gatsby'
 import FluidImage from './FluidImage'
 import { projectsURI } from '../../globals'
-import { handwritten } from 'styles/helpers'
 
-const ProjectEntry = ({
+const CarouselSlide = ({
   post: {
     uri,
     featuredImage,
-    note,
     id,
     title,
     projectDetails: {
@@ -16,30 +14,24 @@ const ProjectEntry = ({
         textualDetails: {
           buildingType,
           suburb,
-          status,
         },
       },
     },
   },
-  showNote,
   className=``,
+  ...props
 }) => {
 
   return (
     <article
       className={`
-        ${className}
+      ${className}
       `}
-      style={{
-        '--grid-template-columns-var-1': '3.75fr 8fr',
-        '--grid-template-columns-var-2': '2.75fr 9fr',
-        '--grid-template-columns-var-3': '1.75fr 10fr',
-      }}
+      {...props}
     >
       <div
         className={`
           position:relative
-          @mq-palm--height:100vh-fixed-less-top
           display:flex
           flex-direction:column
         `}
@@ -51,18 +43,13 @@ const ProjectEntry = ({
             js-contrast
             js-contrast--reverse
           `}
+          // TODO: add sizes
         />
 
-        <div className="@mq-palm--padding-horizontal:columns-0-1/2">
+        <div className="">
           <header
             className={`
               padding-top:400
-              padding-bottom:1000
-              display:grid
-              grid-gap:columns-0-1/4
-              grid-template-columns:var-1
-              @mq-palm--grid-template-columns:var-2
-              @mq-lap--grid-template-columns:var-3
               width:100
             `}
           >
@@ -88,30 +75,15 @@ const ProjectEntry = ({
                     position:relative
                     text-decoration:underline
                     &:hocus--text-decoration:none
-                  `}>{title}</span>
+                  `}>{title} — <span>{suburb}</span></span>
                 </Link>
               </h2>
-              <span
-                className={`
-                `}
-              >
-                {suburb}
-              </span>
             </div>
 
             <div>
               <span>{buildingType}</span><br/>
-              <span>{status}</span>
             </div>
 
-            { !showNote
-              ? ``
-              : <p
-                  className={`
-                    ${handwritten}
-                  `}
-                >{note}</p>
-            }
           </header>
         </div>
       </div>
@@ -119,4 +91,4 @@ const ProjectEntry = ({
   )
 }
 
-export default ProjectEntry
+export default CarouselSlide
