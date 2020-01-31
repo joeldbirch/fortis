@@ -1,6 +1,6 @@
 import React from 'react'
 import Divider from 'components/DividerHorizontal'
-import ArrowRounded from 'components/ArrowRounded'
+import NewsletterForm from 'components/NewsletterForm'
 import { getCurrentYear } from 'utilities/helpers'
 
 const styles = {
@@ -46,73 +46,7 @@ export default ({ className=``, ...props }) => {
           visually-hidden
         `}>Quick contact details</h2>
 
-        <form
-          className={`
-            @mq-palm--padding-right:400
-          `}
-        >
-          <h3
-            className={`
-              font-size:em
-              font-weight:400
-              margin-top:600
-            `}
-          >
-            <label htmlFor="emailSignup">
-              Subscribe to our newsletter
-            </label>
-          </h3>
-          <div
-            className={`
-              display:grid
-              grid-template-columns:var-3
-              align-items:flex-end
-              @mq-palm--margin-right:columns-0-1/2
-            `}
-            style={{'--grid-template-columns-var-3': '1fr auto'}}
-          >
-            <input
-              required
-              id="emailSignup"
-              type="email"
-              placeholder="Email address"
-              className={`
-                padding-left:0
-                padding-top:800
-                padding-bottom:100
-                font-size:400
-                &:placeholder--font-size:300
-                border-bottom-style:solid
-                border-bottom-width:100
-                border-bottom-color:neutral-600
-                line-height:200
-              `}
-            />
-            <button
-              className={`
-                @mq-max-palm--padding-left:800
-                padding-right:0
-                padding-top:800
-                padding-bottom:100
-                border-bottom-style:solid
-                border-bottom-width:100
-                border-bottom-color:neutral-600
-                line-height:200
-                color:neutral-500
-                &:hocus--color:neutral-900
-              `}
-            >
-              <span className="visually-hidden">Go</span>
-              <ArrowRounded
-                role="presentation"
-                className={`
-                  rotate:180
-                  font-size:300
-                `}
-              />
-            </button>
-          </div>
-        </form>
+        <NewsletterForm/>
 
         <div
           className={`
