@@ -18,7 +18,7 @@ const LinkToNewsPage = () => (
   </p>
 )
 
-const NewsOverview = ({showHeading=true, ...props}) => {
+const NewsOverview = ({showHeading=true, nextSection=null, id=null, ...props}) => {
 
   const {
     posts = [],
@@ -34,7 +34,7 @@ const NewsOverview = ({showHeading=true, ...props}) => {
   if (!posts) return null
   return (
     <section
-      {...props}
+      id={id}
       className={`
         position:relative
         scroll-snap-align:start

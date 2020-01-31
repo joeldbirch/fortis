@@ -17,6 +17,7 @@ import TheHeader from './TheHeader'
 import TheFooter from './TheFooter'
 import { isIos, isSafari } from 'utilities/helpers'
 import { uiFontSize, getInvertedStyles } from 'styles/helpers'
+
 import 'styles/index.scss'
 
 const Layout = ({
@@ -30,6 +31,7 @@ const Layout = ({
 
   const [menuOpen, toggleMenu] = useState(false)
   const [headerReversed] = useHeaderIntersection()
+
 
   return (
     <TheWrap

@@ -11,7 +11,7 @@ ${imports.map(({ componentName, filePath }) => `import ${componentName} from '${
 
 const Page = ({ pageContext }) => {
   const {
-    page: { title, pageBuilder, isFrontPage },
+    page: { title, uri, pageBuilder, isFrontPage },
   } = pageContext
 
   const layouts = pageBuilder && pageBuilder.layouts ? pageBuilder.layouts : []
@@ -26,7 +26,11 @@ const Page = ({ pageContext }) => {
           ${imports.map(({ componentName, layoutType }) => {
             return `
               if (layout.fieldGroupName === '${layoutType}') {
-                  return <${componentName} {...layout} key={index} id={"section-"+index} />
+                  const pageUri = isFrontPage ? "" : uri
+                  const nextIndex = index + 1
+                  const isNotLast = index < layouts.length - 1
+                  const nextSection = isNotLast ? "/"+pageUri+"#section-" + nextIndex : null
+                  return <${componentName} {...layout} key={index} id={"section-" + index} nextSection={nextSection} />
               }
             `
           }).join('\n')}

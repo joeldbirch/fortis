@@ -7,10 +7,12 @@ const ScrollPrompt = ({className=``, ...props}) => {
     <ScrollPromptAnimation
       className={`
         ${className}
+        color:inherit
         position:absolute
         pos-bottom:0
         pos-left:50
         padding:columns-0-1/4
+        z-index:800
       `}
       {...props}
     >

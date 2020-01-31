@@ -52,13 +52,13 @@ const styles = {
   `,
 }
 
-const Branded = ({image, text, video=null, ...props}) => {
+const Branded = ({image, text, video=null, nextSection=null, id=null, ...props}) => {
   return (
     <section
       className={`
         ${styles.root}
       `}
-      {...props}
+      id={id}
     >
       <div
         className={`

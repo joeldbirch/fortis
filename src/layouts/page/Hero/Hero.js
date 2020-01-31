@@ -6,14 +6,14 @@ import ScrollPrompt from 'components/ScrollPrompt'
 import { uiFontSize, shader } from 'styles/helpers'
 import { getPath } from 'utilities/helpers'
 
-const Hero = ({image, label, linkTo, video, className=``, ...props}) => {
+const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className=``, ...props}) => {
 
   const to = linkTo && linkTo.link ? getPath(linkTo.link) : null
   const OptionalLink = to ? Link : `span`
 
   return (
     <section
-      {...props}
+      id={id}
       className={`
         ${className}
         js-contrast--reverse
@@ -82,7 +82,7 @@ const Hero = ({image, label, linkTo, video, className=``, ...props}) => {
               `}
             />
       }
-      <ScrollPrompt className={`color:neutral-0`} />
+      <ScrollPrompt className={`color:neutral-0`} to={nextSection} />
     </section>
   )
 }

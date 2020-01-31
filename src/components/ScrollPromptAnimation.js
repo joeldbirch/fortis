@@ -1,8 +1,16 @@
 import React from 'react'
 
-const ScrollPromptAnimation = ({className=``, children, ...props}) => {
+const ScrollPromptAnimation = ({className=``, children, to=null, ...props}) => {
+  const ComponentTag = to ? `a` : `div`
+
   return (
-    <div
+    <ComponentTag
+      href={to}
+      onClick={(e) => {
+        e.preventDefault()
+        const target = document.querySelector(`#${to.split('#')[1]}`)
+        target.scrollIntoView({behavior:"smooth"})
+      }}
       className={`
         ${className}
         animation-name:pulse-down
@@ -13,7 +21,7 @@ const ScrollPromptAnimation = ({className=``, children, ...props}) => {
       {...props}
     >
       {children}
-    </div>
+    </ComponentTag>
   )
 }
 

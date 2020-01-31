@@ -1,7 +1,7 @@
 import React from 'react'
 import ScrollPrompt from 'components/ScrollPrompt'
 
-const TextBlock = ({text, style={}, ...props}) => {
+const TextBlock = ({text, style={}, nextSection=null, id=null, ...props}) => {
   const inlineStyles = Object.assign(
     {},
     {'--rotate': '-1deg'},
@@ -9,7 +9,7 @@ const TextBlock = ({text, style={}, ...props}) => {
   )
   return (
     <section
-      {...props}
+      id={id}
       className={`
         padding-horizontal:columns-1-1/2
         @mq-desk--padding-horizontal:columns-1-1/2
@@ -37,7 +37,7 @@ const TextBlock = ({text, style={}, ...props}) => {
         style={inlineStyles}
         dangerouslySetInnerHTML={{__html: text}}
       />
-      <ScrollPrompt />
+      <ScrollPrompt to={nextSection} />
     </section>
   )
 }
