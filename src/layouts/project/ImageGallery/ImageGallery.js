@@ -31,6 +31,7 @@ const ImageGallery = ({imageGallery}) => {
           /* move dots to be inside flickity container */
           .flickity-page-dots {
             bottom: 1rem;
+            margin-bottom: calc(var(--site-column) * 0.5);
           }
           .flickity-button {
             border-radius: 0;
