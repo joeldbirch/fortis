@@ -94,7 +94,11 @@ const TextLeftTwoImages = ({
           </div>
 
           <div className={styles.startColumnEndRow}>
-            <h2 className={`${subhead}`}>
+            <h2 className={`
+              ${subhead}
+              margin-bottom:400
+              rhythm-fix-after
+            `}>
               {billHeading}
             </h2>
             <p className={`

@@ -17,16 +17,16 @@ const Page = ({ pageContext }) => {
   const layouts = pageBuilder && pageBuilder.layouts ? pageBuilder.layouts : []
 
   return (
-    <Layout>
+    <Layout
+      AddToHeader={<h1 className={isFrontPage ? "visually-hidden" : "@mq-lap--font-size:500 @mq-tiny--font-size:400 font-size:300 font-weight:400"}>{title}</h1>}
+    >
       <SEO title={title} />
-
-      <h1 className="visually-hidden">{title}</h1>
       {
         layouts.map((layout, index) => {
           ${imports.map(({ componentName, layoutType }) => {
             return `
               if (layout.fieldGroupName === '${layoutType}') {
-                  return <${componentName} {...layout} key={index} />
+                  return <${componentName} {...layout} key={index} id={"section-"+index} />
               }
             `
           }).join('\n')}

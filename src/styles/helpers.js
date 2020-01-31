@@ -42,8 +42,6 @@ export const subhead = `
   @mq-lap--font-size:500
   font-size:500
   font-weight:400
-  margin-bottom:400
-  rhythm-fix-after
 `
 
 export const button = `

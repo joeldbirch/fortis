@@ -107,7 +107,11 @@ const TextRightTwoImages = ({
           </div>
 
           <div className={styles.startColumnEndRow}>
-            <h2 className={`${subhead}`}>
+            <h2 className={`
+              ${subhead}
+              margin-bottom:400
+              rhythm-fix-after
+            `}>
               {bobHeading}
             </h2>
             <p className={`

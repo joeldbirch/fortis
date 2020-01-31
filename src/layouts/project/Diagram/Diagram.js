@@ -28,7 +28,11 @@ const Diagram = ({diagram, text, heading}) => {
         max-width:small-column
 
       `}>
-        <h2 className={`${subhead}`}>
+        <h2 className={`
+          ${subhead}
+          margin-bottom:400
+          rhythm-fix-after
+        `}>
           {heading}
         </h2>
         <p>{text}</p>

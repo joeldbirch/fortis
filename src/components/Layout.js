@@ -76,6 +76,7 @@ const Layout = ({
           font-size:300
           @mq-lap--font-size:400
           min-height:100vh-fixed
+          grid-guide
         `} lang="en" />
 
         <meta name="robots" content="noindex" />

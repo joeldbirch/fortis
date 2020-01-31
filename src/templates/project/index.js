@@ -51,7 +51,7 @@ module.exports = (imports) => {
               ${imports.map(({ componentName, layoutType }) => {
                 return `
                   if (layout.fieldGroupName === '${layoutType}') {
-                      return <${componentName} {...layout} key={index} />
+                      return <${componentName} {...layout} key={index} id={"section-"+index} />
                   }
                 `
               }).join('\n')}

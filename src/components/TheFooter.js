@@ -9,7 +9,7 @@ const styles = {
   `,
 }
 
-export default ({ className, ...props }) => {
+export default ({ className=``, ...props }) => {
   className += styles.root
   return (
     <footer className={`

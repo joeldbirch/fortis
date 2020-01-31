@@ -59,6 +59,7 @@
   ],
   "license": "MIT",
   "scripts": {
+    "postinstall": "yarn upgrade hucssley",
     "build:initial": "cd src && git clone https://joel_birch@bitbucket.org/joel_birch/fortis-styles.git && cd ../ && gatsby build",
     "build": "yarn pull:styles && gatsby build",
     "develop": "gatsby develop",
