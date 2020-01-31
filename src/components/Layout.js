@@ -23,7 +23,6 @@ const Layout = ({
   children,
   headerClassName = ``,
   className = ``,
-  ctaClickHandler,
   AddToHeader,
   scrollStrict=false,
   ...props
@@ -144,7 +143,6 @@ const Layout = ({
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   headerClassName: PropTypes.string,
-  ctaClickHandler: PropTypes.func,
 }
 
 export default Layout
