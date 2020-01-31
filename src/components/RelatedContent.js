@@ -33,7 +33,7 @@ const RelatedContent = ({
             @mq-desk--padding-horizontal:columns-1-1/2
           `}
         >
-          Similar Projects
+          Similar projects
         </h2>
 
         <div
