@@ -32,7 +32,7 @@
     "gatsby-source-graphql": "^2.1.32",
     "gatsby-transformer-sharp": "^2.3.13",
     "glob": "^7.1.6",
-    "hucssley": "github:stowball/hucssley",
+    "hucssley": "github:stowball/hucssley#master",
     "lodash.isempty": "^4.4.0",
     "lodash.uniqby": "^4.7.0",
     "prop-types": "^15.7.2",
