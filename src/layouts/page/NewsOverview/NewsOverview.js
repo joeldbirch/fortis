@@ -33,10 +33,13 @@ const NewsOverview = ({showHeading=true, ...props}) => {
 
   if (!posts) return null
   return (
-    <section className={`
-      position:relative
-      scroll-snap-align:start
-    `}>
+    <section
+      {...props}
+      className={`
+        position:relative
+        scroll-snap-align:start
+      `}
+    >
       <Divider />
       <div
         className={`

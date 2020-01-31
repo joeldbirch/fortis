@@ -13,6 +13,7 @@ const Hero = ({image, label, linkTo, video, className=``, ...props}) => {
 
   return (
     <section
+      {...props}
       className={`
         ${className}
         js-contrast--reverse

@@ -1,7 +1,7 @@
 import React from 'react'
 import ScrollPrompt from 'components/ScrollPrompt'
 
-const TextBlock = ({text, style={}}) => {
+const TextBlock = ({text, style={}, ...props}) => {
   const inlineStyles = Object.assign(
     {},
     {'--rotate': '-1deg'},
@@ -9,6 +9,7 @@ const TextBlock = ({text, style={}}) => {
   )
   return (
     <section
+      {...props}
       className={`
         padding-horizontal:columns-1-1/2
         @mq-desk--padding-horizontal:columns-1-1/2
