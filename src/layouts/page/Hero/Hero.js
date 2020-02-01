@@ -16,7 +16,7 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
       id={id}
       className={`
         ${className}
-        js-contrast--reverse
+        color:neutral-0
         position:relative
         min-height:100vh-fixed
         width:100vw
@@ -71,7 +71,6 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
               className={`
                 ${shader}
               `}
-              data-reverse={true}
             />
           : <FluidImage
               image={image}
