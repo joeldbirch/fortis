@@ -18,7 +18,9 @@ const layoutMapping = require('./layoutMappingProjects')
 const projectTemplate = require.resolve('../src/templates/project')
 const projectsTemplate = require.resolve('../src/templates/project/projects')
 
-const { FluidImageFragment } = require('../src/templates/fragments')
+const {
+  FluidImageFragment,
+} = require('../src/templates/fragments')
 
 const GET_PROJECTS = (layouts) => `
   ${FluidImageFragment}
@@ -29,6 +31,7 @@ const GET_PROJECTS = (layouts) => `
 
   query GET_PROJECTS($first:Int) {
     wpgraphql {
+
       # This is the fragment used for the projects intro
       ...ProjectsIntroFragment
 

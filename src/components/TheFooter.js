@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Divider from 'components/DividerHorizontal'
 import NewsletterForm from 'components/NewsletterForm'
 import { getCurrentYear } from 'utilities/helpers'
+import useGlobalContent from 'hooks/use-global-content'
 
 const styles = {
   root: `
@@ -10,6 +11,22 @@ const styles = {
 }
 
 export default ({ className=``, ...props }) => {
+
+  const [year, setYear] = useState(getCurrentYear())
+
+  useEffect(function() {
+    setYear(getCurrentYear())
+  }, [])
+
+  const {
+    globalContent: {
+      contactInformation: {
+        socialMedia,
+        officeLocations,
+      },
+    },
+  } = useGlobalContent()
+
   className += styles.root
   return (
     <footer className={`
@@ -68,50 +85,13 @@ export default ({ className=``, ...props }) => {
               margin:0
             `}
           >
-            <li> <a href="https://instagram.com">Instagram</a> </li>
-            <li> <a href="https://Facebook.com">Facebook</a> </li>
-            <li> <a href="https://Linkedin.com">Linkedin</a> </li>
+            { socialMedia.length > 0 && socialMedia.map(({name, url}, index) => (
+              <li key={index}> <a href={url}>{name}</a> </li>
+            ))}
           </ul>
         </div>
 
-        <address
-          className={`
-            padding-right:400
-            font-style:normal
-          `}
-          role="contentinfo"
-        >
-          <h3
-            className={`
-              font-size:em
-              font-weight:400
-              margin-bottom:100
-              margin-top:600
-            `}
-          >Sydney</h3>
-          33&#8211;39 Riley&#160;Street<br />
-          Woolloomooloo<br />
-          NSW 2011
-        </address>
-
-        <address
-          className={`
-            padding-right:400
-            font-style:normal
-          `}
-        >
-          <h3
-            className={`
-              font-size:em
-              font-weight:400
-              margin-bottom:100
-              margin-top:600
-            `}
-          >Melbourne</h3>
-          L2 49&#8211;51 Stead&#160;Street<br />
-          South Melbourne<br />
-          VIC 3205
-        </address>
+        { officeLocations.map((location, index) => <Address key={index} fields={location} />) }
 
         <div
           className={`
@@ -122,9 +102,39 @@ export default ({ className=``, ...props }) => {
               margin-top:600
               @mq-desk--text-align:right
             `}
-          >&copy; Fortis {getCurrentYear()}</p>
+          >&copy; Fortis {year}</p>
         </div>
       </div>
     </footer>
   )
 }
+
+
+const Address = ({
+  fields: {
+    suburb,
+    state,
+    postcode,
+    label,
+    streetAddress,
+  },
+}) => (
+  <address
+    className={`
+      padding-right:400
+      font-style:normal
+    `}
+  >
+    <h3
+      className={`
+        font-size:em
+        font-weight:400
+        margin-bottom:100
+        margin-top:600
+      `}
+    >{label}</h3>
+    {streetAddress}<br />
+    {suburb}<br />
+    {state} {postcode}
+  </address>
+)

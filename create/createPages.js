@@ -9,9 +9,13 @@ const filePathToComponents = `../src/layouts/page/`
 const layoutMapping = require('./layoutMapping')
 
 const pageTemplate = require.resolve('../src/templates/page')
-const { PageTemplateFragment } = require('../src/templates/page/data')
+const {
+  PageTemplateFragment,
+} = require('../src/templates/page/data')
 
-const { FluidImageFragment } = require('../src/templates/fragments')
+const {
+  FluidImageFragment,
+} = require('../src/templates/fragments')
 
 const GET_PAGES = (layouts) => `
   ${FluidImageFragment}
@@ -26,7 +30,7 @@ const GET_PAGES = (layouts) => `
         where: {
           parent: null
         }
-      ) {
+        ) {
         pageInfo {
           hasNextPage
           endCursor
@@ -135,6 +139,12 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
          */
         page.pageBuilder = page.pageBuilder || {layouts: []}
 
+        if (page.uri === `contact`) {
+          page.pageBuilder.layouts.unshift({
+            fieldGroupName: `contactLayout`,
+          })
+        }
+
         /**
          * Filter out empty objects. This can happen if for some reason you
          * don't query for a specific layout (UnionType), that is potentially
@@ -161,14 +171,14 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
         }
 
         createPageWithTemplate({
-          createTemplate: createTemplate,
-          templateCacheFolder: templateCacheFolder,
-          pageTemplate: pageTemplate,
-          page: page,
-          pagePath: pagePath,
-          mappedLayouts: mappedLayouts,
-          createPage: createPage,
-          reporter: reporter,
+          createTemplate,
+          templateCacheFolder,
+          pageTemplate,
+          page,
+          pagePath,
+          mappedLayouts,
+          createPage,
+          reporter,
         })
 
       })

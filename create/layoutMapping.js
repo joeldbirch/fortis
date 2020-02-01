@@ -6,4 +6,5 @@ module.exports = {
   page_Pagebuilder_Layouts_GoogleMap: `Location`,
   page_Pagebuilder_Layouts_PersonProfile: `PersonProfiles`,
   page_Pagebuilder_Layouts_FullWidthTextAndImage: `FullWidthContent`,
+  contactLayout: `Contact`,
 }

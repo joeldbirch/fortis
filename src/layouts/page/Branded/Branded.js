@@ -1,19 +1,19 @@
 import React from 'react'
 import FluidImage from 'components/FluidImage'
 import FullWindowVideo from 'components/FullWindowVideo'
+import BigBrand from 'components/BigBrand'
 import Divider from 'components/DividerHorizontal'
-import { handwritten } from 'styles/helpers'
 
 const styles = {
   root: `
     height:100vh-fixed
     min-height:50vw
-    padding-horizontal:columns-0-1/2
-    padding-top:site-top
-    padding-bottom:400
     display:flex
     flex-direction:column
     justify-content:space-between
+    padding-horizontal:columns-0-1/2
+    padding-top:site-top
+    padding-bottom:400
     position:relative
     scroll-snap-align:start
   `,
@@ -25,30 +25,6 @@ const styles = {
     @mq-bigdesk--margin-horizontal:site-pad-500
     overflow:hidden
     position:relative
-  `,
-  brandingWrap: `
-    @mq-desk--display:flex
-    @mq-desk--flex-flow:row-reverse
-    @mq-desk--justify-content:space-between
-    @mq-desk--align-items:flex-end
-    @mq-desk--margin-top:-400
-    position:relative
-    flex-basis:20
-  `,
-  tagline: `
-    ${handwritten}
-    text-align:center
-    padding-bottom:200
-    padding-top:400
-    @mq-desk--padding-bottom:columns-0-1/2
-    @mq-desk--text-align:left
-    @mq-desk--padding-left:columns-0-1/2
-    @mq-desk--flex-grow:1
-  `,
-  watermark: `
-    @mq-desk--width:columns-7
-    height:auto
-    width:columns-12
   `,
 }
 
@@ -82,33 +58,7 @@ const Branded = ({image, text, video=null, nextSection=null, id=null, ...props})
               />
         }
       </div>
-      <div
-        className={`
-          ${styles.brandingWrap}
-        `}
-      >
-        <h2
-          className={`
-            ${styles.tagline}
-          `}
-          style={{
-            transform: 'rotate(-2deg)',
-          }}
-          dangerouslySetInnerHTML={{__html: text}}
-        />
-
-        <img
-          className={`
-            ${styles.watermark}
-          `}
-          src="/images/logo-fortis-watermark.svg"
-          role="presentation"
-          alt="Fortis"
-          width="764"
-          height="202"
-          loading="lazy"
-        />
-      </div>
+      <BigBrand>{text}</BigBrand>
       <Divider bottom={true} />
     </section>
   )

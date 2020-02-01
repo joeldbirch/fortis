@@ -6,7 +6,9 @@ const {
   NewsIntroFragment,
 } = require('../src/templates/post/data')
 
-const { FluidImageFragment } = require('../src/templates/fragments')
+const {
+  FluidImageFragment,
+} = require('../src/templates/fragments')
 
 const postTemplate = require.resolve('../src/templates/post/index.js')
 const newsTemplate = require.resolve('../src/templates/post/news.js')
@@ -19,6 +21,7 @@ const GET_POSTS = `
 
   query GET_POSTS($first:Int $after:String) {
     wpgraphql {
+
       # This is the fragment used for the news intros
       ...NewsIntroFragment
 

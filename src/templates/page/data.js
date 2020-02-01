@@ -11,6 +11,7 @@ const PageTemplateFragment = (layouts) => `
         ${layouts}
       }
     }
+
   }
 `
 
