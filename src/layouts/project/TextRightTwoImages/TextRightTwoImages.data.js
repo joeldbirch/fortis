@@ -11,7 +11,7 @@ module.exports = () => {
           altText
           imageFile {
             childImageSharp {
-              fluid(maxHeight: 235, maxWidth: 328, quality: 70, cropFocus: CENTER) {
+              fluid(maxHeight: 235, maxWidth: 328, cropFocus: CENTER) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
@@ -22,7 +22,7 @@ module.exports = () => {
           altText
           imageFile {
             childImageSharp {
-              fluid(maxHeight: 655, maxWidth: 470, quality: 70, cropFocus: CENTER) {
+              fluid(maxHeight: 655, maxWidth: 470, cropFocus: CENTER) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }

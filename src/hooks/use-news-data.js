@@ -25,14 +25,14 @@ export const useNewsData = () => {
           altText
           imageFile {
             childImageSharp {
-              fluid(maxWidth: 1000, maxHeight: 563, quality: 70, cropFocus: CENTER) {
+              fluid(maxWidth: 1000, maxHeight: 563, cropFocus: CENTER) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
           }
           imageFilePortrait {
             childImageSharp {
-              fluid(maxWidth: 1000, maxHeight: 1000, quality: 70, cropFocus: CENTER) {
+              fluid(maxWidth: 1000, maxHeight: 1000, cropFocus: CENTER) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }

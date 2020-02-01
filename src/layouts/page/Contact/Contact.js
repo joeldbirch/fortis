@@ -4,6 +4,7 @@ import FluidImage from 'components/FluidImage'
 import BigBrand from 'components/BigBrand'
 import useGlobalContent from 'hooks/use-global-content'
 import { subhead } from 'styles/helpers'
+import { cols, mq } from 'utilities/helpers'
 
 const styles = {
   links: `
@@ -65,7 +66,12 @@ const Contact = () => {
             grid-column:2
             grid-row:1
           `}
-          // TODO: sizes
+          // extra col added to mq.palm size here because sides are cropped…
+          sizes={`
+            (min-width: ${mq.desk}) ${cols(5)}vw,
+            (min-width: ${mq.palm}) ${cols(6)}vw,
+            ${cols(5.5)}vw
+          `}
         />
 
         <div

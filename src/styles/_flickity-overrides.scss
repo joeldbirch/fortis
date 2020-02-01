@@ -13,6 +13,7 @@
 .flickity-button {
   border-radius: 0;
   padding: 3vw;
+  background: hsla(0, 0%, 90%, 0.75);
 
   &:disabled {
     opacity: 0;

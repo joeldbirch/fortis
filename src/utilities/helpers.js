@@ -112,12 +112,12 @@ export const cols = (num) => Math.round((num / 13) * 10000) / 100
 export const huEm = (px) => `${px / 16}em`
 
 export const mq = {
-  maxTiny: huEm(349),
+  toTiny: huEm(349),
   tiny: huEm(340),
   palm: huEm(550),
   widepalm: huEm(680),
   lap: huEm(768),
-  maxPalm: huEm(549),
+  toPalm: huEm(549),
   desk: huEm(960),
 }
 

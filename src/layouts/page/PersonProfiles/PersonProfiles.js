@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import FluidImage from 'components/FluidImage'
 import { subhead } from 'styles/helpers'
+import { cols, mq } from 'utilities/helpers'
 
 const PersonProfiles = ({profiles=[]}) => {
   if (profiles.length < 1) return ``
@@ -60,6 +61,13 @@ const ProfileEntry = ({
             @mq-max-palm--margin-left:columns-1
             @mq-max-palm--margin-bottom:columns-0-1/2
             float:right
+          `}
+
+          sizes={`
+            (max-width: ${mq.toPalm}) ${cols(5)}vw,
+            (min-width: ${mq.desk}) ${cols(5)}vw,
+            (min-width: ${mq.widepalm}) ${cols(6)}vw,
+            (min-width: ${mq.palm}) ${cols(5.5)}vw
           `}
         />
 

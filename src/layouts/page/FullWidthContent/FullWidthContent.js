@@ -1,5 +1,6 @@
 import React from 'react'
 import FluidImage from 'components/FluidImage'
+import { cols, mq } from 'utilities/helpers'
 
 const FullWidthContent = ({className=``, freeText, image, ...props}) => {
   return (
@@ -26,10 +27,13 @@ const FullWidthContent = ({className=``, freeText, image, ...props}) => {
 
       <FluidImage
         image={image}
-        // TODO: sizes
         className={`
           margin-vertical:400
           @mq-palm--margin-vertical:columns-0-1/2
+        `}
+        sizes={`
+          (min-width: ${mq.desk}) ${cols(10)}vw,
+          (min-width: 1px) ${cols(12)}vw
         `}
       />
     </div>

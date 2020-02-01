@@ -2,15 +2,16 @@ import React from 'react'
 import GatsbyImage from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby'
 
+
 const FluidImage = ({ image, withFallback = false, className=``, artDirection=`imageFile`, sizes, ...props }) => {
 
-  const data = useStaticQuery(graphql`
-    query {
+  const data = useStaticQuery(graphql` query {
       fallBackImage: file(relativePath: { eq: "fallback.svg" }) {
         publicURL
       }
     }
   `)
+
   /**
    * Return fallback image, if no image is given.
    */
@@ -20,15 +21,20 @@ const FluidImage = ({ image, withFallback = false, className=``, artDirection=`i
 
   if (image[artDirection]) {
 
-    const fluidData = sizes
-      ? {...image[artDirection].childImageSharp.fluid, sizes }
-      : image[artDirection].childImageSharp.fluid
+    const { fluid } = image[artDirection].childImageSharp
+    const newFluid = !sizes
+      ? fluid
+      : {
+        ...fluid,
+        sizes: `${sizes.trim()}, ${fluid.presentationWidth}px`,
+      }
 
     return <GatsbyImage
-      fluid={fluidData}
+      fluid={newFluid}
       alt={image.altText}
       className={className}
       durationFadeIn={1500}
+      backgroundColor="#f5f5f5"
       {...props}
     />
   }

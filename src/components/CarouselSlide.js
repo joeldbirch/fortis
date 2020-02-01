@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import FluidImage from './FluidImage'
 import { projectsURI } from '../../globals'
+import { cols, mq } from 'utilities/helpers'
 
 const CarouselSlide = ({
   post: {
@@ -40,10 +41,12 @@ const CarouselSlide = ({
           image={featuredImage}
           className={`
             @mq-palm--height:100
-            js-contrast
-            js-contrast--reverse
           `}
-          // TODO: add sizes
+          sizes={`
+            (max-width: ${mq.toPalm}) ${cols(5.75)}vw,
+            (min-width: ${mq.desk}) ${cols(3)}vw,
+            (min-width: ${mq.palm}) ${cols(3.333)}vw
+          `}
         />
 
         <div className="">

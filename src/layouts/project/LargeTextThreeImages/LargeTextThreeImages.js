@@ -1,10 +1,11 @@
 import React from 'react'
 import FluidImage from 'components/FluidImage'
+import { cols, mq } from 'utilities/helpers'
 
 // import { cols, mq } from 'utilities/helpers'
 
 // // const smallerSizes = `
-// //   (max-width: ${mq.maxPalm}) ${cols(12)}vw,
+// //   (max-width: ${mq.toPalm}) ${cols(12)}vw,
 // //   (min-width: ${mq.desk}) ${cols(3)}vw,
 // //   (min-width: ${mq.palm}) ${cols(4)}vw,
 // //   850px
@@ -85,6 +86,13 @@ const LargeTextThreeImages = ({
                   <FluidImage
                     className={` @mq-lap--margin-right:-400`}
                     image={benSmallerImage}
+                    sizes={`
+                      (max-width: ${mq.toTiny}) 12em,
+                      (max-width: ${mq.toPalm}) ${cols(5)}vw,
+                      (min-width: ${mq.desk}) calc(${cols(2)}vw + 1em),
+                      (min-width: ${mq.lap}) calc(${cols(3)}vw + 1em),
+                      (min-width: ${mq.palm}) ${cols(3)}vw
+                    `}
                   />
                 </div>
                 {
@@ -128,7 +136,12 @@ const LargeTextThreeImages = ({
                   @mq-tiny--margin-bottom:0
                   @mq-tiny--max-width:100
                   max-width:small-column
-
+                `}
+                sizes={`
+                  (max-width: ${mq.toTiny}) 17.5em,
+                  (max-width: ${mq.toPalm}) ${cols(5.75)}vw,
+                  (min-width: ${mq.desk}) ${cols(4)}vw,
+                  (min-width: ${mq.palm}) ${cols(6)}vw
                 `}
               />
             : ``
@@ -157,6 +170,12 @@ const LargeTextThreeImages = ({
                   @mq-desk--max-width:columns-4
                 `}
                 image={benOtherSmallerImage}
+                sizes={`
+                  (max-width: ${mq.toTiny}) 17.5em,
+                  (max-width: ${mq.toPalm}) ${cols(5)}vw,
+                  (min-width: ${mq.desk}) ${cols(4)}vw,
+                  (min-width: ${mq.palm}) ${cols(5)}vw
+                `}
               />
             : ``
           }

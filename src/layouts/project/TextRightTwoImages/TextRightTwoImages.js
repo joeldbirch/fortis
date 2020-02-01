@@ -98,10 +98,9 @@ const TextRightTwoImages = ({
             <FluidImage
               image={smaller}
               sizes={`
-                (max-width: ${mq.maxPalm}) 17.5em,
+                (max-width: ${mq.toPalm}) 17.5em,
                 (min-width: ${mq.desk}) ${cols(3)}vw,
-                (min-width: ${mq.palm}) ${cols(4)}vw,
-                328px
+                (min-width: ${mq.palm}) ${cols(4)}vw
               `}
             />
           </div>
@@ -152,11 +151,10 @@ const TextRightTwoImages = ({
                 @mq-max-palm--max-width:small-column
               `}
               sizes={`
-                (max-width: ${mq.maxPalm}) 17.5em,
+                (max-width: ${mq.toPalm}) 17.5em,
                 (min-width: ${mq.desk}) ${cols(4)}vw,
                 (min-width: ${mq.widepalm}) ${cols(5)}vw,
-                (min-width: ${mq.palm}) ${cols(7)}vw,
-                470px
+                (min-width: ${mq.palm}) ${cols(7)}vw
               `}
             />
           </div>

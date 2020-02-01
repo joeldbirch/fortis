@@ -3,7 +3,7 @@ import NewsEntry from './NewsEntry'
 import { cols, mq } from 'utilities/helpers'
 
 const smallerSizes = `
-  (max-width: ${mq.maxPalm}) ${cols(12)}vw,
+  (max-width: ${mq.toPalm}) ${cols(12)}vw,
   (min-width: ${mq.desk}) ${cols(3)}vw,
   (min-width: ${mq.palm}) ${cols(4)}vw,
   850px

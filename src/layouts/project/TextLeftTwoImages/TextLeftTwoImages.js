@@ -85,10 +85,9 @@ const TextLeftTwoImages = ({
               className={` @mq-palm--margin-right:-400`}
               image={smaller}
               sizes={`
-                (max-width: ${mq.maxPalm}) 12em,
+                (max-width: ${mq.toPalm}) 12em,
                 (min-width: ${mq.desk}) calc(${cols(2)}vw + 1em),
-                (min-width: ${mq.palm}) calc(${cols(3)}vw + 1em),
-                235px
+                (min-width: ${mq.palm}) calc(${cols(3)}vw + 1em)
               `}
             />
           </div>
@@ -134,10 +133,9 @@ const TextLeftTwoImages = ({
                 height:100
               `}
               sizes={`
-                (max-width: ${mq.maxPalm}) ${cols(12)}vw,
+                (max-width: ${mq.toPalm}) ${cols(12)}vw,
                 (min-width: ${mq.desk}) ${cols(6)}vw,
-                (min-width: ${mq.palm}) ${cols(7)}vw,
-                655px
+                (min-width: ${mq.palm}) ${cols(7)}vw
               `}
             />
           </div>

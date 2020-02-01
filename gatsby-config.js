@@ -92,7 +92,13 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        stripMetadata: true,
+        webpQuality: 60,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
