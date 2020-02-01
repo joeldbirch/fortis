@@ -4,7 +4,7 @@ import Divider from 'components/DividerHorizontal'
 import SectionHeader from 'components/SectionHeader'
 import ProjectsFilter from 'components/FilterForm'
 
-const ProjectPreviews = ({posts, tags:{ nodes: tags}}) => {
+const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
 
   const [shownPosts, setShownPosts] = useState(posts)
 
@@ -31,6 +31,7 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}}) => {
         width:100
         @mq-max-palm--padding-horizontal:columns-0-1/2
       `}
+      id={id}
     >
       <div
         className={`
