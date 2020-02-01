@@ -46,9 +46,9 @@ export default ({ prependId="field" }) => (
       style={{'--grid-template-columns-var-3': '1fr auto'}}
     >
       <input
-        required
-        aria-label="Enter your email address here"
+        required={true}
         aria-required={true}
+        aria-label="Enter your email address here"
         id={`${prependId}-emailSignup`}
         type="email"
         name="emailAddress"
@@ -69,6 +69,7 @@ export default ({ prependId="field" }) => (
         `}
       />
       <button
+        type="submit"
         className={`
           @mq-max-palm--padding-left:800
           padding-right:0

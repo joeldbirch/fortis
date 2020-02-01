@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function NetlifyForm({ name, action, className, children }) {
+function NetlifyForm({ name, action, className, children, ...props }) {
   return (
     <form
       action={action}
@@ -11,6 +11,7 @@ function NetlifyForm({ name, action, className, children }) {
       encType="application/x-www-form-urlencoded"
       method="POST"
       name={name}
+      {...props}
     >
       {children}
       <div className="display:none">
