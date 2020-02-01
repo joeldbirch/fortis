@@ -6,7 +6,6 @@ import ScrollPrompt from 'components/ScrollPrompt'
 import PageHeader from 'components/PageHeader'
 import NewsOverview from 'layouts/page/NewsOverview'
 import { useNewsData  } from 'hooks/use-news-data'
-import { handwritten } from 'styles/helpers'
 
 
 const Post = ({ pageContext }) => {
@@ -132,7 +131,7 @@ const Post = ({ pageContext }) => {
               ? ``
               : <p
                   className={`
-                    ${handwritten}
+                    handwritten
                     @mq-palm--margin-top:800
                     @mq-max-palm--position:absolute
                     @mq-max-palm--pos-top-right:0

@@ -1,6 +1,6 @@
 import React from 'react'
 import FluidImage from 'components/FluidImage'
-import { subhead, handwritten } from 'styles/helpers'
+import { subhead } from 'styles/helpers'
 import { cols, mq } from 'utilities/helpers'
 
 const styles = {
@@ -128,7 +128,7 @@ const TextRightTwoImages = ({
           >
             <span
               className={`
-                ${handwritten}
+                handwritten
                 display:block
                 margin-vertical:auto
                 text-align:center

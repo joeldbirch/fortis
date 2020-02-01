@@ -1,6 +1,5 @@
 import React from 'react'
 import FluidImage from 'components/FluidImage'
-import { handwritten } from 'styles/helpers'
 
 // import { cols, mq } from 'utilities/helpers'
 
@@ -101,7 +100,7 @@ const LargeTextThreeImages = ({
                     >
                       <span
                         className={`
-                          ${handwritten}
+                          handwritten
                           display:block
                           text-align:left
                           padding-vertical:columns-0-1/2
@@ -173,7 +172,7 @@ const LargeTextThreeImages = ({
               >
                 <span
                   className={`
-                    ${handwritten}
+                    handwritten
                     display:block
                     text-align:left
                     @mq-tiny--text-align:center

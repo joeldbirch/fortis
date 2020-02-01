@@ -2,7 +2,6 @@ import React from 'react'
 import Flickity from 'react-flickity-component'
 import FluidImage from 'components/FluidImage'
 import {path} from 'components/ArrowRounded'
-import { handwritten } from 'styles/helpers'
 import 'flickity/css/flickity.css'
 import 'styles/_flickity-overrides.scss'
 
@@ -40,7 +39,7 @@ const ImageGallery = ({imageGallery}) => {
             />
             <div
               className={`
-                ${handwritten}
+                handwritten
                 padding-top:columns-0-1/4
                 position:absolute
                 pos-top:100

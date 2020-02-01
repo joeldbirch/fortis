@@ -1,5 +1,4 @@
 import React from 'react'
-import { handwritten } from 'styles/helpers'
 
 const styles = {
   brandingWrap: `
@@ -12,7 +11,7 @@ const styles = {
     flex-basis:20
   `,
   tagline: `
-    ${handwritten}
+    handwritten
     text-align:center
     padding-bottom:200
     padding-top:400

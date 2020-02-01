@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 import FluidImage from './FluidImage'
 import { projectsURI } from '../../globals'
-import { handwritten } from 'styles/helpers'
 import { shader } from 'styles/helpers'
 
 const ProjectEntry = ({
@@ -110,7 +109,7 @@ const ProjectEntry = ({
               ? ``
               : <p
                   className={`
-                    ${handwritten}
+                    handwritten
                   `}
                 >{note}</p>
             }

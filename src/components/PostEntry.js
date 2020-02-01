@@ -1,6 +1,5 @@
 import React from 'react'
 import FluidImage from './FluidImage'
-import { handwritten } from 'styles/helpers'
 
 const PostEntry = ({
   featuredImage,
@@ -53,7 +52,7 @@ const PostEntry = ({
             ? ``
             : <p
                 className={`
-                  ${handwritten}
+                  handwritten
                 `}
               >{note}</p>
           }

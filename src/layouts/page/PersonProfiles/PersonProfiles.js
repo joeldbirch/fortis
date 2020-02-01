@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import FluidImage from 'components/FluidImage'
-import { subhead, handwritten } from 'styles/helpers'
+import { subhead } from 'styles/helpers'
 
 const PersonProfiles = ({profiles=[]}) => {
   if (profiles.length < 1) return ``
@@ -98,7 +98,7 @@ const ProfileEntry = ({
         <p
           dangerouslySetInnerHTML={{__html: note}}
           className={`
-            ${handwritten}
+            handwritten
             margin-bottom:400
             @mq-palm--margin-bottom:columns-0-1/2
           `}
