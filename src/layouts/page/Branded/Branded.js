@@ -40,6 +40,9 @@ const Branded = ({image, text, video=null, nextSection=null, id=null, ...props})
         className={`
           ${styles.mediaWrap}
         `}
+        style={{
+          minHeight: '10rem',
+        }}
       >
         {
           video
