@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import FluidImage from './FluidImage'
 import { projectsURI } from '../../globals'
 import { handwritten } from 'styles/helpers'
+import { shader } from 'styles/helpers'
 
 const ProjectEntry = ({
   post: {
@@ -47,6 +48,7 @@ const ProjectEntry = ({
         <FluidImage
           image={featuredImage}
           className={`
+            ${shader}
             @mq-palm--height:100
             js-contrast
             js-contrast--reverse
