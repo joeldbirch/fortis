@@ -71,7 +71,6 @@ const Layout = ({
               `
           }
           min-height:100vh-fixed
-          grid-guide
         `}
         />
         <html className={`
