@@ -8,7 +8,7 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
 
   const [shownPosts, setShownPosts] = useState(posts)
 
-  const changeShownPosts = (mustHaveIds) => {
+  const changeShownPosts = (mustHaveIds=[]) => {
     const newlyShownPosts =
       mustHaveIds.length < 1
       ? posts
@@ -56,26 +56,65 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
         </SectionHeader>
       </div>
 
-      {posts && posts.map((post, index) => (
-        <ProjectEntry
-          key={post.id}
-          post={post}
+      <div
+        style={{
+          '--min-height': `calc(56.25vw + 4.5rem)`,
+          '--min-height-var-2': `calc(56.25vw + 6rem)`,
+        }}
+        className={`
+          position:relative
+          overflow:hidden
+          min-height:var-1
+          @mq-palm--min-height:var-2
+          background-color:neutral-100
+        `}
+      >
+        {posts && posts.map((post, index) => (
+          <ProjectEntry
+            key={post.id}
+            post={post}
+            className={`
+              ${index !== 0 ? `scroll-snap-align:start` : ``}
+              scroll-margin-top:-px
+              overflow:hidden
+              transition-duration:700
+              ${
+                isShown(post)
+                  ? `max-height:100vh opacity:1`
+                  : `max-height:0 opacity:0`
+              }
+            `}
+            imageClasses={`
+              @mq-palm--flex-grow:1
+            `}
+          />
+        ))}
+
+
+        <div
           className={`
-            ${index !== 0 ? `scroll-snap-align:start` : ``}
-            scroll-margin-top:-px
-            overflow:hidden
-            transition-duration:400
-            ${
-              isShown(post)
-                ? `max-height:100vh`
-                : `max-height:0`
-            }
+            position:absolute
+            pos-top:50
+            translate-y:-50
+            padding-horizontal:columns-0-1/2
+            transition-duration:1000
+            text-align:center
+            width:100
+            ${shownPosts.length ? `opacity:0` : ``}
           `}
-          imageClasses={`
-            @mq-palm--flex-grow:1
-          `}
-        />
-      ))}
+        >
+          <p
+            className={`
+            `}
+            aria-hidden={shownPosts.length ? true : null}
+          >
+            No projects fit all your chosen filters.
+          </p>
+        </div>
+
+      </div>
+
+
     </section>
   )
 }

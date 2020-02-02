@@ -5,7 +5,6 @@ const styles = {
   hitarea: `
     display:flex
     align-items:center
-    font-size:300
     padding-vertical:100
     padding-horizontal:200
     cursor:pointer
@@ -33,10 +32,10 @@ const FilterForm = ({
 
   const [currentFilters, setFilter] = useState([])
 
-  const itemToggled = (id, checked) => {
-    const newFilters = checked
-      ? [...currentFilters, id]
-      : currentFilters.filter(filterId => filterId !== id)
+  const itemToggled = (id) => {
+    const newFilters = currentFilters.includes(id)
+      ? currentFilters.filter(filterId => filterId !== id)
+      : [...currentFilters, id]
 
     setFilter(newFilters)
     update(newFilters)
@@ -51,29 +50,32 @@ const FilterForm = ({
         ${className}
         color:neutral-700
         display:flex
+        font-size:300
       `}
       style={{
         userSelect: `none`
       }}
     >
+      <h2
+        className={`
+          display:flex
+          align-items:center
+          padding-vertical:100
+          padding-horizontal:200
+          line-height:200
+          font-weight:400
+          font-size:em
+          margin-left:-200
+          ${styles.text}
+        `}
+      >Filters:</h2>
       <ul
         className={`
           display:flex
+          align-items:center
           flex-wrap:wrap
-          margin-horizontal:-200
         `}
       >
-        <li className={``}>
-          <button
-            type="reset"
-            className={styles.hitarea}
-            onClick={reset}
-          >
-            <span className={styles.icon} >↻</span>
-            <span className={styles.text} >Reset filter</span>
-          </button>
-        </li>
-
         {
           shownTags
           && shownTags.length
@@ -94,7 +96,7 @@ const FilterForm = ({
   )
 }
 
-const FilterItem = ({id, name, checked=null, toggleHandler = ()=>{}, ...props}) => (
+const FilterItem = ({id, name, toggleHandler = ()=>{}, ...props}) => (
   <li
     className={`
     `}
@@ -103,10 +105,10 @@ const FilterItem = ({id, name, checked=null, toggleHandler = ()=>{}, ...props}) 
   >
     <label className={styles.hitarea} >
       <input
-        defaultChecked={checked}
         type="checkbox"
         className={styles.icon}
-        onChange={({target}) => toggleHandler(id, target.checked)}
+        name="filters"
+        onChange={() => toggleHandler(id)}
       />
       <span className={styles.text} >{name}</span>
     </label>

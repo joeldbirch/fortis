@@ -27,6 +27,7 @@ const ProjectEntry = ({
 
   return (
     <article
+      aria-labelledby={`project-preview-${id}`}
       className={`
         ${className}
       `}
@@ -39,7 +40,7 @@ const ProjectEntry = ({
       <div
         className={`
           position:relative
-          @mq-palm--height:100vh-fixed-less-top
+          @mq-palm--height:auto
           display:flex
           flex-direction:column
         `}
@@ -54,7 +55,10 @@ const ProjectEntry = ({
           `}
         />
 
-        <div className="@mq-palm--padding-horizontal:columns-0-1/2">
+        <div className={`
+          @mq-palm--padding-horizontal:columns-0-1/2
+          background-color:neutral-0
+        `}>
           <header
             className={`
               padding-top:400
@@ -67,7 +71,6 @@ const ProjectEntry = ({
               width:100
             `}
           >
-
             <div>
               <h2
                 className={`
@@ -77,7 +80,6 @@ const ProjectEntry = ({
                 id={`project-preview-${id}`}
               >
                 <Link
-                  aria-labelledby={`project-preview-${id}`}
                   className={`
                     color:inherit
                     &:before:content
