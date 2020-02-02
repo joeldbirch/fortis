@@ -5,7 +5,7 @@ const ProjectHero = ({children, ...props}) => {
   return (
     <div
       className={`
-        margin-vertical:columns-0-1/2
+        @mq-palm--margin-vertical:columns-0-1/2
       `}
     >
       <Hero {...props}>{children}</Hero>

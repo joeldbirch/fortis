@@ -43,25 +43,19 @@ const styles = {
   `,
   startColumnStartRow: `
     @mq-desk--width:columns-3
-    @mq-tiny--margin-bottom:columns-0-1/2
     @mq-widepalm--align-self:flex-end
     @mq-widepalm--max-width:columns-4
-    max-width:small-column
     width:100
   `,
   startColumnEndRow: `
     @mq-desk--justify-self:flex-end
-    max-width:small-column
+    @mq-palm--max-width:small-column
   `,
   endColumnStartRow: `
     @mq-lap--align-items:flex-end
-    @mq-max-palm--pos-bottom:100
-    @mq-max-palm--pos-right:0
+
     @mq-palm--max-width:100
     @mq-palm--max-width:caption
-    @mq-palm--position:static
-    @mq-tiny--max-width:var
-    @mq-tiny--position:absolute
     @mq-widepalm--margin-right:-columns-2
     @mq-widepalm--margin-top:columns-1
     @mq-widepalm--pos-right:0
@@ -71,8 +65,7 @@ const styles = {
     @mq-desk--padding-right:columns-0-1/2
     display:flex
     flex-direction:column
-    max-width:small-column
-    padding-horizontal:400
+    @mq-palm--padding-horizontal:400
   `,
   endColumnEndRow: `
     height:100
@@ -98,7 +91,7 @@ const TextRightTwoImages = ({
             <FluidImage
               image={smaller}
               sizes={`
-                (max-width: ${mq.toPalm}) 17.5em,
+                (max-width: ${mq.toPalm}) ${cols(12)}vw,
                 (min-width: ${mq.desk}) ${cols(3)}vw,
                 (min-width: ${mq.palm}) ${cols(4)}vw
               `}
@@ -147,11 +140,10 @@ const TextRightTwoImages = ({
             <FluidImage
               image={larger}
               className={`
-                height:100
-                @mq-max-palm--max-width:small-column
+                @mq-palm--height:100
               `}
               sizes={`
-                (max-width: ${mq.toPalm}) 17.5em,
+                (max-width: ${mq.toPalm}) ${cols(12)}vw,
                 (min-width: ${mq.desk}) ${cols(4)}vw,
                 (min-width: ${mq.widepalm}) ${cols(5)}vw,
                 (min-width: ${mq.palm}) ${cols(7)}vw

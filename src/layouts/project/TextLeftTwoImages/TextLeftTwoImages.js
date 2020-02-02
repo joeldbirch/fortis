@@ -37,20 +37,14 @@ const styles = {
     @mq-desk--max-width:100
     @mq-desk--width:columns-2
     @mq-palm--width:columns-3
-    @mq-tiny--margin-bottom:columns-0-1/2
-    width:caption
+    @mq-palm--margin-bottom:columns-0-1/2
   `,
   startColumnEndRow: `
-    max-width:small-column
+    @mq-palm--max-width:small-column
   `,
   endColumnStartRow: `
     @mq-lap--align-self:flex-start
-    @mq-max-palm--pos-bottom:100
-    @mq-max-palm--pos-right:0
-    @mq-max-palm--width:columns-8
-    @mq-palm--position:static
-    @mq-tiny--max-width:var
-    @mq-tiny--position:absolute
+    @mq-palm--max-width:var
     display:flex
     flex-basis:40
     flex-direction:column
@@ -85,7 +79,7 @@ const TextLeftTwoImages = ({
               className={` @mq-palm--margin-right:-400`}
               image={smaller}
               sizes={`
-                (max-width: ${mq.toPalm}) 12em,
+                (max-width: ${mq.toPalm}) ${cols(12)}vw,
                 (min-width: ${mq.desk}) calc(${cols(2)}vw + 1em),
                 (min-width: ${mq.palm}) calc(${cols(3)}vw + 1em)
               `}

@@ -25,7 +25,7 @@ const Diagram = ({diagram, text, heading}) => {
         @mq-palm--margin-left:columns-6
         @mq-desk--margin-left:columns-7
         @mq-palm--width:columns-6
-        max-width:small-column
+        @mq-palm--max-width:small-column
 
       `}>
         <h2 className={`

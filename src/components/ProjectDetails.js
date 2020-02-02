@@ -52,6 +52,7 @@ const ProjectDetails = ({
               max-width:logo
             `}
             fallbackClasses={`rhythm-fix-after font-size:700`}
+            sizes={`15em`}
           />
           <div className={`
             margin-top:800
@@ -105,12 +106,11 @@ const ProjectDetails = ({
           <FluidImage
             image={suburbImage}
             className={`
-              @mq-max-palm--margin-top:columns-0-1/2
-              @mq-max-palm--max-width:columns-10
+              @mq-max-palm--margin-top:columns-1
               @mq-palm--height:100
             `}
             sizes={`
-              (max-width: ${mq.toPalm}) ${cols(10)}vw,
+              (max-width: ${mq.toPalm}) ${cols(12)}vw,
               (min-width: ${mq.desk}) ${cols(4)}vw,
               (min-width: ${mq.palm}) ${cols(6)}vw
             `}
