@@ -2,17 +2,15 @@ import React from 'react'
 
 const styles = {
   brandingWrap: `
-    @mq-palm--display:flex
-    @mq-palm--flex-flow:row-reverse
+    display:flex
+    @mq-palm--flex-direction:row-reverse
     @mq-palm--justify-content:flex-end
     @mq-palm--align-items:flex-end
     position:relative
-    flex-basis:20
-    flex-grow:1
   `,
   tagline: `
     @mq-bigdesk--font-size:550
-    @mq-palm--font-size:500
+    @mq-widepalm--font-size:500
     font-family:cursive
     font-size:400
     font-weight:400
@@ -22,19 +20,22 @@ const styles = {
     padding-top:400
     @mq-palm--padding-bottom:columns-0-1/2
     @mq-palm--text-align:left
-    @mq-palm--padding-left:800
+    @mq-palm--padding-left:400
+    @mq-desk--padding-left:800
     width:small-column
   `,
   watermark: `
-    @mq-lap--width:columns-9
+    @mq-palm--width:columns-9
     @mq-desk--width:columns-7
     height:auto
-    width:columns-12
+    max-width:100
+    @mq-palm--flex-shrink:1
   `,
 }
 
 
-const BigBrand = ({htmlText=null, className=``, children}) => {
+const BigBrand = ({htmlText=null, className=``, headingTag=`h2`, children}) => {
+  const HeadingTag = headingTag ? headingTag : `h2`
   return (
     <div
       className={`
@@ -42,7 +43,7 @@ const BigBrand = ({htmlText=null, className=``, children}) => {
         ${className}
       `}
     >
-      <h2
+      <HeadingTag
         className={`
           ${styles.tagline}
           position:relative
@@ -53,14 +54,13 @@ const BigBrand = ({htmlText=null, className=``, children}) => {
       >
         {htmlText ? <span dangerouslySetInnerHTML={{__html: htmlText}}/> : ``}
         {children}
-      </h2>
+      </HeadingTag>
 
       <img
         className={`
           ${styles.watermark}
         `}
         src="/images/logo-fortis-watermark.svg"
-        role="presentation"
         alt="Fortis"
         width="764"
         height="202"

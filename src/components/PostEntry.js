@@ -17,7 +17,6 @@ const PostEntry = ({
       className={`
         ${className}
         position:relative
-        group
       `}
     >
       <div
@@ -26,6 +25,7 @@ const PostEntry = ({
           display:flex
           flex-direction:column
           position:relative
+          group
         `}
       >
         <FluidImage

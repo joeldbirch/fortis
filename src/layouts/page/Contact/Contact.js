@@ -109,15 +109,18 @@ const Contact = () => {
                       className={`
                         handwritten
                         position:absolute
-                        pos-left:100
-                        pos-top:100
-                        margin:800
+                        pos-left:50
+                        @mq-palm--pos-left:100
+                        pos-top:columns-1
+                        @mq-palm--pos-top:columns-0-1/2
+                        @mq-desk--pos-top:columns-0-1/4
+                        margin-top:1000
+                        margin-left:columns-2
+                        @mq-palm--margin-left:400
                         width:small-caption
                         @mq-desk--margin-right:columns-1
+                        rotate:-2
                       `}
-                      style={{
-                        'transform': 'rotate(-2deg)',
-                      }}
                     >
                       <ArrowDrawnUpLeft
                         className={`
@@ -171,6 +174,7 @@ const Contact = () => {
               @mq-palm--margin-top:columns-0-1/2
               font-size:300
               clear:both
+              @mq-max-palm--max-width:small-column
             `}
           />
         </div>
@@ -180,17 +184,17 @@ const Contact = () => {
 
       <BigBrand
         className={`
-            display:flex
-            flex-direction:column-reverse
-            @mq-max-palm--margin-bottom:-columns-1
-            @mq-palm--margin-top:200
+          display:flex
+          flex-direction:column-reverse
+          @mq-max-palm--margin-bottom:-columns-0-1/2
+          margin-top:200
         `}
       >
         <span
           className={`
             position:relative
             @mq-max-palm--position:absolute
-            @mq-max-palm--pos-bottom:columns-1
+            @mq-max-palm--pos-top:200
           `}
         >
           Drop by for coffee
