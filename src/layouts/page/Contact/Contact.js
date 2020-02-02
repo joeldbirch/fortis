@@ -2,6 +2,7 @@ import React from 'react'
 import NewsletterForm from 'components/NewsletterForm'
 import FluidImage from 'components/FluidImage'
 import BigBrand from 'components/BigBrand'
+import ArrowDrawnUpLeft from 'components/ArrowDrawnUpLeft'
 import useGlobalContent from 'hooks/use-global-content'
 import { subhead } from 'styles/helpers'
 import { cols, mq } from 'utilities/helpers'
@@ -78,6 +79,8 @@ const Contact = () => {
           className={`
             grid-row:1
             grid-column:1
+            position:relative
+            padding-right:columns-0-1/2
           `}
         >
 
@@ -100,10 +103,41 @@ const Contact = () => {
               `}
             >
               { !email ? ``
-                : <><a className={`${styles.links}`} href={`mailto:${email}`} aria-label="Our email">{email}</a><br/></>
+                : <span className={`position:relative`}>
+                    <a className={`${styles.links}`} href={`mailto:${email}`} aria-label="Our email">{email}</a>
+                    <span
+                      className={`
+                        handwritten
+                        position:absolute
+                        pos-left:100
+                        pos-top:100
+                        margin:800
+                        width:small-caption
+                        @mq-desk--margin-right:columns-1
+                      `}
+                      style={{
+                        'transform': 'rotate(-2deg)',
+                      }}
+                    >
+                      <ArrowDrawnUpLeft
+                        className={`
+                          position:absolute
+                          pos-bottom:100
+                          margin-bottom:200
+                        `}
+                        style={{
+                          transform: `scale(.7) rotate(10deg)`,
+                        }}
+                        role="presentation"
+                      />
+                      Say hello
+                    </span>
+                    <br/>
+                  </span>
               }
               <a className={`${styles.links}`} href={`tel:${phone}`} aria-label="Our phone number">{phone}</a>
             </p>
+
 
             { socialMedia.length < 1
               ? ``
@@ -145,7 +179,36 @@ const Contact = () => {
       </div>
 
 
-      <BigBrand>Drop by for coffee</BigBrand>
+      <BigBrand
+        className={`
+            display:flex
+            flex-direction:column-reverse
+            @mq-max-palm--margin-bottom:-columns-1
+            @mq-palm--margin-top:200
+        `}
+      >
+        <span
+          className={`
+            position:relative
+            @mq-max-palm--position:absolute
+            @mq-max-palm--pos-bottom:columns-1
+          `}
+        >
+          Drop by for coffee
+          <ArrowDrawnUpLeft
+            className={`
+              position:absolute
+              pos-left:50
+              pos-top:100
+              margin-top:200
+            `}
+            style={{
+              transform: `scaleY(-.8) rotate(60deg)`,
+            }}
+            role="presentation"
+          />
+        </span>
+      </BigBrand>
     </div>
   )
 }

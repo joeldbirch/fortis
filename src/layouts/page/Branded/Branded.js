@@ -18,7 +18,7 @@ const styles = {
     scroll-snap-align:start
   `,
   mediaWrap: `
-    flex-basis:60
+    flex-basis:80
     flex-grow:1
     margin-horizontal:columns-0-1/2
     @mq-desk--margin-horizontal:columns-1-1/2
@@ -61,7 +61,12 @@ const Branded = ({image, text, video=null, nextSection=null, id=null, ...props})
               />
         }
       </div>
-      <BigBrand>{text}</BigBrand>
+      <BigBrand
+        htmlText={text}
+        className={`
+          @mq-palm--margin-top:-400
+        `}
+      ></BigBrand>
       <Divider bottom={true} />
     </section>
   )

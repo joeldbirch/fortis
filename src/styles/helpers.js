@@ -115,12 +115,12 @@ export const forceFullWidth = `
 `
 
 export const handwritten = `
-  font-family:cursive
-  font-weight:400
-  font-size:400
-  line-height:200
-  @mq-palm--font-size:500
   @mq-bigdesk--font-size:550
+  @mq-palm--font-size:500
+  font-family:cursive
+  font-size:400
+  font-weight:400
+  line-height:200
 `
 
 export const centred = `
