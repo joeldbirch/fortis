@@ -27,48 +27,53 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
         transition: 'min-height .25s .1s'
       }}
     >
-      <header
-        className={`
-          padding-top:columns-0-1/2
-          padding-horizontal:columns-0-1/2
-          position:absolute
-          pos-top-left:0
-          width:100
-          z-index:200
-          pointer-events:none
-        `}
-        style={{
-          '--color-contrast': 'white',
-        }}
-      >
-        <h2
-          className={`
-            ${uiFontSize}
-            margin-left:columns-4
-            color:neutral-900
-          `}
-        >
-          <OptionalLink to={to} className={`
-            &:before--hit-area-xy-100
-            color:neutral-0
-            ${to
-              ? `
-                text-decoration:underline
-                &:hover--text-decoration:none
-                pointer-events:auto
-                position:relative
-              `
-              : ``
-            }
-          `}>{label}</OptionalLink>
-        </h2>
-      </header>
 
+        { !label
+          ? ``
+          :
+        <header
+          className={`
+            padding-top:columns-0-1/2
+            padding-horizontal:columns-0-1/2
+            position:absolute
+            pos-top-left:0
+            width:100
+            z-index:200
+            pointer-events:none
+          `}
+          style={{
+            '--color-contrast': 'white',
+          }}
+        >
+          <h2
+            className={`
+              ${uiFontSize}
+              margin-left:columns-4
+              color:neutral-900
+            `}
+          >
+            <OptionalLink to={to} className={`
+              &:before--hit-area-xy-100
+              color:neutral-0
+              ${to
+                ? `
+                  text-decoration:underline
+                  &:hover--text-decoration:none
+                  pointer-events:auto
+                  position:relative
+                `
+                : ``
+              }
+            `}>{label}</OptionalLink>
+          </h2>
+        </header>
+      }
       {
         video
           ? <FullWindowVideo
               vimeoId={video}
               className={`
+                height:100vh-fixed
                 ${shader}
               `}
             />
@@ -76,7 +81,7 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
               image={image}
               artDirection={`imageFileHero`}
               className={`
-                height:100vh
+                height:100vh-fixed
                 ${shader}
               `}
             />

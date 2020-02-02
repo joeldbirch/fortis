@@ -16,6 +16,10 @@ export const isIos = () =>
   typeof window !== `undefined` &&
   /iphone|ipod|ipad/.test(navigator.userAgent.toLowerCase())
 
+  export const isIphone = () =>
+  typeof window !== `undefined` &&
+  /iphone|ipod/.test(navigator.userAgent.toLowerCase())
+
 export const getSvgInline = (image) => (
   fetch(image.src)
     .then((response) => response.text())

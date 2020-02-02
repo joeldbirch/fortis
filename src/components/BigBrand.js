@@ -9,6 +9,7 @@ const styles = {
     @mq-desk--margin-top:-400
     position:relative
     flex-basis:20
+    flex-grow:1
   `,
   tagline: `
     handwritten
