@@ -9,7 +9,7 @@ const useHeaderIntersection = function() {
     const sections = document.querySelectorAll(`section:not(.js-contrast-ignore), .js-contrast`)
     const intersectionConfig = {
       // offset to make the test area similar to where header is
-      rootMargin: `3% 0px -92% 0px`,
+      rootMargin: `-5.5% 0px -94.4% 0px`,
       threshold: 0,
     }
     const observer = new IntersectionObserver(function (entries) {

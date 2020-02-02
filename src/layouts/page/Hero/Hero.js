@@ -16,6 +16,8 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
       id={id}
       className={`
         ${className}
+        js-contrast
+        js-contrast--reverse
         color:neutral-0
         position:relative
         @mq-lap--min-height:100vh-fixed
