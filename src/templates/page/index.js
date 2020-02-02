@@ -2,6 +2,7 @@ module.exports = (imports) => {
   return`
 // This is a temporary generated file. Changes to this file will be overwritten!
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import Layout from '../src/components/Layout'
 import SEO from '../src/components/SEO'
@@ -14,11 +15,27 @@ const Page = ({ pageContext }) => {
     page: { title, uri, pageBuilder, isFrontPage },
   } = pageContext
 
+  const { site } = useStaticQuery(
+    graphql\`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    \`
+  )
+
   const layouts = pageBuilder && pageBuilder.layouts ? pageBuilder.layouts : []
 
   return (
     <Layout
-      AddToHeader={<h1 className={isFrontPage ? "visually-hidden" : "@mq-lap--font-size:500 @mq-tiny--font-size:400 font-size:300 font-weight:400"}>{title}</h1>}
+      AddToHeader={
+        isFrontPage
+        ? <h1 className="visually-hidden">{site.siteMetadata.title}</h1>
+        : <h1 className="@mq-lap--font-size:500 @mq-tiny--font-size:400 font-size:300 font-weight:400">{title}</h1>
+      }
     >
       <SEO title={title} />
       {
