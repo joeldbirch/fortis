@@ -88,7 +88,16 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
               `}
             />
       }
-      <ScrollPrompt className={`color:neutral-0`} to={nextSection} />
+      { nextSection
+        ? <ScrollPrompt
+            to={nextSection}
+            className={`color:neutral-0`}
+            style={{
+              'filter': 'drop-shadow(1px 1px 8px rgba(0,0,0,.8))'
+            }}
+          />
+        : ``
+      }
     </section>
   )
 }
