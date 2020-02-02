@@ -2,34 +2,34 @@ import React from 'react'
 
 const styles = {
   brandingWrap: `
-    display:flex
+    @mq-palm--align-items:flex-end
     @mq-palm--flex-direction:row-reverse
     @mq-palm--justify-content:flex-end
-    @mq-palm--align-items:flex-end
+    display:flex
     position:relative
   `,
   tagline: `
     @mq-bigdesk--font-size:550
+    @mq-desk--padding-left:800
+    @mq-palm--padding-bottom:columns-0-1/2
+    @mq-palm--padding-left:400
+    @mq-palm--text-align:left
     @mq-widepalm--font-size:500
     font-family:cursive
     font-size:400
     font-weight:400
     line-height:200
-    text-align:center
     padding-bottom:200
     padding-top:400
-    @mq-palm--padding-bottom:columns-0-1/2
-    @mq-palm--text-align:left
-    @mq-palm--padding-left:400
-    @mq-desk--padding-left:800
+    text-align:center
     width:small-column
   `,
   watermark: `
-    @mq-palm--width:columns-9
     @mq-desk--width:columns-7
+    @mq-palm--flex-shrink:1
+    @mq-palm--width:columns-9
     height:auto
     max-width:100
-    @mq-palm--flex-shrink:1
   `,
 }
 
@@ -47,10 +47,8 @@ const BigBrand = ({htmlText=null, className=``, headingTag=`h2`, children}) => {
         className={`
           ${styles.tagline}
           position:relative
+          rotate:-2
         `}
-        style={{
-          transform: 'rotate(-2deg)',
-        }}
       >
         {htmlText ? <span dangerouslySetInnerHTML={{__html: htmlText}}/> : ``}
         {children}
