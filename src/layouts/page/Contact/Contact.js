@@ -107,19 +107,19 @@ const Contact = () => {
                     <a className={`${styles.links}`} href={`mailto:${email}`} aria-label="Our email">{email}</a>
                     <span
                       className={`
-                        handwritten
-                        position:absolute
-                        pos-left:50
-                        @mq-palm--pos-left:100
-                        pos-top:columns-1
-                        @mq-palm--pos-top:columns-0-1/2
-                        @mq-desk--pos-top:columns-0-1/4
-                        margin-top:1000
-                        margin-left:columns-2
-                        @mq-palm--margin-left:400
-                        width:small-caption
                         @mq-desk--margin-right:columns-1
+                        @mq-desk--pos-top:columns-0-1/4
+                        @mq-palm--margin-left:400
+                        @mq-palm--pos-left:100
+                        @mq-palm--pos-top:columns-0-1/2
+                        handwritten
+                        margin-left:columns-2
+                        margin-top:1000
+                        pos-left:50
+                        pos-top:columns-1
+                        position:absolute
                         rotate:-2
+                        width:small-caption
                       `}
                     >
                       <ArrowDrawnUpLeft
@@ -146,11 +146,11 @@ const Contact = () => {
               : <>
                   <h2
                     className={`
+                      @mq-palm--margin-top:columns-0-1/2
                       font-size:em
                       font-weight:400
                       margin-bottom:200
                       margin-top:800
-                      @mq-palm--margin-top:columns-0-1/2
                       rhythm-fix-before
                     `}
                   >Follow us</h2>
@@ -170,11 +170,11 @@ const Contact = () => {
           <NewsletterForm
             prependId="contact"
             className={`
-              margin-top:800
-              @mq-palm--margin-top:columns-0-1/2
-              font-size:300
-              clear:both
               @mq-max-palm--max-width:small-column
+              @mq-palm--margin-top:columns-0-1/2
+              clear:both
+              font-size:300
+              margin-top:800
             `}
           />
         </div>
@@ -184,26 +184,26 @@ const Contact = () => {
 
       <BigBrand
         className={`
+          @mq-max-palm--margin-bottom:-columns-0-1/2
           display:flex
           flex-direction:column-reverse
-          @mq-max-palm--margin-bottom:-columns-0-1/2
           margin-top:200
         `}
       >
         <span
           className={`
-            position:relative
-            @mq-max-palm--position:absolute
             @mq-max-palm--pos-top:200
+            @mq-max-palm--position:absolute
+            position:relative
           `}
         >
           Drop by for coffee
           <ArrowDrawnUpLeft
             className={`
-              position:absolute
+              margin-top:200
               pos-left:50
               pos-top:100
-              margin-top:200
+              position:absolute
             `}
             style={{
               transform: `scaleY(-.8) rotate(60deg)`,
