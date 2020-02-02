@@ -5,6 +5,7 @@ import { cols, mq } from 'utilities/helpers'
 
 const ProjectDetails = ({
   title,
+  id=null,
   detailsTable: {
     mediaDetails: {
       suburbImage,
@@ -29,6 +30,7 @@ const ProjectDetails = ({
         position:relative
         scroll-snap-align:start
       `}
+      id={id}
     >
       <div
         className={`
