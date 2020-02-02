@@ -41,6 +41,7 @@ const ProjectDetails = ({
         <div className={`
           @mq-palm--width:50
           @mq-palm--padding-right:columns-1
+          rhythm-fix-before
         `}>
           <Logo
             logo={ logo }
