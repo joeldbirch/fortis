@@ -128,7 +128,6 @@ const Contact = () => {
                         style={{
                           transform: `scale(.7) rotate(10deg)`,
                         }}
-                        role="presentation"
                       />
                       Say hello
                     </span>
@@ -205,7 +204,6 @@ const Contact = () => {
             style={{
               transform: `scaleY(-.8) rotate(60deg)`,
             }}
-            role="presentation"
           />
         </span>
       </BigBrand>

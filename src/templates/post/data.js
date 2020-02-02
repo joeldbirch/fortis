@@ -46,7 +46,7 @@ const NewsPreviewFragment = `
       altText
       imageFile {
         childImageSharp {
-          fluid(maxWidth: 1000, maxHeight: 563, cropFocus: CENTER) {
+          fluid(maxWidth: 1000, maxHeight: 700, cropFocus: CENTER) {
             ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }

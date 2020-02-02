@@ -47,6 +47,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
           </div>
           <NewsEntry
             post={posts[0]}
+            layoutOrder={0}
             className={`
               margin-top:1000
               @mq-palm--margin-top:columns-1
@@ -59,6 +60,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
           ? ``
           : <NewsEntry
               post={posts[1]}
+              layoutOrder={1}
               className={`
               `}
               artDirection={`imageFilePortrait`}
@@ -74,6 +76,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
           ? ``
           : <NewsEntry
               post={posts[2]}
+              layoutOrder={2}
               className={`
                 @mq-palm--margin-top:columns-0-1/2
                 @mq-palm--padding-top:columns-1
@@ -82,12 +85,22 @@ const NewsPreview = ({posts, intro, pagination}) => {
               imageClasses={`
                 flex-grow:1
               `}
+              noteClasses={`
+                @mq-palm--pos-left:100
+                @mq-palm--pos-bottom:0
+                @mq-palm--width:columns-5
+                @mq-palm--text-align:left
+                @mq-palm--margin-left:columns-0-1/2
+                @mq-desk--margin-bottom:1000
+                @mq-desk--padding-bottom:800
+              `}
             />
         }
         { !posts[3]
           ? ``
           : <NewsEntry
               post={posts[3]}
+              layoutOrder={3}
               className={`
                 @mq-palm--padding-left:columns-2
                 @mq-palm--padding-bottom:columns-2
@@ -100,18 +113,29 @@ const NewsPreview = ({posts, intro, pagination}) => {
           ? ``
           : <NewsEntry
               post={posts[4]}
+              layoutOrder={4}
               className={`
                 @mq-palm--padding-horizontal:columns-1
                 @mq-palm--padding-top:columns-1
                 @mq-palm--padding-bottom:columns-2-1/2
               `}
               sizes={smallerSizes}
+              noteClasses={`
+                @mq-palm--pos-left:0
+                @mq-palm--pos-top:100
+                @mq-palm--padding-top:columns-1
+                @mq-palm--margin-top:-400
+                @mq-palm--width:columns-6
+                @mq-palm--text-align:left
+                @mq-palm--margin-left:-columns-1
+              `}
             />
         }
         { !posts[5]
           ? ``
           : <NewsEntry
               post={posts[5]}
+              layoutOrder={5}
               className={`
                 @mq-palm--padding-horizontal:columns-1
                 @mq-palm--padding-top:columns-1

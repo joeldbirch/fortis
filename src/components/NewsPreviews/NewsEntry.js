@@ -1,13 +1,14 @@
 import React from 'react'
 import PostEntry from 'components/PostEntry'
+import ArrowDrawnUpLeft from 'components/ArrowDrawnUpLeft'
 import { Link } from 'gatsby'
 import { blogURI } from '../../../globals'
 
 const NewsEntry = ({
-  showNote,
   post: {
     optionalFields: {
       subheading,
+      note
     },
     uri,
     categories,
@@ -15,17 +16,51 @@ const NewsEntry = ({
     title,
     ...post
   },
+  layoutOrder,
+  noteClasses=``,
   ...props
 }) => {
 
   return (
     <PostEntry
-      showNote={showNote}
       headerClasses={`
         display:flex
         flex-direction:column-reverse
         @mq-palm--padding-bottom:0
+        @mq-max-palm--max-width:columns-8
+        @mq-max-palm--padding-right:400
       `}
+      note={
+        [2,4].includes(layoutOrder)
+        ? <Note
+            className={`
+              ${noteClasses}
+            `}
+          >
+
+            <ArrowDrawnUpLeft
+              className={`
+                position:absolute
+                pos-bottom:100
+                margin-bottom:100
+                @mq-palm--margin-bottom:200
+                @mq-max-palm--transform:arrow-down-right
+                @mq-palm--transform:arrow-right-down
+                @mq-palm--margin-left:-400
+                @mq-max-palm--margin-left:-600
+                ${ layoutOrder !== 2
+                  ? `@mq-palm--display:none`
+                  : ``
+                }
+              `}
+            />
+
+
+            {note}
+          </Note>
+        : ``
+      }
+
       {...post}
       {...props}
     >
@@ -76,4 +111,22 @@ const NewsEntry = ({
   )
 }
 
+
+const Note = ({className=``, children}) => (
+  <p
+    className={`
+      ${className}
+      handwritten
+      position:absolute
+      @mq-max-palm--pos-bottom-right:0
+      @mq-max-palm--rotate:-2
+      @mq-max-palm--margin-bottom:1000
+      @mq-max-palm--max-width:columns-4
+      @mq-max-palm--padding-right:400
+      text-align:center
+    `}
+  >{children}</p>
+)
+
 export default NewsEntry
+

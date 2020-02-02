@@ -5,11 +5,10 @@ const PostEntry = ({
   featuredImage,
   artDirection,
   sizes,
-  showNote=false,
-  note,
   className=``,
   imageClasses=``,
   headerClasses=``,
+  note=null,
   children,
 }) => {
 
@@ -18,6 +17,7 @@ const PostEntry = ({
       className={`
         ${className}
         position:relative
+        group
       `}
     >
       <div
@@ -34,9 +34,14 @@ const PostEntry = ({
           className={`
             ${imageClasses}
             @mq-max-palm--height:9/16vw
+            group:hocus__opacity:80
+            transition-property:opacity
+            transition-duration:400
           `}
           sizes={sizes}
         />
+
+        {note}
 
         <header
           className={`
@@ -48,14 +53,6 @@ const PostEntry = ({
 
           {children}
 
-          { !showNote
-            ? ``
-            : <p
-                className={`
-                  handwritten
-                `}
-              >{note}</p>
-          }
         </header>
       </div>
     </article>

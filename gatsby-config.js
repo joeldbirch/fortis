@@ -65,7 +65,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-polyfill-io`,
       options: {
-        features: [`Array.prototype.every`, `smoothscroll`, `IntersectionObserver`]
+        features: [
+          `Array.prototype.every`,
+          `Array.prototype.includes`,
+          `smoothscroll`,
+          `IntersectionObserver`,
+        ]
       },
     },
     `gatsby-plugin-react-helmet`,
