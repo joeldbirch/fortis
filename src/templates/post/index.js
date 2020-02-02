@@ -157,10 +157,10 @@ const Post = ({ pageContext }) => {
 
         </div>
 
-        <ScrollPrompt/>
+        <ScrollPrompt to="#overview" />
       </div>
 
-      <NewsOverview showHeading={false} />
+      <NewsOverview showHeading={false} id="overview" />
 
     </Layout>
   )
