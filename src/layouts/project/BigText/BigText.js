@@ -7,6 +7,7 @@ const styles = {
     padding-horizontal:columns-0-1/2
     padding-bottom:1000
     padding-top:400
+    @mq-desk--padding-top:200
     position:relative
     width:100
   `,

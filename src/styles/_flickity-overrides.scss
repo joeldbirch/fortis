@@ -7,8 +7,9 @@
 }
 /* move dots to be inside flickity container */
 .flickity-page-dots {
-  bottom: 1rem;
-  margin-bottom: calc(var(--site-column) * 0.5);
+  top: 59vw;
+  bottom: auto;
+  margin-top: -1.5rem;
 }
 .flickity-button {
   border-radius: 0;

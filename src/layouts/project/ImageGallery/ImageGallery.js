@@ -13,7 +13,9 @@ const ImageGallery = ({imageGallery}) => {
         js-contrast-ignore
         position:relative
         width:100vw
-        padding-vertical:columns-0-1/2
+        padding-top:columns-0-1/2
+        padding-bottom:columns-1
+        margin-bottom:-columns-0-1/2
         overflow:hidden
         scroll-snap-align:center
       `}
