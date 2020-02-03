@@ -10,6 +10,17 @@ module.exports = () => {
         longitude
         latitude
       }
+      fallbackImage {
+        sourceUrl
+        altText
+        imageFile {
+          childImageSharp {
+            fluid(maxWidth: 2000) {
+              ...GatsbyImageSharpFluid_withWebp_noBase64
+            }
+          }
+        }
+      }
     }
   `
 }
