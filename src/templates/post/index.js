@@ -77,6 +77,7 @@ const Post = ({ pageContext }) => {
               @mq-palm--padding-right:columns-1
               font-size:500
               @mq-bigdesk--font-size:600
+              @mq-max-palm--padding-right:columns-3-1/2
             `}
             style={{
               '--bigdesk-offset-left': '1rem',
@@ -135,12 +136,12 @@ const Post = ({ pageContext }) => {
                     @mq-palm--margin-top:800
                     @mq-max-palm--position:absolute
                     @mq-max-palm--pos-top-right:0
-                    @mq-max-palm--max-width:caption
+                    @mq-max-palm--width:columns-3
+                    @mq-max-palm--text-align:center
+                    @mq-max-palm--margin-right:columns-0-1/4
                     @mq-palm--max-width:small-column
+                    rotate:-2
                   `}
-                  style={{
-                    'transform': 'rotate(-1deg)',
-                  }}
                 >
                   {note}
                 </p>
