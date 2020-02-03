@@ -16,8 +16,9 @@ export default ({className=``, absolute=`true`, children}) => {
     >
       <div
         className={`
-          padding-left:columns-3-1/2
-          padding-right:columns-1-1/2
+          padding-horizontal:columns-0-1/2
+          @mq-palm--padding-left:columns-3-1/2
+          @mq-palm--padding-right:columns-1-1/2
           width:100
         `}
       >

@@ -49,7 +49,7 @@ const FilterForm = ({
       className={`
         ${className}
         color:neutral-700
-        display:flex
+        display:inline-flex
         font-size:300
       `}
       style={{
@@ -59,7 +59,7 @@ const FilterForm = ({
       <h2
         className={`
           display:flex
-          align-items:center
+          align-items:flex-start
           padding-vertical:100
           padding-horizontal:200
           line-height:200

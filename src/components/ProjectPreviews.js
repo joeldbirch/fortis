@@ -40,22 +40,30 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
           js-contrast
         `}
       >
-        <Divider/>
-        <SectionHeader
-          absolute={false}
-          className={`
-            scroll-snap-align:start
-          `}>
-          <h2 className={` visually-hidden `}>Projects Filter</h2>
+        { !tags
+          ? ``
+          :
+          <>
+            <Divider/>
+            <SectionHeader
+              absolute={false}
+              className={`
+                scroll-snap-align:start
+                @mq-max-palm--text-align:center
+              `}>
+              <h2 className={` visually-hidden `}>Projects Filter</h2>
 
-          <ProjectsFilter
-            items={tags}
-            update={changeShownPosts}
-            reset={filterReset}
-            className={`@mq-desk--padding-top:columns-0-1/2 padding-top:1000`}
-          />
+              <ProjectsFilter
+                items={tags}
+                update={changeShownPosts}
+                reset={filterReset}
+                className={`@mq-desk--padding-top:columns-0-1/2 padding-top:1000`}
+              />
 
-        </SectionHeader>
+            </SectionHeader>
+          </>
+        }
+
       </div>
 
       <div
