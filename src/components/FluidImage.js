@@ -33,7 +33,7 @@ const FluidImage = ({ image, withFallback = false, className=``, artDirection=`i
       fluid={newFluid}
       alt={image.altText || ``}
       className={className}
-      durationFadeIn={1500}
+      durationFadeIn={1000}
       backgroundColor="#f5f5f5"
       {...props}
     />
