@@ -30,12 +30,14 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
       className={`
         width:100
         @mq-max-palm--padding-horizontal:columns-0-1/2
+        js-contrast-ignore
       `}
       id={id}
     >
       <div
         className={`
           position:relative
+          js-contrast
         `}
       >
         <Divider/>

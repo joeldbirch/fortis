@@ -51,6 +51,25 @@ const Layout = ({
           [id="___gatsby"]>[role="group"] {
             height: 100%;
           }
+
+          .grid-guide::before {
+            content: "";
+            position: var(--position, fixed);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 999;
+            pointer-events: none;
+            max-width: var(--guides-max-width, none);
+            margin: 0 auto;
+            background-image:
+              linear-gradient(to bottom, var(--guide-color) 0, var(--guide-color) 1px, transparent 1px),
+              linear-gradient(to bottom, var(--guide-color) 0, var(--guide-color) 1px, transparent 1px);
+            background-size: 100%;
+            background-position-y: 5vh, 6vh;
+          }
+
         `}
         </style>
         <body className={`
@@ -71,6 +90,7 @@ const Layout = ({
               `
           }
           min-height:100vh-fixed
+          grid-guide
         `}
         />
         <html className={`

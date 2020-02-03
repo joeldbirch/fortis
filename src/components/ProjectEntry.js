@@ -61,6 +61,7 @@ const ProjectEntry = ({
         `}>
           <header
             className={`
+              js-contrast
               padding-top:400
               padding-bottom:1000
               display:grid
