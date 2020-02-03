@@ -110,10 +110,10 @@ module.exports = {
         name: `Fortis Development Group`,
         short_name: `Fortis`,
         start_url: `/`,
-        background_color: `#f5f2ed`,
-        theme_color: `#f5f2ed`,
+        background_color: `#ffffff`,
+        theme_color: `#ffffff`,
         display: `minimal-ui`,
-        icon: require.resolve(`./src/images/ode-icon.png`), // This path is relative to the root of the site.
+        icon: require.resolve(`./src/images/fortis-icon.png`), // This path is relative to the root of the site.
       },
     },
     {
