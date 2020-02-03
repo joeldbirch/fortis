@@ -31,7 +31,7 @@ const FluidImage = ({ image, withFallback = false, className=``, artDirection=`i
 
     return <GatsbyImage
       fluid={newFluid}
-      alt={image.altText}
+      alt={image.altText || ``}
       className={className}
       durationFadeIn={1500}
       backgroundColor="#f5f5f5"
