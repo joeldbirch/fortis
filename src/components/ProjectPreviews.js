@@ -51,7 +51,6 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
                 scroll-snap-align:start
                 @mq-max-palm--text-align:center
               `}>
-              <h2 className={` visually-hidden `}>Projects Filter</h2>
 
               <ProjectsFilter
                 items={tags}

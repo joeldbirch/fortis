@@ -8,7 +8,7 @@ const styles = {
     padding-vertical:100
     padding-horizontal:200
     cursor:pointer
-    line-height:200
+    line-height:rem
     &:hover--text-decoration:underline
   `,
   // TODO: use SVG for reset icon
@@ -16,7 +16,7 @@ const styles = {
     margin-right:100
   `,
   text: `
-  vertical-align:top
+    vertical-align:top
   `
 }
 
@@ -51,6 +51,7 @@ const FilterForm = ({
         color:neutral-700
         display:inline-flex
         font-size:300
+        line-height:rem
       `}
       style={{
         userSelect: `none`
@@ -62,7 +63,6 @@ const FilterForm = ({
           align-items:flex-start
           padding-vertical:100
           padding-horizontal:200
-          line-height:200
           font-weight:400
           font-size:em
           margin-left:-200
