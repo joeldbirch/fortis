@@ -14,6 +14,7 @@ const ScrollPromptAnimation = ({className=``, children, to=null, ...props}) => {
       }}
       className={`
         ${className}
+        ${to ? `cursor:pointer` : ``}
         animation-name:pulse-down
         animation-count:infinite
         animation-easing:ease-in-sine
