@@ -37,7 +37,7 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
             position:absolute
             pos-top-left:0
             width:100
-            z-index:200
+            z-index:400
             pointer-events:none
           `}
           style={{
