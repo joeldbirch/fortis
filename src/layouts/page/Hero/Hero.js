@@ -25,9 +25,6 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
         scroll-snap-align:start
         scroll-margin-top:-px
       `}
-      style={{
-        transition: 'min-height .25s .1s'
-      }}
     >
 
         { !label
