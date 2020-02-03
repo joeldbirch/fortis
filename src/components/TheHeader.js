@@ -14,7 +14,7 @@ const TheHeader = ({children, className=``, ...props}) => {
         pos-top:0
         position:fixed
         width:100
-        z-index:200
+        z-index:400
         pointer-events:none
       `}
       {...props}

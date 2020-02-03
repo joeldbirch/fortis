@@ -71,6 +71,7 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
         video
           ? <FullWindowVideo
               vimeoId={video}
+              windowHeight={true}
               className={`
                 @mq-lap--min-height:100vh-fixed
                 ${shader}

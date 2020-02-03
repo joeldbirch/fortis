@@ -1,9 +1,10 @@
 import React from 'react'
 
-const FullWindowVideo = ({vimeoId, height=`56.25vw`}) => {
+const FullWindowVideo = ({vimeoId, className=``, windowHeight=false, height=`56.25vw`}) => {
   return (
     <div
       className={`
+        ${className}
         height:100
         overflow:hidden
         pointer-events:none
@@ -25,7 +26,11 @@ const FullWindowVideo = ({vimeoId, height=`56.25vw`}) => {
           position:absolute
           z-index:200
           width:100
-          min-height:100vh-fixed
+          ${
+            windowHeight
+            ? `min-height:100vh-fixed`
+            : `height:100`
+          }
         `}
         style={{
           height, /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
