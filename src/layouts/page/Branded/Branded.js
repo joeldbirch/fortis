@@ -20,7 +20,7 @@ const styles = {
   mediaWrap: `
     flex-grow:1
     margin-horizontal:columns-0-1/2
-    @mq-desk--margin-horizontal:columns-1-1/2
+    @mq-desk--margin-horizontal:columns-2-1/2
     @mq-bigdesk--margin-horizontal:site-pad-500
     overflow:hidden
     position:relative
