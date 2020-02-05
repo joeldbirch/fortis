@@ -9,7 +9,6 @@
     "@": "./src"
   },
   "dependencies": {
-    "@joeldbirch/fortis-styles": "https://joel_birch@bitbucket.org/joel_birch/fortis-styles.git",
     "babel-plugin-root-import": "^6.4.1",
     "dotenv": "^8.2.0",
     "fibers": "^4.0.2",
@@ -59,7 +58,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "postinstall": "yarn upgrade hucssley",
+    "postinstall": "yarn upgrade hucssley && cd src && git clone https://joel_birch@bitbucket.org/joel_birch/fortis-styles.git && cd ../",
     "build:initial": "cd src && git clone https://joel_birch@bitbucket.org/joel_birch/fortis-styles.git && cd ../ && gatsby build",
     "build": "yarn pull:styles && gatsby build",
     "develop": "gatsby develop",
