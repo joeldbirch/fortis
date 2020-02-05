@@ -1,0 +1,6 @@
+$hu-pointer-events-modules: (
+  core: $hu-pointer-events-modules,
+  pseudos: (
+    "::before",
+  ),
+);

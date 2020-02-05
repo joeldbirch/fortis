@@ -1,0 +1,15 @@
+$hu-width-types: hu-append(
+  $hu-width-types,
+  (
+    50: 50%,
+    30: 30%,
+    33: 33.333%,
+    100: 100%,
+    caption: 12em,
+    small-caption: 5em,
+    var-1: var(--width-var-1),
+    var-2: var(--width-var-2),
+  )
+);
+
+$hu-width-types: hu-append($hu-width-types, $column-spacing);

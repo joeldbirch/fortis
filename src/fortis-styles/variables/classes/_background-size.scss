@@ -1,0 +1,11 @@
+// $hu-background-size-alias: bg-size;
+
+$hu-background-size-modules: (base, responsive);
+
+$hu-background-size-types: (
+  // auto: auto,
+  // contain: contain,
+  // cover: cover,
+  guide-100: calc((100% - var(--site-pad) * 2) / 10),
+  guide-200: calc((100% - var(--site-pad) * 4) / 10),
+);

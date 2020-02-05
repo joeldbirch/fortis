@@ -1,0 +1,14 @@
+$hu-clip-path-alias: "";
+
+$hu-clip-path-modules: (
+  core: (base, hover),
+  pseudos: (
+    "::after",
+    "::before",
+  )
+);
+
+$hu-clip-path-types: (
+  polygon-hide: unquote("polygon(0 0, 0 0, 0 100%, 0 100%)"),
+  polygon-show: unquote("polygon(0 0, 100% 0, 100% 100%, 0 100%)"),
+);

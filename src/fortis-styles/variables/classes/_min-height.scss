@@ -1,0 +1,13 @@
+$hu-min-height-modules: (base, responsive);
+
+$hu-min-height-types: hu-append($hu-min-height-types,
+  (
+    auto: auto,
+    23r: 23rem,
+    50vw: 50vw,
+    100vh-fixed: calc(var(--vh, 1vh) * 100),
+    container: hu-rem(1600),
+    var-1: var(--min-height, auto),
+    var-2: var(--min-height-var-2, auto),
+  )
+);

@@ -1,0 +1,7 @@
+[v-cloak] {
+  display: none !important;
+}
+
+.no-js [v-cloak].no-js-no-cloak {
+  display: block !important;
+}

@@ -1,0 +1,6 @@
+$hu-z-index-modules: (
+  core: $hu-z-index-modules,
+  pseudos: (
+    "::before",
+  ),
+);

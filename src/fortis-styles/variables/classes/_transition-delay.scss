@@ -1,0 +1,16 @@
+$hu-transition-delay-modules: (
+  core: (base, hover),
+  pseudos: (
+    "::after",
+    "::before",
+  )
+);
+
+
+$hu-transition-delay-types: hu-prepend(
+  $hu-transition-delay-types, (
+    150: 0.15s,
+    400: 0.4s,
+    500: 0.5s,
+  )
+);

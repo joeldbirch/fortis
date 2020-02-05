@@ -1,0 +1,60 @@
+.handwritten {
+  font-family: hu-get($hu-font-family-types, "cursive");
+  font-weight: 400;
+  font-size: hu-get($hu-font-size-types, 400);
+  line-height: hu-get($hu-line-height-types, 200);
+
+  @media (min-width: #{hu-get($hu-media-queries, palm)}) {
+    font-size: hu-get($hu-font-size-types, 500);
+  }
+  @media (min-width: #{hu-get($hu-media-queries, bigdesk)}) {
+    font-size: hu-get($hu-font-size-types, 550);
+  }
+
+  em {
+    @include underline;
+  }
+
+  b {
+    @include circle;
+  }
+}
+
+.underlined {
+  @include underline;
+}
+
+.underlined-reveal {
+  &::after {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    opacity: 0;
+    transition: clip-path 0s .5s, opacity .5s;
+    transition-timing-function: ease-out;
+  }
+  &:hover::after {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
+    transition: clip-path .4s, opacity .2s;
+    transition-timing-function: ease-out;
+  }
+}
+
+.#{hu-escape-class-name("&:hover:after--opacity:0")} {
+  :hover::after {
+    opacity: 0;
+  }
+}
+
+.can-style-note {
+  pre {
+    // for use inline in templates
+    transform: rotate(var(--rotate, 0));
+    text-align: var(--text-align, left);
+    margin-left: var(--offset-left, 0);
+
+    @media (min-width: #{hu-get($hu-media-queries, desk)}) {
+      // for use inline in templates
+      margin-left: var(--desk-offset-left, var(--offset-left));
+    }
+  }
+}

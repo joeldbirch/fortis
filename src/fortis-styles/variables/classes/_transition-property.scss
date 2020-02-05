@@ -1,0 +1,17 @@
+$hu-transition-property-modules: (
+  core: (base, hover),
+  pseudos: (
+    "::after",
+    "::before",
+  )
+);
+
+$hu-transition-property-types: (
+  all: all,
+  none: none,
+  opacity: opacity,
+  transform: transform,
+  clip-path: clip-path,
+  min-height: min-height,
+  opacity-transform: unquote('opacity, transform'),
+);

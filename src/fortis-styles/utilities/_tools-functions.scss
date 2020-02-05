@@ -1,0 +1,6 @@
+@function column-space($column: 1, $key: $column) {
+  @return (
+    columns-#{$key}: unquote("calc(var(--site-column) * #{$column})"),
+    -columns-#{$key}: unquote("calc(var(--site-column) * -#{$column})"),
+  );
+}

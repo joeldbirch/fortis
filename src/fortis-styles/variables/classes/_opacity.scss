@@ -1,0 +1,7 @@
+$hu-opacity-modules: (
+  core: (base, responsive, focus, hover, hocus, group-hocus, group-state, state),
+  pseudos: (
+    "::after",
+    "::before",
+  ),
+);

@@ -1,0 +1,10 @@
+$hu-rotate-modules: (base, responsive);
+
+$hu-rotate-types: hu-append(
+  $hu-rotate-types,
+  (
+    -2: -2deg,
+    220: 220deg,
+    var-1: var(--rotate, 0),
+  )
+);

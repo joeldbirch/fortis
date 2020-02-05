@@ -1,0 +1,11 @@
+$hu-background-image-modules: (
+  core: (base),
+  pseudos: (
+    "::before",
+  ),
+);
+
+$hu-background-image-types: (
+  guide: linear-gradient(to right, transparent, transparent 98%, var(--guide-color) 98%,  var(--guide-color)),
+  black-20-down: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0) 25%),
+);

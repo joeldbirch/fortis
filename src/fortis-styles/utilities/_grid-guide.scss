@@ -1,0 +1,43 @@
+// 12 column grid with an extra column margin each side
+/*body*/.grid-guide {
+  &::after {
+    content: '';
+    position: var(--position, fixed);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    pointer-events: none;
+    max-width: var(--guides-max-width, none);
+    margin: 0 auto;
+    background-image:
+      linear-gradient(to right, var(--guide-color) 0, var(--guide-color) 1px, transparent 1px)
+    ;
+    background-size: var(--site-column);
+    background-position-x: calc(var(--site-column) / 2);
+    box-shadow: inset -1px 0 0 var(--guide-color), inset 1px 0 0 var(--guide-color);
+  }
+}
+
+
+// visualise the intersectionObserver rootMargin hit area
+// .grid-guide::before {
+//   content: "";
+//   position: var(--position, fixed);
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   z-index: 999;
+//   pointer-events: none;
+//   max-width: var(--guides-max-width, none);
+//   margin: 0 auto;
+//   background-image:
+//     linear-gradient(to bottom, var(--guide-color) 0, var(--guide-color) 1px, transparent 1px),
+//     linear-gradient(to bottom, var(--guide-color) 0, var(--guide-color) 1px, transparent 1px);
+
+//   background-size: 100%;
+//   background-position-y: 5vh, 6vh;
+
+// }

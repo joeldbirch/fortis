@@ -1,0 +1,60 @@
+@import url("https://use.typekit.net/hwx4ktl.css");
+
+// scoped
+$scoped-container: 'wp-editor';
+$force-button-styles: true;
+$editor-pad: 1.5rem;
+
+@import 'site-variables';
+
+@import 'utilities/tools-functions';
+@import 'utilities/tools-mixins';
+@import 'utilities/tools-typography';
+
+@import 'base/hucssley-setup';
+
+/* purgecss start ignore */
+@import 'base/custom-reset';
+@import 'base/custom-properties';
+/* purgecss end ignore */
+
+// @import "vendor/index";
+@import 'utilities/index';
+@import 'scoped/index';
+
+@import 'classes/font-face';
+
+// :nth-child increases specificity with no side-effects
+// in order to override WP's built-in editor styles
+html:nth-child(n) {
+  background-color: hu-get($hu-colors, neutral 0);
+}
+
+// :nth-child increases specificity with no side-effects
+// in order to override WP's built-in editor styles
+body:nth-child(n) {
+  background-color: transparent;
+}
+
+// :nth-child increases specificity with no side-effects
+// in order to override WP's built-in editor styles
+.#{$scoped-container}:nth-child(n) {
+  color: hu-get($hu-colors, neutral 900);
+  font-family: hu-get($hu-font-family-types, 'default');
+  font-size: hu-get($hu-font-size-types, 400);
+  line-height: hu-get($hu-line-height-types, 400);
+  margin: 0;
+  max-width: 40.5rem + $editor-pad * 2;
+  padding: $editor-pad !important;
+
+  > * {
+    margin-bottom: 0;
+  }
+
+  @include space-items;
+
+  strong {
+    font-weight: normal !important;
+  }
+}
+

@@ -1,0 +1,15 @@
+$hu-flex-basis-modules: (base, responsive);
+
+$hu-flex-basis-types: (
+  auto: auto,
+  10: 10%,
+  15: 15%,
+  20: 20%,
+  25: 25%,
+  33: 33.333%,
+  40: 40%,
+  60: 60%,
+  70: 70%,
+  80: 80%,
+  container: hu-rem(1600),
+);

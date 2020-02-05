@@ -58,16 +58,14 @@
   ],
   "license": "MIT",
   "scripts": {
-    "postinstall": "yarn upgrade hucssley && cd src && git clone https://joel_birch@bitbucket.org/joel_birch/fortis-styles.git && cd ../",
-    "build:initial": "cd src && git clone https://joel_birch@bitbucket.org/joel_birch/fortis-styles.git && cd ../ && gatsby build",
-    "build": "yarn pull:styles && gatsby build",
+    "postinstall": "yarn upgrade hucssley",
+    "build:initial": "gatsby build",
+    "build": "gatsby build",
     "develop": "gatsby develop",
     "clean": "gatsby clean",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "yarn develop",
     "serve": "gatsby serve",
-    "pull:styles": "cd src/fortis-styles && git pull --rebase && cd ../../",
-    "push:styles": "cd src/fortis-styles && git add . && git commit -m 'Update styles.' && git push origin master && cd ../../",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "repository": {

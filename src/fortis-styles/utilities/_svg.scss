@@ -1,0 +1,4 @@
+svg:not([class*=" height:"]):not([class*=" width:"]):not([class*=" size:"]) {
+  width: 1em;
+  height: 1em;
+}

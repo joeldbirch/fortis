@@ -1,0 +1,38 @@
+$hu-box-shadow-modules: (
+  core: (base),
+);
+
+$hu-box-shadow-types: hu-append(
+  $hu-box-shadow-types,
+  (
+    none: none,
+    highlight: unquote('0 0 0 1000px rgba(0,0,0,.5)'),
+    left-200: unquote('-1px 0 0 rgba(0, 0, 0, 0.03), -1px 0 1px rgba(0, 0, 0, 0.03)'),
+    // left-500: unquote('
+    //   -1px 0 0 rgba(0, 0, 0, 0.045),
+    //   -1px 0 1px rgba(0, 0, 0, 0.045),
+    //   -2px 0 2px rgba(0, 0, 0, 0.045),
+    //   -4px 0 4px rgba(0, 0, 0, 0.045),
+    //   -8px 0 8px rgba(0, 0, 0, 0.045)
+    // '),
+
+    // down-100: unquote('0 1px 0 rgba(0, 0, 0, 0.055)'),
+    // down-200: unquote('0 1px 0 rgba(0, 0, 0, 0.03), 0 1px 1px rgba(0, 0, 0, 0.03)'),
+    // down-400: unquote('0 1px 0 rgba(0, 0, 0, 0.03), 0 1px 1px rgba(0, 0, 0, 0.03), 0 2px 2px rgba(0, 0, 0, 0.03), 0 4px 4px rgba(0, 0, 0, 0.03)'),
+    // down-500: unquote('
+    //   0 1px 0 rgba(0, 0, 0, 0.045),
+    //   0 1px 1px rgba(0, 0, 0, 0.045),
+    //   0 2px 2px rgba(0, 0, 0, 0.045),
+    //   0 4px 4px rgba(0, 0, 0, 0.045),
+    //   0 8px 8px rgba(0, 0, 0, 0.045)
+    // '),
+    // down-600: unquote('
+    //   0 1px 0 rgba(0, 0, 0, 0.03),
+    //   0 1px 1px rgba(0, 0, 0, 0.03),
+    //   0 2px 2px rgba(0, 0, 0, 0.03),
+    //   0 4px 4px rgba(0, 0, 0, 0.03),
+    //   0 8px 8px rgba(0, 0, 0, 0.03),
+    //   0 16px 16px rgba(0, 0, 0, 0.03)
+    // '),
+  )
+);
