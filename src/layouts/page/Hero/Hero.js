@@ -20,7 +20,7 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
         js-contrast--reverse
         color:neutral-0
         position:relative
-        @mq-lap--min-height:100vh-fixed
+        min-height:100vh-fixed
         width:100vw
         scroll-snap-align:start
         scroll-margin-top:-px
@@ -73,7 +73,7 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
               vimeoId={video}
               windowHeight={true}
               className={`
-                @mq-lap--min-height:100vh-fixed
+                min-height:100vh-fixed
                 ${shader}
               `}
             />
@@ -81,8 +81,11 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
               image={image}
               artDirection={`imageFileHero`}
               className={`
-                @mq-lap--min-height:100vh-fixed
+                height:100vh-fixed
                 ${shader}
+              `}
+              sizes={`
+                1600px
               `}
             />
       }
