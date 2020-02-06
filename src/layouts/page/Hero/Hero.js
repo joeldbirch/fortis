@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import FluidImage from 'components/FluidImage'
 import FullWindowVideo from 'components/FullWindowVideo'
 import ScrollPrompt from 'components/ScrollPrompt'
-import { uiFontSize, shader } from 'styles/helpers'
+import { uiFontSize } from 'styles/helpers'
 import { getPath } from 'utilities/helpers'
 
 const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className=``, ...props}) => {
@@ -37,7 +37,7 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
             position:absolute
             pos-top-left:0
             width:100
-            z-index:400
+            z-index:100
             pointer-events:none
           `}
           style={{
@@ -74,7 +74,6 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
               windowHeight={true}
               className={`
                 min-height:100vh-fixed
-                ${shader}
               `}
             />
           : <FluidImage
@@ -82,7 +81,6 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
               artDirection={`imageFileHero`}
               className={`
                 height:100vh-fixed
-                ${shader}
               `}
               sizes={`
                 1600px
