@@ -101,7 +101,6 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
             padding:0
             margin:0
             font-size:700
-            font-weight:300
           `}>
             {
               menuItems.map((menuItem) => (
@@ -116,7 +115,6 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
                     underlined-reveal
                     color:neutral-900
                     display:inline-block
-                    @mq-max-palm--padding-vertical:100
                   `}
                   key={menuItem.id}
                   menuItem={menuItem}
