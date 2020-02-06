@@ -59,7 +59,7 @@ const NewsOverview = ({showHeading=true, nextSection=null, id=null, ...props}) =
 
         <NewsPreviews
           posts={posts}
-          intro={<LargeText>{introContent}</LargeText>}
+          intro={<LargeText className={`@mq-max-palm--font-size:400`}>{introContent}</LargeText>}
           pagination={hasNextPage ? <LinkToNewsPage /> : () => {}}
         />
       </div>
