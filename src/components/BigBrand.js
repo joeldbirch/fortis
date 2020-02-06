@@ -30,6 +30,7 @@ const styles = {
     @mq-palm--width:columns-9
     height:auto
     max-width:100
+    opacity:90
   `,
 }
 
