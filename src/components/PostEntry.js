@@ -33,7 +33,6 @@ const PostEntry = ({
           artDirection={artDirection}
           className={`
             ${imageClasses}
-            @mq-max-palm--height:9/16vw
             group:hocus__opacity:80
             transition-property:opacity
             transition-duration:400
