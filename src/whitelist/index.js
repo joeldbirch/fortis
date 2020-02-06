@@ -122,6 +122,7 @@ module.exports = {
     'is-selected',
     'dot',
     'pre',
+    'b',
   ]),
   wordpressPatterns: [
     /^(.*)-template(-.*)?$/,
