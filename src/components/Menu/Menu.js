@@ -31,7 +31,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
             ${uiFontSize}
             &:before--hit-area-xy-100
             &:hover--text-decoration:underline
-            z-index:200
+            z-index:300
             margin-right:columns-0-1/2
             margin-top:columns-0-1/2
             pos-top-right:0

@@ -12,7 +12,7 @@ const ScrollPrompt = ({className=``, ...props}) => {
         pos-bottom:0
         pos-left:50
         padding:columns-0-1/4
-        z-index:800
+        z-index:200
       `}
       {...props}
     >
