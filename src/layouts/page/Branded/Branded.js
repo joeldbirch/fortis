@@ -1,8 +1,10 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import FluidImage from 'components/FluidImage'
 import FullWindowVideo from 'components/FullWindowVideo'
 import BigBrand from 'components/BigBrand'
 import Divider from 'components/DividerHorizontal'
+import ArrowDrawnUpLeft from 'components/ArrowDrawnUpLeft'
 
 const styles = {
   root: `
@@ -19,8 +21,11 @@ const styles = {
   `,
   mediaWrap: `
     flex-grow:1
-    margin-horizontal:columns-0-1/2
-    @mq-desk--margin-horizontal:columns-2-1/2
+    margin-horizontal:columns-1
+    @mq-palm--margin-horizontal:columns-1-1/2
+    @mq-desk--margin-horizontal:columns-2
+    @mq-bigdesk--margin-horizontal:columns-2-1/2
+    @mq-max-palm--margin-top:600
     @mq-bigdesk--margin-horizontal:site-pad-500
     overflow:hidden
     position:relative
@@ -30,6 +35,18 @@ const styles = {
 const Branded = ({image, text, video=null, nextSection=null, id=null, ...props}) => {
   return (
     <section className={` ${styles.root} `} id={id} >
+      <Helmet>
+        <style>{`
+          .underlined--home::after {
+            right: auto;
+            left: -1rem;
+            width: 5.5em;
+            height: 2px;
+            margin-top: 0;
+            transform: rotate(3deg);
+          }
+        `}</style>
+      </Helmet>
       <div className={` ${styles.mediaWrap} `}
         style={{
           minHeight: '10rem',
@@ -54,12 +71,30 @@ const Branded = ({image, text, video=null, nextSection=null, id=null, ...props})
       </div>
       <BigBrand
         htmlText={text}
+        textClasses={`
+          display:inline-block
+          @mq-max-palm--text-align:left
+          @mq-max-palm--margin-top:100
+          underlined
+          underlined--home
+        `}
         className={`
           @mq-palm--margin-top:-400
           flex-direction:column
           justify-content:flex-end
         `}
-      ></BigBrand>
+      >
+        <ArrowDrawnUpLeft
+          className={`
+            transform:arrow-up-right
+            @mq-palm--transform:arrow-right-down
+            @mq-palm--display:block
+            @mq-palm--margin-left:-400
+            @mq-palm--margin-bottom:100
+            @mq-bigdesk--margin-bottom:200
+          `}
+        />
+      </BigBrand>
       <Divider bottom={true} />
     </section>
   )

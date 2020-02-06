@@ -18,6 +18,10 @@
   b {
     @include circle;
   }
+
+  br {
+    display: none;
+  }
 }
 
 .underlined {

@@ -2,7 +2,7 @@ import React from 'react'
 
 const styles = {
   brandingWrap: `
-    @mq-palm--align-items:flex-end
+    @mq-palm--align-items:center
     @mq-palm--flex-direction:row-reverse
     @mq-palm--justify-content:flex-end
     display:flex
@@ -11,15 +11,16 @@ const styles = {
   tagline: `
     @mq-bigdesk--font-size:550
     @mq-desk--padding-left:800
-    @mq-palm--padding-bottom:columns-0-1/2
     @mq-palm--padding-left:400
+    @mq-widepalm--padding-left:800
     @mq-palm--text-align:left
     @mq-widepalm--font-size:500
     font-family:cursive
-    font-size:400
+    white-space:pre
+    font-size:500
     font-weight:400
     line-height:200
-    padding-bottom:200
+    padding-bottom:100
     padding-top:400
     text-align:center
     width:small-column
@@ -35,7 +36,7 @@ const styles = {
 }
 
 
-const BigBrand = ({htmlText=null, className=``, headingTag=`h2`, children}) => {
+const BigBrand = ({htmlText=null, className=``, textClasses=``, headingTag=`h2`, children}) => {
   const HeadingTag = headingTag ? headingTag : `h2`
   return (
     <div
@@ -48,11 +49,17 @@ const BigBrand = ({htmlText=null, className=``, headingTag=`h2`, children}) => {
         className={`
           ${styles.tagline}
           position:relative
-          rotate:-2
+          transform:var-1
+          @mq-widepalm--transform:var-2
+          @mq-bigdesk--margin-top:400
         `}
+        style={{
+          '--rotate-var-1': '-2deg',
+          '--translate-y-var-2': '15%',
+        }}
       >
-        {htmlText ? <span dangerouslySetInnerHTML={{__html: htmlText}}/> : ``}
         {children}
+        {htmlText ? <span className={textClasses} dangerouslySetInnerHTML={{__html: htmlText}}/> : ``}
       </HeadingTag>
 
       <img

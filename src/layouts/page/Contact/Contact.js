@@ -35,6 +35,7 @@ const Contact = () => {
         padding-top:site-top
         position:relative
         scroll-snap-align:start
+        z-index:100
       `}
     >
 
@@ -193,6 +194,8 @@ const Contact = () => {
         <span
           className={`
             @mq-max-palm--pos-top:200
+            @mq-palm--padding-top:columns-0-1/2
+            @mq-palm--display:block
             @mq-max-palm--position:absolute
             position:relative
           `}
