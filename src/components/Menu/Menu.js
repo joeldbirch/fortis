@@ -100,7 +100,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
             list-style:none
             padding:0
             margin:0
-            font-size:700
+            font-size:600
           `}>
             {
               menuItems.map((menuItem) => (
