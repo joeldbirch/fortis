@@ -6,6 +6,7 @@ const Location = ({fallbackImage}) => {
     <div
       className={`
         margin-vertical:columns-0-1/2
+        @mq-max-palm--margin-vertical:800
         height:100vh-fixed
         width:100vw
       `}
