@@ -3,7 +3,6 @@ import Helmet from 'react-helmet'
 import FluidImage from 'components/FluidImage'
 import FullWindowVideo from 'components/FullWindowVideo'
 import BigBrand from 'components/BigBrand'
-import Divider from 'components/DividerHorizontal'
 import ArrowDrawnUpLeft from 'components/ArrowDrawnUpLeft'
 
 const styles = {
@@ -95,7 +94,6 @@ const Branded = ({image, text, video=null, nextSection=null, id=null, ...props})
           `}
         />
       </BigBrand>
-      <Divider bottom={true} />
     </section>
   )
 }
