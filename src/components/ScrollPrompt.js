@@ -1,6 +1,6 @@
 import React from 'react'
 import ScrollPromptAnimation from 'components/ScrollPromptAnimation'
-import ArrowDrawn from 'components/ArrowDrawn'
+import ArrowRounded from 'components/ArrowRounded'
 
 const ScrollPrompt = ({className=``, ...props}) => {
   return (
@@ -16,12 +16,16 @@ const ScrollPrompt = ({className=``, ...props}) => {
       `}
       {...props}
     >
-      <ArrowDrawn
+      <ArrowRounded
         className={`
           height:150r
           @mq-desk--height:200r
+          transform:var-1
         `}
         fill="currentColor"
+        style={{
+          '--rotate-var-1': '-90deg',
+        }}
       />
     </ScrollPromptAnimation>
   )
