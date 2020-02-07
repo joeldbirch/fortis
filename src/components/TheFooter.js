@@ -39,7 +39,8 @@ export default ({ className=``, ...props }) => {
           @mq-palm--grid-template-columns:var-2
           @mq-desk--grid-template-columns:var-3
           @mq-max-lap--grid-gap:columns-0-1/2
-          font-size:300
+          font-size:200
+          @mq-lap--font-size:300
           @mq-bigdesk--font-size:400
           position:relative
           padding-bottom:800

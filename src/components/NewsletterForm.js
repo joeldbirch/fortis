@@ -7,7 +7,7 @@ const styles = {
     margin-right:100p
     @mq-palm--margin-right:250p
     @mq-desk--margin-right:0
-    @mq-palm--padding-right:400
+    @mq-lap--padding-right:400
   `,
   item: `
     @mq-lap--margin-vertical:500
@@ -41,7 +41,8 @@ export default ({ prependId="field", ...props }) => (
         display:grid
         grid-template-columns:var-3
         align-items:flex-end
-        margin-right:columns-0-1/2
+        @mq-lap--margin-right:columns-0-1/2
+        max-width:small-column
       `}
       style={{'--grid-template-columns-var-3': '1fr auto'}}
     >
@@ -60,7 +61,8 @@ export default ({ prependId="field", ...props }) => (
           padding-top:800
           padding-bottom:100
           font-size:400
-          &:placeholder--font-size:300
+          &:placeholder--font-size:200
+          @mq-lap:placeholder--font-size:300
           border-bottom-style:solid
           border-bottom-width:100
           border-bottom-color:neutral-600
