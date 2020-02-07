@@ -43,17 +43,26 @@ const ProjectDetails = ({
           @mq-palm--padding-right:columns-1
           rhythm-fix-before
         `}>
-          <Logo
-            logo={ logo }
-            alt={`${title} logo`}
-            width="264"
-            height="80"
+          <div
             className={`
-              max-width:logo
+              max-width:caption
+              @mq-max-palm--width:50
+              position:relative
             `}
-            fallbackClasses={`rhythm-fix-after font-size:700`}
-            sizes={`15em`}
-          />
+          >
+            <Logo
+              logo={ logo }
+              alt={`${title} logo`}
+              width="264"
+              height="80"
+              className={`
+                width:100
+                height:auto
+              `}
+              fallbackClasses={`rhythm-fix-after font-size:700`}
+              sizes={`15em`}
+            />
+          </div>
           <div className={`
             margin-top:800
             @mq-palm--margin-top:columns-0-1/2
