@@ -41,7 +41,7 @@ export default ({ prependId="field", ...props }) => (
         display:grid
         grid-template-columns:var-3
         align-items:flex-end
-        @mq-palm--margin-right:columns-0-1/2
+        margin-right:columns-0-1/2
       `}
       style={{'--grid-template-columns-var-3': '1fr auto'}}
     >
@@ -71,7 +71,7 @@ export default ({ prependId="field", ...props }) => (
       <button
         type="submit"
         className={`
-          @mq-max-palm--padding-left:800
+          @mq-max-palm--padding-left:400
           padding-right:0
           padding-top:800
           padding-bottom:100

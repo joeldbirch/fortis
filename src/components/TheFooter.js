@@ -38,8 +38,7 @@ export default ({ className=``, ...props }) => {
           grid-template-columns:var-1
           @mq-palm--grid-template-columns:var-2
           @mq-desk--grid-template-columns:var-3
-          grid-gap:columns-1
-          @mq-palm--grid-gap:0
+          @mq-max-lap--grid-gap:columns-0-1/2
           font-size:300
           @mq-bigdesk--font-size:400
           position:relative
@@ -47,7 +46,7 @@ export default ({ className=``, ...props }) => {
           padding-top:50
         `}
         style={{
-          '--grid-template-columns-var-1': '5fr 6fr',
+          '--grid-template-columns-var-1': '5.5fr 5.5fr',
           '--grid-template-columns-var-2': '4fr 2fr 3fr 3fr',
           '--grid-template-columns-var-3': '4fr 2fr 2fr 2fr 2fr',
         }}
@@ -67,7 +66,7 @@ export default ({ className=``, ...props }) => {
 
         <div
           className={`
-            padding-right:400
+            @mq-lap--padding-right:400
           `}
         >
           <h3
