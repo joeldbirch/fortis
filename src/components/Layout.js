@@ -74,7 +74,6 @@ const Layout = ({
         `}
         />
         <html className={`
-          font-size:300
           @mq-lap--font-size:400
           min-height:100vh-fixed
         `} lang="en" />
