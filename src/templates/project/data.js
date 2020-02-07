@@ -16,7 +16,7 @@ const ProjectTemplateFragment = (layouts) => `
       }
       imageFileHero {
         childImageSharp {
-          fluid(maxWidth: 1600, maxHeight: 900, cropFocus: CENTER) {
+          fluid(maxWidth: 1600, maxHeight: 1040, cropFocus: CENTER) {
             ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }
@@ -110,9 +110,9 @@ const ProjectPreviewFragment = `
     featuredImage {
       sourceUrl
       altText
-      imageFile {
+      imageFileHero {
         childImageSharp {
-          fluid(maxWidth: 1600, maxHeight: 900, cropFocus: CENTER) {
+          fluid(maxWidth: 1600, maxHeight: 1040, cropFocus: CENTER) {
             ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }

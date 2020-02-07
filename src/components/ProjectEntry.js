@@ -46,6 +46,7 @@ const ProjectEntry = ({
       >
         <FluidImage
           image={featuredImage}
+          artDirection="imageFileHero"
           className={`
             @mq-palm--height:100
             js-contrast
