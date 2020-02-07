@@ -18,6 +18,10 @@ const Location = ({fallbackImage}) => {
           height:100
           display:block
         `}
+        // ensure wider image than phone viewport as it crops heavily when portrait
+        sizes={`
+          (max-width: 1000px) 1000px
+        `}
       />
     </div>
   )

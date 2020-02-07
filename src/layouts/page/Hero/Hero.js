@@ -82,8 +82,9 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
               className={`
                 height:100vh-fixed
               `}
+              // ensure wider image than phone viewport as it crops heavily when portrait
               sizes={`
-                1600px
+                (max-width: 800px) 800px
               `}
             />
       }
