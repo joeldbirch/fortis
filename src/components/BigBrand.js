@@ -52,6 +52,7 @@ const BigBrand = ({htmlText=null, className=``, textClasses=``, headingTag=`h2`,
           transform:var-1
           @mq-widepalm--transform:var-2
           @mq-bigdesk--margin-top:400
+          z-index:100
         `}
         style={{
           '--rotate-var-1': '-2deg',

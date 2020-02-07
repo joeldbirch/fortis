@@ -4,7 +4,6 @@ import FluidImage from 'components/FluidImage'
 import BigBrand from 'components/BigBrand'
 import ArrowDrawnUpLeft from 'components/ArrowDrawnUpLeft'
 import useGlobalContent from 'hooks/use-global-content'
-import { subhead } from 'styles/helpers'
 import { cols, mq } from 'utilities/helpers'
 
 const styles = {
@@ -43,7 +42,7 @@ const Contact = () => {
         className={`
           @mq-desk--grid-template-columns:var-3
           @mq-desk--padding-horizontal:columns-1
-          @mq-palm--display:grid
+          display:grid
           @mq-palm--grid-template-columns:var-1
           @mq-palm--padding-bottom:columns-0-1/2
           @mq-widepalm--grid-gap:columns-1
@@ -58,24 +57,6 @@ const Contact = () => {
         }}
       >
 
-        <FluidImage
-          image={teamImage}
-          className={`
-            @mq-max-palm--width:columns-5-1/2
-            @mq-max-palm--margin-left:400
-            @mq-max-palm--margin-bottom:400
-            float:right
-            grid-column:2
-            grid-row:1
-          `}
-          // extra col added to mq.palm size here because sides are cropped…
-          sizes={`
-            (min-width: ${mq.desk}) ${cols(5)}vw,
-            (min-width: ${mq.palm}) ${cols(6)}vw,
-            ${cols(5.5)}vw
-          `}
-        />
-
         <div
           className={`
             grid-row:1
@@ -87,7 +68,10 @@ const Contact = () => {
 
           <div
             className={`
-              ${subhead}
+            @mq-bigdesk--font-size:600
+            @mq-lap--font-size:500
+            font-size:400
+            font-weight:400
             `}
           >
             <h2
@@ -113,11 +97,13 @@ const Contact = () => {
                         @mq-palm--margin-left:400
                         @mq-palm--pos-left:100
                         @mq-palm--pos-top:columns-0-1/2
-                        handwritten
-                        margin-left:columns-2
+                        font-family:cursive
+                        line-height:200
+                        font-size:550
+                        margin-left:columns-1
                         margin-top:1000
-                        pos-left:50
-                        pos-top:columns-1
+                        pos-left:100
+                        pos-top:50
                         position:absolute
                         rotate:-2
                         width:small-caption
@@ -171,7 +157,7 @@ const Contact = () => {
           <NewsletterForm
             prependId="contact"
             className={`
-              @mq-max-palm--max-width:small-column
+              @mq-max-palm--display:none
               @mq-palm--margin-top:columns-0-1/2
               clear:both
               font-size:300
@@ -180,6 +166,18 @@ const Contact = () => {
           />
         </div>
 
+        <FluidImage
+          image={teamImage}
+          className={`
+              @mq-max-palm--margin-top:400
+          `}
+          // extra col added to mq.palm size here because sides are cropped…
+          sizes={`
+            (min-width: ${mq.desk}) ${cols(5)}vw,
+            (min-width: ${mq.palm}) ${cols(6)}vw,
+            ${cols(12)}vw
+          `}
+        />
       </div>
 
 
@@ -197,6 +195,9 @@ const Contact = () => {
             @mq-palm--padding-top:columns-0-1/2
             @mq-palm--display:block
             @mq-max-palm--position:absolute
+            @mq-max-palm--pos-right:0
+            @mq-max-palm--margin-top:-1000
+            z-index:100
             position:relative
           `}
         >
@@ -207,9 +208,14 @@ const Contact = () => {
               pos-left:50
               pos-top:100
               position:absolute
+              transform:var-1
+              @mq-desk--transform:var-2
             `}
             style={{
-              transform: `scaleY(-.8) rotate(60deg)`,
+              '--rotate-var-1': `-90deg`,
+              '--translate-y-var-1': `-1rem`,
+              '--scale-y-var-2': `-0.8`,
+              '--rotate-var-2': `60deg`,
             }}
           />
         </span>
