@@ -79,8 +79,8 @@ export default ({ prependId="field", ...props }) => (
           border-bottom-width:100
           border-bottom-color:neutral-600
           line-height:200
-          color:neutral-500
-          &:hocus--color:neutral-900
+          &:hocus--color:neutral-500
+          margin-horizontal:0
         `}
       >
         <span className="visually-hidden">Submit</span>
