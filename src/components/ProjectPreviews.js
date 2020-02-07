@@ -44,7 +44,7 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
           ? ``
           :
           <>
-            <Divider/>
+            <Divider noMargin={true}/>
             <SectionHeader
               absolute={false}
               className={`
