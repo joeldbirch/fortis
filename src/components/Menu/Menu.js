@@ -72,20 +72,17 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
         <div
           className={`
             menu-bg
-            position:fixed
+            height:100vh-fixed
+            padding-horizontal:columns-2
+            @mq-desk--padding-horizontal:columns-1-1/2
+            @mq-bigdesk--padding-horizontal:columns-1
+            padding-top:site-top
             pos-right:0
             pos-top:0
-            height:100vh-fixed
-            display:block
-            width:100
-            max-width:columns-11-1/2
-            @mq-palm--max-width:columns-6-1/2
-            @mq-bigdesk--max-width:columns-3-1/2
-            transition-property:opacity-transform
+            position:fixed
+            display:flex
             transition-duration:400
-            padding-top:site-top
-            padding-left:columns-1
-            padding-right:site-pad
+            transition-property:opacity-transform
             ${isOpen ?  `` : `translate-x:100 opacity:0`}
           `
           }
@@ -99,8 +96,12 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
             menu-list
             list-style:none
             padding:0
-            margin:0
-            font-size:600
+            margin-horizontal:auto
+            margin-vertical:0
+            font-size:500
+            @mq-tiny--font-size:600
+            white-space:no-wrap
+            rhythm-fix-before
           `}>
             {
               menuItems.map((menuItem) => (

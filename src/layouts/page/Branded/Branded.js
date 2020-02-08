@@ -24,7 +24,6 @@ const styles = {
     @mq-palm--margin-horizontal:columns-1-1/2
     @mq-desk--margin-horizontal:columns-2
     @mq-bigdesk--margin-horizontal:columns-2-1/2
-    @mq-max-palm--margin-top:600
     @mq-bigdesk--margin-horizontal:site-pad-500
     overflow:hidden
     position:relative
