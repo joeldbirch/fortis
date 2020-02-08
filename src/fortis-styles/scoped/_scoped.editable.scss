@@ -74,7 +74,7 @@ $scoped_container: 's-editable' !default;
     font-family: #{hu-get($hu-font-family-types, cursive)};
     font-weight: 400;
     line-height: #{hu-get($hu-line-height-types, 200)};
-    font-size: #{hu-get($hu-font-size-types, em)};
+    font-size: 1.231em;
     padding-top: #{hu-get($hu-spacing-scale, 100)};
   }
 

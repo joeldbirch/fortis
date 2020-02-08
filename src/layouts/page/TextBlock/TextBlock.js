@@ -11,6 +11,7 @@ const TextBlock = ({text, style={}, nextSection=null, id=null, ...props}) => {
     <section
       id={id}
       className={`
+        layout-text-block
         padding-horizontal:columns-1-1/2
         @mq-desk--padding-horizontal:columns-1-1/2
         width:100
