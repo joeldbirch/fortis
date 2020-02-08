@@ -79,16 +79,18 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
             pos-top:0
             position:fixed
             display:flex
-            ${isOpen ?  `` : `translate-x:100 opacity:0 display:none`}
+            ${isOpen ?  `` : `translate-x:100 opacity:0 visibility:hidden`}
           `
           }
           style={{
             backgroundColor: `hsla(25, 0%, 88%, 0.95)`,
             backdropFilter: `blur(3px)`,
-            transitionProperty: `opacity, transform, display`,
-            transitionDelay: `0s, 0s, ${transitionDuration}`,
-            transitionDuration: `${transitionDuration}, ${transitionDuration}, 0s`,
-            transitionTimingFunction: appleBezier,
+            transition: `
+              opacity ${transitionDuration} ${appleBezier} 0s,
+              transform ${transitionDuration} ${appleBezier} 0s,
+              visibility 0s linear ${isOpen ? `0s` : transitionDuration}
+            `,
+
           }}
         >
           <ul className={`
