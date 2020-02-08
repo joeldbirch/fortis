@@ -65,6 +65,9 @@ const ProjectDetails = ({
           <div className={`
             margin-top:800
             @mq-palm--margin-top:columns-0-1/2
+            @mq-palm--padding-bottom:columns-1
+            @mq-lap--padding-bottom:columns-1-1/2
+            @mq-desk--padding-bottom:columns-1
           `}>
             <p className={`
               meta
@@ -81,7 +84,9 @@ const ProjectDetails = ({
               dangerouslySetInnerHTML={{__html: introductoryText}}
               className={`
                 s-editable
-                font-size:500
+                @mq-tiny--font-size:500
+                @mq-palm--font-size:400
+                @mq-lap--font-size:500
                 @mq-bigdesk--font-size:600
               `}
             />
