@@ -21,8 +21,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
     <>
       <div
         className={`
-          padding-top:800
-          @mq-palm--padding-top:0
+          padding-top:site-top
           @mq-palm--display:grid
           grid-template-columns:2
         `}
@@ -35,7 +34,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
           <div
             className={`
               @mq-palm--padding-right:columns-1
-              @mq-palm--margin-top:columns-1
+              @mq-lap--margin-top:columns-1
               can-style-note
             `}
             style={{
