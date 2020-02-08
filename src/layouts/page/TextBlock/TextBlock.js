@@ -4,7 +4,7 @@ import ScrollPrompt from 'components/ScrollPrompt'
 const TextBlock = ({text, style={}, nextSection=null, id=null, ...props}) => {
   const inlineStyles = Object.assign(
     {},
-    {'--rotate': '-1deg'},
+    {'--rotate': '-2deg'},
     style
   )
   return (

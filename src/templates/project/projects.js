@@ -26,8 +26,7 @@ const Projects = ({ pageContext }) => {
       />
 
       <TextBlock text={introContent} nextSection="#previews" style={{
-        '--desk-offset-left': '-4.5em',
-        '--rotate': '-1deg',
+        '--desk-offset-left': '-3.5em',
       }} />
 
       <ProjectPreviews posts={nodes} tags={projectTags} id="previews" />
