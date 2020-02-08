@@ -159,7 +159,7 @@ export const invertedStyles = {
 }
 
 export const nonInvertedStyles = {
-  filter: 'invert(0) contrast(1)',
+  filter: `invert(0) contrast(1)`,
   ...appleFade,
 }
 

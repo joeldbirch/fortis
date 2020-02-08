@@ -90,6 +90,9 @@ const Layout = ({
 
       <TheHeader
         id="SiteHeader"
+        className={`
+          ${headerReversed ? `` : `background-color:neutral-0`}
+        `}
       >
         <Link
           to="/"
