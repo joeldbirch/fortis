@@ -65,7 +65,7 @@ export default ({ prependId="field", ...props }) => (
           @mq-lap:placeholder--font-size:300
           border-bottom-style:solid
           border-bottom-width:100
-          border-bottom-color:neutral-600
+          border-bottom-color:neutral-700
           border-radius:0
           line-height:200
         `}
@@ -79,7 +79,7 @@ export default ({ prependId="field", ...props }) => (
           padding-bottom:100
           border-bottom-style:solid
           border-bottom-width:100
-          border-bottom-color:neutral-600
+          border-bottom-color:neutral-700
           line-height:200
           &:hocus--color:neutral-500
           margin-horizontal:0

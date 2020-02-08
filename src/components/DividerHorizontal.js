@@ -15,7 +15,7 @@ export default ({className=``, bottom, noMargin=false, ...props}) => {
         }
         border-top-width:100
         border-top-style:solid
-        border-top-color:neutral-600
+        border-top-color:neutral-700
         pos-left-right:0
         position:absolute
         ${bottom ? `pos-bottom:0` : `pos-top:0` }
