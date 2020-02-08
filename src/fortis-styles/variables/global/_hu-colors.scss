@@ -1,3 +1,14 @@
+$hu-background-color-modules: (
+  base,
+  // visited,
+  hover,
+  // active,
+  // group-hover,
+  // group-state,
+  // state
+) !default;
+
+
 $jb-colors: hu-append((
   contrast: (
     contrast: unquote("var(--color-contrast, currentColor)"),
