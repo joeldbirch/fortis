@@ -49,9 +49,6 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
               height:100
               pos-top-left:0
               position:absolute
-              underlined
-              underlined--thin
-              underlined-reveal
               ${isOpen ? `opacity:0 scale:80` : ``}
             `}
             style={getInvertedStyles(headerReversed)}
@@ -111,9 +108,6 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
                   linkClasses={`
                     text-decoration:none
                     &:hover--text-decoration:underline
-                    underlined
-                    underlined--thin
-                    underlined-reveal
                     color:neutral-900
                     display:inline-block
                   `}

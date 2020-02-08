@@ -93,9 +93,6 @@ const Layout = ({
             &:before--hit-area-xy-100
             position:relative
             pointer-events:auto
-            underlined
-            underlined--thin
-            underlined-reveal
             ${uiFontSize}
           `}
           style={getInvertedStyles(headerReversed)}
