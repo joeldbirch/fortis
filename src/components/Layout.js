@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React, { useState } from 'react'
+import React, { useState, useLayoutEffect } from 'react'
 import PropTypes from 'prop-types'
 import useHeaderIntersection from 'hooks/use-header-intersection'
 import { Link } from 'gatsby'
@@ -17,6 +17,7 @@ import TheHeader from './TheHeader'
 import TheFooter from './TheFooter'
 import { isIos, isSafari } from 'utilities/helpers'
 import { uiFontSize, getInvertedStyles } from 'styles/helpers'
+import fixOutline from 'fix-outline'
 
 import 'styles/index.scss'
 
@@ -32,6 +33,11 @@ const Layout = ({
   const [menuOpen, toggleMenu] = useState(false)
   const [headerReversed] = useHeaderIntersection()
 
+  useLayoutEffect(function(){
+
+    if (typeof window !== `undefined`) fixOutline()
+
+  }, [])
 
   return (
     <TheWrap

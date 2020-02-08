@@ -1,7 +1,4 @@
 import { isIphone } from 'utilities/helpers'
-import fixOutline from 'fix-outline'
-
-fixOutline()
 
 if (isIphone()) {
   document.addEventListener('DOMContentLoaded', function () {
