@@ -150,7 +150,7 @@ const Post = ({ pageContext }) => {
           <div
             className={`
               s-editable
-              @mq-wall--font-size:500
+              @mq-bigdesk--font-size:500
               rhythm-fix-before
             `}
             dangerouslySetInnerHTML={{__html: content}}
