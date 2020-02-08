@@ -13,6 +13,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
   } = useMenuData()
 
   if (!menuItems) return null
+  const transitionDuration = `400ms`
 
   return (
     <div className={`
@@ -78,14 +79,15 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
             pos-top:0
             position:fixed
             display:flex
-            transition-duration:400
-            transition-property:opacity-transform
-            ${isOpen ?  `` : `translate-x:100 opacity:0`}
+            ${isOpen ?  `` : `translate-x:100 opacity:0 display:none`}
           `
           }
           style={{
             backgroundColor: `hsla(25, 0%, 88%, 0.95)`,
             backdropFilter: `blur(3px)`,
+            transitionProperty: `opacity, transform, display`,
+            transitionDelay: `0s, 0s, ${transitionDuration}`,
+            transitionDuration: `${transitionDuration}, ${transitionDuration}, 0s`,
             transitionTimingFunction: appleBezier,
           }}
         >
