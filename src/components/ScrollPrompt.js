@@ -13,7 +13,7 @@ const ScrollPrompt = ({className=``, ...props}) => {
         pos-left:50
         padding:columns-0-1/4
         z-index:200
-        &:hover--color:neutral-500
+        &:hover--opacity:50
       `}
       {...props}
     >
