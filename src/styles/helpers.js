@@ -45,7 +45,7 @@ export const subhead = `
 `
 
 export const button = `
-  &:hocus--opacity:100
+  &:hover--opacity:100
   background-color:neutral-900
   opacity:80
   color:neutral-0

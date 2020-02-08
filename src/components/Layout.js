@@ -89,7 +89,7 @@ const Layout = ({
           to="/"
           className={`
             color:inherit
-            &:hocus--text-decoration:underline
+            &:hover--text-decoration:underline
             &:before--hit-area-xy-100
             position:relative
             pointer-events:auto

@@ -33,7 +33,7 @@ const PostEntry = ({
           artDirection={artDirection}
           className={`
             ${imageClasses}
-            group:hocus__opacity:80
+            group:hover__opacity:80
             transition-property:opacity
             transition-duration:400
           `}

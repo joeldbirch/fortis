@@ -81,7 +81,7 @@ export default ({ prependId="field", ...props }) => (
           border-bottom-width:100
           border-bottom-color:neutral-700
           line-height:200
-          &:hocus--color:neutral-500
+          &:hover--color:neutral-500
           margin-horizontal:0
         `}
       >

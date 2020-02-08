@@ -77,7 +77,7 @@ const CarouselSlide = ({
                   <span className={`
                     position:relative
                     text-decoration:underline
-                    &:hocus--text-decoration:none
+                    &:hover--text-decoration:none
                   `}>{title} — <span>{suburb}</span></span>
                 </Link>
               </h2>
