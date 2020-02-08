@@ -9,18 +9,6 @@ const styles = {
     @mq-desk--margin-right:0
     @mq-lap--padding-right:400
   `,
-  item: `
-    @mq-lap--margin-vertical:500
-    margin-vertical:300
-  `,
-  input: `
-    border-color:neutral-600
-    border-radius-0 //iOS
-    border-style:solid
-    border-width:100
-    @mq-desk:placeholder--font-size:400
-    &:placeholder--font-size:300
-  `,
 }
 
 export default ({ prependId="field", ...props }) => (
