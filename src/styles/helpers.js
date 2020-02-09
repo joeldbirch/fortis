@@ -38,7 +38,6 @@ export const padBottom3 = `
 `
 
 export const subhead = `
-  @mq-bigdesk--font-size:600
   @mq-lap--font-size:500
   font-size:500
   font-weight:400

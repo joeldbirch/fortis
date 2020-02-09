@@ -10,4 +10,6 @@ $hu-font-size-types: (
   650: 1.8125rem, // 29
   700: 2rem, // 32
   800: 3rem, // 48
+  fluid-bigdesk: calc(16px + 6 * ((100vw - 1400px) / 680)),
+  fluid-wall: calc(16px + 6 * ((100vw - 1800px) / 680)),
 );

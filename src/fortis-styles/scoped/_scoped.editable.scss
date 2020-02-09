@@ -64,9 +64,6 @@ $scoped_container: 's-editable' !default;
 
   blockquote {
     font-size: #{hu-get($hu-font-size-types, 500)};
-    @media (min-width: #{hu-get($hu-media-queries, bigdesk)}) {
-      font-size: hu-get($hu-font-size-types, 600);
-    }
   }
 
   pre {

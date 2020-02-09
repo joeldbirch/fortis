@@ -68,7 +68,6 @@ const Contact = () => {
 
           <div
             className={`
-            @mq-bigdesk--font-size:600
             @mq-lap--font-size:500
             font-size:400
             font-weight:400

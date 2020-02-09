@@ -50,12 +50,14 @@ const ProfileEntry = ({
       style={{
         '--grid-template-columns-var-1': `5.5fr 6fr`,
         '--grid-template-columns-var-2': `6fr 5fr`,
-        '--grid-template-columns-var-3': `5fr 4fr`,
+        '--grid-template-columns-var-3': `4fr 5fr`,
       }}
     >
 
       <div
         className={`
+          @mq-desk--padding-right:columns-0-1/2
+          @mq-bigdesk--padding-right:columns-1
         `}
       >
         <h2
@@ -78,7 +80,6 @@ const ProfileEntry = ({
               display:block
               text-transform:uppercase
               font-size:300
-              @mq-bigdesk--font-size:400
               font-weight:400
             `}
           >
@@ -99,7 +100,6 @@ const ProfileEntry = ({
           dangerouslySetInnerHTML={{__html: description}}
           className={`
             s-editable
-            @mq-bigdesk--font-size:500
           `}
         />
       </div>
@@ -113,6 +113,7 @@ const ProfileEntry = ({
           `}
           sizes={`
             (max-width: ${mq.toPalm}) ${cols(5)}vw,
+            (min-width: ${mq.bigdesk}) ${cols(4)}vw,
             (min-width: ${mq.desk}) ${cols(5)}vw,
             (min-width: ${mq.widepalm}) ${cols(6)}vw,
             (min-width: ${mq.palm}) ${cols(5.5)}vw
