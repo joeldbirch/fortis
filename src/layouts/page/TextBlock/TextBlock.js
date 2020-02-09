@@ -27,7 +27,9 @@ const TextBlock = ({text, style={}, nextSection=null, id=null, ...props}) => {
     >
       <div
         className={`
-          font-size:600
+          font-size:500
+          @mq-tiny--font-size:550
+          @mq-palm--font-size:600
           margin:auto
           max-width:measure
           rhythm-fix-after

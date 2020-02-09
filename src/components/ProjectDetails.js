@@ -87,7 +87,8 @@ const ProjectDetails = ({
                 @mq-tiny--font-size:500
                 @mq-palm--font-size:400
                 @mq-lap--font-size:500
-                @mq-bigdesk--font-size:600
+                @mq-bigdesk--font-size:550
+                @mq-desk--max-width:small-column
               `}
             />
             {

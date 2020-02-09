@@ -100,7 +100,8 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
             margin-horizontal:auto
             margin-vertical:0
             font-size:500
-            @mq-tiny--font-size:600
+            @mq-tiny--font-size:550
+            @mq-palm--font-size:600
             white-space:no-wrap
             rhythm-fix-before
           `}>

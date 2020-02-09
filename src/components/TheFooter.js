@@ -41,7 +41,6 @@ export default ({ className=``, ...props }) => {
           @mq-max-lap--grid-gap:columns-0-1/2
           font-size:200
           @mq-lap--font-size:300
-          @mq-bigdesk--font-size:400
           position:relative
           padding-bottom:800
           padding-top:50

@@ -58,19 +58,12 @@ const Layout = ({
             height: 100%;
           }
 
-          html {
-            font-size: 0.9375rem;
-          }
-          @media (min-width: 1400px) {
+          @media (min-width: 960px) {
             html {
-              font-size: calc(15px + 4 * ((100vw - 1400px) / 680));
+              font-size: calc(15px + 4 * ((100vw - 960px) / 680));
             }
           }
-          @media (min-width: 2560px) {
-            html {
-              font-size: 22px;
-            }
-          }
+
         `}
 
         </style>
@@ -92,6 +85,8 @@ const Layout = ({
               `
           }
           min-height:100vh-fixed
+          @mq-max-palm--font-size:300
+          @mq-palm--font-size:400
           grid-guide
         `}
         />
