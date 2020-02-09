@@ -70,7 +70,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
         <div
           className={`
             menu-bg
-            height:100vh-fixed
+            height:100vh
             padding-horizontal:columns-2
             @mq-desk--padding-horizontal:columns-1-1/2
             @mq-bigdesk--padding-horizontal:columns-1

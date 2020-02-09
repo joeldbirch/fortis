@@ -74,14 +74,14 @@ const Layout = ({
                 }
               `
           }
-          min-height:100vh-fixed
+          min-height:100vh
           grid-guide
         `}
         />
         <html className={`
           @mq-lap--font-size:400
           @mq-bigdesk--font-size:fluid-bigdesk
-          min-height:100vh-fixed
+          min-height:100vh
         `} lang="en" />
 
         <meta name="robots" content="noindex" />
