@@ -94,7 +94,7 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
               transition-duration:700
               ${
                 isShown(post)
-                  ? `max-height:100vh opacity:1`
+                  ? `max-height:4000px opacity:1`
                   : `max-height:0 opacity:0`
               }
             `}
