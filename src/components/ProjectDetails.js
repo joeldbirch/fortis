@@ -72,7 +72,6 @@ const ProjectDetails = ({
             <p className={`
               meta
               font-size:300
-              @mq-bigdesk--font-size:400
               margin-bottom:400
             `}>
               <span>{fullAddress}</span><br />
@@ -87,8 +86,6 @@ const ProjectDetails = ({
                 @mq-tiny--font-size:500
                 @mq-palm--font-size:400
                 @mq-lap--font-size:500
-                @mq-bigdesk--font-size:550
-                @mq-desk--max-width:small-column
               `}
             />
             {

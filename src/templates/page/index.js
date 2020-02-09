@@ -34,7 +34,12 @@ const Page = ({ pageContext }) => {
       AddToHeader={
         isFrontPage
         ? <h1 className="visually-hidden">{site.siteMetadata.title}</h1>
-        : <h1 className="@mq-lap--font-size:500 @mq-tiny--font-size:400 font-size:300 font-weight:400">{title}</h1>
+        : <h1 className="
+            @mq-lap--font-size:500
+            @mq-tiny--font-size:400
+            font-size:300
+            font-weight:400
+          ">{title}</h1>
       }
     >
       <SEO title={title} />

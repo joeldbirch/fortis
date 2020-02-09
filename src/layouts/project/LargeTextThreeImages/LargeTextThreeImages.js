@@ -159,6 +159,7 @@ const LargeTextThreeImages = ({
                 className={`
                   @mq-palm--max-width:columns-5
                   @mq-desk--max-width:columns-4
+                  width:100
                 `}
                 image={benOtherSmallerImage}
                 sizes={`

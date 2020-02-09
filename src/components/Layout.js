@@ -85,17 +85,14 @@ const Layout = ({
               `
           }
           min-height:100vh-fixed
-          @mq-max-palm--font-size:300
-          @mq-palm--font-size:400
           grid-guide
         `}
         />
-        <html
-          className={`
-            min-height:100vh-fixed
-          `}
-
-          lang="en" />
+        <html className={`
+          @mq-lap--font-size:400
+          @mq-bigdesk--font-size:fluid-bigdesk
+          min-height:100vh-fixed
+        `} lang="en" />
 
         <meta name="robots" content="noindex" />
 
@@ -104,7 +101,6 @@ const Layout = ({
       <TheHeader
         id="SiteHeader"
         className={`
-          backdrop-filter:blur-100
           ${headerReversed ? `` : `background-color:white-95`}
         `}
       >

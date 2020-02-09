@@ -76,7 +76,6 @@ const Post = ({ pageContext }) => {
               padding-bottom:800
               @mq-palm--padding-right:columns-1
               font-size:500
-              @mq-bigdesk--font-size:600
               @mq-max-palm--padding-right:columns-3-1/2
             `}
             style={{
@@ -96,7 +95,7 @@ const Post = ({ pageContext }) => {
                   font-size:em
                   margin-top:100
                   @mq-lap--margin-top:0
-                  @mq-wall--font-size:700
+                  @mq-bigdesk--font-size:550
                 `}
                 id={`preview-${id}`}
               >
@@ -108,7 +107,7 @@ const Post = ({ pageContext }) => {
                     className={`
                       font-weight:400
                       font-size:300
-                      @mq-bigdesk--font-size:400
+                      @mq-desk--font-size:400
                     `}
                   >
                     <span className={``}>{subheading}</span>
@@ -150,7 +149,6 @@ const Post = ({ pageContext }) => {
           <div
             className={`
               s-editable
-              @mq-bigdesk--font-size:500
               rhythm-fix-before
             `}
             dangerouslySetInnerHTML={{__html: content}}

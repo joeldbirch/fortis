@@ -29,7 +29,12 @@ module.exports = (imports) => {
 
       return (
         <Layout
-          AddToHeader={<h1 className="@mq-lap--font-size:500 @mq-tiny--font-size:400 font-size:300 font-weight:400">{title}</h1>}
+          AddToHeader={<h1 className="
+            @mq-lap--font-size:500
+            @mq-tiny--font-size:400
+            font-size:300
+            font-weight:400
+          ">{title}</h1>}
         >
           <SEO title={title + ' | project'} />
 
