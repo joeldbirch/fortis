@@ -17,6 +17,7 @@ const PostEntry = ({
       className={`
         ${className}
         position:relative
+        @mq-max-palm--margin-bottom:600
       `}
     >
       <div
@@ -45,8 +46,7 @@ const PostEntry = ({
         <header
           className={`
             ${headerClasses}
-            padding-top:400
-            padding-bottom:1000
+            padding-vertical:400
           `}
         >
 
