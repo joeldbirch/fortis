@@ -9,4 +9,5 @@ $hu-font-size-types: (
   650: 1.8125rem, // 29
   700: 2rem, // 32
   800: 3rem, // 48
+  var-1: var(--font-size, 1rem),
 );

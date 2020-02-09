@@ -57,7 +57,22 @@ const Layout = ({
           [id="___gatsby"]>[role="group"] {
             height: 100%;
           }
+
+          html {
+            font-size: 15px;
+          }
+          @media screen and (min-width: 550px) {
+            html {
+              font-size: calc(15px + 4 * ((100vw - 550px) / 680));
+            }
+          }
+          @media screen and (min-width: 2560px) {
+            html {
+              font-size: 22px;
+            }
+          }
         `}
+
         </style>
         <body className={`
           ${
@@ -77,12 +92,15 @@ const Layout = ({
               `
           }
           min-height:100vh-fixed
+          grid-guide
         `}
         />
-        <html className={`
-          @mq-lap--font-size:400
-          min-height:100vh-fixed
-        `} lang="en" />
+        <html
+          className={`
+            min-height:100vh-fixed
+          `}
+
+          lang="en" />
 
         <meta name="robots" content="noindex" />
 
