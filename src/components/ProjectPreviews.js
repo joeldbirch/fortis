@@ -56,7 +56,12 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
                 items={tags}
                 update={changeShownPosts}
                 reset={filterReset}
-                className={`@mq-desk--padding-top:columns-0-1/2 padding-top:1000`}
+                className={`
+                  position:relative
+                  z-index:400
+                  @mq-desk--padding-top:columns-0-1/2
+                  padding-top:1000
+                `}
               />
 
             </SectionHeader>
