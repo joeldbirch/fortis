@@ -59,14 +59,14 @@ const Layout = ({
           }
 
           html {
-            font-size: 15px;
+            font-size: 0.9375rem;
           }
-          @media screen and (min-width: 550px) {
+          @media (min-width: 1400px) {
             html {
-              font-size: calc(15px + 4 * ((100vw - 550px) / 680));
+              font-size: calc(15px + 4 * ((100vw - 1400px) / 680));
             }
           }
-          @media screen and (min-width: 2560px) {
+          @media (min-width: 2560px) {
             html {
               font-size: 22px;
             }
