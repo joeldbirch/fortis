@@ -49,24 +49,14 @@ const Layout = ({
       {...props}
     >
       <Helmet>
-        <style>
-          {`
+        <style>{`
           html,
           body,
           [id="___gatsby"],
-          [id="___gatsby"]>[role="group"] {
+          [id="gatsby-focus-wrapper"] {
             height: 100%;
           }
-
-          @media (min-width: 960px) {
-            html {
-              font-size: calc(16px + 4 * ((100vw - 960px) / 680));
-            }
-          }
-
-        `}
-
-        </style>
+        `}</style>
         <body className={`
           ${
             // Safari just can't handle the truth about scroll snapping
