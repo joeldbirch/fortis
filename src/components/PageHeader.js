@@ -9,6 +9,8 @@ const PageHeader = ({isMain=false, headingText=``, headingTag=`h2`}) => {
     <HeadingTag
       className={`
         ${uiFontSize}
+        position:relative
+        z-index:400
       `}
       dangerouslySetInnerHTML={{
         __html: headingText
