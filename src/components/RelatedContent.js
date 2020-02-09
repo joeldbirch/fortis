@@ -45,6 +45,7 @@ const RelatedContent = ({
           `}
         >
           <Flickity
+            className={'position:static'}
             options={{
               arrowShape: path,
               // initialIndex: 1,
