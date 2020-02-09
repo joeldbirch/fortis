@@ -60,7 +60,7 @@ const Layout = ({
 
           @media (min-width: 960px) {
             html {
-              font-size: calc(15px + 4 * ((100vw - 960px) / 680));
+              font-size: calc(16px + 4 * ((100vw - 960px) / 680));
             }
           }
 
