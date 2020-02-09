@@ -92,7 +92,7 @@ const Layout = ({
         id="SiteHeader"
         className={`
           backdrop-filter:blur-100
-          ${headerReversed ? `` : `background-color:white-90`}
+          ${headerReversed ? `` : `background-color:white-95`}
         `}
       >
         <Link
