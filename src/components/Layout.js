@@ -104,7 +104,8 @@ const Layout = ({
       <TheHeader
         id="SiteHeader"
         className={`
-          ${headerReversed ? `` : `background-color:neutral-0`}
+          backdrop-filter:blur-100
+          ${headerReversed ? `` : `background-color:white-90`}
         `}
       >
         <Link

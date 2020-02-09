@@ -23,25 +23,26 @@ $jb-colors: hu-append((
   ),
   black: (
     10: rgba(0, 0, 0, 0.1),
-    20: rgba(0, 0, 0, 0.2),
-    40: rgba(0, 0, 0, 0.4),
-    60: rgba(0, 0, 0, 0.6),
+  //   20: rgba(0, 0, 0, 0.2),
+  //   40: rgba(0, 0, 0, 0.4),
+  //   60: rgba(0, 0, 0, 0.6),
     80: rgba(0, 0, 0, 0.8),
   ),
-  // white: (
+  white: (
   //   20: rgba(255, 255, 255, 0.2),
   //   40: rgba(255, 255, 255, 0.4),
   //   70: rgba(255, 255, 255, 0.7),
-  // ),
+    90: rgba(255, 255, 255, 0.9),
+  ),
   // beige: (
   //   100: #f5f2ed,
   // ),
   // beige-overlay: (
   //   50: rgba(249, 243, 240, 0.9),
   // ),
-  green: (
-    400: #3f5455, // fortis green
-  ),
+  // green: (
+  //   400: #3f5455, // fortis green
+  // ),
 ), $hu-colors-keywords);
 
 $hu-colors: $jb-colors;
