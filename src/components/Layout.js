@@ -38,12 +38,6 @@ const Layout = ({
     if (typeof window !== `undefined`) fixOutline()
   }, [])
 
-  const setScrollType = (strict) => {
-    return strict
-      ? `scroll-snap-type:y-proximity  @mq-desk--scroll-snap-type:y-mandatory`
-      : `scroll-snap-type:y-proximity`
-  }
-
   const headerStyles = {
     reversed: {
       transition: `background-color 0.5s 0s, backdrop-filter 0.5s 0s`,
@@ -66,7 +60,6 @@ const Layout = ({
           height:100vh-fixed
           overflow-y:scroll
           scroll-behavior:smooth
-          ${setScrollType(scrollStrict)}
       `}
       {...props}
     >

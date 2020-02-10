@@ -35,6 +35,8 @@ const Post = ({ pageContext }) => {
 
   return (
     <Layout
+      className={`
+      `}
       AddToHeader={<PageHeader headingTag="p" headingText={siteSectionTitle} />}
     >
       <SEO title={`${title} | News & views`} />

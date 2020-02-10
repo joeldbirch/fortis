@@ -29,6 +29,7 @@ module.exports = (imports) => {
 
       return (
         <Layout
+          className={"scroll-snap-type:y-proximity"}
           AddToHeader={<h1 className="
             @mq-lap--font-size:500
             @mq-tiny--font-size:400
