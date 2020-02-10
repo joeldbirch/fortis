@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Helmet from 'react-helmet'
 import { uiFontSize } from 'styles/helpers'
 
 const styles = {
   hitarea: `
+    position:relative
+    &:before--hit-area-y-100
     display:flex
     align-items:center
     padding-vertical:100
@@ -23,7 +25,6 @@ const styles = {
 
 const FilterForm = ({
   items,
-  reset = ()=>{},
   update = ()=>{},
   className=``,
 }) => {
@@ -34,20 +35,6 @@ const FilterForm = ({
   }
 
   const shownTags = [defaultTag, ...items.filter(tag => tag.count > 0)]
-
-  const [currentFilters, setFilter] = useState([])
-
-  const itemToggled = (id) => {
-    const newFilters = currentFilters.includes(id)
-      ? currentFilters.filter(filterId => filterId !== id)
-      : [...currentFilters, id]
-
-    setFilter(newFilters)
-    update(newFilters)
-  }
-
-  // reset on page load
-  useEffect(() => setFilter([]), [])
 
   return (
     <form
@@ -74,6 +61,7 @@ const FilterForm = ({
           display:flex
           align-items:center
           flex-wrap:wrap
+          @mq-palm--margin-left:-200
         `}
       >
         {
@@ -85,7 +73,7 @@ const FilterForm = ({
               key={item.id}
               name={item.name}
               id={item.id}
-              toggleHandler={itemToggled}
+              toggleHandler={() => update(item.id === `all` ? [] : [item.id])}
             />
         ))}
 

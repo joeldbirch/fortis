@@ -63,7 +63,6 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
                   padding-top:1000
                 `}
               />
-
             </SectionHeader>
           </>
         }
@@ -118,6 +117,7 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
             width:100
             margin-top:-1000
             z-index:-1
+            ${shownPosts.length ? `opacity:0` : ``}
           `}
         >
           <p
