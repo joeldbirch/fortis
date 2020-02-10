@@ -84,6 +84,11 @@ const Layout = ({
         className={`
           ${headerReversed ? `` : `background-color:white-95 backdrop-filter:blur-100`}
         `}
+        style={{
+          transition: !headerReversed
+            ? `background-color 2s 1s, backdrop-filter 2s 1s`
+            : `background-color 0.5s 0s, backdrop-filter 0.5s 0s` ,
+        }}
       >
         <Link
           to="/"
