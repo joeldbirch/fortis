@@ -1,6 +1,6 @@
-import { isIphone } from 'utilities/helpers'
+import { isIos } from 'utilities/helpers'
 
-if (isIphone()) {
+if (isIos()) {
   document.addEventListener('DOMContentLoaded', function () {
       // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
     const vh = window.innerHeight * 0.01

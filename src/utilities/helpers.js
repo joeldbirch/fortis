@@ -12,11 +12,12 @@ export const isSafari = () =>
   typeof window !== `undefined` &&
   /.*Version.*Safari.*/.test(navigator.userAgent)
 
-export const isIos = () =>
-  typeof window !== `undefined` &&
-  /iphone|ipod|ipad/.test(navigator.userAgent.toLowerCase())
+export const isIos = (style = document.documentElement.style) => {
+  return ('WebkitAppearance' in style && 'webkitOverflowScrolling' in style)
+}
 
-  export const isIphone = () =>
+
+export const isIphone = () =>
   typeof window !== `undefined` &&
   /iphone|ipod/.test(navigator.userAgent.toLowerCase())
 
