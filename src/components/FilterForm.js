@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Helmet from 'react-helmet'
 import { uiFontSize } from 'styles/helpers'
 
 const styles = {
@@ -11,9 +12,8 @@ const styles = {
     line-height:rem
     &:hover--text-decoration:underline
   `,
-  // TODO: use SVG for reset icon
   icon: `
-    margin-right:100
+    visually-hidden
   `,
   text: `
     vertical-align:top
@@ -28,7 +28,12 @@ const FilterForm = ({
   className=``,
 }) => {
 
-  const shownTags = items.filter(tag => tag.count > 0)
+  const defaultTag = {
+    name: `All`,
+    id: `all`,
+  }
+
+  const shownTags = [defaultTag, ...items.filter(tag => tag.count > 0)]
 
   const [currentFilters, setFilter] = useState([])
 
@@ -57,18 +62,13 @@ const FilterForm = ({
         userSelect: `none`
       }}
     >
-      <h2
-        className={`
-          display:flex
-          align-items:flex-start
-          padding-vertical:100
-          padding-horizontal:200
-          font-weight:400
-          font-size:em
-          margin-left:-200
-          ${styles.text}
-        `}
-      >Filters:</h2>
+      <Helmet>
+        <style>{`
+          [type="radio"]:checked + span {
+            text-decoration: underline;
+          }
+        `}</style>
+      </Helmet>
       <ul
         className={`
           display:flex
@@ -105,8 +105,11 @@ const FilterItem = ({id, name, toggleHandler = ()=>{}, ...props}) => (
   >
     <label className={styles.hitarea} >
       <input
-        type="checkbox"
-        className={styles.icon}
+        type="radio"
+        defaultChecked={id===`all`}
+        className={`
+          ${styles.icon}
+        `}
         name="filters"
         onChange={() => toggleHandler(id)}
       />
