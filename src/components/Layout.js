@@ -38,7 +38,7 @@ const Layout = ({
   useLayoutEffect(() => {
     if (typeof window !== `undefined`) {
       fixOutline()
-      fps(document.querySelector(`.the-wrap`))
+      if (!isIos) fps(document.querySelector(`.the-wrap`))
     }
   }, [])
 
@@ -77,11 +77,6 @@ const Layout = ({
           }
         `}</style>
         <body className={`
-          ${
-            isSafari() && !isIos()
-            ? `is-safari`
-            : ``
-          }
         `}
         />
         <html className={`
