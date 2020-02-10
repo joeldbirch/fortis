@@ -10,10 +10,12 @@ const PostEntry = ({
   headerClasses=``,
   note=null,
   children,
+  ariaLabelledby=null,
 }) => {
 
   return (
     <article
+      aria-labelledby={ariaLabelledby}
       className={`
         ${className}
         position:relative

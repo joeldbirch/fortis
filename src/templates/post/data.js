@@ -29,6 +29,7 @@ const PostTemplateFragment = `
 const NewsPreviewFragment = `
   fragment NewsPreviewFragment on WPGraphQL_Post {
     id
+    postId
     title
     uri
     date

@@ -9,6 +9,7 @@ const ProjectEntry = ({
     featuredImage,
     note,
     id,
+    projectId,
     title,
     projectDetails: {
       detailsTable: {
@@ -27,7 +28,7 @@ const ProjectEntry = ({
 
   return (
     <article
-      aria-labelledby={`project-preview-${id}`}
+      aria-labelledby={`project-preview-${projectId}`}
       className={`
         ${className}
       `}
@@ -79,7 +80,7 @@ const ProjectEntry = ({
                   font-weight:400
                   font-size:400
                 `}
-                id={`project-preview-${id}`}
+                id={`project-preview-${projectId}`}
               >
                 <Link
                   className={`

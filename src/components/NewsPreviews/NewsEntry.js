@@ -13,6 +13,7 @@ const NewsEntry = ({
     uri,
     categories,
     id,
+    postId,
     title,
     ...post
   },
@@ -23,6 +24,7 @@ const NewsEntry = ({
 
   return (
     <PostEntry
+      ariaLabelledby={`preview-${postId}`}
       headerClasses={`
         display:flex
         flex-direction:column-reverse
@@ -69,10 +71,9 @@ const NewsEntry = ({
           font-weight:400
           font-size:400
         `}
-        id={`preview-${id}`}
+        id={`preview-${postId}`}
       >
         <Link
-          aria-labelledby={`preview-${id}`}
           className={`
             color:inherit
             text-decoration:none
