@@ -40,7 +40,7 @@ const Layout = ({
   const setScrollType = (strict) => {
     if (isSafari() && !isIos()) return ``
     return strict
-      ? `scroll-snap-type:y-mandatory`
+      ? `scroll-snap-type:y-proximity  @mq-desk--scroll-snap-type:y-mandatory`
       : `scroll-snap-type:y-proximity`
 }
 

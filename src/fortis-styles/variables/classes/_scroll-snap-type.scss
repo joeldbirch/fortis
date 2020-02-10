@@ -1,10 +1,10 @@
 $hu-scroll-snap-type-alias: "";
 
-$hu-scroll-snap-type-modules: (base);
+$hu-scroll-snap-type-modules: (base, responsive);
 
 $hu-scroll-snap-type-types: (
-  x-mandatory: unquote("x mandatory"),
+  // x-mandatory: unquote("x mandatory"),
   y-mandatory: unquote("y mandatory"),
-  x-proximity: unquote("x proximity"),
+  // x-proximity: unquote("x proximity"),
   y-proximity: unquote("y proximity"),
 );
