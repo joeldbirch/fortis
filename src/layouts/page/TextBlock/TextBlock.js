@@ -21,9 +21,6 @@ const TextBlock = ({text, style={}, nextSection=null, id=null, ...props}) => {
         display:flex
         scroll-snap-align:start
       `}
-      style={{
-        transition: 'min-height .25s .1s'
-      }}
     >
       <div
         className={`

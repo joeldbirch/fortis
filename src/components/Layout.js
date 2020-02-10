@@ -15,7 +15,7 @@ import Menu from './Menu'
 import Main from './TheMain'
 import TheHeader from './TheHeader'
 import TheFooter from './TheFooter'
-import { isIos, isSafari } from 'utilities/helpers'
+import { isSafari, isIos } from 'utilities/helpers'
 import { uiFontSize, getInvertedStyles } from 'styles/helpers'
 import fixOutline from 'fix-outline'
 
@@ -33,11 +33,16 @@ const Layout = ({
   const [menuOpen, toggleMenu] = useState(false)
   const [headerReversed] = useHeaderIntersection()
 
-  useLayoutEffect(function(){
-
+  useLayoutEffect(() => {
     if (typeof window !== `undefined`) fixOutline()
-
   }, [])
+
+  const setScrollType = (strict) => {
+    if (isSafari() && !isIos()) return ``
+    return strict
+      ? `scroll-snap-type:y-mandatory`
+      : `scroll-snap-type:y-proximity`
+}
 
   return (
     <TheWrap
@@ -45,6 +50,10 @@ const Layout = ({
       className={`
         👉 the-wrap
         ${className}
+          height:100vh-fixed
+          overflow-y:scroll
+          scroll-behavior:smooth
+          ${setScrollType(scrollStrict)}
       `}
       {...props}
     >
@@ -58,30 +67,12 @@ const Layout = ({
           }
         `}</style>
         <body className={`
-          ${
-            // Safari just can't handle the truth about scroll snapping
-            // in combination with its error-prone nav hiding and vh units
-            isIos() || isSafari()
-            ? `
-                is-safari
-                scroll-behavior:smooth
-              `
-            : `
-                overflow-y:scroll
-                ${scrollStrict
-                  ? `scroll-snap-type:y-mandatory`
-                  : `scroll-snap-type:y-proximity`
-                }
-              `
-          }
-          min-height:100vh
           grid-guide
         `}
         />
         <html className={`
           @mq-lap--font-size:400
           @mq-bigdesk--font-size:fluid-bigdesk
-          min-height:100vh
         `} lang="en" />
 
         <meta name="robots" content="noindex" />

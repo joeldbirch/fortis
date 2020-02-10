@@ -47,7 +47,8 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
           <h2
             className={`
               ${uiFontSize}
-              margin-left:columns-3
+              @mq-max-palm--text-align:center
+              @mq-palm--margin-left:columns-3
               color:neutral-900
             `}
           >

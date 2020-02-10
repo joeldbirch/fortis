@@ -16,7 +16,6 @@ export const isIos = (style = document.documentElement.style) => {
   return ('WebkitAppearance' in style && 'webkitOverflowScrolling' in style)
 }
 
-
 export const isIphone = () =>
   typeof window !== `undefined` &&
   /iphone|ipod/.test(navigator.userAgent.toLowerCase())
