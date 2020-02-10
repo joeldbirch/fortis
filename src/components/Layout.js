@@ -18,6 +18,7 @@ import TheFooter from './TheFooter'
 import { isSafari, isIos } from 'utilities/helpers'
 import { uiFontSize, getInvertedStyles } from 'styles/helpers'
 import fixOutline from 'fix-outline'
+import fps from 'vendor/60fps-scroll-element'
 
 import 'styles/index.scss'
 
@@ -35,7 +36,10 @@ const Layout = ({
   const [headerReversed] = useHeaderIntersection()
 
   useLayoutEffect(() => {
-    if (typeof window !== `undefined`) fixOutline()
+    if (typeof window !== `undefined`) {
+      fixOutline()
+      fps(document.querySelector(`.the-wrap`))
+    }
   }, [])
 
   const headerStyles = {

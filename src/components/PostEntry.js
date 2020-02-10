@@ -37,8 +37,6 @@ const PostEntry = ({
           className={`
             ${imageClasses}
             group:hover__opacity:80
-            transition-property:opacity
-            transition-duration:400
           `}
           sizes={sizes}
         />
