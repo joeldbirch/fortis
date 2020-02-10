@@ -31,7 +31,7 @@ const Page = ({ pageContext }) => {
 
   return (
     <Layout
-      scrollStrict={isFrontPage || uri === '/projects'}
+      scrollStrict={isFrontPage}
       AddToHeader={
         isFrontPage
         ? <h1 className="visually-hidden">{site.siteMetadata.title}</h1>
