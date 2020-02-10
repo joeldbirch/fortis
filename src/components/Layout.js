@@ -67,7 +67,6 @@ const Layout = ({
           }
         `}</style>
         <body className={`
-          grid-guide
         `}
         />
         <html className={`
