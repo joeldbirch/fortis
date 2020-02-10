@@ -22,6 +22,7 @@ const ProjectEntry = ({
   },
   showNote,
   className=``,
+  imageClasses=``,
 }) => {
 
   return (
@@ -48,7 +49,8 @@ const ProjectEntry = ({
           image={featuredImage}
           artDirection="imageFileHero"
           className={`
-            @mq-palm--height:100
+            ${imageClasses}
+            @mq-palm--height:var-1
             js-contrast
             js-contrast--reverse
           `}

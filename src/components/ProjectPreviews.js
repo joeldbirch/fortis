@@ -72,15 +72,20 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
 
       <div
         style={{
-          '--min-height': `calc(56.25vw + 4.5rem)`,
-          '--min-height-var-2': `calc(56.25vw + 6rem)`,
+
+          '--project-header': `6rem`,
+          '--project-filter-text': `1.3rem`,
+          '--project-filter-padding': `var(--site-column) * 1.5`,
+          '--height-var-1': `calc(var(--vh) * 100 - var(--project-filter-padding) - var(--project-header) - var(--project-filter-text))`,
+
+          '--min-height': `calc(56.25vw + 7.3rem)`,
+          '--min-height-var-2': `calc(var(--vh) * 100 - var(--project-filter-padding) - var(--project-filter-text))`,
         }}
         className={`
           position:relative
           overflow:hidden
           min-height:var-1
           @mq-palm--min-height:var-2
-          background-color:neutral-100
         `}
       >
         {posts && posts.map((post, index) => (
@@ -88,7 +93,7 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
             key={post.id}
             post={post}
             className={`
-              ${index !== 0 ? `scroll-snap-align:start` : ``}
+              ${index > 0 ? `@mq-palm--scroll-snap-align:start` : ``}
               scroll-margin-top:-px
               overflow:hidden
               transition-duration:700
@@ -97,9 +102,6 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
                   ? `max-height:4000px opacity:1`
                   : `max-height:0 opacity:0`
               }
-            `}
-            imageClasses={`
-              @mq-palm--flex-grow:1
             `}
           />
         ))}
@@ -114,7 +116,8 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
             transition-duration:1000
             text-align:center
             width:100
-            ${shownPosts.length ? `opacity:0` : ``}
+            margin-top:-1000
+            z-index:-1
           `}
         >
           <p
@@ -122,7 +125,7 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
             `}
             aria-hidden={shownPosts.length ? true : null}
           >
-            No projects fit all your chosen filters.
+            No projects fit your chosen filter.
           </p>
         </div>
 

@@ -9,6 +9,7 @@ $hu-height-types: (
   100vh: 100vh,
   100vh-fixed: calc(var(--vh, 1vh) * 100),
   100vh-fixed-less-top: calc(var(--vh, 1vh) * 100 - var(--site-top)),
+  var-1: var(--height-var-1),
   auto: auto,
   "9/16vw": 56.25vw,
 );
