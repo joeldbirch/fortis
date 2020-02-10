@@ -21,6 +21,7 @@ import fixOutline from 'fix-outline'
 
 import 'styles/index.scss'
 
+
 const Layout = ({
   children,
   headerClassName = ``,
@@ -42,7 +43,20 @@ const Layout = ({
     return strict
       ? `scroll-snap-type:y-proximity  @mq-desk--scroll-snap-type:y-mandatory`
       : `scroll-snap-type:y-proximity`
-}
+  }
+
+  const headerStyles = {
+    reversed: {
+      transition: `background-color 0.5s 0s, backdrop-filter 0.5s 0s`,
+      backgroundColor: `rgba(255, 255, 255, 0)`,
+      backdropFilter: `blur(0) saturate(1)`,
+    },
+    notReversed: {
+      transition: `background-color 2s 1s, backdrop-filter 1s 3s`,
+      backgroundColor: `rgba(255, 255, 255, .95)`,
+      backdropFilter: `blur(2px) saturate(2)`,
+    },
+  }
 
   return (
     <TheWrap
@@ -80,14 +94,7 @@ const Layout = ({
 
       <TheHeader
         id="SiteHeader"
-        className={`
-          ${headerReversed ? `` : `background-color:white-95 backdrop-filter:blur-100`}
-        `}
-        style={{
-          transition: !headerReversed
-            ? `background-color 2s 1s, backdrop-filter 2s 1s`
-            : `background-color 0.5s 0s, backdrop-filter 0.5s 0s` ,
-        }}
+        style={headerStyles[headerReversed ? `reversed` : `notReversed`]}
       >
         <Link
           to="/"
