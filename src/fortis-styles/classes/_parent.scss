@@ -1,3 +1,3 @@
-@include hu-parent-classes(filter, (is-safari), $hu-filter-modules, $hu-filter-types);
-@include hu-parent-classes(display, (is-home), $hu-display-modules, $hu-display-types);
-@include hu-parent-classes(visibility, (is-home), $hu-visibility-modules, $hu-visibility-types);
+@include hu-parent-classes(scroll-snap-type, (is-safari), $hu-scroll-snap-type-modules, $hu-scroll-snap-type-types);
+// @include hu-parent-classes(display, (is-home), $hu-display-modules, $hu-display-types);
+// @include hu-parent-classes(visibility, (is-home), $hu-visibility-modules, $hu-visibility-types);
