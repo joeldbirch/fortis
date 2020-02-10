@@ -31,6 +31,7 @@ const NewsEntry = ({
         @mq-palm--padding-bottom:0
         @mq-max-palm--max-width:columns-8
         @mq-max-palm--padding-right:400
+        scroll-snap-align:start
       `}
       note={
         [2,4].includes(layoutOrder)
