@@ -54,6 +54,10 @@ const FilterForm = ({
           [type="radio"]:checked + span {
             text-decoration: underline;
           }
+          .kb-nav-used label:focus-within {
+            background-color: #f1f1f1;
+            color: #111;
+          }
         `}</style>
       </Helmet>
       <ul
