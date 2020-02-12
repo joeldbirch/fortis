@@ -31,7 +31,7 @@ const Page = ({ pageContext }) => {
 
   return (
     <Layout
-      className={isFrontPage ? "scroll-snap-type:y-proximity  @mq-desk--scroll-snap-type:y-mandatory" : ""}
+      className={isFrontPage ? "scroll-snap-type:y-mandatory" : ""}
       AddToHeader={
         isFrontPage
         ? <h1 className="visually-hidden">{site.siteMetadata.title}</h1>
