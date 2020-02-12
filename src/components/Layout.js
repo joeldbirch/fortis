@@ -69,6 +69,7 @@ const Layout = ({
       {...props}
     >
       <Helmet>
+        <link rel="stylesheet" href="https://use.typekit.net/hwx4ktl.css"/>
         <style>{`
           html,
           body,

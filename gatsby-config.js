@@ -54,14 +54,14 @@ module.exports = {
     //       productionOnly: true,
     //   },
     // },
-    {
-      resolve: `gatsby-plugin-web-font-loader`,
-      options: {
-        typekit: {
-          id: `hwx4ktl`,
-        },
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-web-font-loader`,
+    //   options: {
+    //     typekit: {
+    //       id: `hwx4ktl`,
+    //     },
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-polyfill-io`,
       options: {
