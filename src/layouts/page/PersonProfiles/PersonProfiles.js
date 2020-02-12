@@ -40,16 +40,17 @@ const ProfileEntry = ({
         @mq-desk--padding-horizontal:columns-1-1/2
         padding-vertical:400
         @mq-palm--padding-vertical:columns-0-1/2
-        grid-gap:columns-0-1/2
-        @mq-widepalm--grid-gap:columns-1
+        grid-gap:400
+        @mq-palm--grid-gap:columns-0-1/2
+        @mq-lap--grid-gap:columns-1
         display:grid
         @mq-palm--grid-template-columns:var-1
-        @mq-widepalm--grid-template-columns:var-2
+        @mq-lap--grid-template-columns:var-2
         @mq-desk--grid-template-columns:var-3
       `}
       style={{
-        '--grid-template-columns-var-1': `5.5fr 6fr`,
-        '--grid-template-columns-var-2': `6fr 5fr`,
+        '--grid-template-columns-var-1': `6fr 6fr`,
+        '--grid-template-columns-var-2': `5fr 6fr`,
         '--grid-template-columns-var-3': `4fr 5fr`,
       }}
     >
