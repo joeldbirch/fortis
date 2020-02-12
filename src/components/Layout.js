@@ -38,7 +38,7 @@ const Layout = ({
   useLayoutEffect(() => {
     if (typeof window !== `undefined`) {
       fixOutline()
-      if (!isIos) fps(document.querySelector(`.the-wrap`))
+      if (!isIos() && !isSafari()) fps(document.querySelector(`.the-wrap`))
       if (isIos()) document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`)
     }
   }, [])
