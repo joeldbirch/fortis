@@ -85,7 +85,7 @@ const Layout = ({
           }
         `}</style>
         <body className={`
-          ${isSafari() ? `is-safari` : ``}
+          ${isSafari() || isIos() ? `is-safari` : ``}
         `}
         />
         <html className={`
