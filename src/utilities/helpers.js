@@ -12,7 +12,9 @@ export const isSafari = () =>
   typeof window !== `undefined` &&
   /.*Version.*Safari.*/.test(navigator.userAgent)
 
-export const isIos = (style = document.documentElement.style) => {
+export const isIos = () => {
+  if (typeof document === `undefined`) return false
+  const style = document.documentElement.style
   return ('WebkitAppearance' in style && 'webkitOverflowScrolling' in style)
 }
 
