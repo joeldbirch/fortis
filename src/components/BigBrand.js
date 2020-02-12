@@ -71,7 +71,7 @@ const BigBrand = ({htmlText=null, className=``, textClasses=``, headingTag=`h2`,
         alt="Fortis"
         width="764"
         height="202"
-        loading="lazy"
+        loading="eager"
       />
     </div>
   )
