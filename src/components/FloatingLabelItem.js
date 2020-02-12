@@ -21,11 +21,11 @@ const styles = {
   input: `
     👉 c-floating-field__input
     &:focus:placeholder--opacity:0
-    &:placeholder--color:inherit
-    &:placeholder--mix-blend-mode:multiply
-    &:placeholder--opacity:60
-    &:placeholder--transition-duration:200
-    &:placeholder--transition-property:opacity
+    &::placeholder--color:inherit
+    &::placeholder--mix-blend-mode:multiply
+    &::placeholder--opacity:60
+    &::placeholder--transition-duration:200
+    &::placeholder--transition-property:opacity
     box-sizing:border-box
     display:block
     padding-horizontal:350
@@ -34,7 +34,7 @@ const styles = {
   `,
   label: `
   👉 c-floating-field__label
-  &:before--arrow-left
+  &::before--arrow-left
   margin-left:0
   translate-Y:-50
   opacity:0

@@ -53,7 +53,7 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
             `}
           >
             <OptionalLink to={to} className={`
-              &:before--hit-area-xy-100
+              &::before--hit-area-xy-100
               color:neutral-0
               ${to
                 ? `

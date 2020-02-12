@@ -78,8 +78,8 @@ const NewsEntry = ({
           className={`
             color:inherit
             text-decoration:none
-            &:before:content
-            &:before--hit-area-xy-0
+            &::before:content
+            &::before--hit-area-xy-0
           `}
           to={`${blogURI}/${uri}/`}
         >

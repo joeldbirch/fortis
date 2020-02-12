@@ -145,10 +145,10 @@ export const highlight = `
 `
 
 export const shader = `
-  &:before--background-image:black-20-down
-  &:before--pointer-events:none
-  &:before--hit-area-xy-0
-  &:before--z-index:300
+  &::before--background-image:black-20-down
+  &::before--pointer-events:none
+  &::before--hit-area-xy-0
+  &::before--z-index:300
 `
 
 export const invertedStyles = {

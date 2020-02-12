@@ -5,7 +5,7 @@ import { uiFontSize } from 'styles/helpers'
 const styles = {
   hitarea: `
     position:relative
-    &:before--hit-area-y-100
+    &::before--hit-area-y-100
     display:flex
     align-items:center
     padding-vertical:100

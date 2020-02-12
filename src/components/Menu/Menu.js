@@ -30,7 +30,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
             padding:0
             position:absolute
             ${uiFontSize}
-            &:before--hit-area-xy-100
+            &::before--hit-area-xy-100
             &:hover--text-decoration:underline
             z-index:300
             margin-right:columns-0-1/2

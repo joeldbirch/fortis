@@ -105,7 +105,7 @@ const Layout = ({
           className={`
             color:inherit
             &:hover--text-decoration:underline
-            &:before--hit-area-xy-100
+            &::before--hit-area-xy-100
             position:relative
             pointer-events:auto
             ${uiFontSize}

@@ -85,8 +85,8 @@ const ProjectEntry = ({
                 <Link
                   className={`
                     color:inherit
-                    &:before:content
-                    &:before--hit-area-xy-0
+                    &::before:content
+                    &::before--hit-area-xy-0
                   `}
                   to={`${projectsURI}/${uri}/`}
                 >

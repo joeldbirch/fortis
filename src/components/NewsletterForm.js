@@ -49,7 +49,7 @@ export default ({ prependId="field", ...props }) => (
           padding-top:800
           padding-bottom:100
           font-size:400
-          &:placeholder--font-size:200
+          &::placeholder--font-size:200
           @mq-lap:placeholder--font-size:300
           border-bottom-style:solid
           border-bottom-width:100
