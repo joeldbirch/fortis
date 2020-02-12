@@ -13,6 +13,7 @@ const styles = {
     cursor:pointer
     line-height:rem
     &:hover--text-decoration:underline
+    &:hover--color:neutral-900
   `,
   icon: `
     visually-hidden
