@@ -17,6 +17,7 @@ const ScrollPrompt = ({className=``, ...props}) => {
       `}
       {...props}
     >
+      <span className="visually-hidden">Scroll to next section</span>
       <ArrowRounded
         className={`
           height:150r
