@@ -80,12 +80,11 @@ const Layout = ({
 
         <style>{`
           ${`/*fix gatsby bug*/`}
-          .is-safari .gatsby-image-wrapper img {
+          .gatsby-image-wrapper img {
             transition: opacity 1s !important;
           }
         `}</style>
         <body className={`
-          ${isSafari() || isIos() ? `is-safari` : ``}
         `}
         />
         <html className={`
