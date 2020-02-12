@@ -68,7 +68,6 @@ const LargeTextThreeImages = ({
                 margin-top:800
                 @mq-palm--margin-top:columns-1
                 @mq-palm--display:flex
-                @mq-palm--margin-right:-columns-6
                 @mq-desk--margin-right:-columns-2
                 @mq-desk--margin-left:columns-1
                 @mq-palm--margin-right:-columns-1
@@ -97,11 +96,10 @@ const LargeTextThreeImages = ({
                   ? ``
                   : <figcaption
                       className={`
-                        @mq-palm--max-width:var
                         @mq-palm--padding-left:800
+                        @mq-palm--margin-right:400
                         flex-basis:40
                       `}
-                      style={{'--max-width' : 'calc(90vw - 12em)'}}
                     >
                       <span
                         className={`
@@ -110,7 +108,6 @@ const LargeTextThreeImages = ({
                           @mq-max-palm--text-align:center
                           padding-vertical:columns-0-1/2
                           rhythm-fix-after
-                          @mq-palm--max-width:caption
                         `}
                       >{benNote}</span>
                     </figcaption>
