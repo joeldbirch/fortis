@@ -1,15 +1,9 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery hook
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
 import React, { useState, useLayoutEffect } from 'react'
 import PropTypes from 'prop-types'
 import useHeaderIntersection from 'hooks/use-header-intersection'
 import { Link } from 'gatsby'
 import Helmet from 'react-helmet'
+import loadcss from 'loadcss'
 import TheWrap from './TheWrap'
 import Menu from './Menu'
 import Main from './TheMain'
@@ -72,6 +66,7 @@ const Layout = ({
         <link rel="preconnect" href="https://polyfill.io"/>
         <link rel="preconnect" href="https://p.typekit.net"/>
         <link rel="preconnect" href="https://use.typekit.net"/>
+        <link rel="preload" href="https://use.typekit.net/hwx4ktl.css" as="style" onLoad="this.onload=null;this.rel='stylesheet'"/>
         <noscript>{`<link rel="stylesheet" href="https://use.typekit.net/hwx4ktl.css"/>`}</noscript>
         <style>{`
           html,
