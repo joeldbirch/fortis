@@ -15,7 +15,7 @@ import Menu from './Menu'
 import Main from './TheMain'
 import TheHeader from './TheHeader'
 import TheFooter from './TheFooter'
-import { isIos } from 'utilities/helpers'
+import { isIos, isSafari } from 'utilities/helpers'
 import { uiFontSize, getInvertedStyles } from 'styles/helpers'
 import fixOutline from 'fix-outline'
 import fps from 'vendor/60fps-scroll-element'
@@ -77,7 +77,15 @@ const Layout = ({
             height: 100%;
           }
         `}</style>
+
+        <style>{`
+          ${`/*fix gatsby bug*/`}
+          .is-safari .gatsby-image-wrapper img {
+            transition: opacity 1s !important;
+          }
+        `}</style>
         <body className={`
+          ${isSafari() ? `is-safari` : ``}
         `}
         />
         <html className={`
