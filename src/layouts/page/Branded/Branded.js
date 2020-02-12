@@ -9,9 +9,9 @@ const styles = {
   root: `
     height:100vh-fixed
     min-height:50vw
-    display:flex
-    flex-direction:column
-    justify-content:space-between
+    display:grid
+    grid-template-rows:var-1
+    grid-template-columns:1
     padding-horizontal:columns-0-1/2
     padding-top:site-top
     padding-bottom:400
@@ -19,7 +19,6 @@ const styles = {
     scroll-snap-align:start
   `,
   mediaWrap: `
-    flex-grow:1
     margin-horizontal:columns-1
     @mq-palm--margin-horizontal:columns-1-1/2
     @mq-desk--margin-horizontal:columns-2

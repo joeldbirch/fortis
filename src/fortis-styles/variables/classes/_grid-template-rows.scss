@@ -1,0 +1,6 @@
+$hu-grid-template-rows-modules: (base, responsive);
+
+$hu-grid-template-rows-types: (
+  1: 1fr,
+  var-1: var(--grid-template-rows-var-1, 1fr),
+);
