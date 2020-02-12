@@ -69,7 +69,10 @@ const Layout = ({
       {...props}
     >
       <Helmet>
-        <link rel="stylesheet" href="https://use.typekit.net/hwx4ktl.css"/>
+        <link rel="preconnect" href="https://polyfill.io"/>
+        <link rel="preconnect" href="https://p.typekit.net"/>
+        <link rel="preconnect" href="https://use.typekit.net"/>
+        <noscript>{`<link rel="stylesheet" href="https://use.typekit.net/hwx4ktl.css"/>`}</noscript>
         <style>{`
           html,
           body,

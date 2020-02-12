@@ -30,6 +30,7 @@
     "gatsby-transformer-sharp": "^2.3.14",
     "glob": "^7.1.6",
     "hucssley": "github:stowball/hucssley#d622bbb",
+    "loadcss": "^0.0.2",
     "lodash.isempty": "^4.4.0",
     "lodash.uniqby": "^4.7.0",
     "prop-types": "^15.7.2",
