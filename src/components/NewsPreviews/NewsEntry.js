@@ -107,7 +107,7 @@ const NewsEntry = ({
           color:neutral-700
         `}
       >
-        {categories.nodes[0].name}
+        {categories.nodes[0] ? categories.nodes[0].name : ``}
       </h4>
     </PostEntry>
   )
