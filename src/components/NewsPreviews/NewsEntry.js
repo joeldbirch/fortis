@@ -22,7 +22,7 @@ const NewsEntry = ({
   ...props
 }) => {
 
-  const catName = categories?.nodes?.[0].name ? categories.nodes[0].name : `Update`
+  const catName = (categories?.nodes?.[0].name && categories.nodes[0].name !== `Uncategorised`) ? categories.nodes[0].name : `Update`
 
   return (
     <PostEntry

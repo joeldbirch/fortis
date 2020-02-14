@@ -25,7 +25,7 @@ const Post = ({ pageContext }) => {
     },
   } = pageContext
 
-  const catName = cats[0] ? cats[0].name : `Update`
+  const catName = (cats[0] && cats[0].name !== `Uncategorised`) ? cats[0].name : `Update`
 
   const {
     newsIntro: {
