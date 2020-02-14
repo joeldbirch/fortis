@@ -25,6 +25,8 @@ const Post = ({ pageContext }) => {
     },
   } = pageContext
 
+  const catName = cats[0] ? cats[0].name : null
+
   const {
     newsIntro: {
       content: {
@@ -115,19 +117,24 @@ const Post = ({ pageContext }) => {
                     <span className={``}>{subheading}</span>
                   </h2>
               }
-              <h3
-                className={`
-                  font-weight:400
-                  font-size:200
-                  text-transform:uppercase
-                  margin-bottom:100
-                  @mq-bigdesk--position:absolute
-                  pos-top:-columns-0-1/4
-                  color:neutral-700
-                `}
-              >
-                {cats[0].name}
-              </h3>
+              {
+                !catName
+                ? ``
+                : <h3
+                    className={`
+                      font-weight:400
+                      font-size:200
+                      text-transform:uppercase
+                      margin-bottom:100
+                      @mq-bigdesk--position:absolute
+                      pos-top:-columns-0-1/4
+                      color:neutral-700
+                    `}
+                  >
+                    {catName}
+                  </h3>
+              }
+
             </div>
             { !note
               ? ``
