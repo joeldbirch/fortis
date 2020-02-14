@@ -97,7 +97,6 @@ ul {
 
 @mixin anchor-base {
   color: inherit;
-  display: inline-block;
   text-decoration: underline;
 
   &:hover {
