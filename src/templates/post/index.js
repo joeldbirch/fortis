@@ -6,7 +6,7 @@ import ScrollPrompt from 'components/ScrollPrompt'
 import PageHeader from 'components/PageHeader'
 import NewsOverview from 'layouts/page/NewsOverview'
 import { useNewsData  } from 'hooks/use-news-data'
-import { cleanWpContent } from 'utilities/helpers'
+import { cleanWpContent, noOrphans } from 'utilities/helpers'
 
 const Post = ({ pageContext }) => {
   const {
@@ -103,9 +103,8 @@ const Post = ({ pageContext }) => {
                   @mq-bigdesk--font-size:550
                 `}
                 id={`preview-${id}`}
-              >
-                {title}
-              </h1>
+                dangerouslySetInnerHTML={{__html: noOrphans(title)}}
+              />
               { !subheading
                 ? ``
                 : <h2

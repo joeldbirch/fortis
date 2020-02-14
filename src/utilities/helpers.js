@@ -142,3 +142,12 @@ export const cleanWpContent = content => {
   const cleaned = content.replace(emptyParas, ``)
   return cleaned
 }
+
+export const noOrphans= text => {
+  const words = text.split(` `)
+  const lastTwo = words.splice(-2)
+  .join(`&nbsp;`)
+  // 19 includes 6 character '&nbsp;' string
+  if (lastTwo.length > 19) return text
+  return [...words, lastTwo].join(` `)
+}

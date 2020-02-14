@@ -3,6 +3,7 @@ import PostEntry from 'components/PostEntry'
 import ArrowDrawnUpLeft from 'components/ArrowDrawnUpLeft'
 import { Link } from 'gatsby'
 import { blogURI } from '../../../globals'
+import { noOrphans } from 'utilities/helpers'
 
 const NewsEntry = ({
   post: {
@@ -85,11 +86,14 @@ const NewsEntry = ({
           `}
           to={`${blogURI}/${uri}/`}
         >
-          <span className={`
-            position:relative
-            text-decoration:underline
-            &:hover--text-decoration:none
-          `}>{title}</span>
+          <span
+            className={`
+              position:relative
+              text-decoration:underline
+              &:hover--text-decoration:none
+            `}
+            dangerouslySetInnerHTML={{__html: noOrphans(title)}}
+          />
         </Link>
       </h2>
       <h3
