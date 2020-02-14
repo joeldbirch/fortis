@@ -46,7 +46,8 @@ const Post = ({ pageContext }) => {
       <div
         className={`
           padding-top:site-top
-          padding-bottom:columns-1-1/2
+          padding-bottom:columns-2-1/2
+          @mq-palm--padding-bottom:columns-1-1/2
           @mq-desk--padding-bottom:columns-1
           position:relative
           padding-horizontal:columns-0-1/2
