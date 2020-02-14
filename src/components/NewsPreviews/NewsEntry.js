@@ -96,6 +96,7 @@ const NewsEntry = ({
         className={`
           font-weight:400
           font-size:300
+          margin-bottom:50
         `}
       >
         {subheading || `Article`}
