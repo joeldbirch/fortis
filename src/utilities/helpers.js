@@ -136,3 +136,9 @@ export const postWithFeaturedImageSizes = (post, sizes) => {
   alteredPost.featuredImage.imageFile.childImageSharp.fluid.sizes = sizes
   return alteredPost
 }
+
+export const cleanWpContent = content => {
+  const emptyParas = /<p>&nbsp;<\/p>/g
+  const cleaned = content.replace(emptyParas, ``)
+  return cleaned
+}

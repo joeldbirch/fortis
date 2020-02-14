@@ -6,7 +6,7 @@ import ScrollPrompt from 'components/ScrollPrompt'
 import PageHeader from 'components/PageHeader'
 import NewsOverview from 'layouts/page/NewsOverview'
 import { useNewsData  } from 'hooks/use-news-data'
-
+import { cleanWpContent } from 'utilities/helpers'
 
 const Post = ({ pageContext }) => {
   const {
@@ -160,7 +160,7 @@ const Post = ({ pageContext }) => {
               s-editable
               rhythm-fix-before
             `}
-            dangerouslySetInnerHTML={{__html: content}}
+            dangerouslySetInnerHTML={{__html: cleanWpContent(content)}}
           />
 
         </div>
