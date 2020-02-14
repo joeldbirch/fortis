@@ -50,6 +50,7 @@ const styles = {
   startColumnEndRow: `
     @mq-desk--justify-self:flex-end
     @mq-palm--max-width:small-column
+    @mq-palm--margin-top:columns-0-1/2
   `,
   endColumnStartRow: `
     @mq-lap--align-items:flex-end
