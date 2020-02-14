@@ -22,6 +22,8 @@ const NewsEntry = ({
   ...props
 }) => {
 
+  const catName = categories[0] ? categories[0].name : `Update`
+
   return (
     <PostEntry
       ariaLabelledby={`preview-${postId}`}
@@ -98,17 +100,19 @@ const NewsEntry = ({
       >
         {subheading || `Article`}
       </h3>
-      <h4
-        className={`
-          font-weight:400
-          font-size:200
-          text-transform:uppercase
-          margin-bottom:100
-          color:neutral-700
-        `}
-      >
-        {categories.nodes[0] ? categories.nodes[0].name : ``}
-      </h4>
+      { catName &&
+        <h4
+          className={`
+            font-weight:400
+            font-size:200
+            text-transform:uppercase
+            margin-bottom:100
+            color:neutral-700
+          `}
+        >
+          {catName}
+        </h4>
+      }
     </PostEntry>
   )
 }
