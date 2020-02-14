@@ -51,7 +51,7 @@ const Branded = ({image, text, video=null, nextSection=null, id=null, ...props})
       >
         {
           video
-            ? <FullWindowVideo vimeoId={video} minHeight="100%" height="56.25vmin" />
+            ? <FullWindowVideo vimeoId={video} minHeight="56.25vmin" />
             : <FluidImage
                 image={image}
                 className={`
