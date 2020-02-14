@@ -12,6 +12,7 @@ const styles = {
     @mq-bigdesk--font-size:550
     @mq-desk--padding-left:800
     @mq-palm--padding-left:400
+    @mq-palm--padding-bottom:400
     @mq-widepalm--padding-left:800
     @mq-palm--text-align:left
     @mq-widepalm--font-size:500
@@ -50,29 +51,32 @@ const BigBrand = ({htmlText=null, className=``, textClasses=``, headingTag=`h2`,
           ${styles.tagline}
           position:relative
           transform:var-1
-          @mq-widepalm--transform:var-2
+          @mq-desk--transform:var-2
           @mq-bigdesk--margin-top:400
           z-index:100
         `}
         style={{
           '--rotate-var-1': '-2deg',
-          '--translate-y-var-2': '15%',
+          '--translate-y-var-2': '10%',
         }}
       >
         {children}
         {htmlText ? <span className={textClasses} dangerouslySetInnerHTML={{__html: htmlText}}/> : ``}
       </HeadingTag>
 
-      <img
-        className={`
-          ${styles.watermark}
-        `}
-        src="/images/logo-fortis-watermark.svg"
-        alt="Fortis"
-        width="764"
-        height="202"
-        loading="eager"
-      />
+      {/* div wrapper needed because Safari won't treat the img as a flex item properly */}
+      <div>
+        <img
+          className={`
+            ${styles.watermark}
+          `}
+          src="/images/logo-fortis-watermark.svg"
+          alt="Fortis"
+          width="764"
+          height="202"
+          loading="eager"
+        />
+      </div>
     </div>
   )
 }
