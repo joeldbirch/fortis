@@ -54,6 +54,20 @@ const ProfileEntry = ({
         '--grid-template-columns-var-3': `4fr 5fr`,
       }}
     >
+      <FluidImage
+        image={image}
+        className={`
+          grid-column:1
+          @mq-palm--grid-row:1
+        `}
+        sizes={`
+          (max-width: ${mq.toPalm}) ${cols(5)}vw,
+          (min-width: ${mq.bigdesk}) ${cols(4)}vw,
+          (min-width: ${mq.desk}) ${cols(5)}vw,
+          (min-width: ${mq.widepalm}) ${cols(6)}vw,
+          (min-width: ${mq.palm}) ${cols(5.5)}vw
+        `}
+      />
 
       <div
         className={`
@@ -105,22 +119,6 @@ const ProfileEntry = ({
           `}
         />
       </div>
-
-
-      <FluidImage
-          image={image}
-          className={`
-            grid-column:1
-            @mq-palm--grid-row:1
-          `}
-          sizes={`
-            (max-width: ${mq.toPalm}) ${cols(5)}vw,
-            (min-width: ${mq.bigdesk}) ${cols(4)}vw,
-            (min-width: ${mq.desk}) ${cols(5)}vw,
-            (min-width: ${mq.widepalm}) ${cols(6)}vw,
-            (min-width: ${mq.palm}) ${cols(5.5)}vw
-          `}
-        />
 
     </div>
 
