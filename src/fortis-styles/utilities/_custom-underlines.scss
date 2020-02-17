@@ -1,0 +1,33 @@
+/* change color */
+:root {
+  --bg-color: white;
+}
+
+.hover-underline {
+  text-decoration: none;
+  color: inherit;
+  // gradient from currentColor to transparent causes a 1px line that is lighter in colour than the inherited text color
+
+  background-repeat: no-repeat;
+  background-position: 0 97%;
+  // NOTE: apparently using calc in background-position crashes IE9
+  background-position: 0 calc(100% - 2px);
+  background-size: 100% 0.0625em;
+  // text-shadow:
+  //   -1px 1px 0 var(--bg-color, white),
+  //   1px 1px 0 var(--bg-color, white),
+  //   -2px 1px 0 var(--bg-color, white),
+  //   2px 1px 0 var(--bg-color, white);
+
+  &:focus,
+  &:hover {
+    color: black;
+    background-image: linear-gradient(currentColor, currentColor);
+  }
+
+  ::selection {
+    text-shadow: none;
+    background: black;
+    color: var(--bg-color, white);
+  }
+}

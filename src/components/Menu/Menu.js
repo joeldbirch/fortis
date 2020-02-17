@@ -31,7 +31,6 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
             position:absolute
             ${uiFontSize}
             &::before--hit-area-xy-100
-            &:hover--text-decoration:underline
             z-index:300
             margin-right:columns-0-1/2
             margin-top:columns-0-1/2
@@ -51,6 +50,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
               height:100
               pos-top-left:0
               position:absolute
+              hover-underline
               ${isOpen ? `opacity:0 scale:80` : ``}
             `}
             style={getInvertedStyles(headerReversed)}
@@ -112,8 +112,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
                   className={`
                   `}
                   linkClasses={`
-                    text-decoration:none
-                    &:hover--text-decoration:underline
+                    hover-underline
                     color:neutral-900
                     display:inline-block
                   `}
