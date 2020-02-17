@@ -14,6 +14,9 @@ $column-spacing: column-space(0.25, "0-1/4");
 $hu-spacing-scale: (
   auto: auto,
   0: 0,
+  px: 1px,
+  -px: -1px,
+  vw: 1vw,
   50: hu-rem(2),
   100: hu-rem(4),
   150: hu-rem(6),

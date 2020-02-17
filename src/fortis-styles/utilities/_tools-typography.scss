@@ -90,7 +90,7 @@
 
 @mixin circle {
   display: inline-block;
-  font-weight: normal !important;
+  font-weight: inherit !important;
   position: relative;
 
   &::before {
