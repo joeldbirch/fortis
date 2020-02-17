@@ -39,7 +39,7 @@ const FullWindowVideo = ({vimeoId, className=``, windowHeight=false, minHeight=n
         }}
         frameBorder="0"
         height="1920"
-        src={`https://player.vimeo.com/video/${vimeoId}?background=1&playsinline=1&autoplay=1&loop=1&autopause=0&muted=1`}
+        src={`https://player.vimeo.com/video/${vimeoId}?background=1&playsinline=1&autoplay=0&loop=1&autopause=0&muted=1`}
         title="heroVideo"
         width="1080"
         loading="lazy"
