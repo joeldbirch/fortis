@@ -9,6 +9,7 @@ const Pagination = ({ pageNumber, hasNextPage }) => {
     <div
       className={`
         text-align:center
+        margin-vertical:columns-0-1/2
       `}
     >
       <h2 className={`visually-hidden`}>News navigation</h2>
@@ -42,14 +43,14 @@ const Pagination = ({ pageNumber, hasNextPage }) => {
         }
       </div>
 
-      {
+      {/* {
         (hasNextPage || pageNumber > 1)
         ? <p aria-current="page" className="page-numbers current margin-top:400 color:neutral-400">
             <span className="meta-nav visually-hidden">Page </span>
             {pageNumber}
           </p>
         : ``
-      }
+      } */}
 
     </div>
   )
