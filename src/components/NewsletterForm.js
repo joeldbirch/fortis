@@ -8,6 +8,7 @@ const styles = {
     @mq-palm--margin-right:250p
     @mq-desk--margin-right:0
     @mq-lap--padding-right:400
+    padding-right:columns-0-1/2
   `,
 }
 
@@ -31,8 +32,11 @@ export default ({ prependId="field", ...props }) => (
         align-items:flex-end
         @mq-lap--margin-right:columns-0-1/2
         max-width:small-column
+        @mq-max-lap--margin-top:-px
       `}
-      style={{'--grid-template-columns-var-3': '1fr auto'}}
+      style={{
+        '--grid-template-columns-var-3': `1fr auto`,
+      }}
     >
       <input
         required={true}
@@ -47,6 +51,7 @@ export default ({ prependId="field", ...props }) => (
         className={`
           padding-left:0
           padding-top:800
+          @mq-max-lap--padding-top:600
           padding-bottom:100
           font-size:400
           &::placeholder--font-size:200
@@ -64,6 +69,7 @@ export default ({ prependId="field", ...props }) => (
           @mq-max-palm--padding-left:400
           padding-right:0
           padding-top:800
+          @mq-max-lap--padding-top:600
           padding-bottom:100
           border-bottom-style:solid
           border-bottom-width:100
