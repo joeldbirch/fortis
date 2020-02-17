@@ -26,7 +26,7 @@ const Layout = ({
 }) => {
 
   const [menuOpen, toggleMenu] = useState(false)
-  const [headerReversed] = useHeaderIntersection()
+  const [headerState] = useHeaderIntersection()
 
   useLayoutEffect(() => {
     if (typeof window !== `undefined`) {
@@ -38,14 +38,8 @@ const Layout = ({
 
   const headerStyles = {
     reversed: {
-      transition: `background-color 0.5s 0s, backdrop-filter 0.5s 0s`,
+      transition: `background-color 0.5s 0s`,
       backgroundColor: `rgba(255, 255, 255, 0)`,
-      backdropFilter: `blur(0) saturate(1)`,
-    },
-    notReversed: {
-      transition: `background-color 2s 1s, backdrop-filter 1s 3s`,
-      backgroundColor: `rgba(255, 255, 255, .95)`,
-      backdropFilter: `blur(2px) saturate(2)`,
     },
   }
 
@@ -97,7 +91,10 @@ const Layout = ({
 
       <TheHeader
         id="SiteHeader"
-        style={headerStyles[headerReversed ? `reversed` : `notReversed`]}
+        style={headerState.reversed ? headerStyles.reversed : {
+          transition: headerState.applyBg ? `background-color 2s 1s` : `background-color 0s 0s` ,
+          backgroundColor: headerState.applyBg ? `rgba(255, 255, 255, 1)`: `rgba(255, 255, 255, 0)`,
+        }}
       >
         <Link
           to="/"
@@ -109,7 +106,7 @@ const Layout = ({
             pointer-events:auto
             ${uiFontSize}
           `}
-          style={getInvertedStyles(headerReversed)}
+          style={getInvertedStyles(headerState.reversed)}
         >
           Fortis
         </Link>
@@ -126,13 +123,13 @@ const Layout = ({
                 pos-left:50
                 translate-x:-50
               `}
-              style={getInvertedStyles(headerReversed)}
+              style={getInvertedStyles(headerState.reversed)}
             >
               {AddToHeader}
             </div>
           )
         }
-        <Menu headerReversed={headerReversed} toggleHandler={toggleMenu} isOpen={menuOpen} className="pointer-events:auto" />
+        <Menu headerReversed={headerState.reversed} toggleHandler={toggleMenu} isOpen={menuOpen} className="pointer-events:auto" />
       </TheHeader>
 
       <Main

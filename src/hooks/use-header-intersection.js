@@ -2,7 +2,10 @@ import { useState, useEffect } from 'react'
 
 const useHeaderIntersection = function() {
 
-  const [headerReversed, setHeaderReversed] = useState(false)
+  const [headerState, setHeaderState] = useState({
+    reversed: false,
+    applyBg: false,
+  })
 
   const init = function() {
     // must use classes instead of data because can't pass data props to gatsby-image
@@ -18,7 +21,11 @@ const useHeaderIntersection = function() {
         const { target } = entry
         if (entry.isIntersecting) {
           const shouldReverse = target.classList.contains(`js-contrast--reverse`)
-          setHeaderReversed(shouldReverse)
+          setHeaderState({
+            reversed: shouldReverse,
+            applyBg: !target.classList.contains(`js-no-header-bg`) && shouldReverse !== true
+          })
+
         }
       })
     }, intersectionConfig)
@@ -28,9 +35,7 @@ const useHeaderIntersection = function() {
 
   useEffect(init, [])
 
-  return [
-    headerReversed,
-  ]
+  return [headerState]
 
 }
 

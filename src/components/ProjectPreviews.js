@@ -38,6 +38,9 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
         className={`
           position:relative
           js-contrast
+          js-no-header-bg
+          scroll-snap-align:start
+          scroll-margin-top:-px
         `}
       >
         { !tags
@@ -48,7 +51,6 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
             <SectionHeader
               absolute={false}
               className={`
-                scroll-snap-align:start
                 @mq-max-palm--text-align:center
               `}>
 
@@ -58,9 +60,8 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
                 reset={filterReset}
                 className={`
                   position:relative
-                  z-index:400
                   @mq-desk--padding-top:columns-0-1/2
-                  padding-top:1000
+                  padding-top:800
                 `}
               />
             </SectionHeader>
