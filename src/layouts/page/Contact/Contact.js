@@ -35,6 +35,8 @@ const Contact = () => {
         position:relative
         scroll-snap-align:start
         z-index:100
+        max-width:container
+        margin-horizontal:auto
       `}
     >
 

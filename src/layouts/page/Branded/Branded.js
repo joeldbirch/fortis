@@ -7,7 +7,7 @@ import ArrowDrawnUpLeft from 'components/ArrowDrawnUpLeft'
 const styles = {
   root: `
     height:100vh-fixed
-    min-height:50vw
+    min-height:23r
     display:grid
     grid-template-rows:var-1
     grid-template-columns:1
@@ -16,6 +16,9 @@ const styles = {
     padding-bottom:400
     position:relative
     scroll-snap-align:start
+    width:100
+    max-width:container
+    margin-horizontal:auto
   `,
   mediaWrap: `
     margin-horizontal:columns-1

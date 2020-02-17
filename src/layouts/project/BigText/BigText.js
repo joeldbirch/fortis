@@ -10,6 +10,8 @@ const styles = {
     @mq-desk--padding-top:200
     position:relative
     width:100
+    max-width:container
+    margin-horizontal:auto
   `,
 }
 

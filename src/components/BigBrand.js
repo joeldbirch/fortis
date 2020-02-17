@@ -25,7 +25,7 @@ const styles = {
     padding-bottom:100
     padding-top:400
     width:small-column
-    margin-horizontal:auto
+    @mq-max-palm--margin-horizontal:auto
   `,
   watermark: `
     @mq-desk--width:columns-7

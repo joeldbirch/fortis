@@ -41,7 +41,6 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
           style={{
             width: `2.6em`,
             height: `1.3em`,
-            textDecorationThickness: `1px`,
           }}
         >
           <span
@@ -62,6 +61,30 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
               `}
             >Menu</span>
           </span>
+        </button>
+
+        <button
+          aria-haspopup
+          aria-expanded={isOpen}
+          className={`
+            menu-toggler
+            color:inherit
+            padding:0
+            position:fixed
+            ${uiFontSize}
+            &::before--hit-area-xy-100
+            z-index:300
+            margin-right:columns-0-1/2
+            margin-top:columns-0-1/2
+            pos-top-right:0
+            user-select:none
+          `}
+          onClick={() => toggleHandler(!isOpen)}
+          style={{
+            width: `2.6em`,
+            height: `1.3em`,
+          }}
+        >
           <CloseAnimation
             closed={isOpen}
             wrapStyles={appleFade}

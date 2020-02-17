@@ -36,13 +36,6 @@ const Layout = ({
     }
   }, [])
 
-  const headerStyles = {
-    reversed: {
-      transition: `background-color 0.5s 0s`,
-      backgroundColor: `rgba(255, 255, 255, 0)`,
-    },
-  }
-
   return (
     <TheWrap
       id="TheWrap"
@@ -53,8 +46,6 @@ const Layout = ({
         overflow-y:scroll
         scroll-behavior:smooth
         letter-spacing:-10
-        max-width:container
-        margin-horizontal:auto
       `}
       {...props}
     >
@@ -84,7 +75,8 @@ const Layout = ({
         />
         <html className={`
           @mq-lap--font-size:400
-          @mq-bigdesk--font-size:500
+          @mq-bigdesk--font-size:fluid
+          @mq-wall--font-size:500
         `} lang="en" />
 
         <meta name="robots" content="noindex" />
@@ -93,10 +85,7 @@ const Layout = ({
 
       <TheHeader
         id="SiteHeader"
-        style={headerState.reversed ? headerStyles.reversed : {
-          transition: headerState.applyBg ? `background-color 2s 1s` : `background-color 0s 0s` ,
-          backgroundColor: headerState.applyBg ? `rgba(255, 255, 255, 1)`: `rgba(255, 255, 255, 0)`,
-        }}
+        headerState={headerState}
       >
         <Link
           to="/"
@@ -136,7 +125,7 @@ const Layout = ({
 
       <Main
         style={{
-          '--guides-max-width': '100rem',
+          '--guides-max-width': '87.5rem',
           '--guide-color': 'hsla(350, 100%, 48%, 0.1)',
           '--position': 'absolute'
         }}

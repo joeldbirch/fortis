@@ -7,6 +7,8 @@ import useGlobalContent from 'hooks/use-global-content'
 const styles = {
   root: `
     padding-horizontal:columns-0-1/2
+    max-width:container
+    margin-horizontal:auto
   `,
 }
 

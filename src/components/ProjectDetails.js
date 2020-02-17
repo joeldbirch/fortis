@@ -29,6 +29,8 @@ const ProjectDetails = ({
         padding-top:site-top
         position:relative
         scroll-snap-align:start
+        max-width:container
+        margin-horizontal:auto
       `}
       id={id}
     >

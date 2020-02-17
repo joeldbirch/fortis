@@ -38,9 +38,12 @@ const NewsOverview = ({introText=null, showHeading=true, nextSection=null, id=nu
       className={`
         position:relative
         scroll-snap-align:start
+        max-width:container
+        margin-horizontal:auto
+        js-free-scroll
       `}
     >
-      <Divider />
+      <Divider noMargin={true} />
       <div
         className={`
           padding-horizontal:columns-0-1/2

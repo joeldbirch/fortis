@@ -2,15 +2,15 @@
 :root {
   --guide-color: rgba(0, 153, 255, 0.2);
   --site-column: #{$site-column};
-  --site-top: calc(var(--site-column) * 1.5 + 2rem);
-  --site-max-width: #{hu-get($hu-max-width-types, container)};
+  --site-top: calc(var(--site-column) + 1.3rem);
+  --site-max-width: ;
   --grid-template-columns-var1: 1fr 1fr;
   --rhythm-offset: -0.25em; // see rhythm-fix mixin in _tools-typography.scss
   --bg-image: '';
   --vh: 1vh; // Fallback units
 
-  @media (min-width: #{hu-get($hu-media-queries, bigdesk)}) {
-    --site-column: 7.692rem;
+  @media (min-width: #{$site-max-width}) {
+    --site-column: #{strip-unit($site-max-width / ($site-layout-columns + $site-padding-columns) / 16)}rem;
   }
 }
 /* purgecss end ignore */

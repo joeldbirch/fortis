@@ -19,6 +19,9 @@ const RelatedContent = ({
     <div className={`
       ${className}
       position:relative
+      max-width:container
+      margin-horizontal:auto
+      width:100
     `}>
       <Divider/>
       <section

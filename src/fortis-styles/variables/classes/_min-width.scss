@@ -2,6 +2,6 @@ $hu-min-width-modules: (base, responsive);
 
 $hu-min-width-types: hu-append($hu-min-width-types,
   (
-    container: hu-rem(1600),
+    container: hu-rem(strip-unit($site-max-width)),
   )
 );

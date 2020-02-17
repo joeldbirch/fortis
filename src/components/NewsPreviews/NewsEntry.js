@@ -35,6 +35,7 @@ const NewsEntry = ({
         scroll-snap-align:start
         @mq-hover-only--opacity:0
         &:hover--opacity:100
+        &:focus-within--opacity:100
         transition-property:opacity
         transition-duration:400
       `}

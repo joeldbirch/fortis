@@ -18,6 +18,8 @@ const Diagram = ({diagram, text, heading}) => {
         padding-top:800
         @mq-palm--padding-top:columns-0-1/2
         position:relative
+        max-width:container
+        margin-horizontal:auto
       `}
     >
       <div className={`

@@ -18,6 +18,8 @@ const styles = {
     padding-top:800
     position:relative
     width:100
+    max-width:container
+    margin-horizontal:auto
   `,
 }
 
