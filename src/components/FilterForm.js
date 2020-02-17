@@ -43,10 +43,9 @@ const FilterForm = ({
     <form
       className={`
         ${className}
+        ${uiFontSize}
         color:neutral-700
         display:inline-flex
-        font-size:300
-        line-height:rem
       `}
       style={{
         userSelect: `none`

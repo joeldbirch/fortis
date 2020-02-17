@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import FluidImage from './FluidImage'
 import { projectsURI } from '../../globals'
+import { uiFontSize } from 'styles/helpers'
 
 const ProjectEntry = ({
   post: {
@@ -72,13 +73,14 @@ const ProjectEntry = ({
               @mq-palm--grid-template-columns:var-2
               @mq-lap--grid-template-columns:var-3
               width:100
+              ${uiFontSize}
             `}
           >
             <div>
               <h2
                 className={`
                   font-weight:400
-                  font-size:400
+                  ${uiFontSize}
                 `}
                 id={`project-preview-${projectId}`}
               >

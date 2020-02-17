@@ -133,7 +133,7 @@ export const appleBezier = `cubic-bezier(0.645, 0.045, 0.355, 1)`
 export const appleFade = {transition: `opacity 0.4s, transform 0.4s, filter 0.2s`}
 
 export const uiFontSize = `
-  @mq-lap--font-size:500
+  @mq-desk--font-size:500
   @mq-tiny--font-size:400
   font-size:300
   font-weight:400
