@@ -3,6 +3,7 @@ import ProjectEntry from 'components/ProjectEntry'
 import Divider from 'components/DividerHorizontal'
 import SectionHeader from 'components/SectionHeader'
 import ProjectsFilter from 'components/FilterForm'
+import { uiFontSize } from 'styles/helpers'
 
 const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
 
@@ -73,7 +74,7 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
       <div
         style={{
 
-          '--project-header': `6rem`,
+          '--project-header': `6em`,
           '--project-filter-text': `1.3rem`,
           '--project-filter-padding': `var(--site-column) * 1.5`,
           '--height-var-1': `calc(var(--vh) * 100 - var(--project-filter-padding) - var(--project-header) - var(--project-filter-text))`,
@@ -82,6 +83,7 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
           '--min-height-var-2': `calc(var(--vh) * 100 - var(--project-filter-padding) - var(--project-filter-text))`,
         }}
         className={`
+          ${uiFontSize}
           position:relative
           overflow:hidden
           min-height:var-1
