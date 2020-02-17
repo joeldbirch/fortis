@@ -49,10 +49,12 @@ const Layout = ({
       className={`
         👉 the-wrap
         ${className}
-          height:100vh-fixed
-          overflow-y:scroll
-          scroll-behavior:smooth
-          letter-spacing:-10
+        height:100vh-fixed
+        overflow-y:scroll
+        scroll-behavior:smooth
+        letter-spacing:-10
+        max-width:container
+        margin-horizontal:auto
       `}
       {...props}
     >
@@ -82,7 +84,7 @@ const Layout = ({
         />
         <html className={`
           @mq-lap--font-size:400
-          @mq-bigdesk--font-size:fluid-bigdesk
+          @mq-bigdesk--font-size:500
         `} lang="en" />
 
         <meta name="robots" content="noindex" />

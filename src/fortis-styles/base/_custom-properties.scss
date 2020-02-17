@@ -8,5 +8,9 @@
   --rhythm-offset: -0.25em; // see rhythm-fix mixin in _tools-typography.scss
   --bg-image: '';
   --vh: 1vh; // Fallback units
+
+  @media (min-width: #{hu-get($hu-media-queries, bigdesk)}) {
+    --site-column: 7.692rem;
+  }
 }
 /* purgecss end ignore */

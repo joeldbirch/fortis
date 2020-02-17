@@ -10,7 +10,6 @@ export default ({className=``, absolute=`true`, children}) => {
           : `position:relative`
         }
         padding-vertical:columns-0-1/2
-        force-full-width
         pos-top:0
       `}
     >

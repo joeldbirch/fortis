@@ -10,12 +10,12 @@ const TheHeader = ({children, className=``, ...props}) => {
         justify-content:space-between
         padding:columns-0-1/2
         padding-bottom:0
-        pos-left:0
         pos-top:0
         position:fixed
         width:100
         z-index:400
         pointer-events:none
+        max-width:container
       `}
       {...props}
     >
