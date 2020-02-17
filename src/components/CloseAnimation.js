@@ -16,8 +16,6 @@ const styles = {
 
 const inlineStyles = {
   wrap: {
-    height: `1em`,
-    width: `1em`,
   },
   lines: {
     height: `100%`,
@@ -43,39 +41,16 @@ const ClosedAnimation = ({closed=true, wrapStyles={}}) => {
       )}
     >
       <span className="visually-hidden">Close</span>
-      <span
-        className={`
-          close-left
-          ${styles.lines}
-        `}
-
-        style={Object.assign(
-          {},
-          inlineStyles.lines,
-          {
-            left: `-1px`,
-            transformOrigin: `0 100%`,
-          },
-          closed ? {transform: `rotate(45deg) scaleY(1.414)`} : {}
-        )}
-      ></span>
-      <span
-
-        className={`
-          close-right
-          ${styles.lines}
-        `}
-
-        style={Object.assign(
-          {},
-          inlineStyles.lines,
-          {
-            right: `-1px`,
-            transformOrigin: `100% 100%`,
-          },
-          closed ? {transform: `rotate(-45deg) scaleY(1.414)`} : {}
-        )}
-      ></span>
+      <svg width="24px" height="24px" viewBox="0 0 24 24">
+        <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd" strokeLinecap="square">
+            <g stroke="currentColor" strokeWidth="1.5">
+                <g transform="translate(1.000000, 1.000000)">
+                    <path d="M0.458333333,0.458333333 L21.5416667,21.5416667" />
+                    <path d="M21.5416667,0.458333333 L0.458333333,21.5416667" />
+                </g>
+            </g>
+        </g>
+      </svg>
     </span>
   )
 }
