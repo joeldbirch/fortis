@@ -28,7 +28,6 @@ const PostEntry = ({
           display:flex
           flex-direction:column
           position:relative
-          group
         `}
       >
         <FluidImage
@@ -36,7 +35,6 @@ const PostEntry = ({
           artDirection={artDirection}
           className={`
             ${imageClasses}
-            group:hover__opacity:80
           `}
           sizes={sizes}
         />

@@ -35,7 +35,7 @@ const News = ({ pageContext }) => {
       >
         <NewsPreviews
           posts={nodes}
-          intro={<LargeText>{introContent}</LargeText>}
+          intro={<LargeText className="@mq-max-palm--margin-bottom:1000">{introContent}</LargeText>}
           className={`
             padding-top:site-top
           `}

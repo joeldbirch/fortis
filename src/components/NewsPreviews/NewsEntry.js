@@ -33,6 +33,10 @@ const NewsEntry = ({
         flex-direction:column-reverse
         @mq-palm--padding-bottom:0
         scroll-snap-align:start
+        @mq-hover-only--opacity:0
+        &:hover--opacity:100
+        transition-property:opacity
+        transition-duration:400
       `}
       note={
         [2,4].includes(layoutOrder)
@@ -88,8 +92,6 @@ const NewsEntry = ({
           <span
             className={`
               position:relative
-              text-decoration:underline
-              &:hover--text-decoration:none
             `}
             dangerouslySetInnerHTML={{__html: noOrphans(title)}}
           />
@@ -98,8 +100,9 @@ const NewsEntry = ({
       <h3
         className={`
           font-weight:400
-          font-size:300
-          margin-bottom:50
+          font-size:400
+          text-decoration:underline
+          &:hover--text-decoration:none
         `}
       >
         {subheading || `Article`}

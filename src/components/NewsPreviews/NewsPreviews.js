@@ -47,7 +47,6 @@ const NewsPreview = ({posts, intro, pagination}) => {
             post={posts[0]}
             layoutOrder={0}
             className={`
-              margin-top:1000
               @mq-palm--margin-top:columns-1
               @mq-palm--padding-right:columns-2
             `}

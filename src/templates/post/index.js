@@ -112,6 +112,7 @@ const Post = ({ pageContext }) => {
                       font-weight:400
                       font-size:300
                       @mq-desk--font-size:400
+                      text-decoration:underline
                     `}
                   >
                     <span className={``}>{subheading}</span>
