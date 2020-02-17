@@ -62,7 +62,7 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
                 className={`
                   position:relative
                   @mq-desk--padding-top:columns-0-1/2
-                  padding-top:800
+                  padding-top:600
                 `}
               />
             </SectionHeader>
@@ -73,7 +73,6 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
 
       <div
         style={{
-
           '--project-header': `6em`,
           '--project-filter-text': `1.3rem`,
           '--project-filter-padding': `var(--site-column) * 1.5`,

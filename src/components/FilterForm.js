@@ -82,7 +82,7 @@ const FilterForm = ({
 
       </ul>
       {/* this is to match header heights because reasons */}
-      <span className={`${uiFontSize}`}>&#160;</span>
+      {/* <span className={`${uiFontSize}`}>&#160;</span> */}
     </form>
   )
 }
@@ -90,6 +90,7 @@ const FilterForm = ({
 const FilterItem = ({id, name, toggleHandler = ()=>{}, ...props}) => (
   <li
     className={`
+      rhythm-fix-before
     `}
     key={id}
     {...props}
