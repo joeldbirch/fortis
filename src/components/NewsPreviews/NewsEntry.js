@@ -32,7 +32,6 @@ const NewsEntry = ({
         display:flex
         flex-direction:column-reverse
         @mq-palm--padding-bottom:0
-        scroll-snap-align:start
         @mq-hover-only--opacity:0
         &:hover--opacity:100
         &:focus-within--opacity:100

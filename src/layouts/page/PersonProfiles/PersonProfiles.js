@@ -11,6 +11,8 @@ const PersonProfiles = ({profiles=[]}) => {
       className={`
         padding-bottom:400
         @mq-palm--padding-bottom:columns-0-1/2
+        max-width:container
+        margin-horizontal:auto
       `}
     >
       { profiles.map((profile, index) => <ProfileEntry profile={profile} key={`profile-${index}`} />) }

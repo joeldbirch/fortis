@@ -11,6 +11,8 @@ const FullWidthContent = ({className=``, freeText, image, ...props}) => {
         @mq-desk--padding-horizontal:columns-1-1/2
         padding-top:site-top
         scroll-snap-align:start
+        max-width:container
+        margin-horizontal:auto
       `}
     >
       <div
