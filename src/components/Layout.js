@@ -103,7 +103,7 @@ const Layout = ({
           to="/"
           className={`
             color:inherit
-            &:hover--text-decoration:underline
+            hover-underline
             &::before--hit-area-xy-100
             position:relative
             pointer-events:auto

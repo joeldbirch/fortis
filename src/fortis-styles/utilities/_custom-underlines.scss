@@ -1,9 +1,9 @@
 /* change color */
-:root {
-  --bg-color: white;
-}
+// :root {
+//   --bg-color: white;
+// }
 
-.hover-underline {
+@mixin custom-underline-base {
   text-decoration: none;
   color: inherit;
   // gradient from currentColor to transparent causes a 1px line that is lighter in colour than the inherited text color
@@ -18,16 +18,33 @@
   //   1px 1px 0 var(--bg-color, white),
   //   -2px 1px 0 var(--bg-color, white),
   //   2px 1px 0 var(--bg-color, white);
+}
 
+@mixin custom-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+
+  &:focus,
+  &:hover {
+    background-image: none;
+  }
+}
+
+
+.custom-underline,
+.hover-underline,
+[type="radio"]:checked + span {
+  @include custom-underline-base;
+}
+
+.custom-underline,
+[type="radio"]:checked + span {
+  @include custom-underline;
+}
+
+.hover-underline {
   &:focus,
   &:hover {
     color: black;
     background-image: linear-gradient(currentColor, currentColor);
-  }
-
-  ::selection {
-    text-shadow: none;
-    background: black;
-    color: var(--bg-color, white);
   }
 }

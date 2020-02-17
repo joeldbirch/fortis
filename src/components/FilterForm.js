@@ -11,15 +11,17 @@ const styles = {
     padding-vertical:100
     padding-horizontal:200
     cursor:pointer
-    line-height:rem
-    &:hover--text-decoration:underline
     &:hover--color:neutral-900
-  `,
+    group
+    `,
   icon: `
     visually-hidden
   `,
   text: `
     vertical-align:top
+    hover-underline
+    display:block
+    group:hover__background-image:solid
   `
 }
 
@@ -52,9 +54,6 @@ const FilterForm = ({
     >
       <Helmet>
         <style>{`
-          [type="radio"]:checked + span {
-            text-decoration: underline;
-          }
           .kb-nav-used label:focus-within {
             background-color: #f1f1f1;
             color: #111;

@@ -1,7 +1,14 @@
 $hu-background-color-modules: (
-  base,
+  core: (
+    base,
+    hover,
+  ),
+  pseudos: (
+    "::before",
+  )
+  // base,
   // visited,
-  hover,
+  // hover,
   // active,
   // group-hover,
   // group-state,

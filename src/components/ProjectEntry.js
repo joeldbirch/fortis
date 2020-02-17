@@ -92,8 +92,7 @@ const ProjectEntry = ({
                 >
                   <span className={`
                     position:relative
-                    text-decoration:underline
-                    &:hover--text-decoration:none
+                    custom-underline
                   `}>{title}</span>
                 </Link>
               </h2>
