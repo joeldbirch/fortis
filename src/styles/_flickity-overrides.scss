@@ -24,7 +24,7 @@
 }
 .flickity-button {
   border-radius: 0;
-  padding: 3vw;
+  padding: calc(var(--site-columm, 6vw) /2 );
   background: white;
 
   &:disabled {

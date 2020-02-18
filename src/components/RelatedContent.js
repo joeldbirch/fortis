@@ -33,8 +33,7 @@ const RelatedContent = ({
           className={`
             ${uiFontSize}
             margin-top:600
-            padding-horizontal:columns-0-1/2
-            @mq-desk--padding-horizontal:columns-1-1/2
+            @mq-desk--padding-horizontal:columns-1
           `}
         >
           Similar projects
@@ -43,8 +42,7 @@ const RelatedContent = ({
         <div
           className={`
             padding-vertical:columns-1
-            padding-horizontal:columns-0-1/2
-            @mq-desk--padding-horizontal:columns-1-1/2
+            @mq-desk--padding-horizontal:columns-1
             overflow:hidden
           `}
         >
