@@ -41,10 +41,9 @@ const NewsOverview = ({introText=null, showHeading=true, nextSection=null, id=nu
         max-width:container
         margin-horizontal:auto
         width:100
-        js-free-scroll
       `}
     >
-      <Divider noMargin={true} />
+      <Divider noMargin={true} className={`js-free-scroll`} />
       <div
         className={`
           padding-horizontal:columns-0-1/2

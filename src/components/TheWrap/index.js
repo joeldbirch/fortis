@@ -11,16 +11,17 @@ export default ({className=``, children, ...props }) => {
 
     const observer = new IntersectionObserver(function (entries) {
       entries.forEach(entry => {
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.4) {
+        console.log({
+          y: entry.boundingClientRect.y,
+          root: entry.rootBounds.y,
+        });
+
+        if (entry.boundingClientRect.y < 0) {
           setFreeScroll(true)
         } else {
           setFreeScroll(false)
         }
       })
-    }, {
-      threshold: [0, 0.3, 0.5],
-      rootMargin: `10% 0% 0% 0%`,
-      root: document.querySelector(`.the-wrap`),
     })
 
     sections.forEach(section => observer.observe(section))
