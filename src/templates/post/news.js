@@ -31,6 +31,8 @@ const News = ({ pageContext }) => {
           @mq-palm--padding-bottom:columns-0-1/2
           padding-bottom:800
           width:100
+          max-width:container
+          margin-horizontal:auto
         `}
       >
         <NewsPreviews

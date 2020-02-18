@@ -41,13 +41,13 @@ const NewsOverview = ({introText=null, showHeading=true, nextSection=null, id=nu
         max-width:container
         margin-horizontal:auto
         width:100
+        padding-horizontal:columns-0-1/2
+        @mq-desk--padding-horizontal:columns-1-1/2
       `}
     >
-      <Divider noMargin={true} className={`js-free-scroll`} />
+      <Divider className={`js-free-scroll`} />
       <div
         className={`
-          padding-horizontal:columns-0-1/2
-          @mq-desk--padding-horizontal:columns-1-1/2
           padding-bottom:800
         `}
       >

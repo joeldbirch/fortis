@@ -101,11 +101,10 @@ const NewsEntry = ({
         className={`
           font-weight:400
           font-size:400
-          text-decoration:underline
           &:hover--text-decoration:none
         `}
       >
-        {subheading || `Article`}
+        <span className="custom-underline">{subheading || `Article`}</span>
       </h3>
       { catName &&
         <h4
