@@ -9,6 +9,7 @@ const styles = {
     position:relative
   `,
   tagline: `
+    handwritten
     @mq-bigdesk--font-size:550
     @mq-desk--padding-left:800
     @mq-palm--padding-left:400

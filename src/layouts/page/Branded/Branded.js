@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import FluidImage from 'components/FluidImage'
 import FullWindowVideo from 'components/FullWindowVideo'
 import BigBrand from 'components/BigBrand'
@@ -32,18 +31,6 @@ const styles = {
 const Branded = ({image, text, video=null, nextSection=null, id=null, ...props}) => {
   return (
     <section className={` ${styles.root} `} id={id} >
-      <Helmet>
-        <style>{`
-          .underlined--home::after {
-            right: auto;
-            left: -1rem;
-            width: 5.5em;
-            height: 2px;
-            margin-top: 0;
-            transform: rotate(3deg);
-          }
-        `}</style>
-      </Helmet>
       <div className={` ${styles.mediaWrap} `}
         style={{
           minHeight: '10rem',
@@ -72,8 +59,6 @@ const Branded = ({image, text, video=null, nextSection=null, id=null, ...props})
           display:inline-block
           @mq-max-palm--text-align:left
           @mq-max-palm--margin-top:100
-          underlined
-          underlined--home
         `}
         className={`
           @mq-palm--margin-top:-400

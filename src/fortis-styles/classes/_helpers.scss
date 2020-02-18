@@ -19,6 +19,13 @@
     @include circle;
   }
 
+  u {
+    @include underline;
+    &::after {
+      top: auto;
+    }
+  }
+
   br {
     display: none;
   }
