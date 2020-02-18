@@ -22,23 +22,30 @@
 
 @mixin custom-underline {
   background-image: linear-gradient(currentColor, currentColor);
+}
 
+@mixin custom-underline-hover {
   &:focus,
   &:hover {
     background-image: none;
   }
 }
 
-
 .custom-underline,
+.custom-underline-no-hover,
 .hover-underline,
 [type="radio"]:checked + span {
   @include custom-underline-base;
 }
 
+.custom-underline-no-hover {
+  @include custom-underline;
+}
+
 .custom-underline,
 [type="radio"]:checked + span {
   @include custom-underline;
+  @include custom-underline-hover;
 }
 
 .hover-underline {

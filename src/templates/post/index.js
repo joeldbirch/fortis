@@ -55,6 +55,7 @@ const Post = ({ pageContext }) => {
           scroll-snap-align:start
           max-width:container
           margin-horizontal:auto
+          js-contrast
         `}
       >
         <FluidImage
@@ -99,10 +100,8 @@ const Post = ({ pageContext }) => {
               <h1
                 className={`
                   font-weight:400
-                  font-size:em
+                  font-size:400
                   margin-top:100
-                  @mq-lap--margin-top:0
-                  @mq-bigdesk--font-size:550
                 `}
                 id={`preview-${id}`}
                 dangerouslySetInnerHTML={{__html: noOrphans(title)}}
@@ -112,12 +111,11 @@ const Post = ({ pageContext }) => {
                 : <h2
                     className={`
                       font-weight:400
-                      font-size:300
+                      font-size:400
                       @mq-desk--font-size:400
-                      text-decoration:underline
                     `}
                   >
-                    <span className={``}>{subheading}</span>
+                    <span className={`custom-underline-no-hover`}>{subheading}</span>
                   </h2>
               }
               {
