@@ -40,6 +40,7 @@ const NewsOverview = ({introText=null, showHeading=true, nextSection=null, id=nu
         scroll-snap-align:start
         max-width:container
         margin-horizontal:auto
+        width:100
         js-free-scroll
       `}
     >
