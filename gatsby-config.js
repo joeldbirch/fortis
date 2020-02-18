@@ -46,6 +46,7 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-preload-fonts`,
     // {
     //   resolve: `gatsby-plugin-hubspot`,
     //   options: {
