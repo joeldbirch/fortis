@@ -41,14 +41,12 @@ module.exports = (imports) => {
           <Hero
             image={featuredImage}
             video={projectDetails.detailsTable.mediaDetails.video}
-            className="scroll-snap-align:start"
             nextSection="#project-details"
           />
 
           <ProjectDetails
             title={title}
             {...projectDetails}
-            className="scroll-snap-align:start"
             id="project-details"
           />
 
@@ -66,7 +64,6 @@ module.exports = (imports) => {
 
           <RelatedContent
             {...relatedContent}
-            className="scroll-snap-align:start"
           />
 
         </Layout>

@@ -22,6 +22,7 @@ const RelatedContent = ({
       max-width:container
       margin-horizontal:auto
       width:100
+      padding-horizontal:columns-0-1/2
     `}>
       <Divider/>
       <section

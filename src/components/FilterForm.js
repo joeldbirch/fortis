@@ -91,6 +91,8 @@ const FilterItem = ({id, name, toggleHandler = ()=>{}, ...props}) => (
   <li
     className={`
       rhythm-fix-before
+      margin-right:vw
+      margin-bottom:-200
     `}
     key={id}
     {...props}

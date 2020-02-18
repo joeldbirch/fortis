@@ -61,6 +61,10 @@ const ProjectEntry = ({
         <div className={`
           @mq-palm--padding-horizontal:columns-0-1/2
           background-color:neutral-0
+
+max-width:container
+margin-horizontal:auto
+width:100
         `}>
           <header
             className={`
@@ -73,6 +77,7 @@ const ProjectEntry = ({
               @mq-palm--grid-template-columns:var-2
               @mq-lap--grid-template-columns:var-3
               width:100
+
               ${uiFontSize}
             `}
           >

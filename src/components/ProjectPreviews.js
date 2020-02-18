@@ -61,8 +61,8 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
                 reset={filterReset}
                 className={`
                   position:relative
-                  @mq-desk--padding-top:columns-0-1/2
-                  padding-top:600
+                  @mq-desk--padding-top:1000
+                  padding-top:800
                 `}
               />
             </SectionHeader>
@@ -72,21 +72,10 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
       </div>
 
       <div
-        style={{
-          '--project-header': `6em`,
-          '--project-filter-text': `1.3rem`,
-          '--project-filter-padding': `var(--site-column) * 1.5`,
-          '--height-var-1': `calc(var(--vh) * 100 - var(--project-filter-padding) - var(--project-header) - var(--project-filter-text))`,
-
-          '--min-height': `calc(56.25vw + 7.3rem)`,
-          '--min-height-var-2': `calc(var(--vh) * 100 - var(--project-filter-padding) - var(--project-filter-text))`,
-        }}
         className={`
           ${uiFontSize}
           position:relative
           overflow:hidden
-          min-height:var-1
-          @mq-palm--min-height:var-2
         `}
       >
         {posts && posts.map((post, index) => (
@@ -94,7 +83,6 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
             key={post.id}
             post={post}
             className={`
-              ${index > 0 ? `@mq-palm--scroll-snap-align:start` : ``}
               scroll-margin-top:-px
               overflow:hidden
               transition-duration:700

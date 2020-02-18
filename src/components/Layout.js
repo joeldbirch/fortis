@@ -134,7 +134,6 @@ const Layout = ({
       </Main>
 
       <TheFooter className={`
-        scroll-snap-align:end
       `} />
 
     </TheWrap>
