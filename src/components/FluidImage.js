@@ -26,7 +26,7 @@ const FluidImage = ({ image, withFallback = true, className=``, artDirection=`im
       ? fluid
       : {
         ...fluid,
-        sizes: `${sizes.trim()}, ${fluid.presentationWidth}px`,
+        sizes,
       }
 
     return <GatsbyImage
