@@ -42,7 +42,7 @@ const ProfileEntry = ({
         @mq-desk--padding-horizontal:columns-1-1/2
         padding-vertical:400
         @mq-palm--padding-vertical:columns-0-1/2
-        grid-gap:400
+        grid-gap:500
         @mq-palm--grid-gap:columns-0-1/2
         @mq-lap--grid-gap:columns-1
         display:grid
