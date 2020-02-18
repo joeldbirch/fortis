@@ -10,7 +10,7 @@
   --vh: 1vh; // Fallback units
 
   @media (max-width: #{hu-get($hu-media-queries, palm)}) {
-    --site-top: 3.5rem;
+    --site-top: calc(1rem + 10vw);
   }
   @media (min-width: #{$site-max-width}) {
     --site-column: #{strip-unit($site-max-width / ($site-layout-columns + $site-padding-columns) / 16)}rem;
