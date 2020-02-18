@@ -21,7 +21,6 @@ const Projects = ({ pageContext }) => {
     <Layout
       className={`
         scroll-snap-type:y-proximity
-        @mq-desk--scroll-snap-type:y-mandatory
       `}
       AddToHeader={<PageHeader isMain="true" headingText={siteSectionTitle} />}
     >
