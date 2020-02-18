@@ -11,10 +11,10 @@ export default ({className=``, children, ...props }) => {
 
     const observer = new IntersectionObserver(function (entries) {
       entries.forEach(entry => {
-        console.log({
-          y: entry.boundingClientRect.y,
-          root: entry.rootBounds.y,
-        });
+        // console.log({
+        //   y: entry.boundingClientRect.y,
+        //   root: entry.rootBounds.y,
+        // });
 
         if (entry.boundingClientRect.y < 0) {
           setFreeScroll(true)
