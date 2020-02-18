@@ -22,8 +22,6 @@ const FullWidthContent = ({className=``, freeText, image, ...props}) => {
           rhythm-fix-before
           rhythm-fix-after
           padding-right:columns-1
-          padding-bottom:400
-          @mq-palm--padding-bottom:columns-0-1/2
         `}
       />
 

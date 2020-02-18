@@ -43,6 +43,7 @@ body:nth-child(n) {
   font-family: hu-get($hu-font-family-types, 'default');
   font-size: hu-get($hu-font-size-types, 400);
   line-height: hu-get($hu-line-height-types, 400);
+  letter-spacing: hu-get($hu-letter-spacing-types, -10);
   margin: 0;
   max-width: 40.5rem + $editor-pad * 2;
   padding: $editor-pad !important;

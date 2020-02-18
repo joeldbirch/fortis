@@ -2,13 +2,16 @@
 :root {
   --guide-color: rgba(0, 153, 255, 0.2);
   --site-column: #{$site-column};
-  --site-top: calc(var(--site-column) + 1rem + .3vw);
+  --site-top: calc(var(--site-column) + 1.655rem);
   --site-max-width: #{$site-max-width};
   --grid-template-columns-var1: 1fr 1fr;
   --rhythm-offset: -0.25em; // see rhythm-fix mixin in _tools-typography.scss
   --bg-image: '';
   --vh: 1vh; // Fallback units
 
+  @media (max-width: #{hu-get($hu-media-queries, palm)}) {
+    --site-top: 3.5rem;
+  }
   @media (min-width: #{$site-max-width}) {
     --site-column: #{strip-unit($site-max-width / ($site-layout-columns + $site-padding-columns) / 16)}rem;
   }

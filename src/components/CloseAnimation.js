@@ -41,7 +41,7 @@ const ClosedAnimation = ({closed=true, wrapStyles={}}) => {
       )}
     >
       <span className="visually-hidden">Close</span>
-      <svg width="24px" height="24px" viewBox="0 0 24 24">
+      <svg width="24px" height="24px" viewBox="0 0 24 24" className="size:400">
         <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd" strokeLinecap="square">
             <g stroke="currentColor" strokeWidth="1.5">
                 <g transform="translate(1.000000, 1.000000)">

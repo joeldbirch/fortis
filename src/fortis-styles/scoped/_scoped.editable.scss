@@ -70,7 +70,7 @@ $scoped_container: 's-editable' !default;
     white-space: normal;
     font-family: hu-get($hu-font-family-types, cursive);
     font-weight: 400;
-    letter-spacing: hu-get($hu-letter-spacing-types, 0);
+    letter-spacing: hu-get($hu-letter-spacing-types, 0) !important;
     line-height: hu-get($hu-line-height-types, 200);
     font-size: 1.231em;
     padding-top: hu-get($hu-spacing-scale, 100);
