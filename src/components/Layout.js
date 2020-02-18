@@ -58,6 +58,7 @@ const Layout = ({
           height:100vh-fixed
           overflow-y:scroll
           scroll-behavior:smooth
+          letter-spacing:-10
       `}
       {...props}
     >

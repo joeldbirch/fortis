@@ -15,17 +15,17 @@ const styles = {
     @mq-palm--padding-left:400
     @mq-palm--padding-bottom:400
     @mq-widepalm--padding-left:800
-    @mq-palm--text-align:left
     @mq-widepalm--font-size:500
     font-family:cursive
+    letter-spacing:0
     white-space:pre
     font-size:500
     font-weight:400
     line-height:200
     padding-bottom:100
     padding-top:400
-    text-align:center
     width:small-column
+    margin-horizontal:auto
   `,
   watermark: `
     @mq-desk--width:columns-7
@@ -57,7 +57,6 @@ const BigBrand = ({htmlText=null, className=``, textClasses=``, headingTag=`h2`,
           z-index:100
         `}
         style={{
-          '--rotate-var-1': '-2deg',
           '--translate-y-var-2': '10%',
         }}
       >

@@ -97,6 +97,7 @@ const Contact = () => {
                         @mq-palm--pos-left:100
                         @mq-palm--pos-top:columns-0-1/2
                         font-family:cursive
+                        letter-spacing:0
                         line-height:200
                         font-size:550
                         margin-left:columns-1
@@ -104,7 +105,6 @@ const Contact = () => {
                         pos-left:100
                         pos-top:50
                         position:absolute
-                        rotate:-2
                         width:small-caption
                       `}
                     >

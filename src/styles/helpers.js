@@ -120,6 +120,7 @@ export const handwritten = `
   font-size:400
   font-weight:400
   line-height:200
+  letter-spacing:0
 `
 
 export const centred = `

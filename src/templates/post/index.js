@@ -148,7 +148,6 @@ const Post = ({ pageContext }) => {
                     @mq-max-palm--text-align:center
                     @mq-max-palm--margin-right:columns-0-1/4
                     @mq-palm--max-width:small-column
-                    rotate:-2
                   `}
                 >
                   {note}

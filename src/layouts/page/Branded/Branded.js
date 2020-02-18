@@ -31,6 +31,20 @@ const styles = {
 const Branded = ({image, text, video=null, nextSection=null, id=null, ...props}) => {
   return (
     <section className={` ${styles.root} `} id={id} >
+<<<<<<< HEAD
+=======
+      <Helmet>
+        <style>{`
+          .underlined--home::after {
+            right: auto;
+            left: -1rem;
+            width: 5.5em;
+            height: 2px;
+            margin-top: 0;
+          }
+        `}</style>
+      </Helmet>
+>>>>>>> Handwritten text changes, san-serif reduce letter-spacing.
       <div className={` ${styles.mediaWrap} `}
         style={{
           minHeight: '10rem',

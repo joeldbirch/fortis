@@ -94,6 +94,7 @@ const ProfileEntry = ({
             handwritten
             margin-bottom:400
             @mq-palm--margin-bottom:columns-0-1/2
+            font-size:note
           `}
         />
 

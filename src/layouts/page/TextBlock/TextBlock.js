@@ -2,11 +2,6 @@ import React from 'react'
 import ScrollPrompt from 'components/ScrollPrompt'
 
 const TextBlock = ({text, style={}, nextSection=null, id=null, ...props}) => {
-  const inlineStyles = Object.assign(
-    {},
-    {'--rotate': '-2deg'},
-    style
-  )
   return (
     <section
       id={id}
@@ -34,7 +29,7 @@ const TextBlock = ({text, style={}, nextSection=null, id=null, ...props}) => {
           s-editable
           can-style-note
         `}
-        style={inlineStyles}
+        style={style}
         dangerouslySetInnerHTML={{__html: text}}
       />
       <ScrollPrompt to={nextSection} />

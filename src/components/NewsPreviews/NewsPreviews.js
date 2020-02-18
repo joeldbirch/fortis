@@ -39,7 +39,6 @@ const NewsPreview = ({posts, intro, pagination}) => {
             `}
             style={{
               '--offset-left': '1rem',
-              '--rotate': '-2deg',
             }}
           >
             {intro}

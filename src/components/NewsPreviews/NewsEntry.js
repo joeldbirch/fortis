@@ -32,8 +32,6 @@ const NewsEntry = ({
         display:flex
         flex-direction:column-reverse
         @mq-palm--padding-bottom:0
-        @mq-max-palm--max-width:columns-8
-        @mq-max-palm--padding-right:400
         scroll-snap-align:start
       `}
       note={
@@ -41,6 +39,7 @@ const NewsEntry = ({
         ? <Note
             className={`
               ${noteClasses}
+              @mq-max-palm--display:none
             `}
           >
 
@@ -130,15 +129,12 @@ const Note = ({className=``, children}) => (
       handwritten
       position:absolute
       @mq-max-palm--pos-bottom-right:0
-      @mq-max-palm--rotate:-2
       @mq-max-palm--margin-bottom:1000
       @mq-max-palm--transform:var-1
       @mq-max-palm--max-width:columns-4
       @mq-max-palm--padding-right:400
-      text-align:center
     `}
     style={{
-      '--rotate-var-1': '-2deg',
       '--translate-y-var-1': '50%',
     }}
   >{children}</p>
