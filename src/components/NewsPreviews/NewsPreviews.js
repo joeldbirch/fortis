@@ -60,7 +60,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
               layoutOrder={1}
               className={`
               `}
-              artDirection={`imageFilePortrait`}
+              usePortrait={true}
               imageClasses={`
                 @mq-palm--flex-grow:1
                 @mq-palm--height:0
@@ -138,7 +138,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
                 @mq-palm--padding-top:columns-1
                 @mq-palm--padding-bottom:columns-0-1/2
               `}
-              artDirection={`imageFilePortrait`}
+              usePortrait={true}
               sizes={smallerSizes}
               imageClasses={`
                 flex-grow:1

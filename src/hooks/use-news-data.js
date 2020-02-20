@@ -38,6 +38,19 @@ export const useNewsData = () => {
             }
           }
         }
+        otherImages {
+          portraitImage {
+            sourceUrl
+            altText
+            imageFile {
+              childImageSharp {
+                fluid(maxWidth: 1000, cropFocus: CENTER) {
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
+                }
+              }
+            }
+          }
+        }
       }
       query GET_POSTS {
         wpgraphql {

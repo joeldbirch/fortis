@@ -3,6 +3,8 @@ import FluidImage from './FluidImage'
 
 const PostEntry = ({
   featuredImage,
+  otherImages=null,
+  usePortrait=false,
   artDirection,
   sizes,
   className=``,
@@ -31,7 +33,11 @@ const PostEntry = ({
         `}
       >
         <FluidImage
-          image={featuredImage}
+          image={
+            usePortrait && otherImages?.portraitImage
+            ? otherImages.portraitImage
+            : featuredImage
+          }
           artDirection={artDirection}
           className={`
             ${imageClasses}
