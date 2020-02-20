@@ -10,6 +10,9 @@ module.exports = () => {
         longitude
         latitude
       }
+      nearby {
+        amenity
+      }
       fallbackImage {
         sourceUrl
         altText
