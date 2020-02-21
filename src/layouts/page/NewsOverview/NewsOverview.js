@@ -36,6 +36,7 @@ const NewsOverview = ({introText=null, showHeading=true, nextSection=null, id=nu
     <section
       id={id}
       className={`
+        js-contrast
         position:relative
         scroll-snap-align:start
         max-width:container
