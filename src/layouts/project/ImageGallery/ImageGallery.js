@@ -12,7 +12,7 @@ const ImageGallery = ({imageGallery}) => {
       className={`
         js-contrast-ignore
         position:relative
-        width:100vw
+        width:100
         padding-top:columns-0-1/2
         padding-bottom:columns-1
         margin-bottom:-columns-0-1/2

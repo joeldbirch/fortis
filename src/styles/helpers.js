@@ -60,7 +60,7 @@ export const tintWrap = `
   pos-left:50
   position:relative
   translate-x:-50
-  width:100vw
+  width:100
   `
 
 export const callOutText = `
@@ -110,7 +110,7 @@ export const forceFullWidth = `
   margin-horizontal:-50vw
   pos-left-right:50
   position:relative
-  width:100vw
+  width:100
 `
 
 export const handwritten = `
