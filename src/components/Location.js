@@ -18,6 +18,7 @@ const Location = ({fallbackImage, nearby}) => {
         @mq-palm--grid-template-columns:var-2
         @mq-lap--grid-template-columns:var-3
         @mq-desk--grid-template-columns:var-3
+        @mq-bigdesk--grid-template-columns:var-4
         max-width:container
         margin-horizontal:auto
         padding-horizontal:columns-0-1/2
