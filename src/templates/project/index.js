@@ -7,7 +7,7 @@ module.exports = (imports) => {
     import SEO from '../src/components/SEO'
     import ProjectDetails from '../src/components/ProjectDetails'
     import RelatedContent from '../src/components/RelatedContent'
-    import Hero from '../src/layouts/page/Hero'
+    import Hero from '../src/layouts/project/ProjectHero'
 
     // ProjectBuilder Sections
     ${imports.map(({ componentName, filePath }) => `import ${componentName} from '${filePath}';`).join('\n')}

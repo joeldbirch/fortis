@@ -8,7 +8,7 @@ module.exports = () => {
         caption
         imageFileHero {
           childImageSharp {
-            fluid(maxWidth: 1600, maxHeight: 1120, cropFocus: CENTER) {
+            fluid(maxWidth: 1250, maxHeight: 875, cropFocus: CENTER) {
               ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }

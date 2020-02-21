@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import FluidImage from 'components/FluidImage'
+import GatsbyImage from 'gatsby-image'
 import FullWindowVideo from 'components/FullWindowVideo'
 import ScrollPrompt from 'components/ScrollPrompt'
 import { uiFontSize, forceFullWidth } from 'styles/helpers'
@@ -10,7 +10,20 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
 
   const to = linkTo && linkTo.link ? getPath(linkTo.link) : null
   const OptionalLink = to ? Link : `span`
+  console.log(image);
 
+  const newSrcSet = {
+    srcSet: image.imageFileHero.childImageSharp.fluid.srcSet.split(`,`).splice(0, 4).join(`, `),
+    srcSetWebp: image.imageFileHero.childImageSharp.fluid.srcSetWebp.split(`,`).splice(0, 4).join(`, `),
+  }
+  const fluid = image.imageFileHero.childImageSharp.fluid
+  const newFluid = {
+    ...fluid,
+    ...newSrcSet,
+    sizes: "(max-aspect-ratio: 1/1) and (max-width: 800px) 600px, 100vw",
+  }
+  console.table({newFluid});
+  console.table({fluid});
   return (
     <section
       id={id}
@@ -78,16 +91,15 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
                 min-height:100vh-fixed
               `}
             />
-          : <FluidImage
-              image={image}
-              artDirection={`imageFileHero`}
+          : <GatsbyImage
+              fluid={{
+                ...newFluid,
+                sizes: "(max-aspect-ratio: 1/1) and (max-width: 800px) 600px, 100vw",
+              }}
               className={`
                 height:100vh-fixed
               `}
               // ensure wider image than phone viewport as it crops heavily when portrait
-              sizes={`
-                (max-width: 800px) 800px
-              `}
             />
       }
       { nextSection

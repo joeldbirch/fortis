@@ -19,8 +19,12 @@ module.exports = () => {
         altText
         imageFileHero {
           childImageSharp {
-            fluid(maxWidth: 1600, maxHeight: 900, cropFocus: CENTER) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
+            fluid(
+              maxWidth: 1250,
+              maxHeight: 703,
+              cropFocus: CENTER,
+              srcSetBreakpoints: [ 800, 1250, 1600, 1920 ]) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }
         }
