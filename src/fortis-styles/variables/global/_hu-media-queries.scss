@@ -15,6 +15,11 @@ $hu-media-queries: (
     ),
     min-w: hu-em(768),
   ),
+  hover-none: (
+    other: (
+      hover: none,
+    ),
+  ),
   // grazi: hu-em(2100),
 
   // lap-shallow: (
