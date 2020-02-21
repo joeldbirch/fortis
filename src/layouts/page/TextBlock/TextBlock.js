@@ -11,7 +11,7 @@ const TextBlock = ({text, style={}, nextSection=null, id=null, ...props}) => {
         padding-horizontal:columns-1-1/2
         @mq-desk--padding-horizontal:columns-1-1/2
         width:100
-        padding-vertical:800
+        padding-vertical:columns-2
         position:relative
         min-height:100vh-fixed
         display:flex
