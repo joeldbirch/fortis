@@ -1,9 +1,10 @@
 import React from 'react'
+import { cleanWpContent } from 'utilities/helpers'
 
 export default ({className=``, children=null, ...props}) => {
   return !children ? `` : (
     <div
-      dangerouslySetInnerHTML={{__html: children}}
+      dangerouslySetInnerHTML={{__html: cleanWpContent(children)}}
       className={`
         ${className}
         font-size:500
