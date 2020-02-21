@@ -106,7 +106,7 @@ ul {
 
 a {
   text-decoration: none;
-  text-decoration-thickness: 1px; // editor draft at time of development
+  text-decoration-thickness: 0.0625em; // editor draft at time of development
 
   @supports (text-decoration-skip-ink: auto) {
     text-decoration-skip-ink: none;
