@@ -94,11 +94,12 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
         <div
           className={`
             menu-bg
-            height:100vh
+            height:100
             padding-horizontal:columns-2
             @mq-desk--padding-horizontal:columns-1-1/2
             @mq-bigdesk--padding-horizontal:columns-1
-            padding-top:site-top
+            @mq-max-palm--align-items:center
+            @mq-palm--padding-top:site-top
             pos-right:0
             pos-top:0
             position:fixed
@@ -123,9 +124,8 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
             padding:0
             margin-horizontal:auto
             margin-vertical:0
-            font-size:500
-            @mq-tiny--font-size:550
-            @mq-palm--font-size:600
+            font-size:700
+            @mq-lap--font-size:600
             white-space:no-wrap
             rhythm-fix-before
           `}>
@@ -138,6 +138,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
                     hover-underline
                     color:neutral-900
                     display:inline-block
+                    @mq-max-palm--padding-vertical:px
                   `}
                   key={menuItem.id}
                   menuItem={menuItem}
