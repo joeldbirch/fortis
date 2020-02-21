@@ -14,7 +14,7 @@ import { cols, mq } from 'utilities/helpers'
 const styles = {
   root: `
     padding-horizontal:columns-0-1/2
-    @mq-desk--padding-vertical:columns-0-1/2
+    @mq-palm--padding-vertical:columns-0-1/2
     padding-top:800
     position:relative
     width:100
