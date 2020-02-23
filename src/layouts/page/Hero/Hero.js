@@ -10,7 +10,6 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
 
   const to = linkTo && linkTo.link ? getPath(linkTo.link) : null
   const OptionalLink = to ? Link : `span`
-  console.log(image);
 
   const newSrcSet = {
     srcSet: image.imageFileHero.childImageSharp.fluid.srcSet.split(`,`).splice(0, 4).join(`, `),
@@ -20,10 +19,9 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
   const newFluid = {
     ...fluid,
     ...newSrcSet,
-    sizes: "(max-aspect-ratio: 1/1) and (max-width: 800px) 600px, 100vw",
   }
-  console.table({newFluid});
-  console.table({fluid});
+  console.table(newFluid);
+
   return (
     <section
       id={id}
@@ -94,12 +92,10 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
           : <GatsbyImage
               fluid={{
                 ...newFluid,
-                sizes: "(max-aspect-ratio: 1/1) and (max-width: 800px) 600px, 100vw",
               }}
               className={`
                 height:100vh-fixed
               `}
-              // ensure wider image than phone viewport as it crops heavily when portrait
             />
       }
       { nextSection

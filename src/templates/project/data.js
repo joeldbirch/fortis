@@ -16,8 +16,13 @@ const ProjectTemplateFragment = (layouts) => `
       }
       imageFileHero {
         childImageSharp {
-          fluid(maxWidth: 1600, maxHeight: 1040, cropFocus: CENTER) {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
+          fluid(
+            maxWidth: 1280,
+            maxHeight: 800,
+            cropFocus: CENTER,
+            sizes: "(max-aspect-ratio: 16/10) calc(100vh * 1.6), 100vw",
+            srcSetBreakpoints: [ 800, 1280, 1600, 1920 ]) {
+              ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }
       }
@@ -112,8 +117,13 @@ const ProjectPreviewFragment = `
       altText
       imageFileHero {
         childImageSharp {
-          fluid(maxWidth: 1600, maxHeight: 1040, cropFocus: CENTER) {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
+          fluid(
+            maxWidth: 1280,
+            maxHeight: 800,
+            cropFocus: CENTER,
+            sizes: "(max-aspect-ratio: 16/10) calc(100vh * 1.6), 100vw",
+            srcSetBreakpoints: [ 800, 1280, 1600, 1920 ]) {
+              ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }
       }
