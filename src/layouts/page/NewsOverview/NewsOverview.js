@@ -53,11 +53,11 @@ const NewsOverview = ({introText=null, showHeading=true, nextSection=null, id=nu
         `}
       >
         {
-          !showHeading
-          ? ``
-          : <SectionHeader>
+          showHeading && (
+            <SectionHeader>
               <PageHeader headingText={siteSectionTitle} />
             </SectionHeader>
+          )
         }
 
         <NewsPreviews
