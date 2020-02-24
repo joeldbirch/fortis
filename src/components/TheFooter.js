@@ -92,12 +92,11 @@ export default ({ className=``, ...props }) => {
           </ul>
         </div>
 
-        { officeLocations.map((location, index) => <Address key={index} fields={location} />) }
+        { officeLocations.map((location, index) => (
+          <Address key={index} fields={location} />
+        )) }
 
-        <div
-          className={`
-          `}
-        >
+        <div>
           <p
             className={`
               margin-top:600
