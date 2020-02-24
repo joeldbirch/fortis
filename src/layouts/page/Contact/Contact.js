@@ -88,8 +88,8 @@ const Contact = () => {
                 @mq-max-palm--font-size:400
               `}
             >
-              { !email ? ``
-                : <span className={`position:relative`}>
+              { email && (
+                  <span className={`position:relative`}>
                     <a className={`${styles.links}`} href={`mailto:${email}`} aria-label="Our email">{email}</a>
                     <span
                       className={`
@@ -124,14 +124,14 @@ const Contact = () => {
                     </span>
                     <br/>
                   </span>
+                )
               }
               <a className={`${styles.links}`} href={`tel:${phone}`} aria-label="Our phone number">{phone}</a>
             </p>
 
 
-            { socialMedia.length < 1
-              ? ``
-              : <>
+            { socialMedia.length > 0 && (
+                <>
                   <h2
                     className={`
                       @mq-palm--margin-top:columns-0-1/2
@@ -152,6 +152,7 @@ const Contact = () => {
                     ))}
                   </ul>
                 </>
+              )
             }
           </div>
 
