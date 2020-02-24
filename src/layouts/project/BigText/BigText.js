@@ -17,7 +17,7 @@ const styles = {
 
 const BigText = ({ bigText }) => {
 
-  return !bigText ? `` : (
+  return bigText && (
     <section className={styles.root}>
       <div
         className={`
