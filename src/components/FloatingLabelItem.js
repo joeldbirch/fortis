@@ -20,12 +20,12 @@ const styles = {
   `,
   input: `
     👉 c-floating-field__input
-    &:focus:placeholder--opacity:0
     &::placeholder--color:inherit
     &::placeholder--mix-blend-mode:multiply
     &::placeholder--opacity:60
     &::placeholder--transition-duration:200
     &::placeholder--transition-property:opacity
+    &:focus:placeholder--opacity:0
     box-sizing:border-box
     display:block
     padding-horizontal:350
@@ -36,7 +36,6 @@ const styles = {
   👉 c-floating-field__label
   &::before--arrow-left
   margin-left:0
-  translate-Y:-50
   opacity:0
   pointer-events:none
   pos-left:100
@@ -47,6 +46,7 @@ const styles = {
   transition-duration:200
   transition-easing:ease-in-out
   transition-property::opacity
+  translate-Y:-50
   white-space:no-wrap
   `,
   // raw CSS:

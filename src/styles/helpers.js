@@ -20,8 +20,8 @@ export const padTop2 = `
 `
 
 export const padTop3 = `
-  padding-top:1050vw
   @mq-bigdesk--padding-top:vert3
+  padding-top:1050vw
 `
 
 export const padBottom1 = `
@@ -33,8 +33,8 @@ export const padBottom2 = `
 `
 
 export const padBottom3 = `
-  padding-bottom:1050vw
   @mq-bigdesk--padding-bottom:vert3
+  padding-bottom:1050vw
 `
 
 export const subhead = `
@@ -46,9 +46,9 @@ export const subhead = `
 export const button = `
   &:hover--opacity:100
   background-color:neutral-900
-  opacity:80
   color:neutral-0
   font-size:400
+  opacity:80
   padding-horizontal:600
   padding-vertical:400
   text-transform:uppercase
@@ -79,17 +79,17 @@ export const callOut = `
 `
 
 export const bodyText = `
-  font-size:400
   @mq-lap--font-size:500
-  line-height:300
+  font-size:400
   font-weight:400
+  line-height:300
 `
 
 export const largeText = `
-  font-size:600
   @mq-lap--font-size:800
-  line-height:300
+  font-size:600
   font-weight:400
+  line-height:300
 `
 
 export const smallText = `
@@ -119,13 +119,13 @@ export const handwritten = `
   font-family:cursive
   font-size:400
   font-weight:400
-  line-height:200
   letter-spacing:0
+  line-height:200
 `
 
 export const centred = `
-  position:absolute
   pos-top-left:50
+  position:absolute
   transform:-50
 `
 
@@ -147,8 +147,8 @@ export const highlight = `
 
 export const shader = `
   &::before--background-image:black-20-down
-  &::before--pointer-events:none
   &::before--hit-area-xy-0
+  &::before--pointer-events:none
   &::before--z-index:300
 `
 

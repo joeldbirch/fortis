@@ -23,26 +23,26 @@ const TheHeader = ({
         align-items:center
         display:flex
         justify-content:space-between
-        padding:columns-0-1/2
+        margin-horizontal:auto
+        max-width:container
         padding-bottom:0
+        padding:columns-0-1/2
+        pointer-events:none
         pos-top-left-right:0
         position:fixed
         width:100
         z-index:400
-        pointer-events:none
-        max-width:container
-        margin-horizontal:auto
       `}
       {...props}
     >
       <div
         className={`
           faux-background
+          height:100
           margin-horizontal:-50vw
           pos-left-right:50
-          width:100vw
-          height:100
           position:absolute
+          width:100vw
         `}
         style={reversed ? headerStyles.reversed : {
           transition: applyBg ? `background-color 2s 1s` : `background-color 0s 0s` ,

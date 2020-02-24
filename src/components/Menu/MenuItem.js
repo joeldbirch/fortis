@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import { CreateLocalLink, convertAmpersands } from '../../utilities/helpers'
 
 
-const MenuItem = ({ menuItem, wordPressUrl, tagName=`li`, linkClasses, ...props }) => {
+const MenuItem = ({ menuItem, wordPressUrl, tagName=`li`, linkClasses=``, ...props }) => {
 
   const ItemWrap = `${tagName}`
 
@@ -11,9 +11,7 @@ const MenuItem = ({ menuItem, wordPressUrl, tagName=`li`, linkClasses, ...props 
     <ItemWrap {...props}>
       <Link
         to={CreateLocalLink(menuItem, wordPressUrl)}
-        className={`
-          ${linkClasses}
-        `}
+        className={` ${linkClasses} `}
       >
         { convertAmpersands(menuItem.label) }
       </Link>

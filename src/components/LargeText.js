@@ -7,11 +7,11 @@ export default ({className=``, children=null, ...props}) => {
       dangerouslySetInnerHTML={{__html: cleanWpContent(children)}}
       className={`
         ${className}
-        font-size:500
         @mq-palm--max-width:var
-        s-editable
-        rhythm-fix-before
+        font-size:500
         rhythm-fix-after
+        rhythm-fix-before
+        s-editable
       `}
       style={{'--max-width': '21em'}}
       {...props}

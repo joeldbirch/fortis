@@ -5,14 +5,14 @@ import { cols, mq } from 'utilities/helpers'
 
 const styles = {
   root: `
-    padding-horizontal:columns-0-1/2
     @mq-desk--padding-horizontal:columns-1-1/2
     @mq-desk--padding-vertical:columns-0-1/2
+    margin-horizontal:auto
+    max-width:container
+    padding-horizontal:columns-0-1/2
     padding-vertical:800
     position:relative
     width:100
-    max-width:container
-    margin-horizontal:auto
   `,
   wrapColumns: `
     🎁wrap-columns
@@ -51,24 +51,23 @@ const styles = {
   `,
   startColumnEndRow: `
     @mq-desk--justify-self:flex-end
-    @mq-palm--max-width:small-column
     @mq-palm--margin-top:columns-0-1/2
+    @mq-palm--max-width:small-column
   `,
   endColumnStartRow: `
+    @mq-desk--padding-right:columns-0-1/2
     @mq-lap--align-items:flex-end
-
     @mq-palm--max-width:100
     @mq-palm--max-width:caption
+    @mq-palm--padding-horizontal:400
     @mq-widepalm--margin-right:-columns-2
     @mq-widepalm--margin-top:columns-1
     @mq-widepalm--pos-right:0
     @mq-widepalm--pos-top:400
     @mq-widepalm--position:absolute
     @mq-widepalm--width:columns-2-1/2
-    @mq-desk--padding-right:columns-0-1/2
     display:flex
     flex-direction:column
-    @mq-palm--padding-horizontal:400
   `,
   endColumnEndRow: `
     height:100
@@ -123,18 +122,18 @@ const TextRightTwoImages = ({
           >
             <span
               className={`
-                handwritten
-                display:block
-                margin-vertical:auto
-                text-align:center
-                @mq-palm--text-align:right
-                @mq-widepalm--text-align:center
                 @mq-palm--align-self:flex-end
-                padding-vertical:columns-0-1/2
                 @mq-palm--padding-top:0
+                @mq-palm--text-align:right
+                @mq-palm--width:small-caption
+                @mq-widepalm--text-align:center
+                display:block
+                handwritten
+                margin-vertical:auto
+                padding-vertical:columns-0-1/2
                 rhythm-fix-after
                 rhythm-fix-before
-                @mq-palm--width:small-caption
+                text-align:center
               `}
             >{bobNote}</span>
           </div>

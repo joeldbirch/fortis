@@ -32,9 +32,9 @@ const CarouselSlide = ({
     >
       <div
         className={`
-          position:relative
           display:flex
           flex-direction:column
+          position:relative
         `}
       >
         <FluidImage
@@ -60,24 +60,24 @@ const CarouselSlide = ({
             <div>
               <h2
                 className={`
-                  font-weight:400
                   font-size:400
+                  font-weight:400
                 `}
                 id={`project-preview-${id}`}
               >
                 <Link
                   aria-labelledby={`project-preview-${id}`}
                   className={`
-                    color:inherit
-                    &::before:content
                     &::before--hit-area-xy-0
+                    &::before:content
+                    color:inherit
                   `}
                   to={`${projectsURI}/${uri}/`}
                 >
                   <span className={`
+                    &:hover--text-decoration:none
                     position:relative
                     text-decoration:underline
-                    &:hover--text-decoration:none
                   `}>{title} — <span>{suburb}</span></span>
                 </Link>
               </h2>

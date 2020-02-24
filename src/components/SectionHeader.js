@@ -10,20 +10,19 @@ export default ({className=``, absolute=`true`, children}) => {
           ? `position:absolute`
           : `position:relative`
         }
+        margin-horizontal:auto
+        max-width:container
         padding-vertical:columns-0-1/2
         pos-top-left:0
-
-        max-width:container
-        margin-horizontal:auto
         width:100
       `}
     >
       <div
         className={`
-          padding-horizontal:columns-0-1/2
           @mq-max-palm--text-align:center
           @mq-palm--padding-left:columns-3-1/2
           @mq-palm--padding-right:columns-1-1/2
+          padding-horizontal:columns-0-1/2
           width:100
         `}
       >

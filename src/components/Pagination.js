@@ -8,8 +8,8 @@ const Pagination = ({ pageNumber, hasNextPage }) => {
   return (
     <div
       className={`
-        text-align:center
         margin-vertical:columns-0-1/2
+        text-align:center
       `}
     >
       <h2 className={`visually-hidden`}>News navigation</h2>

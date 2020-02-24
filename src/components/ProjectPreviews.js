@@ -29,19 +29,19 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
   return (
     <section
       className={`
-        width:100
         @mq-max-palm--padding-horizontal:columns-0-1/2
         js-contrast-ignore
+        width:100
       `}
       id={id}
     >
       <div
         className={`
-          position:relative
           js-contrast
           js-no-header-bg
-          scroll-snap-align:start
+          position:relative
           scroll-margin-top:-px
+          scroll-snap-align:start
         `}
       >
         { !tags
@@ -60,9 +60,9 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
                 update={changeShownPosts}
                 reset={filterReset}
                 className={`
-                  position:relative
                   @mq-desk--padding-top:1000
                   padding-top:800
+                  position:relative
                 `}
               />
             </SectionHeader>
@@ -74,8 +74,8 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
       <div
         className={`
           ${uiFontSize}
-          position:relative
           overflow:hidden
+          position:relative
         `}
       >
         {posts && posts.map((post, index) => (
@@ -83,8 +83,8 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
             key={post.id}
             post={post}
             className={`
-              scroll-margin-top:-px
               overflow:hidden
+              scroll-margin-top:-px
               transition-duration:700
               ${
                 isShown(post)
@@ -98,14 +98,14 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
 
         <div
           className={`
-            position:absolute
-            pos-top:50
-            translate-y:-50
-            padding-horizontal:columns-0-1/2
-            transition-duration:1000
-            text-align:center
-            width:100
             margin-top:-1000
+            padding-horizontal:columns-0-1/2
+            pos-top:50
+            position:absolute
+            text-align:center
+            transition-duration:1000
+            translate-y:-50
+            width:100
             z-index:-1
             ${shownPosts.length ? `opacity:0` : ``}
           `}

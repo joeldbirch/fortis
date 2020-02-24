@@ -18,19 +18,19 @@ const RelatedContent = ({
   return (
     <div className={`
       ${className}
-      position:relative
-      max-width:container
       margin-horizontal:auto
-      width:100
+      max-width:container
       padding-horizontal:columns-0-1/2
+      position:relative
+      width:100
     `}>
       <Divider/>
       <section>
         <h2
           className={`
             ${uiFontSize}
-            margin-top:600
             @mq-desk--padding-horizontal:columns-1
+            margin-top:600
           `}
         >
           Similar projects
@@ -38,9 +38,9 @@ const RelatedContent = ({
 
         <div
           className={`
-            padding-vertical:columns-1
             @mq-desk--padding-horizontal:columns-1
             overflow:hidden
+            padding-vertical:columns-1
           `}
         >
           <Flickity
@@ -64,12 +64,12 @@ const RelatedContent = ({
                     '--width-var-2': 'calc(var(--site-column) * 3.667)',
                   }}
                   className={`
-                    width:var-1
-                    margin-right:columns-0-1/2
-                    @mq-lap--width:var-2
-                    @mq-lap--margin-right:columns-0-1/2
-                    @mq-desk--width:columns-3
                     @mq-desk--margin-right:columns-0-1/2
+                    @mq-desk--width:columns-3
+                    @mq-lap--margin-right:columns-0-1/2
+                    @mq-lap--width:var-2
+                    margin-right:columns-0-1/2
+                    width:var-1
                   `}
                 />
               ))

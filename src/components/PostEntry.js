@@ -19,15 +19,15 @@ const PostEntry = ({
       aria-labelledby={ariaLabelledby}
       className={`
         ${className}
-        position:relative
         @mq-max-palm--margin-bottom:600
+        position:relative
       `}
     >
       <div
         className={`
-          height:100
           display:flex
           flex-direction:column
+          height:100
           position:relative
         `}
       >

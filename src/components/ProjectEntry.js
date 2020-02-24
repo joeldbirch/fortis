@@ -60,23 +60,21 @@ const ProjectEntry = ({
         <div className={`
           @mq-palm--padding-horizontal:columns-0-1/2
           background-color:neutral-0
-
-max-width:container
-margin-horizontal:auto
-width:100
+          max-width:container
+          margin-horizontal:auto
+          width:100
         `}>
           <header
             className={`
-              js-contrast
-              padding-top:400
-              padding-bottom:1000
+              @mq-lap--grid-template-columns:var-3
+              @mq-palm--grid-template-columns:var-2
               display:grid
               grid-gap:columns-0-1/4
               grid-template-columns:var-1
-              @mq-palm--grid-template-columns:var-2
-              @mq-lap--grid-template-columns:var-3
+              js-contrast
+              padding-bottom:1000
+              padding-top:400
               width:100
-
               ${uiFontSize}
             `}
           >
@@ -90,15 +88,15 @@ width:100
               >
                 <Link
                   className={`
-                    color:inherit
-                    &::before:content
                     &::before--hit-area-xy-0
+                    &::before:content
+                    color:inherit
                   `}
                   to={`${projectsURI}/${uri}/`}
                 >
                   <span className={`
-                    position:relative
                     custom-underline
+                    position:relative
                   `}>{title}</span>
                 </Link>
               </h2>

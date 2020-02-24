@@ -13,9 +13,9 @@ export default ({className=``, bottom, noMargin=false, ...props}) => {
           ? ``
           : `margin-horizontal:columns-0-1/2`
         }
-        border-top-width:100
-        border-top-style:solid
         border-top-color:neutral-700
+        border-top-style:solid
+        border-top-width:100
         pos-left-right:0
         position:absolute
         ${bottom ? `pos-bottom:0` : `pos-top:0` }

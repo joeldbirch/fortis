@@ -11,13 +11,13 @@ const ImageGallery = ({imageGallery}) => {
     <section
       className={`
         js-contrast-ignore
-        position:relative
-        width:100
-        padding-top:columns-0-1/2
-        padding-bottom:columns-1
         margin-bottom:-columns-0-1/2
         overflow:hidden
+        padding-bottom:columns-1
+        padding-top:columns-0-1/2
+        position:relative
         scroll-snap-align:center
+        width:100
       `}
     >
       <Flickity
@@ -26,26 +26,26 @@ const ImageGallery = ({imageGallery}) => {
       >
         { imageGallery.map((image, index) => (
           <div key={index} className={`
-            position:relative
-            width:100
             js-contrast
             js-contrast--reverse
+            position:relative
+            width:100
           `}>
             <FluidImage
               image={image}
               artDirection={`imageFileHero`}
               className={`
-                width:100
                 height:100
+                width:100
               `}
             />
             <div
               className={`
                 handwritten
                 padding-top:columns-0-1/4
-                position:absolute
-                pos-top:100
                 pos-right:0
+                pos-top:100
+                position:absolute
                 width:33
               `}
               dangerouslySetInnerHTML={{__html: image.caption}}

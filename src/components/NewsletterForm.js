@@ -4,10 +4,10 @@ import ArrowRounded from 'components/ArrowRounded'
 
 const styles = {
   root: `
-    margin-right:100p
-    @mq-palm--margin-right:250p
     @mq-desk--margin-right:0
     @mq-lap--padding-right:400
+    @mq-palm--margin-right:250p
+    margin-right:100p
     padding-right:columns-0-1/2
   `,
 }
@@ -27,12 +27,12 @@ export default ({ prependId="field", ...props }) => (
     </h3>
     <div
       className={`
+        @mq-lap--margin-right:columns-0-1/2
+        @mq-max-lap--margin-top:-px
+        align-items:flex-end
         display:grid
         grid-template-columns:var-3
-        align-items:flex-end
-        @mq-lap--margin-right:columns-0-1/2
         max-width:small-column
-        @mq-max-lap--margin-top:-px
       `}
       style={{
         '--grid-template-columns-var-3': `1fr auto`,
@@ -49,42 +49,42 @@ export default ({ prependId="field", ...props }) => (
         minLength="3"
         size="40"
         className={`
-          padding-left:0
-          padding-top:800
-          @mq-max-lap--padding-top:600
-          padding-bottom:100
-          font-size:400
-          &::placeholder--font-size:200
           @mq-lap:placeholder--font-size:300
+          @mq-max-lap--padding-top:600
+          &::placeholder--font-size:200
+          border-bottom-color:neutral-700
           border-bottom-style:solid
           border-bottom-width:100
-          border-bottom-color:neutral-700
           border-radius:0
+          font-size:400
           line-height:200
+          padding-bottom:100
+          padding-left:0
+          padding-top:800
         `}
       />
       <button
         type="submit"
         className={`
-          @mq-max-palm--padding-left:400
-          padding-right:0
-          padding-top:800
           @mq-max-lap--padding-top:600
-          padding-bottom:100
+          @mq-max-palm--padding-left:400
+          &:hover--color:neutral-500
+          border-bottom-color:neutral-700
           border-bottom-style:solid
           border-bottom-width:100
-          border-bottom-color:neutral-700
           line-height:200
-          &:hover--color:neutral-500
           margin-horizontal:0
+          padding-bottom:100
+          padding-right:0
+          padding-top:800
         `}
       >
         <span className="visually-hidden">Submit</span>
         <ArrowRounded
           role="presentation"
           className={`
-            rotate:180
             font-size:300
+            rotate:180
           `}
         />
       </button>

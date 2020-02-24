@@ -9,10 +9,10 @@ const PersonProfiles = ({profiles=[]}) => {
   return (
     <div
       className={`
-        padding-bottom:400
         @mq-palm--padding-bottom:columns-0-1/2
-        max-width:container
         margin-horizontal:auto
+        max-width:container
+        padding-bottom:400
       `}
     >
       { profiles.map((profile, index) => <ProfileEntry profile={profile} key={`profile-${index}`} />) }
@@ -38,17 +38,17 @@ const ProfileEntry = ({
   return (
     <div
       className={`
-        padding-horizontal:columns-0-1/2
-        @mq-desk--padding-horizontal:columns-1-1/2
-        padding-vertical:400
-        @mq-palm--padding-vertical:columns-0-1/2
-        grid-gap:500
-        @mq-palm--grid-gap:columns-0-1/2
-        @mq-lap--grid-gap:columns-1
-        display:grid
-        @mq-palm--grid-template-columns:var-1
-        @mq-lap--grid-template-columns:var-2
         @mq-desk--grid-template-columns:var-3
+        @mq-desk--padding-horizontal:columns-1-1/2
+        @mq-lap--grid-gap:columns-1
+        @mq-lap--grid-template-columns:var-2
+        @mq-palm--grid-gap:columns-0-1/2
+        @mq-palm--grid-template-columns:var-1
+        @mq-palm--padding-vertical:columns-0-1/2
+        display:grid
+        grid-gap:500
+        padding-horizontal:columns-0-1/2
+        padding-vertical:400
       `}
       style={{
         '--grid-template-columns-var-1': `6fr 6fr`,
@@ -73,14 +73,14 @@ const ProfileEntry = ({
 
       <div
         className={`
-          @mq-desk--padding-right:columns-0-1/2
           @mq-bigdesk--padding-right:columns-1
+          @mq-desk--padding-right:columns-0-1/2
         `}
       >
         <h2
           className={`
-            margin-bottom:400
             @mq-palm--margin-bottom:columns-0-1/2
+            margin-bottom:400
             rhythm-fix-before
           `}
         >
@@ -95,9 +95,9 @@ const ProfileEntry = ({
           <span
             className={`
               display:block
-              text-transform:uppercase
               font-size:300
               font-weight:400
+              text-transform:uppercase
             `}
           >
             {position}
@@ -107,10 +107,10 @@ const ProfileEntry = ({
         <p
           dangerouslySetInnerHTML={{__html: note}}
           className={`
-            handwritten
-            margin-bottom:400
             @mq-palm--margin-bottom:columns-0-1/2
             font-size:note
+            handwritten
+            margin-bottom:400
           `}
         />
 

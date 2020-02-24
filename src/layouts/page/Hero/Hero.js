@@ -18,28 +18,28 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
       className={`
         ${className}
         ${forceFullWidth}
+        color:neutral-0
         js-contrast
         js-contrast--reverse
-        color:neutral-0
-        position:relative
         min-height:100vh-fixed
-        scroll-snap-align:start
+        position:relative
         scroll-margin-top:-px
+        scroll-snap-align:start
       `}
     >
 
         { label && (
           <header
             className={`
-              padding-top:columns-0-1/2
-              padding-horizontal:columns-0-1/2
-              position:absolute
-              pos-left-right:0
               height:100
-              z-index:100
-              pointer-events:none
-              max-width:container
               margin-horizontal:auto
+              max-width:container
+              padding-horizontal:columns-0-1/2
+              padding-top:columns-0-1/2
+              pointer-events:none
+              pos-left-right:0
+              position:absolute
+              z-index:100
             `}
             style={{
               '--color-contrast': 'white',
@@ -57,9 +57,9 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
                 &::before--hit-area-xy-0
                 color:neutral-0
                 ${to && `
-                    text-decoration:underline
                     &:hover--text-decoration:none
                     pointer-events:auto
+                    text-decoration:underline
                   `
                 }
               `}>{label}</OptionalLink>

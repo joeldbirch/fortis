@@ -7,21 +7,21 @@ const ScrollPrompt = ({className=``, ...props}) => {
     <ScrollPromptAnimation
       className={`
         ${className}
+        &:hover--opacity:50
         color:inherit
-        position:absolute
+        padding:columns-0-1/4
         pos-bottom:0
         pos-left:50
-        padding:columns-0-1/4
+        position:absolute
         z-index:200
-        &:hover--opacity:50
       `}
       {...props}
     >
       <span className="visually-hidden">Scroll to next section</span>
       <ArrowRounded
         className={`
-          height:150r
           @mq-desk--height:200r
+          height:150r
           transform:var-1
         `}
         fill="currentColor"

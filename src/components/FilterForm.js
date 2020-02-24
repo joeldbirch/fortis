@@ -4,24 +4,24 @@ import { uiFontSize } from 'styles/helpers'
 
 const styles = {
   hitarea: `
-    position:relative
     &::before--hit-area-y-100
-    display:flex
-    align-items:center
-    padding-vertical:100
-    padding-horizontal:200
-    cursor:pointer
     &:hover--color:neutral-900
+    align-items:center
+    cursor:pointer
+    display:flex
     group
+    padding-horizontal:200
+    padding-vertical:100
+    position:relative
     `,
   icon: `
     visually-hidden
   `,
   text: `
-    vertical-align:top
-    hover-underline
     display:block
     group:hover__background-image:solid
+    hover-underline
+    vertical-align:top
   `
 }
 
@@ -61,10 +61,10 @@ const FilterForm = ({
       </Helmet>
       <ul
         className={`
-          display:flex
-          align-items:center
-          flex-wrap:wrap
           @mq-palm--margin-left:-200
+          align-items:center
+          display:flex
+          flex-wrap:wrap
         `}
       >
         {
@@ -90,9 +90,9 @@ const FilterForm = ({
 const FilterItem = ({id, name, toggleHandler = ()=>{}, ...props}) => (
   <li
     className={`
-      rhythm-fix-before
-      margin-right:vw
       margin-bottom:-200
+      margin-right:vw
+      rhythm-fix-before
     `}
     key={id}
     {...props}

@@ -7,30 +7,30 @@ const FullWidthContent = ({className=``, freeText, image, ...props}) => {
     <div
       className={`
         ${className}
-        js-contrast
-        padding-horizontal:columns-0-1/2
         @mq-desk--padding-horizontal:columns-1-1/2
+        js-contrast
+        margin-horizontal:auto
+        max-width:container
+        padding-horizontal:columns-0-1/2
         padding-top:site-top
         scroll-snap-align:start
-        max-width:container
-        margin-horizontal:auto
       `}
     >
       <div
         dangerouslySetInnerHTML={{__html: freeText}}
         className={`
-          s-editable
-          rhythm-fix-before
-          rhythm-fix-after
           padding-right:columns-1
+          rhythm-fix-after
+          rhythm-fix-before
+          s-editable
         `}
       />
 
       <FluidImage
         image={image}
         className={`
-          margin-vertical:400
           @mq-palm--margin-vertical:columns-0-1/2
+          margin-vertical:400
         `}
         sizes={`
           (min-width: ${mq.desk}) ${cols(10)}vw,

@@ -3,15 +3,15 @@ import LargeText from 'components/LargeText'
 
 const styles = {
   root: `
-    @mq-palm--padding-bottom:columns-1
-    padding-horizontal:columns-0-1/2
-    padding-bottom:1000
-    padding-top:400
     @mq-desk--padding-top:200
+    @mq-palm--padding-bottom:columns-1
+    margin-horizontal:auto
+    max-width:container
+    padding-bottom:1000
+    padding-horizontal:columns-0-1/2
+    padding-top:400
     position:relative
     width:100
-    max-width:container
-    margin-horizontal:auto
   `,
 }
 

@@ -116,22 +116,22 @@ const Location = ({fallbackImage, nearby}) => {
 
       <div
         className={`
-          overflow:hidden
+          @mq-bigdesk--margin-left:0
           @mq-palm--grid-column:1
           @mq-palm--grid-row:1
           @mq-palm--margin-left:-columns-0-1/2
-          @mq-bigdesk--margin-left:0
+          overflow:hidden
         `}
       >
         <FluidImage
           image={fallbackImage}
           className={`
-            width:100
-            height:100
-            display:block
-            transform:var-1
-            @mq-lap--transform:var-2
             @mq-bigdesk--transform:none
+            @mq-lap--transform:var-2
+            display:block
+            height:100
+            transform:var-1
+            width:100
           `}
           // ensure wider image than phone viewport as it crops heavily when portrait
           sizes={`

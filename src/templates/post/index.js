@@ -45,23 +45,23 @@ const Post = ({ pageContext }) => {
 
       <div
         className={`
-          padding-top:site-top
-          padding-bottom:columns-2-1/2
-          @mq-palm--padding-bottom:columns-1-1/2
           @mq-desk--padding-bottom:columns-1
-          position:relative
-          padding-horizontal:columns-0-1/2
           @mq-desk--padding-horizontal:columns-1-1/2
-          scroll-snap-align:start
-          max-width:container
-          margin-horizontal:auto
+          @mq-palm--padding-bottom:columns-1-1/2
           js-contrast
+          margin-horizontal:auto
+          max-width:container
+          padding-bottom:columns-2-1/2
+          padding-horizontal:columns-0-1/2
+          padding-top:site-top
+          position:relative
+          scroll-snap-align:start
         `}
       >
         <FluidImage
           className={`
-            grid-column:span-2
             @mq-desk--margin-horizontal:-columns-1
+            grid-column:span-2
             margin-bottom:columns-0-1/2
           `}
           image={featuredImage}
@@ -70,9 +70,9 @@ const Post = ({ pageContext }) => {
         />
         <div
           className={`
+            @mq-lap--grid-template-columns:2
             @mq-palm--display:grid
             @mq-palm--grid-template-columns:var-1
-            @mq-lap--grid-template-columns:2
           `}
           style={{
             '--grid-template-columns-var-1': '4fr 8fr',
@@ -81,11 +81,11 @@ const Post = ({ pageContext }) => {
 
           <header
             className={`
-              position:relative
-              padding-bottom:800
+              @mq-max-palm--padding-right:columns-3-1/2
               @mq-palm--padding-right:columns-1
               font-size:500
-              @mq-max-palm--padding-right:columns-3-1/2
+              padding-bottom:800
+              position:relative
             `}
             style={{
               '--bigdesk-offset-left': '1rem',
@@ -93,15 +93,15 @@ const Post = ({ pageContext }) => {
           >
             <div
               className={`
+                @mq-max-palm--max-width:small-column //clear-the-note
                 display:flex
                 flex-direction:column-reverse
-                @mq-max-palm--max-width:small-column //clear-the-note
               `}
             >
               <h1
                 className={`
-                  font-weight:400
                   font-size:400
+                  font-weight:400
                   margin-top:100
                 `}
                 id={`preview-${id}`}
@@ -111,9 +111,9 @@ const Post = ({ pageContext }) => {
                 ? ``
                 : <h2
                     className={`
-                      font-weight:400
-                      font-size:400
                       @mq-desk--font-size:400
+                      font-size:400
+                      font-weight:400
                     `}
                   >
                     <span className={`custom-underline-no-hover`}>{subheading}</span>
@@ -124,13 +124,13 @@ const Post = ({ pageContext }) => {
                 ? ``
                 : <h3
                     className={`
-                      font-weight:400
-                      font-size:200
-                      text-transform:uppercase
-                      margin-bottom:100
                       @mq-bigdesk--position:absolute
-                      pos-top:-columns-0-1/4
                       color:neutral-700
+                      font-size:200
+                      font-weight:400
+                      margin-bottom:100
+                      pos-top:-columns-0-1/4
+                      text-transform:uppercase
                     `}
                   >
                     {catName}
@@ -142,13 +142,13 @@ const Post = ({ pageContext }) => {
               ? ``
               : <p
                   className={`
-                    handwritten
-                    @mq-palm--margin-top:800
-                    @mq-max-palm--position:absolute
-                    @mq-max-palm--pos-top-right:0
-                    @mq-max-palm--width:columns-3
                     @mq-max-palm--margin-right:columns-0-1/4
+                    @mq-max-palm--pos-top-right:0
+                    @mq-max-palm--position:absolute
+                    @mq-max-palm--width:columns-3
+                    @mq-palm--margin-top:800
                     @mq-palm--max-width:small-column
+                    handwritten
                   `}
                 >
                   {note}
@@ -157,8 +157,8 @@ const Post = ({ pageContext }) => {
           </header>
           <div
             className={`
-              s-editable
               rhythm-fix-before
+              s-editable
             `}
             dangerouslySetInnerHTML={{__html: cleanWpContent(content)}}
           />

@@ -5,14 +5,14 @@ import { cols, mq } from 'utilities/helpers'
 
 const styles = {
   root: `
-    padding-horizontal:columns-0-1/2
     @mq-desk--padding-horizontal:columns-1-1/2
     @mq-desk--padding-vertical:columns-0-1/2
+    margin-horizontal:auto
+    max-width:container
+    padding-horizontal:columns-0-1/2
     padding-vertical:800
     position:relative
     width:100
-    max-width:container
-    margin-horizontal:auto
   `,
   wrapColumns: `
     🎁wrap-columns
@@ -38,8 +38,8 @@ const styles = {
   startColumnStartRow: `
     @mq-desk--max-width:100
     @mq-desk--width:columns-2
-    @mq-palm--width:columns-3
     @mq-palm--margin-bottom:columns-0-1/2
+    @mq-palm--width:columns-3
   `,
   startColumnEndRow: `
     @mq-palm--max-width:small-column
@@ -111,13 +111,13 @@ const TextLeftTwoImages = ({
           >
             <span
               className={`
-                handwritten
-                display:block
-                margin-vertical:auto
-                text-align:center
                 @mq-palm--text-align:left
+                display:block
+                handwritten
+                margin-vertical:auto
                 padding-vertical:columns-0-1/2
                 rhythm-fix-after
+                text-align:center
               `}
             >{billNote}</span>
           </figcaption>

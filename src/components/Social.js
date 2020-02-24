@@ -4,18 +4,18 @@ import Email from '../images/inline/email.svg'
 
 const styles = {
   iconLink: `
+    &:hocus--background-color:neutral-0
+    &:hocus--color:green-400
+    border-color:neutral-0
     border-radius:1000
     border-style:solid
     border-width:200
-    border-color:neutral-0
-    padding:250
-    display:inline-flex
     color:neutral-0
-    &:hocus--color:green-400
-    &:hocus--background-color:neutral-0
-    transition-property:all
-    transition-duration:150
+    display:inline-flex
     margin:200
+    padding:250
+    transition-duration:150
+    transition-property:all
   `,
 }
 

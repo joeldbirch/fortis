@@ -6,26 +6,26 @@ import ArrowDrawnUpLeft from 'components/ArrowDrawnUpLeft'
 
 const styles = {
   root: `
-    height:100vh-fixed
-    min-height:23r
     display:grid
-    grid-template-rows:var-1
     grid-template-columns:1
+    grid-template-rows:var-1
+    height:100vh-fixed
+    margin-horizontal:auto
+    max-width:container
+    min-height:23r
+    padding-bottom:400
     padding-horizontal:columns-0-1/2
     padding-top:site-top
-    padding-bottom:400
     position:relative
     scroll-snap-align:start
     width:100
-    max-width:container
-    margin-horizontal:auto
   `,
   mediaWrap: `
-    margin-horizontal:columns-1
-    @mq-palm--margin-horizontal:columns-1-1/2
-    @mq-desk--margin-horizontal:columns-2
     @mq-bigdesk--margin-horizontal:columns-2-1/2
     @mq-bigdesk--margin-horizontal:site-pad-500
+    @mq-desk--margin-horizontal:columns-2
+    @mq-palm--margin-horizontal:columns-1-1/2
+    margin-horizontal:columns-1
     overflow:hidden
     position:relative
   `,
@@ -45,9 +45,9 @@ const Branded = ({image, text, video=null, nextSection=null, id=null, ...props})
             : <FluidImage
                 image={image}
                 className={`
+                  height:100
                   pos-left:0
                   pos-top:0
-                  height:100
                   width:100
                 `}
                 style={{
@@ -59,9 +59,9 @@ const Branded = ({image, text, video=null, nextSection=null, id=null, ...props})
       <BigBrand
         htmlText={text}
         textClasses={`
-          display:inline-block
-          @mq-max-palm--text-align:left
           @mq-max-palm--margin-top:100
+          @mq-max-palm--text-align:left
+          display:inline-block
         `}
         className={`
           @mq-palm--margin-top:-400
@@ -71,12 +71,12 @@ const Branded = ({image, text, video=null, nextSection=null, id=null, ...props})
       >
         <ArrowDrawnUpLeft
           className={`
-            transform:arrow-up-right
-            @mq-palm--transform:arrow-right-down
-            @mq-palm--display:block
-            @mq-palm--margin-left:-400
-            @mq-palm--margin-bottom:100
             @mq-bigdesk--margin-bottom:200
+            @mq-palm--display:block
+            @mq-palm--margin-bottom:100
+            @mq-palm--margin-left:-400
+            @mq-palm--transform:arrow-right-down
+            transform:arrow-up-right
           `}
         />
       </BigBrand>

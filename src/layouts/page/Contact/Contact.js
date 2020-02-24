@@ -8,9 +8,9 @@ import { cols, mq } from 'utilities/helpers'
 
 const styles = {
   links: `
-    text-decoration:none
     &:hover--text-decoration:underline
     color:inherit
+    text-decoration:none
   `
 }
 
@@ -29,14 +29,14 @@ const Contact = () => {
   return (
     <div
       className={`
+        margin-horizontal:auto
+        max-width:container
         padding-bottom:400
         padding-horizontal:columns-0-1/2
         padding-top:site-top
         position:relative
         scroll-snap-align:start
         z-index:100
-        max-width:container
-        margin-horizontal:auto
       `}
     >
 
@@ -44,11 +44,11 @@ const Contact = () => {
         className={`
           @mq-desk--grid-template-columns:var-3
           @mq-desk--padding-horizontal:columns-1
-          display:grid
           @mq-palm--grid-template-columns:var-1
           @mq-palm--padding-bottom:columns-0-1/2
           @mq-widepalm--grid-gap:columns-1
           @mq-widepalm--grid-template-columns:var-2
+          display:grid
           grid-gap:columns-0-1/2
           padding-bottom:400
         `}
@@ -61,18 +61,18 @@ const Contact = () => {
 
         <div
           className={`
-            grid-row:1
             grid-column:1
-            position:relative
+            grid-row:1
             padding-right:columns-0-1/2
+            position:relative
           `}
         >
 
           <div
             className={`
-            @mq-lap--font-size:500
-            font-size:400
-            font-weight:400
+              @mq-lap--font-size:500
+              font-size:400
+              font-weight:400
             `}
           >
             <h2
@@ -99,9 +99,9 @@ const Contact = () => {
                         @mq-palm--pos-left:100
                         @mq-palm--pos-top:columns-0-1/2
                         font-family:cursive
+                        font-size:550
                         letter-spacing:0
                         line-height:200
-                        font-size:550
                         margin-left:columns-1
                         margin-top:1000
                         pos-left:100
@@ -112,9 +112,9 @@ const Contact = () => {
                     >
                       <ArrowDrawnUpLeft
                         className={`
-                          position:absolute
-                          pos-bottom:100
                           margin-bottom:200
+                          pos-bottom:100
+                          position:absolute
                         `}
                         style={{
                           transform: `scale(.7) rotate(10deg)`,
@@ -193,25 +193,25 @@ const Contact = () => {
       >
         <span
           className={`
-            @mq-max-palm--pos-top:200
-            @mq-palm--padding-top:columns-0-1/2
-            @mq-palm--display:block
-            @mq-max-palm--position:absolute
-            @mq-max-palm--pos-right:0
             @mq-max-palm--margin-top:-1000
-            z-index:100
+            @mq-max-palm--pos-right:0
+            @mq-max-palm--pos-top:200
+            @mq-max-palm--position:absolute
+            @mq-palm--display:block
+            @mq-palm--padding-top:columns-0-1/2
             position:relative
+            z-index:100
           `}
         >
           Drop by for coffee
           <ArrowDrawnUpLeft
             className={`
+              @mq-desk--transform:var-2
               margin-top:200
               pos-left:50
               pos-top:100
               position:absolute
               transform:var-1
-              @mq-desk--transform:var-2
             `}
             style={{
               '--rotate-var-1': `-90deg`,

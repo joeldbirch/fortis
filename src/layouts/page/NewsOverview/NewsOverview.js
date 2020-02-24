@@ -36,14 +36,14 @@ const NewsOverview = ({introText=null, showHeading=true, nextSection=null, id=nu
     <section
       id={id}
       className={`
+        @mq-desk--padding-horizontal:columns-1-1/2
         js-contrast
+        margin-horizontal:auto
+        max-width:container
+        padding-horizontal:columns-0-1/2
         position:relative
         scroll-snap-align:start
-        max-width:container
-        margin-horizontal:auto
         width:100
-        padding-horizontal:columns-0-1/2
-        @mq-desk--padding-horizontal:columns-1-1/2
       `}
     >
       <Divider className={`js-free-scroll`} />
@@ -63,8 +63,8 @@ const NewsOverview = ({introText=null, showHeading=true, nextSection=null, id=nu
         <NewsPreviews
           posts={posts}
           intro={<LargeText className={`
-            @mq-max-palm--font-size:400
             @mq-max-palm--display:none
+            @mq-max-palm--font-size:400
           `}>{introText || introContent}</LargeText>}
           pagination={hasNextPage ? <LinkToNewsPage /> : () => {}}
         />
