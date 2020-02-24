@@ -81,7 +81,7 @@ const FilterForm = ({
         ))}
 
       </ul>
-      {/* this is to match header heights because reasons */}
+      {/* this is to match header heights if font-size gets changed */}
       {/* <span className={`${uiFontSize}`}>&#160;</span> */}
     </form>
   )
