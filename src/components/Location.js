@@ -10,7 +10,6 @@ const Location = ({fallbackImage, nearby}) => {
   return (
     <div
       className={`
-        grid-guide
         margin-vertical:columns-0-1/2
         @mq-max-palm--margin-vertical:800
         width:100
