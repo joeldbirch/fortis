@@ -28,47 +28,44 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
       `}
     >
 
-        { !label
-          ? ``
-          :
-        <header
-          className={`
-            padding-top:columns-0-1/2
-            padding-horizontal:columns-0-1/2
-            position:absolute
-            pos-left-right:0
-            height:100
-            z-index:100
-            pointer-events:none
-            max-width:container
-            margin-horizontal:auto
-          `}
-          style={{
-            '--color-contrast': 'white',
-          }}
-        >
-          <h2
+        { label && (
+          <header
             className={`
-              ${uiFontSize}
-              @mq-max-palm--text-align:center
-              @mq-palm--margin-left:columns-3
-              color:neutral-900
+              padding-top:columns-0-1/2
+              padding-horizontal:columns-0-1/2
+              position:absolute
+              pos-left-right:0
+              height:100
+              z-index:100
+              pointer-events:none
+              max-width:container
+              margin-horizontal:auto
             `}
+            style={{
+              '--color-contrast': 'white',
+            }}
           >
-            <OptionalLink to={to} className={`
-              &::before--hit-area-xy-0
-              color:neutral-0
-              ${to
-                ? `
-                  text-decoration:underline
-                  &:hover--text-decoration:none
-                  pointer-events:auto
-                `
-                : ``
-              }
-            `}>{label}</OptionalLink>
-          </h2>
-        </header>
+            <h2
+              className={`
+                ${uiFontSize}
+                @mq-max-palm--text-align:center
+                @mq-palm--margin-left:columns-3
+                color:neutral-900
+              `}
+            >
+              <OptionalLink to={to} className={`
+                &::before--hit-area-xy-0
+                color:neutral-0
+                ${to && `
+                    text-decoration:underline
+                    &:hover--text-decoration:none
+                    pointer-events:auto
+                  `
+                }
+              `}>{label}</OptionalLink>
+            </h2>
+          </header>
+        )
       }
       {
         video
@@ -86,12 +83,12 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
               `}
             />
       }
-      { nextSection
-        ? <ScrollPrompt
+      { nextSection && (
+          <ScrollPrompt
             to={nextSection}
             className={`color:neutral-0`}
           />
-        : ``
+        )
       }
     </section>
   )
