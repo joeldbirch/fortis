@@ -38,8 +38,7 @@ const styles = {
 }
 
 
-const BigBrand = ({htmlText=null, className=``, textClasses=``, headingTag=`h2`, children}) => {
-  const HeadingTag = headingTag ? headingTag : `h2`
+const BigBrand = ({htmlText=null, className=``, textClasses=``, HeadingTag=`h2`, children}) => {
   return (
     <div
       className={`
@@ -61,7 +60,7 @@ const BigBrand = ({htmlText=null, className=``, textClasses=``, headingTag=`h2`,
         }}
       >
         {children}
-        {htmlText ? <span className={textClasses} dangerouslySetInnerHTML={{__html: htmlText}}/> : ``}
+        {htmlText && <span className={textClasses} dangerouslySetInnerHTML={{__html: htmlText}}/> }
       </HeadingTag>
 
       {/* div wrapper needed because Safari won't treat the img as a flex item properly */}
