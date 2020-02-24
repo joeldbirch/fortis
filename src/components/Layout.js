@@ -97,9 +97,7 @@ const Layout = ({
         >
           Fortis
         </Link>
-        { !AddToHeader
-          ? ``
-          : (
+        { AddToHeader && (
             <div
               className={`
                 @mq-max-palm--text-align:center
