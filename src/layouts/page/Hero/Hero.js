@@ -8,19 +8,9 @@ import { getPath } from 'utilities/helpers'
 
 const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className=``, ...props}) => {
 
+  const fluid = image.imageFileHero.childImageSharp.fluid
   const to = linkTo && linkTo.link ? getPath(linkTo.link) : null
   const OptionalLink = to ? Link : `span`
-
-  const newSrcSet = {
-    srcSet: image.imageFileHero.childImageSharp.fluid.srcSet.split(`,`).splice(0, 4).join(`, `),
-    srcSetWebp: image.imageFileHero.childImageSharp.fluid.srcSetWebp.split(`,`).splice(0, 4).join(`, `),
-  }
-  const fluid = image.imageFileHero.childImageSharp.fluid
-  const newFluid = {
-    ...fluid,
-    ...newSrcSet,
-  }
-  console.table(newFluid);
 
   return (
     <section
@@ -90,9 +80,7 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
               `}
             />
           : <GatsbyImage
-              fluid={{
-                ...newFluid,
-              }}
+              fluid={fluid}
               className={`
                 height:100vh-fixed
               `}

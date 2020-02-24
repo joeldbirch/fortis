@@ -2,7 +2,6 @@ import React from 'react'
 import GatsbyImage from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby'
 
-
 const FluidImage = ({ image, withFallback = true, className=``, artDirection=`imageFile`, sizes, ...props }) => {
 
   const data = useStaticQuery(graphql` query {

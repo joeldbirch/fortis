@@ -30,13 +30,6 @@ export const useNewsData = () => {
               }
             }
           }
-          imageFilePortrait {
-            childImageSharp {
-              fluid(maxWidth: 1000, maxHeight: 1000, cropFocus: CENTER) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-              }
-            }
-          }
         }
         otherImages {
           portraitImage {

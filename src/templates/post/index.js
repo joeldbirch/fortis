@@ -66,6 +66,7 @@ const Post = ({ pageContext }) => {
           `}
           image={featuredImage}
           artDirection={`imageFileHero`}
+          sizes={`(max-width: 1800px) calc(100vw - var(--site-column)), 1615px`}
         />
         <div
           className={`

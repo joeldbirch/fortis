@@ -17,8 +17,12 @@ const PostTemplateFragment = `
       altText
       imageFileHero {
         childImageSharp {
-          fluid(maxWidth: 1600, maxHeight:900, cropFocus: CENTER) {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
+          fluid(
+            maxWidth: 1615,
+            maxHeight: 970,
+            cropFocus: CENTER,
+            srcSetBreakpoints: [ 800, 1280, 1615, 1920, 2560 ]) {
+              ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }
       }
@@ -48,13 +52,6 @@ const NewsPreviewFragment = `
       imageFile {
         childImageSharp {
           fluid(maxWidth: 1000, maxHeight: 700, cropFocus: CENTER) {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
-          }
-        }
-      }
-      imageFilePortrait {
-        childImageSharp {
-          fluid(maxWidth: 1000, maxHeight: 1000, cropFocus: CENTER) {
             ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }

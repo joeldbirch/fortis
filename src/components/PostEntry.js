@@ -38,7 +38,6 @@ const PostEntry = ({
             ? otherImages.portraitImage
             : featuredImage
           }
-          artDirection={artDirection}
           className={`
             ${imageClasses}
           `}
