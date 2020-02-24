@@ -52,7 +52,7 @@ const ProjectDetails = ({
             `}
           >
             <Logo
-              logo={ logo }
+              logo={logo}
               alt={`${title} logo`}
               width="264"
               height="80"
@@ -91,8 +91,7 @@ const ProjectDetails = ({
               `}
             />
             {
-              enquiryLink
-              ?
+              enquiryLink && (
                 <p className={`
                   margin-top:800
                   @mq-palm--margin-top:columns-0-1/2
@@ -107,7 +106,7 @@ const ProjectDetails = ({
                     Enquire
                   </a>
                 </p>
-              : ``
+              )
             }
           </div>
         </div>
