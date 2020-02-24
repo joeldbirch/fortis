@@ -25,10 +25,7 @@ const RelatedContent = ({
       padding-horizontal:columns-0-1/2
     `}>
       <Divider/>
-      <section
-        className="
-        "
-      >
+      <section>
         <h2
           className={`
             ${uiFontSize}

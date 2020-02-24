@@ -5,7 +5,6 @@ const PostEntry = ({
   featuredImage,
   otherImages=null,
   usePortrait=false,
-  artDirection,
   sizes,
   className=``,
   imageClasses=``,

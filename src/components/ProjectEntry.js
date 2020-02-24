@@ -9,7 +9,6 @@ const ProjectEntry = ({
     uri,
     featuredImage,
     note,
-    id,
     projectId,
     title,
     projectDetails: {

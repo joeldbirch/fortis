@@ -7,7 +7,15 @@ const headerStyles = {
   },
 }
 
-const TheHeader = ({headerState, children, className=``, ...props}) => {
+const TheHeader = ({
+  headerState: {
+    reversed,
+    applyBg,
+  },
+  children,
+  className=``,
+  ...props
+}) => {
   return (
     <header
       className={`
@@ -36,9 +44,9 @@ const TheHeader = ({headerState, children, className=``, ...props}) => {
           height:100
           position:absolute
         `}
-        style={headerState.reversed ? headerStyles.reversed : {
-          transition: headerState.applyBg ? `background-color 2s 1s` : `background-color 0s 0s` ,
-          backgroundColor: headerState.applyBg ? `rgba(255, 255, 255, 1)`: `rgba(255, 255, 255, 0)`,
+        style={reversed ? headerStyles.reversed : {
+          transition: applyBg ? `background-color 2s 1s` : `background-color 0s 0s` ,
+          backgroundColor: applyBg ? `rgba(255, 255, 255, 1)`: `rgba(255, 255, 255, 0)`,
         }}
       />
       {children}

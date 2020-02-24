@@ -26,7 +26,7 @@ const CarouselSlide = ({
   return (
     <article
       className={`
-      ${className}
+        ${className}
       `}
       {...props}
     >

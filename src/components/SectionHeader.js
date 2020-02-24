@@ -5,7 +5,8 @@ export default ({className=``, absolute=`true`, children}) => {
     <header
       className={`
         ${className}
-        ${absolute
+        ${
+          absolute
           ? `position:absolute`
           : `position:relative`
         }
