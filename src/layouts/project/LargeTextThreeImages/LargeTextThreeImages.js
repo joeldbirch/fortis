@@ -53,7 +53,7 @@ const LargeTextThreeImages = ({
         <div className={`
           @mq-palm--width:50
           @mq-palm--padding-right:columns-1
-          ${!benLargerImage ? `` : `@mq-lap--margin-top:columns-1`}
+          ${benLargerImage ? `@mq-lap--margin-top:columns-1` : ``}
         `}>
           <div
             dangerouslySetInnerHTML={{__html: benText}}
@@ -64,9 +64,8 @@ const LargeTextThreeImages = ({
             `}
           />
           {
-            !benSmallerImage
-            ? ``
-            : <figure className={`
+            benSmallerImage && (
+              <figure className={`
                 margin-top:800
                 @mq-palm--margin-top:columns-1
                 @mq-palm--display:flex
@@ -94,9 +93,8 @@ const LargeTextThreeImages = ({
                   />
                 </div>
                 {
-                  !benNote
-                  ? ``
-                  : <figcaption
+                  benNote && (
+                    <figcaption
                       className={`
                         @mq-palm--padding-left:800
                         @mq-palm--margin-right:400
@@ -113,8 +111,10 @@ const LargeTextThreeImages = ({
                         `}
                       >{benNote}</span>
                     </figcaption>
+                  )
                 }
               </figure>
+            )
           }
 
         </div>
@@ -124,8 +124,8 @@ const LargeTextThreeImages = ({
           @mq-desk--padding-left:columns-1
           @mq-max-palm--margin-bottom:800
         `}>
-          { benLargerImage
-            ? <FluidImage
+          { benLargerImage && (
+              <FluidImage
                 image={benLargerImage}
                 className={`
                   margin-bottom:800
@@ -137,15 +137,15 @@ const LargeTextThreeImages = ({
                   (min-width: ${mq.palm}) ${cols(6)}vw
                 `}
               />
-            : ``
+            )
           }
         </div>
       </div>
 
       {
-        !benOtherSmallerImage
-        ? ``
-        : <figure className={`
+        benOtherSmallerImage && (
+
+          <figure className={`
             @mq-palm--margin-right:columns-2
             @mq-desk--margin-right:columns-3
             @mq-palm--margin-top:columns-1
@@ -169,10 +169,10 @@ const LargeTextThreeImages = ({
               />
             : ``
           }
+
           {
-            !benOtherNote
-            ? ``
-            : <figcaption
+            benOtherNote && (
+              <figcaption
                 className={`
                   @mq-tiny--padding-horizontal:800
                   @mq-desk--padding-horizontal:columns-1
@@ -188,9 +188,11 @@ const LargeTextThreeImages = ({
                   `}
                 >{benOtherNote}</span>
               </figcaption>
+            )
           }
 
-        </figure>
+          </figure>
+        )
       }
 
     </section>
