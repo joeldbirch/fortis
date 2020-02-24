@@ -13,7 +13,7 @@ export default ({className=``, children=null, ...props}) => {
         rhythm-fix-before
         rhythm-fix-after
       `}
-      style={{'--max-width': '20em'}}
+      style={{'--max-width': '21em'}}
       {...props}
     />
   )
