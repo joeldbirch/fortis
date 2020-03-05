@@ -56,7 +56,7 @@
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
+  "license": "UNLICENSED",
   "scripts": {
     "postinstall": "yarn upgrade hucssley",
     "build:initial": "gatsby build",
