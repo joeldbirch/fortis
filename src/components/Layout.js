@@ -14,6 +14,7 @@ import fixOutline from 'fix-outline'
 import fps from 'vendor/60fps-scroll-element'
 
 import 'styles/index.scss'
+// import '../../static/styles-dev.css'
 
 
 const Layout = ({
