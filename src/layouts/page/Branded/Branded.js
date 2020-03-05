@@ -33,7 +33,13 @@ const styles = {
 
 const Branded = ({image, text, video=null, nextSection=null, id=null, ...props}) => {
   return (
-    <section className={` ${styles.root} `} id={id} >
+    <section
+      className={` ${styles.root} `}
+      id={id}
+      style={{
+        '--grid-template-rows-var-1': `1fr auto`,
+      }}
+    >
       <div className={` ${styles.mediaWrap} `}
         style={{
           minHeight: '10rem',
