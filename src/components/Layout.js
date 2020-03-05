@@ -71,8 +71,6 @@ const Layout = ({
         />
         <html className={`
           @mq-lap--font-size:400
-          @mq-bigdesk--font-size:fluid
-          @mq-wall--font-size:500
         `} lang="en" />
 
         <meta name="robots" content="noindex" />
