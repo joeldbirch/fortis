@@ -23,7 +23,6 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
         js-contrast--reverse
         min-height:100vh-fixed
         position:relative
-        scroll-margin-top:-px
         scroll-snap-align:start
       `}
     >
