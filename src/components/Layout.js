@@ -10,6 +10,7 @@ import TheHeader from './TheHeader'
 import TheFooter from './TheFooter'
 import { isIos, isSafari } from 'utilities/helpers'
 import { uiFontSize, getInvertedStyles } from 'styles/helpers'
+import useFreeScroll from 'hooks/use-free-scroll'
 import fixOutline from 'fix-outline'
 import fps from 'vendor/60fps-scroll-element'
 
@@ -28,6 +29,8 @@ const Layout = ({
 
   const [menuOpen, toggleMenu] = useState(false)
   const [headerState] = useHeaderIntersection()
+  const [freeScroll, initFreeScroll] = useFreeScroll()
+  useLayoutEffect(initFreeScroll, [])
 
   useLayoutEffect(() => {
     if (typeof window !== `undefined`) {
@@ -48,6 +51,14 @@ const Layout = ({
         scroll-behavior:smooth
         letter-spacing:-10
       `}
+
+      style={
+        freeScroll
+        ? {
+          scrollSnapType: `none`
+        }
+        : {}
+      }
       {...props}
     >
       <Helmet>
