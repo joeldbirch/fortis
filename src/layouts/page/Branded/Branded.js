@@ -36,9 +36,6 @@ const Branded = ({image, text, video=null, nextSection=null, id=null, ...props})
     <section
       className={` ${styles.root} `}
       id={id}
-      style={{
-        '--grid-template-rows-var-1': `1fr auto`,
-      }}
     >
       <div className={` ${styles.mediaWrap} `}
         style={{
@@ -70,7 +67,7 @@ const Branded = ({image, text, video=null, nextSection=null, id=null, ...props})
           display:inline-block
         `}
         className={`
-          @mq-palm--margin-top:-400
+          @mq-lap--margin-top:-400
           flex-direction:column
           justify-content:flex-end
         `}

@@ -2,7 +2,7 @@ import React from 'react'
 
 const styles = {
   brandingWrap: `
-    @mq-palm--align-items:center
+    align-items:flex-end
     @mq-palm--flex-direction:row-reverse
     @mq-palm--justify-content:flex-end
     display:flex
@@ -10,9 +10,13 @@ const styles = {
   `,
   tagline: `
     @mq-bigdesk--font-size:550
+    @mq-bigdesk--margin-top:400
     @mq-desk--padding-left:800
+    @mq-desk--transform:var-2
     @mq-max-palm--margin-horizontal:auto
     @mq-palm--padding-bottom:400
+    @mq-widepalm--padding-bottom:600
+    @mq-lap--padding-bottom:columns-0-1/2
     @mq-palm--padding-left:400
     @mq-widepalm--font-size:500
     @mq-widepalm--padding-left:800
@@ -23,9 +27,12 @@ const styles = {
     letter-spacing:0
     line-height:200
     padding-bottom:100
-    padding-top:400
+    @mq-max-palm--padding-top:400
+    position:relative
+    transform:var-1
     white-space:pre
     width:small-column
+    z-index:100
   `,
   watermark: `
     @mq-desk--width:columns-7
@@ -49,11 +56,6 @@ const BigBrand = ({htmlText=null, className=``, textClasses=``, HeadingTag=`h2`,
       <HeadingTag
         className={`
           ${styles.tagline}
-          @mq-bigdesk--margin-top:400
-          @mq-desk--transform:var-2
-          position:relative
-          transform:var-1
-          z-index:100
         `}
         style={{
           '--translate-y-var-2': '10%',
