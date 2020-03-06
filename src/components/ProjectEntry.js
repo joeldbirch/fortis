@@ -54,6 +54,7 @@ const ProjectEntry = ({
             @mq-palm--height:var-1
             js-contrast
             js-contrast--reverse
+            @mq-palm--margin-horizontal:columns-0-1/2
           `}
         />
 

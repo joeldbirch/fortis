@@ -84,8 +84,9 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
             post={post}
             className={`
               overflow:hidden
-              scroll-margin-top:-px
               transition-duration:700
+              max-width:container
+              margin-horizontal:auto
               ${
                 isShown(post)
                   ? `max-height:4000px opacity:1`
