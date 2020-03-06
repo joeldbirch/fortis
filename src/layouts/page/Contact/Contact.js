@@ -36,6 +36,7 @@ const Contact = () => {
         padding-top:site-top
         position:relative
         scroll-snap-align:start
+        width:100
         z-index:100
       `}
     >
