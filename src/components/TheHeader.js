@@ -25,7 +25,6 @@ const TheHeader = ({
         justify-content:space-between
         margin-horizontal:auto
         max-width:container
-        padding-bottom:0
         padding:columns-0-1/2
         pointer-events:none
         pos-top-left-right:0

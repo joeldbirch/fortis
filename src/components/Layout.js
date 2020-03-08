@@ -97,6 +97,7 @@ const Layout = ({
             hover-underline
             &::before--hit-area-xy-100
             position:relative
+            @mq-lap--position:absolute
             pointer-events:auto
             ${uiFontSize}
           `}
