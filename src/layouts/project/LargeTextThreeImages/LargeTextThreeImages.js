@@ -107,6 +107,7 @@ const LargeTextThreeImages = ({
                           display:block
                           handwritten
                           padding-vertical:columns-0-1/2
+                          @mq-max-palm--padding-bottom:columns-1
                           rhythm-fix-after
                         `}
                       >{benNote}</span>
@@ -184,6 +185,7 @@ const LargeTextThreeImages = ({
                     display:block
                     handwritten
                     padding-vertical:columns-0-1/2
+                    @mq-max-palm--padding-bottom:columns-1
                     text-align:center
                   `}
                 >{benOtherNote}</span>

@@ -131,6 +131,7 @@ const TextRightTwoImages = ({
                 handwritten
                 margin-vertical:auto
                 padding-vertical:columns-0-1/2
+                @mq-max-palm--padding-bottom:columns-1
                 rhythm-fix-after
                 rhythm-fix-before
                 text-align:center
