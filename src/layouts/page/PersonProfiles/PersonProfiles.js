@@ -48,7 +48,8 @@ const ProfileEntry = ({
         display:grid
         grid-gap:500
         padding-horizontal:columns-0-1/2
-        padding-vertical:400
+        padding-top:400
+        padding-bottom:800
       `}
       style={{
         '--grid-template-columns-var-1': `6fr 6fr`,
