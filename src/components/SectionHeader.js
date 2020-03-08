@@ -13,8 +13,11 @@ export default ({className=``, absolute=`true`, children}) => {
         margin-horizontal:auto
         max-width:container
         padding-vertical:columns-0-1/2
+        @mq-lap--padding-vertical:800
+        pointer-events:none
         pos-top-left:0
         width:100
+        z-index:400
       `}
     >
       <div

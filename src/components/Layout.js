@@ -97,7 +97,6 @@ const Layout = ({
             hover-underline
             &::before--hit-area-xy-100
             position:relative
-            @mq-lap--position:absolute
             pointer-events:auto
             ${uiFontSize}
           `}
@@ -113,8 +112,7 @@ const Layout = ({
                 @mq-palm--padding-right:columns-1-1/2
                 width:100
                 position:absolute
-                pos-left:50
-                translate-x:-50
+                pos-left:0
               `}
               style={getInvertedStyles(headerState.reversed)}
             >

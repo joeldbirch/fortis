@@ -25,7 +25,9 @@ const TheHeader = ({
         justify-content:space-between
         margin-horizontal:auto
         max-width:container
-        padding:columns-0-1/2
+        padding-horizontal:columns-0-1/2
+        padding-vertical:columns-0-1/2
+        @mq-lap--padding-vertical:800
         pointer-events:none
         pos-top-left-right:0
         position:fixed

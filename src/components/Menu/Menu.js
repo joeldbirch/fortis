@@ -34,8 +34,8 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
             z-index:300
             margin-right:columns-0-1/2
             margin-top:columns-0-1/2
+            @mq-lap--margin-top:800
             pos-top-right:0
-            @mq-lap--translate-y:-50
             user-select:none
           `}
           onClick={() => toggleHandler(!isOpen)}
@@ -77,8 +77,8 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
             z-index:300
             margin-right:columns-0-1/2
             margin-top:columns-0-1/2
+            @mq-lap--margin-top:columns-0-1/4
             pos-top-right:0
-            @mq-lap--translate-y:-50
             user-select:none
           `}
           onClick={() => toggleHandler(!isOpen)}

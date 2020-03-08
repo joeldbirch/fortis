@@ -45,6 +45,7 @@ const FilterForm = ({
         ${uiFontSize}
         color:neutral-700
         display:inline-flex
+        pointer-events:auto
       `}
       style={{
         userSelect: `none`

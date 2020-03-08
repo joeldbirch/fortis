@@ -36,6 +36,7 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
               max-width:container
               padding-horizontal:columns-0-1/2
               padding-top:columns-0-1/2
+              @mq-lap--padding-top:800
               pointer-events:none
               pos-left-right:0
               position:absolute
