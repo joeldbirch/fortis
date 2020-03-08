@@ -10,8 +10,7 @@ const styles = {
     cursor:pointer
     display:flex
     group
-    padding-horizontal:200
-    padding-vertical:100
+    padding:200
     position:relative
     `,
   icon: `

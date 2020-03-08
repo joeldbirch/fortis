@@ -60,8 +60,8 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
                 update={changeShownPosts}
                 reset={filterReset}
                 className={`
-                  @mq-desk--padding-top:1000
-                  padding-top:800
+                  @mq-desk--padding-top:600
+                  padding-top:400
                   position:relative
                 `}
               />
