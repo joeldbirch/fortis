@@ -138,21 +138,16 @@ const Post = ({ pageContext }) => {
               }
 
             </div>
-            { !note
-              ? ``
-              : <p
-                  className={`
-                    @mq-max-palm--margin-right:columns-0-1/4
-                    @mq-max-palm--pos-top-right:0
-                    @mq-max-palm--position:absolute
-                    @mq-max-palm--width:columns-3
-                    @mq-palm--margin-top:800
-                    @mq-palm--max-width:small-column
-                    handwritten
-                  `}
-                >
-                  {note}
-                </p>
+            { note && <p
+                className={`
+                  @mq-max-palm--display:none
+                  margin-top:800
+                  max-width:small-column
+                  handwritten
+                `}
+              >
+                {note}
+              </p>
             }
           </header>
           <div
