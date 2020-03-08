@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import GatsbyImage from 'gatsby-image'
 import FullWindowVideo from 'components/FullWindowVideo'
 import ScrollPrompt from 'components/ScrollPrompt'
-import { uiFontSize, forceFullWidth } from 'styles/helpers'
+import { uiFontSize } from 'styles/helpers'
 import { getPath } from 'utilities/helpers'
 
 const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className=``, ...props}) => {
@@ -17,7 +17,7 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
       id={id}
       className={`
         ${className}
-        ${forceFullWidth}
+        width:100
         color:neutral-0
         js-contrast
         js-contrast--reverse
