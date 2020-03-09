@@ -2,15 +2,19 @@
 :root {
   --guide-color: rgba(0, 153, 255, 0.2);
   --site-column: #{$site-column};
-  --site-top: calc(var(--site-column) + 1.655rem);
   --site-max-width: #{$site-max-width};
   --grid-template-columns-var1: 1fr 1fr;
   --rhythm-offset: -0.25em; // see rhythm-fix mixin in _tools-typography.scss
   --bg-image: '';
   --vh: 1vh; // Fallback units
 
-  @media (max-width: #{hu-get($hu-media-queries, palm)}) {
-    --site-top: calc(1rem + 10vw);
+  --site-top: calc(1.25rem + #{$site-column});
+
+  @media (min-width: #{hu-get($hu-media-queries, lap)}) {
+    --site-top: 5.25rem;
+  }
+  @media (min-width: #{hu-get($hu-media-queries, desk)}) {
+    --site-top: 5.625rem;
   }
   @media (min-width: #{$site-max-width}) {
     --site-column: #{strip-unit($site-max-width / ($site-layout-columns + $site-padding-columns) / 16)}rem;
