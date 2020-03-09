@@ -4,7 +4,6 @@ import { uiFontSize } from 'styles/helpers'
 
 const styles = {
   hitarea: `
-    &::before--hit-area-y-100
     &:hover--color:neutral-900
     align-items:center
     cursor:pointer
@@ -61,6 +60,7 @@ const FilterForm = ({
       </Helmet>
       <ul
         className={`
+          @mq-max-palm--justify-content:center
           @mq-palm--margin-left:-200
           align-items:center
           display:flex

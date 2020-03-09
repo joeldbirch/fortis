@@ -54,7 +54,7 @@ const NewsOverview = ({introText=null, showHeading=true, nextSection=null, id=nu
       >
         {
           showHeading && (
-            <SectionHeader>
+            <SectionHeader className="z-index:400">
               <PageHeader headingText={siteSectionTitle} />
             </SectionHeader>
           )

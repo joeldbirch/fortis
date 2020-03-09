@@ -17,7 +17,7 @@ export default ({className=``, absolute=`true`, children}) => {
         pointer-events:none
         pos-top-left:0
         width:100
-        z-index:400
+        z-index:300
       `}
     >
       <div
