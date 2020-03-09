@@ -14,7 +14,7 @@ const ImageGallery = ({imageGallery}) => {
         margin-bottom:-columns-0-1/2
         margin-horizontal:auto
         max-width:container
-        padding-horizontal:columns-0-1/2
+        @mq-bigdesk--padding-horizontal:columns-0-1/2
         position:relative
         scroll-snap-align:center
         width:100
