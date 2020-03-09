@@ -123,6 +123,7 @@ module.exports = {
     'dot',
     'pre',
     'b',
+    'strong',
   ]),
   wordpressPatterns: [
     /^(.*)-template(-.*)?$/,

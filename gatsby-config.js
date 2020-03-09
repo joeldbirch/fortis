@@ -1,3 +1,4 @@
+const path = require('path')
 const Fiber = require('fibers')
 
 const {
@@ -120,9 +121,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
-        printRejected: true, // Print removed selectors and processed file names
-        content: ['public/*.html', 'public/**/*.html', 'src/**/*.js','src/*.js', 'src/images/*.svg', 'src/images/**/*.svg', 'src/fortis-styles/**/!(*.d).{js,jsx}'],
-        ignore: [`src/components/FormModal/_index.scss`, `src/components/TheWrap/style.module.scss`, `src/fortis-styles/base/_custom-reset.scss`, `flickity`],
+        printRejected: false, // Print removed selectors and processed file names
+        content: [path.join(process.cwd(), 'src/**/!(*.d).{js,svg,html}')],
+        ignore: [`src/components/TheWrap/style.module.scss`, `src/fortis-styles/base/_custom-reset.scss`, `flickity`],
         whitelist: wordpressSelectors,
         whitelistPatterns: wordpressPatterns,
         extractors: [
