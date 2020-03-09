@@ -24,6 +24,7 @@
     @include underline;
     &::after {
       top: auto;
+      margin-top: -0.25em; // looks better a tad closer to handwritten font
     }
   }
 
