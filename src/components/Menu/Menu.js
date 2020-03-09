@@ -77,7 +77,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
             z-index:200
             margin-right:columns-0-1/2
             margin-top:columns-0-1/2
-            @mq-lap--margin-top:columns-0-1/4
+            @mq-lap--margin-top:800
             pos-top-right:0
             user-select:none
           `}
