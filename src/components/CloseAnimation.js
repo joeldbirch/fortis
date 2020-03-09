@@ -1,27 +1,11 @@
 import React from 'react'
-import { centred, appleBezier } from '../styles/helpers'
+import { centred } from '../styles/helpers'
 
 const styles = {
   wrap: `
     close-wrapper
     ${centred}
   `,
-  lines: `
-    background-color:neutral-900
-    display:block
-    position:absolute
-    z-index:100
-  `,
-}
-
-const inlineStyles = {
-  wrap: {
-  },
-  lines: {
-    height: `100%`,
-    transition: `transform 1s ${appleBezier}`,
-    width: `2px`,
-  }
 }
 
 const ClosedAnimation = ({closed=true, wrapStyles={}}) => {
@@ -32,7 +16,6 @@ const ClosedAnimation = ({closed=true, wrapStyles={}}) => {
       `}
       style={Object.assign(
         {},
-        inlineStyles.wrap,
         {
           opacity: closed ? `1` : `0`,
           pointerEvents: closed ? `auto` : `none`,
