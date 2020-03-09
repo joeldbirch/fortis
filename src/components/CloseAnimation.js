@@ -1,24 +1,17 @@
 import React from 'react'
 import { centred } from '../styles/helpers'
 
-const styles = {
-  wrap: `
-    close-wrapper
-    ${centred}
-  `,
-}
-
 const ClosedAnimation = ({closed=true, wrapStyles={}}) => {
   return (
     <span
       className={`
-        ${styles.wrap}
+        close-wrapper
+        ${centred}
       `}
       style={Object.assign(
         {},
         {
           opacity: closed ? `1` : `0`,
-          pointerEvents: closed ? `auto` : `none`,
         },
         wrapStyles,
       )}

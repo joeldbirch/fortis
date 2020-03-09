@@ -85,6 +85,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
           style={{
             width: `2.6em`,
             height: `1.3em`,
+            pointerEvents: isOpen ? `auto` : `none`,
           }}
         >
           <CloseAnimation
