@@ -74,7 +74,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
             position:fixed
             ${uiFontSize}
             &::before--hit-area-xy-100
-            z-index:300
+            z-index:200
             margin-right:columns-0-1/2
             margin-top:columns-0-1/2
             @mq-lap--margin-top:columns-0-1/4
