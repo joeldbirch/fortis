@@ -38,7 +38,6 @@ const ProfileEntry = ({
   return (
     <div
       className={`
-      grid-guide
         @mq-desk--grid-template-columns:var-3
         @mq-desk--padding-horizontal:columns-1-1/2
         @mq-lap--grid-gap:columns-1
