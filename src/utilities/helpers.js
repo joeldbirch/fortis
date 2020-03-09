@@ -125,6 +125,7 @@ export const mq = {
   lap: huEm(768),
   toPalm: huEm(549),
   desk: huEm(960),
+  bigdesk: huEm(1400),
 }
 
 export const postWithFeaturedImageSizes = (post, sizes) => {
