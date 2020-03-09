@@ -38,6 +38,7 @@ const ProfileEntry = ({
   return (
     <div
       className={`
+      grid-guide
         @mq-desk--grid-template-columns:var-3
         @mq-desk--padding-horizontal:columns-1-1/2
         @mq-lap--grid-gap:columns-1
@@ -65,8 +66,7 @@ const ProfileEntry = ({
         `}
         sizes={`
           (max-width: ${mq.toPalm}) ${cols(5)}vw,
-          (min-width: ${mq.bigdesk}) ${cols(4)}vw,
-          (min-width: ${mq.desk}) ${cols(5)}vw,
+          (min-width: ${mq.desk}) ${cols(4)}vw,
           (min-width: ${mq.widepalm}) ${cols(6)}vw,
           (min-width: ${mq.palm}) ${cols(5.5)}vw
         `}
