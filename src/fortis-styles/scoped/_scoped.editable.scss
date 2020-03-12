@@ -14,7 +14,21 @@ $scoped_container: 's-editable' !default;
 
   @include space-items;
 
-  // @include headings(('h', '.h'));
+  h2 {
+    @include rhythm-fix(after);
+
+    font-size: #{hu-get($hu-font-size-types, 500)};
+    font-weight: normal;
+    font-style: normal;
+
+    em {
+      font-style: normal;
+    }
+
+    strong {
+      font-weight: normal;
+    }
+  }
 
   // improve vertical rhythm by mitigating unwanted line-height
   // &:not(.s-aside) > :first-child:not([class*="margin:"]):not([class*="margin-vertical"]):not([class*="margin-top"]) {
@@ -83,8 +97,11 @@ $scoped_container: 's-editable' !default;
     @include circle;
   }
 
-  [style*="text-decoration: underline"],
-  em {
-    @include underline;
+  pre,
+  p {
+    [style*="text-decoration: underline"],
+    em {
+      @include underline;
+    }
   }
 }
