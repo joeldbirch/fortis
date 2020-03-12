@@ -4,8 +4,8 @@ import { uiFontSize } from 'styles/helpers'
 
 const styles = {
   hitarea: `
-    &:hover--color:neutral-900
     align-items:center
+    color:neutral-900
     cursor:pointer
     display:flex
     group
