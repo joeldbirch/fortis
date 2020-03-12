@@ -24,6 +24,7 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
         min-height:100vh-fixed
         position:relative
         scroll-snap-align:start
+        scroll-snap-stop:always
       `}
     >
 

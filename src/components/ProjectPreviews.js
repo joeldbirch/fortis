@@ -42,6 +42,7 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
           position:relative
           scroll-margin-top:-px
           scroll-snap-align:start
+          scroll-snap-stop:always
         `}
       >
         { !tags

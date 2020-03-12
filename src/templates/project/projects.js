@@ -20,7 +20,7 @@ const Projects = ({ pageContext }) => {
   return (
     <Layout
       className={`
-        scroll-snap-type:y-proximity
+        scroll-snap-type:y-mandatory
       `}
       AddToHeader={<PageHeader isMain="true" headingText={siteSectionTitle} />}
     >

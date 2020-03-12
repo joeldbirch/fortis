@@ -15,6 +15,7 @@ const TextBlock = ({text, style={}, nextSection=null, id=null, ...props}) => {
         padding-vertical:columns-2
         position:relative
         scroll-snap-align:start
+        scroll-snap-stop:always
         width:100
       `}
     >
