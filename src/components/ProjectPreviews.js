@@ -59,7 +59,7 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
               <ProjectsFilter
                 items={tags}
                 update={changeShownPosts}
-                reset={filterReset}
+                onReset={filterReset}
                 className={`
                   padding-top:1000
                   position:relative
