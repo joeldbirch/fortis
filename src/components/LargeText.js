@@ -8,7 +8,7 @@ export default ({className=``, children=null, ...props}) => {
       className={`
         ${className}
         @mq-palm--max-width:var
-        font-size:500
+        @mq-palm--font-size:500
         rhythm-fix-after
         rhythm-fix-before
         s-editable
