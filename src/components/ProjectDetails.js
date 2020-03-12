@@ -116,7 +116,7 @@ const ProjectDetails = ({
         </div>
 
         <div className={`
-          @mq-desk--padding-left:columns-1
+          @mq-palm--padding-left:columns-1
           @mq-palm--width:50
         `}>
           <FluidImage
