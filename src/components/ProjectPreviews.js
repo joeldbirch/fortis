@@ -48,7 +48,7 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
           ? ``
           :
           <>
-            <Divider noMargin={true}/>
+            <Divider className={`js-free-scroll`} noMargin={true} />
             <SectionHeader
               absolute={false}
               className={`
