@@ -17,7 +17,11 @@ const ProjectDetails = ({
       status,
       introductoryText,
       enquiryLink,
-    },
+    }
+  },
+  firstContent: {
+    text,
+    image,
   },
 }) => {
 

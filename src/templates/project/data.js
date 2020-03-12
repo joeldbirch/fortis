@@ -71,6 +71,20 @@ const ProjectTemplateFragment = (layouts) => `
           enquiryLink
         }
       }
+      firstContent {
+        text
+        image {
+          sourceUrl
+          altText
+          imageFile {
+            childImageSharp {
+              fluid(maxHeight: 600, maxWidth: 600, cropFocus: CENTER) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
+          }
+        }
+      }
     }
     relatedContent {
       similarProjects {
