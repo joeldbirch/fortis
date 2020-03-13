@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default ({className=``, absolute=`true`, children}) => {
+export default ({className=``, absolute=`true`, children, ...props}) => {
   return (
     <header
       className={`
@@ -19,6 +19,7 @@ export default ({className=``, absolute=`true`, children}) => {
         width:100
         z-index:300
       `}
+      {...props}
     >
       <div
         className={`

@@ -25,10 +25,12 @@ const styles = {
 
 
 const FilterForm = ({
-  items,
-  update = ()=>{},
-  className=``,
-}) => {
+    items,
+    update = ()=>{},
+    className=``,
+    ...props
+  },
+) => {
 
   const defaultTag = {
     name: `All`,
@@ -49,6 +51,7 @@ const FilterForm = ({
       style={{
         userSelect: `none`
       }}
+      {...props}
     >
       <Helmet>
         <style>{`

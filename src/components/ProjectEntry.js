@@ -24,6 +24,7 @@ const ProjectEntry = ({
   showNote,
   className=``,
   imageClasses=``,
+  ...props
 }) => {
 
   return (
@@ -37,13 +38,11 @@ const ProjectEntry = ({
         '--grid-template-columns-var-2': '2.75fr 9fr',
         '--grid-template-columns-var-3': '1.75fr 10fr',
       }}
+      {...props}
     >
       <div
         className={`
           position:relative
-          @mq-palm--height:auto
-          display:flex
-          flex-direction:column
         `}
       >
         <FluidImage
@@ -51,7 +50,6 @@ const ProjectEntry = ({
           artDirection="imageFileHero"
           className={`
             ${imageClasses}
-            @mq-palm--height:var-1
             js-contrast
             js-contrast--reverse
             @mq-palm--margin-horizontal:columns-0-1/2
@@ -59,6 +57,7 @@ const ProjectEntry = ({
         />
 
         <div className={`
+          js-project-header
           @mq-palm--padding-horizontal:columns-0-1/2
           background-color:neutral-0
           max-width:container

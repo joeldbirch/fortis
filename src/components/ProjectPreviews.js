@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useLayoutEffect } from 'react'
+import Helmet from 'react-helmet'
 import ProjectEntry from 'components/ProjectEntry'
 import Divider from 'components/DividerHorizontal'
 import SectionHeader from 'components/SectionHeader'
@@ -6,6 +7,19 @@ import ProjectsFilter from 'components/FilterForm'
 import { uiFontSize } from 'styles/helpers'
 
 const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
+
+  const [computedSizes, setComputedSizes] = useState({})
+
+  useLayoutEffect(function(){
+    setComputedSizes({
+      projectFilterHeader: {
+        height: document.getElementById(`ProjectFilterHeader`)?.offsetHeight,
+      },
+      projectHeader: {
+        height: document.querySelector(`.js-project-header`)?.offsetHeight,
+      }
+    })
+  }, [])
 
   const [shownPosts, setShownPosts] = useState(posts)
 
@@ -35,6 +49,15 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
       `}
       id={id}
     >
+      <Helmet>
+        <style>{`
+          :root {
+            --project-header-height: ${computedSizes.projectHeader?.height}px;
+            --project-filter-height: ${computedSizes.projectFilterHeader?.height}px;
+            --project-image-height: calc(var(--vh, 1vh) * 100 - var(--project-header-height) - var(--project-filter-height));
+          }
+        `}</style>
+      </Helmet>
       <div
         className={`
           js-contrast
@@ -51,6 +74,7 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
           <>
             <Divider className={`js-free-scroll`} noMargin={true} />
             <SectionHeader
+              id="ProjectFilterHeader"
               absolute={false}
               className={`
                 @mq-max-palm--text-align:center
@@ -77,11 +101,17 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
           overflow:hidden
           position:relative
         `}
+        style={{
+          '--max-height-var-1': `var(--project-image-height)`,
+        }}
       >
-        {posts && posts.map((post, index) => (
+        {posts && posts.map((post) => (
           <ProjectEntry
             key={post.id}
             post={post}
+            imageClasses={`
+              max-height:var-1
+            `}
             className={`
               overflow:hidden
               transition-duration:700
