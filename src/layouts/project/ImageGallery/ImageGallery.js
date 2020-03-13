@@ -35,8 +35,6 @@ const ImageGallery = ({imageGallery}) => {
         >
           { imageGallery.map((image, index) => (
             <div key={index} className={`
-              js-contrast
-              js-contrast--reverse
               position:relative
               width:100
             `}>

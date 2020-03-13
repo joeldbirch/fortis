@@ -1,12 +1,5 @@
 import React from 'react'
 
-const headerStyles = {
-  reversed: {
-    transition: `background-color 0.5s 0s`,
-    backgroundColor: `rgba(255, 255, 255, 0)`,
-  },
-}
-
 const TheHeader = ({
   headerState: {
     reversed,
@@ -45,10 +38,11 @@ const TheHeader = ({
           position:absolute
           width:100vw
         `}
-        style={reversed ? headerStyles.reversed : {
-          transition: applyBg ? `background-color 2s 1s` : `background-color 0s 0s` ,
-          backgroundColor: applyBg ? `rgba(255, 255, 255, 1)`: `rgba(255, 255, 255, 0)`,
-        }}
+        style={
+          reversed || !applyBg
+            ? { backgroundColor: `rgba(255, 255, 255, 0)` }
+            : { backgroundColor: `rgba(255, 255, 255, 1)` }
+          }
       />
       {children}
     </header>

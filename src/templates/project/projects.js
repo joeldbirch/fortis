@@ -28,9 +28,13 @@ const Projects = ({ pageContext }) => {
         title={siteSectionTitle}
       />
 
-      <TextBlock text={introContent} nextSection="#previews" style={{
-        '--desk-offset-left': '-3.5em',
-      }} />
+      <TextBlock
+        text={introContent}
+        nextSection="#previews"
+        style={{
+          '--desk-offset-left': '-3.5em',
+        }}
+      />
 
       <ProjectPreviews posts={nodes} tags={projectTags} id="previews" />
     </Layout>

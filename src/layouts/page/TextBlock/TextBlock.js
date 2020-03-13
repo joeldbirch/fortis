@@ -1,14 +1,13 @@
 import React from 'react'
 import ScrollPrompt from 'components/ScrollPrompt'
 
-const TextBlock = ({text, style={}, nextSection=null, id=null, ...props}) => {
+const TextBlock = ({text, style={}, nextSection=null, id=null, className=``, ...props}) => {
   return (
     <section
       id={id}
       className={`
         @mq-desk--padding-horizontal:columns-1-1/2
         display:flex
-        js-no-header-bg
         layout-text-block
         min-height:100vh-fixed
         padding-horizontal:columns-1-1/2
@@ -17,6 +16,7 @@ const TextBlock = ({text, style={}, nextSection=null, id=null, ...props}) => {
         scroll-snap-align:start
         scroll-snap-stop:always
         width:100
+        ${className}
       `}
     >
       <div

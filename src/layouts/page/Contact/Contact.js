@@ -29,6 +29,7 @@ const Contact = () => {
   return (
     <div
       className={`
+      js-contrast
         margin-horizontal:auto
         max-width:container
         padding-bottom:400
