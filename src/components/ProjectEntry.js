@@ -51,7 +51,6 @@ const ProjectEntry = ({
           className={`
             ${imageClasses}
             js-contrast
-            js-contrast--reverse
             @mq-palm--margin-horizontal:columns-0-1/2
           `}
         />
