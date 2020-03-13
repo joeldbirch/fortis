@@ -8,14 +8,12 @@
   --bg-image: '';
   --vh: 1vh; // Fallback units
 
-  --site-top: calc(1.25rem + #{$site-column});
+  --site-top: 5.5rem;
 
   @media (min-width: #{hu-get($hu-media-queries, lap)}) {
-    --site-top: 5.25rem;
+    --site-top: 7rem;
   }
-  @media (min-width: #{hu-get($hu-media-queries, desk)}) {
-    --site-top: 5.625rem;
-  }
+
   @media (min-width: #{$site-max-width}) {
     --site-column: #{strip-unit($site-max-width / ($site-layout-columns + $site-padding-columns) / 16)}rem;
   }
