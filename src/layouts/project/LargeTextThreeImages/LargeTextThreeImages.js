@@ -1,6 +1,7 @@
 import React from 'react'
 import FluidImage from 'components/FluidImage'
 import { cols, mq } from 'utilities/helpers'
+import { moduleRoot } from 'styles/helpers'
 
 // import { cols, mq } from 'utilities/helpers'
 
@@ -12,15 +13,7 @@ import { cols, mq } from 'utilities/helpers'
 // // `
 
 const styles = {
-  root: `
-    @mq-palm--padding-vertical:columns-0-1/2
-    margin-horizontal:auto
-    max-width:container
-    padding-horizontal:columns-0-1/2
-    padding-top:800
-    position:relative
-    width:100
-  `,
+  root: moduleRoot,
 }
 
 const LargeTextThreeImages = ({
@@ -42,7 +35,6 @@ const LargeTextThreeImages = ({
     <section className={styles.root}>
       <div
         className={`
-          @mq-desk--padding-horizontal:columns-1
           @mq-palm--flex-direction:row
           display:flex
           flex-direction:column-reverse
@@ -147,7 +139,8 @@ const LargeTextThreeImages = ({
         benOtherSmallerImage && (
 
           <figure className={`
-            @mq-desk--margin-right:columns-3
+            @mq-desk--margin-right:columns-2
+            @mq-desk--margin-left:-columns-1
             @mq-palm--display:flex
             @mq-palm--flex-direction:row-reverse
             @mq-palm--margin-right:columns-2

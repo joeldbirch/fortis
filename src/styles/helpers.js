@@ -168,3 +168,14 @@ export const getInvertedStyles = isInverted => (
   ? invertedStyles
   : nonInvertedStyles
 )
+
+export const moduleRoot = `
+  @mq-desk--padding-horizontal:columns-1-1/2
+  @mq-desk--padding-vertical:columns-0-1/2
+  margin-horizontal:auto
+  max-width:container
+  padding-horizontal:columns-0-1/2
+  padding-vertical:800
+  position:relative
+  width:100
+`

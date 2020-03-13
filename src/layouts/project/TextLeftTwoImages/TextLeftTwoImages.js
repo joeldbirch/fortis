@@ -2,18 +2,10 @@ import React from 'react'
 import FluidImage from 'components/FluidImage'
 import { subhead } from 'styles/helpers'
 import { cols, mq } from 'utilities/helpers'
+import { moduleRoot } from 'styles/helpers'
 
 const styles = {
-  root: `
-    @mq-desk--padding-horizontal:columns-1-1/2
-    @mq-desk--padding-vertical:columns-0-1/2
-    margin-horizontal:auto
-    max-width:container
-    padding-horizontal:columns-0-1/2
-    padding-vertical:800
-    position:relative
-    width:100
-  `,
+  root: moduleRoot,
   wrapColumns: `
     🎁wrap-columns
     @mq-palm--display:flex
