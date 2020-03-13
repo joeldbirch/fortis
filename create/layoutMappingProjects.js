@@ -11,4 +11,5 @@ module.exports = {
   Project_Projectbuilder_Layouts_BigTextOnly: `BigText`,
   Project_Projectbuilder_Layouts_GoogleMap: `ProjectLocation`,
   Project_Projectbuilder_Layouts_SimpleLandscape: `SimpleLandscape`,
+  Project_Projectbuilder_Layouts_InFocus: `InFocus`,
 }
