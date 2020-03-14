@@ -46,7 +46,7 @@ const ProfileEntry = ({
         @mq-palm--grid-template-columns:var-1
         @mq-palm--padding-vertical:columns-0-1/2
         display:grid
-        grid-gap:500
+        grid-gap:600
         padding-horizontal:columns-0-1/2
         padding-top:400
         padding-bottom:800

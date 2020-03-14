@@ -24,7 +24,7 @@ const InFocus = ({
       <div
         className={`
           display:grid
-          grid-gap:600
+          grid-gap:800
           @mq-palm--grid-gap:columns-1
           @mq-palm--grid-template-columns:var-1
           @mq-lap--grid-template-columns:var-2
@@ -40,7 +40,7 @@ const InFocus = ({
         <div
           className={`
             display:grid
-            grid-gap:600
+            grid-gap:800
             @mq-palm--grid-gap:columns-0-1/2
           `}
         >
