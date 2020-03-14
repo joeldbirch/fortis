@@ -23,41 +23,82 @@ const InFocus = ({
     >
       <div
         className={`
-          @mq-palm--display:grid
+          display:grid
+          grid-gap:600
+          @mq-palm--grid-gap:columns-1
           @mq-palm--grid-template-columns:var-1
-          @mq-desk--grid-template-columns:var-2
-          padding-top:800
-          @mq-palm--padding-top:columns-0-1/2
+          @mq-lap--grid-template-columns:var-2
+          @mq-desk--grid-template-columns:var-3
         `}
         style={{
-          '--grid-template-columns-var-1': `6fr 1fr 5fr`,
-          '--grid-template-columns-var-2': `4fr 2fr 4fr`,
+          '--grid-template-columns-var-1': `6fr 5fr`,
+          '--grid-template-columns-var-2': `7fr 4fr`,
+          '--grid-template-columns-var-3': `6fr 3fr`,
         }}
       >
+
         <div
           className={`
-            s-editable
-            grid-column:3
-            @mq-palm--max-width:small-column
+            display:grid
+            grid-gap:600
+            @mq-palm--grid-gap:columns-0-1/2
           `}
-          dangerouslySetInnerHTML={{__html: quote}}
-        />
+        >
+          <FluidImage
+            image={mainImage}
+            className={`
+            `}
+            sizes={`
+              (max-width: ${mq.toPalm}) ${cols(12)}vw,
+              (min-width: ${mq.desk}) ${cols(4)}vw,
+              (min-width: ${mq.palm}) ${cols(6)}vw
+            `}
+          />
 
-        <FluidImage
-          image={mainImage}
+          <div
+            className={`
+              s-editable
+              @mq-max-palm--grid-row:1
+            `}
+            dangerouslySetInnerHTML={{__html: quote}}
+          />
+        </div>
+
+        <div
           className={`
-            @mq-max-palm--margin-top:columns-1
-            @mq-palm--height:100
-            grid-column:1
-            grid-row:1
+            display:flex
+            flex-direction:column
+            justify-content:space-between
           `}
-          sizes={`
-            (max-width: ${mq.toPalm}) ${cols(12)}vw,
-            (min-width: ${mq.desk}) ${cols(4)}vw,
-            (min-width: ${mq.palm}) ${cols(6)}vw
-          `}
-        />
+        >
+          <div
+            className={`
+              s-editable
+              rhythm-fix-after
+            `}
+            dangerouslySetInnerHTML={{__html: textContent}}
+          />
+
+          <FluidImage
+            className={`
+              @mq-desk--width:columns-2
+              @mq-palm--margin-right:-400
+              @mq-palm--margin-top:columns-1
+              @mq-palm--width:columns-3
+              margin-top:800
+            `}
+            image={secondaryImage}
+            sizes={`
+              (max-width: ${mq.toPalm}) ${cols(12)}vw,
+              (min-width: ${mq.desk}) calc(${cols(2)}vw + 1em),
+              (min-width: ${mq.palm}) calc(${cols(3)}vw + 1em)
+            `}
+          />
+        </div>
+
       </div>
+
+
     </section>
   )
 }
