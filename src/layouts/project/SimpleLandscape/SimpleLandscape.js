@@ -21,7 +21,7 @@ const SimpleLandscape = ({
       <div
         className={`
           display:grid
-          grid-gap:400
+          grid-gap:600
           @mq-palm--grid-gap:columns-1
           @mq-palm--grid-template-columns:var-1
           @mq-lap--grid-template-columns:var-2
@@ -45,6 +45,7 @@ const SimpleLandscape = ({
           className={`
             display:grid
             grid-gap:400
+            @mq-max-palm--grid-row:1
             @mq-palm--grid-gap:600
             margin-vertical:auto
           `}
