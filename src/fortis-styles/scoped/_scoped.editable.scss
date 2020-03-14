@@ -80,6 +80,12 @@ $scoped_container: 's-editable' !default;
     @media (min-width: #{hu-get($hu-media-queries, palm)}) {
       font-size: hu-get($hu-font-size-types, 500);
     }
+
+    + p {
+      @media (max-width: #{hu-get($hu-media-queries, max-palm max-w)}) {
+        font-size: hu-get($hu-font-size-types, 300);
+      }
+    }
   }
 
   pre {
