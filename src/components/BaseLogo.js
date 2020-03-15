@@ -1,7 +1,7 @@
 import React from 'react'
 import FluidImage from './FluidImage'
 
-const BaseLogo = ({ logo={imageFile:null}, alt=``, fallbackClasses, ...props }) => {
+const BaseLogo = ({ logo={imageFile:false}, alt=``, fallbackClasses, ...props }) => {
   const { imageFile } = logo
 
   switch (true) {
