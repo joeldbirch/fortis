@@ -8,5 +8,5 @@ $hu-transform-types: (
   "arrow-right-down": scalex(.8) scaleY(-.8) rotate(100deg),
   "arrow-up-right": scaleX(-.7) scaleY(.75) rotate(-10deg) translate3d(40%, 30%, 0),
   "var-1": scaleX(var(--scale-x-var-1, 1)) scaleY(var(--scale-y-var-1, 1)) rotate(var(--rotate-var-1, 0deg)) translate3d(var(--translate-x-var-1, 0), var(--translate-y-var-1, 0), 0),
-  "var-2": scaleX(var(--scale-x-var-2, var(--scale-x-var-1, 1))) scaleY(var(--scale-y-var-2, var(--scale-y-var-2, 1))) rotate(var(--rotate-var-2, var(--rotate-var-1, 0deg))) translate3d(var(--translate-x-var-2, var(--translate-x-var-1, 0)), var(--translate-y-var-2, var(--translate-y-var-1, 0)), 0),
+  "var-2": scaleX(var(--scale-x-var-2, var(--scale-x-var-1, 1))) scaleY(var(--scale-y-var-2, var(--scale-y-var-1, 1))) rotate(var(--rotate-var-2, var(--rotate-var-1, 0deg))) translate3d(var(--translate-x-var-2, var(--translate-x-var-1, 0)), var(--translate-y-var-2, var(--translate-y-var-1, 0)), 0),
 );
