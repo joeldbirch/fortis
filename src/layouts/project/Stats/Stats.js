@@ -59,13 +59,17 @@ const Stats = ({
         }
       </ul>
 
-      <div
-        className={`
-          font-size:200
-          @mq-desk--font-size:300
-        `}
-        dangerouslySetInnerHTML={{__html: disclaimer}}
-      />
+      {
+        disclaimer && (
+          <div
+            className={`
+              font-size:200
+              @mq-desk--font-size:300
+            `}
+            dangerouslySetInnerHTML={{__html: disclaimer}}
+          />
+        )
+      }
     </section>
   )
 }
