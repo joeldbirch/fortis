@@ -65,8 +65,7 @@ const ProjectEntry = ({
         `}>
           <header
             className={`
-              @mq-lap--grid-template-columns:var-3
-              @mq-palm--grid-template-columns:var-2
+              @mq-widepalm--grid-template-columns:var-2
               display:grid
               grid-gap:columns-0-1/4
               grid-template-columns:var-1
