@@ -2,7 +2,7 @@ import React from 'react'
 
 const HeadlightsLayout = ({
   className = ``,
-  horizontalReverseOrder = true,
+  flipHorizontal = true,
   slotA = null,
   slotB = null,
   ...props
@@ -27,7 +27,7 @@ const HeadlightsLayout = ({
 
       <div
         className={`
-          ${horizontalReverseOrder && `
+          ${flipHorizontal && `
             @mq-palm--grid-column:2
           `}
         `}
@@ -37,7 +37,7 @@ const HeadlightsLayout = ({
 
       <div
         className={`
-          ${horizontalReverseOrder && `
+          ${flipHorizontal && `
             @mq-palm--grid-column:1
             @mq-palm--grid-row:1
           `}
