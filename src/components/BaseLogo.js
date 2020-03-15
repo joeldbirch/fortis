@@ -1,8 +1,8 @@
 import React from 'react'
 import FluidImage from './FluidImage'
 
-const BaseLogo = ({ logo={imageFile:false}, alt=``, fallbackClasses, ...props }) => {
-  const { imageFile } = logo
+const BaseLogo = ({ logo, alt=``, fallbackClasses, ...props }) => {
+  const imageFile = logo && logo.imageFile
 
   switch (true) {
     case imageFile && imageFile.childImageSharp:
