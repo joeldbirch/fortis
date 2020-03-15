@@ -58,7 +58,7 @@ const ProjectDetails = ({
           >
             <Logo
               logo={logo}
-              alt={`${title} logo`}
+              alt={`${title}`}
               width="264"
               height="80"
               className={`
