@@ -33,6 +33,8 @@ const PortraitDiagram = ({
               position:relative
               display:grid
               grid-gap:400
+              @mq-palm--margin-right:columns-1
+              @mq-desk--margin-right:0
             `}
           >
             <MultiFormatImage
