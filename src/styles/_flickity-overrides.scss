@@ -24,8 +24,12 @@
 }
 .flickity-button {
   border-radius: 0;
-  padding: calc(var(--site-columm, 6vw) /2 );
+  padding: 1rem;
   background: white;
+
+  @media (min-width: 768px) {
+    padding: 2.5rem;
+  }
 
   &:disabled {
     opacity: 0;
