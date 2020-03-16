@@ -82,8 +82,7 @@ const ProjectDetails = ({
               margin-bottom:400
             `}>
               <span>{fullAddress}</span><br />
-              <span>{status}</span> /
-              <span>{buildingType}</span>
+              <span>{status}</span> / <span>{buildingType}</span>
             </p>
 
             <div
