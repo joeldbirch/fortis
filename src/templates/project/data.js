@@ -41,7 +41,7 @@ const ProjectTemplateFragment = (layouts) => `
             altText
             imageFile {
               childImageSharp {
-                fluid(maxHeight: 600, maxWidth: 600, cropFocus: ATTENTION) {
+                fluid(maxWidth: 600, cropFocus: ATTENTION) {
                   ...GatsbyImageSharpFluid_withWebp_noBase64
                 }
               }

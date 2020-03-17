@@ -123,7 +123,7 @@ const ProjectDetails = ({
             image={suburbImage}
             className={`
               @mq-max-palm--margin-top:columns-1
-              @mq-palm--height:100
+              @mq-palm--height:auto
             `}
             sizes={`
               (max-width: ${mq.toPalm}) ${cols(12)}vw,
