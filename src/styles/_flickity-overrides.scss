@@ -3,9 +3,6 @@
   overflow: visible;
 }
 
-.flickity-enabled.position\:static {
-  position: static;
-}
 
 /* move dots to be inside flickity container */
 .flickity-page-dots {
@@ -27,8 +24,16 @@
   padding: 1rem;
   background: white;
 
+  .flickity-carousel.flickity-carousel & {
+    transform: translateY(-100%);
+  }
+
   @media (min-width: 768px) {
     padding: 2.5rem;
+
+    .flickity-carousel & {
+      padding: 1rem;
+    }
   }
 
   &:disabled {

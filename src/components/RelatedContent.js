@@ -25,7 +25,11 @@ const RelatedContent = ({
       width:100
     `}>
       <Divider/>
-      <section>
+      <section
+        className={`
+          position:relative
+        `}
+      >
         <h2
           className={`
             ${uiFontSize}
@@ -39,12 +43,14 @@ const RelatedContent = ({
         <div
           className={`
             @mq-desk--padding-horizontal:columns-1
-            overflow:hidden
             padding-vertical:columns-1
           `}
         >
           <Flickity
-            className={'position:static'}
+            className={`
+              overflow:hidden
+              flickity-carousel
+            `}
             options={{
               arrowShape: path,
               // initialIndex: 1,
