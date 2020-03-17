@@ -28,13 +28,14 @@ const Stats = ({
         }}
       >
         {
-          items.map(({label, value}) => (
+          items.map(({label, value}, index) => (
             <li
               className={`
                 padding-bottom:800
                 @mq-palm--padding-bottom:columns-0-1/2
                 padding-right:800
               `}
+              key={index}
             >
               <h3
                 className={`
