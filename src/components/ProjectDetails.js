@@ -65,7 +65,11 @@ const ProjectDetails = ({
                 height:auto
                 width:100
               `}
-              fallbackClasses={`rhythm-fix-after font-size:700`}
+              fallbackClasses={`
+                rhythm-fix-after
+                rhythm-fix-before
+                font-size:700
+              `}
               sizes={`15em`}
             />
           </div>
@@ -123,7 +127,7 @@ const ProjectDetails = ({
             image={suburbImage}
             className={`
               @mq-max-palm--margin-top:columns-1
-              @mq-palm--height:auto
+              @mq-palm--height:100
             `}
             sizes={`
               (max-width: ${mq.toPalm}) ${cols(12)}vw,

@@ -14,4 +14,5 @@ module.exports = {
   Project_Projectbuilder_Layouts_InFocus: `InFocus`,
   Project_Projectbuilder_Layouts_PortraitDiagram: `PortraitDiagram`,
   Project_Projectbuilder_Layouts_Stats: `Stats`,
+  Project_Projectbuilder_Layouts_EnquiryForm: `EnquiryForm`,
 }
