@@ -1,7 +1,9 @@
 import React from 'react'
 import { cleanWpContent } from 'utilities/helpers'
 
-export default ({className=``, children=null, ...props}) => {
+const defaultMaxWidth = {'--max-width': '21em'}
+
+export default ({className=``, styles=defaultMaxWidth, children=null, ...props}) => {
   return !children ? `` : (
     <div
       dangerouslySetInnerHTML={{__html: cleanWpContent(children)}}
@@ -13,7 +15,7 @@ export default ({className=``, children=null, ...props}) => {
         rhythm-fix-before
         s-editable
       `}
-      style={{'--max-width': '21em'}}
+      style={styles}
       {...props}
     />
   )

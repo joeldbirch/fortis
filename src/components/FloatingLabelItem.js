@@ -28,26 +28,23 @@ const styles = {
     &:focus:placeholder--opacity:0
     box-sizing:border-box
     display:block
-    padding-horizontal:350
-    padding-vertical:300
     width:100
   `,
   label: `
-  👉 c-floating-field__label
-  &::before--arrow-left
-  margin-left:0
-  opacity:0
-  pointer-events:none
-  pos-left:100
-  pos-top:50
-  position:absolute
-  text-case:lower
-  transform:right-center-small
-  transition-duration:200
-  transition-easing:ease-in-out
-  transition-property::opacity
-  translate-Y:-50
-  white-space:no-wrap
+    👉 c-floating-field__label
+    &::before--arrow-left
+    margin-left:0
+    opacity:0
+    pointer-events:none
+    pos-right:0
+    pos-top:50
+    position:absolute
+    text-case:lower
+    transform:var-1
+    transition-duration:200
+    transition-easing:ease-in-out
+    transition-property:opacity
+    white-space:no-wrap
   `,
   // raw CSS:
   inputSiblingBehaviour: `
@@ -65,9 +62,11 @@ export default ({
   inputClassName = ``,
   label = `Label text`,
   labelClassName = ``,
+  labelHidden = false,
   name = nameAttrFromText(label),
   required = null,
   type = `text`,
+  labelStyles = {},
   ...props
 }) => {
   className += styles.item
@@ -90,8 +89,16 @@ export default ({
         size="40"
         type={type}
       />
-      <label className={labelClassName} htmlFor={capitalize(name)}>
-        {label.toLowerCase()}
+      <label
+        className={labelClassName}
+        htmlFor={capitalize(name)}
+        style={labelStyles}
+      >
+        <span
+          className={`
+            ${labelHidden ? `visually-hidden` : ``}
+          `}
+        >{label.toLowerCase()}</span>
       </label>
     </div>
   )
