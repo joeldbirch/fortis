@@ -3,22 +3,6 @@
   overflow: visible;
 }
 
-
-/* move dots to be inside flickity container */
-.flickity-page-dots {
-  top: 100%;
-  bottom: auto;
-  display: flex;
-  margin-top: -3px;
-
-  .dot {
-    background: #111;
-    border-radius: 0;
-    height: 3px;
-    margin: 0;
-    flex-grow:1;
-  }
-}
 .flickity-button {
   border-radius: 0;
   padding: 1rem;

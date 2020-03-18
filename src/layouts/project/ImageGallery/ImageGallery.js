@@ -28,7 +28,10 @@ const ImageGallery = ({imageGallery}) => {
         `}
       >
         <Flickity
-          options={{arrowShape: path}}
+          options={{
+            arrowShape: path,
+            pageDots: false,
+          }}
           static={true}
           className={`
           `}
