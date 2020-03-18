@@ -11,7 +11,6 @@ const RelatedContent = ({
   similarProjects,
   className=``,
 }) => {
-  console.log(similarProjects);
 
   const slides = similarProjects?.filter(similar => similar.project).map(similar => similar.project )
   if (!slides) return ``
