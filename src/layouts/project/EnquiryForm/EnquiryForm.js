@@ -19,8 +19,8 @@ const styles = {
     border-bottom-width:100
     border-radius:0
     font-size:400
-    line-height:200
-    padding-bottom:100
+    line-height:400
+    padding-bottom:0
     padding-top:600
     padding-left:0
     outline:none
