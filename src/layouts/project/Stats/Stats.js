@@ -42,13 +42,13 @@ const Stats = ({
                   font-size:300
                   @mq-bigdesk--font-size:em
                   font-weight:400
-                  margin-bottom:100
                 `}
               >
                 {label}
               </h3>
               <span
                 className={`
+                  color:neutral-800
                   font-size:700
                   @mq-bigdesk--font-size:750
                 `}
