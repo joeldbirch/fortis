@@ -5,4 +5,5 @@ $hu-scroll-margin-top-modules: (base);
 $hu-scroll-margin-top-types: (
   "-px": -1px,
   "px": 1px,
+  site-top: var(--site-top, 5rem),
 );

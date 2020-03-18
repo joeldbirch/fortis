@@ -37,22 +37,23 @@ const EnquiryForm = ({
       id="enquire"
       className={`
         ${moduleRoot}
+        @mq-palm--margin-bottom:columns-0-1/2
         display:grid
         margin-bottom:800
-        @mq-palm--margin-bottom:columns-0-1/2
+        scroll-margin-top:site-top
       `}
     >
       <div
         className={`
-          padding-right:columns-1
           @mq-palm--padding-right:columns-2
+          padding-right:columns-1
         `}
       >
 
         <LargeText
           className={`
-            margin-bottom:200
             @mq-palm--margin-bottom:600
+            margin-bottom:200
           `}
           styles={{'--max-width': `none`}}
         >{`
