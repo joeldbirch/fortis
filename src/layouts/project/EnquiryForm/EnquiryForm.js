@@ -23,7 +23,7 @@ const styles = {
     padding-bottom:0
     padding-top:600
     padding-left:0
-    outline:none
+    &:hocus--outline:none
   `,
 }
 
