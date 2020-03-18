@@ -103,12 +103,13 @@ const TextLeftTwoImages = ({
           >
             <span
               className={`
+                @mq-max-palm--padding-bottom:columns-1
+                @mq-palm--max-width:small-column
                 @mq-palm--text-align:left
                 display:block
                 handwritten
                 margin-vertical:auto
                 padding-vertical:columns-0-1/2
-                @mq-max-palm--padding-bottom:columns-1
                 rhythm-fix-after
                 text-align:center
               `}
