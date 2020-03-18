@@ -86,7 +86,7 @@ const PortraitDiagram = ({
                       '--scale-y-var-1': `0.75`,
                       '--scale-x-var-1': `-0.75`,
                       '--rotate-var-2': `-70deg`,
-                      'transform-origin': `center`
+                      transformOrigin: `center`,
                     }}
                   />
                   {note}
