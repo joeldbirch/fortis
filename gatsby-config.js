@@ -103,7 +103,7 @@ module.exports = {
       resolve: `gatsby-plugin-sharp`,
       options: {
         stripMetadata: true,
-        webpQuality: 60,
+        webpQuality: 90,
       },
     },
     {
