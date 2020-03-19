@@ -7,7 +7,7 @@ import { uiFontSize } from 'styles/helpers'
 import { getPath } from 'utilities/helpers'
 
 const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className=``, ...props}) => {
-
+  if (!image) return ``
   const fluid = image.imageFileHero.childImageSharp.fluid
   const to = linkTo && linkTo.link ? getPath(linkTo.link) : null
   const OptionalLink = to ? Link : `span`
@@ -68,21 +68,23 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
           </header>
         )
       }
+      <GatsbyImage
+        fluid={fluid}
+        className={`
+          height:100vh-fixed
+          z-index:-1
+        `}
+      />
       {
-        video
-          ? <FullWindowVideo
-              vimeoId={video}
-              windowHeight={true}
-              className={`
-                min-height:100vh-fixed
-              `}
-            />
-          : <GatsbyImage
-              fluid={fluid}
-              className={`
-                height:100vh-fixed
-              `}
-            />
+        video && (
+          <FullWindowVideo
+            vimeoId={video}
+            windowHeight={true}
+            className={`
+              min-height:100vh-fixed
+            `}
+          />
+        )
       }
       { nextSection && (
           <ScrollPrompt

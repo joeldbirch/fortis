@@ -40,8 +40,8 @@ module.exports = (imports) => {
           <SEO title={title + ' | project'} />
 
           <Hero
-            image={featuredImage}
-            video={projectDetails.detailsTable.mediaDetails.video}
+            image={projectDetails.header.image}
+            video={projectDetails.header.video}
             nextSection="#project-details"
           />
 

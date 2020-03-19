@@ -19,6 +19,7 @@ const InFocus = ({
     <section
       className={`
         ${moduleRoot}
+        grid-guide
       `}
     >
       <div

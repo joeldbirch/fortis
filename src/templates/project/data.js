@@ -4,29 +4,6 @@ const ProjectTemplateFragment = (layouts) => `
     id
     title
     content
-    featuredImage {
-      sourceUrl
-      altText
-      imageFile {
-        childImageSharp {
-          fluid(maxWidth: 1600, maxHeight: 900, cropFocus: CENTER) {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
-          }
-        }
-      }
-      imageFileHero {
-        childImageSharp {
-          fluid(
-            maxWidth: 1615,
-            maxHeight: 970,
-            cropFocus: CENTER,
-            sizes: "(max-aspect-ratio: 16/10) calc(100vh * 1.6), 100vw",
-            srcSetBreakpoints: [ 800, 1280, 1615, 1920, 2560 ]) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
-          }
-        }
-      }
-    }
     projectBuilder {
       layouts {
         ${layouts}
@@ -34,6 +11,25 @@ const ProjectTemplateFragment = (layouts) => `
     }
     projectDetails {
       fieldGroupName
+      header {
+        video
+        image {
+          sourceUrl
+          altText
+          imageFileHero {
+            childImageSharp {
+              fluid(
+                maxWidth: 1920,
+                maxHeight: 1280,
+                cropFocus: CENTER,
+                sizes: "(max-aspect-ratio: 16/9) calc(100vh * 1.778), 100vw",
+                srcSetBreakpoints: [ 800, 1280, 1615, 1920, 2560 ]) {
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
+          }
+        }
+      }
       detailsTable {
         mediaDetails {
           suburbImage {
@@ -60,7 +56,6 @@ const ProjectTemplateFragment = (layouts) => `
               extension
             }
           }
-          video
         }
         textualDetails {
           buildingType
