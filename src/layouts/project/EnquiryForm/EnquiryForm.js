@@ -13,17 +13,17 @@ const styles = {
     @mq-lap::placeholder--font-size:300
     @mq-max-lap--padding-top:600
     &::placeholder--font-size:200
-    border-bottom-color:neutral-700
     &:focus--border-bottom-color:neutral-1000
+    &:hocus--outline:none
+    border-bottom-color:neutral-700
     border-bottom-style:solid
     border-bottom-width:100
     border-radius:0
     font-size:400
     line-height:400
     padding-bottom:0
-    padding-top:600
     padding-left:0
-    &:hocus--outline:none
+    padding-top:600
   `,
 }
 
