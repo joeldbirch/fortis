@@ -65,7 +65,7 @@ const TextLeftTwoImages = ({
   billNote
 }) => {
   return (
-    <section className={styles.root}>
+    <section className={`${styles.root}`}>
       <div className={styles.wrapColumns}>
         <div className={styles.startColumn}>
           <div className={styles.startColumnStartRow}>

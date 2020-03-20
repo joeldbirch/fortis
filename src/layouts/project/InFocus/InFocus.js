@@ -19,7 +19,6 @@ const InFocus = ({
     <section
       className={`
         ${moduleRoot}
-        grid-guide
       `}
     >
       <div
@@ -80,21 +79,26 @@ const InFocus = ({
             dangerouslySetInnerHTML={{__html: textContent}}
           />
 
-          <FluidImage
+          <div
             className={`
               @mq-desk--width:columns-2
-              @mq-palm--margin-right:-400
               @mq-palm--margin-top:columns-1
               @mq-palm--width:columns-3
               margin-top:800
             `}
-            image={secondaryImage}
-            sizes={`
-              (max-width: ${mq.toPalm}) ${cols(12)}vw,
-              (min-width: ${mq.desk}) calc(${cols(2)}vw + 1em),
-              (min-width: ${mq.palm}) calc(${cols(3)}vw + 1em)
-            `}
-          />
+          >
+            <FluidImage
+              className={`
+                @mq-palm--margin-right:-400
+              `}
+              image={secondaryImage}
+              sizes={`
+                (max-width: ${mq.toPalm}) ${cols(12)}vw,
+                (min-width: ${mq.desk}) calc(${cols(2)}vw + 1em),
+                (min-width: ${mq.palm}) calc(${cols(3)}vw + 1em)
+              `}
+            />
+          </div>
         </div>
 
       </div>
