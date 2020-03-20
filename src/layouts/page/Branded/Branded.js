@@ -1,21 +1,12 @@
 import React from 'react'
-import FluidImage from 'components/FluidImage'
+import GatsbyImage from 'gatsby-image'
 import FullWindowVideo from 'components/FullWindowVideo'
 import BigBrand from 'components/BigBrand'
 import ArrowDrawnUpLeft from 'components/ArrowDrawnUpLeft'
 
 const styles = {
   root: `
-    display:grid
-    grid-template-columns:1
-    grid-template-rows:var-1
     height:100vh-fixed
-    margin-horizontal:auto
-    max-width:container
-    min-height:23r
-    padding-bottom:400
-    padding-horizontal:columns-0-1/2
-    padding-top:site-top
     position:relative
     scroll-snap-align:start
     width:100
@@ -32,33 +23,33 @@ const styles = {
 }
 
 const Branded = ({image, text, video=null, nextSection=null, id=null, ...props}) => {
+  console.log(image);
+
   return (
     <section
       className={` ${styles.root} `}
       id={id}
     >
-      <div className={` ${styles.mediaWrap} `}
-        style={{
-          minHeight: '10rem',
-        }}
-      >
-        {
-          video
-            ? <FullWindowVideo vimeoId={video} minHeight="56.25vmin" />
-            : <FluidImage
-                image={image}
-                className={`
-                  height:100
-                  pos-left:0
-                  pos-top:0
-                  width:100
-                `}
-                style={{
-                  position: `absolute`,
-                }}
-              />
-        }
-      </div>
+      <GatsbyImage
+        fluid={image.imageFile.childImageSharp.fluid}
+        className={`
+          height:100vh-fixed
+          z-index:-1
+          position:absolute
+          pos-top-left:0
+        `}
+      />
+      {
+        video && (
+          <FullWindowVideo
+            vimeoId={video}
+            windowHeight={true}
+            className={`
+              min-height:100vh-fixed
+            `}
+          />
+        )
+      }
       <BigBrand
         htmlText={text}
         textClasses={`
