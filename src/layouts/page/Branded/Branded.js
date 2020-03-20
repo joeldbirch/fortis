@@ -1,5 +1,6 @@
 import React from 'react'
 import GatsbyImage from 'gatsby-image'
+import Helmet from 'react-helmet'
 import FullWindowVideo from 'components/FullWindowVideo'
 
 const styles = {
@@ -28,6 +29,20 @@ const Branded = ({image, text, video=null, nextSection=null, id=null, ...props})
       className={` ${styles.root} `}
       id={id}
     >
+      <Helmet>
+      <style>{`
+        @media (max-aspect-ratio: 16/9) {
+          .full-screen-iframe iframe {
+            width: calc(var(--vh, 1vh) * 100 * 1.778);
+          }
+        }
+        @media (min-aspect-ratio: 16/9) {
+          .full-screen-iframe iframe {
+            height: calc(100vw * 0.5625);
+          }
+        }
+      `}</style>
+      </Helmet>
       <GatsbyImage
         fluid={image.imageFile.childImageSharp.fluid}
         className={`
@@ -43,6 +58,7 @@ const Branded = ({image, text, video=null, nextSection=null, id=null, ...props})
             vimeoId={video}
             windowHeight={true}
             className={`
+              full-screen-iframe
               min-height:100vh-fixed
             `}
           />
