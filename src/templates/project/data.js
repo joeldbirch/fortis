@@ -20,7 +20,7 @@ const ProjectTemplateFragment = (layouts) => `
             childImageSharp {
               fluid(
                 maxWidth: 1920,
-                maxHeight: 1280,
+                maxHeight: 1080,
                 cropFocus: CENTER,
                 sizes: "(max-aspect-ratio: 16/9) calc(100vh * 1.778), 100vw",
                 srcSetBreakpoints: [ 800, 1280, 1615, 1920, 2560 ]) {

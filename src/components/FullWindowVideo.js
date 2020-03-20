@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 
 const FullWindowVideo = ({vimeoId, className=``, windowHeight=false, minHeight=null, height=null}) => {
   return (
@@ -16,6 +17,20 @@ const FullWindowVideo = ({vimeoId, className=``, windowHeight=false, minHeight=n
         z-index:-1
       `}
     >
+      <Helmet>
+        <style>{`
+          @media (max-aspect-ratio: 16/9) {
+            .full-screen-iframe {
+              width: calc(var(--vh, 1vh) * 100 * 1.778);
+            }
+          }
+          @media (min-aspect-ratio: 16/9) {
+            .full-screen-iframe {
+              height: calc(100vw * 0.5625);
+            }
+          }
+        `}</style>
+      </Helmet>
       <iframe
         allow="autoplay; fullscreen"
         allowFullScreen
@@ -28,7 +43,7 @@ const FullWindowVideo = ({vimeoId, className=``, windowHeight=false, minHeight=n
           width:100
           ${
             windowHeight
-            ? `min-height:100vh-fixed`
+            ? `min-height:100vh-fixed full-screen-iframe`
             : `height:100`
           }
         `}

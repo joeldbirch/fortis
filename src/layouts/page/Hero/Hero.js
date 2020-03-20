@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import GatsbyImage from 'gatsby-image'
-import FullWindowVideo from 'components/FullWindowVideo'
+import HeroFullScreenContent from 'components/HeroFullScreenContent'
 import ScrollPrompt from 'components/ScrollPrompt'
 import { uiFontSize } from 'styles/helpers'
 import { getPath } from 'utilities/helpers'
@@ -68,24 +67,12 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
           </header>
         )
       }
-      <GatsbyImage
+
+      <HeroFullScreenContent
         fluid={fluid}
-        className={`
-          height:100vh-fixed
-          z-index:-1
-        `}
+        video={video}
       />
-      {
-        video && (
-          <FullWindowVideo
-            vimeoId={video}
-            windowHeight={true}
-            className={`
-              min-height:100vh-fixed
-            `}
-          />
-        )
-      }
+
       { nextSection && (
           <ScrollPrompt
             to={nextSection}
