@@ -1,29 +1,27 @@
 import React from 'react'
 import GatsbyImage from 'gatsby-image'
 import FullWindowVideo from 'components/FullWindowVideo'
-import BigBrand from 'components/BigBrand'
-import ArrowDrawnUpLeft from 'components/ArrowDrawnUpLeft'
 
 const styles = {
   root: `
-    height:100vh-fixed
+    js-contrast
+    js-contrast--reverse
+    min-height:100vh-fixed
     position:relative
     scroll-snap-align:start
+    scroll-snap-stop:always
     width:100
   `,
-  mediaWrap: `
-    @mq-bigdesk--margin-horizontal:columns-2-1/2
-    @mq-bigdesk--margin-horizontal:site-pad-500
-    @mq-desk--margin-horizontal:columns-2
-    @mq-palm--margin-horizontal:columns-1-1/2
-    margin-horizontal:columns-1
-    overflow:hidden
-    position:relative
+  watermark: `
+    @mq-desk--width:columns-7
+    @mq-palm--flex-shrink:1
+    @mq-palm--width:columns-9
+    height:auto
+    max-width:100
   `,
 }
 
 const Branded = ({image, text, video=null, nextSection=null, id=null, ...props}) => {
-  console.log(image);
 
   return (
     <section
@@ -50,30 +48,28 @@ const Branded = ({image, text, video=null, nextSection=null, id=null, ...props})
           />
         )
       }
-      <BigBrand
-        htmlText={text}
-        textClasses={`
-          @mq-max-palm--margin-top:100
-          @mq-max-palm--text-align:left
-          display:inline-block
-        `}
+      <div
         className={`
-          @mq-lap--margin-top:-400
-          flex-direction:column
-          justify-content:flex-end
+          position:absolute
+          pos-left-right:0
+          pos-bottom:0
+          max-width:container
+          margin-horizontal:auto
+          padding-horizontal:columns-0-1/2
+          padding-bottom:800
         `}
       >
-        <ArrowDrawnUpLeft
+        <img
           className={`
-            @mq-bigdesk--margin-bottom:200
-            @mq-palm--display:block
-            @mq-palm--margin-bottom:100
-            @mq-palm--margin-left:-400
-            @mq-palm--transform:arrow-right-down
-            transform:arrow-up-right
+            ${styles.watermark}
           `}
+          src="/images/logo-fortis-watermark.svg"
+          alt="Fortis"
+          width="764"
+          height="202"
+          loading="lazy"
         />
-      </BigBrand>
+      </div>
     </section>
   )
 }
