@@ -18,6 +18,13 @@ const MultiFormatImage = ({ image, alt=``, fallbackClasses, ...props }) => {
         {...props}
       />
 
+    } else if (imageFile.extension === 'gif') {
+        Image = () => <img
+          alt={alt}
+          src={imageFile.publicURL}
+          {...props}
+        />
+
     } else {
       Image = () => <p className={fallbackClasses}>{alt}</p>
     }

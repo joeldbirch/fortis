@@ -1,5 +1,5 @@
 import React from 'react'
-import FluidImage from 'components/FluidImage'
+import MultiFormatImage from 'components/MultiFormatImage'
 import FluidVideo from 'components/FluidVideo'
 import { cols, mq } from 'utilities/helpers'
 import { moduleRoot } from 'styles/helpers'
@@ -52,7 +52,7 @@ const SimpleLandscape = ({
         >
           {
             video ? <FluidVideo id={video}/>
-            : <FluidImage
+            : <MultiFormatImage
                 className={``}
                 image={image}
                 sizes={`

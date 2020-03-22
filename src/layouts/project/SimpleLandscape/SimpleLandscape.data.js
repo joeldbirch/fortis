@@ -11,6 +11,8 @@ module.exports = () => {
             sourceUrl
             altText
             imageFile {
+              publicURL
+              extension
               childImageSharp {
                 fluid(maxWidth: 655) {
                   ...GatsbyImageSharpFluid_withWebp_noBase64
