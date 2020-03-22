@@ -1,6 +1,5 @@
 import React from 'react'
 import MultiFormatImage from 'components/MultiFormatImage'
-import FluidImage from 'components/FluidImage'
 import HeadlightsLayout from 'components/HeadlightsLayout'
 import ArrowDrawnUpLeft from 'components/ArrowDrawnUpLeft'
 import { moduleRoot } from 'styles/helpers'
@@ -105,7 +104,7 @@ const PortraitDiagram = ({
           >
             {
               horizontalImage && (
-                <FluidImage
+                <MultiFormatImage
                   image={horizontalImage}
                   className={`
                   `}

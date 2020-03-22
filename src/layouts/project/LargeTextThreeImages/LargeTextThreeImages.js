@@ -1,5 +1,5 @@
 import React from 'react'
-import FluidImage from 'components/FluidImage'
+import MultiFormatImage from 'components/MultiFormatImage'
 import { cols, mq } from 'utilities/helpers'
 import { moduleRoot } from 'styles/helpers'
 
@@ -73,7 +73,7 @@ const LargeTextThreeImages = ({
                   @mq-palm--width:columns-3
                   box-sizing:content-box
                 `}>
-                  <FluidImage
+                  <MultiFormatImage
                     className={` @mq-lap--margin-right:-400`}
                     image={benSmallerImage}
                     sizes={`
@@ -118,7 +118,7 @@ const LargeTextThreeImages = ({
           @mq-palm--width:50
         `}>
           { benLargerImage && (
-              <FluidImage
+              <MultiFormatImage
                 image={benLargerImage}
                 className={`
                   @mq-tiny--margin-bottom:0
@@ -148,7 +148,7 @@ const LargeTextThreeImages = ({
             align-items:center
           `}>
           { benOtherSmallerImage
-            ? <FluidImage
+            ? <MultiFormatImage
                 className={`
                   @mq-desk--max-width:columns-4
                   @mq-palm--max-width:columns-5

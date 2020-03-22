@@ -1,5 +1,5 @@
 import React from 'react'
-import FluidImage from 'components/FluidImage'
+import MultiFormatImage from 'components/MultiFormatImage'
 import { cols, mq } from 'utilities/helpers'
 import { moduleRoot } from 'styles/helpers'
 
@@ -44,7 +44,7 @@ const InFocus = ({
             @mq-palm--grid-gap:columns-0-1/2
           `}
         >
-          <FluidImage
+          <MultiFormatImage
             image={mainImage}
             className={`
             `}
@@ -87,7 +87,7 @@ const InFocus = ({
               margin-top:800
             `}
           >
-            <FluidImage
+            <MultiFormatImage
               className={`
                 @mq-palm--margin-right:-400
               `}

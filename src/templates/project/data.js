@@ -36,6 +36,8 @@ const ProjectTemplateFragment = (layouts) => `
             sourceUrl
             altText
             imageFile {
+              publicURL
+              extension
               childImageSharp {
                 fluid(maxWidth: 600, cropFocus: ATTENTION) {
                   ...GatsbyImageSharpFluid_withWebp_noBase64
@@ -72,6 +74,8 @@ const ProjectTemplateFragment = (layouts) => `
           sourceUrl
           altText
           imageFile {
+            publicURL
+            extension
             childImageSharp {
               fluid(maxWidth: 600) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64

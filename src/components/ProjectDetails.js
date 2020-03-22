@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from './BaseLogo'
-import FluidImage from './FluidImage'
+import MultiFormatImage from './MultiFormatImage'
 import HeadlightsLayout from './HeadlightsLayout'
 import { cols, mq } from 'utilities/helpers'
 
@@ -112,7 +112,7 @@ const ProjectDetails = ({
           @mq-palm--padding-left:columns-1
           @mq-palm--width:50
         `}>
-          <FluidImage
+          <MultiFormatImage
             image={suburbImage}
             className={`
               @mq-max-palm--margin-top:columns-1
@@ -145,7 +145,7 @@ const ProjectDetails = ({
         )}
 
         slotB={(
-          <FluidImage
+          <MultiFormatImage
             image={firstImage}
             className={`
               @mq-palm--height:100

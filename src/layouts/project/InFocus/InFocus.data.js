@@ -9,6 +9,8 @@ module.exports = () => {
             sourceUrl
             altText
             imageFile {
+              publicURL
+              extension
               childImageSharp {
                 fluid(maxWidth: 650, maxHeight: 455) {
                   ...GatsbyImageSharpFluid_withWebp_noBase64
@@ -23,6 +25,8 @@ module.exports = () => {
             sourceUrl
             altText
             imageFile {
+              publicURL
+              extension
               childImageSharp {
                 fluid(maxWidth: 550, maxHeight: 770) {
                   ...GatsbyImageSharpFluid_withWebp_noBase64

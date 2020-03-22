@@ -1,5 +1,5 @@
 import React from 'react'
-import FluidImage from 'components/FluidImage'
+import MultiFormatImage from 'components/MultiFormatImage'
 import { cols, mq } from 'utilities/helpers'
 
 const FullWidthContent = ({className=``, freeText, image, ...props}) => {
@@ -26,7 +26,7 @@ const FullWidthContent = ({className=``, freeText, image, ...props}) => {
         `}
       />
 
-      <FluidImage
+      <MultiFormatImage
         image={image}
         className={`
           @mq-palm--margin-vertical:columns-0-1/2

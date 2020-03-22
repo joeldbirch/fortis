@@ -1,5 +1,5 @@
 import React from 'react'
-import FluidImage from 'components/FluidImage'
+import MultiFormatImage from 'components/MultiFormatImage'
 import { subhead } from 'styles/helpers'
 import { cols, mq } from 'utilities/helpers'
 import { moduleRoot } from 'styles/helpers'
@@ -82,7 +82,7 @@ const TextRightTwoImages = ({
       <div className={styles.wrapColumns}>
         <div className={styles.startColumn}>
           <div className={styles.startColumnStartRow}>
-            <FluidImage
+            <MultiFormatImage
               image={smaller}
               sizes={`
                 (max-width: ${mq.toPalm}) ${cols(12)}vw,
@@ -132,7 +132,7 @@ const TextRightTwoImages = ({
           </div>
 
           <div className={styles.endColumnEndRow}>
-            <FluidImage
+            <MultiFormatImage
               image={larger}
               className={`
                 @mq-palm--height:100
