@@ -5,7 +5,17 @@ import ScrollPrompt from 'components/ScrollPrompt'
 import { uiFontSize } from 'styles/helpers'
 import { getPath } from 'utilities/helpers'
 
-const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className=``, ...props}) => {
+const Hero = ({
+  className=``,
+  forceTextColour=false,
+  id=null,
+  image,
+  label,
+  linkTo,
+  nextSection=null,
+  video,
+  ...props
+}) => {
   if (!image) return ``
   const fluid = image.imageFileHero.childImageSharp.fluid
   const to = linkTo && linkTo.link ? getPath(linkTo.link) : null
@@ -19,7 +29,7 @@ const Hero = ({image, label, linkTo, video, nextSection=null, id=null, className
         width:100
         color:neutral-0
         js-contrast
-        js-contrast--reverse
+        ${forceTextColour ? `js-no-header-bg` : `js-contrast--reverse`}
         min-height:100vh-fixed
         position:relative
         scroll-snap-align:start

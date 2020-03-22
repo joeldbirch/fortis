@@ -40,6 +40,7 @@ module.exports = (imports) => {
           <SEO title={title + ' | project'} />
 
           <Hero
+            forceTextColour={projectDetails.header.forceTextColour}
             image={projectDetails.header.image}
             video={projectDetails.header.video}
             nextSection="#project-details"

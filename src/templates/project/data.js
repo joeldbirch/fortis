@@ -13,6 +13,7 @@ const ProjectTemplateFragment = (layouts) => `
       fieldGroupName
       header {
         video
+        forceTextColour
         image {
           sourceUrl
           altText
