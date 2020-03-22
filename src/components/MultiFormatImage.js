@@ -11,6 +11,7 @@ const usesPublicURL = (image) => image && image.imageFile && image.imageFile.pub
 
 const MultiFormatImage = ({
   alt=``,
+  className=``,
   fallbackClasses=``,
   image,
   sizes,
@@ -39,7 +40,7 @@ const MultiFormatImage = ({
     Image = () => <p className={fallbackClasses}>{alt}</p>
 
   } else {
-    Image = () => <FluidImage image={image} sizes={sizes} {...props} />
+    Image = () => <FluidImage image={image} className={className} sizes={sizes} {...props} />
   }
 
   return <Image />
