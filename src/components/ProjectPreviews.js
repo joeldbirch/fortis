@@ -1,5 +1,5 @@
 import React, { useState, useLayoutEffect } from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import ProjectEntry from 'components/ProjectEntry'
 import Divider from 'components/DividerHorizontal'
 import SectionHeader from 'components/SectionHeader'
