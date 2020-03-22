@@ -18,6 +18,7 @@ const News = ({ pageContext }) => {
 
   return (
     <Layout
+      overflowY="overflow-y:scroll"
       AddToHeader={<PageHeader isMain="true" headingText={siteSectionTitle} />}
     >
       <SEO

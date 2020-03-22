@@ -21,6 +21,7 @@ const Layout = ({
   headerClassName = ``,
   className = ``,
   AddToHeader,
+  overflowY=`overflow-y:scroll`,
   scrollStrict=false,
   ...props
 }) => {
@@ -43,10 +44,10 @@ const Layout = ({
       className={`
         👉 the-wrap
         ${className}
+        ${overflowY}
         height:100vh-fixed
-        overflow-y:scroll
-        scroll-behavior:smooth
         letter-spacing:-10
+        scroll-behavior:smooth
       `}
 
       style={
@@ -61,6 +62,13 @@ const Layout = ({
       <Helmet>
         <link rel="preconnect" href="https://polyfill.io"/>
         <style>{`
+          ${`/*
+            scrolling is done on #TheWrap element. This avoids Safari bug causing extra space on news.js template
+          */`}
+          html {
+            overflow:hidden;
+          }
+
           html,
           body,
           [id="___gatsby"],
