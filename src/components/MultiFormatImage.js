@@ -30,6 +30,7 @@ const MultiFormatImage = ({
         width:100
         height:auto
       `}
+      lazyload="lazy"
       src={publicURL}
       {...props}
     />
