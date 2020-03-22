@@ -102,7 +102,6 @@ const Post = ({ pageContext }) => {
                 className={`
                   font-size:400
                   font-weight:400
-                  margin-top:100
                 `}
                 id={`preview-${id}`}
                 dangerouslySetInnerHTML={{__html: noOrphans(title)}}
@@ -124,11 +123,9 @@ const Post = ({ pageContext }) => {
                 ? ``
                 : <h3
                     className={`
-                      @mq-bigdesk--position:absolute
                       color:neutral-700
                       font-size:200
                       font-weight:400
-                      margin-bottom:100
                       pos-top:-columns-0-1/4
                       text-transform:uppercase
                     `}
