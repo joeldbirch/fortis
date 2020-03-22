@@ -2,32 +2,38 @@ import React from 'react'
 import FluidImage from './FluidImage'
 import SvgImg from './SvgImg'
 
-const MultiFormatImage = ({ image, alt=``, fallbackClasses, ...props }) => {
+const formatComponents = {
+  svg: SvgImg,
+  gif: `img`,
+}
 
-  const { imageFile } = image
+const usesPublicURL = (image) => image && image.imageFile && image.imageFile.publicURL && Object.keys(formatComponents).includes(image.imageFile.extension)
+
+const MultiFormatImage = ({
+  alt=``,
+  fallbackClasses=``,
+  image,
+  textFallback=false,
+  ...props
+}) => {
+
   let Image
 
-  if (imageFile) {
-    if ( imageFile.childImageSharp ) {
-      Image = () => <FluidImage image={image} {...props} />
+  if (usesPublicURL(image)) {
+    const { extension, publicURL } = image.imageFile
+    const Component = formatComponents[extension]
 
-    } else if (imageFile.extension === 'svg') {
-      Image = () => <SvgImg
-        alt={alt}
-        src={imageFile.publicURL}
-        {...props}
-      />
+    Image = () => <Component
+      alt={alt}
+      src={publicURL}
+      {...props}
+    />
 
-    } else if (imageFile.extension === 'gif') {
-        Image = () => <img
-          alt={alt}
-          src={imageFile.publicURL}
-          {...props}
-        />
+  } else if ( textFallback ) {
+    Image = () => <p className={fallbackClasses}>{alt}</p>
 
-    } else {
-      Image = () => <p className={fallbackClasses}>{alt}</p>
-    }
+  } else {
+    Image = () => <FluidImage image={image} {...props} />
   }
 
   return <Image />
