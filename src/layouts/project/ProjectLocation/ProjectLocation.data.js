@@ -5,6 +5,7 @@ module.exports = () => {
       nearby {
         amenity
       }
+      listHeading
       fallbackImage {
         sourceUrl
         altText

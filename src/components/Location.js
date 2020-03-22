@@ -3,7 +3,7 @@ import FluidImage from 'components/FluidImage'
 import Divider from 'components/DividerHorizontal'
 import { subhead } from 'styles/helpers'
 
-const Location = ({fallbackImage, nearby}) => {
+const Location = ({fallbackImage, nearby, listHeading=``}) => {
 
   const amenities = nearby && Object.values(nearby).map(item => item.amenity )
 
@@ -54,7 +54,7 @@ const Location = ({fallbackImage, nearby}) => {
             @mq-palm--margin-bottom:columns-0-1/2
           `}
         >
-          Nearby amenities
+          { listHeading }
         </h2>
 
         { amenities && amenities.length < 1
