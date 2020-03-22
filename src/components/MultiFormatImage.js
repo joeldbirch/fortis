@@ -13,6 +13,7 @@ const MultiFormatImage = ({
   alt=``,
   fallbackClasses=``,
   image,
+  sizes,
   textFallback=false,
   ...props
 }) => {
@@ -25,6 +26,10 @@ const MultiFormatImage = ({
 
     Image = () => <Component
       alt={alt}
+      className={`
+        width:100
+        height:auto
+      `}
       src={publicURL}
       {...props}
     />
@@ -33,7 +38,7 @@ const MultiFormatImage = ({
     Image = () => <p className={fallbackClasses}>{alt}</p>
 
   } else {
-    Image = () => <FluidImage image={image} {...props} />
+    Image = () => <FluidImage image={image} sizes={sizes} {...props} />
   }
 
   return <Image />
