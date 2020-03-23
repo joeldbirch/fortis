@@ -81,6 +81,11 @@ $scoped_container: 's-editable' !default;
       font-size: hu-get($hu-font-size-types, 500);
     }
 
+    @if $scoped_container == 'wp-editor' {
+      // always render blockquotes larger when shown in WP editor
+      font-size: hu-get($hu-font-size-types, 500);
+    }
+
     + p {
       @media (max-width: #{hu-get($hu-media-queries, max-palm max-w)}) {
         font-size: hu-get($hu-font-size-types, 300);
