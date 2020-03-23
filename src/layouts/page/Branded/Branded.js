@@ -28,6 +28,9 @@ const Branded = ({image, video=null, id=null}) => {
       id={id}
     >
       <HeroFullScreenContent
+        className={`
+          height:100vh-fixed
+        `}
         fluid={image.imageFile.childImageSharp.fluid}
         video={video}
       />

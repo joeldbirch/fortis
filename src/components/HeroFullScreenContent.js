@@ -10,7 +10,7 @@ const HeroFullScreenContent = ({fluid, video, className=``, ...props}) => {
       <GatsbyImage
         fluid={fluid}
         className={`
-          height:100vh-fixed
+          ${className}
           z-index:-1
         `}
       />

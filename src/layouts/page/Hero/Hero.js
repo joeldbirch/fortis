@@ -8,6 +8,7 @@ import { getPath } from 'utilities/helpers'
 const Hero = ({
   className=``,
   forceTextColour=false,
+  fullScreen=true,
   id=null,
   image,
   label,
@@ -26,14 +27,24 @@ const Hero = ({
       id={id}
       className={`
         ${className}
-        width:100
+        ${forceTextColour ? `js-no-header-bg` : ``}
+        ${!forceTextColour && fullScreen ? `js-contrast--reverse`: ``}
+        ${fullScreen
+          ? `
+            js-contrast
+            min-height:100vh-fixed
+            scroll-snap-align:start
+            scroll-snap-stop:always
+          `
+          : `
+            @mq-bigdesk--padding-horizontal:columns-0-1/2
+            margin-horizontal:auto
+            max-width:container
+          `
+        }
         color:neutral-0
-        js-contrast
-        ${forceTextColour ? `js-no-header-bg` : `js-contrast--reverse`}
-        min-height:100vh-fixed
         position:relative
-        scroll-snap-align:start
-        scroll-snap-stop:always
+        width:100
       `}
     >
 
@@ -79,6 +90,9 @@ const Hero = ({
       }
 
       <HeroFullScreenContent
+        className={`
+          ${fullScreen ? `height:100vh-fixed` : ``}
+        `}
         fluid={fluid}
         video={video}
       />
