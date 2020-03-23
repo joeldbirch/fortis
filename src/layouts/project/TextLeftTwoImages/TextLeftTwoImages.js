@@ -61,7 +61,6 @@ const TextLeftTwoImages = ({
     smaller,
   },
   billText,
-  billHeading,
   billNote
 }) => {
   return (
@@ -81,17 +80,12 @@ const TextLeftTwoImages = ({
           </div>
 
           <div className={styles.startColumnEndRow}>
-            <h2 className={`
-              ${subhead}
-              margin-bottom:400
-              rhythm-fix-after
-            `}>
-              {billHeading}
-            </h2>
-            <p className={`
-              margin-bottom:800
-              rhythm-fix-after
-            `}>{billText}</p>
+            <div
+              className={`
+                s-editable
+              `}
+              dangerouslySetInnerHTML={{__html: billText}}
+            />
           </div>
         </div>
 
