@@ -60,6 +60,8 @@ const styles = {
 export default ({
   className = ``,
   inputClassName = ``,
+  inputmode,
+  pattern,
   label = `Label text`,
   labelClassName = ``,
   labelHidden = false,
@@ -82,8 +84,10 @@ export default ({
         aria-required={required}
         className={inputClassName}
         id={capitalize(name)}
+        inputmode={inputmode}
         minLength="3"
         name={name}
+        pattern={pattern}
         placeholder={label}
         required={required}
         size="40"
