@@ -12,6 +12,8 @@ $scoped_container: 's-editable' !default;
   //   @include space-items;
   // }
 
+  hanging-punctuation: first;
+
   @include space-items;
 
   h2 {
