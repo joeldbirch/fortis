@@ -1,4 +1,5 @@
 import React from 'react'
+import SvgImg from 'components/SvgImg'
 
 const styles = {
   brandingWrap: `
@@ -41,6 +42,7 @@ const styles = {
     height:auto
     max-width:100
     opacity:90
+    svg-fill-color:neutral-100
   `,
 }
 
@@ -67,7 +69,7 @@ const BigBrand = ({htmlText=null, className=``, textClasses=``, HeadingTag=`h2`,
 
       {/* div wrapper needed because Safari won't treat the img as a flex item properly */}
       <div>
-        <img
+        <SvgImg
           className={`
             ${styles.watermark}
           `}
