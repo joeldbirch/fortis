@@ -1,6 +1,5 @@
 import React from 'react'
 import MultiFormatImage from 'components/MultiFormatImage'
-import { subhead } from 'styles/helpers'
 import { cols, mq } from 'utilities/helpers'
 import { moduleRoot } from 'styles/helpers'
 
