@@ -19,6 +19,8 @@ const Hero = ({
 }) => {
   if (!image) return ``
   const fluid = image.imageFileHero.childImageSharp.fluid
+  console.log(linkTo);
+
   const to = linkTo && linkTo.link ? getPath(linkTo.link) : null
   const OptionalLink = to ? Link : `span`
 
@@ -77,13 +79,22 @@ const Hero = ({
               <OptionalLink to={to} className={`
                 &::before--hit-area-xy-0
                 color:neutral-0
-                ${to && `
-                    &:hover--text-decoration:none
-                    pointer-events:auto
-                    text-decoration:underline
-                  `
+                ${
+                  to
+                  ? `
+                      pointer-events:auto
+                    `
+                  : ``
                 }
-              `}>{label}</OptionalLink>
+              `}><span
+                className={`
+                  custom-underline
+                  display:inline-block
+                  position:relative
+                `}>
+                  {label}
+                </span>
+              </OptionalLink>
             </h2>
           </header>
         )
