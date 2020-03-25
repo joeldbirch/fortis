@@ -6,7 +6,7 @@ const createProjects = require('./create/createProjects')
 const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
 
 const getAuthBase64 = (user, pass) => Buffer.from(`${user}:${pass}`).toString('base64')
-const convertAmpersands = text => text.replace(`&#038;`,`&`).replace(`&amp;`,`&`)
+const convertEncodedChars = text => text.replace(`&#038;`,`&`).replace(`&amp;`,`&`).replace(`&#8211;`,`–`)
 
 exports.createPagesStatefully = async ({ graphql, actions, reporter }, options) => {
   await createPages({ actions, graphql, reporter }, options)
@@ -55,17 +55,17 @@ exports.createResolvers = (
     },
     WPGraphQL_Page: {
       title: {
-        resolve: source => convertAmpersands(source.title),
+        resolve: source => convertEncodedChars(source.title),
       },
     },
     WPGraphQL_Post: {
       title: {
-        resolve: source => convertAmpersands(source.title),
+        resolve: source => convertEncodedChars(source.title),
       },
     },
     WPGraphQL_Project: {
       title: {
-        resolve: source => convertAmpersands(source.title),
+        resolve: source => convertEncodedChars(source.title),
       },
     },
   })
