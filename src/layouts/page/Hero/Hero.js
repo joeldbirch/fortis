@@ -19,7 +19,6 @@ const Hero = ({
 }) => {
   if (!image) return ``
   const fluid = image.imageFileHero.childImageSharp.fluid
-  console.log(linkTo);
 
   const to = linkTo && linkTo.link ? getPath(linkTo.link) : null
   const OptionalLink = to ? Link : `span`
