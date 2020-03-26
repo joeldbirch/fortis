@@ -132,7 +132,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
                 @mq-palm--pos-top:100
                 @mq-palm--padding-top:columns-1
                 @mq-palm--margin-top:-400
-                @mq-palm--width:columns-6
+                @mq-palm--width:columns-5
                 @mq-desk--width:columns-4
                 @mq-palm--text-align:left
                 @mq-palm--margin-left:-columns-1
