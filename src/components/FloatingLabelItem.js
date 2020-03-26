@@ -60,7 +60,7 @@ const styles = {
 export default ({
   className = ``,
   inputClassName = ``,
-  inputmode,
+  inputMode,
   pattern,
   label = `Label text`,
   labelClassName = ``,
@@ -84,7 +84,7 @@ export default ({
         aria-required={required}
         className={inputClassName}
         id={capitalize(name)}
-        inputmode={inputmode}
+        inputMode={inputMode}
         minLength="3"
         name={name}
         pattern={pattern}
