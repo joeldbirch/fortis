@@ -123,7 +123,7 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
     */
     await fetchPages({ first: itemsPerPage, after: null }).then((wpPages) => {
 
-      wpPages && wpPages.map((page) => {
+      wpPages && wpPages.forEach((page) => {
         let pagePath = `/${page.uri}/`
 
         /**
