@@ -17,6 +17,7 @@ export default () => {
     })
 
     sections.forEach(section => observer.observe(section))
+    return () => observer.disconnect()
   }
 
   return [freeScroll, init]

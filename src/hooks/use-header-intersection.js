@@ -31,6 +31,7 @@ const useHeaderIntersection = function() {
     }, intersectionConfig)
 
     sections.forEach(section => observer.observe(section))
+    return () => observer.disconnect()
   }
 
   useEffect(init, [])
