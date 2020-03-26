@@ -68,7 +68,10 @@ const TextLeftTwoImages = ({
         <div className={styles.startColumn}>
           <div className={styles.startColumnStartRow}>
             <MultiFormatImage
-              className={` @mq-palm--margin-right:-400`}
+              className={`
+                @mq-palm--margin-right:-400
+                @mq-max-palm--margin-top:800
+              `}
               image={smaller}
               sizes={`
                 (max-width: ${mq.toPalm}) ${cols(12)}vw,
