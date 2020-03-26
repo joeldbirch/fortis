@@ -20,6 +20,8 @@ const NewsEntry = ({
   },
   layoutOrder,
   noteClasses=``,
+  arrowClasses=``,
+  arrowStyles={},
   ...props
 }) => {
 
@@ -49,19 +51,9 @@ const NewsEntry = ({
 
             <ArrowDrawnUpLeft
               className={`
-                @mq-max-palm--margin-left:-600
-                @mq-max-palm--transform:arrow-down-right
-                @mq-palm--margin-bottom:200
-                @mq-palm--margin-left:-400
-                @mq-palm--transform:arrow-right-down
-                margin-bottom:100
-                pos-bottom:100
-                position:absolute
-                ${ layoutOrder !== 2
-                  ? `@mq-palm--display:none`
-                  : ``
-                }
+                ${arrowClasses}
               `}
+              style={arrowStyles}
             />
 
 
@@ -128,17 +120,9 @@ const Note = ({className=``, children}) => (
   <p
     className={`
       ${className}
-      @mq-max-palm--margin-bottom:1000
-      @mq-max-palm--max-width:columns-4
-      @mq-max-palm--padding-right:400
-      @mq-max-palm--pos-bottom-right:0
-      @mq-max-palm--transform:var-1
       handwritten
       position:absolute
     `}
-    style={{
-      '--translate-y-var-1': '50%',
-    }}
   >{children}</p>
 )
 
