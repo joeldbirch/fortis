@@ -24,7 +24,6 @@ const NewsPreview = ({posts, intro, pagination}) => {
           padding-top:site-top
           @mq-palm--display:grid
           grid-template-columns:2
-          grid-guide
         `}
       >
         <div
