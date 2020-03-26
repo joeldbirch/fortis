@@ -95,7 +95,7 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
       * Map over the pages for later creation
       */
       nodes
-      && nodes.map((pages) => {
+      && nodes.filter(page => page.uri !== `projects`).map((pages) => {
         allPages.push(pages)
       })
 
