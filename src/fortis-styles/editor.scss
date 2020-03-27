@@ -28,6 +28,7 @@ $editor-pad: 1.5rem;
 // in order to override WP's built-in editor styles
 html:nth-child(n) {
   background-color: hu-get($hu-colors, neutral 0);
+  overflow-y: auto; // override Hucssley reset so editor can be srolled.
 }
 
 // :nth-child increases specificity with no side-effects
