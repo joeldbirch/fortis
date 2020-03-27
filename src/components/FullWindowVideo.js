@@ -49,7 +49,7 @@ const FullWindowVideo = ({vimeoId, className=``, windowHeight=false, minHeight=n
         `}
         style={{
           height, /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
-          minWidth: `177.77vh`, /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+          minWidth: `calc(var(--vh, 1vh) * 177.77)`, /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
           minHeight,
         }}
         frameBorder="0"
