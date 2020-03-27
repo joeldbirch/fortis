@@ -1,4 +1,7 @@
 import { useStaticQuery, graphql } from "gatsby"
+
+import { siteURL } from '../../globals'
+
 export const useMenuData = () => {
   const { wpgraphql } = useStaticQuery(
     graphql`
@@ -27,5 +30,6 @@ export const useMenuData = () => {
   return {
     menuItems: wpgraphql.menuItems.nodes,
     wordPressUrl: wpgraphql.generalSettings.url,
+    siteURL: siteURL,
   }
 }

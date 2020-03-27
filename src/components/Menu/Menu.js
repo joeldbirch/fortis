@@ -9,7 +9,7 @@ import { centred, appleFade, appleBezier, uiFontSize, getInvertedStyles } from '
 const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerReversed}) => {
   const {
     menuItems = [],
-    wordPressUrl,
+    siteURL,
   } = useMenuData()
 
   if (!menuItems) return null
@@ -146,7 +146,7 @@ const Menu = ({toggleHandler=function(){}, isOpen=false, className=``, headerRev
                   `}
                   key={menuItem.id}
                   menuItem={menuItem}
-                  wordPressUrl={wordPressUrl}
+                  wordPressUrl={siteURL}
                 />
               ))
             }

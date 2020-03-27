@@ -59,7 +59,7 @@
   "scripts": {
     "postinstall": "yarn upgrade hucssley",
     "build:initial": "gatsby build",
-    "build": "npm run preload-fonts && gatsby build",
+    "build": "gatsby build",
     "develop": "gatsby develop",
     "clean": "gatsby clean",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
