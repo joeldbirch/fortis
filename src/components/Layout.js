@@ -1,44 +1,44 @@
-import React, { useState, useLayoutEffect } from 'react';
-import PropTypes from 'prop-types';
-import useHeaderIntersection from 'hooks/use-header-intersection';
-import useHomeIntersection from 'hooks/use-home-intersection';
-import { Link } from 'gatsby';
-import { Helmet } from 'react-helmet';
-import { isIos } from 'utilities/helpers';
-import { uiFontSize, getInvertedStyles } from 'styles/helpers';
-import useFreeScroll from 'hooks/use-free-scroll';
-import fixOutline from 'fix-outline';
-import TheWrap from './TheWrap';
-import Menu from './Menu';
-import Main from './TheMain';
-import TheHeader from './TheHeader';
-import TheFooter from './TheFooter';
+import React, { useState, useLayoutEffect } from 'react'
+import PropTypes from 'prop-types'
+import useHeaderIntersection from 'hooks/use-header-intersection'
+import useHomeIntersection from 'hooks/use-home-intersection'
+import { Link } from 'gatsby'
+import { Helmet } from 'react-helmet'
+import { isIos } from 'utilities/helpers'
+import { uiFontSize, getInvertedStyles } from 'styles/helpers'
+import useFreeScroll from 'hooks/use-free-scroll'
+import fixOutline from 'fix-outline'
+import TheWrap from './TheWrap'
+import Menu from './Menu'
+import Main from './TheMain'
+import TheHeader from './TheHeader'
+import TheFooter from './TheFooter'
 
 
-import 'styles/index.scss';
+import 'styles/index.scss'
 // import '../../static/styles-dev.css'
 
 const Layout = ({
   children,
-  headerClassName = '',
-  className = '',
+  headerClassName = ``,
+  className = ``,
   AddToHeader,
-  overflowY = 'overflow-y:scroll',
+  overflowY = `overflow-y:scroll`,
   scrollStrict = false,
   ...props
 }) => {
-  const [menuOpen, toggleMenu] = useState(false);
-  const [headerState] = useHeaderIntersection();
-  const homePanel = useHomeIntersection();
-  const [freeScroll, initFreeScroll] = useFreeScroll();
-  useLayoutEffect(initFreeScroll, []);
+  const [menuOpen, toggleMenu] = useState(false)
+  const [headerState] = useHeaderIntersection()
+  const homePanel = useHomeIntersection()
+  const [freeScroll, initFreeScroll] = useFreeScroll()
+  useLayoutEffect(initFreeScroll, [])
 
   useLayoutEffect(() => {
-    if (typeof window !== 'undefined') {
-      fixOutline();
-      if (isIos()) document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+    if (typeof window !== `undefined`) {
+      fixOutline()
+      if (isIos()) document.documentElement.style.setProperty(`--vh`, `${window.innerHeight * 0.01}px`)
     }
-  }, []);
+  }, [])
 
   return (
     <TheWrap
@@ -55,7 +55,7 @@ const Layout = ({
       style={
         freeScroll
           ? {
-            scrollSnapType: 'none',
+            scrollSnapType: `none`,
           }
           : {}
       }
@@ -84,7 +84,7 @@ const Layout = ({
 
         <style>
           {`
-          ${'/*fix gatsby bug*/'}
+          ${`/*fix gatsby bug*/`}
           .gatsby-image-wrapper img {
             transition: opacity 1s !important;
           }
@@ -126,12 +126,12 @@ const Layout = ({
                   transition-duration:700
                   transition-property:opacity
                 `
-            : ''
+            : ``
             }
           `}
 
           style={{
-            marginTop: '-0.45em',
+            marginTop: `-0.45em`,
           }}
         >
           <span id="siteLogo" className="visually-hidden">Fortis</span>
@@ -143,8 +143,8 @@ const Layout = ({
             height="29"
             role="img"
             style={{
-              '--logo-color': headerState.reversed ? 'white' : 'hsla(0, 0%, 75%, 0.5)',
-              width: '5.5em',
+              '--logo-color': headerState.reversed ? `white` : `hsla(0, 0%, 75%, 0.5)`,
+              width: `5.5em`,
 
             }}
             width="110"
@@ -177,9 +177,9 @@ const Layout = ({
 
       <Main
         style={{
-          '--guides-max-width': '87.5rem',
-          '--guide-color': 'hsla(350, 100%, 48%, 0.1)',
-          '--position': 'absolute',
+          '--guides-max-width': `87.5rem`,
+          '--guide-color': `hsla(350, 100%, 48%, 0.1)`,
+          '--position': `absolute`,
         }}
       >
         {children}
@@ -190,12 +190,12 @@ const Layout = ({
       />
 
     </TheWrap>
-  );
-};
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   headerClassName: PropTypes.string,
-};
+}
 
-export default Layout;
+export default Layout
