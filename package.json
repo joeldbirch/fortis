@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-theme-fortis",
+  "name": "fortis",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.0.1",
+  "description": "A Gatsby front-end to a WordPress-driven website for Fortis Development Group",
+  "version": "1.0.0",
   "author": "Joel Birch <joeldbirch@gmail.com>",
   "main": "index.js",
   "exports": {
@@ -14,21 +14,21 @@
     "fibers": "^4.0.2",
     "fix-outline": "https://github.com/joeldbirch/fix-outline.git",
     "flickity": "^2.2.1",
-    "gatsby-image": "^2.2.40",
+    "gatsby-image": "^2.3.5",
     "gatsby-plugin-hubspot": "^1.3.3",
     "gatsby-plugin-manifest": "^2.2.41",
     "gatsby-plugin-netlify": "^2.1.32",
     "gatsby-plugin-polyfill-io": "^1.1.0",
     "gatsby-plugin-preload-fonts": "^1.0.27",
     "gatsby-plugin-purgecss": "^4.0.1",
-    "gatsby-plugin-react-helmet": "^3.2.0",
+    "gatsby-plugin-react-helmet": "^3.2.5",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sass": "^2.1.28",
     "gatsby-plugin-sharp": "2.5",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.1.48",
-    "gatsby-source-graphql": "^2.1.33",
-    "gatsby-transformer-sharp": "^2.3.14",
+    "gatsby-source-graphql": "^2.4.3",
+    "gatsby-transformer-sharp": "^2.4.7",
     "glob": "^7.1.6",
     "hucssley": "github:stowball/hucssley#d622bbb",
     "loadcss": "^0.0.2",
@@ -36,21 +36,21 @@
     "lodash.uniqby": "^4.7.0",
     "prop-types": "^15.7.2",
     "react-flickity-component": "^3.5.0",
-    "react-helmet": "^6.0.0-beta",
-    "sass": "^1.25.0"
+    "react-helmet": "^6.0.0",
+    "sass": "^1.26.5"
   },
   "devDependencies": {
-    "gatsby": "^2.19.5",
+    "gatsby": "^2.20.4",
     "gatsby-plugin-eslint": "^2.0.8",
     "prettier": "^1.19.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "sharp": "0.25"
   },
   "peerDependencies": {
-    "gatsby": "^2.19.41",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "gatsby": "^2.20.32",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "keywords": [
     "gatsby"
