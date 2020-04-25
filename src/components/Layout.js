@@ -34,7 +34,7 @@ const Layout = ({
 
   useLayoutEffect(() => {
     if (typeof window !== `undefined`) {
-      // fixOutline()
+      fixOutline()
       if (isIos()) document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`)
     }
   }, [])
