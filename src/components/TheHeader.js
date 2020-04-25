@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 const headerStyles = {
   reversed: {
-    backgroundColor: `rgba(255, 255, 255, 0)`,
+    backgroundColor: 'rgba(255, 255, 255, 0)',
   },
-}
+};
 
 const TheHeader = ({
   headerState: {
@@ -12,12 +12,11 @@ const TheHeader = ({
     applyBg,
   },
   children,
-  className=``,
+  className = '',
   ...props
-}) => {
-  return (
-    <header
-      className={`
+}) => (
+  <header
+    className={`
         ${className}
         align-items:center
         display:flex
@@ -25,7 +24,7 @@ const TheHeader = ({
         margin-horizontal:auto
         max-width:container
         padding-horizontal:columns-0-1/2
-        padding-vertical:columns-0-1/2
+        padding-vertical:600
         @mq-lap--padding-vertical:800
         pointer-events:none
         pos-top-left-right:0
@@ -33,10 +32,10 @@ const TheHeader = ({
         width:100
         z-index:400
       `}
-      {...props}
-    >
-      <div
-        className={`
+    {...props}
+  >
+    <div
+      className={`
           faux-background
           height:100
           margin-horizontal:-50vw
@@ -44,14 +43,13 @@ const TheHeader = ({
           position:absolute
           width:100vw
         `}
-        style={reversed ? headerStyles.reversed : {
-          backgroundColor: applyBg ? `rgba(255, 255, 255, 1)`: `rgba(255, 255, 255, 0)`,
-          transition: `background-color 0.5s 0s`,
-        }}
-      />
-      {children}
-    </header>
-  )
-}
+      style={reversed ? headerStyles.reversed : {
+        backgroundColor: applyBg ? 'rgba(255, 255, 255, 1)' : 'rgba(255, 255, 255, 0)',
+        transition: 'background-color 0.5s 0s',
+      }}
+    />
+    {children}
+  </header>
+);
 
-export default TheHeader
+export default TheHeader;

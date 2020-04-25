@@ -1,27 +1,27 @@
-const path = require('path')
-const Fiber = require('fibers')
+const path = require('path');
+const Fiber = require('fibers');
 
 const {
   wordpressSelectors,
   wordpressPatterns,
-} = require('./src/whitelist')
+} = require('./src/whitelist');
 
-const getAuthBase64 = (user, pass) => Buffer.from(`${user}:${pass}`).toString('base64')
+const getAuthBase64 = (user, pass) => Buffer.from(`${user}:${pass}`).toString('base64');
 
-let activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || `development`
-console.log(`Using environment config: ${activeEnv}`)
+const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development';
+console.log(`Using environment config: ${activeEnv}`);
 
 require('dotenv').config({
   path: `.env.${activeEnv}`,
-})
+});
 
-console.log(`This WordPress Endpoint is used: '${process.env.WORDPRESS_URL}'`)
+console.log(`This WordPress Endpoint is used: '${process.env.WORDPRESS_URL}'`);
 
 
 module.exports = {
   siteMetadata: {
-    title: `Fortis Development Group`,
-    description: `Tailoring places to life’s rituals`,
+    title: 'Fortis Development Group',
+    description: 'Tailoring places to life’s rituals',
   },
   plugins: [
     {
@@ -32,98 +32,89 @@ module.exports = {
         stages: ['develop'],
         options: {
           emitWarning: true,
-          failOnError: false
-        }
-      }
+          failOnError: false,
+        },
+      },
     },
     {
-      resolve: `gatsby-source-graphql`,
+      resolve: 'gatsby-source-graphql',
       options: {
-        typeName: `WPGraphQL`,
-        fieldName: `wpgraphql`,
+        typeName: 'WPGraphQL',
+        fieldName: 'wpgraphql',
         url: `${process.env.WORDPRESS_URL}/graphql`,
         headers: {
           Authorization: `Basic ${getAuthBase64(process.env.AUTH_USERNAME, process.env.AUTH_PASSWORD)}`,
         },
       },
     },
-    `gatsby-plugin-preload-fonts`,
-    // {
-    //   resolve: `gatsby-plugin-hubspot`,
-    //   options: {
-    //       trackingCode: "6351172",
-    //       respectDNT: true,
-    //       productionOnly: true,
-    //   },
-    // },
-    // {
-    //   resolve: `gatsby-plugin-web-font-loader`,
-    //   options: {
-    //     typekit: {
-    //       id: `hwx4ktl`,
-    //     },
-    //   },
-    // },
     {
-      resolve: `gatsby-plugin-polyfill-io`,
+      resolve: 'gatsby-plugin-hubspot',
       options: {
-        features: [
-          `Array.prototype.every`,
-          `Array.prototype.includes`,
-          `smoothscroll`,
-          `IntersectionObserver`,
-        ]
+        trackingCode: '6351172',
+        respectDNT: true,
+        productionOnly: true,
       },
     },
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-sass`,
+      resolve: 'gatsby-plugin-polyfill-io',
       options: {
-        implementation: require(`sass`),
+        features: [
+          'Array.prototype.every',
+          'Array.prototype.includes',
+          'smoothscroll',
+          'IntersectionObserver',
+        ],
+      },
+    },
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        implementation: require('sass'),
         fiber: Fiber,
       },
     },
     {
-      resolve: `gatsby-plugin-react-svg`,
+      resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: /src\/images\/inline/ // See below to configure properly
-        }
-      }
+          include: /src\/images\/inline/, // See below to configure properly
+        },
+      },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `images`,
+        name: 'images',
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
+    'gatsby-transformer-sharp',
     {
-      resolve: `gatsby-plugin-sharp`,
+      resolve: 'gatsby-plugin-sharp',
       options: {
         stripMetadata: true,
         webpQuality: 70,
       },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `Fortis Development Group`,
-        short_name: `Fortis`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#ffffff`,
-        display: `minimal-ui`,
-        icon: require.resolve(`./src/images/fortis-icon.png`), // This path is relative to the root of the site.
+        name: 'Fortis Development Group',
+        short_name: 'Fortis',
+        start_url: '/',
+        background_color: '#ffffff',
+        theme_color: '#ffffff',
+        display: 'minimal-ui',
+        icon: require.resolve('./src/images/fortis-icon.png'), // This path is relative to the root of the site.
       },
     },
     {
-      resolve: `gatsby-plugin-purgecss`,
+      resolve: 'gatsby-plugin-purgecss',
       options: {
         printRejected: false, // Print removed selectors and processed file names
         content: [path.join(process.cwd(), 'src/**/!(*.d).{js,svg,html}')],
-        ignore: [`src/components/TheWrap/style.module.scss`, `src/fortis-styles/base/_custom-reset.scss`, `flickity`],
+        ignore: ['src/components/TheWrap/style.module.scss', 'src/fortis-styles/base/_custom-reset.scss', 'flickity'],
         whitelist: wordpressSelectors,
         whitelistPatterns: wordpressPatterns,
         extractors: [
@@ -134,31 +125,30 @@ module.exports = {
               }
             },
             extensions: ['html', 'js', 'svg'],
-          }
-        ]
-      }
+          },
+        ],
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     {
-      resolve: "gatsby-plugin-netlify",
+      resolve: 'gatsby-plugin-netlify',
       options: {
         headers: {
-          "/*": [
-            "X-Frame-Options: ALLOW-FROM http://ami.responsivedesign.is/",
+          '/*': [
+            'X-Frame-Options: ALLOW-FROM http://ami.responsivedesign.is/',
           ],
-          "/*.js": [
-            "Expires: 1y",
-            "Cache-Control: public, max-age=31536000",
+          '/*.js': [
+            'Expires: 1y',
+            'Cache-Control: public, max-age=31536000',
           ],
-          "/favicon.ico": [
-            "Expires: 1y",
-            "Cache-Control: public, max-age=31536000",
+          '/favicon.ico': [
+            'Expires: 1y',
+            'Cache-Control: public, max-age=31536000',
           ],
         },
       },
     },
   ],
-}
-
+};

@@ -1,5 +1,4 @@
-module.exports = (imports) => {
-  return`
+module.exports = (imports) => `
 // This is a temporary generated file. Changes to this file will be overwritten!
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
@@ -31,7 +30,7 @@ const Page = ({ pageContext }) => {
 
   return (
     <Layout
-      className={isFrontPage ? "scroll-snap-type:y-mandatory" : ""}
+      className={isFrontPage ? "scroll-snap-type:y-mandatory isFrontPage" : ""}
       AddToHeader={
         isFrontPage
         ? <h1 className="visually-hidden">{site.siteMetadata.title}</h1>
@@ -46,8 +45,7 @@ const Page = ({ pageContext }) => {
       <SEO title={title} />
       {
         layouts.map((layout, index) => {
-          ${imports.map(({ componentName, layoutType }) => {
-            return `
+          ${imports.map(({ componentName, layoutType }, index) => `
               if (layout.fieldGroupName === '${layoutType}') {
                   const pageUri = isFrontPage ? "" : uri
                   const nextIndex = index + 1
@@ -55,8 +53,7 @@ const Page = ({ pageContext }) => {
                   const nextSection = isNotLast ? "/"+pageUri+"#section-" + nextIndex : null
                   return <${componentName} {...layout} key={index} id={"section-" + index} nextSection={nextSection} />
               }
-            `
-          }).join('\n')}
+            `).join('\n')}
         })
       }
     </Layout>
@@ -64,5 +61,4 @@ const Page = ({ pageContext }) => {
 }
 
 export default Page
-  `
-}
+  `;
