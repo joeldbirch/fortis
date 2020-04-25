@@ -31,14 +31,9 @@ const NewsEntry = ({
     <PostEntry
       ariaLabelledby={`preview-${postId}`}
       headerClasses={`
-        @mq-hover-only--opacity:0
         @mq-palm--padding-bottom:0
-        &:focus-within--opacity:100
-        &:hover--opacity:100
         display:flex
         flex-direction:column-reverse
-        transition-duration:400
-        transition-property:opacity
       `}
       note={
         [2,4].includes(layoutOrder)
