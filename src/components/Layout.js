@@ -10,6 +10,7 @@ import TheHeader from './TheHeader'
 import TheFooter from './TheFooter'
 import { isIos } from 'utilities/helpers'
 import { uiFontSize, getInvertedStyles } from 'styles/helpers'
+
 import useFreeScroll from 'hooks/use-free-scroll'
 import fixOutline from 'fix-outline'
 
@@ -33,7 +34,7 @@ const Layout = ({
 
   useLayoutEffect(() => {
     if (typeof window !== `undefined`) {
-      fixOutline()
+      // fixOutline()
       if (isIos()) document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`)
     }
   }, [])
@@ -99,18 +100,33 @@ const Layout = ({
         headerState={headerState}
       >
         <Link
+          aria-labelledby="siteLogo"
           to="/"
           className={`
             color:inherit
-            hover-underline
             &::before--hit-area-xy-100
             position:relative
             pointer-events:auto
             ${uiFontSize}
           `}
-          style={getInvertedStyles(headerState.reversed)}
+          style={{
+            marginTop: `-0.4em`,
+          }}
         >
-          Fortis
+          <span id="siteLogo" className="visually-hidden">Fortis</span>
+          <svg
+            className={`
+              display:block
+              svg-fill-color:neutral-100
+            `}
+            height="28"
+            role="img"
+            style={{
+              '--logo-color': `rgb(226, 226, 226)`,
+            }}
+            width="106"
+          ><use xlinkHref={`/images/logo-fortis-watermark.svg#fortis-logo`}></use></svg>
+
         </Link>
         { AddToHeader && (
             <div
