@@ -43,7 +43,7 @@
     "eslint-loader": "^4.0.2",
     "gatsby": "^2.20.4",
     "gatsby-plugin-eslint": "^2.0.8",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "sharp": "0.25"
