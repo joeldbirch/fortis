@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 export default ({
-  className = '', absolute = 'true', children, ...props
+  className = ``, absolute = `true`, children, ...props
 }) => (
   <header
     className={`
@@ -14,7 +14,7 @@ export default ({
             padding-vertical:600
             @mq-lap--padding-vertical:800
           `
-            : 'position:relative'
+            : `position:relative`
         }
         margin-horizontal:auto
         max-width:container
@@ -39,4 +39,4 @@ export default ({
       {children}
     </div>
   </header>
-);
+)

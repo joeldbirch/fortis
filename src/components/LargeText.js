@@ -1,7 +1,7 @@
 import React from 'react'
 import { cleanWpContent } from 'utilities/helpers'
 
-const defaultMaxWidth = {'--max-width': '21em'}
+const defaultMaxWidth = {'--max-width': `21em`}
 
 export default ({className=``, styles=defaultMaxWidth, children=null, ...props}) => {
   return !children ? `` : (

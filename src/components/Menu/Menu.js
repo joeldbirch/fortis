@@ -1,23 +1,23 @@
-import React from 'react';
-import { useMenuData } from '../../hooks/use-menu-data';
+import React from 'react'
+import { useMenuData } from '../../hooks/use-menu-data'
 
-import MenuItem from './MenuItem';
-import CloseAnimation from '../CloseAnimation';
+import MenuItem from './MenuItem'
+import CloseAnimation from '../CloseAnimation'
 import {
   centred, appleFade, appleBezier, uiFontSize, getInvertedStyles,
-} from '../../styles/helpers';
+} from '../../styles/helpers'
 
 
 const Menu = ({
-  toggleHandler = function () {}, isOpen = false, className = '', headerReversed,
+  toggleHandler = function () {}, isOpen = false, className = ``, headerReversed,
 }) => {
   const {
     menuItems = [],
     siteURL,
-  } = useMenuData();
+  } = useMenuData()
 
-  if (!menuItems) return null;
-  const transitionDuration = '400ms';
+  if (!menuItems) return null
+  const transitionDuration = `400ms`
 
   return (
     <div className={`
@@ -45,8 +45,8 @@ const Menu = ({
           `}
           onClick={() => toggleHandler(!isOpen)}
           style={{
-            width: '2.6em',
-            height: '1.3em',
+            width: `2.6em`,
+            height: `1.3em`,
           }}
         >
           <span
@@ -56,14 +56,14 @@ const Menu = ({
               pos-top-left:0
               position:absolute
               hover-underline
-              ${isOpen ? 'opacity:0 scale:80' : ''}
+              ${isOpen ? `opacity:0 scale:80` : ``}
             `}
             style={getInvertedStyles(headerReversed)}
           >
             <span
               className={`
                 ${centred}
-                ${isOpen ? 'text-decoration:none' : ''}
+                ${isOpen ? `text-decoration:none` : ``}
               `}
             >
               Menu
@@ -90,9 +90,9 @@ const Menu = ({
           `}
           onClick={() => toggleHandler(!isOpen)}
           style={{
-            width: '2.6em',
-            height: '1.3em',
-            pointerEvents: isOpen ? 'auto' : 'none',
+            width: `2.6em`,
+            height: `1.3em`,
+            pointerEvents: isOpen ? `auto` : `none`,
           }}
         >
           <CloseAnimation
@@ -114,15 +114,15 @@ const Menu = ({
             pos-top:0
             position:fixed
             display:flex
-            ${isOpen ? '' : 'translate-x:100 opacity:0 visibility:hidden'}
+            ${isOpen ? `` : `translate-x:100 opacity:0 visibility:hidden`}
           `}
           style={{
-            backgroundColor: 'hsla(25, 0%, 88%, 0.95)',
-            backdropFilter: 'blur(3px)',
+            backgroundColor: `hsla(25, 0%, 88%, 0.95)`,
+            backdropFilter: `blur(3px)`,
             transition: `
               opacity ${transitionDuration} ${appleBezier} 0s,
               transform ${transitionDuration} ${appleBezier} 0s,
-              visibility 0s linear ${isOpen ? '0s' : transitionDuration}
+              visibility 0s linear ${isOpen ? `0s` : transitionDuration}
             `,
 
           }}
@@ -161,7 +161,7 @@ const Menu = ({
         </div>
       </nav>
     </div>
-  );
-};
+  )
+}
 
-export default Menu;
+export default Menu

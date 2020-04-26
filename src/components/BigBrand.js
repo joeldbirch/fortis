@@ -60,7 +60,7 @@ const BigBrand = ({htmlText=null, className=``, textClasses=``, HeadingTag=`h2`,
           ${styles.tagline}
         `}
         style={{
-          '--translate-y-var-2': '10%',
+          '--translate-y-var-2': `10%`,
         }}
       >
         {children}

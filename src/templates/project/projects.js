@@ -32,7 +32,7 @@ const Projects = ({ pageContext }) => {
         text={introContent}
         nextSection="#previews"
         style={{
-          '--desk-offset-left': '-3.5em',
+          '--desk-offset-left': `-3.5em`,
         }}
       />
 

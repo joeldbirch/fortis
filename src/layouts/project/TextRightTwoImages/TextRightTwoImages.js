@@ -75,7 +75,7 @@ const TextRightTwoImages = ({
   },
   bobText,
   bobHeading,
-  bobNote
+  bobNote,
 }) => {
   return (
     <section className={styles.root}>
@@ -110,7 +110,7 @@ const TextRightTwoImages = ({
 
         <div className={styles.endColumn}>
           <div className={` ${styles.endColumnStartRow} `}
-            style={{'--max-width' : 'calc(90vw - 17.5em)'}}
+            style={{'--max-width' : `calc(90vw - 17.5em)`}}
           >
             <span
               className={`

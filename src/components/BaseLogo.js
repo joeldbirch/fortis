@@ -19,7 +19,7 @@ const BaseLogo = ({
     case imageFile && imageFile.childImageSharp:
       return <ImageWrap aspectRatio={aspectRatio}><FluidImage image={logo} className={className} {...props} /></ImageWrap>
 
-    case imageFile && imageFile.extension === 'svg':
+    case imageFile && imageFile.extension === `svg`:
       return <ImageWrap aspectRatio={aspectRatio}><img src={imageFile.publicURL} alt={alt} className={className} {...props} /></ImageWrap>
 
     default:

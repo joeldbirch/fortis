@@ -13,7 +13,7 @@ const ClosedAnimation = ({closed=true, wrapStyles={}}) => {
         {
           opacity: closed ? `1` : `0`,
         },
-        wrapStyles,
+        wrapStyles
       )}
     >
       <span className="visually-hidden">Close</span>

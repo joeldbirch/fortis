@@ -60,7 +60,7 @@ const TextLeftTwoImages = ({
     smaller,
   },
   billText,
-  billNote
+  billNote,
 }) => {
   return (
     <section className={`${styles.root}`}>
@@ -95,7 +95,7 @@ const TextLeftTwoImages = ({
         <figure className={styles.endColumn}>
           <figcaption
             className={`${styles.endColumnStartRow}`}
-            style={{'--max-width' : 'calc(90vw - 12em)'}}
+            style={{'--max-width' : `calc(90vw - 12em)`}}
           >
             <span
               className={`

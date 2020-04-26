@@ -7,7 +7,7 @@ import Layout from '../src/components/Layout'
 import SEO from '../src/components/SEO'
 
 // Sections
-${imports.map(({ componentName, filePath }) => `import ${componentName} from '${filePath}';`).join('\n')}
+${imports.map(({ componentName, filePath }) => `import ${componentName} from '${filePath}';`).join(`\n`)}
 
 const Page = ({ pageContext }) => {
   const {
@@ -53,7 +53,7 @@ const Page = ({ pageContext }) => {
                   const nextSection = isNotLast ? "/"+pageUri+"#section-" + nextIndex : null
                   return <${componentName} {...layout} key={index} id={"section-" + index} nextSection={nextSection} />
               }
-            `).join('\n')}
+            `).join(`\n`)}
         })
       }
     </Layout>
@@ -61,4 +61,4 @@ const Page = ({ pageContext }) => {
 }
 
 export default Page
-  `;
+  `

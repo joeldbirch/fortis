@@ -66,8 +66,8 @@ const RelatedContent = ({
                   post={slide}
                   key={index}
                   style={{
-                    '--width-var-1': 'calc(var(--site-column) * 5.75)',
-                    '--width-var-2': 'calc(var(--site-column) * 3.667)',
+                    '--width-var-1': `calc(var(--site-column) * 5.75)`,
+                    '--width-var-2': `calc(var(--site-column) * 3.667)`,
                   }}
                   className={`
                     @mq-desk--margin-right:columns-0-1/2

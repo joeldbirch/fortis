@@ -26,7 +26,7 @@ const ScrollPrompt = ({className=``, ...props}) => {
         `}
         fill="currentColor"
         style={{
-          '--rotate-var-1': '-90deg',
+          '--rotate-var-1': `-90deg`,
         }}
       />
     </ScrollPromptAnimation>

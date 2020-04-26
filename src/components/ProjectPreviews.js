@@ -17,7 +17,7 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
       },
       projectHeader: {
         height: document.querySelector(`.js-project-header`)?.offsetHeight,
-      }
+      },
     })
   }, [])
 

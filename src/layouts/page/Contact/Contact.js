@@ -11,7 +11,7 @@ const styles = {
     &:hover--text-decoration:underline
     color:inherit
     text-decoration:none
-  `
+  `,
 }
 
 const Contact = () => {

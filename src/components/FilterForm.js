@@ -20,7 +20,7 @@ const styles = {
     group:hover__background-image:solid
     hover-underline
     vertical-align:top
-  `
+  `,
 }
 
 
@@ -29,7 +29,7 @@ const FilterForm = ({
     update = ()=>{},
     className=``,
     ...props
-  },
+  }
 ) => {
 
   const defaultTag = {
@@ -49,7 +49,7 @@ const FilterForm = ({
         pointer-events:auto
       `}
       style={{
-        userSelect: `none`
+        userSelect: `none`,
       }}
       {...props}
     >

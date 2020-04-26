@@ -30,8 +30,8 @@ NetlifyForm.propTypes = {
 }
 
 NetlifyForm.defaultProps = {
-  name: 'Contact',
-  action: '/thank-you/',
+  name: `Contact`,
+  action: `/thank-you/`,
 }
 
 export default NetlifyForm

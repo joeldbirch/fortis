@@ -1,8 +1,8 @@
-import React from 'react';
-import { uiFontSize } from '../styles/helpers';
+import React from 'react'
+import { uiFontSize } from '../styles/helpers'
 
-const PageHeader = ({ isMain = false, headingText = '', headingTag = 'h2' }) => {
-  const HeadingTag = isMain ? 'h1' : headingTag;
+const PageHeader = ({ isMain = false, headingText = ``, headingTag = `h2` }) => {
+  const HeadingTag = isMain ? `h1` : headingTag
 
   return (
     <HeadingTag
@@ -16,7 +16,7 @@ const PageHeader = ({ isMain = false, headingText = '', headingTag = 'h2' }) => 
       }}
     />
 
-  );
-};
+  )
+}
 
-export default PageHeader;
+export default PageHeader

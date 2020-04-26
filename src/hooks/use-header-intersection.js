@@ -23,7 +23,7 @@ const useHeaderIntersection = function() {
           const shouldReverse = target.classList.contains(`js-contrast--reverse`)
           setHeaderState({
             reversed: shouldReverse,
-            applyBg: !target.classList.contains(`js-no-header-bg`) && shouldReverse !== true
+            applyBg: !target.classList.contains(`js-no-header-bg`) && shouldReverse !== true,
           })
 
         }

@@ -34,9 +34,9 @@ const ProjectEntry = ({
         ${className}
       `}
       style={{
-        '--grid-template-columns-var-1': '3.75fr 8fr',
-        '--grid-template-columns-var-2': '2.75fr 9fr',
-        '--grid-template-columns-var-3': '1.75fr 10fr',
+        '--grid-template-columns-var-1': `3.75fr 8fr`,
+        '--grid-template-columns-var-2': `2.75fr 9fr`,
+        '--grid-template-columns-var-3': `1.75fr 10fr`,
       }}
       {...props}
     >

@@ -5,7 +5,7 @@ export default ({className=``, bottom, noMargin=false, ...props}) => {
   return (
     <div
       style={{
-        marginTop: `-1px`
+        marginTop: `-1px`,
       }}
       className={`
         ${className}

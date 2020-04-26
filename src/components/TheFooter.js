@@ -48,9 +48,9 @@ export default ({ className=``, ...props }) => {
           padding-top:50
         `}
         style={{
-          '--grid-template-columns-var-1': '5.5fr 5.5fr',
-          '--grid-template-columns-var-2': '4fr 2fr 3fr 3fr',
-          '--grid-template-columns-var-3': '4fr 2fr 2fr 2fr 2fr',
+          '--grid-template-columns-var-1': `5.5fr 5.5fr`,
+          '--grid-template-columns-var-2': `4fr 2fr 3fr 3fr`,
+          '--grid-template-columns-var-3': `4fr 2fr 2fr 2fr 2fr`,
         }}
       >
         <Divider

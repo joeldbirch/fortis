@@ -13,7 +13,7 @@ const Post = ({ pageContext }) => {
     post: {
       optionalFields: {
         subheading,
-        note
+        note,
       },
       categories: {
         nodes: cats,
@@ -75,7 +75,7 @@ const Post = ({ pageContext }) => {
             @mq-palm--grid-template-columns:var-1
           `}
           style={{
-            '--grid-template-columns-var-1': '4fr 8fr',
+            '--grid-template-columns-var-1': `4fr 8fr`,
           }}
         >
 
@@ -88,7 +88,7 @@ const Post = ({ pageContext }) => {
               position:relative
             `}
             style={{
-              '--bigdesk-offset-left': '1rem',
+              '--bigdesk-offset-left': `1rem`,
             }}
           >
             <div

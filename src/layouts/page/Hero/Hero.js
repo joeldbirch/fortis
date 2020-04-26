@@ -64,7 +64,7 @@ const Hero = ({
               z-index:100
             `}
             style={{
-              '--color-contrast': 'white',
+              '--color-contrast': `white`,
             }}
           >
             <h2

@@ -9,7 +9,7 @@ const NewsEntry = ({
   post: {
     optionalFields: {
       subheading,
-      note
+      note,
     },
     uri,
     categories,

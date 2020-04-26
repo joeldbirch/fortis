@@ -9,8 +9,8 @@ const ScrollPromptAnimation = ({className=``, children, to=null, ...props}) => {
       onClick={(e) => {
         if (!to) return false
         e.preventDefault()
-        const target = document.querySelector(`#${to.split('#')[1]}`)
-        target.scrollIntoView({behavior:"smooth"})
+        const target = document.querySelector(`#${to.split(`#`)[1]}`)
+        target.scrollIntoView({behavior:`smooth`})
       }}
       className={`
         ${className}

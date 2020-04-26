@@ -1,11 +1,11 @@
-const path = require('path')
+const path = require(`path`)
 
-const createPages = require('./create/createPages')
-const createPosts = require('./create/createPosts')
-const createProjects = require('./create/createProjects')
+const createPages = require(`./create/createPages`)
+const createPosts = require(`./create/createPosts`)
+const createProjects = require(`./create/createProjects`)
 const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
 
-const getAuthBase64 = (user, pass) => Buffer.from(`${user}:${pass}`).toString('base64')
+const getAuthBase64 = (user, pass) => Buffer.from(`${user}:${pass}`).toString(`base64`)
 const convertEncodedChars = text => text.replace(`&#038;`,`&`).replace(`&amp;`,`&`).replace(`&#8211;`,`–`)
 
 exports.createPagesStatefully = async ({ graphql, actions, reporter }, options) => {
@@ -22,7 +22,7 @@ exports.createResolvers = (
     createResolvers,
     store,
     reporter,
-  },
+  }
 ) => {
   const { createNode } = actions
 
@@ -74,7 +74,7 @@ exports.createResolvers = (
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
   actions.setWebpackConfig({
     resolve: {
-      modules: [path.resolve(__dirname, "src"), "node_modules"],
+      modules: [path.resolve(__dirname, `src`), `node_modules`],
     },
   })
 }

@@ -38,7 +38,7 @@ const NewsPreview = ({posts, intro, pagination}) => {
               can-style-note
             `}
             style={{
-              '--offset-left': '1rem',
+              '--offset-left': `1rem`,
             }}
           >
             {intro}

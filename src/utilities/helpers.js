@@ -6,7 +6,7 @@ export const hasPointerEvents = () =>
 export const usesHover =
   typeof window !== `undefined` &&
   `matchMedia` in window &&
-  window.matchMedia('(hover: hover)').matches
+  window.matchMedia(`(hover: hover)`).matches
 
 export const isSafari = () =>
   typeof window !== `undefined` &&
@@ -15,7 +15,7 @@ export const isSafari = () =>
 export const isIos = () => {
   if (typeof document === `undefined`) return false
   const style = document.documentElement.style
-  return ('WebkitAppearance' in style && 'webkitOverflowScrolling' in style)
+  return (`WebkitAppearance` in style && `webkitOverflowScrolling` in style)
 }
 
 export const isIphone = () =>
@@ -27,12 +27,12 @@ export const getSvgInline = (image) => (
     .then((response) => response.text())
     .then((response) => {
       let svg = response
-      if (svg.indexOf('height') === -1) {
+      if (svg.indexOf(`height`) === -1) {
         const height = image.height
         const width = image.width
-        svg = svg.replace('<svg', `<svg height="${height}" width="${width}"`)
+        svg = svg.replace(`<svg`, `<svg height="${height}" width="${width}"`)
       }
-      return svg.replace('<svg', '<svg class="width:100 height:auto"')
+      return svg.replace(`<svg`, `<svg class="width:100 height:auto"`)
     })
 )
 
@@ -42,37 +42,37 @@ export const fetchSvgInline = (image) => {
     .then((response) => {
       const svgStr = response
 
-      if (svgStr.indexOf('<svg') === -1) {
+      if (svgStr.indexOf(`<svg`) === -1) {
         return
       }
 
-      const span = document.createElement('span')
+      const span = document.createElement(`span`)
 
       span.innerHTML = svgStr
 
-      const inlineSvg = span.getElementsByTagName('svg')[0]
+      const inlineSvg = span.getElementsByTagName(`svg`)[0]
 
-      inlineSvg.setAttribute('aria-label', image.alt || '')
-      inlineSvg.setAttribute('class', image.className) // IE doesn't support classList on SVGs
-      inlineSvg.setAttribute('focusable', false)
-      inlineSvg.setAttribute('role', 'img')
+      inlineSvg.setAttribute(`aria-label`, image.alt || ``)
+      inlineSvg.setAttribute(`class`, image.className) // IE doesn't support classList on SVGs
+      inlineSvg.setAttribute(`focusable`, false)
+      inlineSvg.setAttribute(`role`, `img`)
 
       if (image.height) {
-        inlineSvg.setAttribute('height', image.height)
+        inlineSvg.setAttribute(`height`, image.height)
       }
 
       if (image.width) {
-        inlineSvg.setAttribute('width', image.width)
+        inlineSvg.setAttribute(`width`, image.width)
       }
 
       image.parentNode.replaceChild(inlineSvg, image)
     })
     .catch(() => {
-      image.classList.add('not-inline')
+      image.classList.add(`not-inline`)
     })
 }
 
-export const svgLoaded = (e) => (window !== 'undefined' && 'fetch' in window)
+export const svgLoaded = (e) => (window !== `undefined` && `fetch` in window)
   ? fetchSvgInline(e.currentTarget)
   : true
 
@@ -88,11 +88,11 @@ export const svgLoaded = (e) => (window !== 'undefined' && 'fetch' in window)
 export const CreateLocalLink = (menuItem, wordPressUrl, blogURI=`news/`) => {
   const { url, connectedObject } = menuItem
 
-  if (url === '#') return url
+  if (url === `#`) return url
   /**
    * Always want to remove our API URL.
    */
-  let newUri = url.replace(wordPressUrl, '')
+  let newUri = url.replace(wordPressUrl, ``)
 
   /**
    * If it's a blog link, respect the users blogURI setting.

@@ -67,7 +67,7 @@ const Location = ({fallbackImage, nearby, listHeading=``}) => {
                 @mq-widepalm--grid-gap:400
               `}
               style={{
-                '--grid-template-columns-var-1': `auto 1fr`
+                '--grid-template-columns-var-1': `auto 1fr`,
               }}
             >
               { amenities?.map((amenity, index) => (
