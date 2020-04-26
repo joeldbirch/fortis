@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import ProjectEntry from 'components/ProjectEntry'
-import Divider from 'components/DividerHorizontal'
 import ProjectsFilter from 'components/FilterForm'
 import {uiFontSize} from 'styles/helpers'
 
@@ -29,7 +28,6 @@ const ProjectPreviews = ({posts, tags: {nodes: tags}, id = null}) => {
       className={`
         js-contrast-ignore
         width:100
-        grid-guide
       `}
       id={id}
     >

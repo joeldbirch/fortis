@@ -4,6 +4,7 @@ import FluidImage from './FluidImage'
 import Divider from './DividerHorizontal'
 import {projectsURI} from '../../globals'
 import {uiFontSize} from 'styles/helpers'
+import {cols, mq} from 'utilities/helpers'
 
 const ProjectEntry = ({
   post: {
@@ -41,23 +42,28 @@ const ProjectEntry = ({
             js-contrast
             @mq-bigdesk--grid-column:3
           `}
+          sizes={`
+              (max-width: ${mq.tolap}) ${cols(12)}vw,
+              (min-width: ${mq.lap}) ${cols(6)}vw,
+              (min-width: ${mq.bigdesk}) ${cols(7)}vw
+            `}
         />
         <header
           className={`
-              @mq-tiny--grid-template-columns:var-2
-              @mq-lap--grid-template-columns:var-3
-              @mq-bigdesk--grid-template-columns:var-4
-              @mq-bigdesk--grid-gap:0
-              @mq-lap--grid-column:1
-              @mq-bigdesk--grid-column:2
-              @mq-lap--grid-row:1
-              @mq-lap--grid-gap:columns-0-1/2
-              display:grid
-              grid-gap:columns-1
-              grid-template-columns:var-1
-              width:100
-              ${uiFontSize}
-            `}
+            @mq-tiny--grid-template-columns:var-2
+            @mq-lap--grid-template-columns:var-3
+            @mq-bigdesk--grid-template-columns:var-4
+            @mq-bigdesk--grid-gap:0
+            @mq-lap--grid-column:1
+            @mq-bigdesk--grid-column:2
+            @mq-lap--grid-row:1
+            @mq-lap--grid-gap:columns-0-1/2
+            display:grid
+            grid-gap:columns-1
+            grid-template-columns:var-1
+            width:100
+            ${uiFontSize}
+          `}
           style={{
             '--grid-template-columns-var-1': `5fr 6fr`,
             '--grid-template-columns-var-2': `4fr 7fr`,
