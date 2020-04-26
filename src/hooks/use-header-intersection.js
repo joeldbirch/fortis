@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import {headerRootMargin as rootMargin} from '../utilities/helpers'
 
 const useHeaderIntersection = function () {
   const [headerState, setHeaderState] = useState({
@@ -14,7 +15,7 @@ const useHeaderIntersection = function () {
 
     const intersectionConfig = {
       // offset to make the test area similar to where header is, minus horizontal margin
-      rootMargin: `-5.5% -3.846153846% -94.4% -3.846153846%`,
+      rootMargin,
       threshold: 0,
     }
     const observer = new IntersectionObserver(function (entries) {

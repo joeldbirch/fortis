@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import {headerRootMargin as rootMargin} from '../utilities/helpers'
 
 const useFirstIntersection = function (uri) {
   const [firstPanel, setFirstPanel] = useState({
@@ -12,7 +13,7 @@ const useFirstIntersection = function (uri) {
     const intersectionConfig = {
       root: document.getElementById(`TheWrap`),
       // offset to make the test area similar to where header is, minus horizontal margin
-      rootMargin: `-10px`,
+      rootMargin,
       threshold: [0, 1],
     }
 

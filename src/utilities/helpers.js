@@ -148,3 +148,5 @@ export const noOrphans = (text) => {
   if (lastTwo.length > 19) return text
   return [...words, lastTwo].join(` `)
 }
+
+export const headerRootMargin = `-5.5% -3.846153846% -94.4% -3.846153846%`
