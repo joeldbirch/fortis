@@ -1,9 +1,9 @@
-const path = require('path')
+const path = require(`path`)
 
 module.exports.getAllLayoutsData = (pageType = `page`) => {
-  const glob = require('glob')
+  const glob = require(`glob`)
 
-  let allLayoutsString = ''
+  let allLayoutsString = ``
 
   const fileArray = glob.sync(`./src/layouts/${pageType}/**/*.data.js`)
 
@@ -31,17 +31,17 @@ module.exports.createTemplate = ({
   imports,
 }) => {
   return new Promise((resolve) => {
-    const fs = require('fs')
+    const fs = require(`fs`)
     const template = require(templatePath)
     const contents = template(imports)
 
     fs.mkdir(templateCacheFolderPath, {recursive: true}, (err) => {
-      if (err) throw `Error creating template-cache folder: ${err}`
+      if (err) throw new Error(`Error creating template-cache folder: ${err}`)
 
       const filePath = `${templateCacheFolderPath}/${templateName}.js`
 
       fs.writeFile(filePath, contents, `utf8`, (err) => {
-        if (err) throw `Error writing ${templateName} template: ${err}`
+        if (err) throw new Error(`Error writing ${templateName} template: ${err}`)
 
         console.log(`Successfully created ${templateName} template.`)
         resolve()

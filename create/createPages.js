@@ -1,21 +1,21 @@
-const _uniqBy = require('lodash.uniqby')
-const _isEmpty = require('lodash.isempty')
+const _uniqBy = require(`lodash.uniqby`)
+const _isEmpty = require(`lodash.isempty`)
 
-const {templateCacheFolder} = require('../globals')
+const {templateCacheFolder} = require(`../globals`)
 
 const {
   getAllLayoutsData,
   createTemplate,
   createPageWithTemplate,
-} = require('./utils')
+} = require(`./utils`)
 
 const filePathToComponents = `../src/layouts/page/`
-const layoutMapping = require('./layoutMapping')
+const layoutMapping = require(`./layoutMapping`)
 
-const pageTemplate = require.resolve('../src/templates/page')
-const {PageTemplateFragment} = require('../src/templates/page/data')
+const pageTemplate = require.resolve(`../src/templates/page`)
+const {PageTemplateFragment} = require(`../src/templates/page/data`)
 
-const {FluidImageFragment} = require('../src/templates/fragments')
+const {FluidImageFragment} = require(`../src/templates/fragments`)
 
 const GET_PAGES = (layouts) => `
   ${FluidImageFragment}
@@ -133,7 +133,7 @@ module.exports = async ({actions, graphql, reporter}, options) => {
          * but the root path '/'.
          */
         if (page.isFrontPage) {
-          pagePath = '/'
+          pagePath = `/`
         }
 
         /**

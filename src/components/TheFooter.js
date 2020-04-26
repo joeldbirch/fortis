@@ -94,8 +94,8 @@ export default ({className = ``, ...props}) => {
             {socialMedia.length > 0 &&
               socialMedia.map(({name, url}, index) => (
                 <li key={index}>
-                  {' '}
-                  <a href={url}>{name}</a>{' '}
+                  {` `}
+                  <a href={url}>{name}</a>{` `}
                 </li>
               ))}
           </ul>

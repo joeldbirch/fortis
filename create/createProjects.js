@@ -1,28 +1,28 @@
-const _uniqBy = require('lodash.uniqby')
-const _isEmpty = require('lodash.isempty')
+const _uniqBy = require(`lodash.uniqby`)
+const _isEmpty = require(`lodash.isempty`)
 
-const {projectsURI, templateCacheFolder} = require('../globals')
+const {projectsURI, templateCacheFolder} = require(`../globals`)
 
 const {
   ProjectTemplateFragment,
   ProjectPreviewFragment,
   ProjectsIntroFragment,
   ProjectTagsFragment,
-} = require('../src/templates/project/data')
+} = require(`../src/templates/project/data`)
 
 const {
   getAllLayoutsData,
   createTemplate,
   createPageWithTemplate,
-} = require('./utils')
+} = require(`./utils`)
 
 const filePathToComponents = `../src/layouts/project/`
-const layoutMapping = require('./layoutMappingProjects')
+const layoutMapping = require(`./layoutMappingProjects`)
 
-const projectTemplate = require.resolve('../src/templates/project')
-const projectsTemplate = require.resolve('../src/templates/project/projects')
+const projectTemplate = require.resolve(`../src/templates/project`)
+const projectsTemplate = require.resolve(`../src/templates/project/projects`)
 
-const {FluidImageFragment} = require('../src/templates/fragments')
+const {FluidImageFragment} = require(`../src/templates/fragments`)
 
 const GET_PROJECTS = (layouts) => `
   ${FluidImageFragment}

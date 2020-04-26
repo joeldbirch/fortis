@@ -1,15 +1,15 @@
-const {blogURI} = require('../globals')
+const {blogURI} = require(`../globals`)
 
 const {
   PostTemplateFragment,
   NewsPreviewFragment,
   NewsIntroFragment,
-} = require('../src/templates/post/data')
+} = require(`../src/templates/post/data`)
 
-const {FluidImageFragment} = require('../src/templates/fragments')
+const {FluidImageFragment} = require(`../src/templates/fragments`)
 
-const postTemplate = require.resolve('../src/templates/post/index.js')
-const newsTemplate = require.resolve('../src/templates/post/news.js')
+const postTemplate = require.resolve(`../src/templates/post/index.js`)
+const newsTemplate = require.resolve(`../src/templates/post/news.js`)
 
 const GET_POSTS = `
   ${FluidImageFragment}
@@ -157,7 +157,7 @@ module.exports = async ({actions, graphql, reporter}, options) => {
    */
   await fetchPosts({first: itemsPerPage, after: null}).then((wpPosts) => {
     wpPosts &&
-      wpPosts.map((post) => {
+      wpPosts.forEach((post) => {
         /**
          * Build post path based of theme blogURI setting.
          */
@@ -181,7 +181,7 @@ module.exports = async ({actions, graphql, reporter}, options) => {
      * paginated news pages
      */
     newsPages &&
-      newsPages.map((newsPage) => {
+      newsPages.forEach((newsPage) => {
         if (newsPage.context.pageNumber === 1) {
           newsPage.context.publisher = true
           newsPage.context.label = newsPage.path.replace(`/`, ``)

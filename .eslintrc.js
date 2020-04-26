@@ -3,7 +3,6 @@ module.exports = {
     __PATH_PREFIX__: true,
   },
   extends: `react-app`,
-  parser: 'babel-eslint',
   rules: {
     strict: 0,
     semi: ['error', 'never'],
