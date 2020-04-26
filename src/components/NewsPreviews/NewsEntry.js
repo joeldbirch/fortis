@@ -1,16 +1,13 @@
 import React from 'react'
 import PostEntry from 'components/PostEntry'
 import ArrowDrawnUpLeft from 'components/ArrowDrawnUpLeft'
-import { Link } from 'gatsby'
-import { blogURI } from '../../../globals'
-import { noOrphans } from 'utilities/helpers'
+import {Link} from 'gatsby'
+import {blogURI} from '../../../globals'
+import {noOrphans} from 'utilities/helpers'
 
 const NewsEntry = ({
   post: {
-    optionalFields: {
-      subheading,
-      note,
-    },
+    optionalFields: {subheading, note},
     uri,
     categories,
     id,
@@ -19,13 +16,15 @@ const NewsEntry = ({
     ...post
   },
   layoutOrder,
-  noteClasses=``,
-  arrowClasses=``,
-  arrowStyles={},
+  noteClasses = ``,
+  arrowClasses = ``,
+  arrowStyles = {},
   ...props
 }) => {
-
-  const catName = (categories?.nodes?.[0].name && categories.nodes[0].name !== `Uncategorised`) ? categories.nodes[0].name : `Update`
+  const catName =
+    categories?.nodes?.[0].name && categories.nodes[0].name !== `Uncategorised`
+      ? categories.nodes[0].name
+      : `Update`
 
   return (
     <PostEntry
@@ -36,14 +35,13 @@ const NewsEntry = ({
         flex-direction:column-reverse
       `}
       note={
-        [2,4].includes(layoutOrder)
-        ? <Note
+        [2, 4].includes(layoutOrder) ? (
+          <Note
             className={`
               ${noteClasses}
               @mq-max-palm--display:none
             `}
           >
-
             <ArrowDrawnUpLeft
               className={`
                 ${arrowClasses}
@@ -51,12 +49,12 @@ const NewsEntry = ({
               style={arrowStyles}
             />
 
-
             {note}
           </Note>
-        : ``
+        ) : (
+          ``
+        )
       }
-
       {...post}
       {...props}
     >
@@ -93,7 +91,7 @@ const NewsEntry = ({
       >
         <span className="custom-underline">{subheading || `Article`}</span>
       </h3>
-      { catName &&
+      {catName && (
         <h4
           className={`
             color:neutral-700
@@ -105,21 +103,21 @@ const NewsEntry = ({
         >
           {catName}
         </h4>
-      }
+      )}
     </PostEntry>
   )
 }
 
-
-const Note = ({className=``, children}) => (
+const Note = ({className = ``, children}) => (
   <p
     className={`
       ${className}
       handwritten
       position:absolute
     `}
-  >{children}</p>
+  >
+    {children}
+  </p>
 )
 
 export default NewsEntry
-

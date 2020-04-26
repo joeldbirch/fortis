@@ -163,11 +163,8 @@ export const nonInvertedStyles = {
   ...appleFade,
 }
 
-export const getInvertedStyles = isInverted => (
-  isInverted
-  ? invertedStyles
-  : nonInvertedStyles
-)
+export const getInvertedStyles = (isInverted) =>
+  isInverted ? invertedStyles : nonInvertedStyles
 
 export const moduleRoot = `
   @mq-desk--padding-horizontal:columns-1-1/2

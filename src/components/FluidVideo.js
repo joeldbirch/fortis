@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FluidVideo = ({id, title=`fluidVideo`}) => (
+const FluidVideo = ({id, title = `fluidVideo`}) => (
   <div
     className={`
       position:relative

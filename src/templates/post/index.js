@@ -1,23 +1,18 @@
-import React  from 'react'
+import React from 'react'
 import Layout from 'components/Layout'
 import SEO from 'components/SEO'
 import FluidImage from 'components/FluidImage'
 import ScrollPrompt from 'components/ScrollPrompt'
 import PageHeader from 'components/PageHeader'
 import NewsOverview from 'layouts/page/NewsOverview'
-import { useNewsData  } from 'hooks/use-news-data'
-import { cleanWpContent, noOrphans } from 'utilities/helpers'
+import {useNewsData} from 'hooks/use-news-data'
+import {cleanWpContent, noOrphans} from 'utilities/helpers'
 
-const Post = ({ pageContext }) => {
+const Post = ({pageContext}) => {
   const {
     post: {
-      optionalFields: {
-        subheading,
-        note,
-      },
-      categories: {
-        nodes: cats,
-      },
+      optionalFields: {subheading, note},
+      categories: {nodes: cats},
       id,
       title,
       content,
@@ -25,13 +20,12 @@ const Post = ({ pageContext }) => {
     },
   } = pageContext
 
-  const catName = (cats[0] && cats[0].name !== `Uncategorised`) ? cats[0].name : `Update`
+  const catName =
+    cats[0] && cats[0].name !== `Uncategorised` ? cats[0].name : `Update`
 
   const {
     newsIntro: {
-      content: {
-        siteSectionTitle,
-      },
+      content: {siteSectionTitle},
     },
   } = useNewsData()
 
@@ -78,7 +72,6 @@ const Post = ({ pageContext }) => {
             '--grid-template-columns-var-1': `4fr 8fr`,
           }}
         >
-
           <header
             className={`
               @mq-max-palm--padding-right:columns-3-1/2
@@ -106,36 +99,37 @@ const Post = ({ pageContext }) => {
                 id={`preview-${id}`}
                 dangerouslySetInnerHTML={{__html: noOrphans(title)}}
               />
-              { !subheading
-                ? ``
-                : <h2
-                    className={`
+              {!subheading ? (
+                ``
+              ) : (
+                <h2
+                  className={`
                       @mq-desk--font-size:400
                       font-size:400
                       font-weight:400
                     `}
-                  >
-                    <span className={`custom-underline-no-hover`}>{subheading}</span>
-                  </h2>
-              }
-              {
-                !catName
-                ? ``
-                : <h3
-                    className={`
+                >
+                  <span className={`custom-underline-no-hover`}>{subheading}</span>
+                </h2>
+              )}
+              {!catName ? (
+                ``
+              ) : (
+                <h3
+                  className={`
                       color:neutral-700
                       font-size:200
                       font-weight:400
                       pos-top:-columns-0-1/4
                       text-transform:uppercase
                     `}
-                  >
-                    {catName}
-                  </h3>
-              }
-
+                >
+                  {catName}
+                </h3>
+              )}
             </div>
-            { note && <p
+            {note && (
+              <p
                 className={`
                   @mq-max-palm--display:none
                   margin-top:800
@@ -145,7 +139,7 @@ const Post = ({ pageContext }) => {
               >
                 {note}
               </p>
-            }
+            )}
           </header>
           <div
             className={`
@@ -154,14 +148,12 @@ const Post = ({ pageContext }) => {
             `}
             dangerouslySetInnerHTML={{__html: cleanWpContent(content)}}
           />
-
         </div>
 
         <ScrollPrompt to="#overview" />
       </div>
 
       <NewsOverview showHeading={false} id="overview" />
-
     </Layout>
   )
 }

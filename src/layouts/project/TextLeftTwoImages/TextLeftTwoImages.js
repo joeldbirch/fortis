@@ -1,7 +1,7 @@
 import React from 'react'
 import MultiFormatImage from 'components/MultiFormatImage'
-import { cols, mq } from 'utilities/helpers'
-import { moduleRoot } from 'styles/helpers'
+import {cols, mq} from 'utilities/helpers'
+import {moduleRoot} from 'styles/helpers'
 
 const styles = {
   root: moduleRoot,
@@ -53,15 +53,7 @@ const styles = {
   `,
 }
 
-
-const TextLeftTwoImages = ({
-  billImages: {
-    larger,
-    smaller,
-  },
-  billText,
-  billNote,
-}) => {
+const TextLeftTwoImages = ({billImages: {larger, smaller}, billText, billNote}) => {
   return (
     <section className={`${styles.root}`}>
       <div className={styles.wrapColumns}>
@@ -91,11 +83,10 @@ const TextLeftTwoImages = ({
           </div>
         </div>
 
-
         <figure className={styles.endColumn}>
           <figcaption
             className={`${styles.endColumnStartRow}`}
-            style={{'--max-width' : `calc(90vw - 12em)`}}
+            style={{'--max-width': `calc(90vw - 12em)`}}
           >
             <span
               className={`
@@ -109,7 +100,9 @@ const TextLeftTwoImages = ({
                 rhythm-fix-after
                 text-align:center
               `}
-            >{billNote}</span>
+            >
+              {billNote}
+            </span>
           </figcaption>
 
           <div className={styles.endColumnEndRow}>

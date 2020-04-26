@@ -7,7 +7,6 @@ import 'styles/_flickity-overrides.scss'
 
 const ImageGallery = ({imageGallery}) => {
   return (
-
     <section
       className={`
         js-contrast-ignore
@@ -36,11 +35,14 @@ const ImageGallery = ({imageGallery}) => {
           className={`
           `}
         >
-          { imageGallery.map((image, index) => (
-            <div key={index} className={`
+          {imageGallery.map((image, index) => (
+            <div
+              key={index}
+              className={`
               position:relative
               width:100
-            `}>
+            `}
+            >
               <FluidImage
                 image={image}
                 artDirection={`imageFileHero`}

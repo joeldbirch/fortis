@@ -1,7 +1,13 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
+import {Helmet} from 'react-helmet'
 
-const FullWindowVideo = ({vimeoId, className=``, windowHeight=false, minHeight=null, height=null}) => {
+const FullWindowVideo = ({
+  vimeoId,
+  className = ``,
+  windowHeight = false,
+  minHeight = null,
+  height = null,
+}) => {
   return (
     <div
       className={`
@@ -42,14 +48,12 @@ const FullWindowVideo = ({vimeoId, className=``, windowHeight=false, minHeight=n
           z-index:200
           width:100
           ${
-            windowHeight
-            ? `min-height:100vh-fixed full-screen-iframe`
-            : `height:100`
+            windowHeight ? `min-height:100vh-fixed full-screen-iframe` : `height:100`
           }
         `}
         style={{
-          height, /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
-          minWidth: `calc(var(--vh, 1vh) * 177.77)`, /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+          height /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */,
+          minWidth: `calc(var(--vh, 1vh) * 177.77)` /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */,
           minHeight,
         }}
         frameBorder="0"

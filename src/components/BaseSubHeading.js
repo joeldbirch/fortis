@@ -1,5 +1,5 @@
 import React from 'react'
-import { subhead } from '../styles/helpers'
+import {subhead} from '../styles/helpers'
 
 const styles = {
   root: `
@@ -7,7 +7,7 @@ const styles = {
   `,
 }
 
-export default ({ children, className = ``, ...props }) => {
+export default ({children, className = ``, ...props}) => {
   className += styles.root
   return (
     <h2 className={className} {...props}>

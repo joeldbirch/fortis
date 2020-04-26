@@ -1,7 +1,7 @@
 const _uniqBy = require('lodash.uniqby')
 const _isEmpty = require('lodash.isempty')
 
-const { projectsURI, templateCacheFolder } = require('../globals')
+const {projectsURI, templateCacheFolder} = require('../globals')
 
 const {
   ProjectTemplateFragment,
@@ -10,7 +10,11 @@ const {
   ProjectTagsFragment,
 } = require('../src/templates/project/data')
 
-const { getAllLayoutsData, createTemplate, createPageWithTemplate } = require('./utils')
+const {
+  getAllLayoutsData,
+  createTemplate,
+  createPageWithTemplate,
+} = require('./utils')
 
 const filePathToComponents = `../src/layouts/project/`
 const layoutMapping = require('./layoutMappingProjects')
@@ -18,9 +22,7 @@ const layoutMapping = require('./layoutMappingProjects')
 const projectTemplate = require.resolve('../src/templates/project')
 const projectsTemplate = require.resolve('../src/templates/project/projects')
 
-const {
-  FluidImageFragment,
-} = require('../src/templates/fragments')
+const {FluidImageFragment} = require('../src/templates/fragments')
 
 const GET_PROJECTS = (layouts) => `
   ${FluidImageFragment}
@@ -63,47 +65,45 @@ let projectsPage
 const itemsPerPage = 100
 
 /**
-* This is the export which Gatbsy will use to process.
-*
-* @param { actions, graphql }
-* @returns {Promise<void>}
-*/
-module.exports = async ({ actions, graphql, reporter }) => {
+ * This is the export which Gatbsy will use to process.
+ *
+ * @param { actions, graphql }
+ * @returns {Promise<void>}
+ */
+module.exports = async ({actions, graphql, reporter}) => {
   /**
    * Get all layouts data as a concatenated string
    */
   const layoutsData = getAllLayoutsData(`project`)
 
   /**
-  * This is the method from Gatsby that we're going
-  * to use to create pages in our static site.
-  */
-  const { createPage } = actions
+   * This is the method from Gatsby that we're going
+   * to use to create pages in our static site.
+   */
+  const {createPage} = actions
 
   /**
-  * Fetch pages method. This accepts variables to alter
-  * the query. The variable `first` controls how many items to
-  * request per fetch and the `after` controls where to start in
-  * the dataset.
-  *
-  * @param variables
-  * @returns {Promise<*>}
-  */
+   * Fetch pages method. This accepts variables to alter
+   * the query. The variable `first` controls how many items to
+   * request per fetch and the `after` controls where to start in
+   * the dataset.
+   *
+   * @param variables
+   * @returns {Promise<*>}
+   */
   const fetchProjects = async (variables) =>
     /**
-    * Fetch pages using the GET_PAGES query and the variables passed in.
-    */
-    await graphql(GET_PROJECTS(layoutsData), variables).then(({ data }) => {
+     * Fetch pages using the GET_PAGES query and the variables passed in.
+     */
+    await graphql(GET_PROJECTS(layoutsData), variables).then(({data}) => {
       /**
-      * Extract the data from the GraphQL query results
-      */
+       * Extract the data from the GraphQL query results
+       */
       const {
         wpgraphql: {
           projectTags,
           projectsIntro,
-          projects: {
-            nodes,
-          },
+          projects: {nodes},
         },
       } = data
 
@@ -128,24 +128,25 @@ module.exports = async ({ actions, graphql, reporter }) => {
       }
 
       /**
-      * Once we're done, return all the pages
-      * so we can create the necessary pages with
-      * all the data on hand.
-      */
+       * Once we're done, return all the pages
+       * so we can create the necessary pages with
+       * all the data on hand.
+       */
       return nodes
     })
 
-    /**
-    * Kick off our `fetchProjects` method which will get us all
-    * the projects we need to create individual pages.
-    */
-    await fetchProjects({ first: itemsPerPage}).then((wpProjects) => {
-      reporter.info(`${wpProjects.length} projects found.`)
+  /**
+   * Kick off our `fetchProjects` method which will get us all
+   * the projects we need to create individual pages.
+   */
+  await fetchProjects({first: itemsPerPage}).then((wpProjects) => {
+    reporter.info(`${wpProjects.length} projects found.`)
 
-      wpProjects && wpProjects.forEach((project) => {
+    wpProjects &&
+      wpProjects.forEach((project) => {
         /**
-        * Build project path based of theme projectsURI setting.
-        */
+         * Build project path based of theme projectsURI setting.
+         */
         const path = `${projectsURI}/${project.uri}/`
 
         /**
@@ -159,7 +160,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
          * there.
          */
 
-        const layouts = project.projectBuilder.layouts.filter(el => {
+        const layouts = project.projectBuilder.layouts.filter((el) => {
           return !_isEmpty(el)
         })
 
@@ -167,7 +168,6 @@ module.exports = async ({ actions, graphql, reporter }) => {
 
         if (layouts && layouts.length > 0) {
           const UniqueLayouts = _uniqBy(layouts, `fieldGroupName`)
-
 
           mappedLayouts = UniqueLayouts.map((layout) => {
             return {
@@ -177,7 +177,6 @@ module.exports = async ({ actions, graphql, reporter }) => {
             }
           })
         }
-
 
         createPageWithTemplate({
           createTemplate: createTemplate,
@@ -194,10 +193,9 @@ module.exports = async ({ actions, graphql, reporter }) => {
         reporter.info(`project created:  ${project.uri}`)
       })
 
-      reporter.info(`# -----> PAGES TOTAL: ${wpProjects.length}`)
-    })
+    reporter.info(`# -----> PAGES TOTAL: ${wpProjects.length}`)
+  })
 
-    createPage(projectsPage)
-    reporter.info(`created projects archive page`)
-
+  createPage(projectsPage)
+  reporter.info(`created projects archive page`)
 }

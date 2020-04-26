@@ -1,11 +1,18 @@
 import React from 'react'
 import GatsbyImage from 'gatsby-image'
-import { useStaticQuery, graphql } from 'gatsby'
+import {useStaticQuery, graphql} from 'gatsby'
 
-const FluidImage = ({ image, withFallback = true, className = ``, artDirection = `imageFile`, sizes, ...props }) => {
-
-  const data = useStaticQuery(graphql` query {
-      fallBackImage: file(relativePath: { eq: "fallback.svg" }) {
+const FluidImage = ({
+  image,
+  withFallback = true,
+  className = ``,
+  artDirection = `imageFile`,
+  sizes,
+  ...props
+}) => {
+  const data = useStaticQuery(graphql`
+    query {
+      fallBackImage: file(relativePath: {eq: "fallback.svg"}) {
         publicURL
       }
     }
@@ -17,13 +24,18 @@ const FluidImage = ({ image, withFallback = true, className = ``, artDirection =
   if (!image && withFallback) {
     return (
       <div className={`${className}`}>
-        <img src={data.fallBackImage.publicURL} alt="" className={`width:100 height:100`} {...props} />
+        <img
+          src={data.fallBackImage.publicURL}
+          alt=""
+          className={`width:100 height:100`}
+          {...props}
+        />
       </div>
     )
   }
 
   if (image[artDirection]) {
-    const { fluid } = image[artDirection].childImageSharp
+    const {fluid} = image[artDirection].childImageSharp
     return (
       <GatsbyImage
         fluid={{
@@ -38,7 +50,14 @@ const FluidImage = ({ image, withFallback = true, className = ``, artDirection =
     )
   }
 
-  return <img src={image.sourceUrl} alt={image.altText} className={`${className} width:100`} {...props} />
+  return (
+    <img
+      src={image.sourceUrl}
+      alt={image.altText}
+      className={`${className} width:100`}
+      {...props}
+    />
+  )
 }
 
 export default FluidImage

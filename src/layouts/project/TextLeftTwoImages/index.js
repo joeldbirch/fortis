@@ -1,1 +1,1 @@
-export { default } from './TextLeftTwoImages'
+export {default} from './TextLeftTwoImages'

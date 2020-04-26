@@ -1,19 +1,19 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import {Link} from 'gatsby'
 import HeroFullScreenContent from 'components/HeroFullScreenContent'
 import ScrollPrompt from 'components/ScrollPrompt'
-import { uiFontSize } from 'styles/helpers'
-import { getPath } from 'utilities/helpers'
+import {uiFontSize} from 'styles/helpers'
+import {getPath} from 'utilities/helpers'
 
 const Hero = ({
-  className=``,
-  forceTextColour=false,
-  fullScreen=true,
-  id=null,
+  className = ``,
+  forceTextColour = false,
+  fullScreen = true,
+  id = null,
   image,
   label,
   linkTo,
-  nextSection=null,
+  nextSection = null,
   video,
   ...props
 }) => {
@@ -29,15 +29,16 @@ const Hero = ({
       className={`
         ${className}
         ${forceTextColour ? `js-no-header-bg` : ``}
-        ${!forceTextColour && fullScreen ? `js-contrast--reverse`: ``}
-        ${fullScreen
-          ? `
+        ${!forceTextColour && fullScreen ? `js-contrast--reverse` : ``}
+        ${
+          fullScreen
+            ? `
             js-contrast
             min-height:100vh-fixed
             scroll-snap-align:start
             scroll-snap-stop:always
           `
-          : `
+            : `
             @mq-bigdesk--padding-horizontal:columns-0-1/2
             margin-horizontal:auto
             max-width:container
@@ -48,10 +49,9 @@ const Hero = ({
         width:100
       `}
     >
-
-        { label && (
-          <header
-            className={`
+      {label && (
+        <header
+          className={`
               height:100
               margin-horizontal:auto
               max-width:container
@@ -63,41 +63,45 @@ const Hero = ({
               position:absolute
               z-index:100
             `}
-            style={{
-              '--color-contrast': `white`,
-            }}
-          >
-            <h2
-              className={`
+          style={{
+            '--color-contrast': `white`,
+          }}
+        >
+          <h2
+            className={`
                 ${uiFontSize}
                 @mq-max-palm--text-align:center
                 @mq-palm--margin-left:columns-3
                 color:neutral-900
               `}
-            >
-              <OptionalLink to={to} className={`
+          >
+            <OptionalLink
+              to={to}
+              className={`
                 &::before--hit-area-xy-0
                 color:neutral-0
                 ${
                   to
-                  ? `
+                    ? `
                       pointer-events:auto
                     `
-                  : ``
+                    : ``
                 }
-              `}><span
+              `}
+            >
+              <span
                 className={`
                   custom-underline
                   display:inline-block
                   position:relative
-                `}>
-                  {label}
-                </span>
-              </OptionalLink>
-            </h2>
-          </header>
-        )
-      }
+                `}
+              >
+                {label}
+              </span>
+            </OptionalLink>
+          </h2>
+        </header>
+      )}
 
       <HeroFullScreenContent
         className={`
@@ -107,13 +111,9 @@ const Hero = ({
         video={video}
       />
 
-      { nextSection && (
-          <ScrollPrompt
-            to={nextSection}
-            className={`color:neutral-0`}
-          />
-        )
-      }
+      {nextSection && (
+        <ScrollPrompt to={nextSection} className={`color:neutral-0`} />
+      )}
     </section>
   )
 }

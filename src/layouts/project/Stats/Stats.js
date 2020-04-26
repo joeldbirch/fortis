@@ -1,11 +1,8 @@
 import React from 'react'
 import Divider from 'components/DividerHorizontal'
-import { moduleRoot } from 'styles/helpers'
+import {moduleRoot} from 'styles/helpers'
 
-const Stats = ({
-  disclaimer,
-  items,
-}) => {
+const Stats = ({disclaimer, items}) => {
   return (
     <section
       className={`
@@ -24,53 +21,48 @@ const Stats = ({
           @mq-widepalm--grid-template-columns:3
           @mq-lap--grid-template-columns:4
         `}
-        style={{
-        }}
+        style={{}}
       >
-        {
-          items.map(({label, value}, index) => (
-            <li
-              className={`
+        {items.map(({label, value}, index) => (
+          <li
+            className={`
                 padding-bottom:800
                 @mq-palm--padding-bottom:columns-0-1/2
                 padding-right:800
               `}
-              key={index}
-            >
-              <h3
-                className={`
+            key={index}
+          >
+            <h3
+              className={`
                   font-size:300
                   @mq-bigdesk--font-size:em
                   font-weight:400
                 `}
-              >
-                {label}
-              </h3>
-              <span
-                className={`
+            >
+              {label}
+            </h3>
+            <span
+              className={`
                   color:neutral-800
                   font-size:700
                   @mq-bigdesk--font-size:750
                 `}
-              >
-                {value}
-              </span>
-            </li>
-          ))
-        }
+            >
+              {value}
+            </span>
+          </li>
+        ))}
       </ul>
 
-      {
-        disclaimer && (
-          <div
-            className={`
+      {disclaimer && (
+        <div
+          className={`
               font-size:200
               @mq-desk--font-size:300
             `}
-            dangerouslySetInnerHTML={{__html: disclaimer}}
-          />
-        )
-      }
+          dangerouslySetInnerHTML={{__html: disclaimer}}
+        />
+      )}
     </section>
   )
 }

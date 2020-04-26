@@ -3,17 +3,16 @@ import FluidImage from './FluidImage'
 
 const PostEntry = ({
   featuredImage,
-  otherImages=null,
-  usePortrait=false,
+  otherImages = null,
+  usePortrait = false,
   sizes,
-  className=``,
-  imageClasses=``,
-  headerClasses=``,
-  note=null,
+  className = ``,
+  imageClasses = ``,
+  headerClasses = ``,
+  note = null,
   children,
-  ariaLabelledby=null,
+  ariaLabelledby = null,
 }) => {
-
   return (
     <article
       aria-labelledby={ariaLabelledby}
@@ -34,8 +33,8 @@ const PostEntry = ({
         <FluidImage
           image={
             usePortrait && otherImages?.portraitImage
-            ? otherImages.portraitImage
-            : featuredImage
+              ? otherImages.portraitImage
+              : featuredImage
           }
           className={`
             ${imageClasses}
@@ -51,9 +50,7 @@ const PostEntry = ({
             padding-vertical:400
           `}
         >
-
           {children}
-
         </header>
       </div>
     </article>

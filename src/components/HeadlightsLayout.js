@@ -24,28 +24,32 @@ const HeadlightsLayout = ({
       }}
       {...props}
     >
-
       <div
         className={`
-          ${flipHorizontal && `
+          ${
+            flipHorizontal &&
+            `
             @mq-palm--grid-column:2
-          `}
+          `
+          }
         `}
       >
-        { slotA }
+        {slotA}
       </div>
 
       <div
         className={`
-          ${flipHorizontal && `
+          ${
+            flipHorizontal &&
+            `
             @mq-palm--grid-column:1
             @mq-palm--grid-row:1
-          `}
+          `
+          }
         `}
       >
-        { slotB }
+        {slotB}
       </div>
-
     </div>
   )
 }

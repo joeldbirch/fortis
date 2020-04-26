@@ -4,7 +4,7 @@ import FluidImage from 'components/FluidImage'
 import BigBrand from 'components/BigBrand'
 import ArrowDrawnUpLeft from 'components/ArrowDrawnUpLeft'
 import useGlobalContent from 'hooks/use-global-content'
-import { cols, mq } from 'utilities/helpers'
+import {cols, mq} from 'utilities/helpers'
 
 const styles = {
   links: `
@@ -17,12 +17,7 @@ const styles = {
 const Contact = () => {
   const {
     globalContent: {
-      contactInformation: {
-        socialMedia,
-        teamImage,
-        phone,
-        email,
-      },
+      contactInformation: {socialMedia, teamImage, phone, email},
     },
   } = useGlobalContent()
 
@@ -41,7 +36,6 @@ const Contact = () => {
         z-index:100
       `}
     >
-
       <div
         className={`
           @mq-desk--grid-template-columns:var-3
@@ -60,7 +54,6 @@ const Contact = () => {
           '--grid-template-columns-var-3': `4fr 5fr`,
         }}
       >
-
         <div
           className={`
             grid-column:1
@@ -69,7 +62,6 @@ const Contact = () => {
             position:relative
           `}
         >
-
           <div
             className={`
               @mq-lap--font-size:500
@@ -84,17 +76,25 @@ const Contact = () => {
                 margin-bottom:200
                 rhythm-fix-before
               `}
-            >Get in touch</h2>
+            >
+              Get in touch
+            </h2>
             <p
               className={`
                 @mq-max-palm--font-size:400
               `}
             >
-              { email && (
-                  <span className={`position:relative`}>
-                    <a className={`${styles.links}`} href={`mailto:${email}`} aria-label="Our email">{email}</a>
-                    <span
-                      className={`
+              {email && (
+                <span className={`position:relative`}>
+                  <a
+                    className={`${styles.links}`}
+                    href={`mailto:${email}`}
+                    aria-label="Our email"
+                  >
+                    {email}
+                  </a>
+                  <span
+                    className={`
                         @mq-desk--margin-right:columns-1
                         @mq-desk--pos-top:columns-0-1/4
                         @mq-palm--margin-left:400
@@ -111,31 +111,35 @@ const Contact = () => {
                         position:absolute
                         width:small-caption
                       `}
-                    >
-                      <ArrowDrawnUpLeft
-                        className={`
+                  >
+                    <ArrowDrawnUpLeft
+                      className={`
                           margin-bottom:200
                           pos-bottom:100
                           position:absolute
                         `}
-                        style={{
-                          transform: `scale(.7) rotate(10deg)`,
-                        }}
-                      />
-                      Say hello
-                    </span>
-                    <br/>
+                      style={{
+                        transform: `scale(.7) rotate(10deg)`,
+                      }}
+                    />
+                    Say hello
                   </span>
-                )
-              }
-              <a className={`${styles.links}`} href={`tel:${phone}`} aria-label="Our phone number">{phone}</a>
+                  <br />
+                </span>
+              )}
+              <a
+                className={`${styles.links}`}
+                href={`tel:${phone}`}
+                aria-label="Our phone number"
+              >
+                {phone}
+              </a>
             </p>
 
-
-            { socialMedia.length > 0 && (
-                <>
-                  <h2
-                    className={`
+            {socialMedia.length > 0 && (
+              <>
+                <h2
+                  className={`
                       @mq-palm--margin-top:columns-0-1/2
                       font-size:em
                       font-weight:400
@@ -143,19 +147,24 @@ const Contact = () => {
                       margin-top:800
                       rhythm-fix-before
                     `}
-                  >Follow us</h2>
-                  <ul
-                    className={`
+                >
+                  Follow us
+                </h2>
+                <ul
+                  className={`
                       @mq-max-palm--font-size:400
                     `}
-                  >
-                    {socialMedia.map(({name, url}, index) => (
-                      <li key={index}><a className={`${styles.links}`} href={url}>{name}</a></li>
-                    ))}
-                  </ul>
-                </>
-              )
-            }
+                >
+                  {socialMedia.map(({name, url}, index) => (
+                    <li key={index}>
+                      <a className={`${styles.links}`} href={url}>
+                        {name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
           </div>
 
           <NewsletterForm
@@ -183,7 +192,6 @@ const Contact = () => {
           `}
         />
       </div>
-
 
       <BigBrand
         className={`

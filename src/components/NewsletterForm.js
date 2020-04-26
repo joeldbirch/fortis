@@ -12,7 +12,7 @@ const styles = {
   `,
 }
 
-export default ({ prependId=`field`, ...props }) => (
+export default ({prependId = `field`, ...props}) => (
   <NetlifyForm className={styles.root} name="Fortis Newsletter 2020" {...props}>
     <h3
       className={`
@@ -21,9 +21,7 @@ export default ({ prependId=`field`, ...props }) => (
         margin-top:600
       `}
     >
-      <label htmlFor={`${prependId}-emailSignup`}>
-        Subscribe to our newsletter
-      </label>
+      <label htmlFor={`${prependId}-emailSignup`}>Subscribe to our newsletter</label>
     </h3>
     <div
       className={`

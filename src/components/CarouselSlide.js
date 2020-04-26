@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import {Link} from 'gatsby'
 import FluidImage from './FluidImage'
-import { projectsURI } from '../../globals'
-import { cols, mq } from 'utilities/helpers'
+import {projectsURI} from '../../globals'
+import {cols, mq} from 'utilities/helpers'
 
 const CarouselSlide = ({
   post: {
@@ -12,17 +12,13 @@ const CarouselSlide = ({
     title,
     projectDetails: {
       detailsTable: {
-        textualDetails: {
-          buildingType,
-          suburb,
-        },
+        textualDetails: {buildingType, suburb},
       },
     },
   },
-  className=``,
+  className = ``,
   ...props
 }) => {
-
   return (
     <article
       className={`
@@ -56,7 +52,6 @@ const CarouselSlide = ({
               width:100
             `}
           >
-
             <div>
               <h2
                 className={`
@@ -74,19 +69,23 @@ const CarouselSlide = ({
                   `}
                   to={`${projectsURI}/${uri}/`}
                 >
-                  <span className={`
+                  <span
+                    className={`
                     &:hover--text-decoration:none
                     position:relative
                     text-decoration:underline
-                  `}>{title} — <span>{suburb}</span></span>
+                  `}
+                  >
+                    {title} — <span>{suburb}</span>
+                  </span>
                 </Link>
               </h2>
             </div>
 
             <div>
-              <span>{buildingType}</span><br/>
+              <span>{buildingType}</span>
+              <br />
             </div>
-
           </header>
         </div>
       </div>

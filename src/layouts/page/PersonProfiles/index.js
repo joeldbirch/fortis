@@ -1,1 +1,1 @@
-export { default } from './PersonProfiles'
+export {default} from './PersonProfiles'

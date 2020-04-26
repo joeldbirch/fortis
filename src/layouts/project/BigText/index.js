@@ -1,1 +1,1 @@
-export { default } from './BigText'
+export {default} from './BigText'

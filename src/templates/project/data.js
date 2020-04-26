@@ -120,7 +120,6 @@ const ProjectTemplateFragment = (layouts) => `
   }
 `
 
-
 const ProjectPreviewFragment = `
   fragment ProjectPreviewFragment on WPGraphQL_Project {
     projectId

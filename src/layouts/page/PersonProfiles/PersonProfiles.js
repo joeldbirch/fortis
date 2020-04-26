@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import FluidImage from 'components/FluidImage'
-import { subhead } from 'styles/helpers'
-import { cols, mq } from 'utilities/helpers'
+import {subhead} from 'styles/helpers'
+import {cols, mq} from 'utilities/helpers'
 
-const PersonProfiles = ({profiles=[]}) => {
+const PersonProfiles = ({profiles = []}) => {
   if (profiles.length < 1) return ``
   return (
     <div
@@ -15,7 +15,9 @@ const PersonProfiles = ({profiles=[]}) => {
         padding-bottom:400
       `}
     >
-      { profiles.map((profile, index) => <ProfileEntry profile={profile} key={`profile-${index}`} />) }
+      {profiles.map((profile, index) => (
+        <ProfileEntry profile={profile} key={`profile-${index}`} />
+      ))}
     </div>
   )
 }
@@ -23,15 +25,8 @@ const PersonProfiles = ({profiles=[]}) => {
 const ProfileEntry = ({
   profile: {
     group1: {
-      start: {
-        image,
-      },
-      end: {
-        name,
-        position,
-        note,
-        description,
-      },
+      start: {image},
+      end: {name, position, note, description},
     },
   },
 }) => {
@@ -121,15 +116,12 @@ const ProfileEntry = ({
           `}
         />
       </div>
-
     </div>
-
   )
 }
 
 PersonProfiles.propTypes = {
   profiles: PropTypes.array,
 }
-
 
 export default PersonProfiles

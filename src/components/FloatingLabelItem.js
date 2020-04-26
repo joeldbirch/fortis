@@ -1,11 +1,8 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
+import {Helmet} from 'react-helmet'
 
 function nameAttrFromText(text) {
-  return text
-    .toLowerCase()
-    .trim()
-    .replace(` `, ``)
+  return text.toLowerCase().trim().replace(` `, ``)
 }
 
 function capitalize(text) {
@@ -102,7 +99,9 @@ export default ({
           className={`
             ${labelHidden ? `visually-hidden` : ``}
           `}
-        >{label.toLowerCase()}</span>
+        >
+          {label.toLowerCase()}
+        </span>
       </label>
     </div>
   )

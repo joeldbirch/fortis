@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ScrollPromptAnimation = ({className=``, children, to=null, ...props}) => {
+const ScrollPromptAnimation = ({className = ``, children, to = null, ...props}) => {
   const ComponentTag = to ? `a` : `div`
 
   return (
@@ -10,7 +10,7 @@ const ScrollPromptAnimation = ({className=``, children, to=null, ...props}) => {
         if (!to) return false
         e.preventDefault()
         const target = document.querySelector(`#${to.split(`#`)[1]}`)
-        target.scrollIntoView({behavior:`smooth`})
+        target.scrollIntoView({behavior: `smooth`})
       }}
       className={`
         ${className}

@@ -15,18 +15,19 @@ const styles = {
   `,
 }
 
-const BigText = ({ bigText }) => {
-
-  return bigText && (
-    <section className={styles.root}>
-      <div
-        className={`
+const BigText = ({bigText}) => {
+  return (
+    bigText && (
+      <section className={styles.root}>
+        <div
+          className={`
           @mq-desk--padding-horizontal:columns-1
         `}
-      >
-        <LargeText>{bigText}</LargeText>
-      </div>
-    </section>
+        >
+          <LargeText>{bigText}</LargeText>
+        </div>
+      </section>
+    )
   )
 }
 

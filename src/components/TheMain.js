@@ -10,7 +10,7 @@ const styles = {
   `,
 }
 
-export default ({ children, className=``, ...props }) => (
+export default ({children, className = ``, ...props}) => (
   <main className={`${styles.main} ${className}`} {...props}>
     {children}
   </main>

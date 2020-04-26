@@ -1,8 +1,6 @@
 import React from 'react'
 
-export default ({
-  className = ``, absolute = `true`, children, ...props
-}) => (
+export default ({className = ``, absolute = `true`, children, ...props}) => (
   <header
     className={`
         ${className}

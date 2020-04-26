@@ -20,25 +20,43 @@ const styles = {
 }
 
 export default ({className}) => (
-  <nav className={`
+  <nav
+    className={`
     ${className}
     text-align:center
-  `}>
-    <a href="http://instagram.com/fortisdg" target="_blank" rel="noreferrer noopener" aria-label="Instagram" className={`
-      ${ styles.iconLink }
-    `}>
-      <Instagram className={`
+  `}
+  >
+    <a
+      href="http://instagram.com/fortisdg"
+      target="_blank"
+      rel="noreferrer noopener"
+      aria-label="Instagram"
+      className={`
+      ${styles.iconLink}
+    `}
+    >
+      <Instagram
+        className={`
         display:block
         font-size:200
-      `} />
+      `}
+      />
     </a>
-    <a href="mailto:hello@fortis.com.au" target="_blank" rel="noreferrer noopener"  aria-label="Email us" className={`
-      ${ styles.iconLink }
-    `}>
-      <Email className={`
+    <a
+      href="mailto:hello@fortis.com.au"
+      target="_blank"
+      rel="noreferrer noopener"
+      aria-label="Email us"
+      className={`
+      ${styles.iconLink}
+    `}
+    >
+      <Email
+        className={`
         display:block
         font-size:200
-      `} />
+      `}
+      />
     </a>
   </nav>
 )

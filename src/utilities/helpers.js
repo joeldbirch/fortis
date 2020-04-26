@@ -9,20 +9,19 @@ export const usesHover =
   window.matchMedia(`(hover: hover)`).matches
 
 export const isSafari = () =>
-  typeof window !== `undefined` &&
-  /.*Version.*Safari.*/.test(navigator.userAgent)
+  typeof window !== `undefined` && /.*Version.*Safari.*/.test(navigator.userAgent)
 
 export const isIos = () => {
   if (typeof document === `undefined`) return false
   const style = document.documentElement.style
-  return (`WebkitAppearance` in style && `webkitOverflowScrolling` in style)
+  return `WebkitAppearance` in style && `webkitOverflowScrolling` in style
 }
 
 export const isIphone = () =>
   typeof window !== `undefined` &&
   /iphone|ipod/.test(navigator.userAgent.toLowerCase())
 
-export const getSvgInline = (image) => (
+export const getSvgInline = (image) =>
   fetch(image.src)
     .then((response) => response.text())
     .then((response) => {
@@ -34,7 +33,6 @@ export const getSvgInline = (image) => (
       }
       return svg.replace(`<svg`, `<svg class="width:100 height:auto"`)
     })
-)
 
 export const fetchSvgInline = (image) => {
   fetch(image.currentSrc || image.src)
@@ -72,9 +70,10 @@ export const fetchSvgInline = (image) => {
     })
 }
 
-export const svgLoaded = (e) => (window !== `undefined` && `fetch` in window)
-  ? fetchSvgInline(e.currentTarget)
-  : true
+export const svgLoaded = (e) =>
+  window !== `undefined` && `fetch` in window
+    ? fetchSvgInline(e.currentTarget)
+    : true
 
 // src/utils/index.js
 
@@ -85,8 +84,8 @@ export const svgLoaded = (e) => (window !== `undefined` && `fetch` in window)
  * @param wordPressUrl
  * @param blogURI
  */
-export const CreateLocalLink = (menuItem, wordPressUrl, blogURI=`news/`) => {
-  const { url, connectedObject } = menuItem
+export const CreateLocalLink = (menuItem, wordPressUrl, blogURI = `news/`) => {
+  const {url, connectedObject} = menuItem
 
   if (url === `#`) return url
   /**
@@ -104,9 +103,10 @@ export const CreateLocalLink = (menuItem, wordPressUrl, blogURI=`news/`) => {
   return newUri
 }
 
-export const convertAmpersands = text => text.replace(`&#038`,`&`).replace(`&amp`,`&`)
+export const convertAmpersands = (text) =>
+  text.replace(`&#038`, `&`).replace(`&amp`, `&`)
 
-export const getPath = link => {
+export const getPath = (link) => {
   const path = new URL(link)
   return path.href.replace(path.origin, ``)
 }
@@ -130,24 +130,20 @@ export const mq = {
 
 export const postWithFeaturedImageSizes = (post, sizes) => {
   if (!sizes) return post
-  const alteredPost= Object.assign(
-    {},
-    post
-  )
+  const alteredPost = Object.assign({}, post)
   alteredPost.featuredImage.imageFile.childImageSharp.fluid.sizes = sizes
   return alteredPost
 }
 
-export const cleanWpContent = content => {
+export const cleanWpContent = (content) => {
   const emptyParas = /<p>&nbsp;<\/p>/g
   const cleaned = content.replace(emptyParas, ``)
   return cleaned
 }
 
-export const noOrphans= text => {
+export const noOrphans = (text) => {
   const words = text.split(` `)
-  const lastTwo = words.splice(-2)
-  .join(`&nbsp;`)
+  const lastTwo = words.splice(-2).join(`&nbsp;`)
   // 19 includes 6 character '&nbsp;' string
   if (lastTwo.length > 19) return text
   return [...words, lastTwo].join(` `)

@@ -5,13 +5,10 @@ import TextBlock from 'layouts/page/TextBlock'
 import PageHeader from 'components/PageHeader'
 import SEO from 'components/SEO'
 
-const Projects = ({ pageContext }) => {
+const Projects = ({pageContext}) => {
   const {
     projectsIntro: {
-      content: {
-        siteSectionTitle,
-        introContent,
-      },
+      content: {siteSectionTitle, introContent},
     },
     nodes,
     projectTags,
@@ -24,9 +21,7 @@ const Projects = ({ pageContext }) => {
       `}
       AddToHeader={<PageHeader isMain="true" headingText={siteSectionTitle} />}
     >
-      <SEO
-        title={siteSectionTitle}
-      />
+      <SEO title={siteSectionTitle} />
 
       <TextBlock
         text={introContent}

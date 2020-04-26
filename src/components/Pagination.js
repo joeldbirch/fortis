@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import { blogURI } from '../../globals'
+import {Link} from 'gatsby'
+import {blogURI} from '../../globals'
 
-const Pagination = ({ pageNumber, hasNextPage }) => {
+const Pagination = ({pageNumber, hasNextPage}) => {
   if (pageNumber === 1 && !hasNextPage) return null
 
   return (
@@ -20,27 +20,23 @@ const Pagination = ({ pageNumber, hasNextPage }) => {
           grid-template-columns:2
         `}
       >
-        {
-          pageNumber > 1 && (
-            <Link
-              className={`btn display:inline-block margin-horizontal:100`}
-              to={pageNumber > 2 ? `${blogURI}/page/${pageNumber - 1}` : `${blogURI}/`}
-            >
-              Later articles
-            </Link>
-          )
-        }
+        {pageNumber > 1 && (
+          <Link
+            className={`btn display:inline-block margin-horizontal:100`}
+            to={pageNumber > 2 ? `${blogURI}/page/${pageNumber - 1}` : `${blogURI}/`}
+          >
+            Later articles
+          </Link>
+        )}
 
-        {
-          hasNextPage && (
-            <Link
-              className={`btn display:inline-block margin-horizontal:100`}
-              to={`${blogURI}/page/${pageNumber + 1}`}
-            >
-              Earlier articles
-            </Link>
-          )
-        }
+        {hasNextPage && (
+          <Link
+            className={`btn display:inline-block margin-horizontal:100`}
+            to={`${blogURI}/page/${pageNumber + 1}`}
+          >
+            Earlier articles
+          </Link>
+        )}
       </div>
 
       {/* {
@@ -51,7 +47,6 @@ const Pagination = ({ pageNumber, hasNextPage }) => {
           </p>
         : ``
       } */}
-
     </div>
   )
 }

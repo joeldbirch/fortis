@@ -1,7 +1,14 @@
 import React from 'react'
 import ScrollPrompt from 'components/ScrollPrompt'
 
-const TextBlock = ({text, style={}, nextSection=null, id=null, className=``, ...props}) => {
+const TextBlock = ({
+  text,
+  style = {},
+  nextSection = null,
+  id = null,
+  className = ``,
+  ...props
+}) => {
   return (
     <section
       id={id}

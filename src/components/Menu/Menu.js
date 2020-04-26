@@ -1,26 +1,30 @@
 import React from 'react'
-import { useMenuData } from '../../hooks/use-menu-data'
+import {useMenuData} from '../../hooks/use-menu-data'
 
 import MenuItem from './MenuItem'
 import CloseAnimation from '../CloseAnimation'
 import {
-  centred, appleFade, appleBezier, uiFontSize, getInvertedStyles,
+  centred,
+  appleFade,
+  appleBezier,
+  uiFontSize,
+  getInvertedStyles,
 } from '../../styles/helpers'
 
-
 const Menu = ({
-  toggleHandler = function () {}, isOpen = false, className = ``, headerReversed,
+  toggleHandler = function () {},
+  isOpen = false,
+  className = ``,
+  headerReversed,
 }) => {
-  const {
-    menuItems = [],
-    siteURL,
-  } = useMenuData()
+  const {menuItems = [], siteURL} = useMenuData()
 
   if (!menuItems) return null
   const transitionDuration = `400ms`
 
   return (
-    <div className={`
+    <div
+      className={`
       menu
       ${className}
     `}
@@ -95,10 +99,7 @@ const Menu = ({
             pointerEvents: isOpen ? `auto` : `none`,
           }}
         >
-          <CloseAnimation
-            closed={isOpen}
-            wrapStyles={appleFade}
-          />
+          <CloseAnimation closed={isOpen} wrapStyles={appleFade} />
         </button>
 
         <div
@@ -124,10 +125,10 @@ const Menu = ({
               transform ${transitionDuration} ${appleBezier} 0s,
               visibility 0s linear ${isOpen ? `0s` : transitionDuration}
             `,
-
           }}
         >
-          <ul className={`
+          <ul
+            className={`
             menu-list
             list-style:none
             padding:0
@@ -140,23 +141,21 @@ const Menu = ({
             rhythm-fix-before
           `}
           >
-            {
-              menuItems.map((menuItem) => (
-                <MenuItem
-                  className={`
+            {menuItems.map((menuItem) => (
+              <MenuItem
+                className={`
                   `}
-                  linkClasses={`
+                linkClasses={`
                     hover-underline
                     color:neutral-900
                     display:inline-block
                     @mq-hover-none--padding-vertical:px
                   `}
-                  key={menuItem.id}
-                  menuItem={menuItem}
-                  wordPressUrl={siteURL}
-                />
-              ))
-            }
+                key={menuItem.id}
+                menuItem={menuItem}
+                wordPressUrl={siteURL}
+              />
+            ))}
           </ul>
         </div>
       </nav>

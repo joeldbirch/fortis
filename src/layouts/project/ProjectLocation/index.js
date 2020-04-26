@@ -1,1 +1,1 @@
-export { default } from './ProjectLocation'
+export {default} from './ProjectLocation'

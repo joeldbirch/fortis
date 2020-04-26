@@ -1,5 +1,5 @@
 import React from 'react'
-import { moduleRoot } from 'styles/helpers'
+import {moduleRoot} from 'styles/helpers'
 import NetlifyForm from 'components/NetlifyForm'
 import FloatingLabelItem from 'components/FloatingLabelItem'
 import LargeText from 'components/LargeText'
@@ -27,11 +27,7 @@ const styles = {
   `,
 }
 
-const EnquiryForm = ({
-  formIntroText,
-  uri,
-}) => {
-
+const EnquiryForm = ({formIntroText, uri}) => {
   return (
     <section
       id="enquire"
@@ -49,7 +45,6 @@ const EnquiryForm = ({
           padding-right:columns-1
         `}
       >
-
         <LargeText
           className={`
             @mq-palm--margin-bottom:600
@@ -71,12 +66,13 @@ const EnquiryForm = ({
               className={`
                 padding-top:800
               `}
-            ><button type="submit" className={`btn`}>
-              Enquire
-            </button></div>
+            >
+              <button type="submit" className={`btn`}>
+                Enquire
+              </button>
+            </div>
           </div>
         </NetlifyForm>
-
       </div>
     </section>
   )
@@ -84,8 +80,7 @@ const EnquiryForm = ({
 
 export default EnquiryForm
 
-
-const Field = ({ ...props }) => (
+const Field = ({...props}) => (
   <FloatingLabelItem
     {...props}
     className={styles.item}

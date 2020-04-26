@@ -1,8 +1,8 @@
 import React from 'react'
 import MultiFormatImage from 'components/MultiFormatImage'
-import { cols, mq } from 'utilities/helpers'
+import {cols, mq} from 'utilities/helpers'
 
-const FullWidthContent = ({className=``, freeText, image, ...props}) => {
+const FullWidthContent = ({className = ``, freeText, image, ...props}) => {
   return (
     <div
       className={`

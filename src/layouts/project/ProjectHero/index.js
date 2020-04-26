@@ -1,1 +1,1 @@
-export { default } from './ProjectHero'
+export {default} from './ProjectHero'

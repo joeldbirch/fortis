@@ -63,7 +63,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "clean": "gatsby clean",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\" --ignore-path .gitignore",
     "start": "yarn develop",
     "serve": "gatsby serve",
     "preload-fonts": "gatsby-preload-fonts",

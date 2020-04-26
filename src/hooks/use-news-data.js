@@ -1,8 +1,8 @@
-import { useStaticQuery, graphql } from 'gatsby'
+import {useStaticQuery, graphql} from 'gatsby'
 // const { FluidImageFragment } = require('../src/templates/fragments')
 
 export const useNewsData = () => {
-  const { wpgraphql } = useStaticQuery(
+  const {wpgraphql} = useStaticQuery(
     graphql`
       fragment NewsPreviewFragment on WPGraphQL_Post {
         id
@@ -56,9 +56,7 @@ export const useNewsData = () => {
           posts(
             first: 6
             # This will make sure to only get the parent nodes and no children
-            where: {
-              parent: null
-            }
+            where: {parent: null}
           ) {
             pageInfo {
               hasNextPage

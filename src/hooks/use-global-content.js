@@ -1,8 +1,7 @@
-import { useStaticQuery, graphql } from 'gatsby'
+import {useStaticQuery, graphql} from 'gatsby'
 
 const useGlobalContent = () => {
-  const { wpgraphql } = useStaticQuery(
-
+  const {wpgraphql} = useStaticQuery(
     graphql`
       query GET_GLOBAL_CONTENT {
         wpgraphql {

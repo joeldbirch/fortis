@@ -18,7 +18,6 @@ const NotFoundPage = () => (
       <h1 className="font-weight:400">Not Found</h1>
       <p className="margin-top:400">Sorry, no content exists at this address.</p>
     </div>
-
   </Layout>
 )
 

@@ -2,7 +2,7 @@ import React from 'react'
 import ScrollPromptAnimation from 'components/ScrollPromptAnimation'
 import ArrowRounded from 'components/ArrowRounded'
 
-const ScrollPrompt = ({className=``, ...props}) => {
+const ScrollPrompt = ({className = ``, ...props}) => {
   return (
     <ScrollPromptAnimation
       className={`

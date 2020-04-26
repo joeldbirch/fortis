@@ -1,14 +1,13 @@
 const path = require(`path`)
 const Fiber = require(`fibers`)
 
-const {
-  wordpressSelectors,
-  wordpressPatterns,
-} = require(`./src/whitelist`)
+const {wordpressSelectors, wordpressPatterns} = require(`./src/whitelist`)
 
-const getAuthBase64 = (user, pass) => Buffer.from(`${user}:${pass}`).toString(`base64`)
+const getAuthBase64 = (user, pass) =>
+  Buffer.from(`${user}:${pass}`).toString(`base64`)
 
-const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || `development`
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || `development`
 console.log(`Using environment config: ${activeEnv}`)
 
 require(`dotenv`).config({
@@ -16,7 +15,6 @@ require(`dotenv`).config({
 })
 
 console.log(`This WordPress Endpoint is used: '${process.env.WORDPRESS_URL}'`)
-
 
 module.exports = {
   siteMetadata: {
@@ -43,7 +41,10 @@ module.exports = {
         fieldName: `wpgraphql`,
         url: `${process.env.WORDPRESS_URL}/graphql`,
         headers: {
-          Authorization: `Basic ${getAuthBase64(process.env.AUTH_USERNAME, process.env.AUTH_PASSWORD)}`,
+          Authorization: `Basic ${getAuthBase64(
+            process.env.AUTH_USERNAME,
+            process.env.AUTH_PASSWORD
+          )}`,
         },
       },
     },
@@ -114,7 +115,11 @@ module.exports = {
       options: {
         printRejected: false, // Print removed selectors and processed file names
         content: [path.join(process.cwd(), `src/**/!(*.d).{js,svg,html}`)],
-        ignore: [`src/components/TheWrap/style.module.scss`, `src/fortis-styles/base/_custom-reset.scss`, `flickity`],
+        ignore: [
+          `src/components/TheWrap/style.module.scss`,
+          `src/fortis-styles/base/_custom-reset.scss`,
+          `flickity`,
+        ],
         whitelist: wordpressSelectors,
         whitelistPatterns: wordpressPatterns,
         extractors: [
@@ -136,17 +141,9 @@ module.exports = {
       resolve: `gatsby-plugin-netlify`,
       options: {
         headers: {
-          '/*': [
-            `X-Frame-Options: ALLOW-FROM http://ami.responsivedesign.is/`,
-          ],
-          '/*.js': [
-            `Expires: 1y`,
-            `Cache-Control: public, max-age=31536000`,
-          ],
-          '/favicon.ico': [
-            `Expires: 1y`,
-            `Cache-Control: public, max-age=31536000`,
-          ],
+          '/*': [`X-Frame-Options: ALLOW-FROM http://ami.responsivedesign.is/`],
+          '/*.js': [`Expires: 1y`, `Cache-Control: public, max-age=31536000`],
+          '/favicon.ico': [`Expires: 1y`, `Cache-Control: public, max-age=31536000`],
         },
       },
     },

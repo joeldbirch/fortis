@@ -1,6 +1,6 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
-import { uiFontSize } from 'styles/helpers'
+import {Helmet} from 'react-helmet'
+import {uiFontSize} from 'styles/helpers'
 
 const styles = {
   hitarea: `
@@ -23,21 +23,13 @@ const styles = {
   `,
 }
 
-
-const FilterForm = ({
-    items,
-    update = ()=>{},
-    className=``,
-    ...props
-  }
-) => {
-
+const FilterForm = ({items, update = () => {}, className = ``, ...props}) => {
   const defaultTag = {
     name: `All`,
     id: `all`,
   }
 
-  const shownTags = [defaultTag, ...items.filter(tag => tag.count > 0)]
+  const shownTags = [defaultTag, ...items.filter((tag) => tag.count > 0)]
 
   return (
     <form
@@ -70,19 +62,16 @@ const FilterForm = ({
           flex-wrap:wrap
         `}
       >
-        {
-          shownTags
-          && shownTags.length
-          && shownTags
-          .map(item => (
+        {shownTags &&
+          shownTags.length &&
+          shownTags.map((item) => (
             <FilterItem
               key={item.id}
               name={item.name}
               id={item.id}
               toggleHandler={() => update(item.id === `all` ? [] : [item.id])}
             />
-        ))}
-
+          ))}
       </ul>
       {/* this is to match header heights if font-size gets changed */}
       {/* <span className={`${uiFontSize}`}>&#160;</span> */}
@@ -90,7 +79,7 @@ const FilterForm = ({
   )
 }
 
-const FilterItem = ({id, name, toggleHandler = ()=>{}, ...props}) => (
+const FilterItem = ({id, name, toggleHandler = () => {}, ...props}) => (
   <li
     className={`
       margin-bottom:-200
@@ -100,20 +89,19 @@ const FilterItem = ({id, name, toggleHandler = ()=>{}, ...props}) => (
     key={id}
     {...props}
   >
-    <label className={styles.hitarea} >
+    <label className={styles.hitarea}>
       <input
         type="radio"
-        defaultChecked={id===`all`}
+        defaultChecked={id === `all`}
         className={`
           ${styles.icon}
         `}
         name="filters"
         onChange={() => toggleHandler(id)}
       />
-      <span className={styles.text} >{name}</span>
+      <span className={styles.text}>{name}</span>
     </label>
   </li>
 )
-
 
 export default FilterForm

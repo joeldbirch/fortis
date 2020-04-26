@@ -6,24 +6,24 @@ import PageHeader from '../../components/PageHeader'
 import Pagination from '../../components/Pagination'
 import SEO from '../../components/SEO'
 
-
-const News = ({ pageContext }) => {
-  const { newsIntro: {
-    content: {
-      siteSectionTitle,
-      introContent,
+const News = ({pageContext}) => {
+  const {
+    newsIntro: {
+      content: {siteSectionTitle, introContent},
     },
-  },
-  nodes, pageNumber, hasNextPage, itemsPerPage, allPosts } = pageContext
+    nodes,
+    pageNumber,
+    hasNextPage,
+    itemsPerPage,
+    allPosts,
+  } = pageContext
 
   return (
     <Layout
       overflowY="overflow-y:scroll"
       AddToHeader={<PageHeader isMain="true" headingText={siteSectionTitle} />}
     >
-      <SEO
-        title={siteSectionTitle}
-      />
+      <SEO title={siteSectionTitle} />
 
       <div
         className={`
@@ -39,7 +39,11 @@ const News = ({ pageContext }) => {
       >
         <NewsPreviews
           posts={nodes}
-          intro={<LargeText className="@mq-max-palm--margin-bottom:1000">{introContent}</LargeText>}
+          intro={
+            <LargeText className="@mq-max-palm--margin-bottom:1000">
+              {introContent}
+            </LargeText>
+          }
           className={`
             padding-top:site-top
           `}
@@ -53,7 +57,6 @@ const News = ({ pageContext }) => {
           }
         />
       </div>
-
     </Layout>
   )
 }

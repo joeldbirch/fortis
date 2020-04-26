@@ -4,8 +4,8 @@ import PageHeader from 'components/PageHeader'
 import SectionHeader from 'components/SectionHeader'
 import Divider from 'components/DividerHorizontal'
 import LargeText from 'components/LargeText'
-import { useNewsData  } from 'hooks/use-news-data'
-import { blogURI } from '../../../../globals'
+import {useNewsData} from 'hooks/use-news-data'
+import {blogURI} from '../../../../globals'
 
 const LinkToNewsPage = () => (
   <p
@@ -14,20 +14,24 @@ const LinkToNewsPage = () => (
       text-align:center
     `}
   >
-    <a className={`btn display:inline-flex`} href={blogURI}>View all news</a>
+    <a className={`btn display:inline-flex`} href={blogURI}>
+      View all news
+    </a>
   </p>
 )
 
-const NewsOverview = ({introText=null, showHeading=true, nextSection=null, id=null, ...props}) => {
-
+const NewsOverview = ({
+  introText = null,
+  showHeading = true,
+  nextSection = null,
+  id = null,
+  ...props
+}) => {
   const {
     posts = [],
     hasNextPage,
     newsIntro: {
-      content: {
-        siteSectionTitle,
-        introContent,
-      },
+      content: {siteSectionTitle, introContent},
     },
   } = useNewsData()
 
@@ -52,20 +56,24 @@ const NewsOverview = ({introText=null, showHeading=true, nextSection=null, id=nu
           padding-bottom:800
         `}
       >
-        {
-          showHeading && (
-            <SectionHeader className="z-index:400">
-              <PageHeader headingText={siteSectionTitle} />
-            </SectionHeader>
-          )
-        }
+        {showHeading && (
+          <SectionHeader className="z-index:400">
+            <PageHeader headingText={siteSectionTitle} />
+          </SectionHeader>
+        )}
 
         <NewsPreviews
           posts={posts}
-          intro={<LargeText className={`
+          intro={
+            <LargeText
+              className={`
             @mq-max-palm--display:none
             @mq-max-palm--font-size:400
-          `}>{introText || introContent}</LargeText>}
+          `}
+            >
+              {introText || introContent}
+            </LargeText>
+          }
           pagination={hasNextPage ? <LinkToNewsPage /> : () => {}}
         />
       </div>

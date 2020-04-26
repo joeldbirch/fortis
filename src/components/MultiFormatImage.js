@@ -7,40 +7,45 @@ const formatComponents = {
   gif: `img`,
 }
 
-const usesPublicURL = (image) => image && image.imageFile && image.imageFile.publicURL && Object.keys(formatComponents).includes(image.imageFile.extension)
+const usesPublicURL = (image) =>
+  image &&
+  image.imageFile &&
+  image.imageFile.publicURL &&
+  Object.keys(formatComponents).includes(image.imageFile.extension)
 
 const MultiFormatImage = ({
-  alt=``,
-  className=``,
-  fallbackClasses=``,
+  alt = ``,
+  className = ``,
+  fallbackClasses = ``,
   image,
   sizes,
-  textFallback=false,
+  textFallback = false,
   ...props
 }) => {
-
   let Image
 
   if (usesPublicURL(image)) {
-    const { extension, publicURL } = image.imageFile
+    const {extension, publicURL} = image.imageFile
     const Component = formatComponents[extension]
 
-    Image = () => <Component
-      alt={alt}
-      className={`
+    Image = () => (
+      <Component
+        alt={alt}
+        className={`
         width:100
         height:auto
       `}
-      lazyload="lazy"
-      src={publicURL}
-      {...props}
-    />
-
-  } else if ( textFallback ) {
+        lazyload="lazy"
+        src={publicURL}
+        {...props}
+      />
+    )
+  } else if (textFallback) {
     Image = () => <p className={fallbackClasses}>{alt}</p>
-
   } else {
-    Image = () => <FluidImage image={image} className={className} sizes={sizes} {...props} />
+    Image = () => (
+      <FluidImage image={image} className={className} sizes={sizes} {...props} />
+    )
   }
 
   return <Image />

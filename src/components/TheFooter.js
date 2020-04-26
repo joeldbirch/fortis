@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import Divider from 'components/DividerHorizontal'
 import NewsletterForm from 'components/NewsletterForm'
-import { getCurrentYear } from 'utilities/helpers'
+import {getCurrentYear} from 'utilities/helpers'
 import useGlobalContent from 'hooks/use-global-content'
 
 const styles = {
@@ -12,28 +12,27 @@ const styles = {
   `,
 }
 
-export default ({ className=``, ...props }) => {
-
+export default ({className = ``, ...props}) => {
   const [year, setYear] = useState(getCurrentYear())
 
-  useEffect(function() {
+  useEffect(function () {
     setYear(getCurrentYear())
   }, [])
 
   const {
     globalContent: {
-      contactInformation: {
-        socialMedia,
-        officeLocations,
-      },
+      contactInformation: {socialMedia, officeLocations},
     },
   } = useGlobalContent()
 
   className += styles.root
   return (
-    <footer className={`
-      ${ className }
-    `} {...props}>
+    <footer
+      className={`
+      ${className}
+    `}
+      {...props}
+    >
       <div
         className={`
           display:grid
@@ -60,11 +59,15 @@ export default ({ className=``, ...props }) => {
             @mq-max-palm--margin-horizontal:auto
           `}
         />
-        <h2 className={`
+        <h2
+          className={`
           visually-hidden
-        `}>Quick contact details</h2>
+        `}
+        >
+          Quick contact details
+        </h2>
 
-        <NewsletterForm/>
+        <NewsletterForm />
 
         <div
           className={`
@@ -78,7 +81,9 @@ export default ({ className=``, ...props }) => {
               margin-bottom:100
               margin-top:600
             `}
-          >Follow us</h3>
+          >
+            Follow us
+          </h3>
           <ul
             className={`
               list-style:none
@@ -86,15 +91,19 @@ export default ({ className=``, ...props }) => {
               margin:0
             `}
           >
-            { socialMedia.length > 0 && socialMedia.map(({name, url}, index) => (
-              <li key={index}> <a href={url}>{name}</a> </li>
-            ))}
+            {socialMedia.length > 0 &&
+              socialMedia.map(({name, url}, index) => (
+                <li key={index}>
+                  {' '}
+                  <a href={url}>{name}</a>{' '}
+                </li>
+              ))}
           </ul>
         </div>
 
-        { officeLocations.map((location, index) => (
+        {officeLocations.map((location, index) => (
           <Address key={index} fields={location} />
-        )) }
+        ))}
 
         <div>
           <p
@@ -102,23 +111,16 @@ export default ({ className=``, ...props }) => {
               margin-top:600
               @mq-desk--text-align:right
             `}
-          >&copy; Fortis {year}</p>
+          >
+            &copy; Fortis {year}
+          </p>
         </div>
       </div>
     </footer>
   )
 }
 
-
-const Address = ({
-  fields: {
-    suburb,
-    state,
-    postcode,
-    label,
-    streetAddress,
-  },
-}) => (
+const Address = ({fields: {suburb, state, postcode, label, streetAddress}}) => (
   <address
     className={`
       padding-right:400
@@ -132,9 +134,13 @@ const Address = ({
         margin-bottom:100
         margin-top:600
       `}
-    >{label}</h3>
-    {streetAddress}<br />
-    {suburb}<br />
+    >
+      {label}
+    </h3>
+    {streetAddress}
+    <br />
+    {suburb}
+    <br />
     {state} {postcode}
   </address>
 )

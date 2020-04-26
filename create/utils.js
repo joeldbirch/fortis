@@ -1,13 +1,13 @@
 const path = require('path')
 
-module.exports.getAllLayoutsData = (pageType=`page`) => {
+module.exports.getAllLayoutsData = (pageType = `page`) => {
   const glob = require('glob')
 
   let allLayoutsString = ''
 
   const fileArray = glob.sync(`./src/layouts/${pageType}/**/*.data.js`)
 
-  fileArray.forEach(function(file) {
+  fileArray.forEach(function (file) {
     let queryStringFunction = require(path.resolve(file))
     allLayoutsString = `${allLayoutsString}\n${queryStringFunction()}`
   })
@@ -24,18 +24,23 @@ module.exports.getAllLayoutsData = (pageType=`page`) => {
  * @param {object[]} imports - An array of objects, that define the layoutType, componentName and filePath.
  * @returns {Promise<>}
  */
-module.exports.createTemplate = ({ templateCacheFolderPath, templatePath, templateName, imports }) => {
+module.exports.createTemplate = ({
+  templateCacheFolderPath,
+  templatePath,
+  templateName,
+  imports,
+}) => {
   return new Promise((resolve) => {
     const fs = require('fs')
     const template = require(templatePath)
     const contents = template(imports)
 
-    fs.mkdir(templateCacheFolderPath, { recursive: true }, (err) => {
+    fs.mkdir(templateCacheFolderPath, {recursive: true}, (err) => {
       if (err) throw `Error creating template-cache folder: ${err}`
 
       const filePath = `${templateCacheFolderPath}/${templateName}.js`
 
-      fs.writeFile(filePath, contents, `utf8`, err => {
+      fs.writeFile(filePath, contents, `utf8`, (err) => {
         if (err) throw `Error writing ${templateName} template: ${err}`
 
         console.log(`Successfully created ${templateName} template.`)
@@ -48,7 +53,17 @@ module.exports.createTemplate = ({ templateCacheFolderPath, templatePath, templa
 /**
  * Creates pages out of the temporary created templates.
  */
-module.exports.createPageWithTemplate = ({ createTemplate, templateCacheFolder, pageTemplate, page, pagePath, mappedLayouts, createPage, reporter, prefix=`tmp` }) => {
+module.exports.createPageWithTemplate = ({
+  createTemplate,
+  templateCacheFolder,
+  pageTemplate,
+  page,
+  pagePath,
+  mappedLayouts,
+  createPage,
+  reporter,
+  prefix = `tmp`,
+}) => {
   /**
    * First we create a new template file for each page.
    */

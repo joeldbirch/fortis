@@ -1,19 +1,13 @@
 import React from 'react'
 import MultiFormatImage from 'components/MultiFormatImage'
 import FluidVideo from 'components/FluidVideo'
-import { cols, mq } from 'utilities/helpers'
-import { moduleRoot } from 'styles/helpers'
+import {cols, mq} from 'utilities/helpers'
+import {moduleRoot} from 'styles/helpers'
 
 const SimpleLandscape = ({
   simpleGroup: {
-    media: {
-      simpleNote: note,
-      simpleVideo: video,
-      simpleImage: image,
-    },
-    textual: {
-      simpleText: html,
-    },
+    media: {simpleNote: note, simpleVideo: video, simpleImage: image},
+    textual: {simpleText: html},
   },
 }) => {
   return (
@@ -50,31 +44,29 @@ const SimpleLandscape = ({
             margin-vertical:auto
           `}
         >
-          {
-            video ? <FluidVideo id={video}/>
-            : <MultiFormatImage
-                className={``}
-                image={image}
-                sizes={`
+          {video ? (
+            <FluidVideo id={video} />
+          ) : (
+            <MultiFormatImage
+              className={``}
+              image={image}
+              sizes={`
                   (max-width: ${mq.toPalm}) ${cols(12)}vw,
                   (min-width: ${mq.desk}) ${cols(6)}vw,
                   (min-width: ${mq.palm}) ${cols(4)}vw
                 `}
-              />
-          }
+            />
+          )}
 
-          {
-            note && (
-              <figcaption
-                className={`
+          {note && (
+            <figcaption
+              className={`
                   handwritten
                 `}
-              >
-                {note}
-              </figcaption>
-            )
-          }
-
+            >
+              {note}
+            </figcaption>
+          )}
         </figure>
       </div>
     </section>

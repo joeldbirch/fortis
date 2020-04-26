@@ -20,13 +20,9 @@ const styles = {
   `,
 }
 
-const Branded = ({image, video=null, id=null}) => {
-
+const Branded = ({image, video = null, id = null}) => {
   return (
-    <section
-      className={` ${styles.root} `}
-      id={id}
-    >
+    <section className={` ${styles.root} `} id={id}>
       <HeroFullScreenContent
         className={`
           height:100vh-fixed

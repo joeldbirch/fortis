@@ -1,18 +1,12 @@
 import React from 'react'
 import MultiFormatImage from 'components/MultiFormatImage'
-import { cols, mq } from 'utilities/helpers'
-import { moduleRoot } from 'styles/helpers'
+import {cols, mq} from 'utilities/helpers'
+import {moduleRoot} from 'styles/helpers'
 
 const InFocus = ({
   group: {
-    start: {
-      quote,
-      mainImage,
-    },
-    end: {
-      textContent,
-      secondaryImage,
-    },
+    start: {quote, mainImage},
+    end: {textContent, secondaryImage},
   },
 }) => {
   return (
@@ -36,7 +30,6 @@ const InFocus = ({
           '--grid-template-columns-var-3': `6fr 3fr`,
         }}
       >
-
         <div
           className={`
             display:grid
@@ -100,10 +93,7 @@ const InFocus = ({
             />
           </div>
         </div>
-
       </div>
-
-
     </section>
   )
 }

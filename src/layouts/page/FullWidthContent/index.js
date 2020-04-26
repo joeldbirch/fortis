@@ -1,1 +1,1 @@
-export { default } from './FullWidthContent'
+export {default} from './FullWidthContent'

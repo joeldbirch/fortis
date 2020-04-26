@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function NetlifyForm({ name, action, className, children, ...props }) {
+function NetlifyForm({name, action, className, children, ...props}) {
   return (
     <form
       action={action}

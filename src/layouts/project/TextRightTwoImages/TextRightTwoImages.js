@@ -1,8 +1,8 @@
 import React from 'react'
 import MultiFormatImage from 'components/MultiFormatImage'
-import { subhead } from 'styles/helpers'
-import { cols, mq } from 'utilities/helpers'
-import { moduleRoot } from 'styles/helpers'
+import {subhead} from 'styles/helpers'
+import {cols, mq} from 'utilities/helpers'
+import {moduleRoot} from 'styles/helpers'
 
 const styles = {
   root: moduleRoot,
@@ -67,12 +67,8 @@ const styles = {
   `,
 }
 
-
 const TextRightTwoImages = ({
-  bobImages: {
-    larger,
-    smaller,
-  },
+  bobImages: {larger, smaller},
   bobText,
   bobHeading,
   bobNote,
@@ -93,24 +89,30 @@ const TextRightTwoImages = ({
           </div>
 
           <div className={styles.startColumnEndRow}>
-            <h2 className={`
+            <h2
+              className={`
               ${subhead}
               margin-bottom:400
               rhythm-fix-after
-            `}>
+            `}
+            >
               {bobHeading}
             </h2>
-            <p className={`
+            <p
+              className={`
               margin-bottom:800
               rhythm-fix-after
-            `}>{bobText}</p>
+            `}
+            >
+              {bobText}
+            </p>
           </div>
         </div>
 
-
         <div className={styles.endColumn}>
-          <div className={` ${styles.endColumnStartRow} `}
-            style={{'--max-width' : `calc(90vw - 17.5em)`}}
+          <div
+            className={` ${styles.endColumnStartRow} `}
+            style={{'--max-width': `calc(90vw - 17.5em)`}}
           >
             <span
               className={`
@@ -128,7 +130,9 @@ const TextRightTwoImages = ({
                 rhythm-fix-before
                 text-align:center
               `}
-            >{bobNote}</span>
+            >
+              {bobNote}
+            </span>
           </div>
 
           <div className={styles.endColumnEndRow}>

@@ -1,11 +1,10 @@
 import React from 'react'
 import FluidImage from 'components/FluidImage'
 import Divider from 'components/DividerHorizontal'
-import { subhead } from 'styles/helpers'
+import {subhead} from 'styles/helpers'
 
-const Location = ({fallbackImage, nearby, listHeading=``}) => {
-
-  const amenities = nearby && Object.values(nearby).map(item => item.amenity )
+const Location = ({fallbackImage, nearby, listHeading = ``}) => {
+  const amenities = nearby && Object.values(nearby).map((item) => item.amenity)
 
   return (
     <div
@@ -23,15 +22,15 @@ const Location = ({fallbackImage, nearby, listHeading=``}) => {
         margin-horizontal:auto
         padding-horizontal:columns-0-1/2
       `}
-        style={{
-          '--scale-x-var-1': `1.75`,
-          '--scale-y-var-1': `1.75`,
-          '--scale-x-var-2': `1.25`,
-          '--scale-y-var-2': `1.25`,
-          '--grid-template-columns-var-2': `7fr 5fr`,
-          '--grid-template-columns-var-3': `8fr 4fr`,
-          '--grid-template-columns-var-4': `9fr 3fr`,
-        }}
+      style={{
+        '--scale-x-var-1': `1.75`,
+        '--scale-y-var-1': `1.75`,
+        '--scale-x-var-2': `1.25`,
+        '--scale-y-var-2': `1.25`,
+        '--grid-template-columns-var-2': `7fr 5fr`,
+        '--grid-template-columns-var-3': `8fr 4fr`,
+        '--grid-template-columns-var-4': `9fr 3fr`,
+      }}
     >
       <div
         className={`
@@ -54,36 +53,37 @@ const Location = ({fallbackImage, nearby, listHeading=``}) => {
             @mq-palm--margin-bottom:columns-0-1/2
           `}
         >
-          { listHeading }
+          {listHeading}
         </h2>
 
-        { amenities && amenities.length < 1
-          ? ``
-          : <ol
-              className={`
+        {amenities && amenities.length < 1 ? (
+          ``
+        ) : (
+          <ol
+            className={`
                 list-type:none
                 display:grid
                 grid-gap:200
                 @mq-widepalm--grid-gap:400
               `}
-              style={{
-                '--grid-template-columns-var-1': `auto 1fr`,
-              }}
-            >
-              { amenities?.map((amenity, index) => (
-                <li
-                  key={index}
-                  className={`
+            style={{
+              '--grid-template-columns-var-1': `auto 1fr`,
+            }}
+          >
+            {amenities?.map((amenity, index) => (
+              <li
+                key={index}
+                className={`
                     display:grid
                     grid-template-columns:var-1
                     align-items:center
                     grid-gap:300
                     @mq-lap--grid-gap:400
                   `}
-                >
-                  <span
-                    aria-hidden
-                    className={`
+              >
+                <span
+                  aria-hidden
+                  className={`
                       marker
                       display:inline-flex
                       size:800
@@ -94,24 +94,28 @@ const Location = ({fallbackImage, nearby, listHeading=``}) => {
                       align-items:center
                       justify-content:center
                     `}
-                  >
-                    <span
-                      className={`
+                >
+                  <span
+                    className={`
                         font-size:200
                         line-height:200
                       `}
-                    >{index + 1}</span>
+                  >
+                    {index + 1}
                   </span>
-                  <span
-                    className={`
+                </span>
+                <span
+                  className={`
                       font-size:300
                       @mq-lap--font-size:400
                     `}
-                  >{amenity}</span>
-                </li>
-              ))}
-            </ol>
-        }
+                >
+                  {amenity}
+                </span>
+              </li>
+            ))}
+          </ol>
+        )}
       </div>
 
       <div

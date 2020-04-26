@@ -10,7 +10,11 @@ module.exports = (imports) => {
     import Hero from '../src/layouts/page/Hero'
 
     // ProjectBuilder Sections
-    ${imports.map(({ componentName, filePath }) => `import ${componentName} from '${filePath}';`).join(`\n`)}
+    ${imports
+      .map(
+        ({componentName, filePath}) => `import ${componentName} from '${filePath}';`
+      )
+      .join(`\n`)}
 
 
     const Project = ({ pageContext }) => {
@@ -54,13 +58,15 @@ module.exports = (imports) => {
 
           {
             layouts.map((layout, index) => {
-              ${imports.map(({ componentName, layoutType }) => {
-                return `
+              ${imports
+                .map(({componentName, layoutType}) => {
+                  return `
                   if (layout.fieldGroupName === '${layoutType}') {
                       return <${componentName} {...layout} key={index} id={"section-"+index} uri={uri} />
                   }
                 `
-              }).join(`\n`)}
+                })
+                .join(`\n`)}
             })
           }
 

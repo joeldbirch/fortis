@@ -1,11 +1,11 @@
-import React, { useState, useLayoutEffect } from 'react'
+import React, {useState, useLayoutEffect} from 'react'
 import PropTypes from 'prop-types'
 import useHeaderIntersection from 'hooks/use-header-intersection'
 import useHomeIntersection from 'hooks/use-home-intersection'
-import { Link } from 'gatsby'
-import { Helmet } from 'react-helmet'
-import { isIos } from 'utilities/helpers'
-import { uiFontSize, getInvertedStyles } from 'styles/helpers'
+import {Link} from 'gatsby'
+import {Helmet} from 'react-helmet'
+import {isIos} from 'utilities/helpers'
+import {uiFontSize, getInvertedStyles} from 'styles/helpers'
 import useFreeScroll from 'hooks/use-free-scroll'
 import fixOutline from 'fix-outline'
 import TheWrap from './TheWrap'
@@ -13,7 +13,6 @@ import Menu from './Menu'
 import Main from './TheMain'
 import TheHeader from './TheHeader'
 import TheFooter from './TheFooter'
-
 
 import 'styles/index.scss'
 // import '../../static/styles-dev.css'
@@ -36,7 +35,11 @@ const Layout = ({
   useLayoutEffect(() => {
     if (typeof window !== `undefined`) {
       fixOutline()
-      if (isIos()) document.documentElement.style.setProperty(`--vh`, `${window.innerHeight * 0.01}px`)
+      if (isIos())
+        document.documentElement.style.setProperty(
+          `--vh`,
+          `${window.innerHeight * 0.01}px`
+        )
     }
   }, [])
 
@@ -51,12 +54,11 @@ const Layout = ({
         letter-spacing:-10
         scroll-behavior:smooth
       `}
-
       style={
         freeScroll
           ? {
-            scrollSnapType: `none`,
-          }
+              scrollSnapType: `none`,
+            }
           : {}
       }
       {...props}
@@ -79,7 +81,6 @@ const Layout = ({
             height: 100%;
           }
         `}
-
         </style>
 
         <style>
@@ -89,9 +90,9 @@ const Layout = ({
             transition: opacity 1s !important;
           }
         `}
-
         </style>
-        <body className={`
+        <body
+          className={`
         `}
         />
         <html
@@ -102,13 +103,9 @@ const Layout = ({
         />
 
         <meta name="robots" content="noindex" />
-
       </Helmet>
 
-      <TheHeader
-        id="SiteHeader"
-        headerState={headerState}
-      >
+      <TheHeader id="SiteHeader" headerState={headerState}>
         <Link
           aria-labelledby="siteLogo"
           to="/"
@@ -119,22 +116,24 @@ const Layout = ({
             opacity:0
             pointer-events:auto
             position:relative
-            ${!homePanel.isIntersecting
-            ? `
+            ${
+              !homePanel.isIntersecting
+                ? `
                   opacity:100
                   transition-delay:500
                   transition-duration:700
                   transition-property:opacity
                 `
-            : ``
+                : ``
             }
           `}
-
           style={{
             marginTop: `-0.45em`,
           }}
         >
-          <span id="siteLogo" className="visually-hidden">Fortis</span>
+          <span id="siteLogo" className="visually-hidden">
+            Fortis
+          </span>
           <svg
             className={`
               display:block
@@ -143,20 +142,19 @@ const Layout = ({
             height="29"
             role="img"
             style={{
-              '--logo-color': headerState.reversed ? `white` : `hsla(0, 0%, 75%, 0.5)`,
+              '--logo-color': headerState.reversed
+                ? `white`
+                : `hsla(0, 0%, 75%, 0.5)`,
               width: `5.5em`,
-
             }}
             width="110"
           >
             <use xlinkHref="/images/logo-fortis-watermark.svg#fortis-logo" />
-
           </svg>
-
         </Link>
-        { AddToHeader && (
-        <div
-          className={`
+        {AddToHeader && (
+          <div
+            className={`
                 @mq-lap--padding-vertical:800
                 @mq-max-palm--text-align:center
                 @mq-palm--padding-left:columns-3-1/2
@@ -167,12 +165,17 @@ const Layout = ({
                 position:absolute
                 width:100
               `}
-          style={getInvertedStyles(headerState.reversed)}
-        >
-          {AddToHeader}
-        </div>
+            style={getInvertedStyles(headerState.reversed)}
+          >
+            {AddToHeader}
+          </div>
         )}
-        <Menu headerReversed={headerState.reversed} toggleHandler={toggleMenu} isOpen={menuOpen} className="pointer-events:auto" />
+        <Menu
+          headerReversed={headerState.reversed}
+          toggleHandler={toggleMenu}
+          isOpen={menuOpen}
+          className="pointer-events:auto"
+        />
       </TheHeader>
 
       <Main
@@ -185,10 +188,10 @@ const Layout = ({
         {children}
       </Main>
 
-      <TheFooter className={`
+      <TheFooter
+        className={`
       `}
       />
-
     </TheWrap>
   )
 }

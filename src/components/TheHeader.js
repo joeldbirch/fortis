@@ -7,16 +7,13 @@ const headerStyles = {
 }
 
 const TheHeader = ({
-  headerState: {
-    reversed,
-    applyBg,
-  },
+  headerState: {reversed, applyBg},
   children,
   className = ``,
   ...props
 }) => (
-    <header
-      className={`
+  <header
+    className={`
       ${className}
       align-items:center
       display:flex
@@ -32,10 +29,10 @@ const TheHeader = ({
       width:100
       z-index:400
     `}
-      {...props}
-    >
-      <div
-        className={`
+    {...props}
+  >
+    <div
+      className={`
           faux-background
           height:100
           margin-horizontal:-50vw
@@ -43,13 +40,19 @@ const TheHeader = ({
           position:absolute
           width:100vw
         `}
-        style={reversed ? headerStyles.reversed : {
-          backgroundColor: applyBg ? `rgba(255, 255, 255, 1)` : `rgba(255, 255, 255, 0)`,
-          transition: `background-color 0.5s 0s`,
-        }}
-      />
-      {children}
-    </header>
-  )
+      style={
+        reversed
+          ? headerStyles.reversed
+          : {
+              backgroundColor: applyBg
+                ? `rgba(255, 255, 255, 1)`
+                : `rgba(255, 255, 255, 0)`,
+              transition: `background-color 0.5s 0s`,
+            }
+      }
+    />
+    {children}
+  </header>
+)
 
 export default TheHeader

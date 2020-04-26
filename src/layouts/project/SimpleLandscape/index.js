@@ -1,1 +1,1 @@
-export { default } from './SimpleLandscape'
+export {default} from './SimpleLandscape'

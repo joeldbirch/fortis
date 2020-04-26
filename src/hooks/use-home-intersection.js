@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import {useState, useEffect, useRef} from 'react'
 
 const useHomeIntersection = function () {
   const timesNotIntersecting = useRef(0)
@@ -20,7 +20,7 @@ const useHomeIntersection = function () {
       threshold: [0, 1],
     }
 
-    const observer = new IntersectionObserver(((entries) => {
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!homePanel.isIntersecting && entry.isIntersecting) {
           timesNotIntersecting.current += 1
@@ -32,7 +32,7 @@ const useHomeIntersection = function () {
           shownCount: timesNotIntersecting.current,
         })
       })
-    }), intersectionConfig)
+    }, intersectionConfig)
 
     homePanelElement && observer.observe(homePanelElement)
 

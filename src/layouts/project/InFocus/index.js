@@ -1,1 +1,1 @@
-export { default } from './InFocus'
+export {default} from './InFocus'

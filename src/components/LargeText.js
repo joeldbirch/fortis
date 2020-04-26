@@ -1,10 +1,17 @@
 import React from 'react'
-import { cleanWpContent } from 'utilities/helpers'
+import {cleanWpContent} from 'utilities/helpers'
 
 const defaultMaxWidth = {'--max-width': `21em`}
 
-export default ({className=``, styles=defaultMaxWidth, children=null, ...props}) => {
-  return !children ? `` : (
+export default ({
+  className = ``,
+  styles = defaultMaxWidth,
+  children = null,
+  ...props
+}) => {
+  return !children ? (
+    ``
+  ) : (
     <div
       dangerouslySetInnerHTML={{__html: cleanWpContent(children)}}
       className={`

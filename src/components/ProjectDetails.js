@@ -2,16 +2,13 @@ import React from 'react'
 import Logo from './BaseLogo'
 import MultiFormatImage from './MultiFormatImage'
 import HeadlightsLayout from './HeadlightsLayout'
-import { cols, mq } from 'utilities/helpers'
+import {cols, mq} from 'utilities/helpers'
 
 const ProjectDetails = ({
   title,
-  id=null,
+  id = null,
   detailsTable: {
-    mediaDetails: {
-      suburbImage,
-      logo,
-    },
+    mediaDetails: {suburbImage, logo},
     textualDetails: {
       buildingType,
       fullAddress,
@@ -20,12 +17,8 @@ const ProjectDetails = ({
       enquiryLink,
     },
   },
-  firstContent: {
-    text: firstText,
-    image: firstImage,
-  },
+  firstContent: {text: firstText, image: firstImage},
 }) => {
-
   return (
     <section
       className={`
@@ -44,12 +37,12 @@ const ProjectDetails = ({
           @mq-palm--display:flex
         `}
       >
-
-        <div className={`
+        <div
+          className={`
           @mq-palm--padding-right:columns-1
           @mq-palm--width:50
-        `}>
-
+        `}
+        >
           <Logo
             logo={logo}
             alt={`${title}`}
@@ -62,19 +55,24 @@ const ProjectDetails = ({
             `}
           />
 
-          <div className={`
+          <div
+            className={`
             @mq-desk--padding-bottom:columns-1
             @mq-lap--padding-bottom:columns-1-1/2
             @mq-palm--margin-top:columns-0-1/2
             @mq-palm--padding-bottom:columns-1
             margin-top:800
-          `}>
-            <p className={`
+          `}
+          >
+            <p
+              className={`
               meta
               font-size:300
               margin-bottom:400
-            `}>
-              <span>{fullAddress}</span><br />
+            `}
+            >
+              <span>{fullAddress}</span>
+              <br />
               <span>{status}</span> / <span>{buildingType}</span>
             </p>
 
@@ -87,31 +85,33 @@ const ProjectDetails = ({
                 s-editable
               `}
             />
-            {
-              enquiryLink && (
-                <p className={`
+            {enquiryLink && (
+              <p
+                className={`
                   @mq-palm--margin-top:columns-0-1/2
                   margin-top:800
-                `}>
-                  <a
-                    href={enquiryLink}
-                    className={`
+                `}
+              >
+                <a
+                  href={enquiryLink}
+                  className={`
                       btn
                       display:inline-block
                     `}
-                  >
-                    Enquire
-                  </a>
-                </p>
-              )
-            }
+                >
+                  Enquire
+                </a>
+              </p>
+            )}
           </div>
         </div>
 
-        <div className={`
+        <div
+          className={`
           @mq-palm--padding-left:columns-1
           @mq-palm--width:50
-        `}>
+        `}
+        >
           <MultiFormatImage
             image={suburbImage}
             className={`
@@ -133,18 +133,17 @@ const ProjectDetails = ({
           @mq-palm--padding-top:columns-0-1/2
         `}
         //render prop slots for content
-        slotA={(
+        slotA={
           <div
-          className={`
+            className={`
             s-editable
             @mq-palm--max-width:small-column
             rhythm-fix-after
           `}
-          dangerouslySetInnerHTML={{__html: firstText}}
-        />
-        )}
-
-        slotB={(
+            dangerouslySetInnerHTML={{__html: firstText}}
+          />
+        }
+        slotB={
           <MultiFormatImage
             image={firstImage}
             className={`
@@ -156,7 +155,7 @@ const ProjectDetails = ({
               (min-width: ${mq.palm}) ${cols(6)}vw
             `}
           />
-        )}
+        }
       />
     </section>
   )

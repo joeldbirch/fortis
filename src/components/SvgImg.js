@@ -1,8 +1,7 @@
-import React, {Component, createRef } from 'react'
-import { fetchSvgInline } from '../utilities/helpers'
+import React, {Component, createRef} from 'react'
+import {fetchSvgInline} from '../utilities/helpers'
 
 export default class extends Component {
-
   constructor({props}) {
     super(props)
     this.imgRef = createRef()
@@ -16,7 +15,7 @@ export default class extends Component {
   }
 
   svgLoaded(e) {
-    return (window !== `undefined` && `fetch` in window)
+    return window !== `undefined` && `fetch` in window
       ? fetchSvgInline(e.currentTarget)
       : true
   }

@@ -1,9 +1,9 @@
-import { useStaticQuery, graphql } from "gatsby"
+import {useStaticQuery, graphql} from 'gatsby'
 
-import { siteURL } from '../../globals'
+import {siteURL} from '../../globals'
 
 export const useMenuData = () => {
-  const { wpgraphql } = useStaticQuery(
+  const {wpgraphql} = useStaticQuery(
     graphql`
       fragment MenuItem on WPGraphQL_MenuItem {
         id

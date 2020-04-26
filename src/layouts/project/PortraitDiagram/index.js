@@ -1,1 +1,1 @@
-export { default } from './PortraitDiagram'
+export {default} from './PortraitDiagram'

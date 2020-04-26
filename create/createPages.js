@@ -1,21 +1,21 @@
 const _uniqBy = require('lodash.uniqby')
 const _isEmpty = require('lodash.isempty')
 
-const { templateCacheFolder } = require('../globals')
+const {templateCacheFolder} = require('../globals')
 
-const { getAllLayoutsData, createTemplate, createPageWithTemplate } = require('./utils')
+const {
+  getAllLayoutsData,
+  createTemplate,
+  createPageWithTemplate,
+} = require('./utils')
 
 const filePathToComponents = `../src/layouts/page/`
 const layoutMapping = require('./layoutMapping')
 
 const pageTemplate = require.resolve('../src/templates/page')
-const {
-  PageTemplateFragment,
-} = require('../src/templates/page/data')
+const {PageTemplateFragment} = require('../src/templates/page/data')
 
-const {
-  FluidImageFragment,
-} = require('../src/templates/fragments')
+const {FluidImageFragment} = require('../src/templates/fragments')
 
 const GET_PAGES = (layouts) => `
   ${FluidImageFragment}
@@ -48,89 +48,91 @@ let pageNumber = 0
 const itemsPerPage = 1
 
 /**
-* This is the export which Gatbsy will use to process.
-*
-* @param { actions, graphql }
-* @returns {Promise<void>}
-*/
-module.exports = async ({ actions, graphql, reporter }, options) => {
+ * This is the export which Gatbsy will use to process.
+ *
+ * @param { actions, graphql }
+ * @returns {Promise<void>}
+ */
+module.exports = async ({actions, graphql, reporter}, options) => {
   /**
    * Get all layouts data as a concatenated string
    */
   const layoutsData = getAllLayoutsData()
 
   /**
-  * This is the method from Gatsby that we're going
-  * to use to create pages in our static site.
-  */
-  const { createPage } = actions
+   * This is the method from Gatsby that we're going
+   * to use to create pages in our static site.
+   */
+  const {createPage} = actions
 
   /**
-  * Fetch pages method. This accepts variables to alter
-  * the query. The variable `first` controls how many items to
-  * request per fetch and the `after` controls where to start in
-  * the dataset.
-  *
-  * @param variables
-  * @returns {Promise<*>}
-  */
+   * Fetch pages method. This accepts variables to alter
+   * the query. The variable `first` controls how many items to
+   * request per fetch and the `after` controls where to start in
+   * the dataset.
+   *
+   * @param variables
+   * @returns {Promise<*>}
+   */
   const fetchPages = async (variables) =>
     /**
-    * Fetch pages using the GET_PAGES query and the variables passed in.
-    */
-    await graphql(GET_PAGES(layoutsData), variables).then(({ data }) => {
+     * Fetch pages using the GET_PAGES query and the variables passed in.
+     */
+    await graphql(GET_PAGES(layoutsData), variables).then(({data}) => {
       /**
-      * Extract the data from the GraphQL query results
-      */
+       * Extract the data from the GraphQL query results
+       */
       const {
         wpgraphql: {
           pages: {
             nodes,
-            pageInfo: { hasNextPage, endCursor },
+            pageInfo: {hasNextPage, endCursor},
           },
         },
       } = data
 
       /**
-      * Map over the pages for later creation
-      */
-      nodes
-      && nodes.filter(page => page.uri !== `projects`).forEach((pages) => {
-        allPages.push(pages)
-      })
+       * Map over the pages for later creation
+       */
+      nodes &&
+        nodes
+          .filter((page) => page.uri !== `projects`)
+          .forEach((pages) => {
+            allPages.push(pages)
+          })
 
       /**
-      * If there's another page, fetch more
-      * so we can have all the data we need.
-      */
+       * If there's another page, fetch more
+       * so we can have all the data we need.
+       */
       if (hasNextPage) {
         pageNumber++
         reporter.info(`fetch page ${pageNumber} of pages...`)
-        return fetchPages({ first: itemsPerPage, after: endCursor })
+        return fetchPages({first: itemsPerPage, after: endCursor})
       }
 
       /**
-      * Once we're done, return all the pages
-      * so we can create the necessary pages with
-      * all the data on hand.
-      */
+       * Once we're done, return all the pages
+       * so we can create the necessary pages with
+       * all the data on hand.
+       */
       return allPages
     })
 
-    /**
-    * Kick off our `fetchPages` method which will get us all
-    * the pages we need to create individual pages.
-    */
-    await fetchPages({ first: itemsPerPage, after: null }).then((wpPages) => {
-
-      wpPages && wpPages.forEach((page) => {
+  /**
+   * Kick off our `fetchPages` method which will get us all
+   * the pages we need to create individual pages.
+   */
+  await fetchPages({first: itemsPerPage, after: null}).then((wpPages) => {
+    wpPages &&
+      wpPages.forEach((page) => {
         let pagePath = `/${page.uri}/`
 
         /**
-        * If the page is the front page, the page path should not be the uri,
-        * but the root path '/'.
-        */
-        if(page.isFrontPage) {
+         * If the page is the front page, the page path should not be the uri,
+         * but the root path '/'.
+         */
+        if (page.isFrontPage) {
           pagePath = '/'
         }
 
@@ -151,7 +153,7 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
          * there.
          */
 
-        const layouts = page.pageBuilder.layouts.filter(el => {
+        const layouts = page.pageBuilder.layouts.filter((el) => {
           return !_isEmpty(el)
         })
 
@@ -159,7 +161,6 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
 
         if (layouts && layouts.length > 0) {
           const UniqueLayouts = _uniqBy(layouts, `fieldGroupName`)
-
 
           mappedLayouts = UniqueLayouts.map((layout) => {
             return {
@@ -180,10 +181,8 @@ module.exports = async ({ actions, graphql, reporter }, options) => {
           createPage,
           reporter,
         })
-
       })
 
-      reporter.info(`# -----> PAGES TOTAL: ${wpPages.length}`)
-    })
-
+    reporter.info(`# -----> PAGES TOTAL: ${wpPages.length}`)
+  })
 }

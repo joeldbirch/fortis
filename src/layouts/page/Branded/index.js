@@ -1,1 +1,1 @@
-export { default } from './Branded'
+export {default} from './Branded'

@@ -2,29 +2,29 @@ import React from 'react'
 import Flickity from 'react-flickity-component'
 import Divider from 'components/DividerHorizontal'
 import CarouselSlide from 'components/CarouselSlide'
-import { path } from 'components/ArrowRounded'
-import { uiFontSize } from 'styles/helpers'
+import {path} from 'components/ArrowRounded'
+import {uiFontSize} from 'styles/helpers'
 import 'flickity/css/flickity.css'
 import 'styles/_flickity-overrides.scss'
 
-const RelatedContent = ({
-  similarProjects,
-  className=``,
-}) => {
-
-  const slides = similarProjects?.filter(similar => similar.project).map(similar => similar.project )
+const RelatedContent = ({similarProjects, className = ``}) => {
+  const slides = similarProjects
+    ?.filter((similar) => similar.project)
+    .map((similar) => similar.project)
   if (!slides) return ``
 
   return (
-    <div className={`
+    <div
+      className={`
       ${className}
       margin-horizontal:auto
       max-width:container
       padding-horizontal:columns-0-1/2
       position:relative
       width:100
-    `}>
-      <Divider/>
+    `}
+    >
+      <Divider />
       <section
         className={`
           position:relative
@@ -60,16 +60,15 @@ const RelatedContent = ({
             }}
             static={true}
           >
-            {
-              slides.map((slide, index) => (
-                <CarouselSlide
-                  post={slide}
-                  key={index}
-                  style={{
-                    '--width-var-1': `calc(var(--site-column) * 5.75)`,
-                    '--width-var-2': `calc(var(--site-column) * 3.667)`,
-                  }}
-                  className={`
+            {slides.map((slide, index) => (
+              <CarouselSlide
+                post={slide}
+                key={index}
+                style={{
+                  '--width-var-1': `calc(var(--site-column) * 5.75)`,
+                  '--width-var-2': `calc(var(--site-column) * 3.667)`,
+                }}
+                className={`
                     @mq-desk--margin-right:columns-0-1/2
                     @mq-desk--width:columns-3
                     @mq-lap--margin-right:columns-0-1/2
@@ -77,9 +76,8 @@ const RelatedContent = ({
                     margin-right:columns-0-1/2
                     width:var-1
                   `}
-                />
-              ))
-            }
+              />
+            ))}
           </Flickity>
         </div>
       </section>

@@ -1,16 +1,15 @@
-import React, { useState, useLayoutEffect } from 'react'
-import { Helmet } from 'react-helmet'
+import React, {useState, useLayoutEffect} from 'react'
+import {Helmet} from 'react-helmet'
 import ProjectEntry from 'components/ProjectEntry'
 import Divider from 'components/DividerHorizontal'
 import SectionHeader from 'components/SectionHeader'
 import ProjectsFilter from 'components/FilterForm'
-import { uiFontSize } from 'styles/helpers'
+import {uiFontSize} from 'styles/helpers'
 
-const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
-
+const ProjectPreviews = ({posts, tags: {nodes: tags}, id = null}) => {
   const [computedSizes, setComputedSizes] = useState({})
 
-  useLayoutEffect(function(){
+  useLayoutEffect(function () {
     setComputedSizes({
       projectFilterHeader: {
         height: document.getElementById(`ProjectFilterHeader`)?.offsetHeight,
@@ -23,19 +22,19 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
 
   const [shownPosts, setShownPosts] = useState(posts)
 
-  const changeShownPosts = (mustHaveIds=[]) => {
+  const changeShownPosts = (mustHaveIds = []) => {
     const newlyShownPosts =
       mustHaveIds.length < 1
-      ? posts
-      : posts.filter(post => {
-        const ids = post.projectTags.nodes.map(tag => tag.id)
-        return mustHaveIds.every(id => ids.includes(id))
-      })
+        ? posts
+        : posts.filter((post) => {
+            const ids = post.projectTags.nodes.map((tag) => tag.id)
+            return mustHaveIds.every((id) => ids.includes(id))
+          })
     setShownPosts(newlyShownPosts)
   }
 
   const isShown = ({id}) => {
-    return shownPosts.map(post => post.id).includes(id)
+    return shownPosts.map((post) => post.id).includes(id)
   }
 
   const filterReset = () => setShownPosts(posts)
@@ -68,9 +67,9 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
           scroll-snap-stop:always
         `}
       >
-        { !tags
-          ? ``
-          :
+        {!tags ? (
+          ``
+        ) : (
           <>
             <Divider className={`js-free-scroll`} noMargin={true} />
             <SectionHeader
@@ -78,8 +77,8 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
               absolute={false}
               className={`
                 @mq-max-palm--text-align:center
-              `}>
-
+              `}
+            >
               <ProjectsFilter
                 items={tags}
                 update={changeShownPosts}
@@ -91,8 +90,7 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
               />
             </SectionHeader>
           </>
-        }
-
+        )}
       </div>
 
       <div
@@ -105,14 +103,15 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
           '--max-height-var-1': `var(--project-image-height)`,
         }}
       >
-        {posts && posts.map((post) => (
-          <ProjectEntry
-            key={post.id}
-            post={post}
-            imageClasses={`
+        {posts &&
+          posts.map((post) => (
+            <ProjectEntry
+              key={post.id}
+              post={post}
+              imageClasses={`
               max-height:var-1
             `}
-            className={`
+              className={`
               overflow:hidden
               transition-duration:700
               max-width:container
@@ -123,9 +122,8 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
                   : `max-height:0 opacity:0`
               }
             `}
-          />
-        ))}
-
+            />
+          ))}
 
         <div
           className={`
@@ -149,10 +147,7 @@ const ProjectPreviews = ({posts, tags:{ nodes: tags}, id=null}) => {
             No projects fit your chosen filter.
           </p>
         </div>
-
       </div>
-
-
     </section>
   )
 }

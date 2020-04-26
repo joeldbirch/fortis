@@ -1,1 +1,1 @@
-export { default } from './EnquiryForm'
+export {default} from './EnquiryForm'

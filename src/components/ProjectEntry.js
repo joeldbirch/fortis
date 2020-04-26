@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import {Link} from 'gatsby'
 import FluidImage from './FluidImage'
-import { projectsURI } from '../../globals'
-import { uiFontSize } from 'styles/helpers'
+import {projectsURI} from '../../globals'
+import {uiFontSize} from 'styles/helpers'
 
 const ProjectEntry = ({
   post: {
@@ -13,20 +13,15 @@ const ProjectEntry = ({
     title,
     projectDetails: {
       detailsTable: {
-        textualDetails: {
-          buildingType,
-          suburb,
-          status,
-        },
+        textualDetails: {buildingType, suburb, status},
       },
     },
   },
   showNote,
-  className=``,
-  imageClasses=``,
+  className = ``,
+  imageClasses = ``,
   ...props
 }) => {
-
   return (
     <article
       aria-labelledby={`project-preview-${projectId}`}
@@ -55,14 +50,16 @@ const ProjectEntry = ({
           `}
         />
 
-        <div className={`
+        <div
+          className={`
           js-project-header
           @mq-palm--padding-horizontal:columns-0-1/2
           background-color:neutral-0
           max-width:container
           margin-horizontal:auto
           width:100
-        `}>
+        `}
+        >
           <header
             className={`
               @mq-widepalm--grid-template-columns:var-2
@@ -92,10 +89,14 @@ const ProjectEntry = ({
                   `}
                   to={`${projectsURI}/${uri}/`}
                 >
-                  <span className={`
+                  <span
+                    className={`
                     custom-underline
                     position:relative
-                  `}>{title}</span>
+                  `}
+                  >
+                    {title}
+                  </span>
                 </Link>
               </h2>
               <span
@@ -107,18 +108,22 @@ const ProjectEntry = ({
             </div>
 
             <div>
-              <span>{buildingType}</span><br/>
+              <span>{buildingType}</span>
+              <br />
               <span>{status}</span>
             </div>
 
-            { !showNote
-              ? ``
-              : <p
-                  className={`
+            {!showNote ? (
+              ``
+            ) : (
+              <p
+                className={`
                     handwritten
                   `}
-                >{note}</p>
-            }
+              >
+                {note}
+              </p>
+            )}
           </header>
         </div>
       </div>
