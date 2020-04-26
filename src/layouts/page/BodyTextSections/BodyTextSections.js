@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import {cols, mq} from 'utilities/helpers'
 import {cleanWpContent} from 'utilities/helpers'
 import Divider from 'components/DividerHorizontal'
 
