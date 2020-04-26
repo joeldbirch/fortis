@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import ProjectEntry from 'components/ProjectEntry'
 import ProjectsFilter from 'components/FilterForm'
+import Divider from 'components/DividerHorizontal'
 import {uiFontSize} from 'styles/helpers'
 
 const ProjectPreviews = ({posts, tags: {nodes: tags}, id = null}) => {
@@ -45,6 +46,7 @@ const ProjectPreviews = ({posts, tags: {nodes: tags}, id = null}) => {
           ``
         ) : (
           <>
+            <Divider className={`js-free-scroll`} />
             <header
               className={`
                   @mq-max-palm--text-align:center
