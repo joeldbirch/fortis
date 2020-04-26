@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import HeroFullScreenContent from 'components/HeroFullScreenContent'
+import useFirstIntersection from 'hooks/use-first-intersection'
 
 const styles = {
   root: `
@@ -21,6 +22,10 @@ const styles = {
 }
 
 const Branded = ({image, video = null, id = null}) => {
+  const [firstPanel, initFirstIntersection] = useFirstIntersection()
+
+  useEffect(initFirstIntersection, [])
+
   return (
     <section className={` ${styles.root} `} id={id}>
       <HeroFullScreenContent
@@ -44,6 +49,10 @@ const Branded = ({image, video = null, id = null}) => {
         <img
           className={`
             ${styles.watermark}
+            ${firstPanel.isIntersecting ? `opacity:100` : `opacity:0`}
+            transition-property:opacity
+            transition-duration:1000
+            transition-delay:500
           `}
           src="/images/logo-fortis-watermark.svg"
           alt="Fortis"
