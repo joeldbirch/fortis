@@ -95,10 +95,7 @@ const Layout = ({
           }
         `}
         </style>
-        <body
-          className={`
-        `}
-        />
+
         <html
           className={`
           @mq-lap--font-size:400

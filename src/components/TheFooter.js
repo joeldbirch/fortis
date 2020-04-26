@@ -115,8 +115,11 @@ export default ({className = ``, ...props}) => {
             `}
           >
             &copy; Fortis {year}
-            <br />
-            <Link to="/privacy">Privacy policy</Link>
+            {` `}
+            <br className={`display:none @mq-desk--display:block`} />
+            <Link to="/privacy-policy" className={`white-space:no-wrap anchor-base`}>
+              Privacy policy
+            </Link>
           </p>
         </div>
       </div>
