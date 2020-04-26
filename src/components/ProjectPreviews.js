@@ -1,25 +1,10 @@
-import React, {useState, useLayoutEffect} from 'react'
-import {Helmet} from 'react-helmet'
+import React, {useState} from 'react'
 import ProjectEntry from 'components/ProjectEntry'
 import Divider from 'components/DividerHorizontal'
-import SectionHeader from 'components/SectionHeader'
 import ProjectsFilter from 'components/FilterForm'
 import {uiFontSize} from 'styles/helpers'
 
 const ProjectPreviews = ({posts, tags: {nodes: tags}, id = null}) => {
-  const [computedSizes, setComputedSizes] = useState({})
-
-  useLayoutEffect(function () {
-    setComputedSizes({
-      projectFilterHeader: {
-        height: document.getElementById(`ProjectFilterHeader`)?.offsetHeight,
-      },
-      projectHeader: {
-        height: document.querySelector(`.js-project-header`)?.offsetHeight,
-      },
-    })
-  }, [])
-
   const [shownPosts, setShownPosts] = useState(posts)
 
   const changeShownPosts = (mustHaveIds = []) => {
@@ -42,21 +27,12 @@ const ProjectPreviews = ({posts, tags: {nodes: tags}, id = null}) => {
   return (
     <section
       className={`
-        @mq-max-palm--padding-horizontal:columns-0-1/2
         js-contrast-ignore
         width:100
+        grid-guide
       `}
       id={id}
     >
-      <Helmet>
-        <style>{`
-          :root {
-            --project-header-height: ${computedSizes.projectHeader?.height}px;
-            --project-filter-height: ${computedSizes.projectFilterHeader?.height}px;
-            --project-image-height: calc(var(--vh, 1vh) * 100 - var(--project-header-height) - var(--project-filter-height));
-          }
-        `}</style>
-      </Helmet>
       <div
         className={`
           js-contrast
@@ -71,24 +47,42 @@ const ProjectPreviews = ({posts, tags: {nodes: tags}, id = null}) => {
           ``
         ) : (
           <>
-            <Divider className={`js-free-scroll`} noMargin={true} />
-            <SectionHeader
-              id="ProjectFilterHeader"
-              absolute={false}
+            <header
               className={`
-                @mq-max-palm--text-align:center
-              `}
-            >
-              <ProjectsFilter
-                items={tags}
-                update={changeShownPosts}
-                onReset={filterReset}
-                className={`
-                  padding-top:1000
+                  @mq-max-palm--text-align:center
+                  @mq-bigdesk--margin-horizontal:auto
                   position:relative
+                  margin-horizontal:auto
+                  max-width:container
+                  padding-vertical:600
+                  @mq-lap--padding-vertical:800
+                  pointer-events:none
+                  pos-top-left:0
+                  width:100
+                  z-index:300
                 `}
-              />
-            </SectionHeader>
+              id="ProjectFilterHeader"
+            >
+              <div
+                className={`
+                    @mq-max-palm--text-align:center
+                    @mq-palm--padding-left:columns-3-1/2
+                    @mq-palm--padding-right:columns-1-1/2
+                    padding-horizontal:columns-0-1/2
+                    width:100
+                  `}
+              >
+                <ProjectsFilter
+                  items={tags}
+                  update={changeShownPosts}
+                  onReset={filterReset}
+                  className={`
+                    padding-top:1000
+                    position:relative
+                  `}
+                />
+              </div>
+            </header>
           </>
         )}
       </div>
@@ -99,9 +93,6 @@ const ProjectPreviews = ({posts, tags: {nodes: tags}, id = null}) => {
           overflow:hidden
           position:relative
         `}
-        style={{
-          '--max-height-var-1': `var(--project-image-height)`,
-        }}
       >
         {posts &&
           posts.map((post) => (

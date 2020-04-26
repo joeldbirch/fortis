@@ -1,10 +1,16 @@
 import React from 'react'
 
-export default ({className = ``, bottom, noMargin = false, ...props}) => {
+export default ({
+  className = ``,
+  bottom,
+  noMargin = false,
+  inside = false,
+  ...props
+}) => {
   return (
     <div
       style={{
-        marginTop: `-1px`,
+        marginTop: inside ? `0` : `-1px`,
       }}
       className={`
         ${className}
