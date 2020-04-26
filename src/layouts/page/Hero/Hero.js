@@ -56,7 +56,7 @@ const Hero = ({
               margin-horizontal:auto
               max-width:container
               padding-horizontal:columns-0-1/2
-              padding-top:columns-0-1/2
+              padding-top:600
               @mq-lap--padding-top:800
               pointer-events:none
               pos-left-right:0

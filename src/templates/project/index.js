@@ -40,6 +40,7 @@ module.exports = (imports) => {
             font-size:300
             font-weight:400
           ">{title}</h1>}
+          uri={uri}
         >
           <SEO title={title + ' | project'} />
 
@@ -48,6 +49,7 @@ module.exports = (imports) => {
             image={projectDetails.header.image}
             video={projectDetails.header.video}
             nextSection="#project-details"
+            id="section-0"
           />
 
           <ProjectDetails

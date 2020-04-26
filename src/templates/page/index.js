@@ -43,6 +43,7 @@ const Page = ({ pageContext }) => {
             font-weight:400
           ">{title}</h1>
       }
+      uri={uri}
     >
       <SEO title={title} />
       {

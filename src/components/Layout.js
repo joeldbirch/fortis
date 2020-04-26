@@ -1,7 +1,7 @@
-import React, {useState, useLayoutEffect} from 'react'
+import React, {useState, useLayoutEffect, useEffect} from 'react'
 import PropTypes from 'prop-types'
 import useHeaderIntersection from 'hooks/use-header-intersection'
-import useHomeIntersection from 'hooks/use-home-intersection'
+import useFirstIntersection from 'hooks/use-first-intersection'
 import {Link} from 'gatsby'
 import {Helmet} from 'react-helmet'
 import {isIos} from 'utilities/helpers'
@@ -24,12 +24,16 @@ const Layout = ({
   AddToHeader,
   overflowY = `overflow-y:scroll`,
   scrollStrict = false,
+  uri = ``,
   ...props
 }) => {
   const [menuOpen, toggleMenu] = useState(false)
   const [headerState] = useHeaderIntersection()
-  const homePanel = useHomeIntersection()
+  const [firstPanel, initFirstSection] = useFirstIntersection()
   const [freeScroll, initFreeScroll] = useFreeScroll()
+
+  useEffect(initFirstSection, [uri])
+
   useLayoutEffect(initFreeScroll, [])
 
   useLayoutEffect(() => {
@@ -117,7 +121,7 @@ const Layout = ({
             pointer-events:auto
             position:relative
             ${
-              !homePanel.isIntersecting
+              !firstPanel.isIntersecting || uri !== `home`
                 ? `
                   opacity:100
                   transition-delay:500
@@ -144,7 +148,9 @@ const Layout = ({
             style={{
               '--logo-color': headerState.reversed
                 ? `white`
-                : `hsla(0, 0%, 75%, 0.5)`,
+                : firstPanel.isIntersecting
+                ? `currentColor`
+                : `hsla(0, 0%, 85%, 0.85)`,
               width: `5.5em`,
             }}
             width="110"

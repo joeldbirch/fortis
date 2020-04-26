@@ -18,7 +18,7 @@ $hu-background-color-modules: (
 
 $jb-colors: hu-append((
   contrast: (
-    contrast: unquote("var(--color-contrast, currentColor)"),
+    contrast: unquote("var(--color-contrast, white)"),
   ),
   neutral: hu-append(
     hu-get($hu-colors, "neutral"),
