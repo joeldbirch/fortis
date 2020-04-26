@@ -4,9 +4,9 @@ import SEO from 'components/SEO'
 import FluidImage from 'components/FluidImage'
 import ScrollPrompt from 'components/ScrollPrompt'
 import PageHeader from 'components/PageHeader'
-import NewsOverview from 'layouts/page/NewsOverview'
 import {useNewsData} from 'hooks/use-news-data'
 import {cleanWpContent, noOrphans} from 'utilities/helpers'
+import RelatedPosts from 'components/RelatedPosts'
 
 const Post = ({pageContext}) => {
   const {
@@ -18,6 +18,7 @@ const Post = ({pageContext}) => {
       content,
       featuredImage,
       uri,
+      relatedPosts: {relatedPostsList},
     },
   } = pageContext
 
@@ -152,10 +153,10 @@ const Post = ({pageContext}) => {
           />
         </div>
 
-        <ScrollPrompt to="#overview" />
+        {relatedPostsList ? <ScrollPrompt to="#overview" /> : ``}
       </div>
 
-      <NewsOverview showHeading={false} id="overview" />
+      {relatedPostsList ? <RelatedPosts previews={relatedPostsList} /> : ``}
     </Layout>
   )
 }

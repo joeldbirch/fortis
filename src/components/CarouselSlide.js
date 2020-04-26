@@ -1,21 +1,14 @@
 import React from 'react'
 import {Link} from 'gatsby'
 import FluidImage from './FluidImage'
-import {projectsURI} from '../../globals'
 import {cols, mq} from 'utilities/helpers'
 
 const CarouselSlide = ({
-  post: {
-    uri,
-    featuredImage,
-    id,
-    title,
-    projectDetails: {
-      detailsTable: {
-        textualDetails: {buildingType, suburb},
-      },
-    },
-  },
+  link = null,
+  title = ``,
+  subtitle = ``,
+  image = null,
+  id = ``,
   className = ``,
   ...props
 }) => {
@@ -34,7 +27,7 @@ const CarouselSlide = ({
         `}
       >
         <FluidImage
-          image={featuredImage}
+          image={image}
           className={`
             @mq-palm--height:100
           `}
@@ -58,16 +51,16 @@ const CarouselSlide = ({
                   font-size:400
                   font-weight:400
                 `}
-                id={`project-preview-${id}`}
+                id={`post-preview-${id}`}
               >
                 <Link
-                  aria-labelledby={`project-preview-${id}`}
+                  aria-labelledby={`post-preview-${id}`}
                   className={`
                     &::before--hit-area-xy-0
                     &::before:content
                     color:inherit
                   `}
-                  to={`${projectsURI}/${uri}/`}
+                  to={link}
                 >
                   <span
                     className={`
@@ -76,14 +69,14 @@ const CarouselSlide = ({
                     text-decoration:underline
                   `}
                   >
-                    {title} — <span>{suburb}</span>
+                    {title}
                   </span>
                 </Link>
               </h2>
             </div>
 
             <div>
-              <span>{buildingType}</span>
+              <span>{subtitle}</span>
               <br />
             </div>
           </header>

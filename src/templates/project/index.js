@@ -6,7 +6,7 @@ module.exports = (imports) => {
     import Layout from '../src/components/Layout'
     import SEO from '../src/components/SEO'
     import ProjectDetails from '../src/components/ProjectDetails'
-    import RelatedContent from '../src/components/RelatedContent'
+    import RelatedProjects from '../src/components/RelatedProjects'
     import Hero from '../src/layouts/page/Hero'
 
     // ProjectBuilder Sections
@@ -25,7 +25,7 @@ module.exports = (imports) => {
           featuredImage,
           projectDetails,
           projectBuilder,
-          relatedContent,
+          relatedContent: {similarProjects},
           uri,
         },
       } = pageContext
@@ -72,8 +72,8 @@ module.exports = (imports) => {
             })
           }
 
-          <RelatedContent
-            {...relatedContent}
+          <RelatedProjects
+            previews={similarProjects}
           />
 
         </Layout>

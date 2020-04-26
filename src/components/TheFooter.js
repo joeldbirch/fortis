@@ -3,6 +3,7 @@ import Divider from 'components/DividerHorizontal'
 import NewsletterForm from 'components/NewsletterForm'
 import {getCurrentYear} from 'utilities/helpers'
 import useGlobalContent from 'hooks/use-global-content'
+import {Link} from 'gatsby'
 
 const styles = {
   root: `
@@ -95,7 +96,8 @@ export default ({className = ``, ...props}) => {
               socialMedia.map(({name, url}, index) => (
                 <li key={index}>
                   {` `}
-                  <a href={url}>{name}</a>{` `}
+                  <a href={url}>{name}</a>
+                  {` `}
                 </li>
               ))}
           </ul>
@@ -113,6 +115,8 @@ export default ({className = ``, ...props}) => {
             `}
           >
             &copy; Fortis {year}
+            <br />
+            <Link to="/privacy">Privacy policy</Link>
           </p>
         </div>
       </div>

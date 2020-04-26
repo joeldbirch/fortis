@@ -7,22 +7,18 @@ import {uiFontSize} from 'styles/helpers'
 import 'flickity/css/flickity.css'
 import 'styles/_flickity-overrides.scss'
 
-const RelatedContent = ({similarProjects, className = ``}) => {
-  const slides = similarProjects
-    ?.filter((similar) => similar.project)
-    .map((similar) => similar.project)
-  if (!slides) return ``
+const CarouselSection = ({slideData = [], title = `Related`}) => {
+  if (slideData.length < 1) return ``
 
   return (
     <div
       className={`
-      ${className}
-      margin-horizontal:auto
-      max-width:container
-      padding-horizontal:columns-0-1/2
-      position:relative
-      width:100
-    `}
+        margin-horizontal:auto
+        max-width:container
+        padding-horizontal:columns-0-1/2
+        position:relative
+        width:100
+      `}
     >
       <Divider />
       <section
@@ -37,7 +33,7 @@ const RelatedContent = ({similarProjects, className = ``}) => {
             margin-top:600
           `}
         >
-          Similar projects
+          {title}
         </h2>
 
         <div
@@ -60,10 +56,9 @@ const RelatedContent = ({similarProjects, className = ``}) => {
             }}
             static={true}
           >
-            {slides.map((slide, index) => (
+            {slideData.map((data) => (
               <CarouselSlide
-                post={slide}
-                key={index}
+                {...data}
                 style={{
                   '--width-var-1': `calc(var(--site-column) * 5.75)`,
                   '--width-var-2': `calc(var(--site-column) * 3.667)`,
@@ -85,4 +80,4 @@ const RelatedContent = ({similarProjects, className = ``}) => {
   )
 }
 
-export default RelatedContent
+export default CarouselSection
