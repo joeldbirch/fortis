@@ -49,6 +49,14 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-hubspot`,
+      options: {
+        trackingCode: `6351172`,
+        respectDNT: true,
+        productionOnly: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-polyfill-io`,
       options: {
         features: [
