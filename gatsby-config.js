@@ -20,6 +20,7 @@ module.exports = {
   siteMetadata: {
     title: `Fortis Development Group`,
     description: `Tailoring places to life’s rituals`,
+    siteUrl: `https://www.fortis.com.au`,
   },
   plugins: [
     `gatsby-plugin-sitemap`,
