@@ -22,6 +22,7 @@ module.exports = {
     description: `Tailoring places to life’s rituals`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-eslint`,
       options: {
