@@ -1,19 +1,19 @@
 http://www.fortis.com.au/* https://www.fortis.com.au/:splat 301!
 https://fortis-dg.netlify.app/* https://www.fortis.com.au/:splat 301!
 
-/pallashouse-melbourne  /projects/pallashouse-melbourne
-/clifton-hill /projects/clifton-hill
-/eastgrove  /projects/eastgrove
-/balmoral /projects/balmoral
-/232wattletree  /projects/232wattletree
 /brighton /projects/brighton
-/bowersouthyarra  /projects/bowersouthyarra
-/odeoftoorak  /projects/odeoftoorak
-/moorebank  /projects/moorebank
-/belle-residences /projects/belle-residences
-/alchemy  /projects/alchemy
-/neutral-bay  /projects/neutral-bay
-/rosebay-carlisle /projects/rosebay-carlisle
-/rosebay-benson /projects/rosebay-benson
-/marmont  /projects/marmont
-/pallashouse-sydney /projects/pallashouse-sydney
+/neutral-bay /projects/neutral-bay
+/guilfoyle-sydney /projects/guilfoyle
+/rosebay-benson /projects/rose-bay-the-benson
+/ode /projects/toorak-ode
+/odeoftoorak /projects/toorak-ode
+/pallashouse-sydney /projects/pallas-house-sydney
+/balmoral /projects/glen-iris-balmoral
+/marmont /projects/double-bay-marmont
+/bowersouthyarra /projects/south-yarra-bower
+/rosebay-carlisle /projects/rose-bay
+/232wattletree /projects/malvern-232-wattletree
+/eastgrove /projects/glen-iris-east-grove
+/clifton-hill /projects/clifton-hill-the-foundry
+/pallashouse-melbourne /projects/pallas-house-melbourne
+/moorebank /projects/moore-lakes
