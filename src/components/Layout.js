@@ -102,8 +102,6 @@ const Layout = ({
         `}
           lang="en"
         />
-
-        <meta name="robots" content="noindex" />
       </Helmet>
 
       <TheHeader id="SiteHeader" headerState={headerState}>
