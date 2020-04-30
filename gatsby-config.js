@@ -19,7 +19,7 @@ console.log(`This WordPress Endpoint is used: '${process.env.WORDPRESS_URL}'`)
 module.exports = {
   siteMetadata: {
     title: `Fortis Development Group`,
-    description: `Tailoring places to life’s rituals`,
+    description: `A highly personal approach to development`,
     siteUrl: `https://www.fortis.com.au`,
   },
   plugins: [
