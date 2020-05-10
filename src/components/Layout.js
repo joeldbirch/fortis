@@ -70,6 +70,10 @@ const Layout = ({
     >
       <Helmet>
         <link rel="preconnect" href="https://polyfill.io" />
+        <link rel="dns-prefetch" href="https://vimeocdn.com" />
+        <link rel="dns-prefetch" href="https://facebook.net" />
+        <link rel="dns-prefetch" href="https://js.hs-scripts.com" />
+        <link rel="dns-prefetch" href="https://js.hs-banner.com" />
         <style>
           {`
           ${`/*
