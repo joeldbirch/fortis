@@ -7,7 +7,7 @@ import {uiFontSize} from 'styles/helpers'
 import 'flickity/css/flickity.css'
 import 'styles/_flickity-overrides.scss'
 
-const CarouselSection = ({slideData = [], title = `Related`}) => {
+const CarouselSection = ({slideData = [], title = `Related`, ...props}) => {
   if (slideData.length < 1) return ``
 
   return (
@@ -19,6 +19,7 @@ const CarouselSection = ({slideData = [], title = `Related`}) => {
         position:relative
         width:100
       `}
+      {...props}
     >
       <Divider />
       <section
