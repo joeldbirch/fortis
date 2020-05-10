@@ -8,7 +8,7 @@ import {noOrphans} from 'utilities/helpers'
 const NewsEntry = ({
   post: {
     optionalFields: {subheading, note},
-    uri,
+    slug,
     categories,
     id,
     postId,
@@ -72,7 +72,7 @@ const NewsEntry = ({
             color:inherit
             text-decoration:none
           `}
-          to={`${blogURI}/${uri}/`}
+          to={`${blogURI}/${slug}/`}
         >
           <span
             className={`

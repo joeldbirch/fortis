@@ -7,8 +7,12 @@ const {createRemoteFileNode} = require(`gatsby-source-filesystem`)
 
 const getAuthBase64 = (user, pass) =>
   Buffer.from(`${user}:${pass}`).toString(`base64`)
+
 const convertEncodedChars = (text) =>
   text.replace(`&#038;`, `&`).replace(`&amp;`, `&`).replace(`&#8211;`, `–`)
+
+const stripTrailingSlash = (uri) => uri.replace(/\/$/, ``)
+const replaceEmptyWithHome = (uri) => (uri === `` ? `home` : uri)
 
 exports.createPagesStatefully = async ({graphql, actions, reporter}, options) => {
   await createPages({actions, graphql, reporter}, options)
@@ -42,6 +46,18 @@ exports.createResolvers = ({
       },
     })
 
+  const pageResolvers = {
+    title: {
+      resolve: ({title}) => convertEncodedChars(title),
+    },
+    uri: {
+      resolve: ({uri}) => {
+        const stripped = stripTrailingSlash(uri)
+        return replaceEmptyWithHome(stripped)
+      },
+    },
+  }
+
   createResolvers({
     WPGraphQL_MediaItem: {
       imageFile: {
@@ -57,21 +73,9 @@ exports.createResolvers = ({
         resolve: createThumbnailResolver,
       },
     },
-    WPGraphQL_Page: {
-      title: {
-        resolve: (source) => convertEncodedChars(source.title),
-      },
-    },
-    WPGraphQL_Post: {
-      title: {
-        resolve: (source) => convertEncodedChars(source.title),
-      },
-    },
-    WPGraphQL_Project: {
-      title: {
-        resolve: (source) => convertEncodedChars(source.title),
-      },
-    },
+    WPGraphQL_Page: pageResolvers,
+    WPGraphQL_Post: pageResolvers,
+    WPGraphQL_Project: pageResolvers,
   })
 }
 

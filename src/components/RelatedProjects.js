@@ -10,7 +10,7 @@ const RelatedProjects = ({previews = []}) => {
 
   const slideData = slides.map((post) => ({
     key: post.id,
-    link: `${projectsURI}/${post.uri}/`,
+    link: `${projectsURI}/${post.slug}/`,
     title: `${post.title} – ${post.projectDetails.detailsTable.textualDetails.suburb}`,
     subtitle: post.projectDetails.detailsTable.textualDetails.buildingType,
     image: post.featuredImage,

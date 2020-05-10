@@ -70,7 +70,7 @@ module.exports.createPageWithTemplate = ({
   createTemplate({
     templateCacheFolderPath: templateCacheFolder,
     templatePath: pageTemplate,
-    templateName: `${prefix}-${page.uri}`,
+    templateName: `${prefix}-${page.slug}`,
     imports: mappedLayouts,
   }).then(() => {
     /**
@@ -78,7 +78,7 @@ module.exports.createPageWithTemplate = ({
      */
     createPage({
       path: pagePath,
-      component: path.resolve(`${templateCacheFolder}/${prefix}-${page.uri}.js`),
+      component: path.resolve(`${templateCacheFolder}/${prefix}-${page.slug}.js`),
       context: {
         page: page,
       },

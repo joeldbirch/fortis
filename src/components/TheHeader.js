@@ -33,13 +33,13 @@ const TheHeader = ({
   >
     <div
       className={`
-          faux-background
-          height:100
-          margin-horizontal:-50vw
-          pos-left-right:50
-          position:absolute
-          width:100vw
-        `}
+        faux-background
+        height:100
+        margin-horizontal:-50vw
+        pos-left-right:50
+        position:absolute
+        width:100vw
+      `}
       style={
         reversed
           ? headerStyles.reversed

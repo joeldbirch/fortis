@@ -16,6 +16,19 @@ require(`dotenv`).config({
 
 console.log(`This WordPress Endpoint is used: '${process.env.WORDPRESS_URL}'`)
 
+const sourceWP = {
+  url: `${process.env.WORDPRESS_URL}/graphql`,
+  headers:
+    activeEnv === `development`
+      ? {}
+      : {
+          Authorization: `Basic ${getAuthBase64(
+            process.env.AUTH_USERNAME,
+            process.env.AUTH_PASSWORD
+          )}`,
+        },
+}
+
 module.exports = {
   siteMetadata: {
     title: `Fortis Development Group`,
@@ -41,13 +54,7 @@ module.exports = {
       options: {
         typeName: `WPGraphQL`,
         fieldName: `wpgraphql`,
-        url: `${process.env.WORDPRESS_URL}/graphql`,
-        headers: {
-          Authorization: `Basic ${getAuthBase64(
-            process.env.AUTH_USERNAME,
-            process.env.AUTH_PASSWORD
-          )}`,
-        },
+        ...sourceWP,
       },
     },
     {
@@ -97,7 +104,9 @@ module.exports = {
       resolve: `gatsby-plugin-sharp`,
       options: {
         stripMetadata: true,
-        webpQuality: 80,
+        webpQuality: 90,
+        quality: 90,
+        defaultQuality: 90,
       },
     },
     {

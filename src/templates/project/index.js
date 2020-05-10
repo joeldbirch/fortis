@@ -26,7 +26,7 @@ module.exports = (imports) => {
           projectDetails,
           projectBuilder,
           relatedContent: {similarProjects},
-          uri,
+          slug,
         },
       } = pageContext
 
@@ -40,7 +40,7 @@ module.exports = (imports) => {
             font-size:300
             font-weight:400
           ">{title}</h1>}
-          uri={uri}
+          slug={slug}
         >
           <SEO title={title + ' | project'} />
 
@@ -64,7 +64,7 @@ module.exports = (imports) => {
                 .map(({componentName, layoutType}) => {
                   return `
                   if (layout.fieldGroupName === '${layoutType}') {
-                      return <${componentName} {...layout} key={index} id={"section-"+index} uri={uri} />
+                      return <${componentName} {...layout} key={index} id={"section-"+index} slug={slug} />
                   }
                 `
                 })

@@ -33,6 +33,7 @@ const PostTemplateFragment = `
           ... on WPGraphQL_Post {
             id
             uri
+            slug
             title
             featuredImage {
               sourceUrl
@@ -63,6 +64,7 @@ const NewsPreviewFragment = `
     postId
     title
     uri
+    slug
     date
     optionalFields {
       subheading

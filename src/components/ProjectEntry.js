@@ -8,7 +8,7 @@ import {cols, mq} from 'utilities/helpers'
 
 const ProjectEntry = ({
   post: {
-    uri,
+    slug,
     featuredImage,
     projectId,
     title,
@@ -89,7 +89,7 @@ const ProjectEntry = ({
                     &::before:content
                     color:inherit
                   `}
-                to={`${projectsURI}/${uri}/`}
+                to={`${projectsURI}/${slug}/`}
               >
                 <span
                   className={`

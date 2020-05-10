@@ -37,6 +37,7 @@ const GET_POSTS = `
         }
         nodes {
           uri
+          slug
 
           # This is the fragment used for the Post Template
           ...PostTemplateFragment
@@ -161,7 +162,7 @@ module.exports = async ({actions, graphql, reporter}, options) => {
         /**
          * Build post path based of theme blogURI setting.
          */
-        const path = `${blogURI}/${post.uri}/`
+        const path = `${blogURI}/${post.slug}/`
 
         createPage({
           path: path,
@@ -171,7 +172,7 @@ module.exports = async ({actions, graphql, reporter}, options) => {
           },
         })
 
-        reporter.info(`post created:  ${post.uri}`)
+        reporter.info(`post created:  ${post.slug}`)
       })
 
     reporter.info(`# -----> POSTS TOTAL: ${wpPosts.length}`)

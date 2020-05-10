@@ -27,7 +27,7 @@ const styles = {
   `,
 }
 
-const EnquiryForm = ({formIntroText, uri}) => {
+const EnquiryForm = ({formIntroText, slug}) => {
   return (
     <section
       id="enquire"
@@ -61,7 +61,7 @@ const EnquiryForm = ({formIntroText, uri}) => {
           <Field label="Email" type="email" />
           <Field label="Phone" type="tel" />
           <div>
-            <input type="hidden" name="project" value={uri} />
+            <input type="hidden" name="project" value={slug} />
             <div
               className={`
                 padding-top:800

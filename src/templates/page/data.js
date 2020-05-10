@@ -5,6 +5,7 @@ const PageTemplateFragment = (layouts) => `
     pageId
     content
     uri
+    slug
     isFrontPage
     pageBuilder {
       layouts {

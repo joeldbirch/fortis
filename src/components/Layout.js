@@ -25,6 +25,7 @@ const Layout = ({
   overflowY = `overflow-y:scroll`,
   scrollStrict = false,
   uri = ``,
+  slug = ``,
   ...props
 }) => {
   const [menuOpen, toggleMenu] = useState(false)
@@ -32,7 +33,7 @@ const Layout = ({
   const [firstPanel, initFirstSection] = useFirstIntersection()
   const [freeScroll, initFreeScroll] = useFreeScroll()
 
-  useEffect(initFirstSection, [uri])
+  useEffect(initFirstSection, [slug])
 
   useLayoutEffect(initFreeScroll, [])
 
@@ -116,7 +117,7 @@ const Layout = ({
             pointer-events:auto
             position:relative
             ${
-              !firstPanel.isIntersecting || uri !== `home`
+              !firstPanel.isIntersecting || ![`home`, `/`].includes(slug)
                 ? `
                   opacity:100
                   transition-delay:500

@@ -17,7 +17,7 @@ const Post = ({pageContext}) => {
       title,
       content,
       featuredImage,
-      uri,
+      slug,
       relatedPosts: {relatedPostsList},
     },
   } = pageContext
@@ -36,7 +36,7 @@ const Post = ({pageContext}) => {
       className={`
       `}
       AddToHeader={<PageHeader headingTag="p" headingText={siteSectionTitle} />}
-      uri={uri}
+      slug={slug}
     >
       <SEO title={`${title} | News & views`} />
 

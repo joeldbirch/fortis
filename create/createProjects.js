@@ -49,6 +49,7 @@ const GET_PROJECTS = (layouts) => `
       ) {
         nodes {
           uri
+          slug
 
           # This is the fragment used for the Project Template
           ...ProjectTemplateFragment
@@ -147,7 +148,7 @@ module.exports = async ({actions, graphql, reporter}) => {
         /**
          * Build project path based of theme projectsURI setting.
          */
-        const path = `${projectsURI}/${project.uri}/`
+        const path = `${projectsURI}/${project.slug}/`
 
         /**
          * Some projects don't have projectBuilder
@@ -190,7 +191,7 @@ module.exports = async ({actions, graphql, reporter}) => {
           prefix: `project`,
         })
 
-        reporter.info(`project created:  ${project.uri}`)
+        reporter.info(`project created:  ${project.slug}`)
       })
 
     reporter.info(`# -----> PAGES TOTAL: ${wpProjects.length}`)

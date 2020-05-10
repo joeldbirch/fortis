@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import {headerRootMargin as rootMargin} from '../utilities/helpers'
 
-const useFirstIntersection = function (uri) {
+const useFirstIntersection = function () {
   const [firstPanel, setFirstPanel] = useState({
     isIntersecting: false,
   })

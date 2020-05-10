@@ -91,12 +91,14 @@ module.exports = async ({actions, graphql, reporter}, options) => {
         },
       } = data
 
+      const usesCustomTemplate = [`projects`]
+
       /**
        * Map over the pages for later creation
        */
       nodes &&
         nodes
-          .filter((page) => page.uri !== `projects`)
+          .filter(({slug}) => !usesCustomTemplate.includes(slug))
           .forEach((pages) => {
             allPages.push(pages)
           })
@@ -126,10 +128,10 @@ module.exports = async ({actions, graphql, reporter}, options) => {
   await fetchPages({first: itemsPerPage, after: null}).then((wpPages) => {
     wpPages &&
       wpPages.forEach((page) => {
-        let pagePath = `/${page.uri}/`
+        let pagePath = `/${page.slug}/`
 
         /**
-         * If the page is the front page, the page path should not be the uri,
+         * If the page is the front page, the page path should not be the slug,
          * but the root path '/'.
          */
         if (page.isFrontPage) {
@@ -141,7 +143,7 @@ module.exports = async ({actions, graphql, reporter}, options) => {
          */
         page.pageBuilder = page.pageBuilder || {layouts: []}
 
-        if (page.uri === `contact`) {
+        if (page.slug === `contact`) {
           page.pageBuilder.layouts.unshift({
             fieldGroupName: `contactLayout`,
           })

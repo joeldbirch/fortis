@@ -9,6 +9,7 @@ export const useNewsData = () => {
         postId
         title
         uri
+        slug
         date
         content
         optionalFields {

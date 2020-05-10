@@ -13,7 +13,7 @@ ${imports
 
 const Page = ({ pageContext }) => {
   const {
-    page: { title, uri, pageBuilder, isFrontPage },
+    page: { title, slug, uri, pageBuilder, isFrontPage },
   } = pageContext
 
   const { site } = useStaticQuery(
@@ -43,7 +43,7 @@ const Page = ({ pageContext }) => {
             font-weight:400
           ">{title}</h1>
       }
-      uri={uri}
+      slug={slug}
     >
       <SEO title={title} />
       {
@@ -52,7 +52,7 @@ const Page = ({ pageContext }) => {
             .map(
               ({componentName, layoutType}, index) => `
               if (layout.fieldGroupName === '${layoutType}') {
-                  const pageUri = isFrontPage ? "" : uri
+                  const pageUri = isFrontPage ? "" : slug
                   const nextIndex = index + 1
                   const isNotLast = index < layouts.length - 1
                   const nextSection = isNotLast ? "/"+pageUri+"#section-" + nextIndex : null

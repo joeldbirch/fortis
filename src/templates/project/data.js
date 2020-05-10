@@ -92,6 +92,7 @@ const ProjectTemplateFragment = (layouts) => `
           ... on WPGraphQL_Project {
             id
             uri
+            slug
             title
             featuredImage {
               sourceUrl

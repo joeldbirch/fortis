@@ -49,28 +49,28 @@ const ProjectPreviews = ({posts, tags: {nodes: tags}, id = null}) => {
             <Divider className={`js-free-scroll`} />
             <header
               className={`
-                  @mq-max-palm--text-align:center
-                  @mq-bigdesk--margin-horizontal:auto
-                  position:relative
-                  margin-horizontal:auto
-                  max-width:container
-                  padding-vertical:600
-                  @mq-lap--padding-vertical:800
-                  pointer-events:none
-                  pos-top-left:0
-                  width:100
-                  z-index:300
-                `}
+                @mq-max-palm--text-align:center
+                @mq-bigdesk--margin-horizontal:auto
+                position:relative
+                margin-horizontal:auto
+                max-width:container
+                padding-vertical:600
+                @mq-lap--padding-vertical:800
+                pointer-events:none
+                pos-top-left:0
+                width:100
+                z-index:300
+              `}
               id="ProjectFilterHeader"
             >
               <div
                 className={`
-                    @mq-max-palm--text-align:center
-                    @mq-palm--padding-left:columns-3-1/2
-                    @mq-palm--padding-right:columns-1-1/2
-                    padding-horizontal:columns-0-1/2
-                    width:100
-                  `}
+                  @mq-max-palm--text-align:center
+                  @mq-palm--padding-left:columns-3-1/2
+                  @mq-palm--padding-right:columns-1-1/2
+                  padding-horizontal:columns-0-1/2
+                  width:100
+                `}
               >
                 <ProjectsFilter
                   items={tags}
