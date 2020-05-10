@@ -120,11 +120,11 @@ export const huEm = (px) => `${px / 16}em`
 export const mq = {
   toTiny: huEm(349),
   tiny: huEm(340),
+  toPalm: huEm(549),
   palm: huEm(550),
   widepalm: huEm(680),
   toLap: huEm(767),
   lap: huEm(768),
-  toPalm: huEm(549),
   desk: huEm(960),
   bigdesk: huEm(1400),
 }

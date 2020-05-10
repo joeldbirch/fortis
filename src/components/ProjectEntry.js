@@ -43,7 +43,7 @@ const ProjectEntry = ({
             @mq-bigdesk--grid-column:3
           `}
           sizes={`
-              (max-width: ${mq.tolap}) ${cols(12)}vw,
+              (max-width: ${mq.toLap}) ${cols(12)}vw,
               (min-width: ${mq.lap}) ${cols(6)}vw,
               (min-width: ${mq.bigdesk}) ${cols(7)}vw,
               754px
