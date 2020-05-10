@@ -62,7 +62,8 @@ const ProfileEntry = ({
           (max-width: ${mq.toPalm}) ${cols(5)}vw,
           (min-width: ${mq.desk}) ${cols(4)}vw,
           (min-width: ${mq.widepalm}) ${cols(6)}vw,
-          (min-width: ${mq.palm}) ${cols(5.5)}vw
+          (min-width: ${mq.palm}) ${cols(5.5)}vw,
+          510px
         `}
       />
 
