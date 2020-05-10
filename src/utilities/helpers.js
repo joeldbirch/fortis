@@ -122,6 +122,7 @@ export const mq = {
   tiny: huEm(340),
   palm: huEm(550),
   widepalm: huEm(680),
+  toLap: huEm(767),
   lap: huEm(768),
   toPalm: huEm(549),
   desk: huEm(960),
