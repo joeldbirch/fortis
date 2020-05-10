@@ -2,7 +2,7 @@ const Globals = {
   blogURI: `/news`,
   projectsURI: `/projects`,
   templateCacheFolder: `.template-cache`,
-  siteURL: `https://fortis-dg.netlify.com`,
+  siteURL: `https://www.fortis.com.au`,
   wpURL: `https://fortis.joelbirch.design`,
 }
 
