@@ -153,7 +153,7 @@ const Post = ({pageContext}) => {
           />
         </div>
 
-        {relatedPostsList ? <ScrollPrompt to="#overview" /> : ``}
+        {relatedPostsList ? <ScrollPrompt to="#relatedPosts" /> : ``}
       </div>
 
       {relatedPostsList ? <RelatedPosts previews={relatedPostsList} /> : ``}

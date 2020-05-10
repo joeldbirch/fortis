@@ -19,7 +19,9 @@ const RelatedPosts = ({previews = []}) => {
     id: post.id,
   }))
 
-  return <CarouselSection title="Related posts" slideData={slideData} />
+  return (
+    <CarouselSection id="relatedPosts" title="Related posts" slideData={slideData} />
+  )
 }
 
 export default RelatedPosts
