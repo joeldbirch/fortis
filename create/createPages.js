@@ -15,10 +15,11 @@ const layoutMapping = require(`./layoutMapping`)
 const pageTemplate = require.resolve(`../src/templates/page`)
 const {PageTemplateFragment} = require(`../src/templates/page/data`)
 
-const {FluidImageFragment} = require(`../src/templates/fragments`)
+const {FluidImageFragment, HeroImage} = require(`../src/templates/fragments`)
 
 const GET_PAGES = (layouts) => `
   ${FluidImageFragment}
+  ${HeroImage}
   ${PageTemplateFragment(layouts)}
 
   query GET_PAGES($first:Int $after:String) {
