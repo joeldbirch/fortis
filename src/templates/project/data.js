@@ -95,15 +95,7 @@ const ProjectTemplateFragment = (layouts) => `
             slug
             title
             featuredImage {
-              sourceUrl
-              altText
-              imageFile {
-                childImageSharp {
-                  fluid(maxWidth: 540, maxHeight: 405, cropFocus: ATTENTION) {
-                    ...GatsbyImageSharpFluid_withWebp_noBase64
-                  }
-                }
-              }
+              ...PreviewImage
             }
             projectDetails {
               fieldGroupName
