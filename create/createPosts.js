@@ -6,7 +6,11 @@ const {
   NewsIntroFragment,
 } = require(`../src/templates/post/data`)
 
-const {FluidImageFragment, PreviewImage} = require(`../src/templates/fragments`)
+const {
+  FluidImageFragment,
+  PreviewImage,
+  GalleryImage,
+} = require(`../src/templates/fragments`)
 
 const postTemplate = require.resolve(`../src/templates/post/index.js`)
 const newsTemplate = require.resolve(`../src/templates/post/news.js`)
@@ -14,6 +18,7 @@ const newsTemplate = require.resolve(`../src/templates/post/news.js`)
 const GET_POSTS = `
   ${FluidImageFragment}
   ${PreviewImage}
+  ${GalleryImage}
   ${PostTemplateFragment}
   ${NewsPreviewFragment}
   ${NewsIntroFragment}

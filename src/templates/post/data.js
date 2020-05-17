@@ -27,6 +27,16 @@ const PostTemplateFragment = `
         }
       }
     }
+    postBuilder {
+      layouts {
+        ... on WPGraphQL_Post_Postbuilder_Layouts_ImageGallery {
+          fieldGroupName
+          imageGallery {
+            ...GalleryImage
+          }
+        }
+      }
+    }
     relatedPosts {
       relatedPostsList {
         post {

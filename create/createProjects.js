@@ -26,12 +26,14 @@ const {
   FluidImageFragment,
   HeroImage,
   PreviewImage,
+  GalleryImage,
 } = require(`../src/templates/fragments`)
 
 const GET_PROJECTS = (layouts) => `
   ${FluidImageFragment}
   ${HeroImage}
   ${PreviewImage}
+  ${GalleryImage}
   ${ProjectTemplateFragment(layouts)}
   ${ProjectPreviewFragment}
   ${ProjectsIntroFragment}

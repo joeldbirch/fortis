@@ -6,6 +6,7 @@ import ScrollPrompt from 'components/ScrollPrompt'
 import PageHeader from 'components/PageHeader'
 import {useNewsData} from 'hooks/use-news-data'
 import {cleanWpContent, noOrphans} from 'utilities/helpers'
+import ImageGallery from 'layouts/project/ImageGallery'
 import RelatedPosts from 'components/RelatedPosts'
 
 const Post = ({pageContext}) => {
@@ -18,6 +19,7 @@ const Post = ({pageContext}) => {
       content,
       featuredImage,
       slug,
+      postBuilder,
       relatedPosts: {relatedPostsList},
     },
   } = pageContext
@@ -30,6 +32,8 @@ const Post = ({pageContext}) => {
       content: {siteSectionTitle},
     },
   } = useNewsData()
+
+  const layouts = postBuilder && postBuilder.layouts ? postBuilder.layouts : []
 
   return (
     <Layout
@@ -152,6 +156,21 @@ const Post = ({pageContext}) => {
             dangerouslySetInnerHTML={{__html: cleanWpContent(content)}}
           />
         </div>
+
+        {layouts.map((layout, index) => {
+          return layout.fieldGroupName ===
+            `post_Postbuilder_Layouts_ImageGallery` ? (
+            <div
+              className={`
+                  margin-horizontal:-columns-0-1/2
+                  @mq-desk--margin-horizontal:-columns-1-1/2
+                  margin-top:columns-0-1/2
+                `}
+            >
+              <ImageGallery {...layout} key={index} />
+            </div>
+          ) : null
+        })}
 
         {relatedPostsList ? <ScrollPrompt to="#relatedPosts" /> : ``}
       </div>

@@ -15,7 +15,7 @@ const stripTrailingSlash = (uri) => uri.replace(/\/$/, ``)
 const replaceEmptyWithHome = (uri) => (uri === `` ? `home` : uri)
 
 exports.createPagesStatefully = async ({graphql, actions, reporter}, options) => {
-  await createPages({actions, graphql, reporter}, options)
+  // await createPages({actions, graphql, reporter}, options)
   await createPosts({actions, graphql, reporter}, options)
   await createProjects({actions, graphql, reporter}, options)
 }
