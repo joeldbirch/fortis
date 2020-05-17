@@ -3,8 +3,6 @@ import {blogURI} from '../../globals'
 import CarouselSection from 'components/CarouselSection'
 
 const RelatedPosts = ({previews = []}) => {
-  console.log(`PREVIEWS`, previews)
-
   const slides = previews
     .filter((related) => related.post)
     .map((related) => related.post)
