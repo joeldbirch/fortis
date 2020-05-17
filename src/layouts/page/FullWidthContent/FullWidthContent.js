@@ -34,7 +34,7 @@ const FullWidthContent = ({className = ``, freeText, image, ...props}) => {
         `}
         sizes={`
           (min-width: ${mq.desk}) ${cols(10)}vw,
-          (min-width: 1px) ${cols(12)}vw
+          ${cols(12)}vw
         `}
       />
     </div>
