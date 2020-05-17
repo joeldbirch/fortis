@@ -59,7 +59,7 @@ const ProfileEntry = ({
           @mq-palm--grid-row:1
         `}
         sizes={`
-          (max-width: ${mq.toPalm}) ${cols(5)}vw,
+          (max-width: ${mq.toPalm}) ${cols(12)}vw,
           (min-width: ${mq.desk}) ${cols(4)}vw,
           (min-width: ${mq.widepalm}) ${cols(6)}vw,
           (min-width: ${mq.palm}) ${cols(5.5)}vw,
