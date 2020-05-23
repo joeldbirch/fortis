@@ -151,3 +151,16 @@ export const noOrphans = (text) => {
 }
 
 export const headerRootMargin = `-5.5% -3.846153846% -94.4% -3.846153846%`
+
+export const smallerSizes = `
+  (max-width: ${mq.toPalm}) ${cols(12)}vw,
+  (min-width: ${mq.desk}) ${cols(3)}vw,
+  (min-width: ${mq.palm}) ${cols(4)}vw,
+  850px
+`
+export const largerSizes = `
+  (max-width: 549px) ${cols(12)}vw,
+  (min-width: 960px) ${cols(5)}vw,
+  (min-width: 550px) ${cols(6)}vw,
+  850px
+`

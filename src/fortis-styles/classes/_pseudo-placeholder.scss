@@ -4,7 +4,9 @@ $placeholder-base: (
   color: (inherit: inherit),
   mix-blend-mode: $hu-mix-blend-mode-types,
   transition-property: $hu-transition-property-types,
+  position: $hu-position-types,
 );
+
 @each $class-name, $types in $placeholder-base {
   @include hu-pseudo-classes($class-name, ("::placeholder"), (base), $types);
 }

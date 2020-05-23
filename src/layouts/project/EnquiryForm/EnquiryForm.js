@@ -1,10 +1,10 @@
 import React from 'react'
 import {moduleRoot} from 'styles/helpers'
 import NetlifyForm from 'components/NetlifyForm'
-import FloatingLabelItem from 'components/FloatingLabelItem'
 import LargeText from 'components/LargeText'
+import Field from './Field'
 
-const styles = {
+export const styles = {
   item: `
     @mq-lap--margin-vertical:500
     margin-vertical:300
@@ -15,6 +15,7 @@ const styles = {
     &::placeholder--font-size:200
     &:focus--border-bottom-color:neutral-1000
     &:hocus--outline:none
+    border-width:0
     border-bottom-color:neutral-700
     border-bottom-style:solid
     border-bottom-width:100
@@ -27,7 +28,7 @@ const styles = {
   `,
 }
 
-const EnquiryForm = ({formIntroText, slug}) => {
+const EnquiryForm = ({formIntroText, slug, children = null}) => {
   return (
     <section
       id="enquire"
@@ -55,11 +56,15 @@ const EnquiryForm = ({formIntroText, slug}) => {
           <p>${formIntroText}</p>
         `}</LargeText>
         <NetlifyForm name="project enquiry">
-          <Field label="First name" />
-          <Field label="Last name" />
-          <Field label="Company" />
-          <Field label="Email" type="email" />
-          <Field label="Phone" type="tel" />
+          {children || (
+            <>
+              <Field label="First name" minLength="2" />
+              <Field label="Last name" minLength="2" />
+              <Field label="Company" />
+              <Field label="Email" type="email" />
+              <Field label="Phone" type="tel" />
+            </>
+          )}
           <div>
             <input type="hidden" name="project" value={slug} />
             <div
@@ -80,19 +85,4 @@ const EnquiryForm = ({formIntroText, slug}) => {
 
 export default EnquiryForm
 
-const Field = ({...props}) => (
-  <FloatingLabelItem
-    {...props}
-    className={styles.item}
-    inputClassName={styles.input}
-    labelClassName={``}
-    labelStyles={{
-      '--scale-x-var-1': `0.8`,
-      '--scale-y-var-1': `0.8`,
-      '--translate-x-var-1': `0`,
-      '--translate-y-var-1': `0`,
-      transformOrigin: `right`,
-    }}
-    required
-  />
-)
+export {Field}

@@ -150,6 +150,12 @@ module.exports = async ({actions, graphql, reporter}, options) => {
           })
         }
 
+        if (page.pageId === 2352) {
+          // `customers`
+          page.pageBuilder.layouts.unshift({
+            fieldGroupName: `resourcesLayout`,
+          })
+        }
         /**
          * Filter out empty objects. This can happen if for some reason you
          * don't query for a specific layout (UnionType), that is potentially

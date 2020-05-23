@@ -96,7 +96,7 @@ $scoped_container: 's-editable' !default;
   }
 
   pre {
-    white-space: normal;
+    white-space: pre-wrap;
     font-family: hu-get($hu-font-family-types, cursive);
     font-weight: 400;
     letter-spacing: hu-get($hu-letter-spacing-types, 0) !important;

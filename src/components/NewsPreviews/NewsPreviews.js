@@ -1,19 +1,6 @@
 import React from 'react'
 import NewsEntry from './NewsEntry'
-import {cols, mq} from 'utilities/helpers'
-
-const smallerSizes = `
-  (max-width: ${mq.toPalm}) ${cols(12)}vw,
-  (min-width: ${mq.desk}) ${cols(3)}vw,
-  (min-width: ${mq.palm}) ${cols(4)}vw,
-  850px
-`
-const largerSizes = `
-  (max-width: 549px) ${cols(12)}vw,
-  (min-width: 960px) ${cols(5)}vw,
-  (min-width: 550px) ${cols(6)}vw,
-  850px
-`
+import {smallerSizes, largerSizes} from 'utilities/helpers'
 
 const NewsPreview = ({posts, intro, pagination}) => {
   if (!posts) return ``

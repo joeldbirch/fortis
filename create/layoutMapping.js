@@ -8,4 +8,5 @@ module.exports = {
   page_Pagebuilder_Layouts_FullWidthTextAndImage: `FullWidthContent`,
   page_Pagebuilder_Layouts_BodyTextSections: `BodyTextSections`,
   contactLayout: `Contact`,
+  resourcesLayout: `CustomerResources`,
 }

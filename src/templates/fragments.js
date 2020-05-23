@@ -67,3 +67,17 @@ fragment GalleryImage on WPGraphQL_MediaItem {
   }
 }
 `
+
+module.exports.PortraitImage = `
+  fragment PortraitImage on WPGraphQL_MediaItem {
+    sourceUrl
+    altText
+    imageFile {
+      childImageSharp {
+        fluid(maxWidth: 1000, cropFocus: CENTER) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+  }
+`

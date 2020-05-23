@@ -1,4 +1,9 @@
-$hu-pos-modules: (base, responsive);
+$hu-pos-modules: (
+  core: (base, responsive),
+  pseudos: (
+    "::placeholder"
+  )
+);
 
 $hu-pos-scale: hu-prepend(
   $hu-pos-scale,

@@ -30,11 +30,12 @@ const styles = {
   label: `
     👉 c-floating-field__label
     &::before--arrow-left
+    margin-bottom:px
     margin-left:0
     opacity:0
     pointer-events:none
+    pos-bottom:0
     pos-right:0
-    pos-top:50
     position:absolute
     text-case:lower
     transform:var-1
@@ -62,27 +63,31 @@ export default ({
   label = `Label text`,
   labelClassName = ``,
   labelHidden = false,
+  minLength = 3,
   name = nameAttrFromText(label),
   required = null,
   type = `text`,
   labelStyles = {},
+  as = `input`,
   ...props
 }) => {
   className += styles.item
   inputClassName += styles.input
   labelClassName += styles.label
 
+  const FormElement = as
+
   return (
     <div className={className} {...props}>
       <Helmet>
         <style>{styles.inputSiblingBehaviour}</style>
       </Helmet>
-      <input
+      <FormElement
         aria-required={required}
         className={inputClassName}
         id={capitalize(name)}
         inputMode={inputMode}
-        minLength="3"
+        minLength={minLength}
         name={name}
         pattern={pattern}
         placeholder={label}

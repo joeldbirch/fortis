@@ -74,15 +74,17 @@ module.exports.createPageWithTemplate = ({
     imports: mappedLayouts,
   }).then(() => {
     /**
-     * Then, we create a gatsby page with the just created template file.
+     * Then, we create a gatsby page with the just-created template file.
      */
-    createPage({
+    const pageData = {
       path: pagePath,
       component: path.resolve(`${templateCacheFolder}/${prefix}-${page.slug}.js`),
       context: {
         page: page,
       },
-    })
+    }
+
+    createPage(pageData)
 
     reporter.info(`page created: ${pagePath}`)
   })
