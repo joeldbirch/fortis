@@ -7,10 +7,10 @@ import Divider from 'components/DividerHorizontal'
 import {useStaticQuery, graphql} from 'gatsby'
 import {cleanWpContent} from 'utilities/helpers'
 import EnquiryForm, {Field} from '../../project/EnquiryForm/EnquiryForm'
+import {uiFontSize} from 'styles/helpers'
 
 const styles = {
   sectionWrap: `
-    js-contrast
     margin-horizontal:auto
     max-width:container
     padding-bottom:400
@@ -26,6 +26,7 @@ const CustomerResources = () => {
   const {
     wpgraphql: {
       pageBy: {
+        title,
         resources: {
           introductionSection: {text: introText, image: introImage},
           testimonials,
@@ -49,6 +50,7 @@ const CustomerResources = () => {
       wpgraphql {
         pageBy(uri: "customers") {
           id
+          title
           resources {
             fieldGroupName
             introductionSection {
@@ -71,15 +73,31 @@ const CustomerResources = () => {
 
   return (
     <>
+      <SectionHeader
+        absolute={false}
+        className={`
+          js-contrast
+          js-no-header-bg
+        `}
+      >
+        <h1
+          className={`
+            ${uiFontSize}
+          `}
+        >
+          {title}
+        </h1>
+      </SectionHeader>
       <div
         className={`
           ${styles.sectionWrap}
+          js-contrast
           padding-bottom:site-top
+          padding-top:columns-0-1/2
         `}
       >
         <div
           className={`
-            padding-top:site-top
             display:grid
             @mq-max-palm--grid-gap:800
             @mq-palm--grid-template-columns:2
@@ -110,18 +128,33 @@ const CustomerResources = () => {
         <Divider bottom={true} />
       </div>
 
+      <SectionHeader
+        absolute={false}
+        className={`
+          js-contrast
+          js-no-header-bg
+        `}
+      >
+        <h2
+          className={`
+            ${uiFontSize}
+          `}
+        >
+          Customer testimonials
+        </h2>
+      </SectionHeader>
       <div
         id="testimonials"
         className={`
           ${styles.sectionWrap}
-          padding-top:site-top
+          js-contrast
+          padding-top:columns-0-1/2
           display:grid
           grid-gap:800
           @mq-palm--grid-gap:columns-0-1/2
           padding-bottom:site-top
         `}
       >
-        <SectionHeader>Customer testimonials</SectionHeader>
         {testimonials.map(
           ({text: testimonialText, image: testimonialImage}, index) => (
             <div
