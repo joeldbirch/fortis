@@ -42,9 +42,7 @@ const ProjectPreviews = ({posts, tags: {nodes: tags}, id = null}) => {
           scroll-snap-stop:always
         `}
       >
-        {!tags ? (
-          ``
-        ) : (
+        {tags && (
           <>
             <Divider className={`js-free-scroll`} />
             <header

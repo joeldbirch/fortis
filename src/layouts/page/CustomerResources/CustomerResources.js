@@ -157,7 +157,7 @@ const CustomerResources = () => {
         <ScrollPrompt to="#enquiries" />
         <Divider bottom={true} />
       </div>
-      {/* Need to get Kristina to set up a "customer question" form in Hubspot for the form to go to via Netlify then Zapier then Hubspot. Also need to remove "company" and "phone" fields and add "question" textarea. */}
+      {/* Need to get Kristina to set up a "customer question" form in Hubspot for the form to go to via Netlify then Zapier then Hubspot. */}
 
       <EnquiryForm
         id="enquiries"
@@ -183,7 +183,5 @@ const CustomerResources = () => {
     </>
   )
 }
-
-CustomerResources.propTypes = {}
 
 export default CustomerResources

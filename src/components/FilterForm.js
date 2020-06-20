@@ -62,8 +62,7 @@ const FilterForm = ({items, update = () => {}, className = ``, ...props}) => {
           flex-wrap:wrap
         `}
       >
-        {shownTags &&
-          shownTags.length &&
+        {shownTags?.length &&
           shownTags.map((item) => (
             <FilterItem
               key={item.id}
