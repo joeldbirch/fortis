@@ -1,25 +1,10 @@
 import React from 'react'
 import {Helmet} from 'react-helmet'
-import {uiFontSize} from 'styles/helpers'
+import {uiFontSize, navList, navItem, navHitarea, navText} from 'styles/helpers'
 
 const styles = {
-  hitarea: `
-    align-items:center
-    color:neutral-900
-    cursor:pointer
-    display:flex
-    group
-    padding:200
-    position:relative
-    `,
   icon: `
     visually-hidden
-  `,
-  text: `
-    display:block
-    group:hover__background-image:solid
-    hover-underline
-    vertical-align:top
   `,
 }
 
@@ -55,11 +40,7 @@ const FilterForm = ({items, update = () => {}, className = ``, ...props}) => {
       </Helmet>
       <ul
         className={`
-          @mq-max-palm--justify-content:center
-          @mq-palm--margin-left:-200
-          align-items:center
-          display:flex
-          flex-wrap:wrap
+          ${navList}
         `}
       >
         {shownTags?.length &&
@@ -81,14 +62,12 @@ const FilterForm = ({items, update = () => {}, className = ``, ...props}) => {
 const FilterItem = ({id, name, toggleHandler = () => {}, ...props}) => (
   <li
     className={`
-      margin-bottom:-200
-      margin-right:vw
-      rhythm-fix-before
+      ${navItem}
     `}
     key={id}
     {...props}
   >
-    <label className={styles.hitarea}>
+    <label className={navHitarea}>
       <input
         type="radio"
         defaultChecked={id === `all`}
@@ -98,7 +77,7 @@ const FilterItem = ({id, name, toggleHandler = () => {}, ...props}) => (
         name="filters"
         onChange={() => toggleHandler(id)}
       />
-      <span className={styles.text}>{name}</span>
+      <span className={navText}>{name}</span>
     </label>
   </li>
 )

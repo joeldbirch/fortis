@@ -1,3 +1,9 @@
+@import "~hucssley/src/helpers";
+
+@import "~hucssley/src/variables/global/index";
+@import "../variables/global/index";
+
+
 /* change color */
 // :root {
 //   --bg-color: white;
@@ -20,8 +26,14 @@
   //   2px 1px 0 var(--bg-color, white);
 }
 
+
 @mixin custom-underline {
-  background-image: linear-gradient(currentColor, currentColor);
+  @media (max-width: #{hu-get($hu-media-queries, max-lap max-w)}) {
+    text-decoration: underline;
+  }
+  @media (min-width: #{hu-get($hu-media-queries, lap)}) {
+    background-image: linear-gradient(currentColor, currentColor);
+  }
 }
 
 @mixin custom-underline-hover {
@@ -49,9 +61,16 @@
 }
 
 .hover-underline {
+  text-decoration: none;
+
   &:focus,
   &:hover {
-    color: black;
-    background-image: linear-gradient(currentColor, currentColor);
+    @media (max-width: #{hu-get($hu-media-queries, max-lap max-w)}) {
+      text-decoration: underline;
+    }
+    @media (min-width: #{hu-get($hu-media-queries, lap)}) {
+      color: black;
+      background-image: linear-gradient(currentColor, currentColor);
+    }
   }
 }

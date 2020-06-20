@@ -7,7 +7,7 @@ import Divider from 'components/DividerHorizontal'
 import {useStaticQuery, graphql} from 'gatsby'
 import {cleanWpContent} from 'utilities/helpers'
 import EnquiryForm, {Field} from '../../project/EnquiryForm/EnquiryForm'
-import {uiFontSize} from 'styles/helpers'
+import {uiFontSize, navList, navItem, navHitarea, navText} from 'styles/helpers'
 
 const styles = {
   sectionWrap: `
@@ -73,123 +73,149 @@ const CustomerResources = () => {
 
   return (
     <>
-      <SectionHeader
-        absolute={false}
+      <section
         className={`
-          js-contrast
-          js-no-header-bg
+          js-contrast-ignore
         `}
       >
-        <h1
+        <SectionHeader
+          absolute={false}
           className={`
-            ${uiFontSize}
+            js-contrast
+            js-no-header-bg
           `}
         >
-          {title}
-        </h1>
-      </SectionHeader>
-      <div
-        className={`
-          ${styles.sectionWrap}
-          js-contrast
-          padding-bottom:site-top
-          padding-top:columns-0-1/2
-        `}
-      >
+          <h1 className={`${uiFontSize}`}>{title}</h1>
+          <ul
+            className={`
+              ${navList}
+              ${uiFontSize}
+              padding-top:400
+            `}
+          >
+            <li
+              className={`
+                ${navItem}
+              `}
+            >
+              <a className={`${navHitarea}`} href="#testimonials">
+                <span className={navText}>Customer testimonials</span>
+              </a>
+            </li>
+            <li
+              className={`
+                ${navItem}
+              `}
+            >
+              <a className={`${navHitarea}`} href="#faq">
+                <span className={navText}>FAQs</span>
+              </a>
+            </li>
+          </ul>
+        </SectionHeader>
         <div
           className={`
-            display:grid
-            @mq-max-palm--grid-gap:800
-            @mq-palm--grid-template-columns:2
-
+            ${styles.sectionWrap}
+            js-contrast
+            padding-bottom:site-top
+            padding-top:columns-0-1/2
           `}
         >
           <div
-            dangerouslySetInnerHTML={{__html: cleanWpContent(introText)}}
             className={`
-              @mq-palm--padding-right:columns-1
-              @mq-lap--margin-top:columns-1
-              can-style-note
-              s-editable
-              @mq-palm--font-size:500
-              @mq-bigdesk--font-size:600
-            `}
-          />
+              display:grid
+              @mq-max-palm--grid-gap:800
+              @mq-palm--grid-template-columns:2
 
-          <FluidImage
-            image={introImage}
-            className={`
-              @mq-palm--flex-grow:1
             `}
-            sizes={largerSizes}
-          />
+          >
+            <div
+              dangerouslySetInnerHTML={{__html: cleanWpContent(introText)}}
+              className={`
+                @mq-palm--padding-right:columns-1
+                @mq-lap--margin-top:columns-1
+                can-style-note
+                s-editable
+                @mq-palm--font-size:500
+                @mq-bigdesk--font-size:600
+              `}
+            />
+
+            <FluidImage
+              image={introImage}
+              className={`
+                @mq-palm--flex-grow:1
+              `}
+              sizes={largerSizes}
+            />
+          </div>
+          <ScrollPrompt to="#testimonials" />
+          <Divider bottom={true} />
         </div>
-        <ScrollPrompt to="#testimonials" />
-        <Divider bottom={true} />
-      </div>
+      </section>
 
-      <SectionHeader
-        absolute={false}
-        className={`
-          js-contrast
-          js-no-header-bg
-        `}
-      >
-        <h2
-          className={`
-            ${uiFontSize}
-          `}
-        >
-          Customer testimonials
-        </h2>
-      </SectionHeader>
-      <div
+      <section
         id="testimonials"
         className={`
-          ${styles.sectionWrap}
-          js-contrast
-          padding-top:columns-0-1/2
-          display:grid
-          grid-gap:800
-          @mq-palm--grid-gap:columns-0-1/2
-          padding-bottom:site-top
+          js-contrast-ignore
         `}
       >
-        {testimonials.map(
-          ({text: testimonialText, image: testimonialImage}, index) => (
-            <div
-              key={index}
-              className={`
-                align-items:center
-                @mq-palm--display:grid
-                grid-template-columns:2
-              `}
-            >
-              <FluidImage
-                image={testimonialImage}
-                className={`
-                  @mq-palm--flex-grow:1
-                `}
-                sizes={largerSizes}
-              />
+        <SectionHeader
+          absolute={false}
+          className={`
+            js-contrast
+            js-no-header-bg
+          `}
+        >
+          <h2 className={`${uiFontSize}`}>Customer testimonials</h2>
+        </SectionHeader>
+        <div
+          className={`
+            ${styles.sectionWrap}
+            js-contrast
+            padding-top:columns-0-1/2
+            display:grid
+            grid-gap:800
+            @mq-palm--grid-gap:columns-0-1/2
+            padding-bottom:site-top
+          `}
+        >
+          {testimonials.map(
+            ({text: testimonialText, image: testimonialImage}, index) => (
               <div
                 key={index}
-                dangerouslySetInnerHTML={{__html: cleanWpContent(testimonialText)}}
                 className={`
-                  @mq-palm--padding-left:columns-1
-                  padding-top:600
-                  @mq-lap--padding-vertical:columns-1
-                  can-style-note
-                  s-editable
+                  align-items:center
+                  @mq-palm--display:grid
+                  grid-template-columns:2
                 `}
-              />
-            </div>
-          )
-        )}
+              >
+                <FluidImage
+                  image={testimonialImage}
+                  className={`
+                    @mq-palm--flex-grow:1
+                  `}
+                  sizes={largerSizes}
+                />
+                <div
+                  key={index}
+                  dangerouslySetInnerHTML={{__html: cleanWpContent(testimonialText)}}
+                  className={`
+                    @mq-palm--padding-left:columns-1
+                    padding-top:600
+                    @mq-lap--padding-vertical:columns-1
+                    can-style-note
+                    s-editable
+                  `}
+                />
+              </div>
+            )
+          )}
 
-        <ScrollPrompt to="#enquiries" />
-        <Divider bottom={true} />
-      </div>
+          <ScrollPrompt to="#enquiries" />
+          <Divider bottom={true} />
+        </div>
+      </section>
       {/* Need to get Kristina to set up a "customer question" form in Hubspot for the form to go to via Netlify then Zapier then Hubspot. */}
 
       <EnquiryForm

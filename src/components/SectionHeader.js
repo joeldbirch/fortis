@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default ({className = ``, absolute = `true`, children, ...props}) => (
+export default ({className = ``, absolute = true, children, ...props}) => (
   <header
     className={`
       ${className}
@@ -11,6 +11,7 @@ export default ({className = ``, absolute = `true`, children, ...props}) => (
             pos-top:0
             padding-vertical:600
             @mq-lap--padding-vertical:800
+            pointer-events:none
           `
           : `position:relative`
       }
@@ -18,7 +19,6 @@ export default ({className = ``, absolute = `true`, children, ...props}) => (
       max-width:container
       padding-vertical:600
       @mq-lap--padding-vertical:800
-      pointer-events:none
       pos-top-left:0
       width:100
       z-index:300

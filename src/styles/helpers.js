@@ -176,3 +176,36 @@ export const moduleRoot = `
   position:relative
   width:100
 `
+
+export const navList = `
+  @mq-max-palm--justify-content:center
+  @mq-palm--margin-left:-200
+  align-items:center
+  display:flex
+  flex-wrap:wrap
+`
+
+export const navItem = `
+  margin-bottom:-200
+  margin-right:vw
+  rhythm-fix-before
+`
+
+export const navHitarea = `
+  align-items:center
+  color:neutral-900
+  cursor:pointer
+  display:flex
+  group
+  opacity:50
+  &:hover--opacity:100
+  padding:200
+  position:relative
+`
+
+export const navText = `
+  display:block
+  @mq-lap--group:hover__background-image:solid
+  hover-underline
+  vertical-align:top
+`
