@@ -3,11 +3,12 @@ import {largerSizes} from 'utilities/helpers'
 import FluidImage from 'components/FluidImage'
 import ScrollPrompt from 'components/ScrollPrompt'
 import SectionHeader from 'components/SectionHeader'
+import SectionNav, {Item as SectionNavItem} from 'components/SectionNav'
 import Divider from 'components/DividerHorizontal'
 import {useStaticQuery, graphql} from 'gatsby'
 import {cleanWpContent} from 'utilities/helpers'
 import EnquiryForm, {Field} from '../../project/EnquiryForm/EnquiryForm'
-import {uiFontSize, navList, navItem, navHitarea, navText} from 'styles/helpers'
+import {uiFontSize} from 'styles/helpers'
 
 const styles = {
   sectionWrap: `
@@ -78,41 +79,12 @@ const CustomerResources = () => {
           js-contrast-ignore
         `}
       >
-        <SectionHeader
-          absolute={false}
-          className={`
-            js-contrast
-            js-no-header-bg
-          `}
-        >
-          <h1 className={`${uiFontSize}`}>{title}</h1>
-          <ul
-            className={`
-              ${navList}
-              ${uiFontSize}
-              padding-top:400
-            `}
-          >
-            <li
-              className={`
-                ${navItem}
-              `}
-            >
-              <a className={`${navHitarea}`} href="#testimonials">
-                <span className={navText}>Customer testimonials</span>
-              </a>
-            </li>
-            <li
-              className={`
-                ${navItem}
-              `}
-            >
-              <a className={`${navHitarea}`} href="#faq">
-                <span className={navText}>FAQs</span>
-              </a>
-            </li>
-          </ul>
-        </SectionHeader>
+        <SectionNav title={title} headingPriority="1">
+          <SectionNavItem to="#testimonials">Customer testimonials</SectionNavItem>
+          <SectionNavItem to="#faq">FAQs</SectionNavItem>
+          <SectionNavItem to="#info-series">Information Series</SectionNavItem>
+        </SectionNav>
+
         <div
           className={`
             ${styles.sectionWrap}
@@ -167,7 +139,7 @@ const CustomerResources = () => {
             js-no-header-bg
           `}
         >
-          <h2 className={`${uiFontSize}`}>Customer testimonials</h2>
+          <h2 className={uiFontSize}>Customer testimonials</h2>
         </SectionHeader>
         <div
           className={`
