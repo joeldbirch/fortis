@@ -28,10 +28,10 @@ export const styles = {
   `,
 }
 
-const EnquiryForm = ({formIntroText, slug, children = null}) => {
+const EnquiryForm = ({formIntroText, slug, id = `enquire`, children = null}) => {
   return (
     <section
-      id="enquire"
+      id={id}
       className={`
         ${moduleRoot}
         @mq-palm--margin-bottom:columns-0-1/2
