@@ -1,13 +1,14 @@
 import React from 'react'
+import {useStaticQuery, graphql} from 'gatsby'
 import {largerSizes} from 'utilities/helpers'
 import FluidImage from 'components/FluidImage'
 import ScrollPrompt from 'components/ScrollPrompt'
 import SectionHeader from 'components/SectionHeader'
 import SectionNav, {Item as SectionNavItem} from 'components/SectionNav'
 import Divider from 'components/DividerHorizontal'
-import {useStaticQuery, graphql} from 'gatsby'
-import {cleanWpContent} from 'utilities/helpers'
+import FaqFilter from 'components/FilterForm'
 import EnquiryForm, {Field} from '../../project/EnquiryForm/EnquiryForm'
+import {cleanWpContent} from 'utilities/helpers'
 import {uiFontSize} from 'styles/helpers'
 
 const styles = {
@@ -184,10 +185,71 @@ const CustomerResources = () => {
             )
           )}
 
+          <ScrollPrompt to="#faq" />
+          <Divider bottom={true} />
+        </div>
+      </section>
+
+      {/*
+
+ 88888888b  .d888888   .88888.
+ 88        d8'    88  d8'   `8b
+a88aaaa    88aaaaa88a 88     88  .d8888b.
+ 88        88     88  88  db 88  Y8ooooo.
+ 88        88     88  Y8.  Y88P        88
+ dP        88     88   `8888PY8b `88888P'
+*/}
+
+      <section
+        id="faq"
+        className={`
+          js-contrast-ignore
+        `}
+      >
+        <SectionHeader
+          absolute={false}
+          className={`
+            js-contrast
+            js-no-header-bg
+          `}
+        >
+          <h2 className={uiFontSize}>FAQs</h2>
+
+          <FaqFilter
+            items={[
+              {
+                name: `Test`,
+                slug: `test`,
+                id: `someid`,
+                count: 1,
+              },
+            ]}
+            update={() => null}
+            onReset={() => null}
+            className={`
+              padding-top:400
+              position:relative
+            `}
+          />
+        </SectionHeader>
+
+        <div
+          className={`
+            ${styles.sectionWrap}
+            js-contrast
+            padding-top:columns-0-1/2
+            display:grid
+            grid-gap:800
+            @mq-palm--grid-gap:columns-0-1/2
+            padding-bottom:site-top
+          `}
+        >
+          FAQs here
           <ScrollPrompt to="#enquiries" />
           <Divider bottom={true} />
         </div>
       </section>
+
       {/* Need to get Kristina to set up a "customer question" form in Hubspot for the form to go to via Netlify then Zapier then Hubspot. */}
 
       <EnquiryForm
