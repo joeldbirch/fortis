@@ -98,19 +98,19 @@ const ProjectPreviews = ({posts, tags: {nodes: tags}, id = null}) => {
               key={post.id}
               post={post}
               imageClasses={`
-              max-height:var-1
-            `}
+                max-height:var-1
+              `}
               className={`
-              overflow:hidden
-              transition-duration:700
-              max-width:container
-              margin-horizontal:auto
-              ${
-                isShown(post)
-                  ? `max-height:4000px opacity:1`
-                  : `max-height:0 opacity:0`
-              }
-            `}
+                overflow:hidden
+                transition-duration:700
+                max-width:container
+                margin-horizontal:auto
+                ${
+                  isShown(post)
+                    ? `max-height:4000px opacity:1`
+                    : `max-height:0 opacity:0`
+                }
+              `}
             />
           ))}
 

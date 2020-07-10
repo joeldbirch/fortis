@@ -4,25 +4,12 @@ import {largerSizes} from 'utilities/helpers'
 import FluidImage from 'components/FluidImage'
 import ScrollPrompt from 'components/ScrollPrompt'
 import SectionHeader from 'components/SectionHeader'
+import Faqs from 'components/Faqs'
 import SectionNav, {Item as SectionNavItem} from 'components/SectionNav'
 import Divider from 'components/DividerHorizontal'
-import FaqFilter from 'components/FilterForm'
 import EnquiryForm, {Field} from '../../project/EnquiryForm/EnquiryForm'
 import {cleanWpContent} from 'utilities/helpers'
-import {uiFontSize} from 'styles/helpers'
-
-const styles = {
-  sectionWrap: `
-    margin-horizontal:auto
-    max-width:container
-    padding-bottom:400
-    padding-horizontal:columns-0-1/2
-    @mq-desk--padding-horizontal:columns-1-1/2
-    position:relative
-    width:100
-    z-index:100
-  `,
-}
+import {uiFontSize, sectionWrap} from 'styles/helpers'
 
 const CustomerResources = () => {
   const {
@@ -32,22 +19,11 @@ const CustomerResources = () => {
         resources: {
           introductionSection: {text: introText, image: introImage},
           testimonials,
+          faqs,
         },
       },
     },
   } = useStaticQuery(graphql`
-    fragment PortraitImage on WPGraphQL_MediaItem {
-      sourceUrl
-      altText
-      imageFile {
-        childImageSharp {
-          fluid(maxWidth: 1000, cropFocus: CENTER) {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
-          }
-        }
-      }
-    }
-
     query CustomerResourcesQuery {
       wpgraphql {
         pageBy(uri: "customers") {
@@ -65,6 +41,20 @@ const CustomerResources = () => {
               text
               image {
                 ...PortraitImage
+              }
+            }
+            faqs {
+              faqSectionTitle
+              qandas {
+                media {
+                  image {
+                    ...SquareImage
+                  }
+                }
+                textual {
+                  answer
+                  question
+                }
               }
             }
           }
@@ -88,7 +78,7 @@ const CustomerResources = () => {
 
         <div
           className={`
-            ${styles.sectionWrap}
+            ${sectionWrap}
             js-contrast
             padding-bottom:site-top
             padding-top:columns-0-1/2
@@ -144,7 +134,7 @@ const CustomerResources = () => {
         </SectionHeader>
         <div
           className={`
-            ${styles.sectionWrap}
+            ${sectionWrap}
             js-contrast
             padding-top:columns-0-1/2
             display:grid
@@ -200,55 +190,7 @@ a88aaaa    88aaaaa88a 88     88  .d8888b.
  dP        88     88   `8888PY8b `88888P'
 */}
 
-      <section
-        id="faq"
-        className={`
-          js-contrast-ignore
-        `}
-      >
-        <SectionHeader
-          absolute={false}
-          className={`
-            js-contrast
-            js-no-header-bg
-          `}
-        >
-          <h2 className={uiFontSize}>FAQs</h2>
-
-          <FaqFilter
-            items={[
-              {
-                name: `Test`,
-                slug: `test`,
-                id: `someid`,
-                count: 1,
-              },
-            ]}
-            update={() => null}
-            onReset={() => null}
-            className={`
-              padding-top:400
-              position:relative
-            `}
-          />
-        </SectionHeader>
-
-        <div
-          className={`
-            ${styles.sectionWrap}
-            js-contrast
-            padding-top:columns-0-1/2
-            display:grid
-            grid-gap:800
-            @mq-palm--grid-gap:columns-0-1/2
-            padding-bottom:site-top
-          `}
-        >
-          FAQs here
-          <ScrollPrompt to="#enquiries" />
-          <Divider bottom={true} />
-        </div>
-      </section>
+      <Faqs sections={faqs} />
 
       {/* Need to get Kristina to set up a "customer question" form in Hubspot for the form to go to via Netlify then Zapier then Hubspot. */}
 

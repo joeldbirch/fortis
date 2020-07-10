@@ -61,3 +61,29 @@ const FluidImage = ({
 }
 
 export default FluidImage
+
+export const query = graphql`
+  fragment PortraitImage on WPGraphQL_MediaItem {
+    sourceUrl
+    altText
+    imageFile {
+      childImageSharp {
+        fluid(maxWidth: 1000, cropFocus: CENTER) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+  }
+
+  fragment SquareImage on WPGraphQL_MediaItem {
+    sourceUrl
+    altText
+    imageFile {
+      childImageSharp {
+        fluid(maxHeight: 800, maxWidth: 800, cropFocus: ATTENTION) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+  }
+`

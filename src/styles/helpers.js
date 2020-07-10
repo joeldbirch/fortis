@@ -209,3 +209,14 @@ export const navText = `
   hover-underline
   vertical-align:top
 `
+
+export const sectionWrap = `
+  margin-horizontal:auto
+  max-width:container
+  padding-bottom:400
+  padding-horizontal:columns-0-1/2
+  @mq-desk--padding-horizontal:columns-1-1/2
+  position:relative
+  width:100
+  z-index:100
+`
