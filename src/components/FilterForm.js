@@ -8,13 +8,20 @@ const styles = {
   `,
 }
 
-const FilterForm = ({items, update = () => {}, className = ``, ...props}) => {
+const FilterForm = ({
+  items,
+  andAll = true,
+  update = () => {},
+  className = ``,
+  ...props
+}) => {
   const defaultTag = {
     name: `All`,
     id: `all`,
   }
 
-  const shownTags = [defaultTag, ...items.filter((tag) => tag.count > 0)]
+  const populatedTags = items.filter((tag) => tag.count > 0)
+  const shownTags = andAll ? [defaultTag, ...populatedTags] : populatedTags
 
   return (
     <form
@@ -44,12 +51,13 @@ const FilterForm = ({items, update = () => {}, className = ``, ...props}) => {
         `}
       >
         {shownTags?.length &&
-          shownTags.map((item) => (
+          shownTags.map((item, index) => (
             <FilterItem
               key={item.id}
               name={item.name}
               id={item.id}
               toggleHandler={() => update(item.id === `all` ? [] : [item.id])}
+              defaultChecked={index === 0}
             />
           ))}
       </ul>
@@ -59,7 +67,13 @@ const FilterForm = ({items, update = () => {}, className = ``, ...props}) => {
   )
 }
 
-const FilterItem = ({id, name, toggleHandler = () => {}, ...props}) => (
+const FilterItem = ({
+  id,
+  name,
+  toggleHandler = () => {},
+  defaultChecked = false,
+  ...props
+}) => (
   <li
     className={`
       ${navItem}
@@ -70,7 +84,7 @@ const FilterItem = ({id, name, toggleHandler = () => {}, ...props}) => (
     <label className={navHitarea}>
       <input
         type="radio"
-        defaultChecked={id === `all`}
+        defaultChecked={defaultChecked}
         className={`
           ${styles.icon}
         `}

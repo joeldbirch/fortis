@@ -266,7 +266,11 @@ a88aaaa    88aaaaa88a 88     88  .d8888b.
         />
       </EnquiryForm>
       {relatedPostsList && (
-        <RelatedPosts previews={relatedPostsList} title="Information series" />
+        <RelatedPosts
+          previews={relatedPostsList}
+          title="Information series"
+          id="info-series"
+        />
       )}
     </>
   )

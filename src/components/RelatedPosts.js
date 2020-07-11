@@ -2,7 +2,11 @@ import React from 'react'
 import {blogURI} from '../../globals'
 import CarouselSection from 'components/CarouselSection'
 
-const RelatedPosts = ({previews = [], title = `Information series`}) => {
+const RelatedPosts = ({
+  previews = [],
+  id = `relatedPosts`,
+  title = `Information series`,
+}) => {
   const slides = previews
     .filter((related) => related.post)
     .map((related) => related.post)
@@ -19,7 +23,7 @@ const RelatedPosts = ({previews = [], title = `Information series`}) => {
 
   return (
     <CarouselSection
-      id="relatedPosts"
+      id={id}
       title={title || `Related posts`}
       slideData={slideData}
     />

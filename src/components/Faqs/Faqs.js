@@ -47,20 +47,21 @@ const Faqs = ({sections = []}) => {
       <SectionHeader
         absolute={false}
         className={`
-        js-contrast
-        js-no-header-bg
-      `}
+          js-contrast
+          js-no-header-bg
+        `}
       >
         <h2 className={uiFontSize}>FAQs</h2>
 
         <FaqFilter
           items={navItems}
+          andAll={false}
           update={changeShownPosts}
           onReset={filterReset}
           className={`
-          padding-top:400
-          position:relative
-        `}
+            padding-top:400
+            position:relative
+          `}
         />
       </SectionHeader>
 

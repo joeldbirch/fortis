@@ -71,7 +71,13 @@ const ProjectPreviews = ({posts, tags: {nodes: tags}, id = null}) => {
                 `}
               >
                 <ProjectsFilter
-                  items={tags}
+                  items={[
+                    ...tags,
+                    {
+                      name: `All`,
+                      id: `all`,
+                    },
+                  ]}
                   update={changeShownPosts}
                   onReset={filterReset}
                   className={`
