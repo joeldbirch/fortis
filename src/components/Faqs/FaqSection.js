@@ -29,7 +29,8 @@ const FaqSection = ({data, className = ``}) => {
           className={`
             @mq-widepalm--display:grid
             grid-template-columns:2
-            padding-bottom:columns-0-1/2
+            padding-bottom:600
+            @mq-widepalm--padding-bottom:columns-0-1/2
           `}
           style={{
             '--grid-template-columns-var-1': `6fr 6fr`,
@@ -60,7 +61,8 @@ const FaqSection = ({data, className = ``}) => {
             className={`
               @mq-palm--padding-right:columns-1
               @mq-desk--padding-right:columns-0-1/2
-              padding-top:columns-0-1/2
+              padding-top:600
+              @mq-palm--padding-top:columns-0-1/2
             `}
           >
             <h2
@@ -68,7 +70,6 @@ const FaqSection = ({data, className = ``}) => {
                 @mq-palm--margin-bottom:columns-0-1/2
                 margin-bottom:400
                 rhythm-fix-before
-                rhythm-fix-after
               `}
             >
               <span

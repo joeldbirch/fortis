@@ -172,10 +172,10 @@ const Post = ({pageContext}) => {
           ) : null
         })}
 
-        {relatedPostsList ? <ScrollPrompt to="#relatedPosts" /> : ``}
+        {relatedPostsList && <ScrollPrompt to="#relatedPosts" />}
       </div>
 
-      {relatedPostsList ? <RelatedPosts previews={relatedPostsList} /> : ``}
+      {relatedPostsList && <RelatedPosts previews={relatedPostsList} />}
     </Layout>
   )
 }

@@ -4,6 +4,7 @@ import {largerSizes} from 'utilities/helpers'
 import FluidImage from 'components/FluidImage'
 import ScrollPrompt from 'components/ScrollPrompt'
 import SectionHeader from 'components/SectionHeader'
+import RelatedPosts from 'components/RelatedPosts'
 import Faqs from 'components/Faqs'
 import SectionNav, {Item as SectionNavItem} from 'components/SectionNav'
 import Divider from 'components/DividerHorizontal'
@@ -22,6 +23,7 @@ const CustomerResources = () => {
           testimonials,
           faqs,
         },
+        relatedPosts: {relatedPostsList},
       },
     },
   } = useStaticQuery(graphql`
@@ -55,6 +57,26 @@ const CustomerResources = () => {
                 textual {
                   answer
                   question
+                }
+              }
+            }
+          }
+          relatedPosts {
+            relatedPostsList {
+              post {
+                ... on WPGraphQL_Post {
+                  id
+                  uri
+                  slug
+                  title
+                  featuredImage {
+                    ...PreviewImage
+                  }
+                  categories {
+                    nodes {
+                      name
+                    }
+                  }
                 }
               }
             }
@@ -225,7 +247,7 @@ a88aaaa    88aaaaa88a 88     88  .d8888b.
       <EnquiryForm
         id="enquiries"
         formIntroText="If you have a question you’d like the Fortis development team to answer, please submit below."
-        slug="customer-question"
+        name="customer-question"
       >
         <Field label="First name" minLength="2" />
         <Field label="Last name" minLength="2" />
@@ -243,6 +265,9 @@ a88aaaa    88aaaaa88a 88     88  .d8888b.
           minLength="6"
         />
       </EnquiryForm>
+      {relatedPostsList && (
+        <RelatedPosts previews={relatedPostsList} title="Information series" />
+      )}
     </>
   )
 }

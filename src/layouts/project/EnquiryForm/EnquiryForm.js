@@ -28,7 +28,13 @@ export const styles = {
   `,
 }
 
-const EnquiryForm = ({formIntroText, slug, id = `enquire`, children = null}) => {
+const EnquiryForm = ({
+  formIntroText,
+  name = `project enquiry`,
+  slug,
+  id = `enquire`,
+  children = null,
+}) => {
   return (
     <section
       id={id}
@@ -55,7 +61,7 @@ const EnquiryForm = ({formIntroText, slug, id = `enquire`, children = null}) => 
         >{`
           <p>${formIntroText}</p>
         `}</LargeText>
-        <NetlifyForm name="project enquiry">
+        <NetlifyForm name={name}>
           {children || (
             <>
               <Field label="First name" minLength="2" />
@@ -66,7 +72,7 @@ const EnquiryForm = ({formIntroText, slug, id = `enquire`, children = null}) => 
             </>
           )}
           <div>
-            <input type="hidden" name="project" value={slug} />
+            {slug && <input type="hidden" name="project" value={slug} />}
             <div
               className={`
                 padding-top:800
