@@ -1,6 +1,8 @@
 http://www.fortis.com.au/* https://www.fortis.com.au/:splat 301!
 https://fortis-dg.netlify.app/* https://www.fortis.com.au/:splat 301!
 
+/openhome https://development.fortis.com.au/openhome
+
 /sydney-projects /projects
 /melbourne-projects /projects
 /about /team
@@ -22,3 +24,4 @@ https://fortis-dg.netlify.app/* https://www.fortis.com.au/:splat 301!
 /pallashouse-melbourne /projects/pallas-house-melbourne
 /moorebank /projects/moore-lakes
 /southmelbourne /projects/pallas-house-melbourne
+/thebenson /projects/rose-bay-the-benson/
