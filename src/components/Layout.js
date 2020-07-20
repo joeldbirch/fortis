@@ -132,7 +132,7 @@ const Layout = ({
             }
           `}
           style={{
-            marginTop: `-0.45em`,
+            marginTop: `-0.1em`,
           }}
         >
           <span id="siteLogo" className="visually-hidden">
@@ -151,7 +151,7 @@ const Layout = ({
                 : firstPanel.isIntersecting
                 ? `currentColor`
                 : `hsla(0, 0%, 85%, 0.85)`,
-              width: `5.5em`,
+              width: `4.25em`,
             }}
             width="110"
           >
