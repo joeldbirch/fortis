@@ -87,6 +87,18 @@ export const imageFragments = graphql`
     }
   }
 
+  fragment MovieImage on WPGraphQL_MediaItem {
+    sourceUrl
+    altText
+    imageFile {
+      childImageSharp {
+        fluid(maxHeight: 450, maxWidth: 800, cropFocus: CENTER) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+  }
+
   fragment HeroImage on WPGraphQL_MediaItem {
     sourceUrl
     altText

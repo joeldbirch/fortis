@@ -1,5 +1,6 @@
 import React from 'react'
-import FluidImage from '../FluidImage'
+import MultiFormatImage from '../MultiFormatImage'
+import FluidVideo from '../FluidVideo'
 import {subhead} from 'styles/helpers'
 import {cols, mq} from 'utilities/helpers'
 
@@ -27,10 +28,10 @@ const FaqSection = ({data, className = ``}) => {
         <div
           key={index}
           className={`
-            @mq-widepalm--display:grid
+            @mq-lap--display:grid
             grid-template-columns:2
             padding-bottom:600
-            @mq-widepalm--padding-bottom:columns-0-1/2
+            @mq-lap--padding-bottom:columns-0-1/2
           `}
           style={{
             '--grid-template-columns-var-1': `6fr 6fr`,
@@ -40,34 +41,13 @@ const FaqSection = ({data, className = ``}) => {
         >
           <div
             className={`
-              grid-column:2
-              @mq-palm--grid-row:1
-              margin-top:columns-0-1/2
-            `}
-          >
-            <FluidImage
-              image={qanda.media.image}
-              sizes={`
-                (max-width: ${mq.toPalm}) ${cols(12)}vw,
-                (min-width: ${mq.desk}) ${cols(4)}vw,
-                (min-width: ${mq.widepalm}) ${cols(6)}vw,
-                (min-width: ${mq.palm}) ${cols(5.5)}vw,
-                510px
-              `}
-            />
-          </div>
-
-          <div
-            className={`
               @mq-palm--padding-right:columns-1
               @mq-desk--padding-right:columns-0-1/2
-              padding-top:600
-              @mq-palm--padding-top:columns-0-1/2
+              padding-top:800
             `}
           >
             <h2
               className={`
-                @mq-palm--margin-bottom:columns-0-1/2
                 margin-bottom:400
                 rhythm-fix-before
               `}
@@ -88,6 +68,31 @@ const FaqSection = ({data, className = ``}) => {
                 s-editable
               `}
             />
+          </div>
+
+          <div
+            className={`
+              @mq-lap--column-row:2
+              @mq-lap--margin-vertical:auto
+              @mq-lap--padding-top:800
+              padding-top:600
+            `}
+          >
+            {qanda.media.simpleVideo ? (
+              <FluidVideo id={qanda.media.simpleVideo} />
+            ) : (
+              <MultiFormatImage
+                className={`
+                `}
+                image={qanda.media.image}
+                sizes={`
+                    (min-width: ${mq.desk}) ${cols(4)}vw,
+                    (min-width: ${mq.lap}) ${cols(6)}vw,
+                    (min-width: ${mq.palm}) ${cols(5.5)}vw,
+                    ${cols(12)}vw
+                  `}
+              />
+            )}
           </div>
         </div>
       ))}

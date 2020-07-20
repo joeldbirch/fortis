@@ -50,8 +50,9 @@ const CustomerResources = () => {
               faqSectionTitle
               qandas {
                 media {
+                  simpleVideo
                   image {
-                    ...SquareImage
+                    ...MovieImage
                   }
                 }
                 textual {
@@ -242,7 +243,7 @@ a88aaaa    88aaaaa88a 88     88  .d8888b.
 
       <Faqs sections={faqs} />
 
-      {/* Need to get Kristina to set up a "customer question" form in Hubspot for the form to go to via Netlify then Zapier then Hubspot. */}
+      {/* This form submits to Netlify, then Zapier sends it to one of Kristina's forms in Hubspot. */}
 
       <EnquiryForm
         id="enquiries"

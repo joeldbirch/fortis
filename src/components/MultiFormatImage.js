@@ -32,9 +32,9 @@ const MultiFormatImage = ({
       <Component
         alt={alt}
         className={`
-        width:100
-        height:auto
-      `}
+          width:100
+          height:auto
+        `}
         lazyload="lazy"
         src={publicURL}
         {...props}
