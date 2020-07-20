@@ -26,6 +26,7 @@ const Layout = ({
   scrollStrict = false,
   uri = ``,
   slug = ``,
+  showMenu = true,
   ...props
 }) => {
   const [menuOpen, toggleMenu] = useState(false)
@@ -176,12 +177,14 @@ const Layout = ({
             {AddToHeader}
           </div>
         )}
-        <Menu
-          headerReversed={headerState.reversed}
-          toggleHandler={toggleMenu}
-          isOpen={menuOpen}
-          className="pointer-events:auto"
-        />
+        {showMenu && (
+          <Menu
+            headerReversed={headerState.reversed}
+            toggleHandler={toggleMenu}
+            isOpen={menuOpen}
+            className="pointer-events:auto"
+          />
+        )}
       </TheHeader>
 
       <Main

@@ -54,6 +54,7 @@ export default ({className = ``, ...props}) => {
         }}
       >
         <Divider
+          inside={true}
           // override divider component's margin
           className={`
             @mq-palm--margin-horizontal:auto

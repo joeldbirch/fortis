@@ -61,7 +61,7 @@ const EnquiryForm = ({
         >{`
           <p>${formIntroText}</p>
         `}</LargeText>
-        <NetlifyForm name={name}>
+        <NetlifyForm name={name} action="/thank-you/">
           {children || (
             <>
               <Field label="First name" minLength="2" />

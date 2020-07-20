@@ -13,7 +13,12 @@ const styles = {
 }
 
 export default ({prependId = `field`, ...props}) => (
-  <NetlifyForm className={styles.root} name="Fortis Newsletter 2020" {...props}>
+  <NetlifyForm
+    className={styles.root}
+    name="Fortis Newsletter 2020"
+    action="/thank-you/"
+    {...props}
+  >
     <h3
       className={`
         font-size:em

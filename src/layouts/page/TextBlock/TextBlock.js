@@ -1,12 +1,25 @@
 import React from 'react'
 import ScrollPrompt from 'components/ScrollPrompt'
 
+const textClasses = `
+  @mq-palm--font-size:600
+  @mq-tiny--font-size:550
+  can-style-note
+  font-size:500
+  margin:auto
+  max-width:measure
+  rhythm-fix-after
+  rhythm-fix-before
+  s-editable
+`
+
 const TextBlock = ({
   text,
   style = {},
   nextSection = null,
   id = null,
   className = ``,
+  children,
   ...props
 }) => {
   return (
@@ -26,22 +39,19 @@ const TextBlock = ({
         ${className}
       `}
     >
-      <div
-        className={`
-          @mq-palm--font-size:600
-          @mq-tiny--font-size:550
-          can-style-note
-          font-size:500
-          margin:auto
-          max-width:measure
-          rhythm-fix-after
-          rhythm-fix-before
-          s-editable
-        `}
-        style={style}
-        dangerouslySetInnerHTML={{__html: text}}
-      />
-      <ScrollPrompt to={nextSection} />
+      {text ? (
+        <div
+          className={textClasses}
+          style={style}
+          dangerouslySetInnerHTML={{__html: text}}
+        />
+      ) : (
+        <div className={textClasses} style={style}>
+          {children}
+        </div>
+      )}
+
+      {nextSection && <ScrollPrompt to={nextSection} />}
     </section>
   )
 }
