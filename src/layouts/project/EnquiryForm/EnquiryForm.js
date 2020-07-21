@@ -66,7 +66,6 @@ const EnquiryForm = ({
             <>
               <Field label="First name" minLength="2" />
               <Field label="Last name" minLength="2" />
-              <Field label="Company" />
               <Field label="Email" type="email" />
               <Field label="Phone" type="tel" />
             </>
