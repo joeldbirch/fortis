@@ -2,7 +2,7 @@ http://www.fortis.com.au/* https://www.fortis.com.au/:splat 301!
 https://fortis-dg.netlify.app/* https://www.fortis.com.au/:splat 301!
 
 /openhome https://development.fortis.com.au/openhome
-
+/team /about
 /sydney-projects /projects
 /melbourne-projects /projects
 /about /team
