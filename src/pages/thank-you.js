@@ -33,7 +33,7 @@ const Thankyou = () => {
             className={`btn font-size:300 margin-top:400 display:inline-block`}
             onClick={back}
           >
-            &larr; Back to our home
+            &larr; Back to previous page
           </a>
         </p>
       </TextBlock>
