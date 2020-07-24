@@ -29,7 +29,7 @@ const CustomerResources = () => {
   } = useStaticQuery(graphql`
     query CustomerResourcesQuery {
       wpgraphql {
-        pageBy(uri: "customers") {
+        pageBy(uri: "info") {
           id
           title
           resources {

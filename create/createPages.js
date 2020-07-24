@@ -151,7 +151,7 @@ module.exports = async ({actions, graphql, reporter}, options) => {
         }
 
         if (page.pageId === 2352) {
-          // `customers`
+          // `info`
           page.pageBuilder.layouts.unshift({
             fieldGroupName: `resourcesLayout`,
           })

@@ -36,7 +36,7 @@ const Page = ({ pageContext }) => {
       AddToHeader={
         isFrontPage
         ? <h1 className="visually-hidden">{site.siteMetadata.title}</h1>
-        : slug === "customers" ? <></>
+        : slug === "info" ? <></>
         : <h1 className="
             @mq-desk--font-size:500
             @mq-tiny--font-size:400
