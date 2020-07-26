@@ -5,6 +5,7 @@
   .aspectConstrained & {
     background-color: hsl(20, 5%, 96%);
     padding-bottom: 56.25%;
+    touch-action: pan-y pinch-zoom !important;
   }
 }
 
