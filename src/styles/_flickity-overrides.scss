@@ -1,6 +1,11 @@
 /* allow caption to break out of flickity container */
 .flickity-viewport {
   overflow: visible;
+
+  .aspectConstrained & {
+    background-color: hsl(20, 5%, 96%);
+    padding-bottom: 56.25%;
+  }
 }
 
 .flickity-button {

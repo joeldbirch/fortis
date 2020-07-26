@@ -30,18 +30,21 @@ const ImageGallery = ({imageGallery}) => {
           options={{
             arrowShape: path,
             pageDots: false,
+            setGallerySize: false,
+            draggable: false,
           }}
           static={true}
           className={`
+            aspectConstrained
           `}
         >
           {imageGallery.map((image, index) => (
             <div
               key={index}
               className={`
-              position:relative
-              width:100
-            `}
+                width:100
+                height:100
+              `}
             >
               <FluidImage
                 image={image}
@@ -50,6 +53,9 @@ const ImageGallery = ({imageGallery}) => {
                   height:100
                   width:100
                 `}
+                imgStyle={{
+                  objectFit: `contain`,
+                }}
               />
               <div
                 className={`
