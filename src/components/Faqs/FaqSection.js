@@ -79,7 +79,7 @@ const FaqSection = ({data, className = ``}) => {
             `}
           >
             {qanda.media.simpleVideo ? (
-              <FluidVideo id={qanda.media.simpleVideo} />
+              <FluidVideo id={qanda.media.simpleVideo} ratioPadding="100%" />
             ) : (
               <MultiFormatImage
                 className={`

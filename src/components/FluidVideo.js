@@ -1,13 +1,13 @@
 import React from 'react'
 
-const FluidVideo = ({id, title = `fluidVideo`}) => (
+const FluidVideo = ({id, title = `fluidVideo`, ratioPadding = `56.25%`}) => (
   <div
     className={`
       position:relative
       width:100
     `}
     style={{
-      paddingBottom: `56.25%`,
+      paddingBottom: ratioPadding,
     }}
   >
     <iframe
