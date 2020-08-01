@@ -8,7 +8,7 @@ import {uiFontSize, sectionWrap} from 'styles/helpers'
 import slugify from 'slugify'
 
 const Faqs = ({sections = []}) => {
-  const [shownPosts, setShownPosts] = useState(sections)
+  const [shownPosts, setShownPosts] = useState([sections[0]])
 
   sections.forEach(
     (section, index) => (section.id = `faq-${slugify(section.faqSectionTitle)}`)
