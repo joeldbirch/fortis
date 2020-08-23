@@ -10,6 +10,7 @@ module.exports = {
   Project_Projectbuilder_Layouts_ImageGallery: `ImageGallery`,
   Project_Projectbuilder_Layouts_BigTextOnly: `BigText`,
   Project_Projectbuilder_Layouts_GoogleMap: `ProjectLocation`,
+  Project_Projectbuilder_Layouts_ProximityMap: `ProximityMap`,
   Project_Projectbuilder_Layouts_SimpleLandscape: `SimpleLandscape`,
   Project_Projectbuilder_Layouts_InFocus: `InFocus`,
   Project_Projectbuilder_Layouts_PortraitDiagram: `PortraitDiagram`,
