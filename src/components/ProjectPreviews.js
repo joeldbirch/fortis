@@ -4,6 +4,15 @@ import ProjectsFilter from 'components/FilterForm'
 import Divider from 'components/DividerHorizontal'
 import {uiFontSize} from 'styles/helpers'
 
+const arbitraryOrder = (tags) => {
+  const ordered = []
+  ordered[0] = tags.filter((tag) => tag.slug === `melbourne`)[0]
+  ordered[1] = tags.filter((tag) => tag.slug === `sydney`)[0]
+  ordered[2] = tags.filter((tag) => tag.slug === `residential`)[0]
+  ordered[3] = tags.filter((tag) => tag.slug === `commercial`)[0]
+  return ordered.filter((tag) => tag)
+}
+
 const ProjectPreviews = ({posts, tags: {nodes: tags}, id = null}) => {
   const [shownPosts, setShownPosts] = useState(posts)
 
@@ -21,6 +30,8 @@ const ProjectPreviews = ({posts, tags: {nodes: tags}, id = null}) => {
   const isShown = ({id}) => {
     return shownPosts.map((post) => post.id).includes(id)
   }
+
+  const orderedTags = arbitraryOrder(tags)
 
   const filterReset = () => setShownPosts(posts)
 
@@ -72,7 +83,7 @@ const ProjectPreviews = ({posts, tags: {nodes: tags}, id = null}) => {
               >
                 <ProjectsFilter
                   items={[
-                    ...tags,
+                    ...orderedTags,
                     {
                       name: `All`,
                       id: `all`,
