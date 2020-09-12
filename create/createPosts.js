@@ -59,7 +59,7 @@ const GET_POSTS = `
 const allPosts = []
 const newsPages = []
 let pageNumber = 0
-const itemsPerPage = 6
+const itemsPerPage = 12
 
 /**
  * This is the export which Gatbsy will use to process.

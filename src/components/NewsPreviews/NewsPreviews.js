@@ -1,14 +1,17 @@
 import React from 'react'
 import NewsEntry from './NewsEntry'
 import {smallerSizes, largerSizes} from 'utilities/helpers'
+import chunk from 'lodash.chunk'
 
 const NewsPreview = ({posts, intro, pagination}) => {
   if (!posts) return ``
-  return (
+  const postChunks = chunk(posts, 6)
+  return postChunks.map((posts, index) => (
     <>
       <div
         className={`
-          padding-top:site-top
+        ${index === 0 ? `padding-top:site-top` : `padding-top:columns-0-1/2`}
+
           @mq-palm--display:grid
           grid-template-columns:2
         `}
@@ -28,13 +31,17 @@ const NewsPreview = ({posts, intro, pagination}) => {
               '--offset-left': `1rem`,
             }}
           >
-            {intro}
+            {index === 0 ? intro : ` `}
           </div>
           <NewsEntry
             post={posts[0]}
             layoutOrder={0}
             className={`
-              @mq-palm--margin-top:columns-1
+              ${
+                index === 0
+                  ? `@mq-palm--margin-top:columns-1`
+                  : `@mq-palm--margin-top:columns-3`
+              }
               @mq-palm--padding-right:columns-2
             `}
             sizes={smallerSizes}
@@ -162,9 +169,9 @@ const NewsPreview = ({posts, intro, pagination}) => {
         )}
       </div>
 
-      {pagination}
+      {postChunks.length < 2 || index === 1 ? pagination : ``}
     </>
-  )
+  ))
 }
 
 export default NewsPreview
