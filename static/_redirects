@@ -1,6 +1,5 @@
 http://www.fortis.com.au/* https://www.fortis.com.au/:splat 301!
 https://fortis-dg.netlify.app/* https://www.fortis.com.au/:splat 301!
-https://fortis.gtsb.io/* https://www.fortis.com.au/:splat 301!
 
 /openhome https://development.fortis.com.au/openhome
 /team /about
