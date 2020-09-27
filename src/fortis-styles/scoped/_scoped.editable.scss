@@ -23,6 +23,12 @@ $scoped_container: 's-editable' !default;
     font-weight: normal;
     font-style: normal;
 
+    &:not(:first-of-type) {
+      @include increase-specificity(4) {
+        margin-top: 2rem;
+      }
+    }
+
     em {
       font-style: normal;
     }
@@ -31,6 +37,7 @@ $scoped_container: 's-editable' !default;
       font-weight: normal;
     }
   }
+
 
   // improve vertical rhythm by mitigating unwanted line-height
   // &:not(.s-aside) > :first-child:not([class*="margin:"]):not([class*="margin-vertical"]):not([class*="margin-top"]) {
@@ -75,7 +82,25 @@ $scoped_container: 's-editable' !default;
 
   ol,
   ul {
-    list-style-position: inside;
+    list-style-position: outside;
+  }
+  &.#{$scoped_container}.#{$scoped_container} {
+    & > ul {
+      padding-left: 1.25em;
+
+      & > li {
+        &:not(:first-child) {
+          margin-top: 1em;
+        }
+        list-style-type: none;
+
+        &::before {
+          content: "— ";
+          position: absolute;
+          margin-left: -1.25em;
+        }
+      }
+    }
   }
 
   blockquote {
