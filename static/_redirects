@@ -31,3 +31,5 @@ https://fortis-dg.netlify.app/* https://www.fortis.com.au/:splat 301!
 /pallashouse /projects/pallas-house-sydney/
 /colindia /projects/neutral-bay/
 /carlisle /projects/rose-bay/
+/projects/rose-bay /projects/rose-bay-no1-carlisle
+/no1-carlisle /projects/rose-bay-no1-carlisle
