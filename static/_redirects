@@ -17,7 +17,7 @@ https://fortis-dg.netlify.app/* https://www.fortis.com.au/:splat 301!
 /balmoral /projects/glen-iris-balmoral
 /marmont /projects/double-bay-marmont
 /bowersouthyarra /projects/south-yarra-bower
-/rosebay-carlisle /projects/rose-bay
+/rosebay-carlisle /projects/rose-bay-no1-carlisle
 /232wattletree /projects/malvern-232-wattletree
 /eastgrove /projects/glen-iris-east-grove
 /clifton-hill /projects/clifton-hill-the-foundry
@@ -25,11 +25,11 @@ https://fortis-dg.netlify.app/* https://www.fortis.com.au/:splat 301!
 /moorebank /projects/moore-lakes
 /southmelbourne /projects/pallas-house-melbourne
 /thebenson /projects/rose-bay-the-benson/
-/rose-bay /projects/rose-bay
+/rose-bay /projects/rose-bay-no1-carlisle
 /bower /projects/south-yarra-bower/
 /pallas-house-sydney /projects/pallas-house-sydney/
 /pallashouse /projects/pallas-house-sydney/
 /colindia /projects/neutral-bay/
-/carlisle /projects/rose-bay/
+/carlisle /projects/rose-bay-no1-carlisle
 /projects/rose-bay /projects/rose-bay-no1-carlisle
 /no1-carlisle /projects/rose-bay-no1-carlisle
