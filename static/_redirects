@@ -33,3 +33,8 @@ https://fortis-dg.netlify.app/* https://www.fortis.com.au/:splat 301!
 /carlisle /projects/rose-bay-no1-carlisle
 /projects/rose-bay /projects/rose-bay-no1-carlisle
 /no1-carlisle /projects/rose-bay-no1-carlisle
+/projects/neutral-bay /projects/colindia
+/projects/pillarandtide /projects/brighton-pillarandtide 
+/projects/brighton /projects/brighton-pillarandtide  
+/pillarandtide /projects/brighton-pillarandtide  
+/brighton /projects/brighton-pillarandtide
