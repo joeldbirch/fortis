@@ -7,7 +7,6 @@ https://fortis-dg.netlify.app/* https://www.fortis.com.au/:splat 301!
 /melbourne-projects /projects
 /about /team
 /partners /news
-/brighton /projects/brighton
 /neutral-bay /projects/neutral-bay
 /guilfoyle-sydney /projects/guilfoyle
 /rosebay-benson /projects/rose-bay-the-benson
@@ -34,7 +33,7 @@ https://fortis-dg.netlify.app/* https://www.fortis.com.au/:splat 301!
 /projects/rose-bay /projects/rose-bay-no1-carlisle
 /no1-carlisle /projects/rose-bay-no1-carlisle
 /projects/neutral-bay /projects/colindia
-/projects/pillarandtide /projects/brighton-pillarandtide 
-/projects/brighton /projects/brighton-pillarandtide  
-/pillarandtide /projects/brighton-pillarandtide  
-/brighton /projects/brighton-pillarandtide
+/projects/brighton-pillarandtide /projects/pillarandtide
+/projects/brighton /projects/pillarandtide
+/pillarandtide /projects/pillarandtide
+/brighton /projects/pillarandtide
